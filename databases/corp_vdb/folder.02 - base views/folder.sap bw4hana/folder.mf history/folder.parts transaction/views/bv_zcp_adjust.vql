@@ -1,0 +1,172 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_adjust
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ADJUST'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        adjust_cre_by_idlevel01_0 = '[4ZCP_ADJUST-ADJUST_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJUST_CRE_B]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJUST_CRE_B]' LEVELPOSITION=1,
+        adjust_cre_by_id_key = '[4ZCP_ADJUST-ADJUST_CRE_B].[24ZCP_ADJUST-ADJUST_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJUST_CRE_B]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJUST_CRE_B]' ATTRIBUTE,
+        adjust_cre_tslevel01_0 = '[4ZCP_ADJUST-ADJUST_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJUST_CRE_T]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJUST_CRE_T]' LEVELPOSITION=1,
+        adjust_cre_ts_key = '[4ZCP_ADJUST-ADJUST_CRE_T].[24ZCP_ADJUST-ADJUST_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJUST_CRE_T]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJUST_CRE_T]' ATTRIBUTE,
+        adjust_upd_tslevel01_0 = '[4ZCP_ADJUST-ADJUST_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJUST_UPD_T]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJUST_UPD_T]' LEVELPOSITION=1,
+        adjust_upd_ts_key = '[4ZCP_ADJUST-ADJUST_UPD_T].[24ZCP_ADJUST-ADJUST_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJUST_UPD_T]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJUST_UPD_T]' ATTRIBUTE,
+        adj_adj_availlevel01_0 = '[4ZCP_ADJUST-ADJ_ADJ_AVAI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_ADJ_AVAI]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_ADJ_AVAI]' LEVELPOSITION=1,
+        adj_adj_avail_key = '[4ZCP_ADJUST-ADJ_ADJ_AVAI].[24ZCP_ADJUST-ADJ_ADJ_AVAI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_ADJ_AVAI]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_ADJ_AVAI]' ATTRIBUTE,
+        adj_adj_qtylevel01_0 = '[4ZCP_ADJUST-ADJ_ADJ_QTY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_ADJ_QTY]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_ADJ_QTY]' LEVELPOSITION=1,
+        adj_adj_qty_key = '[4ZCP_ADJUST-ADJ_ADJ_QTY].[24ZCP_ADJUST-ADJ_ADJ_QTY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_ADJ_QTY]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_ADJ_QTY]' ATTRIBUTE,
+        adj_adj_unavaillevel01_0 = '[4ZCP_ADJUST-ADJ_ADJ_UNAV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_ADJ_UNAV]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_ADJ_UNAV]' LEVELPOSITION=1,
+        adj_adj_unavail_key = '[4ZCP_ADJUST-ADJ_ADJ_UNAV].[24ZCP_ADJUST-ADJ_ADJ_UNAV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_ADJ_UNAV]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_ADJ_UNAV]' ATTRIBUTE,
+        adj_archive_inlevel01_0 = '[4ZCP_ADJUST-ADJ_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_ARCHIVE]' LEVELPOSITION=1,
+        adj_archive_in_key = '[4ZCP_ADJUST-ADJ_ARCHIVE].[24ZCP_ADJUST-ADJ_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_ARCHIVE]' ATTRIBUTE,
+        adj_commentlevel01_0 = '[4ZCP_ADJUST-ADJ_COMMENT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_COMMENT]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_COMMENT]' LEVELPOSITION=1,
+        adj_comment_key = '[4ZCP_ADJUST-ADJ_COMMENT].[24ZCP_ADJUST-ADJ_COMMENT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_COMMENT]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_COMMENT]' ATTRIBUTE,
+        adj_document_numlevel01_0 = '[4ZCP_ADJUST-ADJ_DOCUMENT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_DOCUMENT]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_DOCUMENT]' LEVELPOSITION=1,
+        adj_document_num_key = '[4ZCP_ADJUST-ADJ_DOCUMENT].[24ZCP_ADJUST-ADJ_DOCUMENT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_DOCUMENT]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_DOCUMENT]' ATTRIBUTE,
+        adj_new_availlevel01_0 = '[4ZCP_ADJUST-ADJ_NEW_AVAI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_NEW_AVAI]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_NEW_AVAI]' LEVELPOSITION=1,
+        adj_new_avail_key = '[4ZCP_ADJUST-ADJ_NEW_AVAI].[24ZCP_ADJUST-ADJ_NEW_AVAI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_NEW_AVAI]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_NEW_AVAI]' ATTRIBUTE,
+        adj_new_qohlevel01_0 = '[4ZCP_ADJUST-ADJ_NEW_QOH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_NEW_QOH]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_NEW_QOH]' LEVELPOSITION=1,
+        adj_new_qoh_key = '[4ZCP_ADJUST-ADJ_NEW_QOH].[24ZCP_ADJUST-ADJ_NEW_QOH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_NEW_QOH]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_NEW_QOH]' ATTRIBUTE,
+        adj_new_unavaillevel01_0 = '[4ZCP_ADJUST-ADJ_NEW_UNAV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_NEW_UNAV]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_NEW_UNAV]' LEVELPOSITION=1,
+        adj_new_unavail_key = '[4ZCP_ADJUST-ADJ_NEW_UNAV].[24ZCP_ADJUST-ADJ_NEW_UNAV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_NEW_UNAV]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_NEW_UNAV]' ATTRIBUTE,
+        adj_old_availlevel01_0 = '[4ZCP_ADJUST-ADJ_OLD_AVAI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_OLD_AVAI]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_OLD_AVAI]' LEVELPOSITION=1,
+        adj_old_avail_key = '[4ZCP_ADJUST-ADJ_OLD_AVAI].[24ZCP_ADJUST-ADJ_OLD_AVAI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_OLD_AVAI]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_OLD_AVAI]' ATTRIBUTE,
+        adj_old_qohlevel01_0 = '[4ZCP_ADJUST-ADJ_OLD_QOH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_OLD_QOH]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_OLD_QOH]' LEVELPOSITION=1,
+        adj_old_qoh_key = '[4ZCP_ADJUST-ADJ_OLD_QOH].[24ZCP_ADJUST-ADJ_OLD_QOH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_OLD_QOH]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_OLD_QOH]' ATTRIBUTE,
+        adj_old_unavaillevel01_0 = '[4ZCP_ADJUST-ADJ_OLD_UNAV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_OLD_UNAV]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_OLD_UNAV]' LEVELPOSITION=1,
+        adj_old_unavail_key = '[4ZCP_ADJUST-ADJ_OLD_UNAV].[24ZCP_ADJUST-ADJ_OLD_UNAV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_OLD_UNAV]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_OLD_UNAV]' ATTRIBUTE,
+        adj_part_numlevel01_0 = '[4ZCP_ADJUST-ADJ_PART_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_PART_NUM]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_PART_NUM]' LEVELPOSITION=1,
+        adj_part_num_key = '[4ZCP_ADJUST-ADJ_PART_NUM].[24ZCP_ADJUST-ADJ_PART_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_PART_NUM]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_PART_NUM]' ATTRIBUTE,
+        adj_port_accntlevel01_0 = '[4ZCP_ADJUST-ADJ_PORT_ACC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_PORT_ACC]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_PORT_ACC]' LEVELPOSITION=1,
+        adj_port_accnt_key = '[4ZCP_ADJUST-ADJ_PORT_ACC].[24ZCP_ADJUST-ADJ_PORT_ACC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_PORT_ACC]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_PORT_ACC]' ATTRIBUTE,
+        adj_process_datelevel01_0 = '[4ZCP_ADJUST-ADJ_PROCESS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_PROCESS]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_PROCESS]' LEVELPOSITION=1,
+        adj_process_date_key = '[4ZCP_ADJUST-ADJ_PROCESS].[24ZCP_ADJUST-ADJ_PROCESS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_PROCESS]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_PROCESS]' ATTRIBUTE,
+        adj_process_timelevel01_0 = '[4ZCP_ADJUST-ADJ_PROCES_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_PROCES_0]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_PROCES_0]' LEVELPOSITION=1,
+        adj_process_time_key = '[4ZCP_ADJUST-ADJ_PROCES_0].[24ZCP_ADJUST-ADJ_PROCES_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_PROCES_0]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_PROCES_0]' ATTRIBUTE,
+        adj_reason_cdlevel01_0 = '[4ZCP_ADJUST-ADJ_REASON_C].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_REASON_C]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_REASON_C]' LEVELPOSITION=1,
+        adj_reason_cd_key = '[4ZCP_ADJUST-ADJ_REASON_C].[24ZCP_ADJUST-ADJ_REASON_C]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_REASON_C]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_REASON_C]' ATTRIBUTE,
+        adj_tl_old_qohlevel01_0 = '[4ZCP_ADJUST-ADJ_TL_OLD_Q].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_TL_OLD_Q]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_TL_OLD_Q]' LEVELPOSITION=1,
+        adj_tl_old_qoh_key = '[4ZCP_ADJUST-ADJ_TL_OLD_Q].[24ZCP_ADJUST-ADJ_TL_OLD_Q]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_TL_OLD_Q]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_TL_OLD_Q]' ATTRIBUTE,
+        adj_user_idlevel01_0 = '[4ZCP_ADJUST-ADJ_USER_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_USER_ID]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_USER_ID]' LEVELPOSITION=1,
+        adj_user_id_key = '[4ZCP_ADJUST-ADJ_USER_ID].[24ZCP_ADJUST-ADJ_USER_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJUST-ADJ_USER_ID]' DIMENSIONNAME = '[4ZCP_ADJUST-ADJ_USER_ID]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_adjust I18N us_cst (
+        adjust_cre_by_idlevel01_0:text,
+        adjust_cre_by_id_key:text,
+        adjust_cre_tslevel01_0:text,
+        adjust_cre_ts_key:text,
+        adjust_upd_tslevel01_0:text,
+        adjust_upd_ts_key:text,
+        adj_adj_availlevel01_0:text,
+        adj_adj_avail_key:text,
+        adj_adj_qtylevel01_0:text,
+        adj_adj_qty_key:text,
+        adj_adj_unavaillevel01_0:text,
+        adj_adj_unavail_key:text,
+        adj_archive_inlevel01_0:text,
+        adj_archive_in_key:text,
+        adj_commentlevel01_0:text,
+        adj_comment_key:text,
+        adj_document_numlevel01_0:text,
+        adj_document_num_key:text,
+        adj_new_availlevel01_0:text,
+        adj_new_avail_key:text,
+        adj_new_qohlevel01_0:text,
+        adj_new_qoh_key:text,
+        adj_new_unavaillevel01_0:text,
+        adj_new_unavail_key:text,
+        adj_old_availlevel01_0:text,
+        adj_old_avail_key:text,
+        adj_old_qohlevel01_0:text,
+        adj_old_qoh_key:text,
+        adj_old_unavaillevel01_0:text,
+        adj_old_unavail_key:text,
+        adj_part_numlevel01_0:text,
+        adj_part_num_key:text,
+        adj_port_accntlevel01_0:text,
+        adj_port_accnt_key:text,
+        adj_process_datelevel01_0:text,
+        adj_process_date_key:text,
+        adj_process_timelevel01_0:text,
+        adj_process_time_key:text,
+        adj_reason_cdlevel01_0:text,
+        adj_reason_cd_key:text,
+        adj_tl_old_qohlevel01_0:text,
+        adj_tl_old_qoh_key:text,
+        adj_user_idlevel01_0:text,
+        adj_user_id_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_adjust(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD adjust_cre_by_idlevel01_0 (any) OPT ANY
+             ADD adjust_cre_by_id_key (any) OPT ANY
+             ADD adjust_cre_tslevel01_0 (any) OPT ANY
+             ADD adjust_cre_ts_key (any) OPT ANY
+             ADD adjust_upd_tslevel01_0 (any) OPT ANY
+             ADD adjust_upd_ts_key (any) OPT ANY
+             ADD adj_adj_availlevel01_0 (any) OPT ANY
+             ADD adj_adj_avail_key (any) OPT ANY
+             ADD adj_adj_qtylevel01_0 (any) OPT ANY
+             ADD adj_adj_qty_key (any) OPT ANY
+             ADD adj_adj_unavaillevel01_0 (any) OPT ANY
+             ADD adj_adj_unavail_key (any) OPT ANY
+             ADD adj_archive_inlevel01_0 (any) OPT ANY
+             ADD adj_archive_in_key (any) OPT ANY
+             ADD adj_commentlevel01_0 (any) OPT ANY
+             ADD adj_comment_key (any) OPT ANY
+             ADD adj_document_numlevel01_0 (any) OPT ANY
+             ADD adj_document_num_key (any) OPT ANY
+             ADD adj_new_availlevel01_0 (any) OPT ANY
+             ADD adj_new_avail_key (any) OPT ANY
+             ADD adj_new_qohlevel01_0 (any) OPT ANY
+             ADD adj_new_qoh_key (any) OPT ANY
+             ADD adj_new_unavaillevel01_0 (any) OPT ANY
+             ADD adj_new_unavail_key (any) OPT ANY
+             ADD adj_old_availlevel01_0 (any) OPT ANY
+             ADD adj_old_avail_key (any) OPT ANY
+             ADD adj_old_qohlevel01_0 (any) OPT ANY
+             ADD adj_old_qoh_key (any) OPT ANY
+             ADD adj_old_unavaillevel01_0 (any) OPT ANY
+             ADD adj_old_unavail_key (any) OPT ANY
+             ADD adj_part_numlevel01_0 (any) OPT ANY
+             ADD adj_part_num_key (any) OPT ANY
+             ADD adj_port_accntlevel01_0 (any) OPT ANY
+             ADD adj_port_accnt_key (any) OPT ANY
+             ADD adj_process_datelevel01_0 (any) OPT ANY
+             ADD adj_process_date_key (any) OPT ANY
+             ADD adj_process_timelevel01_0 (any) OPT ANY
+             ADD adj_process_time_key (any) OPT ANY
+             ADD adj_reason_cdlevel01_0 (any) OPT ANY
+             ADD adj_reason_cd_key (any) OPT ANY
+             ADD adj_tl_old_qohlevel01_0 (any) OPT ANY
+             ADD adj_tl_old_qoh_key (any) OPT ANY
+             ADD adj_user_idlevel01_0 (any) OPT ANY
+             ADD adj_user_id_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (adj_adj_avail_key, adj_adj_availlevel01_0, adj_adj_qty_key, adj_adj_qtylevel01_0, adj_adj_unavail_key, adj_adj_unavaillevel01_0, adj_archive_in_key, adj_archive_inlevel01_0, adj_comment_key, adj_commentlevel01_0, adj_document_num_key, adj_document_numlevel01_0, adj_new_avail_key, adj_new_availlevel01_0, adj_new_qoh_key, adj_new_qohlevel01_0, adj_new_unavail_key, adj_new_unavaillevel01_0, adj_old_avail_key, adj_old_availlevel01_0, adj_old_qoh_key, adj_old_qohlevel01_0, adj_old_unavail_key, adj_old_unavaillevel01_0, adj_part_num_key, adj_part_numlevel01_0, adj_port_accnt_key, adj_port_accntlevel01_0, adj_process_date_key, adj_process_datelevel01_0, adj_process_time_key, adj_process_timelevel01_0, adj_reason_cd_key, adj_reason_cdlevel01_0, adj_tl_old_qoh_key, adj_tl_old_qohlevel01_0, adj_user_id_key, adj_user_idlevel01_0, adjust_cre_by_id_key, adjust_cre_by_idlevel01_0, adjust_cre_ts_key, adjust_cre_tslevel01_0, adjust_upd_ts_key, adjust_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_adjust)
+    );
+

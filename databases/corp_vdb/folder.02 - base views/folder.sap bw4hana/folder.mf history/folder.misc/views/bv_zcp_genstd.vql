@@ -1,0 +1,127 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_genstd
+    FOLDER = '/02 - base views/sap bw4hana/mf history/misc'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENSTD'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_GENSTD-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENSTD-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_by_id_key = '[4ZCP_GENSTD-CRE_BY_ID].[24ZCP_GENSTD-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENSTD-CRE_BY_ID]' ATTRIBUTE,
+        cre_tslevel01_0 = '[4ZCP_GENSTD-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENSTD-CRE_TS]' LEVELPOSITION=1,
+        cre_ts_key = '[4ZCP_GENSTD-CRE_TS].[24ZCP_GENSTD-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENSTD-CRE_TS]' ATTRIBUTE,
+        genstd_key_filler01level01_0 = '[4ZCP_GENSTD-GENSTD_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-GENSTD_KEY_F]' DIMENSIONNAME = '[4ZCP_GENSTD-GENSTD_KEY_F]' LEVELPOSITION=1,
+        genstd_key_filler01_key = '[4ZCP_GENSTD-GENSTD_KEY_F].[24ZCP_GENSTD-GENSTD_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-GENSTD_KEY_F]' DIMENSIONNAME = '[4ZCP_GENSTD-GENSTD_KEY_F]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        std_cd_reflevel01_0 = '[4ZCP_GENSTD-STD_CD_REF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_CD_REF]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_CD_REF]' LEVELPOSITION=1,
+        std_cd_ref_key = '[4ZCP_GENSTD-STD_CD_REF].[24ZCP_GENSTD-STD_CD_REF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_CD_REF]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_CD_REF]' ATTRIBUTE,
+        std_classlevel01_0 = '[4ZCP_GENSTD-STD_CLASS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_CLASS]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_CLASS]' LEVELPOSITION=1,
+        std_class_key = '[4ZCP_GENSTD-STD_CLASS].[24ZCP_GENSTD-STD_CLASS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_CLASS]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_CLASS]' ATTRIBUTE,
+        std_desclevel01_0 = '[4ZCP_GENSTD-STD_DESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_DESC]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_DESC]' LEVELPOSITION=1,
+        std_desc_key = '[4ZCP_GENSTD-STD_DESC].[24ZCP_GENSTD-STD_DESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_DESC]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_DESC]' ATTRIBUTE,
+        std_majlevel01_0 = '[4ZCP_GENSTD-STD_MAJ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_MAJ]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_MAJ]' LEVELPOSITION=1,
+        std_maj_key = '[4ZCP_GENSTD-STD_MAJ].[24ZCP_GENSTD-STD_MAJ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_MAJ]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_MAJ]' ATTRIBUTE,
+        std_modellevel01_0 = '[4ZCP_GENSTD-STD_MODEL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_MODEL]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_MODEL]' LEVELPOSITION=1,
+        std_model_key = '[4ZCP_GENSTD-STD_MODEL].[24ZCP_GENSTD-STD_MODEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_MODEL]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_MODEL]' ATTRIBUTE,
+        std_updt_idlevel01_0 = '[4ZCP_GENSTD-STD_UPDT_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_UPDT_ID]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_UPDT_ID]' LEVELPOSITION=1,
+        std_updt_id_key = '[4ZCP_GENSTD-STD_UPDT_ID].[24ZCP_GENSTD-STD_UPDT_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_UPDT_ID]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_UPDT_ID]' ATTRIBUTE,
+        std_updt_tmdtlevel01_0 = '[4ZCP_GENSTD-STD_UPDT_TMD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_UPDT_TMD]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_UPDT_TMD]' LEVELPOSITION=1,
+        std_updt_tmdt_key = '[4ZCP_GENSTD-STD_UPDT_TMD].[24ZCP_GENSTD-STD_UPDT_TMD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_UPDT_TMD]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_UPDT_TMD]' ATTRIBUTE,
+        std_updt_useridlevel01_0 = '[4ZCP_GENSTD-STD_UPDT_USE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_UPDT_USE]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_UPDT_USE]' LEVELPOSITION=1,
+        std_updt_userid_key = '[4ZCP_GENSTD-STD_UPDT_USE].[24ZCP_GENSTD-STD_UPDT_USE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_UPDT_USE]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_UPDT_USE]' ATTRIBUTE,
+        std_yearlevel01_0 = '[4ZCP_GENSTD-STD_YEAR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_YEAR]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_YEAR]' LEVELPOSITION=1,
+        std_year_key = '[4ZCP_GENSTD-STD_YEAR].[24ZCP_GENSTD-STD_YEAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-STD_YEAR]' DIMENSIONNAME = '[4ZCP_GENSTD-STD_YEAR]' ATTRIBUTE,
+        upd_by_idlevel01_0 = '[4ZCP_GENSTD-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENSTD-UPD_BY_ID]' LEVELPOSITION=1,
+        upd_by_id_key = '[4ZCP_GENSTD-UPD_BY_ID].[24ZCP_GENSTD-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENSTD-UPD_BY_ID]' ATTRIBUTE,
+        upd_tslevel01_0 = '[4ZCP_GENSTD-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENSTD-UPD_TS]' LEVELPOSITION=1,
+        upd_ts_key = '[4ZCP_GENSTD-UPD_TS].[24ZCP_GENSTD-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSTD-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENSTD-UPD_TS]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        std_seq = '[Measures].[4ZCP_GENSTD-STD_SEQ]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_genstd I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_by_id_key:text,
+        cre_tslevel01_0:text,
+        cre_ts_key:text,
+        genstd_key_filler01level01_0:text,
+        genstd_key_filler01_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        std_cd_reflevel01_0:text,
+        std_cd_ref_key:text,
+        std_classlevel01_0:text,
+        std_class_key:text,
+        std_desclevel01_0:text,
+        std_desc_key:text,
+        std_majlevel01_0:text,
+        std_maj_key:text,
+        std_modellevel01_0:text,
+        std_model_key:text,
+        std_updt_idlevel01_0:text,
+        std_updt_id_key:text,
+        std_updt_tmdtlevel01_0:text,
+        std_updt_tmdt_key:text,
+        std_updt_useridlevel01_0:text,
+        std_updt_userid_key:text,
+        std_yearlevel01_0:text,
+        std_year_key:text,
+        upd_by_idlevel01_0:text,
+        upd_by_id_key:text,
+        upd_tslevel01_0:text,
+        upd_ts_key:text,
+        numberofrecords_0:double,
+        std_seq:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/misc'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_genstd(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_by_id_key (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD cre_ts_key (any) OPT ANY
+             ADD genstd_key_filler01level01_0 (any) OPT ANY
+             ADD genstd_key_filler01_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD std_cd_reflevel01_0 (any) OPT ANY
+             ADD std_cd_ref_key (any) OPT ANY
+             ADD std_classlevel01_0 (any) OPT ANY
+             ADD std_class_key (any) OPT ANY
+             ADD std_desclevel01_0 (any) OPT ANY
+             ADD std_desc_key (any) OPT ANY
+             ADD std_majlevel01_0 (any) OPT ANY
+             ADD std_maj_key (any) OPT ANY
+             ADD std_modellevel01_0 (any) OPT ANY
+             ADD std_model_key (any) OPT ANY
+             ADD std_updt_idlevel01_0 (any) OPT ANY
+             ADD std_updt_id_key (any) OPT ANY
+             ADD std_updt_tmdtlevel01_0 (any) OPT ANY
+             ADD std_updt_tmdt_key (any) OPT ANY
+             ADD std_updt_useridlevel01_0 (any) OPT ANY
+             ADD std_updt_userid_key (any) OPT ANY
+             ADD std_yearlevel01_0 (any) OPT ANY
+             ADD std_year_key (any) OPT ANY
+             ADD upd_by_idlevel01_0 (any) OPT ANY
+             ADD upd_by_id_key (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD upd_ts_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+             ADD std_seq (any) OPT ANY
+        )
+        OUTPUTLIST (cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, genstd_key_filler01_key, genstd_key_filler01level01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, std_cd_ref_key, std_cd_reflevel01_0, std_class_key, std_classlevel01_0, std_desc_key, std_desclevel01_0, std_maj_key, std_majlevel01_0, std_model_key, std_modellevel01_0, std_seq, std_updt_id_key, std_updt_idlevel01_0, std_updt_tmdt_key, std_updt_tmdtlevel01_0, std_updt_userid_key, std_updt_useridlevel01_0, std_year_key, std_yearlevel01_0, upd_by_id_key, upd_by_idlevel01_0, upd_ts_key, upd_tslevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_genstd)
+    );
+

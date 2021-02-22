@@ -1,0 +1,136 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_doxmit
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_DOXMIT'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        doxmit_cre_by_idlevel01_0 = '[4ZCP_DOXMIT-DOXMIT_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOXMIT_CRE_B]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOXMIT_CRE_B]' LEVELPOSITION=1,
+        doxmit_cre_by_id_key = '[4ZCP_DOXMIT-DOXMIT_CRE_B].[24ZCP_DOXMIT-DOXMIT_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOXMIT_CRE_B]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOXMIT_CRE_B]' ATTRIBUTE,
+        doxmit_cre_tslevel01_0 = '[4ZCP_DOXMIT-DOXMIT_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOXMIT_CRE_T]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOXMIT_CRE_T]' LEVELPOSITION=1,
+        doxmit_cre_ts_key = '[4ZCP_DOXMIT-DOXMIT_CRE_T].[24ZCP_DOXMIT-DOXMIT_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOXMIT_CRE_T]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOXMIT_CRE_T]' ATTRIBUTE,
+        doxmit_upd_by_idlevel01_0 = '[4ZCP_DOXMIT-DOXMIT_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOXMIT_UPD_B]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOXMIT_UPD_B]' LEVELPOSITION=1,
+        doxmit_upd_by_id_key = '[4ZCP_DOXMIT-DOXMIT_UPD_B].[24ZCP_DOXMIT-DOXMIT_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOXMIT_UPD_B]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOXMIT_UPD_B]' ATTRIBUTE,
+        doxmit_upd_tslevel01_0 = '[4ZCP_DOXMIT-DOXMIT_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOXMIT_UPD_T]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOXMIT_UPD_T]' LEVELPOSITION=1,
+        doxmit_upd_ts_key = '[4ZCP_DOXMIT-DOXMIT_UPD_T].[24ZCP_DOXMIT-DOXMIT_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOXMIT_UPD_T]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOXMIT_UPD_T]' ATTRIBUTE,
+        dox_carr_cdlevel01_0 = '[4ZCP_DOXMIT-DOX_CARR_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_CARR_CD]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_CARR_CD]' LEVELPOSITION=1,
+        dox_carr_cd_key = '[4ZCP_DOXMIT-DOX_CARR_CD].[24ZCP_DOXMIT-DOX_CARR_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_CARR_CD]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_CARR_CD]' ATTRIBUTE,
+        dox_cmtlevel01_0 = '[4ZCP_DOXMIT-DOX_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_CMT]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_CMT]' LEVELPOSITION=1,
+        dox_cmt_key = '[4ZCP_DOXMIT-DOX_CMT].[24ZCP_DOXMIT-DOX_CMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_CMT]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_CMT]' ATTRIBUTE,
+        dox_dlr_loclevel01_0 = '[4ZCP_DOXMIT-DOX_DLR_LOC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_DLR_LOC]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_DLR_LOC]' LEVELPOSITION=1,
+        dox_dlr_loc_key = '[4ZCP_DOXMIT-DOX_DLR_LOC].[24ZCP_DOXMIT-DOX_DLR_LOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_DLR_LOC]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_DLR_LOC]' ATTRIBUTE,
+        dox_dlr_numlevel01_0 = '[4ZCP_DOXMIT-DOX_DLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_DLR_NUM]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_DLR_NUM]' LEVELPOSITION=1,
+        dox_dlr_num_key = '[4ZCP_DOXMIT-DOX_DLR_NUM].[24ZCP_DOXMIT-DOX_DLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_DLR_NUM]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_DLR_NUM]' ATTRIBUTE,
+        dox_dlr_ord_numlevel01_0 = '[4ZCP_DOXMIT-DOX_DLR_ORD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_DLR_ORD]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_DLR_ORD]' LEVELPOSITION=1,
+        dox_dlr_ord_num_key = '[4ZCP_DOXMIT-DOX_DLR_ORD].[24ZCP_DOXMIT-DOX_DLR_ORD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_DLR_ORD]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_DLR_ORD]' ATTRIBUTE,
+        dox_dnld_dtlevel01_0 = '[4ZCP_DOXMIT-DOX_DNLD_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_DNLD_DT]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_DNLD_DT]' LEVELPOSITION=1,
+        dox_dnld_dt_key = '[4ZCP_DOXMIT-DOX_DNLD_DT].[24ZCP_DOXMIT-DOX_DNLD_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_DNLD_DT]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_DNLD_DT]' ATTRIBUTE,
+        dox_fill_kill_indlevel01_0 = '[4ZCP_DOXMIT-DOX_FILL_KIL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_FILL_KIL]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_FILL_KIL]' LEVELPOSITION=1,
+        dox_fill_kill_ind_key = '[4ZCP_DOXMIT-DOX_FILL_KIL].[24ZCP_DOXMIT-DOX_FILL_KIL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_FILL_KIL]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_FILL_KIL]' ATTRIBUTE,
+        dox_ord_dtlevel01_0 = '[4ZCP_DOXMIT-DOX_ORD_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_ORD_DT]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_ORD_DT]' LEVELPOSITION=1,
+        dox_ord_dt_key = '[4ZCP_DOXMIT-DOX_ORD_DT].[24ZCP_DOXMIT-DOX_ORD_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_ORD_DT]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_ORD_DT]' ATTRIBUTE,
+        dox_ord_qtylevel01_0 = '[4ZCP_DOXMIT-DOX_ORD_QTY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_ORD_QTY]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_ORD_QTY]' LEVELPOSITION=1,
+        dox_ord_qty_key = '[4ZCP_DOXMIT-DOX_ORD_QTY].[24ZCP_DOXMIT-DOX_ORD_QTY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_ORD_QTY]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_ORD_QTY]' ATTRIBUTE,
+        dox_part_ordlevel01_0 = '[4ZCP_DOXMIT-DOX_PART_ORD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_PART_ORD]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_PART_ORD]' LEVELPOSITION=1,
+        dox_part_ord_key = '[4ZCP_DOXMIT-DOX_PART_ORD].[24ZCP_DOXMIT-DOX_PART_ORD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_PART_ORD]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_PART_ORD]' ATTRIBUTE,
+        dox_part_ship_seqlevel01_0 = '[4ZCP_DOXMIT-DOX_PART_SHI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_PART_SHI]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_PART_SHI]' LEVELPOSITION=1,
+        dox_part_ship_seq_key = '[4ZCP_DOXMIT-DOX_PART_SHI].[24ZCP_DOXMIT-DOX_PART_SHI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_PART_SHI]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_PART_SHI]' ATTRIBUTE,
+        dox_po_numlevel01_0 = '[4ZCP_DOXMIT-DOX_PO_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_PO_NUM]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_PO_NUM]' LEVELPOSITION=1,
+        dox_po_num_key = '[4ZCP_DOXMIT-DOX_PO_NUM].[24ZCP_DOXMIT-DOX_PO_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_PO_NUM]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_PO_NUM]' ATTRIBUTE,
+        dox_sale_type_cdlevel01_0 = '[4ZCP_DOXMIT-DOX_SALE_TYP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_SALE_TYP]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_SALE_TYP]' LEVELPOSITION=1,
+        dox_sale_type_cd_key = '[4ZCP_DOXMIT-DOX_SALE_TYP].[24ZCP_DOXMIT-DOX_SALE_TYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_SALE_TYP]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_SALE_TYP]' ATTRIBUTE,
+        dox_stat_cdlevel01_0 = '[4ZCP_DOXMIT-DOX_STAT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_STAT_CD]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_STAT_CD]' LEVELPOSITION=1,
+        dox_stat_cd_key = '[4ZCP_DOXMIT-DOX_STAT_CD].[24ZCP_DOXMIT-DOX_STAT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOXMIT-DOX_STAT_CD]' DIMENSIONNAME = '[4ZCP_DOXMIT-DOX_STAT_CD]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_doxmit I18N us_cst (
+        doxmit_cre_by_idlevel01_0:text,
+        doxmit_cre_by_id_key:text,
+        doxmit_cre_tslevel01_0:text,
+        doxmit_cre_ts_key:text,
+        doxmit_upd_by_idlevel01_0:text,
+        doxmit_upd_by_id_key:text,
+        doxmit_upd_tslevel01_0:text,
+        doxmit_upd_ts_key:text,
+        dox_carr_cdlevel01_0:text,
+        dox_carr_cd_key:text,
+        dox_cmtlevel01_0:text,
+        dox_cmt_key:text,
+        dox_dlr_loclevel01_0:text,
+        dox_dlr_loc_key:text,
+        dox_dlr_numlevel01_0:text,
+        dox_dlr_num_key:text,
+        dox_dlr_ord_numlevel01_0:text,
+        dox_dlr_ord_num_key:text,
+        dox_dnld_dtlevel01_0:text,
+        dox_dnld_dt_key:text,
+        dox_fill_kill_indlevel01_0:text,
+        dox_fill_kill_ind_key:text,
+        dox_ord_dtlevel01_0:text,
+        dox_ord_dt_key:text,
+        dox_ord_qtylevel01_0:text,
+        dox_ord_qty_key:text,
+        dox_part_ordlevel01_0:text,
+        dox_part_ord_key:text,
+        dox_part_ship_seqlevel01_0:text,
+        dox_part_ship_seq_key:text,
+        dox_po_numlevel01_0:text,
+        dox_po_num_key:text,
+        dox_sale_type_cdlevel01_0:text,
+        dox_sale_type_cd_key:text,
+        dox_stat_cdlevel01_0:text,
+        dox_stat_cd_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_doxmit(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD doxmit_cre_by_idlevel01_0 (any) OPT ANY
+             ADD doxmit_cre_by_id_key (any) OPT ANY
+             ADD doxmit_cre_tslevel01_0 (any) OPT ANY
+             ADD doxmit_cre_ts_key (any) OPT ANY
+             ADD doxmit_upd_by_idlevel01_0 (any) OPT ANY
+             ADD doxmit_upd_by_id_key (any) OPT ANY
+             ADD doxmit_upd_tslevel01_0 (any) OPT ANY
+             ADD doxmit_upd_ts_key (any) OPT ANY
+             ADD dox_carr_cdlevel01_0 (any) OPT ANY
+             ADD dox_carr_cd_key (any) OPT ANY
+             ADD dox_cmtlevel01_0 (any) OPT ANY
+             ADD dox_cmt_key (any) OPT ANY
+             ADD dox_dlr_loclevel01_0 (any) OPT ANY
+             ADD dox_dlr_loc_key (any) OPT ANY
+             ADD dox_dlr_numlevel01_0 (any) OPT ANY
+             ADD dox_dlr_num_key (any) OPT ANY
+             ADD dox_dlr_ord_numlevel01_0 (any) OPT ANY
+             ADD dox_dlr_ord_num_key (any) OPT ANY
+             ADD dox_dnld_dtlevel01_0 (any) OPT ANY
+             ADD dox_dnld_dt_key (any) OPT ANY
+             ADD dox_fill_kill_indlevel01_0 (any) OPT ANY
+             ADD dox_fill_kill_ind_key (any) OPT ANY
+             ADD dox_ord_dtlevel01_0 (any) OPT ANY
+             ADD dox_ord_dt_key (any) OPT ANY
+             ADD dox_ord_qtylevel01_0 (any) OPT ANY
+             ADD dox_ord_qty_key (any) OPT ANY
+             ADD dox_part_ordlevel01_0 (any) OPT ANY
+             ADD dox_part_ord_key (any) OPT ANY
+             ADD dox_part_ship_seqlevel01_0 (any) OPT ANY
+             ADD dox_part_ship_seq_key (any) OPT ANY
+             ADD dox_po_numlevel01_0 (any) OPT ANY
+             ADD dox_po_num_key (any) OPT ANY
+             ADD dox_sale_type_cdlevel01_0 (any) OPT ANY
+             ADD dox_sale_type_cd_key (any) OPT ANY
+             ADD dox_stat_cdlevel01_0 (any) OPT ANY
+             ADD dox_stat_cd_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (dox_carr_cd_key, dox_carr_cdlevel01_0, dox_cmt_key, dox_cmtlevel01_0, dox_dlr_loc_key, dox_dlr_loclevel01_0, dox_dlr_num_key, dox_dlr_numlevel01_0, dox_dlr_ord_num_key, dox_dlr_ord_numlevel01_0, dox_dnld_dt_key, dox_dnld_dtlevel01_0, dox_fill_kill_ind_key, dox_fill_kill_indlevel01_0, dox_ord_dt_key, dox_ord_dtlevel01_0, dox_ord_qty_key, dox_ord_qtylevel01_0, dox_part_ord_key, dox_part_ordlevel01_0, dox_part_ship_seq_key, dox_part_ship_seqlevel01_0, dox_po_num_key, dox_po_numlevel01_0, dox_sale_type_cd_key, dox_sale_type_cdlevel01_0, dox_stat_cd_key, dox_stat_cdlevel01_0, doxmit_cre_by_id_key, doxmit_cre_by_idlevel01_0, doxmit_cre_ts_key, doxmit_cre_tslevel01_0, doxmit_upd_by_id_key, doxmit_upd_by_idlevel01_0, doxmit_upd_ts_key, doxmit_upd_tslevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_doxmit)
+    );
+

@@ -1,0 +1,247 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_vtrn22
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_VTRN22'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_VTRN22-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_VTRN22-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_by_id_key = '[4ZCP_VTRN22-CRE_BY_ID].[24ZCP_VTRN22-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_VTRN22-CRE_BY_ID]' ATTRIBUTE,
+        cre_tslevel01_0 = '[4ZCP_VTRN22-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-CRE_TS]' DIMENSIONNAME = '[4ZCP_VTRN22-CRE_TS]' LEVELPOSITION=1,
+        cre_ts_key = '[4ZCP_VTRN22-CRE_TS].[24ZCP_VTRN22-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-CRE_TS]' DIMENSIONNAME = '[4ZCP_VTRN22-CRE_TS]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        upd_by_idlevel01_0 = '[4ZCP_VTRN22-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_VTRN22-UPD_BY_ID]' LEVELPOSITION=1,
+        upd_by_id_key = '[4ZCP_VTRN22-UPD_BY_ID].[24ZCP_VTRN22-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_VTRN22-UPD_BY_ID]' ATTRIBUTE,
+        upd_tslevel01_0 = '[4ZCP_VTRN22-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-UPD_TS]' DIMENSIONNAME = '[4ZCP_VTRN22-UPD_TS]' LEVELPOSITION=1,
+        upd_ts_key = '[4ZCP_VTRN22-UPD_TS].[24ZCP_VTRN22-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-UPD_TS]' DIMENSIONNAME = '[4ZCP_VTRN22-UPD_TS]' ATTRIBUTE,
+        vtrn21_alt_key_filler01level01_0 = '[4ZCP_VTRN22-LVR7QZ44EXWN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-LVR7QZ44EXWN]' DIMENSIONNAME = '[4ZCP_VTRN22-LVR7QZ44EXWN]' LEVELPOSITION=1,
+        vtrn21_alt_key_filler01_key = '[4ZCP_VTRN22-LVR7QZ44EXWN].[24ZCP_VTRN22-LVR7QZ44EXWN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-LVR7QZ44EXWN]' DIMENSIONNAME = '[4ZCP_VTRN22-LVR7QZ44EXWN]' ATTRIBUTE,
+        vtrn21_key_filler01level01_0 = '[4ZCP_VTRN22-VTRN21_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VTRN21_KEY_F]' DIMENSIONNAME = '[4ZCP_VTRN22-VTRN21_KEY_F]' LEVELPOSITION=1,
+        vtrn21_key_filler01_key = '[4ZCP_VTRN22-VTRN21_KEY_F].[24ZCP_VTRN22-VTRN21_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VTRN21_KEY_F]' DIMENSIONNAME = '[4ZCP_VTRN22-VTRN21_KEY_F]' ATTRIBUTE,
+        vt_21_alc_datelevel01_0 = '[4ZCP_VTRN22-VT_21_ALC_DA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_ALC_DA]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_ALC_DA]' LEVELPOSITION=1,
+        vt_21_alc_date_key = '[4ZCP_VTRN22-VT_21_ALC_DA].[24ZCP_VTRN22-VT_21_ALC_DA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_ALC_DA]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_ALC_DA]' ATTRIBUTE,
+        vt_21_ext_colorlevel01_0 = '[4ZCP_VTRN22-VT_21_EXT_CO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_EXT_CO]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_EXT_CO]' LEVELPOSITION=1,
+        vt_21_ext_color_key = '[4ZCP_VTRN22-VT_21_EXT_CO].[24ZCP_VTRN22-VT_21_EXT_CO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_EXT_CO]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_EXT_CO]' ATTRIBUTE,
+        vt_21_int_colorlevel01_0 = '[4ZCP_VTRN22-VT_21_INT_CO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_INT_CO]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_INT_CO]' LEVELPOSITION=1,
+        vt_21_int_color_key = '[4ZCP_VTRN22-VT_21_INT_CO].[24ZCP_VTRN22-VT_21_INT_CO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_INT_CO]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_INT_CO]' ATTRIBUTE,
+        vt_21_japan_cclevel01_0 = '[4ZCP_VTRN22-VT_21_JAPAN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_JAPAN]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_JAPAN]' LEVELPOSITION=1,
+        vt_21_japan_cc_key = '[4ZCP_VTRN22-VT_21_JAPAN].[24ZCP_VTRN22-VT_21_JAPAN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_JAPAN]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_JAPAN]' ATTRIBUTE,
+        vt_21_load_nolevel01_0 = '[4ZCP_VTRN22-VT_21_LOAD_N].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_LOAD_N]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_LOAD_N]' LEVELPOSITION=1,
+        vt_21_load_no_key = '[4ZCP_VTRN22-VT_21_LOAD_N].[24ZCP_VTRN22-VT_21_LOAD_N]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_LOAD_N]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_LOAD_N]' ATTRIBUTE,
+        vt_21_modellevel01_1 = '[4ZCP_VTRN22-VT_21_MODE_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_MODE_0]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_MODE_0]' LEVELPOSITION=1,
+        vt_21_model_key_0 = '[4ZCP_VTRN22-VT_21_MODE_0].[24ZCP_VTRN22-VT_21_MODE_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_MODE_0]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_MODE_0]' ATTRIBUTE,
+        vt_21_modellevel01_0 = '[4ZCP_VTRN22-VT_21_MODE_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_MODE_1]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_MODE_1]' LEVELPOSITION=1,
+        vt_21_model_key = '[4ZCP_VTRN22-VT_21_MODE_1].[24ZCP_VTRN22-VT_21_MODE_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_MODE_1]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_MODE_1]' ATTRIBUTE,
+        vt_21_model_yearlevel01_0 = '[4ZCP_VTRN22-VT_21_MODEL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_MODEL]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_MODEL]' LEVELPOSITION=1,
+        vt_21_model_year_key = '[4ZCP_VTRN22-VT_21_MODEL].[24ZCP_VTRN22-VT_21_MODEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_MODEL]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_MODEL]' ATTRIBUTE,
+        vt_21_pgm_idlevel01_0 = '[4ZCP_VTRN22-VT_21_PGM_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_PGM_ID]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_PGM_ID]' LEVELPOSITION=1,
+        vt_21_pgm_id_key = '[4ZCP_VTRN22-VT_21_PGM_ID].[24ZCP_VTRN22-VT_21_PGM_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_PGM_ID]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_PGM_ID]' ATTRIBUTE,
+        vt_21_portlevel01_0 = '[4ZCP_VTRN22-VT_21_PORT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_PORT]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_PORT]' LEVELPOSITION=1,
+        vt_21_port_key = '[4ZCP_VTRN22-VT_21_PORT].[24ZCP_VTRN22-VT_21_PORT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_PORT]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_PORT]' ATTRIBUTE,
+        vt_21_purge_datelevel01_0 = '[4ZCP_VTRN22-VT_21_PURGE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_PURGE]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_PURGE]' LEVELPOSITION=1,
+        vt_21_purge_date_key = '[4ZCP_VTRN22-VT_21_PURGE].[24ZCP_VTRN22-VT_21_PURGE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_PURGE]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_PURGE]' ATTRIBUTE,
+        vt_21_statuslevel01_0 = '[4ZCP_VTRN22-VT_21_STATUS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_STATUS]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_STATUS]' LEVELPOSITION=1,
+        vt_21_status_key = '[4ZCP_VTRN22-VT_21_STATUS].[24ZCP_VTRN22-VT_21_STATUS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_STATUS]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_STATUS]' ATTRIBUTE,
+        vt_21_timelevel01_0 = '[4ZCP_VTRN22-VT_21_TIME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_TIME]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_TIME]' LEVELPOSITION=1,
+        vt_21_time_key = '[4ZCP_VTRN22-VT_21_TIME].[24ZCP_VTRN22-VT_21_TIME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_TIME]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_TIME]' ATTRIBUTE,
+        vt_21_vess_nolevel01_0 = '[4ZCP_VTRN22-VT_21_VESS_N].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_VESS_N]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_VESS_N]' LEVELPOSITION=1,
+        vt_21_vess_no_key = '[4ZCP_VTRN22-VT_21_VESS_N].[24ZCP_VTRN22-VT_21_VESS_N]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_VESS_N]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_VESS_N]' ATTRIBUTE,
+        vt_21_wmilevel01_0 = '[4ZCP_VTRN22-VT_21_WMI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_WMI]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_WMI]' LEVELPOSITION=1,
+        vt_21_wmi_key = '[4ZCP_VTRN22-VT_21_WMI].[24ZCP_VTRN22-VT_21_WMI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_21_WMI]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_21_WMI]' ATTRIBUTE,
+        vt_alt_cntllevel01_0 = '[4ZCP_VTRN22-VT_ALT_CNTL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_CNTL]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_CNTL]' LEVELPOSITION=1,
+        vt_alt_cntl_key = '[4ZCP_VTRN22-VT_ALT_CNTL].[24ZCP_VTRN22-VT_ALT_CNTL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_CNTL]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_CNTL]' ATTRIBUTE,
+        vt_alt_datelevel01_0 = '[4ZCP_VTRN22-VT_ALT_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_DATE]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_DATE]' LEVELPOSITION=1,
+        vt_alt_date_key = '[4ZCP_VTRN22-VT_ALT_DATE].[24ZCP_VTRN22-VT_ALT_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_DATE]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_DATE]' ATTRIBUTE,
+        vt_alt_dlrlevel01_0 = '[4ZCP_VTRN22-VT_ALT_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_DLR]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_DLR]' LEVELPOSITION=1,
+        vt_alt_dlr_key = '[4ZCP_VTRN22-VT_ALT_DLR].[24ZCP_VTRN22-VT_ALT_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_DLR]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_DLR]' ATTRIBUTE,
+        vt_alt_seqlevel01_0 = '[4ZCP_VTRN22-VT_ALT_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_SEQ]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_SEQ]' LEVELPOSITION=1,
+        vt_alt_seq_key = '[4ZCP_VTRN22-VT_ALT_SEQ].[24ZCP_VTRN22-VT_ALT_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_SEQ]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_SEQ]' ATTRIBUTE,
+        vt_alt_tranlevel01_0 = '[4ZCP_VTRN22-VT_ALT_TRAN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_TRAN]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_TRAN]' LEVELPOSITION=1,
+        vt_alt_tran_key = '[4ZCP_VTRN22-VT_ALT_TRAN].[24ZCP_VTRN22-VT_ALT_TRAN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_TRAN]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_TRAN]' ATTRIBUTE,
+        vt_alt_vinlevel01_0 = '[4ZCP_VTRN22-VT_ALT_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_VIN]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_VIN]' LEVELPOSITION=1,
+        vt_alt_vin_key = '[4ZCP_VTRN22-VT_ALT_VIN].[24ZCP_VTRN22-VT_ALT_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ALT_VIN]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ALT_VIN]' ATTRIBUTE,
+        vt_archive_inlevel01_0 = '[4ZCP_VTRN22-VT_ARCHIVE_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ARCHIVE_I]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ARCHIVE_I]' LEVELPOSITION=1,
+        vt_archive_in_key = '[4ZCP_VTRN22-VT_ARCHIVE_I].[24ZCP_VTRN22-VT_ARCHIVE_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_ARCHIVE_I]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_ARCHIVE_I]' ATTRIBUTE,
+        vt_trn_cntllevel01_0 = '[4ZCP_VTRN22-VT_TRN_CNTL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_CNTL]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_CNTL]' LEVELPOSITION=1,
+        vt_trn_cntl_key = '[4ZCP_VTRN22-VT_TRN_CNTL].[24ZCP_VTRN22-VT_TRN_CNTL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_CNTL]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_CNTL]' ATTRIBUTE,
+        vt_trn_datelevel01_0 = '[4ZCP_VTRN22-VT_TRN_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_DATE]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_DATE]' LEVELPOSITION=1,
+        vt_trn_date_key = '[4ZCP_VTRN22-VT_TRN_DATE].[24ZCP_VTRN22-VT_TRN_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_DATE]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_DATE]' ATTRIBUTE,
+        vt_trn_dlrlevel01_0 = '[4ZCP_VTRN22-VT_TRN_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_DLR]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_DLR]' LEVELPOSITION=1,
+        vt_trn_dlr_key = '[4ZCP_VTRN22-VT_TRN_DLR].[24ZCP_VTRN22-VT_TRN_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_DLR]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_DLR]' ATTRIBUTE,
+        vt_trn_seqlevel01_0 = '[4ZCP_VTRN22-VT_TRN_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_SEQ]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_SEQ]' LEVELPOSITION=1,
+        vt_trn_seq_key = '[4ZCP_VTRN22-VT_TRN_SEQ].[24ZCP_VTRN22-VT_TRN_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_SEQ]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_SEQ]' ATTRIBUTE,
+        vt_trn_tranlevel01_0 = '[4ZCP_VTRN22-VT_TRN_TRAN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_TRAN]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_TRAN]' LEVELPOSITION=1,
+        vt_trn_tran_key = '[4ZCP_VTRN22-VT_TRN_TRAN].[24ZCP_VTRN22-VT_TRN_TRAN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_TRAN]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_TRAN]' ATTRIBUTE,
+        vt_trn_vinlevel01_0 = '[4ZCP_VTRN22-VT_TRN_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_VIN]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_VIN]' LEVELPOSITION=1,
+        vt_trn_vin_key = '[4ZCP_VTRN22-VT_TRN_VIN].[24ZCP_VTRN22-VT_TRN_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTRN22-VT_TRN_VIN]' DIMENSIONNAME = '[4ZCP_VTRN22-VT_TRN_VIN]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        vt_21_alc_no = '[Measures].[4ZCP_VTRN22-VT_21_ALC_NO]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_vtrn22 I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_by_id_key:text,
+        cre_tslevel01_0:text,
+        cre_ts_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        upd_by_idlevel01_0:text,
+        upd_by_id_key:text,
+        upd_tslevel01_0:text,
+        upd_ts_key:text,
+        vtrn21_alt_key_filler01level01_0:text,
+        vtrn21_alt_key_filler01_key:text,
+        vtrn21_key_filler01level01_0:text,
+        vtrn21_key_filler01_key:text,
+        vt_21_alc_datelevel01_0:text,
+        vt_21_alc_date_key:text,
+        vt_21_ext_colorlevel01_0:text,
+        vt_21_ext_color_key:text,
+        vt_21_int_colorlevel01_0:text,
+        vt_21_int_color_key:text,
+        vt_21_japan_cclevel01_0:text,
+        vt_21_japan_cc_key:text,
+        vt_21_load_nolevel01_0:text,
+        vt_21_load_no_key:text,
+        vt_21_modellevel01_1:text,
+        vt_21_model_key_0:text,
+        vt_21_modellevel01_0:text,
+        vt_21_model_key:text,
+        vt_21_model_yearlevel01_0:text,
+        vt_21_model_year_key:text,
+        vt_21_pgm_idlevel01_0:text,
+        vt_21_pgm_id_key:text,
+        vt_21_portlevel01_0:text,
+        vt_21_port_key:text,
+        vt_21_purge_datelevel01_0:text,
+        vt_21_purge_date_key:text,
+        vt_21_statuslevel01_0:text,
+        vt_21_status_key:text,
+        vt_21_timelevel01_0:text,
+        vt_21_time_key:text,
+        vt_21_vess_nolevel01_0:text,
+        vt_21_vess_no_key:text,
+        vt_21_wmilevel01_0:text,
+        vt_21_wmi_key:text,
+        vt_alt_cntllevel01_0:text,
+        vt_alt_cntl_key:text,
+        vt_alt_datelevel01_0:text,
+        vt_alt_date_key:text,
+        vt_alt_dlrlevel01_0:text,
+        vt_alt_dlr_key:text,
+        vt_alt_seqlevel01_0:text,
+        vt_alt_seq_key:text,
+        vt_alt_tranlevel01_0:text,
+        vt_alt_tran_key:text,
+        vt_alt_vinlevel01_0:text,
+        vt_alt_vin_key:text,
+        vt_archive_inlevel01_0:text,
+        vt_archive_in_key:text,
+        vt_trn_cntllevel01_0:text,
+        vt_trn_cntl_key:text,
+        vt_trn_datelevel01_0:text,
+        vt_trn_date_key:text,
+        vt_trn_dlrlevel01_0:text,
+        vt_trn_dlr_key:text,
+        vt_trn_seqlevel01_0:text,
+        vt_trn_seq_key:text,
+        vt_trn_tranlevel01_0:text,
+        vt_trn_tran_key:text,
+        vt_trn_vinlevel01_0:text,
+        vt_trn_vin_key:text,
+        numberofrecords_0:double,
+        vt_21_alc_no:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_vtrn22(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_by_id_key (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD cre_ts_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD upd_by_idlevel01_0 (any) OPT ANY
+             ADD upd_by_id_key (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD upd_ts_key (any) OPT ANY
+             ADD vtrn21_alt_key_filler01level01_0 (any) OPT ANY
+             ADD vtrn21_alt_key_filler01_key (any) OPT ANY
+             ADD vtrn21_key_filler01level01_0 (any) OPT ANY
+             ADD vtrn21_key_filler01_key (any) OPT ANY
+             ADD vt_21_alc_datelevel01_0 (any) OPT ANY
+             ADD vt_21_alc_date_key (any) OPT ANY
+             ADD vt_21_ext_colorlevel01_0 (any) OPT ANY
+             ADD vt_21_ext_color_key (any) OPT ANY
+             ADD vt_21_int_colorlevel01_0 (any) OPT ANY
+             ADD vt_21_int_color_key (any) OPT ANY
+             ADD vt_21_japan_cclevel01_0 (any) OPT ANY
+             ADD vt_21_japan_cc_key (any) OPT ANY
+             ADD vt_21_load_nolevel01_0 (any) OPT ANY
+             ADD vt_21_load_no_key (any) OPT ANY
+             ADD vt_21_modellevel01_1 (any) OPT ANY
+             ADD vt_21_model_key_0 (any) OPT ANY
+             ADD vt_21_modellevel01_0 (any) OPT ANY
+             ADD vt_21_model_key (any) OPT ANY
+             ADD vt_21_model_yearlevel01_0 (any) OPT ANY
+             ADD vt_21_model_year_key (any) OPT ANY
+             ADD vt_21_pgm_idlevel01_0 (any) OPT ANY
+             ADD vt_21_pgm_id_key (any) OPT ANY
+             ADD vt_21_portlevel01_0 (any) OPT ANY
+             ADD vt_21_port_key (any) OPT ANY
+             ADD vt_21_purge_datelevel01_0 (any) OPT ANY
+             ADD vt_21_purge_date_key (any) OPT ANY
+             ADD vt_21_statuslevel01_0 (any) OPT ANY
+             ADD vt_21_status_key (any) OPT ANY
+             ADD vt_21_timelevel01_0 (any) OPT ANY
+             ADD vt_21_time_key (any) OPT ANY
+             ADD vt_21_vess_nolevel01_0 (any) OPT ANY
+             ADD vt_21_vess_no_key (any) OPT ANY
+             ADD vt_21_wmilevel01_0 (any) OPT ANY
+             ADD vt_21_wmi_key (any) OPT ANY
+             ADD vt_alt_cntllevel01_0 (any) OPT ANY
+             ADD vt_alt_cntl_key (any) OPT ANY
+             ADD vt_alt_datelevel01_0 (any) OPT ANY
+             ADD vt_alt_date_key (any) OPT ANY
+             ADD vt_alt_dlrlevel01_0 (any) OPT ANY
+             ADD vt_alt_dlr_key (any) OPT ANY
+             ADD vt_alt_seqlevel01_0 (any) OPT ANY
+             ADD vt_alt_seq_key (any) OPT ANY
+             ADD vt_alt_tranlevel01_0 (any) OPT ANY
+             ADD vt_alt_tran_key (any) OPT ANY
+             ADD vt_alt_vinlevel01_0 (any) OPT ANY
+             ADD vt_alt_vin_key (any) OPT ANY
+             ADD vt_archive_inlevel01_0 (any) OPT ANY
+             ADD vt_archive_in_key (any) OPT ANY
+             ADD vt_trn_cntllevel01_0 (any) OPT ANY
+             ADD vt_trn_cntl_key (any) OPT ANY
+             ADD vt_trn_datelevel01_0 (any) OPT ANY
+             ADD vt_trn_date_key (any) OPT ANY
+             ADD vt_trn_dlrlevel01_0 (any) OPT ANY
+             ADD vt_trn_dlr_key (any) OPT ANY
+             ADD vt_trn_seqlevel01_0 (any) OPT ANY
+             ADD vt_trn_seq_key (any) OPT ANY
+             ADD vt_trn_tranlevel01_0 (any) OPT ANY
+             ADD vt_trn_tran_key (any) OPT ANY
+             ADD vt_trn_vinlevel01_0 (any) OPT ANY
+             ADD vt_trn_vin_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+             ADD vt_21_alc_no (any) OPT ANY
+        )
+        OUTPUTLIST (cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, upd_by_id_key, upd_by_idlevel01_0, upd_ts_key, upd_tslevel01_0, vt_21_alc_date_key, vt_21_alc_datelevel01_0, vt_21_alc_no, vt_21_ext_color_key, vt_21_ext_colorlevel01_0, vt_21_int_color_key, vt_21_int_colorlevel01_0, vt_21_japan_cc_key, vt_21_japan_cclevel01_0, vt_21_load_no_key, vt_21_load_nolevel01_0, vt_21_model_key, vt_21_model_key_0, vt_21_model_year_key, vt_21_model_yearlevel01_0, vt_21_modellevel01_0, vt_21_modellevel01_1, vt_21_pgm_id_key, vt_21_pgm_idlevel01_0, vt_21_port_key, vt_21_portlevel01_0, vt_21_purge_date_key, vt_21_purge_datelevel01_0, vt_21_status_key, vt_21_statuslevel01_0, vt_21_time_key, vt_21_timelevel01_0, vt_21_vess_no_key, vt_21_vess_nolevel01_0, vt_21_wmi_key, vt_21_wmilevel01_0, vt_alt_cntl_key, vt_alt_cntllevel01_0, vt_alt_date_key, vt_alt_datelevel01_0, vt_alt_dlr_key, vt_alt_dlrlevel01_0, vt_alt_seq_key, vt_alt_seqlevel01_0, vt_alt_tran_key, vt_alt_tranlevel01_0, vt_alt_vin_key, vt_alt_vinlevel01_0, vt_archive_in_key, vt_archive_inlevel01_0, vt_trn_cntl_key, vt_trn_cntllevel01_0, vt_trn_date_key, vt_trn_datelevel01_0, vt_trn_dlr_key, vt_trn_dlrlevel01_0, vt_trn_seq_key, vt_trn_seqlevel01_0, vt_trn_tran_key, vt_trn_tranlevel01_0, vt_trn_vin_key, vt_trn_vinlevel01_0, vtrn21_alt_key_filler01_key, vtrn21_alt_key_filler01level01_0, vtrn21_key_filler01_key, vtrn21_key_filler01level01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_vtrn22)
+    );
+

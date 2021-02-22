@@ -1,0 +1,124 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_acctsum
+    FOLDER = '/02 - base views/sap bw4hana/mf history/accounting'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ACCTSUM'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        acs_acct_gl_dlr_cdlevel01_0 = '[4ZCP_ACCTSUM-ACS_ACCT_GL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_ACCT_GL]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_ACCT_GL]' LEVELPOSITION=1,
+        acs_acct_gl_dlr_cd_key = '[4ZCP_ACCTSUM-ACS_ACCT_GL].[24ZCP_ACCTSUM-ACS_ACCT_GL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_ACCT_GL]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_ACCT_GL]' ATTRIBUTE,
+        acs_btch_cdlevel01_0 = '[4ZCP_ACCTSUM-ACS_BTCH_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_BTCH_CD]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_BTCH_CD]' LEVELPOSITION=1,
+        acs_btch_cd_key = '[4ZCP_ACCTSUM-ACS_BTCH_CD].[24ZCP_ACCTSUM-ACS_BTCH_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_BTCH_CD]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_BTCH_CD]' ATTRIBUTE,
+        acs_cre_by_idlevel01_0 = '[4ZCP_ACCTSUM-ACS_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_CRE_BY_I]' LEVELPOSITION=1,
+        acs_cre_by_id_key = '[4ZCP_ACCTSUM-ACS_CRE_BY_I].[24ZCP_ACCTSUM-ACS_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_CRE_BY_I]' ATTRIBUTE,
+        acs_cre_tslevel01_0 = '[4ZCP_ACCTSUM-ACS_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_CRE_TS]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_CRE_TS]' LEVELPOSITION=1,
+        acs_cre_ts_key = '[4ZCP_ACCTSUM-ACS_CRE_TS].[24ZCP_ACCTSUM-ACS_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_CRE_TS]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_CRE_TS]' ATTRIBUTE,
+        acs_cr_debit_cdlevel01_0 = '[4ZCP_ACCTSUM-ACS_CR_DEBIT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_CR_DEBIT]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_CR_DEBIT]' LEVELPOSITION=1,
+        acs_cr_debit_cd_key = '[4ZCP_ACCTSUM-ACS_CR_DEBIT].[24ZCP_ACCTSUM-ACS_CR_DEBIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_CR_DEBIT]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_CR_DEBIT]' ATTRIBUTE,
+        acs_doc_dtlevel01_0 = '[4ZCP_ACCTSUM-ACS_DOC_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_DOC_DT]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_DOC_DT]' LEVELPOSITION=1,
+        acs_doc_dt_key = '[4ZCP_ACCTSUM-ACS_DOC_DT].[24ZCP_ACCTSUM-ACS_DOC_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_DOC_DT]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_DOC_DT]' ATTRIBUTE,
+        acs_doc_idlevel01_0 = '[4ZCP_ACCTSUM-ACS_DOC_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_DOC_ID]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_DOC_ID]' LEVELPOSITION=1,
+        acs_doc_id_key = '[4ZCP_ACCTSUM-ACS_DOC_ID].[24ZCP_ACCTSUM-ACS_DOC_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_DOC_ID]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_DOC_ID]' ATTRIBUTE,
+        acs_key_rpt_dtlevel01_0 = '[4ZCP_ACCTSUM-ACS_KEY_RPT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_KEY_RPT]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_KEY_RPT]' LEVELPOSITION=1,
+        acs_key_rpt_dt_key = '[4ZCP_ACCTSUM-ACS_KEY_RPT].[24ZCP_ACCTSUM-ACS_KEY_RPT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_KEY_RPT]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_KEY_RPT]' ATTRIBUTE,
+        acs_key_svc_dlr_cdlevel01_0 = '[4ZCP_ACCTSUM-ACS_KEY_SVC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_KEY_SVC]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_KEY_SVC]' LEVELPOSITION=1,
+        acs_key_svc_dlr_cd_key = '[4ZCP_ACCTSUM-ACS_KEY_SVC].[24ZCP_ACCTSUM-ACS_KEY_SVC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_KEY_SVC]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_KEY_SVC]' ATTRIBUTE,
+        acs_proc_inlevel01_0 = '[4ZCP_ACCTSUM-ACS_PROC_IN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_PROC_IN]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_PROC_IN]' LEVELPOSITION=1,
+        acs_proc_in_key = '[4ZCP_ACCTSUM-ACS_PROC_IN].[24ZCP_ACCTSUM-ACS_PROC_IN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_PROC_IN]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_PROC_IN]' ATTRIBUTE,
+        acs_proc_stat_cdlevel01_0 = '[4ZCP_ACCTSUM-ACS_PROC_STA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_PROC_STA]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_PROC_STA]' LEVELPOSITION=1,
+        acs_proc_stat_cd_key = '[4ZCP_ACCTSUM-ACS_PROC_STA].[24ZCP_ACCTSUM-ACS_PROC_STA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_PROC_STA]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_PROC_STA]' ATTRIBUTE,
+        acs_proc_tslevel01_0 = '[4ZCP_ACCTSUM-ACS_PROC_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_PROC_TS]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_PROC_TS]' LEVELPOSITION=1,
+        acs_proc_ts_key = '[4ZCP_ACCTSUM-ACS_PROC_TS].[24ZCP_ACCTSUM-ACS_PROC_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_PROC_TS]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_PROC_TS]' ATTRIBUTE,
+        acs_proc_txlevel01_0 = '[4ZCP_ACCTSUM-ACS_PROC_TX].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_PROC_TX]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_PROC_TX]' LEVELPOSITION=1,
+        acs_proc_tx_key = '[4ZCP_ACCTSUM-ACS_PROC_TX].[24ZCP_ACCTSUM-ACS_PROC_TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_PROC_TX]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_PROC_TX]' ATTRIBUTE,
+        acs_stmt_delevel01_0 = '[4ZCP_ACCTSUM-ACS_STMT_DE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_STMT_DE]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_STMT_DE]' LEVELPOSITION=1,
+        acs_stmt_de_key = '[4ZCP_ACCTSUM-ACS_STMT_DE].[24ZCP_ACCTSUM-ACS_STMT_DE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_STMT_DE]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_STMT_DE]' ATTRIBUTE,
+        acs_upd_by_idlevel01_0 = '[4ZCP_ACCTSUM-ACS_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_UPD_BY_I]' LEVELPOSITION=1,
+        acs_upd_by_id_key = '[4ZCP_ACCTSUM-ACS_UPD_BY_I].[24ZCP_ACCTSUM-ACS_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_UPD_BY_I]' ATTRIBUTE,
+        acs_upd_tslevel01_0 = '[4ZCP_ACCTSUM-ACS_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_UPD_TS]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_UPD_TS]' LEVELPOSITION=1,
+        acs_upd_ts_key = '[4ZCP_ACCTSUM-ACS_UPD_TS].[24ZCP_ACCTSUM-ACS_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCTSUM-ACS_UPD_TS]' DIMENSIONNAME = '[4ZCP_ACCTSUM-ACS_UPD_TS]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_acctsum I18N us_cst (
+        acs_acct_gl_dlr_cdlevel01_0:text,
+        acs_acct_gl_dlr_cd_key:text,
+        acs_btch_cdlevel01_0:text,
+        acs_btch_cd_key:text,
+        acs_cre_by_idlevel01_0:text,
+        acs_cre_by_id_key:text,
+        acs_cre_tslevel01_0:text,
+        acs_cre_ts_key:text,
+        acs_cr_debit_cdlevel01_0:text,
+        acs_cr_debit_cd_key:text,
+        acs_doc_dtlevel01_0:text,
+        acs_doc_dt_key:text,
+        acs_doc_idlevel01_0:text,
+        acs_doc_id_key:text,
+        acs_key_rpt_dtlevel01_0:text,
+        acs_key_rpt_dt_key:text,
+        acs_key_svc_dlr_cdlevel01_0:text,
+        acs_key_svc_dlr_cd_key:text,
+        acs_proc_inlevel01_0:text,
+        acs_proc_in_key:text,
+        acs_proc_stat_cdlevel01_0:text,
+        acs_proc_stat_cd_key:text,
+        acs_proc_tslevel01_0:text,
+        acs_proc_ts_key:text,
+        acs_proc_txlevel01_0:text,
+        acs_proc_tx_key:text,
+        acs_stmt_delevel01_0:text,
+        acs_stmt_de_key:text,
+        acs_upd_by_idlevel01_0:text,
+        acs_upd_by_id_key:text,
+        acs_upd_tslevel01_0:text,
+        acs_upd_ts_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/accounting'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_acctsum(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD acs_acct_gl_dlr_cdlevel01_0 (any) OPT ANY
+             ADD acs_acct_gl_dlr_cd_key (any) OPT ANY
+             ADD acs_btch_cdlevel01_0 (any) OPT ANY
+             ADD acs_btch_cd_key (any) OPT ANY
+             ADD acs_cre_by_idlevel01_0 (any) OPT ANY
+             ADD acs_cre_by_id_key (any) OPT ANY
+             ADD acs_cre_tslevel01_0 (any) OPT ANY
+             ADD acs_cre_ts_key (any) OPT ANY
+             ADD acs_cr_debit_cdlevel01_0 (any) OPT ANY
+             ADD acs_cr_debit_cd_key (any) OPT ANY
+             ADD acs_doc_dtlevel01_0 (any) OPT ANY
+             ADD acs_doc_dt_key (any) OPT ANY
+             ADD acs_doc_idlevel01_0 (any) OPT ANY
+             ADD acs_doc_id_key (any) OPT ANY
+             ADD acs_key_rpt_dtlevel01_0 (any) OPT ANY
+             ADD acs_key_rpt_dt_key (any) OPT ANY
+             ADD acs_key_svc_dlr_cdlevel01_0 (any) OPT ANY
+             ADD acs_key_svc_dlr_cd_key (any) OPT ANY
+             ADD acs_proc_inlevel01_0 (any) OPT ANY
+             ADD acs_proc_in_key (any) OPT ANY
+             ADD acs_proc_stat_cdlevel01_0 (any) OPT ANY
+             ADD acs_proc_stat_cd_key (any) OPT ANY
+             ADD acs_proc_tslevel01_0 (any) OPT ANY
+             ADD acs_proc_ts_key (any) OPT ANY
+             ADD acs_proc_txlevel01_0 (any) OPT ANY
+             ADD acs_proc_tx_key (any) OPT ANY
+             ADD acs_stmt_delevel01_0 (any) OPT ANY
+             ADD acs_stmt_de_key (any) OPT ANY
+             ADD acs_upd_by_idlevel01_0 (any) OPT ANY
+             ADD acs_upd_by_id_key (any) OPT ANY
+             ADD acs_upd_tslevel01_0 (any) OPT ANY
+             ADD acs_upd_ts_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (acs_acct_gl_dlr_cd_key, acs_acct_gl_dlr_cdlevel01_0, acs_btch_cd_key, acs_btch_cdlevel01_0, acs_cr_debit_cd_key, acs_cr_debit_cdlevel01_0, acs_cre_by_id_key, acs_cre_by_idlevel01_0, acs_cre_ts_key, acs_cre_tslevel01_0, acs_doc_dt_key, acs_doc_dtlevel01_0, acs_doc_id_key, acs_doc_idlevel01_0, acs_key_rpt_dt_key, acs_key_rpt_dtlevel01_0, acs_key_svc_dlr_cd_key, acs_key_svc_dlr_cdlevel01_0, acs_proc_in_key, acs_proc_inlevel01_0, acs_proc_stat_cd_key, acs_proc_stat_cdlevel01_0, acs_proc_ts_key, acs_proc_tslevel01_0, acs_proc_tx_key, acs_proc_txlevel01_0, acs_stmt_de_key, acs_stmt_delevel01_0, acs_upd_by_id_key, acs_upd_by_idlevel01_0, acs_upd_ts_key, acs_upd_tslevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_acctsum)
+    );
+

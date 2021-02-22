@@ -1,0 +1,160 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_dlysls
+    FOLDER = '/02 - base views/sap bw4hana/mf history/sales'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_DLYSLS'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        dlysls_cre_by_idlevel01_0 = '[4ZCP_DLYSLS-DLYSLS_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLYSLS_CRE_B]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLYSLS_CRE_B]' LEVELPOSITION=1,
+        dlysls_cre_by_id_key = '[4ZCP_DLYSLS-DLYSLS_CRE_B].[24ZCP_DLYSLS-DLYSLS_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLYSLS_CRE_B]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLYSLS_CRE_B]' ATTRIBUTE,
+        dlysls_cre_tslevel01_0 = '[4ZCP_DLYSLS-DLYSLS_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLYSLS_CRE_T]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLYSLS_CRE_T]' LEVELPOSITION=1,
+        dlysls_cre_ts_key = '[4ZCP_DLYSLS-DLYSLS_CRE_T].[24ZCP_DLYSLS-DLYSLS_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLYSLS_CRE_T]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLYSLS_CRE_T]' ATTRIBUTE,
+        dlysls_upd_by_idlevel01_0 = '[4ZCP_DLYSLS-DLYSLS_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLYSLS_UPD_B]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLYSLS_UPD_B]' LEVELPOSITION=1,
+        dlysls_upd_by_id_key = '[4ZCP_DLYSLS-DLYSLS_UPD_B].[24ZCP_DLYSLS-DLYSLS_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLYSLS_UPD_B]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLYSLS_UPD_B]' ATTRIBUTE,
+        dlysls_upd_tslevel01_0 = '[4ZCP_DLYSLS-DLYSLS_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLYSLS_UPD_T]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLYSLS_UPD_T]' LEVELPOSITION=1,
+        dlysls_upd_ts_key = '[4ZCP_DLYSLS-DLYSLS_UPD_T].[24ZCP_DLYSLS-DLYSLS_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLYSLS_UPD_T]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLYSLS_UPD_T]' ATTRIBUTE,
+        dly_balloon_ynlevel01_0 = '[4ZCP_DLYSLS-DLY_BALLOON].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_BALLOON]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_BALLOON]' LEVELPOSITION=1,
+        dly_balloon_yn_key = '[4ZCP_DLYSLS-DLY_BALLOON].[24ZCP_DLYSLS-DLY_BALLOON]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_BALLOON]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_BALLOON]' ATTRIBUTE,
+        dly_ctrlevel01_0 = '[4ZCP_DLYSLS-DLY_CTR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_CTR]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_CTR]' LEVELPOSITION=1,
+        dly_ctr_key = '[4ZCP_DLYSLS-DLY_CTR].[24ZCP_DLYSLS-DLY_CTR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_CTR]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_CTR]' ATTRIBUTE,
+        dly_date_tslevel01_0 = '[4ZCP_DLYSLS-DLY_DATE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_DATE_TS]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_DATE_TS]' LEVELPOSITION=1,
+        dly_date_ts_key = '[4ZCP_DLYSLS-DLY_DATE_TS].[24ZCP_DLYSLS-DLY_DATE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_DATE_TS]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_DATE_TS]' ATTRIBUTE,
+        dly_dlr_distlevel01_0 = '[4ZCP_DLYSLS-DLY_DLR_DIST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_DLR_DIST]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_DLR_DIST]' LEVELPOSITION=1,
+        dly_dlr_dist_key = '[4ZCP_DLYSLS-DLY_DLR_DIST].[24ZCP_DLYSLS-DLY_DLR_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_DLR_DIST]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_DLR_DIST]' ATTRIBUTE,
+        dly_dlr_numlevel01_0 = '[4ZCP_DLYSLS-DLY_DLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_DLR_NUM]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_DLR_NUM]' LEVELPOSITION=1,
+        dly_dlr_num_key = '[4ZCP_DLYSLS-DLY_DLR_NUM].[24ZCP_DLYSLS-DLY_DLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_DLR_NUM]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_DLR_NUM]' ATTRIBUTE,
+        dly_flt_cdlevel01_0 = '[4ZCP_DLYSLS-DLY_FLT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_FLT_CD]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_FLT_CD]' LEVELPOSITION=1,
+        dly_flt_cd_key = '[4ZCP_DLYSLS-DLY_FLT_CD].[24ZCP_DLYSLS-DLY_FLT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_FLT_CD]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_FLT_CD]' ATTRIBUTE,
+        dly_lease_namelevel01_0 = '[4ZCP_DLYSLS-DLY_LEASE_NA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_LEASE_NA]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_LEASE_NA]' LEVELPOSITION=1,
+        dly_lease_name_key = '[4ZCP_DLYSLS-DLY_LEASE_NA].[24ZCP_DLYSLS-DLY_LEASE_NA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_LEASE_NA]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_LEASE_NA]' ATTRIBUTE,
+        dly_lease_term_cdlevel01_0 = '[4ZCP_DLYSLS-DLY_LEASE_TE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_LEASE_TE]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_LEASE_TE]' LEVELPOSITION=1,
+        dly_lease_term_cd_key = '[4ZCP_DLYSLS-DLY_LEASE_TE].[24ZCP_DLYSLS-DLY_LEASE_TE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_LEASE_TE]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_LEASE_TE]' ATTRIBUTE,
+        dly_lease_ynlevel01_0 = '[4ZCP_DLYSLS-DLY_LEASE_YN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_LEASE_YN]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_LEASE_YN]' LEVELPOSITION=1,
+        dly_lease_yn_key = '[4ZCP_DLYSLS-DLY_LEASE_YN].[24ZCP_DLYSLS-DLY_LEASE_YN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_LEASE_YN]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_LEASE_YN]' ATTRIBUTE,
+        dly_modellevel01_0 = '[4ZCP_DLYSLS-DLY_MODEL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_MODEL]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_MODEL]' LEVELPOSITION=1,
+        dly_model_key = '[4ZCP_DLYSLS-DLY_MODEL].[24ZCP_DLYSLS-DLY_MODEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_MODEL]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_MODEL]' ATTRIBUTE,
+        dly_model_yrlevel01_0 = '[4ZCP_DLYSLS-DLY_MODEL_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_MODEL_YR]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_MODEL_YR]' LEVELPOSITION=1,
+        dly_model_yr_key = '[4ZCP_DLYSLS-DLY_MODEL_YR].[24ZCP_DLYSLS-DLY_MODEL_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_MODEL_YR]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_MODEL_YR]' ATTRIBUTE,
+        dly_modified_usridlevel01_0 = '[4ZCP_DLYSLS-DLY_MODIFIED].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_MODIFIED]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_MODIFIED]' LEVELPOSITION=1,
+        dly_modified_usrid_key = '[4ZCP_DLYSLS-DLY_MODIFIED].[24ZCP_DLYSLS-DLY_MODIFIED]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_MODIFIED]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_MODIFIED]' ATTRIBUTE,
+        dly_sers_cdlevel01_0 = '[4ZCP_DLYSLS-DLY_SERS_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_SERS_CD]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_SERS_CD]' LEVELPOSITION=1,
+        dly_sers_cd_key = '[4ZCP_DLYSLS-DLY_SERS_CD].[24ZCP_DLYSLS-DLY_SERS_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_SERS_CD]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_SERS_CD]' ATTRIBUTE,
+        dly_traclevel01_0 = '[4ZCP_DLYSLS-DLY_TRAC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_TRAC]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_TRAC]' LEVELPOSITION=1,
+        dly_trac_key = '[4ZCP_DLYSLS-DLY_TRAC].[24ZCP_DLYSLS-DLY_TRAC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_TRAC]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_TRAC]' ATTRIBUTE,
+        dly_trn_cdlevel01_0 = '[4ZCP_DLYSLS-DLY_TRN_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_TRN_CD]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_TRN_CD]' LEVELPOSITION=1,
+        dly_trn_cd_key = '[4ZCP_DLYSLS-DLY_TRN_CD].[24ZCP_DLYSLS-DLY_TRN_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_TRN_CD]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_TRN_CD]' ATTRIBUTE,
+        dly_vinlevel01_0 = '[4ZCP_DLYSLS-DLY_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_VIN]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_VIN]' LEVELPOSITION=1,
+        dly_vin_key = '[4ZCP_DLYSLS-DLY_VIN].[24ZCP_DLYSLS-DLY_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYSLS-DLY_VIN]' DIMENSIONNAME = '[4ZCP_DLYSLS-DLY_VIN]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_dlysls I18N us_cst (
+        dlysls_cre_by_idlevel01_0:text,
+        dlysls_cre_by_id_key:text,
+        dlysls_cre_tslevel01_0:text,
+        dlysls_cre_ts_key:text,
+        dlysls_upd_by_idlevel01_0:text,
+        dlysls_upd_by_id_key:text,
+        dlysls_upd_tslevel01_0:text,
+        dlysls_upd_ts_key:text,
+        dly_balloon_ynlevel01_0:text,
+        dly_balloon_yn_key:text,
+        dly_ctrlevel01_0:text,
+        dly_ctr_key:text,
+        dly_date_tslevel01_0:text,
+        dly_date_ts_key:text,
+        dly_dlr_distlevel01_0:text,
+        dly_dlr_dist_key:text,
+        dly_dlr_numlevel01_0:text,
+        dly_dlr_num_key:text,
+        dly_flt_cdlevel01_0:text,
+        dly_flt_cd_key:text,
+        dly_lease_namelevel01_0:text,
+        dly_lease_name_key:text,
+        dly_lease_term_cdlevel01_0:text,
+        dly_lease_term_cd_key:text,
+        dly_lease_ynlevel01_0:text,
+        dly_lease_yn_key:text,
+        dly_modellevel01_0:text,
+        dly_model_key:text,
+        dly_model_yrlevel01_0:text,
+        dly_model_yr_key:text,
+        dly_modified_usridlevel01_0:text,
+        dly_modified_usrid_key:text,
+        dly_sers_cdlevel01_0:text,
+        dly_sers_cd_key:text,
+        dly_traclevel01_0:text,
+        dly_trac_key:text,
+        dly_trn_cdlevel01_0:text,
+        dly_trn_cd_key:text,
+        dly_vinlevel01_0:text,
+        dly_vin_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/sales'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_dlysls(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD dlysls_cre_by_idlevel01_0 (any) OPT ANY
+             ADD dlysls_cre_by_id_key (any) OPT ANY
+             ADD dlysls_cre_tslevel01_0 (any) OPT ANY
+             ADD dlysls_cre_ts_key (any) OPT ANY
+             ADD dlysls_upd_by_idlevel01_0 (any) OPT ANY
+             ADD dlysls_upd_by_id_key (any) OPT ANY
+             ADD dlysls_upd_tslevel01_0 (any) OPT ANY
+             ADD dlysls_upd_ts_key (any) OPT ANY
+             ADD dly_balloon_ynlevel01_0 (any) OPT ANY
+             ADD dly_balloon_yn_key (any) OPT ANY
+             ADD dly_ctrlevel01_0 (any) OPT ANY
+             ADD dly_ctr_key (any) OPT ANY
+             ADD dly_date_tslevel01_0 (any) OPT ANY
+             ADD dly_date_ts_key (any) OPT ANY
+             ADD dly_dlr_distlevel01_0 (any) OPT ANY
+             ADD dly_dlr_dist_key (any) OPT ANY
+             ADD dly_dlr_numlevel01_0 (any) OPT ANY
+             ADD dly_dlr_num_key (any) OPT ANY
+             ADD dly_flt_cdlevel01_0 (any) OPT ANY
+             ADD dly_flt_cd_key (any) OPT ANY
+             ADD dly_lease_namelevel01_0 (any) OPT ANY
+             ADD dly_lease_name_key (any) OPT ANY
+             ADD dly_lease_term_cdlevel01_0 (any) OPT ANY
+             ADD dly_lease_term_cd_key (any) OPT ANY
+             ADD dly_lease_ynlevel01_0 (any) OPT ANY
+             ADD dly_lease_yn_key (any) OPT ANY
+             ADD dly_modellevel01_0 (any) OPT ANY
+             ADD dly_model_key (any) OPT ANY
+             ADD dly_model_yrlevel01_0 (any) OPT ANY
+             ADD dly_model_yr_key (any) OPT ANY
+             ADD dly_modified_usridlevel01_0 (any) OPT ANY
+             ADD dly_modified_usrid_key (any) OPT ANY
+             ADD dly_sers_cdlevel01_0 (any) OPT ANY
+             ADD dly_sers_cd_key (any) OPT ANY
+             ADD dly_traclevel01_0 (any) OPT ANY
+             ADD dly_trac_key (any) OPT ANY
+             ADD dly_trn_cdlevel01_0 (any) OPT ANY
+             ADD dly_trn_cd_key (any) OPT ANY
+             ADD dly_vinlevel01_0 (any) OPT ANY
+             ADD dly_vin_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (dly_balloon_yn_key, dly_balloon_ynlevel01_0, dly_ctr_key, dly_ctrlevel01_0, dly_date_ts_key, dly_date_tslevel01_0, dly_dlr_dist_key, dly_dlr_distlevel01_0, dly_dlr_num_key, dly_dlr_numlevel01_0, dly_flt_cd_key, dly_flt_cdlevel01_0, dly_lease_name_key, dly_lease_namelevel01_0, dly_lease_term_cd_key, dly_lease_term_cdlevel01_0, dly_lease_yn_key, dly_lease_ynlevel01_0, dly_model_key, dly_model_yr_key, dly_model_yrlevel01_0, dly_modellevel01_0, dly_modified_usrid_key, dly_modified_usridlevel01_0, dly_sers_cd_key, dly_sers_cdlevel01_0, dly_trac_key, dly_traclevel01_0, dly_trn_cd_key, dly_trn_cdlevel01_0, dly_vin_key, dly_vinlevel01_0, dlysls_cre_by_id_key, dlysls_cre_by_idlevel01_0, dlysls_cre_ts_key, dlysls_cre_tslevel01_0, dlysls_upd_by_id_key, dlysls_upd_by_idlevel01_0, dlysls_upd_ts_key, dlysls_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_dlysls)
+    );
+

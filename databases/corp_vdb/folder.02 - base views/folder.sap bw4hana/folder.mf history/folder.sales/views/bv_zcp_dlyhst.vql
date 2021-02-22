@@ -1,0 +1,160 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_dlyhst
+    FOLDER = '/02 - base views/sap bw4hana/mf history/sales'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_DLYHST'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        dlyhst_cre_by_idlevel01_0 = '[4ZCP_DLYHST-DLYHST_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-DLYHST_CRE_B]' DIMENSIONNAME = '[4ZCP_DLYHST-DLYHST_CRE_B]' LEVELPOSITION=1,
+        dlyhst_cre_by_id_key = '[4ZCP_DLYHST-DLYHST_CRE_B].[24ZCP_DLYHST-DLYHST_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-DLYHST_CRE_B]' DIMENSIONNAME = '[4ZCP_DLYHST-DLYHST_CRE_B]' ATTRIBUTE,
+        dlyhst_cre_tslevel01_0 = '[4ZCP_DLYHST-DLYHST_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-DLYHST_CRE_T]' DIMENSIONNAME = '[4ZCP_DLYHST-DLYHST_CRE_T]' LEVELPOSITION=1,
+        dlyhst_cre_ts_key = '[4ZCP_DLYHST-DLYHST_CRE_T].[24ZCP_DLYHST-DLYHST_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-DLYHST_CRE_T]' DIMENSIONNAME = '[4ZCP_DLYHST-DLYHST_CRE_T]' ATTRIBUTE,
+        dlyhst_upd_by_idlevel01_0 = '[4ZCP_DLYHST-DLYHST_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-DLYHST_UPD_B]' DIMENSIONNAME = '[4ZCP_DLYHST-DLYHST_UPD_B]' LEVELPOSITION=1,
+        dlyhst_upd_by_id_key = '[4ZCP_DLYHST-DLYHST_UPD_B].[24ZCP_DLYHST-DLYHST_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-DLYHST_UPD_B]' DIMENSIONNAME = '[4ZCP_DLYHST-DLYHST_UPD_B]' ATTRIBUTE,
+        dlyhst_upd_tslevel01_0 = '[4ZCP_DLYHST-DLYHST_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-DLYHST_UPD_T]' DIMENSIONNAME = '[4ZCP_DLYHST-DLYHST_UPD_T]' LEVELPOSITION=1,
+        dlyhst_upd_ts_key = '[4ZCP_DLYHST-DLYHST_UPD_T].[24ZCP_DLYHST-DLYHST_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-DLYHST_UPD_T]' DIMENSIONNAME = '[4ZCP_DLYHST-DLYHST_UPD_T]' ATTRIBUTE,
+        dly_lease_term_cdlevel01_0 = '[4ZCP_DLYHST-DLY_LEASE_TE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-DLY_LEASE_TE]' DIMENSIONNAME = '[4ZCP_DLYHST-DLY_LEASE_TE]' LEVELPOSITION=1,
+        dly_lease_term_cd_key = '[4ZCP_DLYHST-DLY_LEASE_TE].[24ZCP_DLYHST-DLY_LEASE_TE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-DLY_LEASE_TE]' DIMENSIONNAME = '[4ZCP_DLYHST-DLY_LEASE_TE]' ATTRIBUTE,
+        hst_ctrlevel01_0 = '[4ZCP_DLYHST-HST_CTR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_CTR]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_CTR]' LEVELPOSITION=1,
+        hst_ctr_key = '[4ZCP_DLYHST-HST_CTR].[24ZCP_DLYHST-HST_CTR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_CTR]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_CTR]' ATTRIBUTE,
+        hst_date_tslevel01_0 = '[4ZCP_DLYHST-HST_DATE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DATE_TS]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DATE_TS]' LEVELPOSITION=1,
+        hst_date_ts_key = '[4ZCP_DLYHST-HST_DATE_TS].[24ZCP_DLYHST-HST_DATE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DATE_TS]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DATE_TS]' ATTRIBUTE,
+        hst_dlr_distlevel01_0 = '[4ZCP_DLYHST-HST_DLR_DIST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DLR_DIST]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DLR_DIST]' LEVELPOSITION=1,
+        hst_dlr_dist_key = '[4ZCP_DLYHST-HST_DLR_DIST].[24ZCP_DLYHST-HST_DLR_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DLR_DIST]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DLR_DIST]' ATTRIBUTE,
+        hst_dlr_numlevel01_0 = '[4ZCP_DLYHST-HST_DLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DLR_NUM]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DLR_NUM]' LEVELPOSITION=1,
+        hst_dlr_num_key = '[4ZCP_DLYHST-HST_DLR_NUM].[24ZCP_DLYHST-HST_DLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DLR_NUM]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DLR_NUM]' ATTRIBUTE,
+        hst_dly_balloon_ynlevel01_0 = '[4ZCP_DLYHST-HST_DLY_BALL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DLY_BALL]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DLY_BALL]' LEVELPOSITION=1,
+        hst_dly_balloon_yn_key = '[4ZCP_DLYHST-HST_DLY_BALL].[24ZCP_DLYHST-HST_DLY_BALL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DLY_BALL]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DLY_BALL]' ATTRIBUTE,
+        hst_dly_lease_namelevel01_0 = '[4ZCP_DLYHST-HST_DLY_LE_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DLY_LE_0]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DLY_LE_0]' LEVELPOSITION=1,
+        hst_dly_lease_name_key = '[4ZCP_DLYHST-HST_DLY_LE_0].[24ZCP_DLYHST-HST_DLY_LE_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DLY_LE_0]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DLY_LE_0]' ATTRIBUTE,
+        hst_dly_lease_ynlevel01_0 = '[4ZCP_DLYHST-HST_DLY_LEAS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DLY_LEAS]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DLY_LEAS]' LEVELPOSITION=1,
+        hst_dly_lease_yn_key = '[4ZCP_DLYHST-HST_DLY_LEAS].[24ZCP_DLYHST-HST_DLY_LEAS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_DLY_LEAS]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_DLY_LEAS]' ATTRIBUTE,
+        hst_flt_cdlevel01_0 = '[4ZCP_DLYHST-HST_FLT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_FLT_CD]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_FLT_CD]' LEVELPOSITION=1,
+        hst_flt_cd_key = '[4ZCP_DLYHST-HST_FLT_CD].[24ZCP_DLYHST-HST_FLT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_FLT_CD]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_FLT_CD]' ATTRIBUTE,
+        hst_modellevel01_0 = '[4ZCP_DLYHST-HST_MODEL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_MODEL]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_MODEL]' LEVELPOSITION=1,
+        hst_model_key = '[4ZCP_DLYHST-HST_MODEL].[24ZCP_DLYHST-HST_MODEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_MODEL]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_MODEL]' ATTRIBUTE,
+        hst_model_yrlevel01_0 = '[4ZCP_DLYHST-HST_MODEL_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_MODEL_YR]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_MODEL_YR]' LEVELPOSITION=1,
+        hst_model_yr_key = '[4ZCP_DLYHST-HST_MODEL_YR].[24ZCP_DLYHST-HST_MODEL_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_MODEL_YR]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_MODEL_YR]' ATTRIBUTE,
+        hst_modified_usridlevel01_0 = '[4ZCP_DLYHST-HST_MODIFIED].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_MODIFIED]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_MODIFIED]' LEVELPOSITION=1,
+        hst_modified_usrid_key = '[4ZCP_DLYHST-HST_MODIFIED].[24ZCP_DLYHST-HST_MODIFIED]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_MODIFIED]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_MODIFIED]' ATTRIBUTE,
+        hst_sers_cdlevel01_0 = '[4ZCP_DLYHST-HST_SERS_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_SERS_CD]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_SERS_CD]' LEVELPOSITION=1,
+        hst_sers_cd_key = '[4ZCP_DLYHST-HST_SERS_CD].[24ZCP_DLYHST-HST_SERS_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_SERS_CD]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_SERS_CD]' ATTRIBUTE,
+        hst_traclevel01_0 = '[4ZCP_DLYHST-HST_TRAC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_TRAC]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_TRAC]' LEVELPOSITION=1,
+        hst_trac_key = '[4ZCP_DLYHST-HST_TRAC].[24ZCP_DLYHST-HST_TRAC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_TRAC]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_TRAC]' ATTRIBUTE,
+        hst_trn_cdlevel01_0 = '[4ZCP_DLYHST-HST_TRN_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_TRN_CD]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_TRN_CD]' LEVELPOSITION=1,
+        hst_trn_cd_key = '[4ZCP_DLYHST-HST_TRN_CD].[24ZCP_DLYHST-HST_TRN_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_TRN_CD]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_TRN_CD]' ATTRIBUTE,
+        hst_vinlevel01_0 = '[4ZCP_DLYHST-HST_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_VIN]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_VIN]' LEVELPOSITION=1,
+        hst_vin_key = '[4ZCP_DLYHST-HST_VIN].[24ZCP_DLYHST-HST_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLYHST-HST_VIN]' DIMENSIONNAME = '[4ZCP_DLYHST-HST_VIN]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_dlyhst I18N us_cst (
+        dlyhst_cre_by_idlevel01_0:text,
+        dlyhst_cre_by_id_key:text,
+        dlyhst_cre_tslevel01_0:text,
+        dlyhst_cre_ts_key:text,
+        dlyhst_upd_by_idlevel01_0:text,
+        dlyhst_upd_by_id_key:text,
+        dlyhst_upd_tslevel01_0:text,
+        dlyhst_upd_ts_key:text,
+        dly_lease_term_cdlevel01_0:text,
+        dly_lease_term_cd_key:text,
+        hst_ctrlevel01_0:text,
+        hst_ctr_key:text,
+        hst_date_tslevel01_0:text,
+        hst_date_ts_key:text,
+        hst_dlr_distlevel01_0:text,
+        hst_dlr_dist_key:text,
+        hst_dlr_numlevel01_0:text,
+        hst_dlr_num_key:text,
+        hst_dly_balloon_ynlevel01_0:text,
+        hst_dly_balloon_yn_key:text,
+        hst_dly_lease_namelevel01_0:text,
+        hst_dly_lease_name_key:text,
+        hst_dly_lease_ynlevel01_0:text,
+        hst_dly_lease_yn_key:text,
+        hst_flt_cdlevel01_0:text,
+        hst_flt_cd_key:text,
+        hst_modellevel01_0:text,
+        hst_model_key:text,
+        hst_model_yrlevel01_0:text,
+        hst_model_yr_key:text,
+        hst_modified_usridlevel01_0:text,
+        hst_modified_usrid_key:text,
+        hst_sers_cdlevel01_0:text,
+        hst_sers_cd_key:text,
+        hst_traclevel01_0:text,
+        hst_trac_key:text,
+        hst_trn_cdlevel01_0:text,
+        hst_trn_cd_key:text,
+        hst_vinlevel01_0:text,
+        hst_vin_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/sales'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_dlyhst(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD dlyhst_cre_by_idlevel01_0 (any) OPT ANY
+             ADD dlyhst_cre_by_id_key (any) OPT ANY
+             ADD dlyhst_cre_tslevel01_0 (any) OPT ANY
+             ADD dlyhst_cre_ts_key (any) OPT ANY
+             ADD dlyhst_upd_by_idlevel01_0 (any) OPT ANY
+             ADD dlyhst_upd_by_id_key (any) OPT ANY
+             ADD dlyhst_upd_tslevel01_0 (any) OPT ANY
+             ADD dlyhst_upd_ts_key (any) OPT ANY
+             ADD dly_lease_term_cdlevel01_0 (any) OPT ANY
+             ADD dly_lease_term_cd_key (any) OPT ANY
+             ADD hst_ctrlevel01_0 (any) OPT ANY
+             ADD hst_ctr_key (any) OPT ANY
+             ADD hst_date_tslevel01_0 (any) OPT ANY
+             ADD hst_date_ts_key (any) OPT ANY
+             ADD hst_dlr_distlevel01_0 (any) OPT ANY
+             ADD hst_dlr_dist_key (any) OPT ANY
+             ADD hst_dlr_numlevel01_0 (any) OPT ANY
+             ADD hst_dlr_num_key (any) OPT ANY
+             ADD hst_dly_balloon_ynlevel01_0 (any) OPT ANY
+             ADD hst_dly_balloon_yn_key (any) OPT ANY
+             ADD hst_dly_lease_namelevel01_0 (any) OPT ANY
+             ADD hst_dly_lease_name_key (any) OPT ANY
+             ADD hst_dly_lease_ynlevel01_0 (any) OPT ANY
+             ADD hst_dly_lease_yn_key (any) OPT ANY
+             ADD hst_flt_cdlevel01_0 (any) OPT ANY
+             ADD hst_flt_cd_key (any) OPT ANY
+             ADD hst_modellevel01_0 (any) OPT ANY
+             ADD hst_model_key (any) OPT ANY
+             ADD hst_model_yrlevel01_0 (any) OPT ANY
+             ADD hst_model_yr_key (any) OPT ANY
+             ADD hst_modified_usridlevel01_0 (any) OPT ANY
+             ADD hst_modified_usrid_key (any) OPT ANY
+             ADD hst_sers_cdlevel01_0 (any) OPT ANY
+             ADD hst_sers_cd_key (any) OPT ANY
+             ADD hst_traclevel01_0 (any) OPT ANY
+             ADD hst_trac_key (any) OPT ANY
+             ADD hst_trn_cdlevel01_0 (any) OPT ANY
+             ADD hst_trn_cd_key (any) OPT ANY
+             ADD hst_vinlevel01_0 (any) OPT ANY
+             ADD hst_vin_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (dly_lease_term_cd_key, dly_lease_term_cdlevel01_0, dlyhst_cre_by_id_key, dlyhst_cre_by_idlevel01_0, dlyhst_cre_ts_key, dlyhst_cre_tslevel01_0, dlyhst_upd_by_id_key, dlyhst_upd_by_idlevel01_0, dlyhst_upd_ts_key, dlyhst_upd_tslevel01_0, hst_ctr_key, hst_ctrlevel01_0, hst_date_ts_key, hst_date_tslevel01_0, hst_dlr_dist_key, hst_dlr_distlevel01_0, hst_dlr_num_key, hst_dlr_numlevel01_0, hst_dly_balloon_yn_key, hst_dly_balloon_ynlevel01_0, hst_dly_lease_name_key, hst_dly_lease_namelevel01_0, hst_dly_lease_yn_key, hst_dly_lease_ynlevel01_0, hst_flt_cd_key, hst_flt_cdlevel01_0, hst_model_key, hst_model_yr_key, hst_model_yrlevel01_0, hst_modellevel01_0, hst_modified_usrid_key, hst_modified_usridlevel01_0, hst_sers_cd_key, hst_sers_cdlevel01_0, hst_trac_key, hst_traclevel01_0, hst_trn_cd_key, hst_trn_cdlevel01_0, hst_vin_key, hst_vinlevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_dlyhst)
+    );
+

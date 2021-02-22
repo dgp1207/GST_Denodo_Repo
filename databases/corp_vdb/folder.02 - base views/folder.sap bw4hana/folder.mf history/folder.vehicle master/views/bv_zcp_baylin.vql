@@ -1,0 +1,172 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_baylin
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle master'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_BAYLIN'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        baylin_cre_by_idlevel01_0 = '[4ZCP_BAYLIN-BAYLIN_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BAYLIN_CRE_B]' DIMENSIONNAME = '[4ZCP_BAYLIN-BAYLIN_CRE_B]' LEVELPOSITION=1,
+        baylin_cre_by_id_key = '[4ZCP_BAYLIN-BAYLIN_CRE_B].[24ZCP_BAYLIN-BAYLIN_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BAYLIN_CRE_B]' DIMENSIONNAME = '[4ZCP_BAYLIN-BAYLIN_CRE_B]' ATTRIBUTE,
+        baylin_cre_tslevel01_0 = '[4ZCP_BAYLIN-BAYLIN_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BAYLIN_CRE_T]' DIMENSIONNAME = '[4ZCP_BAYLIN-BAYLIN_CRE_T]' LEVELPOSITION=1,
+        baylin_cre_ts_key = '[4ZCP_BAYLIN-BAYLIN_CRE_T].[24ZCP_BAYLIN-BAYLIN_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BAYLIN_CRE_T]' DIMENSIONNAME = '[4ZCP_BAYLIN-BAYLIN_CRE_T]' ATTRIBUTE,
+        baylin_upd_by_idlevel01_0 = '[4ZCP_BAYLIN-BAYLIN_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BAYLIN_UPD_B]' DIMENSIONNAME = '[4ZCP_BAYLIN-BAYLIN_UPD_B]' LEVELPOSITION=1,
+        baylin_upd_by_id_key = '[4ZCP_BAYLIN-BAYLIN_UPD_B].[24ZCP_BAYLIN-BAYLIN_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BAYLIN_UPD_B]' DIMENSIONNAME = '[4ZCP_BAYLIN-BAYLIN_UPD_B]' ATTRIBUTE,
+        baylin_upd_tslevel01_0 = '[4ZCP_BAYLIN-BAYLIN_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BAYLIN_UPD_T]' DIMENSIONNAME = '[4ZCP_BAYLIN-BAYLIN_UPD_T]' LEVELPOSITION=1,
+        baylin_upd_ts_key = '[4ZCP_BAYLIN-BAYLIN_UPD_T].[24ZCP_BAYLIN-BAYLIN_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BAYLIN_UPD_T]' DIMENSIONNAME = '[4ZCP_BAYLIN-BAYLIN_UPD_T]' ATTRIBUTE,
+        byl_asgn_carrlevel01_0 = '[4ZCP_BAYLIN-BYL_ASGN_CAR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_ASGN_CAR]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_ASGN_CAR]' LEVELPOSITION=1,
+        byl_asgn_carr_key = '[4ZCP_BAYLIN-BYL_ASGN_CAR].[24ZCP_BAYLIN-BYL_ASGN_CAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_ASGN_CAR]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_ASGN_CAR]' ATTRIBUTE,
+        byl_asgn_dlrlevel01_0 = '[4ZCP_BAYLIN-BYL_ASGN_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_ASGN_DLR]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_ASGN_DLR]' LEVELPOSITION=1,
+        byl_asgn_dlr_key = '[4ZCP_BAYLIN-BYL_ASGN_DLR].[24ZCP_BAYLIN-BYL_ASGN_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_ASGN_DLR]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_ASGN_DLR]' ATTRIBUTE,
+        byl_asgn_rgnlevel01_0 = '[4ZCP_BAYLIN-BYL_ASGN_RGN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_ASGN_RGN]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_ASGN_RGN]' LEVELPOSITION=1,
+        byl_asgn_rgn_key = '[4ZCP_BAYLIN-BYL_ASGN_RGN].[24ZCP_BAYLIN-BYL_ASGN_RGN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_ASGN_RGN]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_ASGN_RGN]' ATTRIBUTE,
+        byl_auto_loadlevel01_0 = '[4ZCP_BAYLIN-BYL_AUTO_LOA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_AUTO_LOA]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_AUTO_LOA]' LEVELPOSITION=1,
+        byl_auto_load_key = '[4ZCP_BAYLIN-BYL_AUTO_LOA].[24ZCP_BAYLIN-BYL_AUTO_LOA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_AUTO_LOA]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_AUTO_LOA]' ATTRIBUTE,
+        byl_bay_caplevel01_0 = '[4ZCP_BAYLIN-BYL_BAY_CAP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_BAY_CAP]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_BAY_CAP]' LEVELPOSITION=1,
+        byl_bay_cap_key = '[4ZCP_BAYLIN-BYL_BAY_CAP].[24ZCP_BAYLIN-BYL_BAY_CAP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_BAY_CAP]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_BAY_CAP]' ATTRIBUTE,
+        byl_carr_cdlevel01_0 = '[4ZCP_BAYLIN-BYL_CARR_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_CARR_CD]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_CARR_CD]' LEVELPOSITION=1,
+        byl_carr_cd_key = '[4ZCP_BAYLIN-BYL_CARR_CD].[24ZCP_BAYLIN-BYL_CARR_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_CARR_CD]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_CARR_CD]' ATTRIBUTE,
+        byl_dlr_numlevel01_0 = '[4ZCP_BAYLIN-BYL_DLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_DLR_NUM]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_DLR_NUM]' LEVELPOSITION=1,
+        byl_dlr_num_key = '[4ZCP_BAYLIN-BYL_DLR_NUM].[24ZCP_BAYLIN-BYL_DLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_DLR_NUM]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_DLR_NUM]' ATTRIBUTE,
+        byl_excp_baylevel01_0 = '[4ZCP_BAYLIN-BYL_EXCP_BAY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_EXCP_BAY]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_EXCP_BAY]' LEVELPOSITION=1,
+        byl_excp_bay_key = '[4ZCP_BAYLIN-BYL_EXCP_BAY].[24ZCP_BAYLIN-BYL_EXCP_BAY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_EXCP_BAY]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_EXCP_BAY]' ATTRIBUTE,
+        byl_flt_indlevel01_0 = '[4ZCP_BAYLIN-BYL_FLT_IND].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_FLT_IND]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_FLT_IND]' LEVELPOSITION=1,
+        byl_flt_ind_key = '[4ZCP_BAYLIN-BYL_FLT_IND].[24ZCP_BAYLIN-BYL_FLT_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_FLT_IND]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_FLT_IND]' ATTRIBUTE,
+        byl_grid_numlevel01_0 = '[4ZCP_BAYLIN-BYL_GRID_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_GRID_NUM]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_GRID_NUM]' LEVELPOSITION=1,
+        byl_grid_num_key = '[4ZCP_BAYLIN-BYL_GRID_NUM].[24ZCP_BAYLIN-BYL_GRID_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_GRID_NUM]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_GRID_NUM]' ATTRIBUTE,
+        byl_ln_caplevel01_0 = '[4ZCP_BAYLIN-BYL_LN_CAP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_LN_CAP]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_LN_CAP]' LEVELPOSITION=1,
+        byl_ln_cap_key = '[4ZCP_BAYLIN-BYL_LN_CAP].[24ZCP_BAYLIN-BYL_LN_CAP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_LN_CAP]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_LN_CAP]' ATTRIBUTE,
+        byl_ln_numlevel01_0 = '[4ZCP_BAYLIN-BYL_LN_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_LN_NUM]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_LN_NUM]' LEVELPOSITION=1,
+        byl_ln_num_key = '[4ZCP_BAYLIN-BYL_LN_NUM].[24ZCP_BAYLIN-BYL_LN_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_LN_NUM]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_LN_NUM]' ATTRIBUTE,
+        byl_lot_numlevel01_0 = '[4ZCP_BAYLIN-BYL_LOT_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_LOT_NUM]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_LOT_NUM]' LEVELPOSITION=1,
+        byl_lot_num_key = '[4ZCP_BAYLIN-BYL_LOT_NUM].[24ZCP_BAYLIN-BYL_LOT_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_LOT_NUM]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_LOT_NUM]' ATTRIBUTE,
+        byl_max_unitlevel01_0 = '[4ZCP_BAYLIN-BYL_MAX_UNIT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_MAX_UNIT]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_MAX_UNIT]' LEVELPOSITION=1,
+        byl_max_unit_key = '[4ZCP_BAYLIN-BYL_MAX_UNIT].[24ZCP_BAYLIN-BYL_MAX_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_MAX_UNIT]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_MAX_UNIT]' ATTRIBUTE,
+        byl_rgn_cdlevel01_0 = '[4ZCP_BAYLIN-BYL_RGN_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_RGN_CD]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_RGN_CD]' LEVELPOSITION=1,
+        byl_rgn_cd_key = '[4ZCP_BAYLIN-BYL_RGN_CD].[24ZCP_BAYLIN-BYL_RGN_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_RGN_CD]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_RGN_CD]' ATTRIBUTE,
+        byl_typelevel01_0 = '[4ZCP_BAYLIN-BYL_TYPE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_TYPE]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_TYPE]' LEVELPOSITION=1,
+        byl_type_key = '[4ZCP_BAYLIN-BYL_TYPE].[24ZCP_BAYLIN-BYL_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_TYPE]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_TYPE]' ATTRIBUTE,
+        byl_unitlevel01_0 = '[4ZCP_BAYLIN-BYL_UNIT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_UNIT]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_UNIT]' LEVELPOSITION=1,
+        byl_unit_key = '[4ZCP_BAYLIN-BYL_UNIT].[24ZCP_BAYLIN-BYL_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_UNIT]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_UNIT]' ATTRIBUTE,
+        byl_usgelevel01_0 = '[4ZCP_BAYLIN-BYL_USGE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_USGE]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_USGE]' LEVELPOSITION=1,
+        byl_usge_key = '[4ZCP_BAYLIN-BYL_USGE].[24ZCP_BAYLIN-BYL_USGE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAYLIN-BYL_USGE]' DIMENSIONNAME = '[4ZCP_BAYLIN-BYL_USGE]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_baylin I18N us_cst (
+        baylin_cre_by_idlevel01_0:text,
+        baylin_cre_by_id_key:text,
+        baylin_cre_tslevel01_0:text,
+        baylin_cre_ts_key:text,
+        baylin_upd_by_idlevel01_0:text,
+        baylin_upd_by_id_key:text,
+        baylin_upd_tslevel01_0:text,
+        baylin_upd_ts_key:text,
+        byl_asgn_carrlevel01_0:text,
+        byl_asgn_carr_key:text,
+        byl_asgn_dlrlevel01_0:text,
+        byl_asgn_dlr_key:text,
+        byl_asgn_rgnlevel01_0:text,
+        byl_asgn_rgn_key:text,
+        byl_auto_loadlevel01_0:text,
+        byl_auto_load_key:text,
+        byl_bay_caplevel01_0:text,
+        byl_bay_cap_key:text,
+        byl_carr_cdlevel01_0:text,
+        byl_carr_cd_key:text,
+        byl_dlr_numlevel01_0:text,
+        byl_dlr_num_key:text,
+        byl_excp_baylevel01_0:text,
+        byl_excp_bay_key:text,
+        byl_flt_indlevel01_0:text,
+        byl_flt_ind_key:text,
+        byl_grid_numlevel01_0:text,
+        byl_grid_num_key:text,
+        byl_ln_caplevel01_0:text,
+        byl_ln_cap_key:text,
+        byl_ln_numlevel01_0:text,
+        byl_ln_num_key:text,
+        byl_lot_numlevel01_0:text,
+        byl_lot_num_key:text,
+        byl_max_unitlevel01_0:text,
+        byl_max_unit_key:text,
+        byl_rgn_cdlevel01_0:text,
+        byl_rgn_cd_key:text,
+        byl_typelevel01_0:text,
+        byl_type_key:text,
+        byl_unitlevel01_0:text,
+        byl_unit_key:text,
+        byl_usgelevel01_0:text,
+        byl_usge_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle master'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_baylin(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD baylin_cre_by_idlevel01_0 (any) OPT ANY
+             ADD baylin_cre_by_id_key (any) OPT ANY
+             ADD baylin_cre_tslevel01_0 (any) OPT ANY
+             ADD baylin_cre_ts_key (any) OPT ANY
+             ADD baylin_upd_by_idlevel01_0 (any) OPT ANY
+             ADD baylin_upd_by_id_key (any) OPT ANY
+             ADD baylin_upd_tslevel01_0 (any) OPT ANY
+             ADD baylin_upd_ts_key (any) OPT ANY
+             ADD byl_asgn_carrlevel01_0 (any) OPT ANY
+             ADD byl_asgn_carr_key (any) OPT ANY
+             ADD byl_asgn_dlrlevel01_0 (any) OPT ANY
+             ADD byl_asgn_dlr_key (any) OPT ANY
+             ADD byl_asgn_rgnlevel01_0 (any) OPT ANY
+             ADD byl_asgn_rgn_key (any) OPT ANY
+             ADD byl_auto_loadlevel01_0 (any) OPT ANY
+             ADD byl_auto_load_key (any) OPT ANY
+             ADD byl_bay_caplevel01_0 (any) OPT ANY
+             ADD byl_bay_cap_key (any) OPT ANY
+             ADD byl_carr_cdlevel01_0 (any) OPT ANY
+             ADD byl_carr_cd_key (any) OPT ANY
+             ADD byl_dlr_numlevel01_0 (any) OPT ANY
+             ADD byl_dlr_num_key (any) OPT ANY
+             ADD byl_excp_baylevel01_0 (any) OPT ANY
+             ADD byl_excp_bay_key (any) OPT ANY
+             ADD byl_flt_indlevel01_0 (any) OPT ANY
+             ADD byl_flt_ind_key (any) OPT ANY
+             ADD byl_grid_numlevel01_0 (any) OPT ANY
+             ADD byl_grid_num_key (any) OPT ANY
+             ADD byl_ln_caplevel01_0 (any) OPT ANY
+             ADD byl_ln_cap_key (any) OPT ANY
+             ADD byl_ln_numlevel01_0 (any) OPT ANY
+             ADD byl_ln_num_key (any) OPT ANY
+             ADD byl_lot_numlevel01_0 (any) OPT ANY
+             ADD byl_lot_num_key (any) OPT ANY
+             ADD byl_max_unitlevel01_0 (any) OPT ANY
+             ADD byl_max_unit_key (any) OPT ANY
+             ADD byl_rgn_cdlevel01_0 (any) OPT ANY
+             ADD byl_rgn_cd_key (any) OPT ANY
+             ADD byl_typelevel01_0 (any) OPT ANY
+             ADD byl_type_key (any) OPT ANY
+             ADD byl_unitlevel01_0 (any) OPT ANY
+             ADD byl_unit_key (any) OPT ANY
+             ADD byl_usgelevel01_0 (any) OPT ANY
+             ADD byl_usge_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (baylin_cre_by_id_key, baylin_cre_by_idlevel01_0, baylin_cre_ts_key, baylin_cre_tslevel01_0, baylin_upd_by_id_key, baylin_upd_by_idlevel01_0, baylin_upd_ts_key, baylin_upd_tslevel01_0, byl_asgn_carr_key, byl_asgn_carrlevel01_0, byl_asgn_dlr_key, byl_asgn_dlrlevel01_0, byl_asgn_rgn_key, byl_asgn_rgnlevel01_0, byl_auto_load_key, byl_auto_loadlevel01_0, byl_bay_cap_key, byl_bay_caplevel01_0, byl_carr_cd_key, byl_carr_cdlevel01_0, byl_dlr_num_key, byl_dlr_numlevel01_0, byl_excp_bay_key, byl_excp_baylevel01_0, byl_flt_ind_key, byl_flt_indlevel01_0, byl_grid_num_key, byl_grid_numlevel01_0, byl_ln_cap_key, byl_ln_caplevel01_0, byl_ln_num_key, byl_ln_numlevel01_0, byl_lot_num_key, byl_lot_numlevel01_0, byl_max_unit_key, byl_max_unitlevel01_0, byl_rgn_cd_key, byl_rgn_cdlevel01_0, byl_type_key, byl_typelevel01_0, byl_unit_key, byl_unitlevel01_0, byl_usge_key, byl_usgelevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_baylin)
+    );
+

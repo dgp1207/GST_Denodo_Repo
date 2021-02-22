@@ -1,0 +1,88 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_gendfc
+    FOLDER = '/02 - base views/sap bw4hana/mf history/misc'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENDFC'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_GENDFC-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENDFC-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_by_id_key = '[4ZCP_GENDFC-CRE_BY_ID].[24ZCP_GENDFC-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENDFC-CRE_BY_ID]' ATTRIBUTE,
+        cre_tslevel01_0 = '[4ZCP_GENDFC-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENDFC-CRE_TS]' LEVELPOSITION=1,
+        cre_ts_key = '[4ZCP_GENDFC-CRE_TS].[24ZCP_GENDFC-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENDFC-CRE_TS]' ATTRIBUTE,
+        dfc_cdlevel01_0 = '[4ZCP_GENDFC-DFC_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-DFC_CD]' DIMENSIONNAME = '[4ZCP_GENDFC-DFC_CD]' LEVELPOSITION=1,
+        dfc_cd_key = '[4ZCP_GENDFC-DFC_CD].[24ZCP_GENDFC-DFC_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-DFC_CD]' DIMENSIONNAME = '[4ZCP_GENDFC-DFC_CD]' ATTRIBUTE,
+        dfc_mdl_yrlevel01_0 = '[4ZCP_GENDFC-DFC_MDL_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-DFC_MDL_YR]' DIMENSIONNAME = '[4ZCP_GENDFC-DFC_MDL_YR]' LEVELPOSITION=1,
+        dfc_mdl_yr_key = '[4ZCP_GENDFC-DFC_MDL_YR].[24ZCP_GENDFC-DFC_MDL_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-DFC_MDL_YR]' DIMENSIONNAME = '[4ZCP_GENDFC-DFC_MDL_YR]' ATTRIBUTE,
+        gendfc_key_filler01level01_0 = '[4ZCP_GENDFC-GENDFC_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-GENDFC_KEY_F]' DIMENSIONNAME = '[4ZCP_GENDFC-GENDFC_KEY_F]' LEVELPOSITION=1,
+        gendfc_key_filler01_key = '[4ZCP_GENDFC-GENDFC_KEY_F].[24ZCP_GENDFC-GENDFC_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-GENDFC_KEY_F]' DIMENSIONNAME = '[4ZCP_GENDFC-GENDFC_KEY_F]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        upd_by_idlevel01_0 = '[4ZCP_GENDFC-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENDFC-UPD_BY_ID]' LEVELPOSITION=1,
+        upd_by_id_key = '[4ZCP_GENDFC-UPD_BY_ID].[24ZCP_GENDFC-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENDFC-UPD_BY_ID]' ATTRIBUTE,
+        upd_tslevel01_0 = '[4ZCP_GENDFC-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENDFC-UPD_TS]' LEVELPOSITION=1,
+        upd_ts_key = '[4ZCP_GENDFC-UPD_TS].[24ZCP_GENDFC-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDFC-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENDFC-UPD_TS]' ATTRIBUTE,
+        array_index = '[Measures].[4ZCP_GENDFC-ARRAY_INDEX]' : 'java.lang.Double' (OPT) MEASURE,
+        dfc_amt = '[Measures].[4ZCP_GENDFC-DFC_AMT]' : 'java.lang.Double' (OPT) MEASURE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_gendfc I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_by_id_key:text,
+        cre_tslevel01_0:text,
+        cre_ts_key:text,
+        dfc_cdlevel01_0:text,
+        dfc_cd_key:text,
+        dfc_mdl_yrlevel01_0:text,
+        dfc_mdl_yr_key:text,
+        gendfc_key_filler01level01_0:text,
+        gendfc_key_filler01_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        upd_by_idlevel01_0:text,
+        upd_by_id_key:text,
+        upd_tslevel01_0:text,
+        upd_ts_key:text,
+        array_index:double,
+        dfc_amt:double,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/misc'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_gendfc(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_by_id_key (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD cre_ts_key (any) OPT ANY
+             ADD dfc_cdlevel01_0 (any) OPT ANY
+             ADD dfc_cd_key (any) OPT ANY
+             ADD dfc_mdl_yrlevel01_0 (any) OPT ANY
+             ADD dfc_mdl_yr_key (any) OPT ANY
+             ADD gendfc_key_filler01level01_0 (any) OPT ANY
+             ADD gendfc_key_filler01_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD upd_by_idlevel01_0 (any) OPT ANY
+             ADD upd_by_id_key (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD upd_ts_key (any) OPT ANY
+             ADD array_index (any) OPT ANY
+             ADD dfc_amt (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (array_index, cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, dfc_amt, dfc_cd_key, dfc_cdlevel01_0, dfc_mdl_yr_key, dfc_mdl_yrlevel01_0, gendfc_key_filler01_key, gendfc_key_filler01level01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, upd_by_id_key, upd_by_idlevel01_0, upd_ts_key, upd_tslevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_gendfc)
+    );
+

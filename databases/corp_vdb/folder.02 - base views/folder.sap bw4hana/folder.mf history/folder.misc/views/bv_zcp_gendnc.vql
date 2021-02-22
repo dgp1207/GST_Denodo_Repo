@@ -1,0 +1,97 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_gendnc
+    FOLDER = '/02 - base views/sap bw4hana/mf history/misc'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENDNC'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_GENDNC-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENDNC-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_by_id_key = '[4ZCP_GENDNC-CRE_BY_ID].[24ZCP_GENDNC-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENDNC-CRE_BY_ID]' ATTRIBUTE,
+        cre_tslevel01_0 = '[4ZCP_GENDNC-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENDNC-CRE_TS]' LEVELPOSITION=1,
+        cre_ts_key = '[4ZCP_GENDNC-CRE_TS].[24ZCP_GENDNC-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENDNC-CRE_TS]' ATTRIBUTE,
+        dnc_mdllevel01_0 = '[4ZCP_GENDNC-DNC_MDL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-DNC_MDL]' DIMENSIONNAME = '[4ZCP_GENDNC-DNC_MDL]' LEVELPOSITION=1,
+        dnc_mdl_key = '[4ZCP_GENDNC-DNC_MDL].[24ZCP_GENDNC-DNC_MDL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-DNC_MDL]' DIMENSIONNAME = '[4ZCP_GENDNC-DNC_MDL]' ATTRIBUTE,
+        dnc_mdl_yrlevel01_0 = '[4ZCP_GENDNC-DNC_MDL_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-DNC_MDL_YR]' DIMENSIONNAME = '[4ZCP_GENDNC-DNC_MDL_YR]' LEVELPOSITION=1,
+        dnc_mdl_yr_key = '[4ZCP_GENDNC-DNC_MDL_YR].[24ZCP_GENDNC-DNC_MDL_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-DNC_MDL_YR]' DIMENSIONNAME = '[4ZCP_GENDNC-DNC_MDL_YR]' ATTRIBUTE,
+        dnc_sers_cdlevel01_0 = '[4ZCP_GENDNC-DNC_SERS_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-DNC_SERS_CD]' DIMENSIONNAME = '[4ZCP_GENDNC-DNC_SERS_CD]' LEVELPOSITION=1,
+        dnc_sers_cd_key = '[4ZCP_GENDNC-DNC_SERS_CD].[24ZCP_GENDNC-DNC_SERS_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-DNC_SERS_CD]' DIMENSIONNAME = '[4ZCP_GENDNC-DNC_SERS_CD]' ATTRIBUTE,
+        dnc_sers_namelevel01_0 = '[4ZCP_GENDNC-DNC_SERS_NAM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-DNC_SERS_NAM]' DIMENSIONNAME = '[4ZCP_GENDNC-DNC_SERS_NAM]' LEVELPOSITION=1,
+        dnc_sers_name_key = '[4ZCP_GENDNC-DNC_SERS_NAM].[24ZCP_GENDNC-DNC_SERS_NAM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-DNC_SERS_NAM]' DIMENSIONNAME = '[4ZCP_GENDNC-DNC_SERS_NAM]' ATTRIBUTE,
+        gendnc_key_filler01level01_0 = '[4ZCP_GENDNC-GENDNC_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-GENDNC_KEY_F]' DIMENSIONNAME = '[4ZCP_GENDNC-GENDNC_KEY_F]' LEVELPOSITION=1,
+        gendnc_key_filler01_key = '[4ZCP_GENDNC-GENDNC_KEY_F].[24ZCP_GENDNC-GENDNC_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-GENDNC_KEY_F]' DIMENSIONNAME = '[4ZCP_GENDNC-GENDNC_KEY_F]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        upd_by_idlevel01_0 = '[4ZCP_GENDNC-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENDNC-UPD_BY_ID]' LEVELPOSITION=1,
+        upd_by_id_key = '[4ZCP_GENDNC-UPD_BY_ID].[24ZCP_GENDNC-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENDNC-UPD_BY_ID]' ATTRIBUTE,
+        upd_tslevel01_0 = '[4ZCP_GENDNC-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENDNC-UPD_TS]' LEVELPOSITION=1,
+        upd_ts_key = '[4ZCP_GENDNC-UPD_TS].[24ZCP_GENDNC-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENDNC-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENDNC-UPD_TS]' ATTRIBUTE,
+        dnc_seq = '[Measures].[4ZCP_GENDNC-DNC_SEQ]' : 'java.lang.Double' (OPT) MEASURE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_gendnc I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_by_id_key:text,
+        cre_tslevel01_0:text,
+        cre_ts_key:text,
+        dnc_mdllevel01_0:text,
+        dnc_mdl_key:text,
+        dnc_mdl_yrlevel01_0:text,
+        dnc_mdl_yr_key:text,
+        dnc_sers_cdlevel01_0:text,
+        dnc_sers_cd_key:text,
+        dnc_sers_namelevel01_0:text,
+        dnc_sers_name_key:text,
+        gendnc_key_filler01level01_0:text,
+        gendnc_key_filler01_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        upd_by_idlevel01_0:text,
+        upd_by_id_key:text,
+        upd_tslevel01_0:text,
+        upd_ts_key:text,
+        dnc_seq:double,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/misc'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_gendnc(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_by_id_key (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD cre_ts_key (any) OPT ANY
+             ADD dnc_mdllevel01_0 (any) OPT ANY
+             ADD dnc_mdl_key (any) OPT ANY
+             ADD dnc_mdl_yrlevel01_0 (any) OPT ANY
+             ADD dnc_mdl_yr_key (any) OPT ANY
+             ADD dnc_sers_cdlevel01_0 (any) OPT ANY
+             ADD dnc_sers_cd_key (any) OPT ANY
+             ADD dnc_sers_namelevel01_0 (any) OPT ANY
+             ADD dnc_sers_name_key (any) OPT ANY
+             ADD gendnc_key_filler01level01_0 (any) OPT ANY
+             ADD gendnc_key_filler01_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD upd_by_idlevel01_0 (any) OPT ANY
+             ADD upd_by_id_key (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD upd_ts_key (any) OPT ANY
+             ADD dnc_seq (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, dnc_mdl_key, dnc_mdl_yr_key, dnc_mdl_yrlevel01_0, dnc_mdllevel01_0, dnc_seq, dnc_sers_cd_key, dnc_sers_cdlevel01_0, dnc_sers_name_key, dnc_sers_namelevel01_0, gendnc_key_filler01_key, gendnc_key_filler01level01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, upd_by_id_key, upd_by_idlevel01_0, upd_ts_key, upd_tslevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_gendnc)
+    );
+

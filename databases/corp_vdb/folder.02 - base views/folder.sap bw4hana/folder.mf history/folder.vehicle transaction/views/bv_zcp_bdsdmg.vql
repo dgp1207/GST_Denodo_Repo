@@ -1,0 +1,94 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_bdsdmg
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_BDSDMG'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        bdsdmg_cre_by_idlevel01_0 = '[4ZCP_BDSDMG-BDSDMG_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-BDSDMG_CRE_B]' DIMENSIONNAME = '[4ZCP_BDSDMG-BDSDMG_CRE_B]' LEVELPOSITION=1,
+        bdsdmg_cre_by_id_key = '[4ZCP_BDSDMG-BDSDMG_CRE_B].[24ZCP_BDSDMG-BDSDMG_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-BDSDMG_CRE_B]' DIMENSIONNAME = '[4ZCP_BDSDMG-BDSDMG_CRE_B]' ATTRIBUTE,
+        bdsdmg_cre_tslevel01_0 = '[4ZCP_BDSDMG-BDSDMG_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-BDSDMG_CRE_T]' DIMENSIONNAME = '[4ZCP_BDSDMG-BDSDMG_CRE_T]' LEVELPOSITION=1,
+        bdsdmg_cre_ts_key = '[4ZCP_BDSDMG-BDSDMG_CRE_T].[24ZCP_BDSDMG-BDSDMG_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-BDSDMG_CRE_T]' DIMENSIONNAME = '[4ZCP_BDSDMG-BDSDMG_CRE_T]' ATTRIBUTE,
+        bdsdmg_upd_by_idlevel01_0 = '[4ZCP_BDSDMG-BDSDMG_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-BDSDMG_UPD_B]' DIMENSIONNAME = '[4ZCP_BDSDMG-BDSDMG_UPD_B]' LEVELPOSITION=1,
+        bdsdmg_upd_by_id_key = '[4ZCP_BDSDMG-BDSDMG_UPD_B].[24ZCP_BDSDMG-BDSDMG_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-BDSDMG_UPD_B]' DIMENSIONNAME = '[4ZCP_BDSDMG-BDSDMG_UPD_B]' ATTRIBUTE,
+        bdsdmg_upd_tslevel01_0 = '[4ZCP_BDSDMG-BDSDMG_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-BDSDMG_UPD_T]' DIMENSIONNAME = '[4ZCP_BDSDMG-BDSDMG_UPD_T]' LEVELPOSITION=1,
+        bdsdmg_upd_ts_key = '[4ZCP_BDSDMG-BDSDMG_UPD_T].[24ZCP_BDSDMG-BDSDMG_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-BDSDMG_UPD_T]' DIMENSIONNAME = '[4ZCP_BDSDMG-BDSDMG_UPD_T]' ATTRIBUTE,
+        dmg_bds_uniq_numlevel01_0 = '[4ZCP_BDSDMG-DMG_BDS_UNIQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-DMG_BDS_UNIQ]' DIMENSIONNAME = '[4ZCP_BDSDMG-DMG_BDS_UNIQ]' LEVELPOSITION=1,
+        dmg_bds_uniq_num_key = '[4ZCP_BDSDMG-DMG_BDS_UNIQ].[24ZCP_BDSDMG-DMG_BDS_UNIQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-DMG_BDS_UNIQ]' DIMENSIONNAME = '[4ZCP_BDSDMG-DMG_BDS_UNIQ]' ATTRIBUTE,
+        dmg_cmtlevel01_0 = '[4ZCP_BDSDMG-DMG_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-DMG_CMT]' DIMENSIONNAME = '[4ZCP_BDSDMG-DMG_CMT]' LEVELPOSITION=1,
+        dmg_cmt_key = '[4ZCP_BDSDMG-DMG_CMT].[24ZCP_BDSDMG-DMG_CMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-DMG_CMT]' DIMENSIONNAME = '[4ZCP_BDSDMG-DMG_CMT]' ATTRIBUTE,
+        dmg_dmg_cdlevel01_0 = '[4ZCP_BDSDMG-DMG_DMG_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-DMG_DMG_CD]' DIMENSIONNAME = '[4ZCP_BDSDMG-DMG_DMG_CD]' LEVELPOSITION=1,
+        dmg_dmg_cd_key = '[4ZCP_BDSDMG-DMG_DMG_CD].[24ZCP_BDSDMG-DMG_DMG_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-DMG_DMG_CD]' DIMENSIONNAME = '[4ZCP_BDSDMG-DMG_DMG_CD]' ATTRIBUTE,
+        dmg_rpr_loc_cdlevel01_0 = '[4ZCP_BDSDMG-DMG_RPR_LOC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-DMG_RPR_LOC]' DIMENSIONNAME = '[4ZCP_BDSDMG-DMG_RPR_LOC]' LEVELPOSITION=1,
+        dmg_rpr_loc_cd_key = '[4ZCP_BDSDMG-DMG_RPR_LOC].[24ZCP_BDSDMG-DMG_RPR_LOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-DMG_RPR_LOC]' DIMENSIONNAME = '[4ZCP_BDSDMG-DMG_RPR_LOC]' ATTRIBUTE,
+        dmg_vinlevel01_0 = '[4ZCP_BDSDMG-DMG_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-DMG_VIN]' DIMENSIONNAME = '[4ZCP_BDSDMG-DMG_VIN]' LEVELPOSITION=1,
+        dmg_vin_key = '[4ZCP_BDSDMG-DMG_VIN].[24ZCP_BDSDMG-DMG_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BDSDMG-DMG_VIN]' DIMENSIONNAME = '[4ZCP_BDSDMG-DMG_VIN]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_bdsdmg I18N us_cst (
+        bdsdmg_cre_by_idlevel01_0:text,
+        bdsdmg_cre_by_id_key:text,
+        bdsdmg_cre_tslevel01_0:text,
+        bdsdmg_cre_ts_key:text,
+        bdsdmg_upd_by_idlevel01_0:text,
+        bdsdmg_upd_by_id_key:text,
+        bdsdmg_upd_tslevel01_0:text,
+        bdsdmg_upd_ts_key:text,
+        dmg_bds_uniq_numlevel01_0:text,
+        dmg_bds_uniq_num_key:text,
+        dmg_cmtlevel01_0:text,
+        dmg_cmt_key:text,
+        dmg_dmg_cdlevel01_0:text,
+        dmg_dmg_cd_key:text,
+        dmg_rpr_loc_cdlevel01_0:text,
+        dmg_rpr_loc_cd_key:text,
+        dmg_vinlevel01_0:text,
+        dmg_vin_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_bdsdmg(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD bdsdmg_cre_by_idlevel01_0 (any) OPT ANY
+             ADD bdsdmg_cre_by_id_key (any) OPT ANY
+             ADD bdsdmg_cre_tslevel01_0 (any) OPT ANY
+             ADD bdsdmg_cre_ts_key (any) OPT ANY
+             ADD bdsdmg_upd_by_idlevel01_0 (any) OPT ANY
+             ADD bdsdmg_upd_by_id_key (any) OPT ANY
+             ADD bdsdmg_upd_tslevel01_0 (any) OPT ANY
+             ADD bdsdmg_upd_ts_key (any) OPT ANY
+             ADD dmg_bds_uniq_numlevel01_0 (any) OPT ANY
+             ADD dmg_bds_uniq_num_key (any) OPT ANY
+             ADD dmg_cmtlevel01_0 (any) OPT ANY
+             ADD dmg_cmt_key (any) OPT ANY
+             ADD dmg_dmg_cdlevel01_0 (any) OPT ANY
+             ADD dmg_dmg_cd_key (any) OPT ANY
+             ADD dmg_rpr_loc_cdlevel01_0 (any) OPT ANY
+             ADD dmg_rpr_loc_cd_key (any) OPT ANY
+             ADD dmg_vinlevel01_0 (any) OPT ANY
+             ADD dmg_vin_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (bdsdmg_cre_by_id_key, bdsdmg_cre_by_idlevel01_0, bdsdmg_cre_ts_key, bdsdmg_cre_tslevel01_0, bdsdmg_upd_by_id_key, bdsdmg_upd_by_idlevel01_0, bdsdmg_upd_ts_key, bdsdmg_upd_tslevel01_0, dmg_bds_uniq_num_key, dmg_bds_uniq_numlevel01_0, dmg_cmt_key, dmg_cmtlevel01_0, dmg_dmg_cd_key, dmg_dmg_cdlevel01_0, dmg_rpr_loc_cd_key, dmg_rpr_loc_cdlevel01_0, dmg_vin_key, dmg_vinlevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_bdsdmg)
+    );
+

@@ -1,0 +1,172 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_dlrinv
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_DLRINV'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        opi_archive_cdlevel01_0 = '[4ZCP_DLRINV-OPI_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_ARCHIVE]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_ARCHIVE]' LEVELPOSITION=1,
+        opi_archive_cd_key = '[4ZCP_DLRINV-OPI_ARCHIVE].[24ZCP_DLRINV-OPI_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_ARCHIVE]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_ARCHIVE]' ATTRIBUTE,
+        opi_best_reord_point_qtylevel01_0 = '[4ZCP_DLRINV-IA3AUB2JJQAD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-IA3AUB2JJQAD]' DIMENSIONNAME = '[4ZCP_DLRINV-IA3AUB2JJQAD]' LEVELPOSITION=1,
+        opi_best_reord_point_qty_key = '[4ZCP_DLRINV-IA3AUB2JJQAD].[24ZCP_DLRINV-IA3AUB2JJQAD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-IA3AUB2JJQAD]' DIMENSIONNAME = '[4ZCP_DLRINV-IA3AUB2JJQAD]' ATTRIBUTE,
+        opi_best_stk_lvl_qtylevel01_0 = '[4ZCP_DLRINV-OPI_BEST_STK].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_BEST_STK]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_BEST_STK]' LEVELPOSITION=1,
+        opi_best_stk_lvl_qty_key = '[4ZCP_DLRINV-OPI_BEST_STK].[24ZCP_DLRINV-OPI_BEST_STK]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_BEST_STK]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_BEST_STK]' ATTRIBUTE,
+        opi_cre_by_idlevel01_0 = '[4ZCP_DLRINV-OPI_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_CRE_BY_I]' LEVELPOSITION=1,
+        opi_cre_by_id_key = '[4ZCP_DLRINV-OPI_CRE_BY_I].[24ZCP_DLRINV-OPI_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_CRE_BY_I]' ATTRIBUTE,
+        opi_cre_tslevel01_0 = '[4ZCP_DLRINV-OPI_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_CRE_TS]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_CRE_TS]' LEVELPOSITION=1,
+        opi_cre_ts_key = '[4ZCP_DLRINV-OPI_CRE_TS].[24ZCP_DLRINV-OPI_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_CRE_TS]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_CRE_TS]' ATTRIBUTE,
+        opi_dmi_part_nolevel01_0 = '[4ZCP_DLRINV-OPI_DMI_PART].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_DMI_PART]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_DMI_PART]' LEVELPOSITION=1,
+        opi_dmi_part_no_key = '[4ZCP_DLRINV-OPI_DMI_PART].[24ZCP_DLRINV-OPI_DMI_PART]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_DMI_PART]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_DMI_PART]' ATTRIBUTE,
+        opi_dmi_part_stk_stat_snlevel01_0 = '[4ZCP_DLRINV-H7UV2CPMX7GK].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-H7UV2CPMX7GK]' DIMENSIONNAME = '[4ZCP_DLRINV-H7UV2CPMX7GK]' LEVELPOSITION=1,
+        opi_dmi_part_stk_stat_sn_key = '[4ZCP_DLRINV-H7UV2CPMX7GK].[24ZCP_DLRINV-H7UV2CPMX7GK]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-H7UV2CPMX7GK]' DIMENSIONNAME = '[4ZCP_DLRINV-H7UV2CPMX7GK]' ATTRIBUTE,
+        opi_dms_part_delevel01_0 = '[4ZCP_DLRINV-OPI_DMS_PART].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_DMS_PART]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_DMS_PART]' LEVELPOSITION=1,
+        opi_dms_part_de_key = '[4ZCP_DLRINV-OPI_DMS_PART].[24ZCP_DLRINV-OPI_DMS_PART]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_DMS_PART]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_DMS_PART]' ATTRIBUTE,
+        opi_file_dtlevel01_0 = '[4ZCP_DLRINV-OPI_FILE_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_FILE_DT]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_FILE_DT]' LEVELPOSITION=1,
+        opi_file_dt_key = '[4ZCP_DLRINV-OPI_FILE_DT].[24ZCP_DLRINV-OPI_FILE_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_FILE_DT]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_FILE_DT]' ATTRIBUTE,
+        opi_inv_dtlevel01_0 = '[4ZCP_DLRINV-OPI_INV_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_INV_DT]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_INV_DT]' LEVELPOSITION=1,
+        opi_inv_dt_key = '[4ZCP_DLRINV-OPI_INV_DT].[24ZCP_DLRINV-OPI_INV_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_INV_DT]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_INV_DT]' ATTRIBUTE,
+        opi_mo_no_sale_qtylevel01_0 = '[4ZCP_DLRINV-OPI_MO_NO_SA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_MO_NO_SA]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_MO_NO_SA]' LEVELPOSITION=1,
+        opi_mo_no_sale_qty_key = '[4ZCP_DLRINV-OPI_MO_NO_SA].[24ZCP_DLRINV-OPI_MO_NO_SA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_MO_NO_SA]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_MO_NO_SA]' ATTRIBUTE,
+        opi_mtd_lost_sls_qtylevel01_0 = '[4ZCP_DLRINV-OPI_MTD_LOST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_MTD_LOST]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_MTD_LOST]' LEVELPOSITION=1,
+        opi_mtd_lost_sls_qty_key = '[4ZCP_DLRINV-OPI_MTD_LOST].[24ZCP_DLRINV-OPI_MTD_LOST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_MTD_LOST]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_MTD_LOST]' ATTRIBUTE,
+        opi_mtd_qtylevel01_0 = '[4ZCP_DLRINV-OPI_MTD_QTY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_MTD_QTY]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_MTD_QTY]' LEVELPOSITION=1,
+        opi_mtd_qty_key = '[4ZCP_DLRINV-OPI_MTD_QTY].[24ZCP_DLRINV-OPI_MTD_QTY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_MTD_QTY]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_MTD_QTY]' ATTRIBUTE,
+        opi_on_hand_qtylevel01_0 = '[4ZCP_DLRINV-OPI_ON_HAND].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_ON_HAND]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_ON_HAND]' LEVELPOSITION=1,
+        opi_on_hand_qty_key = '[4ZCP_DLRINV-OPI_ON_HAND].[24ZCP_DLRINV-OPI_ON_HAND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_ON_HAND]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_ON_HAND]' ATTRIBUTE,
+        opi_opn_ord_qtylevel01_0 = '[4ZCP_DLRINV-OPI_OPN_ORD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_OPN_ORD]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_OPN_ORD]' LEVELPOSITION=1,
+        opi_opn_ord_qty_key = '[4ZCP_DLRINV-OPI_OPN_ORD].[24ZCP_DLRINV-OPI_OPN_ORD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_OPN_ORD]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_OPN_ORD]' ATTRIBUTE,
+        opi_part_cre_dtlevel01_0 = '[4ZCP_DLRINV-OPI_PART_CRE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_PART_CRE]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_PART_CRE]' LEVELPOSITION=1,
+        opi_part_cre_dt_key = '[4ZCP_DLRINV-OPI_PART_CRE].[24ZCP_DLRINV-OPI_PART_CRE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_PART_CRE]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_PART_CRE]' ATTRIBUTE,
+        opi_part_last_rcv_dtlevel01_0 = '[4ZCP_DLRINV-OPI_PART_LAS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_PART_LAS]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_PART_LAS]' LEVELPOSITION=1,
+        opi_part_last_rcv_dt_key = '[4ZCP_DLRINV-OPI_PART_LAS].[24ZCP_DLRINV-OPI_PART_LAS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_PART_LAS]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_PART_LAS]' ATTRIBUTE,
+        opi_part_last_sold_dtlevel01_0 = '[4ZCP_DLRINV-MA8T5UEBFX4B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-MA8T5UEBFX4B]' DIMENSIONNAME = '[4ZCP_DLRINV-MA8T5UEBFX4B]' LEVELPOSITION=1,
+        opi_part_last_sold_dt_key = '[4ZCP_DLRINV-MA8T5UEBFX4B].[24ZCP_DLRINV-MA8T5UEBFX4B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-MA8T5UEBFX4B]' DIMENSIONNAME = '[4ZCP_DLRINV-MA8T5UEBFX4B]' ATTRIBUTE,
+        opi_part_prod_snlevel01_0 = '[4ZCP_DLRINV-OPI_PART_PRO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_PART_PRO]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_PART_PRO]' LEVELPOSITION=1,
+        opi_part_prod_sn_key = '[4ZCP_DLRINV-OPI_PART_PRO].[24ZCP_DLRINV-OPI_PART_PRO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_PART_PRO]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_PART_PRO]' ATTRIBUTE,
+        opi_rolng_yr_qtylevel01_0 = '[4ZCP_DLRINV-OPI_ROLNG_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_ROLNG_YR]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_ROLNG_YR]' LEVELPOSITION=1,
+        opi_rolng_yr_qty_key = '[4ZCP_DLRINV-OPI_ROLNG_YR].[24ZCP_DLRINV-OPI_ROLNG_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_ROLNG_YR]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_ROLNG_YR]' ATTRIBUTE,
+        opi_upd_by_idlevel01_0 = '[4ZCP_DLRINV-OPI_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_UPD_BY_I]' LEVELPOSITION=1,
+        opi_upd_by_id_key = '[4ZCP_DLRINV-OPI_UPD_BY_I].[24ZCP_DLRINV-OPI_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_UPD_BY_I]' ATTRIBUTE,
+        opi_upd_tslevel01_0 = '[4ZCP_DLRINV-OPI_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_UPD_TS]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_UPD_TS]' LEVELPOSITION=1,
+        opi_upd_ts_key = '[4ZCP_DLRINV-OPI_UPD_TS].[24ZCP_DLRINV-OPI_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DLRINV-OPI_UPD_TS]' DIMENSIONNAME = '[4ZCP_DLRINV-OPI_UPD_TS]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_dlrinv I18N us_cst (
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        opi_archive_cdlevel01_0:text,
+        opi_archive_cd_key:text,
+        opi_best_reord_point_qtylevel01_0:text,
+        opi_best_reord_point_qty_key:text,
+        opi_best_stk_lvl_qtylevel01_0:text,
+        opi_best_stk_lvl_qty_key:text,
+        opi_cre_by_idlevel01_0:text,
+        opi_cre_by_id_key:text,
+        opi_cre_tslevel01_0:text,
+        opi_cre_ts_key:text,
+        opi_dmi_part_nolevel01_0:text,
+        opi_dmi_part_no_key:text,
+        opi_dmi_part_stk_stat_snlevel01_0:text,
+        opi_dmi_part_stk_stat_sn_key:text,
+        opi_dms_part_delevel01_0:text,
+        opi_dms_part_de_key:text,
+        opi_file_dtlevel01_0:text,
+        opi_file_dt_key:text,
+        opi_inv_dtlevel01_0:text,
+        opi_inv_dt_key:text,
+        opi_mo_no_sale_qtylevel01_0:text,
+        opi_mo_no_sale_qty_key:text,
+        opi_mtd_lost_sls_qtylevel01_0:text,
+        opi_mtd_lost_sls_qty_key:text,
+        opi_mtd_qtylevel01_0:text,
+        opi_mtd_qty_key:text,
+        opi_on_hand_qtylevel01_0:text,
+        opi_on_hand_qty_key:text,
+        opi_opn_ord_qtylevel01_0:text,
+        opi_opn_ord_qty_key:text,
+        opi_part_cre_dtlevel01_0:text,
+        opi_part_cre_dt_key:text,
+        opi_part_last_rcv_dtlevel01_0:text,
+        opi_part_last_rcv_dt_key:text,
+        opi_part_last_sold_dtlevel01_0:text,
+        opi_part_last_sold_dt_key:text,
+        opi_part_prod_snlevel01_0:text,
+        opi_part_prod_sn_key:text,
+        opi_rolng_yr_qtylevel01_0:text,
+        opi_rolng_yr_qty_key:text,
+        opi_upd_by_idlevel01_0:text,
+        opi_upd_by_id_key:text,
+        opi_upd_tslevel01_0:text,
+        opi_upd_ts_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_dlrinv(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD opi_archive_cdlevel01_0 (any) OPT ANY
+             ADD opi_archive_cd_key (any) OPT ANY
+             ADD opi_best_reord_point_qtylevel01_0 (any) OPT ANY
+             ADD opi_best_reord_point_qty_key (any) OPT ANY
+             ADD opi_best_stk_lvl_qtylevel01_0 (any) OPT ANY
+             ADD opi_best_stk_lvl_qty_key (any) OPT ANY
+             ADD opi_cre_by_idlevel01_0 (any) OPT ANY
+             ADD opi_cre_by_id_key (any) OPT ANY
+             ADD opi_cre_tslevel01_0 (any) OPT ANY
+             ADD opi_cre_ts_key (any) OPT ANY
+             ADD opi_dmi_part_nolevel01_0 (any) OPT ANY
+             ADD opi_dmi_part_no_key (any) OPT ANY
+             ADD opi_dmi_part_stk_stat_snlevel01_0 (any) OPT ANY
+             ADD opi_dmi_part_stk_stat_sn_key (any) OPT ANY
+             ADD opi_dms_part_delevel01_0 (any) OPT ANY
+             ADD opi_dms_part_de_key (any) OPT ANY
+             ADD opi_file_dtlevel01_0 (any) OPT ANY
+             ADD opi_file_dt_key (any) OPT ANY
+             ADD opi_inv_dtlevel01_0 (any) OPT ANY
+             ADD opi_inv_dt_key (any) OPT ANY
+             ADD opi_mo_no_sale_qtylevel01_0 (any) OPT ANY
+             ADD opi_mo_no_sale_qty_key (any) OPT ANY
+             ADD opi_mtd_lost_sls_qtylevel01_0 (any) OPT ANY
+             ADD opi_mtd_lost_sls_qty_key (any) OPT ANY
+             ADD opi_mtd_qtylevel01_0 (any) OPT ANY
+             ADD opi_mtd_qty_key (any) OPT ANY
+             ADD opi_on_hand_qtylevel01_0 (any) OPT ANY
+             ADD opi_on_hand_qty_key (any) OPT ANY
+             ADD opi_opn_ord_qtylevel01_0 (any) OPT ANY
+             ADD opi_opn_ord_qty_key (any) OPT ANY
+             ADD opi_part_cre_dtlevel01_0 (any) OPT ANY
+             ADD opi_part_cre_dt_key (any) OPT ANY
+             ADD opi_part_last_rcv_dtlevel01_0 (any) OPT ANY
+             ADD opi_part_last_rcv_dt_key (any) OPT ANY
+             ADD opi_part_last_sold_dtlevel01_0 (any) OPT ANY
+             ADD opi_part_last_sold_dt_key (any) OPT ANY
+             ADD opi_part_prod_snlevel01_0 (any) OPT ANY
+             ADD opi_part_prod_sn_key (any) OPT ANY
+             ADD opi_rolng_yr_qtylevel01_0 (any) OPT ANY
+             ADD opi_rolng_yr_qty_key (any) OPT ANY
+             ADD opi_upd_by_idlevel01_0 (any) OPT ANY
+             ADD opi_upd_by_id_key (any) OPT ANY
+             ADD opi_upd_tslevel01_0 (any) OPT ANY
+             ADD opi_upd_ts_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, opi_archive_cd_key, opi_archive_cdlevel01_0, opi_best_reord_point_qty_key, opi_best_reord_point_qtylevel01_0, opi_best_stk_lvl_qty_key, opi_best_stk_lvl_qtylevel01_0, opi_cre_by_id_key, opi_cre_by_idlevel01_0, opi_cre_ts_key, opi_cre_tslevel01_0, opi_dmi_part_no_key, opi_dmi_part_nolevel01_0, opi_dmi_part_stk_stat_sn_key, opi_dmi_part_stk_stat_snlevel01_0, opi_dms_part_de_key, opi_dms_part_delevel01_0, opi_file_dt_key, opi_file_dtlevel01_0, opi_inv_dt_key, opi_inv_dtlevel01_0, opi_mo_no_sale_qty_key, opi_mo_no_sale_qtylevel01_0, opi_mtd_lost_sls_qty_key, opi_mtd_lost_sls_qtylevel01_0, opi_mtd_qty_key, opi_mtd_qtylevel01_0, opi_on_hand_qty_key, opi_on_hand_qtylevel01_0, opi_opn_ord_qty_key, opi_opn_ord_qtylevel01_0, opi_part_cre_dt_key, opi_part_cre_dtlevel01_0, opi_part_last_rcv_dt_key, opi_part_last_rcv_dtlevel01_0, opi_part_last_sold_dt_key, opi_part_last_sold_dtlevel01_0, opi_part_prod_sn_key, opi_part_prod_snlevel01_0, opi_rolng_yr_qty_key, opi_rolng_yr_qtylevel01_0, opi_upd_by_id_key, opi_upd_by_idlevel01_0, opi_upd_ts_key, opi_upd_tslevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_dlrinv)
+    );
+

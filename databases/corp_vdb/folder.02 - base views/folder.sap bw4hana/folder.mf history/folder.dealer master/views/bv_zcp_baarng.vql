@@ -1,0 +1,88 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_baarng
+    FOLDER = '/02 - base views/sap bw4hana/mf history/dealer master'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_BAARNG'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        baa_bank_acct_nolevel01_0 = '[4ZCP_BAARNG-BAA_BANK_A_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_BANK_A_1]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_BANK_A_1]' LEVELPOSITION=1,
+        baa_bank_acct_no_key = '[4ZCP_BAARNG-BAA_BANK_A_1].[24ZCP_BAARNG-BAA_BANK_A_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_BANK_A_1]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_BANK_A_1]' ATTRIBUTE,
+        baa_bank_acct_rte_nolevel01_0 = '[4ZCP_BAARNG-BAA_BANK_A_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_BANK_A_0]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_BANK_A_0]' LEVELPOSITION=1,
+        baa_bank_acct_rte_no_key = '[4ZCP_BAARNG-BAA_BANK_A_0].[24ZCP_BAARNG-BAA_BANK_A_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_BANK_A_0]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_BANK_A_0]' ATTRIBUTE,
+        baa_bank_acct_snlevel01_0 = '[4ZCP_BAARNG-BAA_BANK_ACC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_BANK_ACC]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_BANK_ACC]' LEVELPOSITION=1,
+        baa_bank_acct_sn_key = '[4ZCP_BAARNG-BAA_BANK_ACC].[24ZCP_BAARNG-BAA_BANK_ACC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_BANK_ACC]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_BANK_ACC]' ATTRIBUTE,
+        baa_bank_nmlevel01_0 = '[4ZCP_BAARNG-BAA_BANK_NM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_BANK_NM]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_BANK_NM]' LEVELPOSITION=1,
+        baa_bank_nm_key = '[4ZCP_BAARNG-BAA_BANK_NM].[24ZCP_BAARNG-BAA_BANK_NM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_BANK_NM]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_BANK_NM]' ATTRIBUTE,
+        baa_cre_by_idlevel01_0 = '[4ZCP_BAARNG-BAA_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_CRE_BY_I]' LEVELPOSITION=1,
+        baa_cre_by_id_key = '[4ZCP_BAARNG-BAA_CRE_BY_I].[24ZCP_BAARNG-BAA_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_CRE_BY_I]' ATTRIBUTE,
+        baa_cre_tslevel01_0 = '[4ZCP_BAARNG-BAA_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_CRE_TS]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_CRE_TS]' LEVELPOSITION=1,
+        baa_cre_ts_key = '[4ZCP_BAARNG-BAA_CRE_TS].[24ZCP_BAARNG-BAA_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_CRE_TS]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_CRE_TS]' ATTRIBUTE,
+        baa_upd_by_idlevel01_0 = '[4ZCP_BAARNG-BAA_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_UPD_BY_I]' LEVELPOSITION=1,
+        baa_upd_by_id_key = '[4ZCP_BAARNG-BAA_UPD_BY_I].[24ZCP_BAARNG-BAA_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_UPD_BY_I]' ATTRIBUTE,
+        baa_upd_tslevel01_0 = '[4ZCP_BAARNG-BAA_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_UPD_TS]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_UPD_TS]' LEVELPOSITION=1,
+        baa_upd_ts_key = '[4ZCP_BAARNG-BAA_UPD_TS].[24ZCP_BAARNG-BAA_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_BAARNG-BAA_UPD_TS]' DIMENSIONNAME = '[4ZCP_BAARNG-BAA_UPD_TS]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_baarng I18N us_cst (
+        baa_bank_acct_nolevel01_0:text,
+        baa_bank_acct_no_key:text,
+        baa_bank_acct_rte_nolevel01_0:text,
+        baa_bank_acct_rte_no_key:text,
+        baa_bank_acct_snlevel01_0:text,
+        baa_bank_acct_sn_key:text,
+        baa_bank_nmlevel01_0:text,
+        baa_bank_nm_key:text,
+        baa_cre_by_idlevel01_0:text,
+        baa_cre_by_id_key:text,
+        baa_cre_tslevel01_0:text,
+        baa_cre_ts_key:text,
+        baa_upd_by_idlevel01_0:text,
+        baa_upd_by_id_key:text,
+        baa_upd_tslevel01_0:text,
+        baa_upd_ts_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/dealer master'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_baarng(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD baa_bank_acct_nolevel01_0 (any) OPT ANY
+             ADD baa_bank_acct_no_key (any) OPT ANY
+             ADD baa_bank_acct_rte_nolevel01_0 (any) OPT ANY
+             ADD baa_bank_acct_rte_no_key (any) OPT ANY
+             ADD baa_bank_acct_snlevel01_0 (any) OPT ANY
+             ADD baa_bank_acct_sn_key (any) OPT ANY
+             ADD baa_bank_nmlevel01_0 (any) OPT ANY
+             ADD baa_bank_nm_key (any) OPT ANY
+             ADD baa_cre_by_idlevel01_0 (any) OPT ANY
+             ADD baa_cre_by_id_key (any) OPT ANY
+             ADD baa_cre_tslevel01_0 (any) OPT ANY
+             ADD baa_cre_ts_key (any) OPT ANY
+             ADD baa_upd_by_idlevel01_0 (any) OPT ANY
+             ADD baa_upd_by_id_key (any) OPT ANY
+             ADD baa_upd_tslevel01_0 (any) OPT ANY
+             ADD baa_upd_ts_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (baa_bank_acct_no_key, baa_bank_acct_nolevel01_0, baa_bank_acct_rte_no_key, baa_bank_acct_rte_nolevel01_0, baa_bank_acct_sn_key, baa_bank_acct_snlevel01_0, baa_bank_nm_key, baa_bank_nmlevel01_0, baa_cre_by_id_key, baa_cre_by_idlevel01_0, baa_cre_ts_key, baa_cre_tslevel01_0, baa_upd_by_id_key, baa_upd_by_idlevel01_0, baa_upd_ts_key, baa_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_baarng)
+    );
+

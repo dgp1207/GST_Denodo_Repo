@@ -1,0 +1,334 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_casdtl
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_CASDTL'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        cad_archive_inlevel01_0 = '[4ZCP_CASDTL-CAD_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_ARCHIVE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_ARCHIVE]' LEVELPOSITION=1,
+        cad_archive_in_key = '[4ZCP_CASDTL-CAD_ARCHIVE].[24ZCP_CASDTL-CAD_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_ARCHIVE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_ARCHIVE]' ATTRIBUTE,
+        cad_assort_numlevel01_0 = '[4ZCP_CASDTL-CAD_ASSORT_N].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_ASSORT_N]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_ASSORT_N]' LEVELPOSITION=1,
+        cad_assort_num_key = '[4ZCP_CASDTL-CAD_ASSORT_N].[24ZCP_CASDTL-CAD_ASSORT_N]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_ASSORT_N]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_ASSORT_N]' ATTRIBUTE,
+        cad_batch_numlevel01_0 = '[4ZCP_CASDTL-CAD_BATCH_NU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_BATCH_NU]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_BATCH_NU]' LEVELPOSITION=1,
+        cad_batch_num_key = '[4ZCP_CASDTL-CAD_BATCH_NU].[24ZCP_CASDTL-CAD_BATCH_NU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_BATCH_NU]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_BATCH_NU]' ATTRIBUTE,
+        cad_case_numlevel01_0 = '[4ZCP_CASDTL-CAD_CASE_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_CASE_NUM]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_CASE_NUM]' LEVELPOSITION=1,
+        cad_case_num_key = '[4ZCP_CASDTL-CAD_CASE_NUM].[24ZCP_CASDTL-CAD_CASE_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_CASE_NUM]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_CASE_NUM]' ATTRIBUTE,
+        cad_case_seq_numlevel01_0 = '[4ZCP_CASDTL-CAD_CASE_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_CASE_SEQ]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_CASE_SEQ]' LEVELPOSITION=1,
+        cad_case_seq_num_key = '[4ZCP_CASDTL-CAD_CASE_SEQ].[24ZCP_CASDTL-CAD_CASE_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_CASE_SEQ]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_CASE_SEQ]' ATTRIBUTE,
+        cad_cntry_of_orgnlevel01_0 = '[4ZCP_CASDTL-CAD_CNTRY_OF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_CNTRY_OF]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_CNTRY_OF]' LEVELPOSITION=1,
+        cad_cntry_of_orgn_key = '[4ZCP_CASDTL-CAD_CNTRY_OF].[24ZCP_CASDTL-CAD_CNTRY_OF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_CNTRY_OF]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_CNTRY_OF]' ATTRIBUTE,
+        cad_colorlevel01_0 = '[4ZCP_CASDTL-CAD_COLOR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_COLOR]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_COLOR]' LEVELPOSITION=1,
+        cad_color_key = '[4ZCP_CASDTL-CAD_COLOR].[24ZCP_CASDTL-CAD_COLOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_COLOR]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_COLOR]' ATTRIBUTE,
+        cad_color_sfxlevel01_0 = '[4ZCP_CASDTL-CAD_COLOR_SF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_COLOR_SF]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_COLOR_SF]' LEVELPOSITION=1,
+        cad_color_sfx_key = '[4ZCP_CASDTL-CAD_COLOR_SF].[24ZCP_CASDTL-CAD_COLOR_SF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_COLOR_SF]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_COLOR_SF]' ATTRIBUTE,
+        cad_companylevel01_0 = '[4ZCP_CASDTL-CAD_COMPANY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_COMPANY]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_COMPANY]' LEVELPOSITION=1,
+        cad_company_key = '[4ZCP_CASDTL-CAD_COMPANY].[24ZCP_CASDTL-CAD_COMPANY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_COMPANY]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_COMPANY]' ATTRIBUTE,
+        cad_create_date_tmlevel01_0 = '[4ZCP_CASDTL-CAD_CREATE_D].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_CREATE_D]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_CREATE_D]' LEVELPOSITION=1,
+        cad_create_date_tm_key = '[4ZCP_CASDTL-CAD_CREATE_D].[24ZCP_CASDTL-CAD_CREATE_D]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_CREATE_D]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_CREATE_D]' ATTRIBUTE,
+        cad_cut_numlevel01_0 = '[4ZCP_CASDTL-CAD_CUT_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_CUT_NUM]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_CUT_NUM]' LEVELPOSITION=1,
+        cad_cut_num_key = '[4ZCP_CASDTL-CAD_CUT_NUM].[24ZCP_CASDTL-CAD_CUT_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_CUT_NUM]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_CUT_NUM]' ATTRIBUTE,
+        cad_divisionlevel01_0 = '[4ZCP_CASDTL-CAD_DIVISION].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_DIVISION]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_DIVISION]' LEVELPOSITION=1,
+        cad_division_key = '[4ZCP_CASDTL-CAD_DIVISION].[24ZCP_CASDTL-CAD_DIVISION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_DIVISION]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_DIVISION]' ATTRIBUTE,
+        cad_dtl_idlevel01_0 = '[4ZCP_CASDTL-CAD_DTL_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_DTL_ID]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_DTL_ID]' LEVELPOSITION=1,
+        cad_dtl_id_key = '[4ZCP_CASDTL-CAD_DTL_ID].[24ZCP_CASDTL-CAD_DTL_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_DTL_ID]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_DTL_ID]' ATTRIBUTE,
+        cad_error_seq_numlevel01_0 = '[4ZCP_CASDTL-CAD_ERROR_SE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_ERROR_SE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_ERROR_SE]' LEVELPOSITION=1,
+        cad_error_seq_num_key = '[4ZCP_CASDTL-CAD_ERROR_SE].[24ZCP_CASDTL-CAD_ERROR_SE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_ERROR_SE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_ERROR_SE]' ATTRIBUTE,
+        cad_host_inpt_idlevel01_0 = '[4ZCP_CASDTL-CAD_HOST_INP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_HOST_INP]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_HOST_INP]' LEVELPOSITION=1,
+        cad_host_inpt_id_key = '[4ZCP_CASDTL-CAD_HOST_INP].[24ZCP_CASDTL-CAD_HOST_INP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_HOST_INP]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_HOST_INP]' ATTRIBUTE,
+        cad_invn_typelevel01_0 = '[4ZCP_CASDTL-CAD_INVN_TYP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_INVN_TYP]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_INVN_TYP]' LEVELPOSITION=1,
+        cad_invn_type_key = '[4ZCP_CASDTL-CAD_INVN_TYP].[24ZCP_CASDTL-CAD_INVN_TYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_INVN_TYP]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_INVN_TYP]' ATTRIBUTE,
+        cad_mod_date_tmlevel01_0 = '[4ZCP_CASDTL-CAD_MOD_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_MOD_DATE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_MOD_DATE]' LEVELPOSITION=1,
+        cad_mod_date_tm_key = '[4ZCP_CASDTL-CAD_MOD_DATE].[24ZCP_CASDTL-CAD_MOD_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_MOD_DATE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_MOD_DATE]' ATTRIBUTE,
+        cad_po_line_numlevel01_0 = '[4ZCP_CASDTL-CAD_PO_LINE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PO_LINE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PO_LINE]' LEVELPOSITION=1,
+        cad_po_line_num_key = '[4ZCP_CASDTL-CAD_PO_LINE].[24ZCP_CASDTL-CAD_PO_LINE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PO_LINE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PO_LINE]' ATTRIBUTE,
+        cad_po_numlevel01_0 = '[4ZCP_CASDTL-CAD_PO_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PO_NUM]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PO_NUM]' LEVELPOSITION=1,
+        cad_po_num_key = '[4ZCP_CASDTL-CAD_PO_NUM].[24ZCP_CASDTL-CAD_PO_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PO_NUM]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PO_NUM]' ATTRIBUTE,
+        cad_ppack_grp_cdlevel01_0 = '[4ZCP_CASDTL-CAD_PPACK_GR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PPACK_GR]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PPACK_GR]' LEVELPOSITION=1,
+        cad_ppack_grp_cd_key = '[4ZCP_CASDTL-CAD_PPACK_GR].[24ZCP_CASDTL-CAD_PPACK_GR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PPACK_GR]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PPACK_GR]' ATTRIBUTE,
+        cad_proc_cmt_txlevel01_0 = '[4ZCP_CASDTL-CAD_PROC_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PROC_CMT]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PROC_CMT]' LEVELPOSITION=1,
+        cad_proc_cmt_tx_key = '[4ZCP_CASDTL-CAD_PROC_CMT].[24ZCP_CASDTL-CAD_PROC_CMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PROC_CMT]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PROC_CMT]' ATTRIBUTE,
+        cad_proc_stat_cdlevel01_0 = '[4ZCP_CASDTL-CAD_PROC_STA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PROC_STA]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PROC_STA]' LEVELPOSITION=1,
+        cad_proc_stat_cd_key = '[4ZCP_CASDTL-CAD_PROC_STA].[24ZCP_CASDTL-CAD_PROC_STA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PROC_STA]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PROC_STA]' ATTRIBUTE,
+        cad_proc_tslevel01_0 = '[4ZCP_CASDTL-CAD_PROC_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PROC_TS]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PROC_TS]' LEVELPOSITION=1,
+        cad_proc_ts_key = '[4ZCP_CASDTL-CAD_PROC_TS].[24ZCP_CASDTL-CAD_PROC_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PROC_TS]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PROC_TS]' ATTRIBUTE,
+        cad_prod_statlevel01_0 = '[4ZCP_CASDTL-CAD_PROD_STA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PROD_STA]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PROD_STA]' LEVELPOSITION=1,
+        cad_prod_stat_key = '[4ZCP_CASDTL-CAD_PROD_STA].[24ZCP_CASDTL-CAD_PROD_STA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_PROD_STA]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_PROD_STA]' ATTRIBUTE,
+        cad_qualitylevel01_0 = '[4ZCP_CASDTL-CAD_QUALITY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_QUALITY]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_QUALITY]' LEVELPOSITION=1,
+        cad_quality_key = '[4ZCP_CASDTL-CAD_QUALITY].[24ZCP_CASDTL-CAD_QUALITY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_QUALITY]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_QUALITY]' ATTRIBUTE,
+        cad_redy_stat_cdlevel01_0 = '[4ZCP_CASDTL-CAD_REDY_STA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_REDY_STA]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_REDY_STA]' LEVELPOSITION=1,
+        cad_redy_stat_cd_key = '[4ZCP_CASDTL-CAD_REDY_STA].[24ZCP_CASDTL-CAD_REDY_STA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_REDY_STA]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_REDY_STA]' ATTRIBUTE,
+        cad_seasonlevel01_0 = '[4ZCP_CASDTL-CAD_SEASON].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SEASON]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SEASON]' LEVELPOSITION=1,
+        cad_season_key = '[4ZCP_CASDTL-CAD_SEASON].[24ZCP_CASDTL-CAD_SEASON]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SEASON]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SEASON]' ATTRIBUTE,
+        cad_season_yrlevel01_0 = '[4ZCP_CASDTL-CAD_SEASON_Y].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SEASON_Y]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SEASON_Y]' LEVELPOSITION=1,
+        cad_season_yr_key = '[4ZCP_CASDTL-CAD_SEASON_Y].[24ZCP_CASDTL-CAD_SEASON_Y]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SEASON_Y]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SEASON_Y]' ATTRIBUTE,
+        cad_sec_dimlevel01_0 = '[4ZCP_CASDTL-CAD_SEC_DIM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SEC_DIM]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SEC_DIM]' LEVELPOSITION=1,
+        cad_sec_dim_key = '[4ZCP_CASDTL-CAD_SEC_DIM].[24ZCP_CASDTL-CAD_SEC_DIM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SEC_DIM]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SEC_DIM]' ATTRIBUTE,
+        cad_size_desclevel01_0 = '[4ZCP_CASDTL-CAD_SIZE_DES].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SIZE_DES]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SIZE_DES]' LEVELPOSITION=1,
+        cad_size_desc_key = '[4ZCP_CASDTL-CAD_SIZE_DES].[24ZCP_CASDTL-CAD_SIZE_DES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SIZE_DES]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SIZE_DES]' ATTRIBUTE,
+        cad_size_range_cdlevel01_0 = '[4ZCP_CASDTL-CAD_SIZE_RAN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SIZE_RAN]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SIZE_RAN]' LEVELPOSITION=1,
+        cad_size_range_cd_key = '[4ZCP_CASDTL-CAD_SIZE_RAN].[24ZCP_CASDTL-CAD_SIZE_RAN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SIZE_RAN]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SIZE_RAN]' ATTRIBUTE,
+        cad_size_rel_posnlevel01_0 = '[4ZCP_CASDTL-CAD_SIZE_REL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SIZE_REL]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SIZE_REL]' LEVELPOSITION=1,
+        cad_size_rel_posn_key = '[4ZCP_CASDTL-CAD_SIZE_REL].[24ZCP_CASDTL-CAD_SIZE_REL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SIZE_REL]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SIZE_REL]' ATTRIBUTE,
+        cad_sku_attr1level01_0 = '[4ZCP_CASDTL-CAD_SKU_ATTR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_ATTR]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_ATTR]' LEVELPOSITION=1,
+        cad_sku_attr1_key = '[4ZCP_CASDTL-CAD_SKU_ATTR].[24ZCP_CASDTL-CAD_SKU_ATTR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_ATTR]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_ATTR]' ATTRIBUTE,
+        cad_sku_attr2level01_0 = '[4ZCP_CASDTL-CAD_SKU_AT_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_AT_0]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_AT_0]' LEVELPOSITION=1,
+        cad_sku_attr2_key = '[4ZCP_CASDTL-CAD_SKU_AT_0].[24ZCP_CASDTL-CAD_SKU_AT_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_AT_0]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_AT_0]' ATTRIBUTE,
+        cad_sku_attr3level01_0 = '[4ZCP_CASDTL-CAD_SKU_AT_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_AT_1]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_AT_1]' LEVELPOSITION=1,
+        cad_sku_attr3_key = '[4ZCP_CASDTL-CAD_SKU_AT_1].[24ZCP_CASDTL-CAD_SKU_AT_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_AT_1]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_AT_1]' ATTRIBUTE,
+        cad_sku_attr4level01_0 = '[4ZCP_CASDTL-CAD_SKU_AT_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_AT_2]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_AT_2]' LEVELPOSITION=1,
+        cad_sku_attr4_key = '[4ZCP_CASDTL-CAD_SKU_AT_2].[24ZCP_CASDTL-CAD_SKU_AT_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_AT_2]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_AT_2]' ATTRIBUTE,
+        cad_sku_attr5level01_0 = '[4ZCP_CASDTL-CAD_SKU_AT_3].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_AT_3]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_AT_3]' LEVELPOSITION=1,
+        cad_sku_attr5_key = '[4ZCP_CASDTL-CAD_SKU_AT_3].[24ZCP_CASDTL-CAD_SKU_AT_3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_AT_3]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_AT_3]' ATTRIBUTE,
+        cad_sku_idlevel01_0 = '[4ZCP_CASDTL-CAD_SKU_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_ID]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_ID]' LEVELPOSITION=1,
+        cad_sku_id_key = '[4ZCP_CASDTL-CAD_SKU_ID].[24ZCP_CASDTL-CAD_SKU_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SKU_ID]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SKU_ID]' ATTRIBUTE,
+        cad_spl_instr_cd1level01_0 = '[4ZCP_CASDTL-CAD_SPL_INST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SPL_INST]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SPL_INST]' LEVELPOSITION=1,
+        cad_spl_instr_cd1_key = '[4ZCP_CASDTL-CAD_SPL_INST].[24ZCP_CASDTL-CAD_SPL_INST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SPL_INST]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SPL_INST]' ATTRIBUTE,
+        cad_spl_instr_cd2level01_0 = '[4ZCP_CASDTL-CAD_SPL_IN_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SPL_IN_0]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SPL_IN_0]' LEVELPOSITION=1,
+        cad_spl_instr_cd2_key = '[4ZCP_CASDTL-CAD_SPL_IN_0].[24ZCP_CASDTL-CAD_SPL_IN_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SPL_IN_0]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SPL_IN_0]' ATTRIBUTE,
+        cad_spl_instr_cd3level01_0 = '[4ZCP_CASDTL-CAD_SPL_IN_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SPL_IN_1]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SPL_IN_1]' LEVELPOSITION=1,
+        cad_spl_instr_cd3_key = '[4ZCP_CASDTL-CAD_SPL_IN_1].[24ZCP_CASDTL-CAD_SPL_IN_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SPL_IN_1]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SPL_IN_1]' ATTRIBUTE,
+        cad_spl_instr_cd4level01_0 = '[4ZCP_CASDTL-CAD_SPL_IN_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SPL_IN_2]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SPL_IN_2]' LEVELPOSITION=1,
+        cad_spl_instr_cd4_key = '[4ZCP_CASDTL-CAD_SPL_IN_2].[24ZCP_CASDTL-CAD_SPL_IN_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SPL_IN_2]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SPL_IN_2]' ATTRIBUTE,
+        cad_spl_instr_cd5level01_0 = '[4ZCP_CASDTL-CAD_SPL_IN_3].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SPL_IN_3]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SPL_IN_3]' LEVELPOSITION=1,
+        cad_spl_instr_cd5_key = '[4ZCP_CASDTL-CAD_SPL_IN_3].[24ZCP_CASDTL-CAD_SPL_IN_3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_SPL_IN_3]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_SPL_IN_3]' ATTRIBUTE,
+        cad_stylelevel01_0 = '[4ZCP_CASDTL-CAD_STYLE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_STYLE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_STYLE]' LEVELPOSITION=1,
+        cad_style_key = '[4ZCP_CASDTL-CAD_STYLE].[24ZCP_CASDTL-CAD_STYLE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_STYLE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_STYLE]' ATTRIBUTE,
+        cad_style_sfxlevel01_0 = '[4ZCP_CASDTL-CAD_STYLE_SF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_STYLE_SF]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_STYLE_SF]' LEVELPOSITION=1,
+        cad_style_sfx_key = '[4ZCP_CASDTL-CAD_STYLE_SF].[24ZCP_CASDTL-CAD_STYLE_SF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_STYLE_SF]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_STYLE_SF]' ATTRIBUTE,
+        cad_user_idlevel01_0 = '[4ZCP_CASDTL-CAD_USER_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_USER_ID]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_USER_ID]' LEVELPOSITION=1,
+        cad_user_id_key = '[4ZCP_CASDTL-CAD_USER_ID].[24ZCP_CASDTL-CAD_USER_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_USER_ID]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_USER_ID]' ATTRIBUTE,
+        cad_vndr_item_numlevel01_0 = '[4ZCP_CASDTL-CAD_VNDR_ITE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_VNDR_ITE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_VNDR_ITE]' LEVELPOSITION=1,
+        cad_vndr_item_num_key = '[4ZCP_CASDTL-CAD_VNDR_ITE].[24ZCP_CASDTL-CAD_VNDR_ITE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CAD_VNDR_ITE]' DIMENSIONNAME = '[4ZCP_CASDTL-CAD_VNDR_ITE]' ATTRIBUTE,
+        casdtl_cre_by_idlevel01_0 = '[4ZCP_CASDTL-CASDTL_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CASDTL_CRE_B]' DIMENSIONNAME = '[4ZCP_CASDTL-CASDTL_CRE_B]' LEVELPOSITION=1,
+        casdtl_cre_by_id_key = '[4ZCP_CASDTL-CASDTL_CRE_B].[24ZCP_CASDTL-CASDTL_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CASDTL_CRE_B]' DIMENSIONNAME = '[4ZCP_CASDTL-CASDTL_CRE_B]' ATTRIBUTE,
+        casdtl_cre_tslevel01_0 = '[4ZCP_CASDTL-CASDTL_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CASDTL_CRE_T]' DIMENSIONNAME = '[4ZCP_CASDTL-CASDTL_CRE_T]' LEVELPOSITION=1,
+        casdtl_cre_ts_key = '[4ZCP_CASDTL-CASDTL_CRE_T].[24ZCP_CASDTL-CASDTL_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CASDTL_CRE_T]' DIMENSIONNAME = '[4ZCP_CASDTL-CASDTL_CRE_T]' ATTRIBUTE,
+        casdtl_upd_by_idlevel01_0 = '[4ZCP_CASDTL-CASDTL_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CASDTL_UPD_B]' DIMENSIONNAME = '[4ZCP_CASDTL-CASDTL_UPD_B]' LEVELPOSITION=1,
+        casdtl_upd_by_id_key = '[4ZCP_CASDTL-CASDTL_UPD_B].[24ZCP_CASDTL-CASDTL_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CASDTL_UPD_B]' DIMENSIONNAME = '[4ZCP_CASDTL-CASDTL_UPD_B]' ATTRIBUTE,
+        casdtl_upd_tslevel01_0 = '[4ZCP_CASDTL-CASDTL_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CASDTL_UPD_T]' DIMENSIONNAME = '[4ZCP_CASDTL-CASDTL_UPD_T]' LEVELPOSITION=1,
+        casdtl_upd_ts_key = '[4ZCP_CASDTL-CASDTL_UPD_T].[24ZCP_CASDTL-CASDTL_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CASDTL-CASDTL_UPD_T]' DIMENSIONNAME = '[4ZCP_CASDTL-CASDTL_UPD_T]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_casdtl I18N us_cst (
+        cad_archive_inlevel01_0:text,
+        cad_archive_in_key:text,
+        cad_assort_numlevel01_0:text,
+        cad_assort_num_key:text,
+        cad_batch_numlevel01_0:text,
+        cad_batch_num_key:text,
+        cad_case_numlevel01_0:text,
+        cad_case_num_key:text,
+        cad_case_seq_numlevel01_0:text,
+        cad_case_seq_num_key:text,
+        cad_cntry_of_orgnlevel01_0:text,
+        cad_cntry_of_orgn_key:text,
+        cad_colorlevel01_0:text,
+        cad_color_key:text,
+        cad_color_sfxlevel01_0:text,
+        cad_color_sfx_key:text,
+        cad_companylevel01_0:text,
+        cad_company_key:text,
+        cad_create_date_tmlevel01_0:text,
+        cad_create_date_tm_key:text,
+        cad_cut_numlevel01_0:text,
+        cad_cut_num_key:text,
+        cad_divisionlevel01_0:text,
+        cad_division_key:text,
+        cad_dtl_idlevel01_0:text,
+        cad_dtl_id_key:text,
+        cad_error_seq_numlevel01_0:text,
+        cad_error_seq_num_key:text,
+        cad_host_inpt_idlevel01_0:text,
+        cad_host_inpt_id_key:text,
+        cad_invn_typelevel01_0:text,
+        cad_invn_type_key:text,
+        cad_mod_date_tmlevel01_0:text,
+        cad_mod_date_tm_key:text,
+        cad_po_line_numlevel01_0:text,
+        cad_po_line_num_key:text,
+        cad_po_numlevel01_0:text,
+        cad_po_num_key:text,
+        cad_ppack_grp_cdlevel01_0:text,
+        cad_ppack_grp_cd_key:text,
+        cad_proc_cmt_txlevel01_0:text,
+        cad_proc_cmt_tx_key:text,
+        cad_proc_stat_cdlevel01_0:text,
+        cad_proc_stat_cd_key:text,
+        cad_proc_tslevel01_0:text,
+        cad_proc_ts_key:text,
+        cad_prod_statlevel01_0:text,
+        cad_prod_stat_key:text,
+        cad_qualitylevel01_0:text,
+        cad_quality_key:text,
+        cad_redy_stat_cdlevel01_0:text,
+        cad_redy_stat_cd_key:text,
+        cad_seasonlevel01_0:text,
+        cad_season_key:text,
+        cad_season_yrlevel01_0:text,
+        cad_season_yr_key:text,
+        cad_sec_dimlevel01_0:text,
+        cad_sec_dim_key:text,
+        cad_size_desclevel01_0:text,
+        cad_size_desc_key:text,
+        cad_size_range_cdlevel01_0:text,
+        cad_size_range_cd_key:text,
+        cad_size_rel_posnlevel01_0:text,
+        cad_size_rel_posn_key:text,
+        cad_sku_attr1level01_0:text,
+        cad_sku_attr1_key:text,
+        cad_sku_attr2level01_0:text,
+        cad_sku_attr2_key:text,
+        cad_sku_attr3level01_0:text,
+        cad_sku_attr3_key:text,
+        cad_sku_attr4level01_0:text,
+        cad_sku_attr4_key:text,
+        cad_sku_attr5level01_0:text,
+        cad_sku_attr5_key:text,
+        cad_sku_idlevel01_0:text,
+        cad_sku_id_key:text,
+        cad_spl_instr_cd1level01_0:text,
+        cad_spl_instr_cd1_key:text,
+        cad_spl_instr_cd2level01_0:text,
+        cad_spl_instr_cd2_key:text,
+        cad_spl_instr_cd3level01_0:text,
+        cad_spl_instr_cd3_key:text,
+        cad_spl_instr_cd4level01_0:text,
+        cad_spl_instr_cd4_key:text,
+        cad_spl_instr_cd5level01_0:text,
+        cad_spl_instr_cd5_key:text,
+        cad_stylelevel01_0:text,
+        cad_style_key:text,
+        cad_style_sfxlevel01_0:text,
+        cad_style_sfx_key:text,
+        cad_user_idlevel01_0:text,
+        cad_user_id_key:text,
+        cad_vndr_item_numlevel01_0:text,
+        cad_vndr_item_num_key:text,
+        casdtl_cre_by_idlevel01_0:text,
+        casdtl_cre_by_id_key:text,
+        casdtl_cre_tslevel01_0:text,
+        casdtl_cre_ts_key:text,
+        casdtl_upd_by_idlevel01_0:text,
+        casdtl_upd_by_id_key:text,
+        casdtl_upd_tslevel01_0:text,
+        casdtl_upd_ts_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_casdtl(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cad_archive_inlevel01_0 (any) OPT ANY
+             ADD cad_archive_in_key (any) OPT ANY
+             ADD cad_assort_numlevel01_0 (any) OPT ANY
+             ADD cad_assort_num_key (any) OPT ANY
+             ADD cad_batch_numlevel01_0 (any) OPT ANY
+             ADD cad_batch_num_key (any) OPT ANY
+             ADD cad_case_numlevel01_0 (any) OPT ANY
+             ADD cad_case_num_key (any) OPT ANY
+             ADD cad_case_seq_numlevel01_0 (any) OPT ANY
+             ADD cad_case_seq_num_key (any) OPT ANY
+             ADD cad_cntry_of_orgnlevel01_0 (any) OPT ANY
+             ADD cad_cntry_of_orgn_key (any) OPT ANY
+             ADD cad_colorlevel01_0 (any) OPT ANY
+             ADD cad_color_key (any) OPT ANY
+             ADD cad_color_sfxlevel01_0 (any) OPT ANY
+             ADD cad_color_sfx_key (any) OPT ANY
+             ADD cad_companylevel01_0 (any) OPT ANY
+             ADD cad_company_key (any) OPT ANY
+             ADD cad_create_date_tmlevel01_0 (any) OPT ANY
+             ADD cad_create_date_tm_key (any) OPT ANY
+             ADD cad_cut_numlevel01_0 (any) OPT ANY
+             ADD cad_cut_num_key (any) OPT ANY
+             ADD cad_divisionlevel01_0 (any) OPT ANY
+             ADD cad_division_key (any) OPT ANY
+             ADD cad_dtl_idlevel01_0 (any) OPT ANY
+             ADD cad_dtl_id_key (any) OPT ANY
+             ADD cad_error_seq_numlevel01_0 (any) OPT ANY
+             ADD cad_error_seq_num_key (any) OPT ANY
+             ADD cad_host_inpt_idlevel01_0 (any) OPT ANY
+             ADD cad_host_inpt_id_key (any) OPT ANY
+             ADD cad_invn_typelevel01_0 (any) OPT ANY
+             ADD cad_invn_type_key (any) OPT ANY
+             ADD cad_mod_date_tmlevel01_0 (any) OPT ANY
+             ADD cad_mod_date_tm_key (any) OPT ANY
+             ADD cad_po_line_numlevel01_0 (any) OPT ANY
+             ADD cad_po_line_num_key (any) OPT ANY
+             ADD cad_po_numlevel01_0 (any) OPT ANY
+             ADD cad_po_num_key (any) OPT ANY
+             ADD cad_ppack_grp_cdlevel01_0 (any) OPT ANY
+             ADD cad_ppack_grp_cd_key (any) OPT ANY
+             ADD cad_proc_cmt_txlevel01_0 (any) OPT ANY
+             ADD cad_proc_cmt_tx_key (any) OPT ANY
+             ADD cad_proc_stat_cdlevel01_0 (any) OPT ANY
+             ADD cad_proc_stat_cd_key (any) OPT ANY
+             ADD cad_proc_tslevel01_0 (any) OPT ANY
+             ADD cad_proc_ts_key (any) OPT ANY
+             ADD cad_prod_statlevel01_0 (any) OPT ANY
+             ADD cad_prod_stat_key (any) OPT ANY
+             ADD cad_qualitylevel01_0 (any) OPT ANY
+             ADD cad_quality_key (any) OPT ANY
+             ADD cad_redy_stat_cdlevel01_0 (any) OPT ANY
+             ADD cad_redy_stat_cd_key (any) OPT ANY
+             ADD cad_seasonlevel01_0 (any) OPT ANY
+             ADD cad_season_key (any) OPT ANY
+             ADD cad_season_yrlevel01_0 (any) OPT ANY
+             ADD cad_season_yr_key (any) OPT ANY
+             ADD cad_sec_dimlevel01_0 (any) OPT ANY
+             ADD cad_sec_dim_key (any) OPT ANY
+             ADD cad_size_desclevel01_0 (any) OPT ANY
+             ADD cad_size_desc_key (any) OPT ANY
+             ADD cad_size_range_cdlevel01_0 (any) OPT ANY
+             ADD cad_size_range_cd_key (any) OPT ANY
+             ADD cad_size_rel_posnlevel01_0 (any) OPT ANY
+             ADD cad_size_rel_posn_key (any) OPT ANY
+             ADD cad_sku_attr1level01_0 (any) OPT ANY
+             ADD cad_sku_attr1_key (any) OPT ANY
+             ADD cad_sku_attr2level01_0 (any) OPT ANY
+             ADD cad_sku_attr2_key (any) OPT ANY
+             ADD cad_sku_attr3level01_0 (any) OPT ANY
+             ADD cad_sku_attr3_key (any) OPT ANY
+             ADD cad_sku_attr4level01_0 (any) OPT ANY
+             ADD cad_sku_attr4_key (any) OPT ANY
+             ADD cad_sku_attr5level01_0 (any) OPT ANY
+             ADD cad_sku_attr5_key (any) OPT ANY
+             ADD cad_sku_idlevel01_0 (any) OPT ANY
+             ADD cad_sku_id_key (any) OPT ANY
+             ADD cad_spl_instr_cd1level01_0 (any) OPT ANY
+             ADD cad_spl_instr_cd1_key (any) OPT ANY
+             ADD cad_spl_instr_cd2level01_0 (any) OPT ANY
+             ADD cad_spl_instr_cd2_key (any) OPT ANY
+             ADD cad_spl_instr_cd3level01_0 (any) OPT ANY
+             ADD cad_spl_instr_cd3_key (any) OPT ANY
+             ADD cad_spl_instr_cd4level01_0 (any) OPT ANY
+             ADD cad_spl_instr_cd4_key (any) OPT ANY
+             ADD cad_spl_instr_cd5level01_0 (any) OPT ANY
+             ADD cad_spl_instr_cd5_key (any) OPT ANY
+             ADD cad_stylelevel01_0 (any) OPT ANY
+             ADD cad_style_key (any) OPT ANY
+             ADD cad_style_sfxlevel01_0 (any) OPT ANY
+             ADD cad_style_sfx_key (any) OPT ANY
+             ADD cad_user_idlevel01_0 (any) OPT ANY
+             ADD cad_user_id_key (any) OPT ANY
+             ADD cad_vndr_item_numlevel01_0 (any) OPT ANY
+             ADD cad_vndr_item_num_key (any) OPT ANY
+             ADD casdtl_cre_by_idlevel01_0 (any) OPT ANY
+             ADD casdtl_cre_by_id_key (any) OPT ANY
+             ADD casdtl_cre_tslevel01_0 (any) OPT ANY
+             ADD casdtl_cre_ts_key (any) OPT ANY
+             ADD casdtl_upd_by_idlevel01_0 (any) OPT ANY
+             ADD casdtl_upd_by_id_key (any) OPT ANY
+             ADD casdtl_upd_tslevel01_0 (any) OPT ANY
+             ADD casdtl_upd_ts_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (cad_archive_in_key, cad_archive_inlevel01_0, cad_assort_num_key, cad_assort_numlevel01_0, cad_batch_num_key, cad_batch_numlevel01_0, cad_case_num_key, cad_case_numlevel01_0, cad_case_seq_num_key, cad_case_seq_numlevel01_0, cad_cntry_of_orgn_key, cad_cntry_of_orgnlevel01_0, cad_color_key, cad_color_sfx_key, cad_color_sfxlevel01_0, cad_colorlevel01_0, cad_company_key, cad_companylevel01_0, cad_create_date_tm_key, cad_create_date_tmlevel01_0, cad_cut_num_key, cad_cut_numlevel01_0, cad_division_key, cad_divisionlevel01_0, cad_dtl_id_key, cad_dtl_idlevel01_0, cad_error_seq_num_key, cad_error_seq_numlevel01_0, cad_host_inpt_id_key, cad_host_inpt_idlevel01_0, cad_invn_type_key, cad_invn_typelevel01_0, cad_mod_date_tm_key, cad_mod_date_tmlevel01_0, cad_po_line_num_key, cad_po_line_numlevel01_0, cad_po_num_key, cad_po_numlevel01_0, cad_ppack_grp_cd_key, cad_ppack_grp_cdlevel01_0, cad_proc_cmt_tx_key, cad_proc_cmt_txlevel01_0, cad_proc_stat_cd_key, cad_proc_stat_cdlevel01_0, cad_proc_ts_key, cad_proc_tslevel01_0, cad_prod_stat_key, cad_prod_statlevel01_0, cad_quality_key, cad_qualitylevel01_0, cad_redy_stat_cd_key, cad_redy_stat_cdlevel01_0, cad_season_key, cad_season_yr_key, cad_season_yrlevel01_0, cad_seasonlevel01_0, cad_sec_dim_key, cad_sec_dimlevel01_0, cad_size_desc_key, cad_size_desclevel01_0, cad_size_range_cd_key, cad_size_range_cdlevel01_0, cad_size_rel_posn_key, cad_size_rel_posnlevel01_0, cad_sku_attr1_key, cad_sku_attr1level01_0, cad_sku_attr2_key, cad_sku_attr2level01_0, cad_sku_attr3_key, cad_sku_attr3level01_0, cad_sku_attr4_key, cad_sku_attr4level01_0, cad_sku_attr5_key, cad_sku_attr5level01_0, cad_sku_id_key, cad_sku_idlevel01_0, cad_spl_instr_cd1_key, cad_spl_instr_cd1level01_0, cad_spl_instr_cd2_key, cad_spl_instr_cd2level01_0, cad_spl_instr_cd3_key, cad_spl_instr_cd3level01_0, cad_spl_instr_cd4_key, cad_spl_instr_cd4level01_0, cad_spl_instr_cd5_key, cad_spl_instr_cd5level01_0, cad_style_key, cad_style_sfx_key, cad_style_sfxlevel01_0, cad_stylelevel01_0, cad_user_id_key, cad_user_idlevel01_0, cad_vndr_item_num_key, cad_vndr_item_numlevel01_0, casdtl_cre_by_id_key, casdtl_cre_by_idlevel01_0, casdtl_cre_ts_key, casdtl_cre_tslevel01_0, casdtl_upd_by_id_key, casdtl_upd_by_idlevel01_0, casdtl_upd_ts_key, casdtl_upd_tslevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_casdtl)
+    );
+

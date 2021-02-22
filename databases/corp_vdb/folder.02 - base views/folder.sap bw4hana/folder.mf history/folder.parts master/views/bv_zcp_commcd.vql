@@ -1,0 +1,202 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_commcd
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts master'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_COMMCD'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        cmm_add_faclevel01_0 = '[4ZCP_COMMCD-CMM_ADD_FAC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_ADD_FAC]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_ADD_FAC]' LEVELPOSITION=1,
+        cmm_add_fac_key = '[4ZCP_COMMCD-CMM_ADD_FAC].[24ZCP_COMMCD-CMM_ADD_FAC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_ADD_FAC]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_ADD_FAC]' ATTRIBUTE,
+        cmm_air_ord_cntllevel01_0 = '[4ZCP_COMMCD-CMM_AIR_ORD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_AIR_ORD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_AIR_ORD]' LEVELPOSITION=1,
+        cmm_air_ord_cntl_key = '[4ZCP_COMMCD-CMM_AIR_ORD].[24ZCP_COMMCD-CMM_AIR_ORD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_AIR_ORD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_AIR_ORD]' ATTRIBUTE,
+        cmm_anlst_idlevel01_0 = '[4ZCP_COMMCD-CMM_ANLST_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_ANLST_ID]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_ANLST_ID]' LEVELPOSITION=1,
+        cmm_anlst_id_key = '[4ZCP_COMMCD-CMM_ANLST_ID].[24ZCP_COMMCD-CMM_ANLST_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_ANLST_ID]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_ANLST_ID]' ATTRIBUTE,
+        cmm_class_cdlevel01_0 = '[4ZCP_COMMCD-CMM_CLASS_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_CLASS_CD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_CLASS_CD]' LEVELPOSITION=1,
+        cmm_class_cd_key = '[4ZCP_COMMCD-CMM_CLASS_CD].[24ZCP_COMMCD-CMM_CLASS_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_CLASS_CD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_CLASS_CD]' ATTRIBUTE,
+        cmm_commd_cdlevel01_0 = '[4ZCP_COMMCD-CMM_COMMD_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_COMMD_CD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_COMMD_CD]' LEVELPOSITION=1,
+        cmm_commd_cd_key = '[4ZCP_COMMCD-CMM_COMMD_CD].[24ZCP_COMMCD-CMM_COMMD_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_COMMD_CD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_COMMD_CD]' ATTRIBUTE,
+        cmm_desclevel01_0 = '[4ZCP_COMMCD-CMM_DESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_DESC]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_DESC]' LEVELPOSITION=1,
+        cmm_desc_key = '[4ZCP_COMMCD-CMM_DESC].[24ZCP_COMMCD-CMM_DESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_DESC]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_DESC]' ATTRIBUTE,
+        cmm_dps_inlevel01_0 = '[4ZCP_COMMCD-CMM_DPS_IN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_DPS_IN]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_DPS_IN]' LEVELPOSITION=1,
+        cmm_dps_in_key = '[4ZCP_COMMCD-CMM_DPS_IN].[24ZCP_COMMCD-CMM_DPS_IN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_DPS_IN]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_DPS_IN]' ATTRIBUTE,
+        cmm_fmla_cdlevel01_0 = '[4ZCP_COMMCD-CMM_FMLA_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_FMLA_CD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_FMLA_CD]' LEVELPOSITION=1,
+        cmm_fmla_cd_key = '[4ZCP_COMMCD-CMM_FMLA_CD].[24ZCP_COMMCD-CMM_FMLA_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_FMLA_CD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_FMLA_CD]' ATTRIBUTE,
+        cmm_last_gen_dtlevel01_0 = '[4ZCP_COMMCD-CMM_LAST_GEN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_LAST_GEN]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_LAST_GEN]' LEVELPOSITION=1,
+        cmm_last_gen_dt_key = '[4ZCP_COMMCD-CMM_LAST_GEN].[24ZCP_COMMCD-CMM_LAST_GEN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_LAST_GEN]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_LAST_GEN]' ATTRIBUTE,
+        cmm_lead_daylevel01_0 = '[4ZCP_COMMCD-CMM_LEAD_DAY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_LEAD_DAY]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_LEAD_DAY]' LEVELPOSITION=1,
+        cmm_lead_day_key = '[4ZCP_COMMCD-CMM_LEAD_DAY].[24ZCP_COMMCD-CMM_LEAD_DAY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_LEAD_DAY]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_LEAD_DAY]' ATTRIBUTE,
+        cmm_lead_molevel01_0 = '[4ZCP_COMMCD-CMM_LEAD_MO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_LEAD_MO]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_LEAD_MO]' LEVELPOSITION=1,
+        cmm_lead_mo_key = '[4ZCP_COMMCD-CMM_LEAD_MO].[24ZCP_COMMCD-CMM_LEAD_MO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_LEAD_MO]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_LEAD_MO]' ATTRIBUTE,
+        cmm_ord_cntl_indlevel01_0 = '[4ZCP_COMMCD-CMM_ORD_CNTL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_ORD_CNTL]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_ORD_CNTL]' LEVELPOSITION=1,
+        cmm_ord_cntl_ind_key = '[4ZCP_COMMCD-CMM_ORD_CNTL].[24ZCP_COMMCD-CMM_ORD_CNTL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_ORD_CNTL]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_ORD_CNTL]' ATTRIBUTE,
+        cmm_reord_typelevel01_0 = '[4ZCP_COMMCD-CMM_REORD_TY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_REORD_TY]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_REORD_TY]' LEVELPOSITION=1,
+        cmm_reord_type_key = '[4ZCP_COMMCD-CMM_REORD_TY].[24ZCP_COMMCD-CMM_REORD_TY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_REORD_TY]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_REORD_TY]' ATTRIBUTE,
+        cmm_rstrct_referlevel01_0 = '[4ZCP_COMMCD-CMM_RSTRCT_R].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_RSTRCT_R]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_RSTRCT_R]' LEVELPOSITION=1,
+        cmm_rstrct_refer_key = '[4ZCP_COMMCD-CMM_RSTRCT_R].[24ZCP_COMMCD-CMM_RSTRCT_R]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_RSTRCT_R]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_RSTRCT_R]' ATTRIBUTE,
+        cmm_safty_stk_daylevel01_0 = '[4ZCP_COMMCD-CMM_SAFTY_ST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_SAFTY_ST]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_SAFTY_ST]' LEVELPOSITION=1,
+        cmm_safty_stk_day_key = '[4ZCP_COMMCD-CMM_SAFTY_ST].[24ZCP_COMMCD-CMM_SAFTY_ST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_SAFTY_ST]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_SAFTY_ST]' ATTRIBUTE,
+        cmm_safty_stk_day_toledolevel01_0 = '[4ZCP_COMMCD-LGTC4PA2CSZC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-LGTC4PA2CSZC]' DIMENSIONNAME = '[4ZCP_COMMCD-LGTC4PA2CSZC]' LEVELPOSITION=1,
+        cmm_safty_stk_day_toledo_key = '[4ZCP_COMMCD-LGTC4PA2CSZC].[24ZCP_COMMCD-LGTC4PA2CSZC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-LGTC4PA2CSZC]' DIMENSIONNAME = '[4ZCP_COMMCD-LGTC4PA2CSZC]' ATTRIBUTE,
+        cmm_safty_stk_molevel01_0 = '[4ZCP_COMMCD-CMM_SAFTY_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_SAFTY_0]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_SAFTY_0]' LEVELPOSITION=1,
+        cmm_safty_stk_mo_key = '[4ZCP_COMMCD-CMM_SAFTY_0].[24ZCP_COMMCD-CMM_SAFTY_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_SAFTY_0]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_SAFTY_0]' ATTRIBUTE,
+        cmm_sat_ord_indlevel01_0 = '[4ZCP_COMMCD-CMM_SAT_ORD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_SAT_ORD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_SAT_ORD]' LEVELPOSITION=1,
+        cmm_sat_ord_ind_key = '[4ZCP_COMMCD-CMM_SAT_ORD].[24ZCP_COMMCD-CMM_SAT_ORD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_SAT_ORD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_SAT_ORD]' ATTRIBUTE,
+        cmm_season_indlevel01_0 = '[4ZCP_COMMCD-CMM_SEASON_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_SEASON_I]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_SEASON_I]' LEVELPOSITION=1,
+        cmm_season_ind_key = '[4ZCP_COMMCD-CMM_SEASON_I].[24ZCP_COMMCD-CMM_SEASON_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_SEASON_I]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_SEASON_I]' ATTRIBUTE,
+        cmm_stat_cdlevel01_0 = '[4ZCP_COMMCD-CMM_STAT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_STAT_CD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_STAT_CD]' LEVELPOSITION=1,
+        cmm_stat_cd_key = '[4ZCP_COMMCD-CMM_STAT_CD].[24ZCP_COMMCD-CMM_STAT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_STAT_CD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_STAT_CD]' ATTRIBUTE,
+        cmm_type_cdlevel01_0 = '[4ZCP_COMMCD-CMM_TYPE_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_TYPE_CD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_TYPE_CD]' LEVELPOSITION=1,
+        cmm_type_cd_key = '[4ZCP_COMMCD-CMM_TYPE_CD].[24ZCP_COMMCD-CMM_TYPE_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_TYPE_CD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_TYPE_CD]' ATTRIBUTE,
+        cmm_vpc_ord_indlevel01_0 = '[4ZCP_COMMCD-CMM_VPC_ORD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_VPC_ORD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_VPC_ORD]' LEVELPOSITION=1,
+        cmm_vpc_ord_ind_key = '[4ZCP_COMMCD-CMM_VPC_ORD].[24ZCP_COMMCD-CMM_VPC_ORD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_VPC_ORD]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_VPC_ORD]' ATTRIBUTE,
+        cmm_xpo_anlst_idlevel01_0 = '[4ZCP_COMMCD-CMM_XPO_ANLS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_XPO_ANLS]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_XPO_ANLS]' LEVELPOSITION=1,
+        cmm_xpo_anlst_id_key = '[4ZCP_COMMCD-CMM_XPO_ANLS].[24ZCP_COMMCD-CMM_XPO_ANLS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-CMM_XPO_ANLS]' DIMENSIONNAME = '[4ZCP_COMMCD-CMM_XPO_ANLS]' ATTRIBUTE,
+        commcd_cre_by_idlevel01_0 = '[4ZCP_COMMCD-COMMCD_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-COMMCD_CRE_B]' DIMENSIONNAME = '[4ZCP_COMMCD-COMMCD_CRE_B]' LEVELPOSITION=1,
+        commcd_cre_by_id_key = '[4ZCP_COMMCD-COMMCD_CRE_B].[24ZCP_COMMCD-COMMCD_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-COMMCD_CRE_B]' DIMENSIONNAME = '[4ZCP_COMMCD-COMMCD_CRE_B]' ATTRIBUTE,
+        commcd_cre_tslevel01_0 = '[4ZCP_COMMCD-COMMCD_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-COMMCD_CRE_T]' DIMENSIONNAME = '[4ZCP_COMMCD-COMMCD_CRE_T]' LEVELPOSITION=1,
+        commcd_cre_ts_key = '[4ZCP_COMMCD-COMMCD_CRE_T].[24ZCP_COMMCD-COMMCD_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-COMMCD_CRE_T]' DIMENSIONNAME = '[4ZCP_COMMCD-COMMCD_CRE_T]' ATTRIBUTE,
+        commcd_upd_by_idlevel01_0 = '[4ZCP_COMMCD-COMMCD_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-COMMCD_UPD_B]' DIMENSIONNAME = '[4ZCP_COMMCD-COMMCD_UPD_B]' LEVELPOSITION=1,
+        commcd_upd_by_id_key = '[4ZCP_COMMCD-COMMCD_UPD_B].[24ZCP_COMMCD-COMMCD_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-COMMCD_UPD_B]' DIMENSIONNAME = '[4ZCP_COMMCD-COMMCD_UPD_B]' ATTRIBUTE,
+        commcd_upd_tslevel01_0 = '[4ZCP_COMMCD-COMMCD_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-COMMCD_UPD_T]' DIMENSIONNAME = '[4ZCP_COMMCD-COMMCD_UPD_T]' LEVELPOSITION=1,
+        commcd_upd_ts_key = '[4ZCP_COMMCD-COMMCD_UPD_T].[24ZCP_COMMCD-COMMCD_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_COMMCD-COMMCD_UPD_T]' DIMENSIONNAME = '[4ZCP_COMMCD-COMMCD_UPD_T]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_commcd I18N us_cst (
+        cmm_add_faclevel01_0:text,
+        cmm_add_fac_key:text,
+        cmm_air_ord_cntllevel01_0:text,
+        cmm_air_ord_cntl_key:text,
+        cmm_anlst_idlevel01_0:text,
+        cmm_anlst_id_key:text,
+        cmm_class_cdlevel01_0:text,
+        cmm_class_cd_key:text,
+        cmm_commd_cdlevel01_0:text,
+        cmm_commd_cd_key:text,
+        cmm_desclevel01_0:text,
+        cmm_desc_key:text,
+        cmm_dps_inlevel01_0:text,
+        cmm_dps_in_key:text,
+        cmm_fmla_cdlevel01_0:text,
+        cmm_fmla_cd_key:text,
+        cmm_last_gen_dtlevel01_0:text,
+        cmm_last_gen_dt_key:text,
+        cmm_lead_daylevel01_0:text,
+        cmm_lead_day_key:text,
+        cmm_lead_molevel01_0:text,
+        cmm_lead_mo_key:text,
+        cmm_ord_cntl_indlevel01_0:text,
+        cmm_ord_cntl_ind_key:text,
+        cmm_reord_typelevel01_0:text,
+        cmm_reord_type_key:text,
+        cmm_rstrct_referlevel01_0:text,
+        cmm_rstrct_refer_key:text,
+        cmm_safty_stk_daylevel01_0:text,
+        cmm_safty_stk_day_key:text,
+        cmm_safty_stk_day_toledolevel01_0:text,
+        cmm_safty_stk_day_toledo_key:text,
+        cmm_safty_stk_molevel01_0:text,
+        cmm_safty_stk_mo_key:text,
+        cmm_sat_ord_indlevel01_0:text,
+        cmm_sat_ord_ind_key:text,
+        cmm_season_indlevel01_0:text,
+        cmm_season_ind_key:text,
+        cmm_stat_cdlevel01_0:text,
+        cmm_stat_cd_key:text,
+        cmm_type_cdlevel01_0:text,
+        cmm_type_cd_key:text,
+        cmm_vpc_ord_indlevel01_0:text,
+        cmm_vpc_ord_ind_key:text,
+        cmm_xpo_anlst_idlevel01_0:text,
+        cmm_xpo_anlst_id_key:text,
+        commcd_cre_by_idlevel01_0:text,
+        commcd_cre_by_id_key:text,
+        commcd_cre_tslevel01_0:text,
+        commcd_cre_ts_key:text,
+        commcd_upd_by_idlevel01_0:text,
+        commcd_upd_by_id_key:text,
+        commcd_upd_tslevel01_0:text,
+        commcd_upd_ts_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts master'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_commcd(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cmm_add_faclevel01_0 (any) OPT ANY
+             ADD cmm_add_fac_key (any) OPT ANY
+             ADD cmm_air_ord_cntllevel01_0 (any) OPT ANY
+             ADD cmm_air_ord_cntl_key (any) OPT ANY
+             ADD cmm_anlst_idlevel01_0 (any) OPT ANY
+             ADD cmm_anlst_id_key (any) OPT ANY
+             ADD cmm_class_cdlevel01_0 (any) OPT ANY
+             ADD cmm_class_cd_key (any) OPT ANY
+             ADD cmm_commd_cdlevel01_0 (any) OPT ANY
+             ADD cmm_commd_cd_key (any) OPT ANY
+             ADD cmm_desclevel01_0 (any) OPT ANY
+             ADD cmm_desc_key (any) OPT ANY
+             ADD cmm_dps_inlevel01_0 (any) OPT ANY
+             ADD cmm_dps_in_key (any) OPT ANY
+             ADD cmm_fmla_cdlevel01_0 (any) OPT ANY
+             ADD cmm_fmla_cd_key (any) OPT ANY
+             ADD cmm_last_gen_dtlevel01_0 (any) OPT ANY
+             ADD cmm_last_gen_dt_key (any) OPT ANY
+             ADD cmm_lead_daylevel01_0 (any) OPT ANY
+             ADD cmm_lead_day_key (any) OPT ANY
+             ADD cmm_lead_molevel01_0 (any) OPT ANY
+             ADD cmm_lead_mo_key (any) OPT ANY
+             ADD cmm_ord_cntl_indlevel01_0 (any) OPT ANY
+             ADD cmm_ord_cntl_ind_key (any) OPT ANY
+             ADD cmm_reord_typelevel01_0 (any) OPT ANY
+             ADD cmm_reord_type_key (any) OPT ANY
+             ADD cmm_rstrct_referlevel01_0 (any) OPT ANY
+             ADD cmm_rstrct_refer_key (any) OPT ANY
+             ADD cmm_safty_stk_daylevel01_0 (any) OPT ANY
+             ADD cmm_safty_stk_day_key (any) OPT ANY
+             ADD cmm_safty_stk_day_toledolevel01_0 (any) OPT ANY
+             ADD cmm_safty_stk_day_toledo_key (any) OPT ANY
+             ADD cmm_safty_stk_molevel01_0 (any) OPT ANY
+             ADD cmm_safty_stk_mo_key (any) OPT ANY
+             ADD cmm_sat_ord_indlevel01_0 (any) OPT ANY
+             ADD cmm_sat_ord_ind_key (any) OPT ANY
+             ADD cmm_season_indlevel01_0 (any) OPT ANY
+             ADD cmm_season_ind_key (any) OPT ANY
+             ADD cmm_stat_cdlevel01_0 (any) OPT ANY
+             ADD cmm_stat_cd_key (any) OPT ANY
+             ADD cmm_type_cdlevel01_0 (any) OPT ANY
+             ADD cmm_type_cd_key (any) OPT ANY
+             ADD cmm_vpc_ord_indlevel01_0 (any) OPT ANY
+             ADD cmm_vpc_ord_ind_key (any) OPT ANY
+             ADD cmm_xpo_anlst_idlevel01_0 (any) OPT ANY
+             ADD cmm_xpo_anlst_id_key (any) OPT ANY
+             ADD commcd_cre_by_idlevel01_0 (any) OPT ANY
+             ADD commcd_cre_by_id_key (any) OPT ANY
+             ADD commcd_cre_tslevel01_0 (any) OPT ANY
+             ADD commcd_cre_ts_key (any) OPT ANY
+             ADD commcd_upd_by_idlevel01_0 (any) OPT ANY
+             ADD commcd_upd_by_id_key (any) OPT ANY
+             ADD commcd_upd_tslevel01_0 (any) OPT ANY
+             ADD commcd_upd_ts_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (cmm_add_fac_key, cmm_add_faclevel01_0, cmm_air_ord_cntl_key, cmm_air_ord_cntllevel01_0, cmm_anlst_id_key, cmm_anlst_idlevel01_0, cmm_class_cd_key, cmm_class_cdlevel01_0, cmm_commd_cd_key, cmm_commd_cdlevel01_0, cmm_desc_key, cmm_desclevel01_0, cmm_dps_in_key, cmm_dps_inlevel01_0, cmm_fmla_cd_key, cmm_fmla_cdlevel01_0, cmm_last_gen_dt_key, cmm_last_gen_dtlevel01_0, cmm_lead_day_key, cmm_lead_daylevel01_0, cmm_lead_mo_key, cmm_lead_molevel01_0, cmm_ord_cntl_ind_key, cmm_ord_cntl_indlevel01_0, cmm_reord_type_key, cmm_reord_typelevel01_0, cmm_rstrct_refer_key, cmm_rstrct_referlevel01_0, cmm_safty_stk_day_key, cmm_safty_stk_day_toledo_key, cmm_safty_stk_day_toledolevel01_0, cmm_safty_stk_daylevel01_0, cmm_safty_stk_mo_key, cmm_safty_stk_molevel01_0, cmm_sat_ord_ind_key, cmm_sat_ord_indlevel01_0, cmm_season_ind_key, cmm_season_indlevel01_0, cmm_stat_cd_key, cmm_stat_cdlevel01_0, cmm_type_cd_key, cmm_type_cdlevel01_0, cmm_vpc_ord_ind_key, cmm_vpc_ord_indlevel01_0, cmm_xpo_anlst_id_key, cmm_xpo_anlst_idlevel01_0, commcd_cre_by_id_key, commcd_cre_by_idlevel01_0, commcd_cre_ts_key, commcd_cre_tslevel01_0, commcd_upd_by_id_key, commcd_upd_by_idlevel01_0, commcd_upd_ts_key, commcd_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_commcd)
+    );
+

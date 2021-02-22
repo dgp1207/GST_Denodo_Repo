@@ -1,0 +1,106 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI employeemaster_0
+    FOLDER = '/02 - base views/sap bw4hana/mf history/dealer master'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_EMPLOY'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = TRUE
+    OUTPUTSCHEMA (
+        employ_cre_by_idlevel01_0 = '[4ZCP_EMPLOY-EMPLOY_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMPLOY_CRE_B]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMPLOY_CRE_B]' LEVELPOSITION=1,
+        employ_cre_by_id_key = '[4ZCP_EMPLOY-EMPLOY_CRE_B].[24ZCP_EMPLOY-EMPLOY_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMPLOY_CRE_B]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMPLOY_CRE_B]' ATTRIBUTE,
+        employ_cre_tslevel01_0 = '[4ZCP_EMPLOY-EMPLOY_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMPLOY_CRE_T]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMPLOY_CRE_T]' LEVELPOSITION=1,
+        employ_cre_ts_key = '[4ZCP_EMPLOY-EMPLOY_CRE_T].[24ZCP_EMPLOY-EMPLOY_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMPLOY_CRE_T]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMPLOY_CRE_T]' ATTRIBUTE,
+        employ_upd_by_idlevel01_0 = '[4ZCP_EMPLOY-EMPLOY_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMPLOY_UPD_B]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMPLOY_UPD_B]' LEVELPOSITION=1,
+        employ_upd_by_id_key = '[4ZCP_EMPLOY-EMPLOY_UPD_B].[24ZCP_EMPLOY-EMPLOY_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMPLOY_UPD_B]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMPLOY_UPD_B]' ATTRIBUTE,
+        employ_upd_tslevel01_0 = '[4ZCP_EMPLOY-EMPLOY_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMPLOY_UPD_T]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMPLOY_UPD_T]' LEVELPOSITION=1,
+        employ_upd_ts_key = '[4ZCP_EMPLOY-EMPLOY_UPD_T].[24ZCP_EMPLOY-EMPLOY_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMPLOY_UPD_T]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMPLOY_UPD_T]' ATTRIBUTE,
+        emp_bus_unit_idlevel01_0 = '[4ZCP_EMPLOY-EMP_BUS_UNIT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_BUS_UNIT]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_BUS_UNIT]' LEVELPOSITION=1,
+        emp_bus_unit_id_key = '[4ZCP_EMPLOY-EMP_BUS_UNIT].[24ZCP_EMPLOY-EMP_BUS_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_BUS_UNIT]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_BUS_UNIT]' ATTRIBUTE,
+        emp_dept_idlevel01_0 = '[4ZCP_EMPLOY-EMP_DEPT_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_DEPT_ID]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_DEPT_ID]' LEVELPOSITION=1,
+        emp_dept_id_key = '[4ZCP_EMPLOY-EMP_DEPT_ID].[24ZCP_EMPLOY-EMP_DEPT_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_DEPT_ID]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_DEPT_ID]' ATTRIBUTE,
+        emp_fst_namelevel01_0 = '[4ZCP_EMPLOY-EMP_FST_NAME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_FST_NAME]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_FST_NAME]' LEVELPOSITION=1,
+        emp_fst_name_key = '[4ZCP_EMPLOY-EMP_FST_NAME].[24ZCP_EMPLOY-EMP_FST_NAME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_FST_NAME]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_FST_NAME]' ATTRIBUTE,
+        emp_last_namelevel01_0 = '[4ZCP_EMPLOY-EMP_LAST_NAM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_LAST_NAM]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_LAST_NAM]' LEVELPOSITION=1,
+        emp_last_name_key = '[4ZCP_EMPLOY-EMP_LAST_NAM].[24ZCP_EMPLOY-EMP_LAST_NAM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_LAST_NAM]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_LAST_NAM]' ATTRIBUTE,
+        emp_milevel01_0 = '[4ZCP_EMPLOY-EMP_MI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_MI]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_MI]' LEVELPOSITION=1,
+        emp_mi_key = '[4ZCP_EMPLOY-EMP_MI].[24ZCP_EMPLOY-EMP_MI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_MI]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_MI]' ATTRIBUTE,
+        emp_numlevel01_0 = '[4ZCP_EMPLOY-EMP_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_NUM]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_NUM]' LEVELPOSITION=1,
+        emp_num_key = '[4ZCP_EMPLOY-EMP_NUM].[24ZCP_EMPLOY-EMP_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_NUM]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_NUM]' ATTRIBUTE,
+        emp_stat_cdlevel01_0 = '[4ZCP_EMPLOY-EMP_STAT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_STAT_CD]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_STAT_CD]' LEVELPOSITION=1,
+        emp_stat_cd_key = '[4ZCP_EMPLOY-EMP_STAT_CD].[24ZCP_EMPLOY-EMP_STAT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPLOY-EMP_STAT_CD]' DIMENSIONNAME = '[4ZCP_EMPLOY-EMP_STAT_CD]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_employ I18N us_cst (
+        employ_cre_by_idlevel01_0:text,
+        employ_cre_by_id_key:text,
+        employ_cre_tslevel01_0:text,
+        employ_cre_ts_key:text,
+        employ_upd_by_idlevel01_0:text,
+        employ_upd_by_id_key:text,
+        employ_upd_tslevel01_0:text,
+        employ_upd_ts_key:text,
+        emp_bus_unit_idlevel01_0:text,
+        emp_bus_unit_id_key:text,
+        emp_dept_idlevel01_0:text,
+        emp_dept_id_key:text,
+        emp_fst_namelevel01_0:text,
+        emp_fst_name_key:text,
+        emp_last_namelevel01_0:text,
+        emp_last_name_key:text,
+        emp_milevel01_0:text,
+        emp_mi_key:text,
+        emp_numlevel01_0:text,
+        emp_num_key:text,
+        emp_stat_cdlevel01_0:text,
+        emp_stat_cd_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/dealer master'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD employeemaster_0(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD employ_cre_by_idlevel01_0 (any) OPT ANY
+             ADD employ_cre_by_id_key (any) OPT ANY
+             ADD employ_cre_tslevel01_0 (any) OPT ANY
+             ADD employ_cre_ts_key (any) OPT ANY
+             ADD employ_upd_by_idlevel01_0 (any) OPT ANY
+             ADD employ_upd_by_id_key (any) OPT ANY
+             ADD employ_upd_tslevel01_0 (any) OPT ANY
+             ADD employ_upd_ts_key (any) OPT ANY
+             ADD emp_bus_unit_idlevel01_0 (any) OPT ANY
+             ADD emp_bus_unit_id_key (any) OPT ANY
+             ADD emp_dept_idlevel01_0 (any) OPT ANY
+             ADD emp_dept_id_key (any) OPT ANY
+             ADD emp_fst_namelevel01_0 (any) OPT ANY
+             ADD emp_fst_name_key (any) OPT ANY
+             ADD emp_last_namelevel01_0 (any) OPT ANY
+             ADD emp_last_name_key (any) OPT ANY
+             ADD emp_milevel01_0 (any) OPT ANY
+             ADD emp_mi_key (any) OPT ANY
+             ADD emp_numlevel01_0 (any) OPT ANY
+             ADD emp_num_key (any) OPT ANY
+             ADD emp_stat_cdlevel01_0 (any) OPT ANY
+             ADD emp_stat_cd_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (emp_bus_unit_id_key, emp_bus_unit_idlevel01_0, emp_dept_id_key, emp_dept_idlevel01_0, emp_fst_name_key, emp_fst_namelevel01_0, emp_last_name_key, emp_last_namelevel01_0, emp_mi_key, emp_milevel01_0, emp_num_key, emp_numlevel01_0, emp_stat_cd_key, emp_stat_cdlevel01_0, employ_cre_by_id_key, employ_cre_by_idlevel01_0, employ_cre_ts_key, employ_cre_tslevel01_0, employ_upd_by_id_key, employ_upd_by_idlevel01_0, employ_upd_ts_key, employ_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi employeemaster_0)
+    );
+

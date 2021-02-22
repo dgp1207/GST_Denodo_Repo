@@ -1,0 +1,118 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_accobj
+    FOLDER = '/02 - base views/sap bw4hana/mf history/accessory'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ACCOBJ'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        acb_acct_proj_cdlevel01_0 = '[4ZCP_ACCOBJ-ACB_ACCT_PRO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_ACCT_PRO]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_ACCT_PRO]' LEVELPOSITION=1,
+        acb_acct_proj_cd_key = '[4ZCP_ACCOBJ-ACB_ACCT_PRO].[24ZCP_ACCOBJ-ACB_ACCT_PRO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_ACCT_PRO]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_ACCT_PRO]' ATTRIBUTE,
+        acb_acc_catg_base_obj_snlevel01_0 = '[4ZCP_ACCOBJ-GSYD6DU9PASD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-GSYD6DU9PASD]' DIMENSIONNAME = '[4ZCP_ACCOBJ-GSYD6DU9PASD]' LEVELPOSITION=1,
+        acb_acc_catg_base_obj_sn_key = '[4ZCP_ACCOBJ-GSYD6DU9PASD].[24ZCP_ACCOBJ-GSYD6DU9PASD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-GSYD6DU9PASD]' DIMENSIONNAME = '[4ZCP_ACCOBJ-GSYD6DU9PASD]' ATTRIBUTE,
+        acb_acc_catg_clsn_snlevel01_0 = '[4ZCP_ACCOBJ-ACB_ACC_CATG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_ACC_CATG]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_ACC_CATG]' LEVELPOSITION=1,
+        acb_acc_catg_clsn_sn_key = '[4ZCP_ACCOBJ-ACB_ACC_CATG].[24ZCP_ACCOBJ-ACB_ACC_CATG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_ACC_CATG]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_ACC_CATG]' ATTRIBUTE,
+        acb_archive_cdlevel01_0 = '[4ZCP_ACCOBJ-ACB_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_ARCHIVE]' LEVELPOSITION=1,
+        acb_archive_cd_key = '[4ZCP_ACCOBJ-ACB_ARCHIVE].[24ZCP_ACCOBJ-ACB_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_ARCHIVE]' ATTRIBUTE,
+        acb_base_act_pctlevel01_0 = '[4ZCP_ACCOBJ-ACB_BASE_ACT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_BASE_ACT]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_BASE_ACT]' LEVELPOSITION=1,
+        acb_base_act_pct_key = '[4ZCP_ACCOBJ-ACB_BASE_ACT].[24ZCP_ACCOBJ-ACB_BASE_ACT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_BASE_ACT]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_BASE_ACT]' ATTRIBUTE,
+        acb_cre_by_idlevel01_0 = '[4ZCP_ACCOBJ-ACB_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_CRE_BY_I]' LEVELPOSITION=1,
+        acb_cre_by_id_key = '[4ZCP_ACCOBJ-ACB_CRE_BY_I].[24ZCP_ACCOBJ-ACB_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_CRE_BY_I]' ATTRIBUTE,
+        acb_cre_tslevel01_0 = '[4ZCP_ACCOBJ-ACB_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_CRE_TS]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_CRE_TS]' LEVELPOSITION=1,
+        acb_cre_ts_key = '[4ZCP_ACCOBJ-ACB_CRE_TS].[24ZCP_ACCOBJ-ACB_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_CRE_TS]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_CRE_TS]' ATTRIBUTE,
+        acb_eff_dtlevel01_0 = '[4ZCP_ACCOBJ-ACB_EFF_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_EFF_DT]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_EFF_DT]' LEVELPOSITION=1,
+        acb_eff_dt_key = '[4ZCP_ACCOBJ-ACB_EFF_DT].[24ZCP_ACCOBJ-ACB_EFF_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_EFF_DT]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_EFF_DT]' ATTRIBUTE,
+        acb_end_dtlevel01_0 = '[4ZCP_ACCOBJ-ACB_END_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_END_DT]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_END_DT]' LEVELPOSITION=1,
+        acb_end_dt_key = '[4ZCP_ACCOBJ-ACB_END_DT].[24ZCP_ACCOBJ-ACB_END_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_END_DT]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_END_DT]' ATTRIBUTE,
+        acb_pentr_cdlevel01_0 = '[4ZCP_ACCOBJ-ACB_PENTR_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_PENTR_CD]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_PENTR_CD]' LEVELPOSITION=1,
+        acb_pentr_cd_key = '[4ZCP_ACCOBJ-ACB_PENTR_CD].[24ZCP_ACCOBJ-ACB_PENTR_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_PENTR_CD]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_PENTR_CD]' ATTRIBUTE,
+        acb_trgt_obj_pctlevel01_0 = '[4ZCP_ACCOBJ-ACB_TRGT_OBJ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_TRGT_OBJ]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_TRGT_OBJ]' LEVELPOSITION=1,
+        acb_trgt_obj_pct_key = '[4ZCP_ACCOBJ-ACB_TRGT_OBJ].[24ZCP_ACCOBJ-ACB_TRGT_OBJ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_TRGT_OBJ]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_TRGT_OBJ]' ATTRIBUTE,
+        acb_upd_by_idlevel01_0 = '[4ZCP_ACCOBJ-ACB_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_UPD_BY_I]' LEVELPOSITION=1,
+        acb_upd_by_id_key = '[4ZCP_ACCOBJ-ACB_UPD_BY_I].[24ZCP_ACCOBJ-ACB_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_UPD_BY_I]' ATTRIBUTE,
+        acb_upd_tslevel01_0 = '[4ZCP_ACCOBJ-ACB_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_UPD_TS]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_UPD_TS]' LEVELPOSITION=1,
+        acb_upd_ts_key = '[4ZCP_ACCOBJ-ACB_UPD_TS].[24ZCP_ACCOBJ-ACB_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCOBJ-ACB_UPD_TS]' DIMENSIONNAME = '[4ZCP_ACCOBJ-ACB_UPD_TS]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_accobj I18N us_cst (
+        acb_acct_proj_cdlevel01_0:text,
+        acb_acct_proj_cd_key:text,
+        acb_acc_catg_base_obj_snlevel01_0:text,
+        acb_acc_catg_base_obj_sn_key:text,
+        acb_acc_catg_clsn_snlevel01_0:text,
+        acb_acc_catg_clsn_sn_key:text,
+        acb_archive_cdlevel01_0:text,
+        acb_archive_cd_key:text,
+        acb_base_act_pctlevel01_0:text,
+        acb_base_act_pct_key:text,
+        acb_cre_by_idlevel01_0:text,
+        acb_cre_by_id_key:text,
+        acb_cre_tslevel01_0:text,
+        acb_cre_ts_key:text,
+        acb_eff_dtlevel01_0:text,
+        acb_eff_dt_key:text,
+        acb_end_dtlevel01_0:text,
+        acb_end_dt_key:text,
+        acb_pentr_cdlevel01_0:text,
+        acb_pentr_cd_key:text,
+        acb_trgt_obj_pctlevel01_0:text,
+        acb_trgt_obj_pct_key:text,
+        acb_upd_by_idlevel01_0:text,
+        acb_upd_by_id_key:text,
+        acb_upd_tslevel01_0:text,
+        acb_upd_ts_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/accessory'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_accobj(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD acb_acct_proj_cdlevel01_0 (any) OPT ANY
+             ADD acb_acct_proj_cd_key (any) OPT ANY
+             ADD acb_acc_catg_base_obj_snlevel01_0 (any) OPT ANY
+             ADD acb_acc_catg_base_obj_sn_key (any) OPT ANY
+             ADD acb_acc_catg_clsn_snlevel01_0 (any) OPT ANY
+             ADD acb_acc_catg_clsn_sn_key (any) OPT ANY
+             ADD acb_archive_cdlevel01_0 (any) OPT ANY
+             ADD acb_archive_cd_key (any) OPT ANY
+             ADD acb_base_act_pctlevel01_0 (any) OPT ANY
+             ADD acb_base_act_pct_key (any) OPT ANY
+             ADD acb_cre_by_idlevel01_0 (any) OPT ANY
+             ADD acb_cre_by_id_key (any) OPT ANY
+             ADD acb_cre_tslevel01_0 (any) OPT ANY
+             ADD acb_cre_ts_key (any) OPT ANY
+             ADD acb_eff_dtlevel01_0 (any) OPT ANY
+             ADD acb_eff_dt_key (any) OPT ANY
+             ADD acb_end_dtlevel01_0 (any) OPT ANY
+             ADD acb_end_dt_key (any) OPT ANY
+             ADD acb_pentr_cdlevel01_0 (any) OPT ANY
+             ADD acb_pentr_cd_key (any) OPT ANY
+             ADD acb_trgt_obj_pctlevel01_0 (any) OPT ANY
+             ADD acb_trgt_obj_pct_key (any) OPT ANY
+             ADD acb_upd_by_idlevel01_0 (any) OPT ANY
+             ADD acb_upd_by_id_key (any) OPT ANY
+             ADD acb_upd_tslevel01_0 (any) OPT ANY
+             ADD acb_upd_ts_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (acb_acc_catg_base_obj_sn_key, acb_acc_catg_base_obj_snlevel01_0, acb_acc_catg_clsn_sn_key, acb_acc_catg_clsn_snlevel01_0, acb_acct_proj_cd_key, acb_acct_proj_cdlevel01_0, acb_archive_cd_key, acb_archive_cdlevel01_0, acb_base_act_pct_key, acb_base_act_pctlevel01_0, acb_cre_by_id_key, acb_cre_by_idlevel01_0, acb_cre_ts_key, acb_cre_tslevel01_0, acb_eff_dt_key, acb_eff_dtlevel01_0, acb_end_dt_key, acb_end_dtlevel01_0, acb_pentr_cd_key, acb_pentr_cdlevel01_0, acb_trgt_obj_pct_key, acb_trgt_obj_pctlevel01_0, acb_upd_by_id_key, acb_upd_by_idlevel01_0, acb_upd_ts_key, acb_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_accobj)
+    );
+

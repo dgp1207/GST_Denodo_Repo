@@ -1,0 +1,435 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_asndtl
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ASNDTL'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        asd_actn_cdlevel01_0 = '[4ZCP_ASNDTL-ASD_ACTN_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_ACTN_CD]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_ACTN_CD]' LEVELPOSITION=1,
+        asd_actn_cd_key = '[4ZCP_ASNDTL-ASD_ACTN_CD].[24ZCP_ASNDTL-ASD_ACTN_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_ACTN_CD]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_ACTN_CD]' ATTRIBUTE,
+        asd_archive_inlevel01_0 = '[4ZCP_ASNDTL-ASD_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_ARCHIVE]' LEVELPOSITION=1,
+        asd_archive_in_key = '[4ZCP_ASNDTL-ASD_ARCHIVE].[24ZCP_ASNDTL-ASD_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_ARCHIVE]' ATTRIBUTE,
+        asd_assort_numlevel01_0 = '[4ZCP_ASNDTL-ASD_ASSORT_N].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_ASSORT_N]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_ASSORT_N]' LEVELPOSITION=1,
+        asd_assort_num_key = '[4ZCP_ASNDTL-ASD_ASSORT_N].[24ZCP_ASNDTL-ASD_ASSORT_N]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_ASSORT_N]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_ASSORT_N]' ATTRIBUTE,
+        asd_batch_numlevel01_0 = '[4ZCP_ASNDTL-ASD_BATCH_NU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_BATCH_NU]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_BATCH_NU]' LEVELPOSITION=1,
+        asd_batch_num_key = '[4ZCP_ASNDTL-ASD_BATCH_NU].[24ZCP_ASNDTL-ASD_BATCH_NU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_BATCH_NU]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_BATCH_NU]' ATTRIBUTE,
+        asd_cases_shpdlevel01_0 = '[4ZCP_ASNDTL-ASD_CASES_SH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_CASES_SH]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_CASES_SH]' LEVELPOSITION=1,
+        asd_cases_shpd_key = '[4ZCP_ASNDTL-ASD_CASES_SH].[24ZCP_ASNDTL-ASD_CASES_SH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_CASES_SH]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_CASES_SH]' ATTRIBUTE,
+        asd_cntry_of_orgnlevel01_0 = '[4ZCP_ASNDTL-ASD_CNTRY_OF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_CNTRY_OF]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_CNTRY_OF]' LEVELPOSITION=1,
+        asd_cntry_of_orgn_key = '[4ZCP_ASNDTL-ASD_CNTRY_OF].[24ZCP_ASNDTL-ASD_CNTRY_OF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_CNTRY_OF]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_CNTRY_OF]' ATTRIBUTE,
+        asd_colorlevel01_0 = '[4ZCP_ASNDTL-ASD_COLOR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_COLOR]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_COLOR]' LEVELPOSITION=1,
+        asd_color_key = '[4ZCP_ASNDTL-ASD_COLOR].[24ZCP_ASNDTL-ASD_COLOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_COLOR]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_COLOR]' ATTRIBUTE,
+        asd_color_sfxlevel01_0 = '[4ZCP_ASNDTL-ASD_COLOR_SF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_COLOR_SF]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_COLOR_SF]' LEVELPOSITION=1,
+        asd_color_sfx_key = '[4ZCP_ASNDTL-ASD_COLOR_SF].[24ZCP_ASNDTL-ASD_COLOR_SF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_COLOR_SF]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_COLOR_SF]' ATTRIBUTE,
+        asd_companylevel01_0 = '[4ZCP_ASNDTL-ASD_COMPANY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_COMPANY]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_COMPANY]' LEVELPOSITION=1,
+        asd_company_key = '[4ZCP_ASNDTL-ASD_COMPANY].[24ZCP_ASNDTL-ASD_COMPANY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_COMPANY]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_COMPANY]' ATTRIBUTE,
+        asd_create_date_tmlevel01_0 = '[4ZCP_ASNDTL-ASD_CREATE_D].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_CREATE_D]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_CREATE_D]' LEVELPOSITION=1,
+        asd_create_date_tm_key = '[4ZCP_ASNDTL-ASD_CREATE_D].[24ZCP_ASNDTL-ASD_CREATE_D]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_CREATE_D]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_CREATE_D]' ATTRIBUTE,
+        asd_cut_numlevel01_0 = '[4ZCP_ASNDTL-ASD_CUT_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_CUT_NUM]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_CUT_NUM]' LEVELPOSITION=1,
+        asd_cut_num_key = '[4ZCP_ASNDTL-ASD_CUT_NUM].[24ZCP_ASNDTL-ASD_CUT_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_CUT_NUM]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_CUT_NUM]' ATTRIBUTE,
+        asd_divisionlevel01_0 = '[4ZCP_ASNDTL-ASD_DIVISION].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_DIVISION]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_DIVISION]' LEVELPOSITION=1,
+        asd_division_key = '[4ZCP_ASNDTL-ASD_DIVISION].[24ZCP_ASNDTL-ASD_DIVISION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_DIVISION]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_DIVISION]' ATTRIBUTE,
+        asd_dtl_idlevel01_0 = '[4ZCP_ASNDTL-ASD_DTL_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_DTL_ID]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_DTL_ID]' LEVELPOSITION=1,
+        asd_dtl_id_key = '[4ZCP_ASNDTL-ASD_DTL_ID].[24ZCP_ASNDTL-ASD_DTL_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_DTL_ID]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_DTL_ID]' ATTRIBUTE,
+        asd_error_seq_numlevel01_0 = '[4ZCP_ASNDTL-ASD_ERROR_SE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_ERROR_SE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_ERROR_SE]' LEVELPOSITION=1,
+        asd_error_seq_num_key = '[4ZCP_ASNDTL-ASD_ERROR_SE].[24ZCP_ASNDTL-ASD_ERROR_SE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_ERROR_SE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_ERROR_SE]' ATTRIBUTE,
+        asd_hld_qual_chklevel01_0 = '[4ZCP_ASNDTL-ASD_HLD_QUAL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_HLD_QUAL]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_HLD_QUAL]' LEVELPOSITION=1,
+        asd_hld_qual_chk_key = '[4ZCP_ASNDTL-ASD_HLD_QUAL].[24ZCP_ASNDTL-ASD_HLD_QUAL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_HLD_QUAL]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_HLD_QUAL]' ATTRIBUTE,
+        asd_host_inpt_idlevel01_0 = '[4ZCP_ASNDTL-ASD_HOST_INP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_HOST_INP]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_HOST_INP]' LEVELPOSITION=1,
+        asd_host_inpt_id_key = '[4ZCP_ASNDTL-ASD_HOST_INP].[24ZCP_ASNDTL-ASD_HOST_INP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_HOST_INP]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_HOST_INP]' ATTRIBUTE,
+        asd_invn_typelevel01_0 = '[4ZCP_ASNDTL-ASD_INVN_TYP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_INVN_TYP]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_INVN_TYP]' LEVELPOSITION=1,
+        asd_invn_type_key = '[4ZCP_ASNDTL-ASD_INVN_TYP].[24ZCP_ASNDTL-ASD_INVN_TYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_INVN_TYP]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_INVN_TYP]' ATTRIBUTE,
+        asd_lpn_per_tierlevel01_0 = '[4ZCP_ASNDTL-ASD_LPN_PER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_LPN_PER]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_LPN_PER]' LEVELPOSITION=1,
+        asd_lpn_per_tier_key = '[4ZCP_ASNDTL-ASD_LPN_PER].[24ZCP_ASNDTL-ASD_LPN_PER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_LPN_PER]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_LPN_PER]' ATTRIBUTE,
+        asd_mfg_datelevel01_0 = '[4ZCP_ASNDTL-ASD_MFG_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_MFG_DATE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_MFG_DATE]' LEVELPOSITION=1,
+        asd_mfg_date_key = '[4ZCP_ASNDTL-ASD_MFG_DATE].[24ZCP_ASNDTL-ASD_MFG_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_MFG_DATE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_MFG_DATE]' ATTRIBUTE,
+        asd_mfg_plntlevel01_0 = '[4ZCP_ASNDTL-ASD_MFG_PLNT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_MFG_PLNT]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_MFG_PLNT]' LEVELPOSITION=1,
+        asd_mfg_plnt_key = '[4ZCP_ASNDTL-ASD_MFG_PLNT].[24ZCP_ASNDTL-ASD_MFG_PLNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_MFG_PLNT]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_MFG_PLNT]' ATTRIBUTE,
+        asd_misc_instr_cd1level01_0 = '[4ZCP_ASNDTL-ASD_MISC_INS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_MISC_INS]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_MISC_INS]' LEVELPOSITION=1,
+        asd_misc_instr_cd1_key = '[4ZCP_ASNDTL-ASD_MISC_INS].[24ZCP_ASNDTL-ASD_MISC_INS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_MISC_INS]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_MISC_INS]' ATTRIBUTE,
+        asd_misc_instr_cd2level01_0 = '[4ZCP_ASNDTL-ASD_MISC_I_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_MISC_I_0]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_MISC_I_0]' LEVELPOSITION=1,
+        asd_misc_instr_cd2_key = '[4ZCP_ASNDTL-ASD_MISC_I_0].[24ZCP_ASNDTL-ASD_MISC_I_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_MISC_I_0]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_MISC_I_0]' ATTRIBUTE,
+        asd_mod_date_tmlevel01_0 = '[4ZCP_ASNDTL-ASD_MOD_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_MOD_DATE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_MOD_DATE]' LEVELPOSITION=1,
+        asd_mod_date_tm_key = '[4ZCP_ASNDTL-ASD_MOD_DATE].[24ZCP_ASNDTL-ASD_MOD_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_MOD_DATE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_MOD_DATE]' ATTRIBUTE,
+        asd_num_pk_ctch_wtlevel01_0 = '[4ZCP_ASNDTL-ASD_NUM_PK_C].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_NUM_PK_C]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_NUM_PK_C]' LEVELPOSITION=1,
+        asd_num_pk_ctch_wt_key = '[4ZCP_ASNDTL-ASD_NUM_PK_C].[24ZCP_ASNDTL-ASD_NUM_PK_C]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_NUM_PK_C]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_NUM_PK_C]' ATTRIBUTE,
+        asd_po_line_numlevel01_0 = '[4ZCP_ASNDTL-ASD_PO_LINE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PO_LINE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PO_LINE]' LEVELPOSITION=1,
+        asd_po_line_num_key = '[4ZCP_ASNDTL-ASD_PO_LINE].[24ZCP_ASNDTL-ASD_PO_LINE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PO_LINE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PO_LINE]' ATTRIBUTE,
+        asd_po_numlevel01_0 = '[4ZCP_ASNDTL-ASD_PO_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PO_NUM]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PO_NUM]' LEVELPOSITION=1,
+        asd_po_num_key = '[4ZCP_ASNDTL-ASD_PO_NUM].[24ZCP_ASNDTL-ASD_PO_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PO_NUM]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PO_NUM]' ATTRIBUTE,
+        asd_ppack_grp_cdlevel01_0 = '[4ZCP_ASNDTL-ASD_PPACK_GR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PPACK_GR]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PPACK_GR]' LEVELPOSITION=1,
+        asd_ppack_grp_cd_key = '[4ZCP_ASNDTL-ASD_PPACK_GR].[24ZCP_ASNDTL-ASD_PPACK_GR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PPACK_GR]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PPACK_GR]' ATTRIBUTE,
+        asd_prc_immed_needlevel01_0 = '[4ZCP_ASNDTL-ASD_PRC_IMME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PRC_IMME]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PRC_IMME]' LEVELPOSITION=1,
+        asd_prc_immed_need_key = '[4ZCP_ASNDTL-ASD_PRC_IMME].[24ZCP_ASNDTL-ASD_PRC_IMME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PRC_IMME]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PRC_IMME]' ATTRIBUTE,
+        asd_proc_cmt_txlevel01_0 = '[4ZCP_ASNDTL-ASD_PROC_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PROC_CMT]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PROC_CMT]' LEVELPOSITION=1,
+        asd_proc_cmt_tx_key = '[4ZCP_ASNDTL-ASD_PROC_CMT].[24ZCP_ASNDTL-ASD_PROC_CMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PROC_CMT]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PROC_CMT]' ATTRIBUTE,
+        asd_proc_stat_cdlevel01_0 = '[4ZCP_ASNDTL-ASD_PROC_STA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PROC_STA]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PROC_STA]' LEVELPOSITION=1,
+        asd_proc_stat_cd_key = '[4ZCP_ASNDTL-ASD_PROC_STA].[24ZCP_ASNDTL-ASD_PROC_STA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PROC_STA]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PROC_STA]' ATTRIBUTE,
+        asd_proc_tslevel01_0 = '[4ZCP_ASNDTL-ASD_PROC_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PROC_TS]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PROC_TS]' LEVELPOSITION=1,
+        asd_proc_ts_key = '[4ZCP_ASNDTL-ASD_PROC_TS].[24ZCP_ASNDTL-ASD_PROC_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PROC_TS]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PROC_TS]' ATTRIBUTE,
+        asd_prod_statlevel01_0 = '[4ZCP_ASNDTL-ASD_PROD_STA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PROD_STA]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PROD_STA]' LEVELPOSITION=1,
+        asd_prod_stat_key = '[4ZCP_ASNDTL-ASD_PROD_STA].[24ZCP_ASNDTL-ASD_PROD_STA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PROD_STA]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PROD_STA]' ATTRIBUTE,
+        asd_putwy_typelevel01_0 = '[4ZCP_ASNDTL-ASD_PUTWY_TY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PUTWY_TY]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PUTWY_TY]' LEVELPOSITION=1,
+        asd_putwy_type_key = '[4ZCP_ASNDTL-ASD_PUTWY_TY].[24ZCP_ASNDTL-ASD_PUTWY_TY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_PUTWY_TY]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_PUTWY_TY]' ATTRIBUTE,
+        asd_qualitylevel01_0 = '[4ZCP_ASNDTL-ASD_QUALITY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_QUALITY]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_QUALITY]' LEVELPOSITION=1,
+        asd_quality_key = '[4ZCP_ASNDTL-ASD_QUALITY].[24ZCP_ASNDTL-ASD_QUALITY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_QUALITY]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_QUALITY]' ATTRIBUTE,
+        asd_redy_stat_cdlevel01_0 = '[4ZCP_ASNDTL-ASD_REDY_STA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_REDY_STA]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_REDY_STA]' LEVELPOSITION=1,
+        asd_redy_stat_cd_key = '[4ZCP_ASNDTL-ASD_REDY_STA].[24ZCP_ASNDTL-ASD_REDY_STA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_REDY_STA]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_REDY_STA]' ATTRIBUTE,
+        asd_ref_field1level01_0 = '[4ZCP_ASNDTL-ASD_REF_FIEL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_REF_FIEL]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_REF_FIEL]' LEVELPOSITION=1,
+        asd_ref_field1_key = '[4ZCP_ASNDTL-ASD_REF_FIEL].[24ZCP_ASNDTL-ASD_REF_FIEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_REF_FIEL]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_REF_FIEL]' ATTRIBUTE,
+        asd_ref_field2level01_0 = '[4ZCP_ASNDTL-ASD_REF_FI_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_REF_FI_0]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_REF_FI_0]' LEVELPOSITION=1,
+        asd_ref_field2_key = '[4ZCP_ASNDTL-ASD_REF_FI_0].[24ZCP_ASNDTL-ASD_REF_FI_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_REF_FI_0]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_REF_FI_0]' ATTRIBUTE,
+        asd_ref_field3level01_0 = '[4ZCP_ASNDTL-ASD_REF_FI_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_REF_FI_1]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_REF_FI_1]' LEVELPOSITION=1,
+        asd_ref_field3_key = '[4ZCP_ASNDTL-ASD_REF_FI_1].[24ZCP_ASNDTL-ASD_REF_FI_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_REF_FI_1]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_REF_FI_1]' ATTRIBUTE,
+        asd_seasonlevel01_0 = '[4ZCP_ASNDTL-ASD_SEASON].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SEASON]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SEASON]' LEVELPOSITION=1,
+        asd_season_key = '[4ZCP_ASNDTL-ASD_SEASON].[24ZCP_ASNDTL-ASD_SEASON]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SEASON]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SEASON]' ATTRIBUTE,
+        asd_season_yrlevel01_0 = '[4ZCP_ASNDTL-ASD_SEASON_Y].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SEASON_Y]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SEASON_Y]' LEVELPOSITION=1,
+        asd_season_yr_key = '[4ZCP_ASNDTL-ASD_SEASON_Y].[24ZCP_ASNDTL-ASD_SEASON_Y]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SEASON_Y]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SEASON_Y]' ATTRIBUTE,
+        asd_sec_dimlevel01_0 = '[4ZCP_ASNDTL-ASD_SEC_DIM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SEC_DIM]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SEC_DIM]' LEVELPOSITION=1,
+        asd_sec_dim_key = '[4ZCP_ASNDTL-ASD_SEC_DIM].[24ZCP_ASNDTL-ASD_SEC_DIM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SEC_DIM]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SEC_DIM]' ATTRIBUTE,
+        asd_ship_by_datelevel01_0 = '[4ZCP_ASNDTL-ASD_SHIP_BY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SHIP_BY]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SHIP_BY]' LEVELPOSITION=1,
+        asd_ship_by_date_key = '[4ZCP_ASNDTL-ASD_SHIP_BY].[24ZCP_ASNDTL-ASD_SHIP_BY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SHIP_BY]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SHIP_BY]' ATTRIBUTE,
+        asd_shpmt_numlevel01_0 = '[4ZCP_ASNDTL-ASD_SHPMT_NU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SHPMT_NU]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SHPMT_NU]' LEVELPOSITION=1,
+        asd_shpmt_num_key = '[4ZCP_ASNDTL-ASD_SHPMT_NU].[24ZCP_ASNDTL-ASD_SHPMT_NU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SHPMT_NU]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SHPMT_NU]' ATTRIBUTE,
+        asd_shpmt_seq_numlevel01_0 = '[4ZCP_ASNDTL-ASD_SHPMT_SE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SHPMT_SE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SHPMT_SE]' LEVELPOSITION=1,
+        asd_shpmt_seq_num_key = '[4ZCP_ASNDTL-ASD_SHPMT_SE].[24ZCP_ASNDTL-ASD_SHPMT_SE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SHPMT_SE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SHPMT_SE]' ATTRIBUTE,
+        asd_size_desclevel01_0 = '[4ZCP_ASNDTL-ASD_SIZE_DES].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SIZE_DES]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SIZE_DES]' LEVELPOSITION=1,
+        asd_size_desc_key = '[4ZCP_ASNDTL-ASD_SIZE_DES].[24ZCP_ASNDTL-ASD_SIZE_DES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SIZE_DES]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SIZE_DES]' ATTRIBUTE,
+        asd_size_range_cdlevel01_0 = '[4ZCP_ASNDTL-ASD_SIZE_RAN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SIZE_RAN]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SIZE_RAN]' LEVELPOSITION=1,
+        asd_size_range_cd_key = '[4ZCP_ASNDTL-ASD_SIZE_RAN].[24ZCP_ASNDTL-ASD_SIZE_RAN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SIZE_RAN]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SIZE_RAN]' ATTRIBUTE,
+        asd_size_rel_posnlevel01_0 = '[4ZCP_ASNDTL-ASD_SIZE_REL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SIZE_REL]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SIZE_REL]' LEVELPOSITION=1,
+        asd_size_rel_posn_key = '[4ZCP_ASNDTL-ASD_SIZE_REL].[24ZCP_ASNDTL-ASD_SIZE_REL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SIZE_REL]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SIZE_REL]' ATTRIBUTE,
+        asd_sku_attr1level01_0 = '[4ZCP_ASNDTL-ASD_SKU_ATTR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_ATTR]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_ATTR]' LEVELPOSITION=1,
+        asd_sku_attr1_key = '[4ZCP_ASNDTL-ASD_SKU_ATTR].[24ZCP_ASNDTL-ASD_SKU_ATTR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_ATTR]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_ATTR]' ATTRIBUTE,
+        asd_sku_attr2level01_0 = '[4ZCP_ASNDTL-ASD_SKU_AT_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_0]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_0]' LEVELPOSITION=1,
+        asd_sku_attr2_key = '[4ZCP_ASNDTL-ASD_SKU_AT_0].[24ZCP_ASNDTL-ASD_SKU_AT_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_0]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_0]' ATTRIBUTE,
+        asd_sku_attr3level01_0 = '[4ZCP_ASNDTL-ASD_SKU_AT_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_1]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_1]' LEVELPOSITION=1,
+        asd_sku_attr3_key = '[4ZCP_ASNDTL-ASD_SKU_AT_1].[24ZCP_ASNDTL-ASD_SKU_AT_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_1]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_1]' ATTRIBUTE,
+        asd_sku_attr4level01_0 = '[4ZCP_ASNDTL-ASD_SKU_AT_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_2]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_2]' LEVELPOSITION=1,
+        asd_sku_attr4_key = '[4ZCP_ASNDTL-ASD_SKU_AT_2].[24ZCP_ASNDTL-ASD_SKU_AT_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_2]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_2]' ATTRIBUTE,
+        asd_sku_attr5level01_0 = '[4ZCP_ASNDTL-ASD_SKU_AT_3].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_3]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_3]' LEVELPOSITION=1,
+        asd_sku_attr5_key = '[4ZCP_ASNDTL-ASD_SKU_AT_3].[24ZCP_ASNDTL-ASD_SKU_AT_3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_3]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_AT_3]' ATTRIBUTE,
+        asd_sku_idlevel01_0 = '[4ZCP_ASNDTL-ASD_SKU_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_ID]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_ID]' LEVELPOSITION=1,
+        asd_sku_id_key = '[4ZCP_ASNDTL-ASD_SKU_ID].[24ZCP_ASNDTL-ASD_SKU_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_SKU_ID]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_SKU_ID]' ATTRIBUTE,
+        asd_stylelevel01_0 = '[4ZCP_ASNDTL-ASD_STYLE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_STYLE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_STYLE]' LEVELPOSITION=1,
+        asd_style_key = '[4ZCP_ASNDTL-ASD_STYLE].[24ZCP_ASNDTL-ASD_STYLE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_STYLE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_STYLE]' ATTRIBUTE,
+        asd_style_sfxlevel01_0 = '[4ZCP_ASNDTL-ASD_STYLE_SF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_STYLE_SF]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_STYLE_SF]' LEVELPOSITION=1,
+        asd_style_sfx_key = '[4ZCP_ASNDTL-ASD_STYLE_SF].[24ZCP_ASNDTL-ASD_STYLE_SF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_STYLE_SF]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_STYLE_SF]' ATTRIBUTE,
+        asd_tier_per_pltlevel01_0 = '[4ZCP_ASNDTL-ASD_TIER_PER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_TIER_PER]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_TIER_PER]' LEVELPOSITION=1,
+        asd_tier_per_plt_key = '[4ZCP_ASNDTL-ASD_TIER_PER].[24ZCP_ASNDTL-ASD_TIER_PER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_TIER_PER]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_TIER_PER]' ATTRIBUTE,
+        asd_tot_unload_tmlevel01_0 = '[4ZCP_ASNDTL-ASD_TOT_UNLO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_TOT_UNLO]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_TOT_UNLO]' LEVELPOSITION=1,
+        asd_tot_unload_tm_key = '[4ZCP_ASNDTL-ASD_TOT_UNLO].[24ZCP_ASNDTL-ASD_TOT_UNLO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_TOT_UNLO]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_TOT_UNLO]' ATTRIBUTE,
+        asd_user_idlevel01_0 = '[4ZCP_ASNDTL-ASD_USER_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_USER_ID]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_USER_ID]' LEVELPOSITION=1,
+        asd_user_id_key = '[4ZCP_ASNDTL-ASD_USER_ID].[24ZCP_ASNDTL-ASD_USER_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_USER_ID]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_USER_ID]' ATTRIBUTE,
+        asd_vendor_idlevel01_0 = '[4ZCP_ASNDTL-ASD_VENDOR_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_VENDOR_I]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_VENDOR_I]' LEVELPOSITION=1,
+        asd_vendor_id_key = '[4ZCP_ASNDTL-ASD_VENDOR_I].[24ZCP_ASNDTL-ASD_VENDOR_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_VENDOR_I]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_VENDOR_I]' ATTRIBUTE,
+        asd_vndr_item_numlevel01_0 = '[4ZCP_ASNDTL-ASD_VNDR_ITE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_VNDR_ITE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_VNDR_ITE]' LEVELPOSITION=1,
+        asd_vndr_item_num_key = '[4ZCP_ASNDTL-ASD_VNDR_ITE].[24ZCP_ASNDTL-ASD_VNDR_ITE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_VNDR_ITE]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_VNDR_ITE]' ATTRIBUTE,
+        asd_xpire_datelevel01_0 = '[4ZCP_ASNDTL-ASD_XPIRE_DA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_XPIRE_DA]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_XPIRE_DA]' LEVELPOSITION=1,
+        asd_xpire_date_key = '[4ZCP_ASNDTL-ASD_XPIRE_DA].[24ZCP_ASNDTL-ASD_XPIRE_DA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASD_XPIRE_DA]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASD_XPIRE_DA]' ATTRIBUTE,
+        asndtl_cre_by_idlevel01_0 = '[4ZCP_ASNDTL-ASNDTL_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASNDTL_CRE_B]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASNDTL_CRE_B]' LEVELPOSITION=1,
+        asndtl_cre_by_id_key = '[4ZCP_ASNDTL-ASNDTL_CRE_B].[24ZCP_ASNDTL-ASNDTL_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASNDTL_CRE_B]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASNDTL_CRE_B]' ATTRIBUTE,
+        asndtl_cre_tslevel01_0 = '[4ZCP_ASNDTL-ASNDTL_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASNDTL_CRE_T]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASNDTL_CRE_T]' LEVELPOSITION=1,
+        asndtl_cre_ts_key = '[4ZCP_ASNDTL-ASNDTL_CRE_T].[24ZCP_ASNDTL-ASNDTL_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASNDTL_CRE_T]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASNDTL_CRE_T]' ATTRIBUTE,
+        asndtl_upd_by_idlevel01_0 = '[4ZCP_ASNDTL-ASNDTL_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASNDTL_UPD_B]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASNDTL_UPD_B]' LEVELPOSITION=1,
+        asndtl_upd_by_id_key = '[4ZCP_ASNDTL-ASNDTL_UPD_B].[24ZCP_ASNDTL-ASNDTL_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASNDTL_UPD_B]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASNDTL_UPD_B]' ATTRIBUTE,
+        asndtl_upd_tslevel01_0 = '[4ZCP_ASNDTL-ASNDTL_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASNDTL_UPD_T]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASNDTL_UPD_T]' LEVELPOSITION=1,
+        asndtl_upd_ts_key = '[4ZCP_ASNDTL-ASNDTL_UPD_T].[24ZCP_ASNDTL-ASNDTL_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNDTL-ASNDTL_UPD_T]' DIMENSIONNAME = '[4ZCP_ASNDTL-ASNDTL_UPD_T]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    )
+    SOURCECONFIGURATION (
+        datainorderfieldslist = (),
+        delegateoperatorslist = (between, =, >=, >, in, <=, like, <, <>, notbetween, notin)
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_asndtl I18N us_cst (
+        asd_actn_cdlevel01_0:text,
+        asd_actn_cd_key:text,
+        asd_archive_inlevel01_0:text,
+        asd_archive_in_key:text,
+        asd_assort_numlevel01_0:text,
+        asd_assort_num_key:text,
+        asd_batch_numlevel01_0:text,
+        asd_batch_num_key:text,
+        asd_cases_shpdlevel01_0:text,
+        asd_cases_shpd_key:text,
+        asd_cntry_of_orgnlevel01_0:text,
+        asd_cntry_of_orgn_key:text,
+        asd_colorlevel01_0:text,
+        asd_color_key:text,
+        asd_color_sfxlevel01_0:text,
+        asd_color_sfx_key:text,
+        asd_companylevel01_0:text,
+        asd_company_key:text,
+        asd_create_date_tmlevel01_0:text,
+        asd_create_date_tm_key:text,
+        asd_cut_numlevel01_0:text,
+        asd_cut_num_key:text,
+        asd_divisionlevel01_0:text,
+        asd_division_key:text,
+        asd_dtl_idlevel01_0:text,
+        asd_dtl_id_key:text,
+        asd_error_seq_numlevel01_0:text,
+        asd_error_seq_num_key:text,
+        asd_hld_qual_chklevel01_0:text,
+        asd_hld_qual_chk_key:text,
+        asd_host_inpt_idlevel01_0:text,
+        asd_host_inpt_id_key:text,
+        asd_invn_typelevel01_0:text,
+        asd_invn_type_key:text,
+        asd_lpn_per_tierlevel01_0:text,
+        asd_lpn_per_tier_key:text,
+        asd_mfg_datelevel01_0:text,
+        asd_mfg_date_key:text,
+        asd_mfg_plntlevel01_0:text,
+        asd_mfg_plnt_key:text,
+        asd_misc_instr_cd1level01_0:text,
+        asd_misc_instr_cd1_key:text,
+        asd_misc_instr_cd2level01_0:text,
+        asd_misc_instr_cd2_key:text,
+        asd_mod_date_tmlevel01_0:text,
+        asd_mod_date_tm_key:text,
+        asd_num_pk_ctch_wtlevel01_0:text,
+        asd_num_pk_ctch_wt_key:text,
+        asd_po_line_numlevel01_0:text,
+        asd_po_line_num_key:text,
+        asd_po_numlevel01_0:text,
+        asd_po_num_key:text,
+        asd_ppack_grp_cdlevel01_0:text,
+        asd_ppack_grp_cd_key:text,
+        asd_prc_immed_needlevel01_0:text,
+        asd_prc_immed_need_key:text,
+        asd_proc_cmt_txlevel01_0:text,
+        asd_proc_cmt_tx_key:text,
+        asd_proc_stat_cdlevel01_0:text,
+        asd_proc_stat_cd_key:text,
+        asd_proc_tslevel01_0:text,
+        asd_proc_ts_key:text,
+        asd_prod_statlevel01_0:text,
+        asd_prod_stat_key:text,
+        asd_putwy_typelevel01_0:text,
+        asd_putwy_type_key:text,
+        asd_qualitylevel01_0:text,
+        asd_quality_key:text,
+        asd_redy_stat_cdlevel01_0:text,
+        asd_redy_stat_cd_key:text,
+        asd_ref_field1level01_0:text,
+        asd_ref_field1_key:text,
+        asd_ref_field2level01_0:text,
+        asd_ref_field2_key:text,
+        asd_ref_field3level01_0:text,
+        asd_ref_field3_key:text,
+        asd_seasonlevel01_0:text,
+        asd_season_key:text,
+        asd_season_yrlevel01_0:text,
+        asd_season_yr_key:text,
+        asd_sec_dimlevel01_0:text,
+        asd_sec_dim_key:text,
+        asd_ship_by_datelevel01_0:text,
+        asd_ship_by_date_key:text,
+        asd_shpmt_numlevel01_0:text,
+        asd_shpmt_num_key:text,
+        asd_shpmt_seq_numlevel01_0:text,
+        asd_shpmt_seq_num_key:text,
+        asd_size_desclevel01_0:text,
+        asd_size_desc_key:text,
+        asd_size_range_cdlevel01_0:text,
+        asd_size_range_cd_key:text,
+        asd_size_rel_posnlevel01_0:text,
+        asd_size_rel_posn_key:text,
+        asd_sku_attr1level01_0:text,
+        asd_sku_attr1_key:text,
+        asd_sku_attr2level01_0:text,
+        asd_sku_attr2_key:text,
+        asd_sku_attr3level01_0:text,
+        asd_sku_attr3_key:text,
+        asd_sku_attr4level01_0:text,
+        asd_sku_attr4_key:text,
+        asd_sku_attr5level01_0:text,
+        asd_sku_attr5_key:text,
+        asd_sku_idlevel01_0:text,
+        asd_sku_id_key:text,
+        asd_stylelevel01_0:text,
+        asd_style_key:text,
+        asd_style_sfxlevel01_0:text,
+        asd_style_sfx_key:text,
+        asd_tier_per_pltlevel01_0:text,
+        asd_tier_per_plt_key:text,
+        asd_tot_unload_tmlevel01_0:text,
+        asd_tot_unload_tm_key:text,
+        asd_user_idlevel01_0:text,
+        asd_user_id_key:text,
+        asd_vendor_idlevel01_0:text,
+        asd_vendor_id_key:text,
+        asd_vndr_item_numlevel01_0:text,
+        asd_vndr_item_num_key:text,
+        asd_xpire_datelevel01_0:text,
+        asd_xpire_date_key:text,
+        asndtl_cre_by_idlevel01_0:text,
+        asndtl_cre_by_id_key:text,
+        asndtl_cre_tslevel01_0:text,
+        asndtl_cre_ts_key:text,
+        asndtl_upd_by_idlevel01_0:text,
+        asndtl_upd_by_id_key:text,
+        asndtl_upd_tslevel01_0:text,
+        asndtl_upd_ts_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/parts transaction'
+    CACHE OFF
+    BATCHSIZEINCACHE DEFAULT
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_asndtl(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD asd_actn_cdlevel01_0 (any) OPT ANY
+             ADD asd_actn_cd_key (any) OPT ANY
+             ADD asd_archive_inlevel01_0 (any) OPT ANY
+             ADD asd_archive_in_key (any) OPT ANY
+             ADD asd_assort_numlevel01_0 (any) OPT ANY
+             ADD asd_assort_num_key (any) OPT ANY
+             ADD asd_batch_numlevel01_0 (any) OPT ANY
+             ADD asd_batch_num_key (any) OPT ANY
+             ADD asd_cases_shpdlevel01_0 (any) OPT ANY
+             ADD asd_cases_shpd_key (any) OPT ANY
+             ADD asd_cntry_of_orgnlevel01_0 (any) OPT ANY
+             ADD asd_cntry_of_orgn_key (any) OPT ANY
+             ADD asd_colorlevel01_0 (any) OPT ANY
+             ADD asd_color_key (any) OPT ANY
+             ADD asd_color_sfxlevel01_0 (any) OPT ANY
+             ADD asd_color_sfx_key (any) OPT ANY
+             ADD asd_companylevel01_0 (any) OPT ANY
+             ADD asd_company_key (any) OPT ANY
+             ADD asd_create_date_tmlevel01_0 (any) OPT ANY
+             ADD asd_create_date_tm_key (any) OPT ANY
+             ADD asd_cut_numlevel01_0 (any) OPT ANY
+             ADD asd_cut_num_key (any) OPT ANY
+             ADD asd_divisionlevel01_0 (any) OPT ANY
+             ADD asd_division_key (any) OPT ANY
+             ADD asd_dtl_idlevel01_0 (any) OPT ANY
+             ADD asd_dtl_id_key (any) OPT ANY
+             ADD asd_error_seq_numlevel01_0 (any) OPT ANY
+             ADD asd_error_seq_num_key (any) OPT ANY
+             ADD asd_hld_qual_chklevel01_0 (any) OPT ANY
+             ADD asd_hld_qual_chk_key (any) OPT ANY
+             ADD asd_host_inpt_idlevel01_0 (any) OPT ANY
+             ADD asd_host_inpt_id_key (any) OPT ANY
+             ADD asd_invn_typelevel01_0 (any) OPT ANY
+             ADD asd_invn_type_key (any) OPT ANY
+             ADD asd_lpn_per_tierlevel01_0 (any) OPT ANY
+             ADD asd_lpn_per_tier_key (any) OPT ANY
+             ADD asd_mfg_datelevel01_0 (any) OPT ANY
+             ADD asd_mfg_date_key (any) OPT ANY
+             ADD asd_mfg_plntlevel01_0 (any) OPT ANY
+             ADD asd_mfg_plnt_key (any) OPT ANY
+             ADD asd_misc_instr_cd1level01_0 (any) OPT ANY
+             ADD asd_misc_instr_cd1_key (any) OPT ANY
+             ADD asd_misc_instr_cd2level01_0 (any) OPT ANY
+             ADD asd_misc_instr_cd2_key (any) OPT ANY
+             ADD asd_mod_date_tmlevel01_0 (any) OPT ANY
+             ADD asd_mod_date_tm_key (any) OPT ANY
+             ADD asd_num_pk_ctch_wtlevel01_0 (any) OPT ANY
+             ADD asd_num_pk_ctch_wt_key (any) OPT ANY
+             ADD asd_po_line_numlevel01_0 (any) OPT ANY
+             ADD asd_po_line_num_key (any) OPT ANY
+             ADD asd_po_numlevel01_0 (any) OPT ANY
+             ADD asd_po_num_key (any) OPT ANY
+             ADD asd_ppack_grp_cdlevel01_0 (any) OPT ANY
+             ADD asd_ppack_grp_cd_key (any) OPT ANY
+             ADD asd_prc_immed_needlevel01_0 (any) OPT ANY
+             ADD asd_prc_immed_need_key (any) OPT ANY
+             ADD asd_proc_cmt_txlevel01_0 (any) OPT ANY
+             ADD asd_proc_cmt_tx_key (any) OPT ANY
+             ADD asd_proc_stat_cdlevel01_0 (any) OPT ANY
+             ADD asd_proc_stat_cd_key (any) OPT ANY
+             ADD asd_proc_tslevel01_0 (any) OPT ANY
+             ADD asd_proc_ts_key (any) OPT ANY
+             ADD asd_prod_statlevel01_0 (any) OPT ANY
+             ADD asd_prod_stat_key (any) OPT ANY
+             ADD asd_putwy_typelevel01_0 (any) OPT ANY
+             ADD asd_putwy_type_key (any) OPT ANY
+             ADD asd_qualitylevel01_0 (any) OPT ANY
+             ADD asd_quality_key (any) OPT ANY
+             ADD asd_redy_stat_cdlevel01_0 (any) OPT ANY
+             ADD asd_redy_stat_cd_key (any) OPT ANY
+             ADD asd_ref_field1level01_0 (any) OPT ANY
+             ADD asd_ref_field1_key (any) OPT ANY
+             ADD asd_ref_field2level01_0 (any) OPT ANY
+             ADD asd_ref_field2_key (any) OPT ANY
+             ADD asd_ref_field3level01_0 (any) OPT ANY
+             ADD asd_ref_field3_key (any) OPT ANY
+             ADD asd_seasonlevel01_0 (any) OPT ANY
+             ADD asd_season_key (any) OPT ANY
+             ADD asd_season_yrlevel01_0 (any) OPT ANY
+             ADD asd_season_yr_key (any) OPT ANY
+             ADD asd_sec_dimlevel01_0 (any) OPT ANY
+             ADD asd_sec_dim_key (any) OPT ANY
+             ADD asd_ship_by_datelevel01_0 (any) OPT ANY
+             ADD asd_ship_by_date_key (any) OPT ANY
+             ADD asd_shpmt_numlevel01_0 (any) OPT ANY
+             ADD asd_shpmt_num_key (any) OPT ANY
+             ADD asd_shpmt_seq_numlevel01_0 (any) OPT ANY
+             ADD asd_shpmt_seq_num_key (any) OPT ANY
+             ADD asd_size_desclevel01_0 (any) OPT ANY
+             ADD asd_size_desc_key (any) OPT ANY
+             ADD asd_size_range_cdlevel01_0 (any) OPT ANY
+             ADD asd_size_range_cd_key (any) OPT ANY
+             ADD asd_size_rel_posnlevel01_0 (any) OPT ANY
+             ADD asd_size_rel_posn_key (any) OPT ANY
+             ADD asd_sku_attr1level01_0 (any) OPT ANY
+             ADD asd_sku_attr1_key (any) OPT ANY
+             ADD asd_sku_attr2level01_0 (any) OPT ANY
+             ADD asd_sku_attr2_key (any) OPT ANY
+             ADD asd_sku_attr3level01_0 (any) OPT ANY
+             ADD asd_sku_attr3_key (any) OPT ANY
+             ADD asd_sku_attr4level01_0 (any) OPT ANY
+             ADD asd_sku_attr4_key (any) OPT ANY
+             ADD asd_sku_attr5level01_0 (any) OPT ANY
+             ADD asd_sku_attr5_key (any) OPT ANY
+             ADD asd_sku_idlevel01_0 (any) OPT ANY
+             ADD asd_sku_id_key (any) OPT ANY
+             ADD asd_stylelevel01_0 (any) OPT ANY
+             ADD asd_style_key (any) OPT ANY
+             ADD asd_style_sfxlevel01_0 (any) OPT ANY
+             ADD asd_style_sfx_key (any) OPT ANY
+             ADD asd_tier_per_pltlevel01_0 (any) OPT ANY
+             ADD asd_tier_per_plt_key (any) OPT ANY
+             ADD asd_tot_unload_tmlevel01_0 (any) OPT ANY
+             ADD asd_tot_unload_tm_key (any) OPT ANY
+             ADD asd_user_idlevel01_0 (any) OPT ANY
+             ADD asd_user_id_key (any) OPT ANY
+             ADD asd_vendor_idlevel01_0 (any) OPT ANY
+             ADD asd_vendor_id_key (any) OPT ANY
+             ADD asd_vndr_item_numlevel01_0 (any) OPT ANY
+             ADD asd_vndr_item_num_key (any) OPT ANY
+             ADD asd_xpire_datelevel01_0 (any) OPT ANY
+             ADD asd_xpire_date_key (any) OPT ANY
+             ADD asndtl_cre_by_idlevel01_0 (any) OPT ANY
+             ADD asndtl_cre_by_id_key (any) OPT ANY
+             ADD asndtl_cre_tslevel01_0 (any) OPT ANY
+             ADD asndtl_cre_ts_key (any) OPT ANY
+             ADD asndtl_upd_by_idlevel01_0 (any) OPT ANY
+             ADD asndtl_upd_by_id_key (any) OPT ANY
+             ADD asndtl_upd_tslevel01_0 (any) OPT ANY
+             ADD asndtl_upd_ts_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (asd_actn_cd_key, asd_actn_cdlevel01_0, asd_archive_in_key, asd_archive_inlevel01_0, asd_assort_num_key, asd_assort_numlevel01_0, asd_batch_num_key, asd_batch_numlevel01_0, asd_cases_shpd_key, asd_cases_shpdlevel01_0, asd_cntry_of_orgn_key, asd_cntry_of_orgnlevel01_0, asd_color_key, asd_color_sfx_key, asd_color_sfxlevel01_0, asd_colorlevel01_0, asd_company_key, asd_companylevel01_0, asd_create_date_tm_key, asd_create_date_tmlevel01_0, asd_cut_num_key, asd_cut_numlevel01_0, asd_division_key, asd_divisionlevel01_0, asd_dtl_id_key, asd_dtl_idlevel01_0, asd_error_seq_num_key, asd_error_seq_numlevel01_0, asd_hld_qual_chk_key, asd_hld_qual_chklevel01_0, asd_host_inpt_id_key, asd_host_inpt_idlevel01_0, asd_invn_type_key, asd_invn_typelevel01_0, asd_lpn_per_tier_key, asd_lpn_per_tierlevel01_0, asd_mfg_date_key, asd_mfg_datelevel01_0, asd_mfg_plnt_key, asd_mfg_plntlevel01_0, asd_misc_instr_cd1_key, asd_misc_instr_cd1level01_0, asd_misc_instr_cd2_key, asd_misc_instr_cd2level01_0, asd_mod_date_tm_key, asd_mod_date_tmlevel01_0, asd_num_pk_ctch_wt_key, asd_num_pk_ctch_wtlevel01_0, asd_po_line_num_key, asd_po_line_numlevel01_0, asd_po_num_key, asd_po_numlevel01_0, asd_ppack_grp_cd_key, asd_ppack_grp_cdlevel01_0, asd_prc_immed_need_key, asd_prc_immed_needlevel01_0, asd_proc_cmt_tx_key, asd_proc_cmt_txlevel01_0, asd_proc_stat_cd_key, asd_proc_stat_cdlevel01_0, asd_proc_ts_key, asd_proc_tslevel01_0, asd_prod_stat_key, asd_prod_statlevel01_0, asd_putwy_type_key, asd_putwy_typelevel01_0, asd_quality_key, asd_qualitylevel01_0, asd_redy_stat_cd_key, asd_redy_stat_cdlevel01_0, asd_ref_field1_key, asd_ref_field1level01_0, asd_ref_field2_key, asd_ref_field2level01_0, asd_ref_field3_key, asd_ref_field3level01_0, asd_season_key, asd_season_yr_key, asd_season_yrlevel01_0, asd_seasonlevel01_0, asd_sec_dim_key, asd_sec_dimlevel01_0, asd_ship_by_date_key, asd_ship_by_datelevel01_0, asd_shpmt_num_key, asd_shpmt_numlevel01_0, asd_shpmt_seq_num_key, asd_shpmt_seq_numlevel01_0, asd_size_desc_key, asd_size_desclevel01_0, asd_size_range_cd_key, asd_size_range_cdlevel01_0, asd_size_rel_posn_key, asd_size_rel_posnlevel01_0, asd_sku_attr1_key, asd_sku_attr1level01_0, asd_sku_attr2_key, asd_sku_attr2level01_0, asd_sku_attr3_key, asd_sku_attr3level01_0, asd_sku_attr4_key, asd_sku_attr4level01_0, asd_sku_attr5_key, asd_sku_attr5level01_0, asd_sku_id_key, asd_sku_idlevel01_0, asd_style_key, asd_style_sfx_key, asd_style_sfxlevel01_0, asd_stylelevel01_0, asd_tier_per_plt_key, asd_tier_per_pltlevel01_0, asd_tot_unload_tm_key, asd_tot_unload_tmlevel01_0, asd_user_id_key, asd_user_idlevel01_0, asd_vendor_id_key, asd_vendor_idlevel01_0, asd_vndr_item_num_key, asd_vndr_item_numlevel01_0, asd_xpire_date_key, asd_xpire_datelevel01_0, asndtl_cre_by_id_key, asndtl_cre_by_idlevel01_0, asndtl_cre_ts_key, asndtl_cre_tslevel01_0, asndtl_upd_by_id_key, asndtl_upd_by_idlevel01_0, asndtl_upd_ts_key, asndtl_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_asndtl)
+    );
+
