@@ -1,0 +1,19 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE DATASOURCE SAPBWBAPI ds_sap_hana
+    FOLDER = '/01 - connectivity'
+    DATABASENAME = 'sap_bi_bapi'
+    DATABASEVERSION = '7x'
+    SYSTEMNAME = '${databases.corp_vdb.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.SYSTEMNAME}'
+    LANGUAGE = '${databases.corp_vdb.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.LANGUAGE}'
+    HOSTNAME = '${databases.corp_vdb.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.HOSTNAME}'
+    CLIENTID = '${databases.corp_vdb.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.CLIENTID}'
+    SYSTEMNUMBER = '${databases.corp_vdb.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.SYSTEMNUMBER}'
+    USERNAME = '${databases.corp_vdb.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.USERNAME}'
+    USERPASSWORD = '${databases.corp_vdb.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.USERPASSWORD}' ${databases.corp_vdb.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.USERPASSWORD.ENCRYPTED}
+    READBLOCKSIZE = 20000
+    MAXACTIVE = 2
+    MAXIDLE = 4
+    MAXWAIT = 60000
+    MINEVICTABLEIDLETIME = 100000
+    TIMEBETWEENEVICTION = 150000;
+

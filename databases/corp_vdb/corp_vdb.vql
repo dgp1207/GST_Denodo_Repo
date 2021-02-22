@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE DATABASE corp_vdb '';
+
+ALTER DATABASE corp_vdb
+  CHARSET DEFAULT;
+
