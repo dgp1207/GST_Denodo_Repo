@@ -141,6 +141,97 @@
         infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
         infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
         infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        internalvehiclenumlevel01_0 = '[ZINVEHNO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' LEVELPOSITION=1,
+        internalvehiclenum_actioncontrolmmctkey_0 = '[ZINVEHNO].[2ZACTCTRL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_actioncontrolmmctmediumname_0 = '[ZINVEHNO].[5ZACTCTRL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_actioncontrolsdctkey_0 = '[ZINVEHNO].[2ZACTCTRL1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_actioncontrolsdctmediumname_0 = '[ZINVEHNO].[5ZACTCTRL1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_allocationyearkey_0 = '[ZINVEHNO].[2ZALCTNYR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_archivingflagkey_0 = '[ZINVEHNO].[2ZARCHFLAG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_authorizeflagkey_0 = '[ZINVEHNO].[2ZAUTH_FG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_availabilitystatuskey_0 = '[ZINVEHNO].[2ZAVASTAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_batchkey_0 = '[ZINVEHNO].[20BATCH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_configurationinterkey_0 = '[ZINVEHNO].[2ZCUOBJ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_counterreadingkey_0 = '[ZINVEHNO].[2ZPCOUNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_creationdatesdtspkey_0 = '[ZINVEHNO].[2ZSDTSP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_currencykey_0 = '[ZINVEHNO].[20CURRENCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_currencymediumname_0 = '[ZINVEHNO].[50CURRENCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_currencyname_0 = '[ZINVEHNO].[10CURRENCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_customerkey_0 = '[ZINVEHNO].[20CUSTOMER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_customermediumname_0 = '[ZINVEHNO].[50CUSTOMER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_dateofcreationmmkey_0 = '[ZINVEHNO].[2ZMMTSP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_dummyvinkey_0 = '[ZINVEHNO].[2ZDUMMYVIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_etaarrivaltovpckey_1 = '[ZINVEHNO].[2ZETAVPCDT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_etaarrivaltovpckey_0 = '[ZINVEHNO].[2ZVPCETADT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_endcustomercentrakey_0 = '[ZINVEHNO].[2ZENDCUST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_endcustomercentramediumname_0 = '[ZINVEHNO].[5ZENDCUST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_equipmentkey_0 = '[ZINVEHNO].[20EQUIPMENT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_equipmentmediumname_0 = '[ZINVEHNO].[50EQUIPMENT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_externalvehiclenumkey_0 = '[ZINVEHNO].[2ZEXTVENO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_flagindicatorusedkey_0 = '[ZINVEHNO].[2ZUSEDVEH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_fleetaccountnumberkey_0 = '[ZINVEHNO].[2ZFLETACNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_grosslistpriceofkey_0 = '[ZINVEHNO].[2ZGLPRICEV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_initialregistrationkey_0 = '[ZINVEHNO].[2ZSCAMPGIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_key_0 = '[ZINVEHNO].[2ZINVEHNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_modelphasecodekey_0 = '[ZINVEHNO].[2ZMDLPHCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_modelyearkey_0 = '[ZINVEHNO].[2ZMODELYR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_name_0 = '[ZINVEHNO].[1ZINVEHNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_originalorderingpakey_0 = '[ZINVEHNO].[2ZOOPOVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_parkinglotlocationkey_0 = '[ZINVEHNO].[2ZPRKLOCCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_plantkey_0 = '[ZINVEHNO].[20PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_plantmediumname_0 = '[ZINVEHNO].[50PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_plantname_0 = '[ZINVEHNO].[10PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_plantcodekey_0 = '[ZINVEHNO].[2ZMFGPLTCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_primarystatuskey_0 = '[ZINVEHNO].[2ZPSTATUS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_primarystatusmediumname_0 = '[ZINVEHNO].[5ZPSTATUS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_railcarnumberkey_0 = '[ZINVEHNO].[2ZRILCARNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_railcarshippeddatekey_0 = '[ZINVEHNO].[2ZRCARSHPD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_regioncodekey_0 = '[ZINVEHNO].[2ZREGIONCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_salescampaignkey_0 = '[ZINVEHNO].[2ZSALCAMGN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_secondarystatuskey_0 = '[ZINVEHNO].[2ZSECSTAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_secondarystatusmediumname_0 = '[ZINVEHNO].[5ZSECSTAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_sharinglevelsforvkey_0 = '[ZINVEHNO].[2ZSLVESRCH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_shiptodealercodekey_0 = '[ZINVEHNO].[2ZSHIPTOCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_shiptoregioncodekey_0 = '[ZINVEHNO].[2ZSHIPRGCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_storagelocationkey_0 = '[ZINVEHNO].[20STOR_LOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_storagelocationmediumname_0 = '[ZINVEHNO].[50STOR_LOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_timestampforconfikey_0 = '[ZINVEHNO].[2ZCDTSP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_timestampforplannkey_0 = '[ZINVEHNO].[2ZPSTSP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_timestampforprodukey_0 = '[ZINVEHNO].[2ZPDTSP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_typeofdocumentforkey_0 = '[ZINVEHNO].[2ZCUABA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_unitofmeasurekey_0 = '[ZINVEHNO].[20UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_unitofmeasuremediumname_0 = '[ZINVEHNO].[50UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_unitofmeasurename_0 = '[ZINVEHNO].[10UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vindealermatchdatkey_0 = '[ZINVEHNO].[2ZVMATCHDT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vlcadddata1key_0 = '[ZINVEHNO].[2ZVLCAD1TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vlcadddata10key_0 = '[ZINVEHNO].[2ZVLAD10TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vlcadddata2key_0 = '[ZINVEHNO].[2ZVLCAD2TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vlcadddata3key_0 = '[ZINVEHNO].[2ZVLCAD3TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vlcadddata4key_0 = '[ZINVEHNO].[2ZVLCAD4TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vlcadddata5key_0 = '[ZINVEHNO].[2ZVLCAD5TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vlcadddata6key_0 = '[ZINVEHNO].[2ZVLCAD6TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vlcadddata7key_0 = '[ZINVEHNO].[2ZVLCAD7TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vlcadddata8key_0 = '[ZINVEHNO].[2ZVLCAD8TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vlcadddata9key_0 = '[ZINVEHNO].[2ZVLCAD9TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vmsvehiclelocationkey_0 = '[ZINVEHNO].[2ZVMSVELOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_valuationtypekey_0 = '[ZINVEHNO].[20VAL_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehiclenamekey_0 = '[ZINVEHNO].[2ZERNAM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehicleexteriorcolkey_0 = '[ZINVEHNO].[2ZEXTCLRCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehicleidentificatikey_0 = '[ZINVEHNO].[2ZVEHIDNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehicleinteriorcolkey_0 = '[ZINVEHNO].[2ZINTCLRCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehiclemileskey_0 = '[ZINVEHNO].[2ZVEHMILES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehiclemodelmatekey_0 = '[ZINVEHNO].[2ZVEMODEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehiclemodelmatemediumname_0 = '[ZINVEHNO].[5ZVEMODEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehicleorderyyyymmkey_0 = '[ZINVEHNO].[2ZVEHOYYM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehiclerdrdatekey_0 = '[ZINVEHNO].[2ZVEHRDRDT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehiclesaletypekey_0 = '[ZINVEHNO].[2ZVSALETYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehiclesaletypelongname_0 = '[ZINVEHNO].[4ZVSALETYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehiclesearchareakey_0 = '[ZINVEHNO].[2ZVESAREA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vehicleusagekey_0 = '[ZINVEHNO].[2ZVEUSGE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vendorkey_0 = '[ZINVEHNO].[20VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vendormediumname_0 = '[ZINVEHNO].[50VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_vesselnumberkey_0 = '[ZINVEHNO].[2ZVSL_NO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
+        internalvehiclenum_visibilitykey_0 = '[ZINVEHNO].[2ZVISBLTY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
         materiallevel01_0 = '[0MATERIAL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATERIAL]' DIMENSIONNAME = '[0MATERIAL]' LEVELPOSITION=1,
         material_afsgridkey_0 = '[0MATERIAL].[20AF_GRID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATERIAL]' DIMENSIONNAME = '[0MATERIAL]' ATTRIBUTE,
         material_afsgridname_0 = '[0MATERIAL].[10AF_GRID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATERIAL]' DIMENSIONNAME = '[0MATERIAL]' ATTRIBUTE,
@@ -425,6 +516,97 @@ CREATE OR REPLACE TABLE bv_zcp_v_sd003_copy I18N us_cst (
         infoprovider_key:text,
         infoprovider_longname_0:text,
         infoprovider_name:text,
+        internalvehiclenumlevel01_0:text,
+        internalvehiclenum_actioncontrolmmctkey_0:text,
+        internalvehiclenum_actioncontrolmmctmediumname_0:text,
+        internalvehiclenum_actioncontrolsdctkey_0:text,
+        internalvehiclenum_actioncontrolsdctmediumname_0:text,
+        internalvehiclenum_allocationyearkey_0:text,
+        internalvehiclenum_archivingflagkey_0:text,
+        internalvehiclenum_authorizeflagkey_0:text,
+        internalvehiclenum_availabilitystatuskey_0:text,
+        internalvehiclenum_batchkey_0:text,
+        internalvehiclenum_configurationinterkey_0:text,
+        internalvehiclenum_counterreadingkey_0:text,
+        internalvehiclenum_creationdatesdtspkey_0:text,
+        internalvehiclenum_currencykey_0:text,
+        internalvehiclenum_currencymediumname_0:text,
+        internalvehiclenum_currencyname_0:text,
+        internalvehiclenum_customerkey_0:text,
+        internalvehiclenum_customermediumname_0:text,
+        internalvehiclenum_dateofcreationmmkey_0:text,
+        internalvehiclenum_dummyvinkey_0:text,
+        internalvehiclenum_etaarrivaltovpckey_1:text,
+        internalvehiclenum_etaarrivaltovpckey_0:text,
+        internalvehiclenum_endcustomercentrakey_0:text,
+        internalvehiclenum_endcustomercentramediumname_0:text,
+        internalvehiclenum_equipmentkey_0:text,
+        internalvehiclenum_equipmentmediumname_0:text,
+        internalvehiclenum_externalvehiclenumkey_0:text,
+        internalvehiclenum_flagindicatorusedkey_0:text,
+        internalvehiclenum_fleetaccountnumberkey_0:text,
+        internalvehiclenum_grosslistpriceofkey_0:text,
+        internalvehiclenum_initialregistrationkey_0:text,
+        internalvehiclenum_key_0:text,
+        internalvehiclenum_modelphasecodekey_0:text,
+        internalvehiclenum_modelyearkey_0:text,
+        internalvehiclenum_name_0:text,
+        internalvehiclenum_originalorderingpakey_0:text,
+        internalvehiclenum_parkinglotlocationkey_0:text,
+        internalvehiclenum_plantkey_0:text,
+        internalvehiclenum_plantmediumname_0:text,
+        internalvehiclenum_plantname_0:text,
+        internalvehiclenum_plantcodekey_0:text,
+        internalvehiclenum_primarystatuskey_0:text,
+        internalvehiclenum_primarystatusmediumname_0:text,
+        internalvehiclenum_railcarnumberkey_0:text,
+        internalvehiclenum_railcarshippeddatekey_0:text,
+        internalvehiclenum_regioncodekey_0:text,
+        internalvehiclenum_salescampaignkey_0:text,
+        internalvehiclenum_secondarystatuskey_0:text,
+        internalvehiclenum_secondarystatusmediumname_0:text,
+        internalvehiclenum_sharinglevelsforvkey_0:text,
+        internalvehiclenum_shiptodealercodekey_0:text,
+        internalvehiclenum_shiptoregioncodekey_0:text,
+        internalvehiclenum_storagelocationkey_0:text,
+        internalvehiclenum_storagelocationmediumname_0:text,
+        internalvehiclenum_timestampforconfikey_0:text,
+        internalvehiclenum_timestampforplannkey_0:text,
+        internalvehiclenum_timestampforprodukey_0:text,
+        internalvehiclenum_typeofdocumentforkey_0:text,
+        internalvehiclenum_unitofmeasurekey_0:text,
+        internalvehiclenum_unitofmeasuremediumname_0:text,
+        internalvehiclenum_unitofmeasurename_0:text,
+        internalvehiclenum_vindealermatchdatkey_0:text,
+        internalvehiclenum_vlcadddata1key_0:text,
+        internalvehiclenum_vlcadddata10key_0:text,
+        internalvehiclenum_vlcadddata2key_0:text,
+        internalvehiclenum_vlcadddata3key_0:text,
+        internalvehiclenum_vlcadddata4key_0:text,
+        internalvehiclenum_vlcadddata5key_0:text,
+        internalvehiclenum_vlcadddata6key_0:text,
+        internalvehiclenum_vlcadddata7key_0:text,
+        internalvehiclenum_vlcadddata8key_0:text,
+        internalvehiclenum_vlcadddata9key_0:text,
+        internalvehiclenum_vmsvehiclelocationkey_0:text,
+        internalvehiclenum_valuationtypekey_0:text,
+        internalvehiclenum_vehiclenamekey_0:text,
+        internalvehiclenum_vehicleexteriorcolkey_0:text,
+        internalvehiclenum_vehicleidentificatikey_0:text,
+        internalvehiclenum_vehicleinteriorcolkey_0:text,
+        internalvehiclenum_vehiclemileskey_0:text,
+        internalvehiclenum_vehiclemodelmatekey_0:text,
+        internalvehiclenum_vehiclemodelmatemediumname_0:text,
+        internalvehiclenum_vehicleorderyyyymmkey_0:text,
+        internalvehiclenum_vehiclerdrdatekey_0:text,
+        internalvehiclenum_vehiclesaletypekey_0:text,
+        internalvehiclenum_vehiclesaletypelongname_0:text,
+        internalvehiclenum_vehiclesearchareakey_0:text,
+        internalvehiclenum_vehicleusagekey_0:text,
+        internalvehiclenum_vendorkey_0:text,
+        internalvehiclenum_vendormediumname_0:text,
+        internalvehiclenum_vesselnumberkey_0:text,
+        internalvehiclenum_visibilitykey_0:text,
         materiallevel01_0:text,
         material_afsgridkey_0:text,
         material_afsgridname_0:text,
@@ -713,6 +895,97 @@ CREATE OR REPLACE TABLE bv_zcp_v_sd003_copy I18N us_cst (
              ADD infoprovider_key (any) OPT ANY
              ADD infoprovider_longname_0 (any) OPT ANY
              ADD infoprovider_name (any) OPT ANY
+             ADD internalvehiclenumlevel01_0 (any) OPT ANY
+             ADD internalvehiclenum_actioncontrolmmctkey_0 (any) OPT ANY
+             ADD internalvehiclenum_actioncontrolmmctmediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_actioncontrolsdctkey_0 (any) OPT ANY
+             ADD internalvehiclenum_actioncontrolsdctmediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_allocationyearkey_0 (any) OPT ANY
+             ADD internalvehiclenum_archivingflagkey_0 (any) OPT ANY
+             ADD internalvehiclenum_authorizeflagkey_0 (any) OPT ANY
+             ADD internalvehiclenum_availabilitystatuskey_0 (any) OPT ANY
+             ADD internalvehiclenum_batchkey_0 (any) OPT ANY
+             ADD internalvehiclenum_configurationinterkey_0 (any) OPT ANY
+             ADD internalvehiclenum_counterreadingkey_0 (any) OPT ANY
+             ADD internalvehiclenum_creationdatesdtspkey_0 (any) OPT ANY
+             ADD internalvehiclenum_currencykey_0 (any) OPT ANY
+             ADD internalvehiclenum_currencymediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_currencyname_0 (any) OPT ANY
+             ADD internalvehiclenum_customerkey_0 (any) OPT ANY
+             ADD internalvehiclenum_customermediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_dateofcreationmmkey_0 (any) OPT ANY
+             ADD internalvehiclenum_dummyvinkey_0 (any) OPT ANY
+             ADD internalvehiclenum_etaarrivaltovpckey_1 (any) OPT ANY
+             ADD internalvehiclenum_etaarrivaltovpckey_0 (any) OPT ANY
+             ADD internalvehiclenum_endcustomercentrakey_0 (any) OPT ANY
+             ADD internalvehiclenum_endcustomercentramediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_equipmentkey_0 (any) OPT ANY
+             ADD internalvehiclenum_equipmentmediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_externalvehiclenumkey_0 (any) OPT ANY
+             ADD internalvehiclenum_flagindicatorusedkey_0 (any) OPT ANY
+             ADD internalvehiclenum_fleetaccountnumberkey_0 (any) OPT ANY
+             ADD internalvehiclenum_grosslistpriceofkey_0 (any) OPT ANY
+             ADD internalvehiclenum_initialregistrationkey_0 (any) OPT ANY
+             ADD internalvehiclenum_key_0 (any) OPT ANY
+             ADD internalvehiclenum_modelphasecodekey_0 (any) OPT ANY
+             ADD internalvehiclenum_modelyearkey_0 (any) OPT ANY
+             ADD internalvehiclenum_name_0 (any) OPT ANY
+             ADD internalvehiclenum_originalorderingpakey_0 (any) OPT ANY
+             ADD internalvehiclenum_parkinglotlocationkey_0 (any) OPT ANY
+             ADD internalvehiclenum_plantkey_0 (any) OPT ANY
+             ADD internalvehiclenum_plantmediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_plantname_0 (any) OPT ANY
+             ADD internalvehiclenum_plantcodekey_0 (any) OPT ANY
+             ADD internalvehiclenum_primarystatuskey_0 (any) OPT ANY
+             ADD internalvehiclenum_primarystatusmediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_railcarnumberkey_0 (any) OPT ANY
+             ADD internalvehiclenum_railcarshippeddatekey_0 (any) OPT ANY
+             ADD internalvehiclenum_regioncodekey_0 (any) OPT ANY
+             ADD internalvehiclenum_salescampaignkey_0 (any) OPT ANY
+             ADD internalvehiclenum_secondarystatuskey_0 (any) OPT ANY
+             ADD internalvehiclenum_secondarystatusmediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_sharinglevelsforvkey_0 (any) OPT ANY
+             ADD internalvehiclenum_shiptodealercodekey_0 (any) OPT ANY
+             ADD internalvehiclenum_shiptoregioncodekey_0 (any) OPT ANY
+             ADD internalvehiclenum_storagelocationkey_0 (any) OPT ANY
+             ADD internalvehiclenum_storagelocationmediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_timestampforconfikey_0 (any) OPT ANY
+             ADD internalvehiclenum_timestampforplannkey_0 (any) OPT ANY
+             ADD internalvehiclenum_timestampforprodukey_0 (any) OPT ANY
+             ADD internalvehiclenum_typeofdocumentforkey_0 (any) OPT ANY
+             ADD internalvehiclenum_unitofmeasurekey_0 (any) OPT ANY
+             ADD internalvehiclenum_unitofmeasuremediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_unitofmeasurename_0 (any) OPT ANY
+             ADD internalvehiclenum_vindealermatchdatkey_0 (any) OPT ANY
+             ADD internalvehiclenum_vlcadddata1key_0 (any) OPT ANY
+             ADD internalvehiclenum_vlcadddata10key_0 (any) OPT ANY
+             ADD internalvehiclenum_vlcadddata2key_0 (any) OPT ANY
+             ADD internalvehiclenum_vlcadddata3key_0 (any) OPT ANY
+             ADD internalvehiclenum_vlcadddata4key_0 (any) OPT ANY
+             ADD internalvehiclenum_vlcadddata5key_0 (any) OPT ANY
+             ADD internalvehiclenum_vlcadddata6key_0 (any) OPT ANY
+             ADD internalvehiclenum_vlcadddata7key_0 (any) OPT ANY
+             ADD internalvehiclenum_vlcadddata8key_0 (any) OPT ANY
+             ADD internalvehiclenum_vlcadddata9key_0 (any) OPT ANY
+             ADD internalvehiclenum_vmsvehiclelocationkey_0 (any) OPT ANY
+             ADD internalvehiclenum_valuationtypekey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehiclenamekey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehicleexteriorcolkey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehicleidentificatikey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehicleinteriorcolkey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehiclemileskey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehiclemodelmatekey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehiclemodelmatemediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_vehicleorderyyyymmkey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehiclerdrdatekey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehiclesaletypekey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehiclesaletypelongname_0 (any) OPT ANY
+             ADD internalvehiclenum_vehiclesearchareakey_0 (any) OPT ANY
+             ADD internalvehiclenum_vehicleusagekey_0 (any) OPT ANY
+             ADD internalvehiclenum_vendorkey_0 (any) OPT ANY
+             ADD internalvehiclenum_vendormediumname_0 (any) OPT ANY
+             ADD internalvehiclenum_vesselnumberkey_0 (any) OPT ANY
+             ADD internalvehiclenum_visibilitykey_0 (any) OPT ANY
              ADD materiallevel01_0 (any) OPT ANY
              ADD material_afsgridkey_0 (any) OPT ANY
              ADD material_afsgridname_0 (any) OPT ANY
@@ -861,7 +1134,7 @@ CREATE OR REPLACE TABLE bv_zcp_v_sd003_copy I18N us_cst (
              ADD numberofrecords_0 (any) OPT ANY
              ADD qtyinbaseuom_0 (any) OPT ANY
         )
-        OUTPUTLIST (baseunitofmeasure_key_0, baseunitofmeasure_mediumname_0, baseunitofmeasure_name_0, baseunitofmeasurelevel01_0, currency_key, currency_mediumname_0, currency_name, currencylevel01_0, customer_accountgroupkey_0, customer_accountgroupmediumname_0, customer_addresskey_0, customer_apolocationkey_0, customer_apolocationmediumname_0, customer_bascitydistrictkey_0, customer_baspoboxlocationkey_0, customer_baspoboxpostalcodekey_0, customer_baspstcdegeorelkey_0, customer_bpcategorykey_0, customer_bpcategorylongname_0, customer_bpgroupingkey_0, customer_bpgroupingmediumname_0, customer_bpgroupingname_0, customer_bpgrouptypekey_0, customer_bpgrouptypemediumname_0, customer_bpgrouptypename_0, customer_branchcategorykey_0, customer_businesspartnerkey_0, customer_businesspartnerlongname_0, customer_businesspartnermediumname_0, customer_businesspartnername_0, customer_callfrequencykey_0, customer_countrykey_0, customer_countrylongname_0, customer_countryname_0, customer_custidpartnersyskey_0, customer_customerclassifickey_0, customer_customerclassificname_0, customer_customerisconsumerkey_0, customer_customermarketkey_0, customer_datsrcidofgeoloctkey_0, customer_distributionchannelkey_0, customer_distributionchannelname_0, customer_divisionkey_0, customer_divisionname_0, customer_dunsnumberkey_0, customer_dunsnumberlongname_0, customer_faxnumberkey_0, customer_fiscalyearvariantkey_0, customer_fiscalyearvariantmediumname_0, customer_geographicalheightkey_0, customer_geoprecisionkey_0, customer_geoprecisionlongname_0, customer_geoprecisionmediumname_0, customer_geoprecisionname_0, customer_identificationnumbekey_0, customer_identificationtypekey_0, customer_industrycode1key_0, customer_industrycode1name_0, customer_industrycode2key_0, customer_industrycode2name_0, customer_industrycode3key_0, customer_industrycode3name_0, customer_industrycode4key_0, customer_industrycode4name_0, customer_industrycode5key_0, customer_industrycode5name_0, customer_industrykey_0, customer_industryname_0, customer_key, customer_keyaccountkey_0, customer_languagekeykey_0, customer_languagekeyname_0, customer_latitudekey_0, customer_locationkey_0, customer_longitudekey_0, customer_mediumname_0, customer_name2key_0, customer_name3key_0, customer_namekey_0, customer_nielsenindicatorkey_0, customer_nielsenindicatorname_0, customer_nocustomerdckey_0, customer_onetimeaccountkey_0, customer_partnercompanykey_0, customer_partnercompanymediumname_0, customer_plantkey_0, customer_plantmediumname_0, customer_plantname_0, customer_poboxkey_0, customer_postalcodekey_0, customer_regionkey_0, customer_regionname_0, customer_salesareakey_0, customer_salesdistrictkey_0, customer_salesdistrictname_0, customer_salesdistricttextkey_0, customer_salesgroupkey_0, customer_salesgroupname_0, customer_salesgrouptextkey_0, customer_salesofficekey_0, customer_salesofficename_0, customer_salesofficetextkey_0, customer_salesorganizationkey_0, customer_salesorganizationlongname_0, customer_salesunitkey_0, customer_salesunitmediumname_0, customer_salesunitname_0, customer_searchtermakey_0, customer_searchtermbkey_0, customer_sortfieldkey_0, customer_sourcesystemkey_0, customer_sourcesystemmediumname_0, customer_statekey_0, customer_statename_0, customer_streetkey_0, customer_taxcode1key_0, customer_taxnumber2key_0, customer_taxnumber3key_0, customer_telephone1key_0, customer_usageindicatorkey_0, customer_usageindicatorname_0, customer_validfromkey_0, customer_validuntilkey_0, customer_vendorkey_0, customer_vendormediumname_0, customerlevel01_0, documentcurrency_key_0, documentcurrency_mediumname_0, documentcurrency_name_0, documentcurrencylevel01_0, grosslistpriceof_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, material_afscolorkey_0, material_afscolormediumname_0, material_afsgridkey_0, material_afsgridname_0, material_baseunitofmeasurekey_0, material_baseunitofmeasuremediumname_0, material_baseunitofmeasurename_0, material_basicmaterialkey_0, material_bodidkey_0, material_bodystylekey_0, material_bodytypekey_0, material_brandkey_0, material_brandname_0, material_certificationtypekey_0, material_certificationtypemediumname_0, material_colorkey_0, material_colorname_0, material_competitorskey_0, material_competitorsmediumname_0, material_constructionclasskey_0, material_constructionclassmediumname_0, material_contentunitkey_0, material_contentunitmediumname_0, material_contentunitname_0, material_createdonkey_0, material_crossplantcmkey_0, material_curbweightkey_0, material_divisionkey_0, material_divisionname_0, material_eanupckey_0, material_engineprefixkey_0, material_extmatlgroupkey_0, material_fabriccontentcodekey_0, material_fabriccontentcodemediumname_0, material_fashiongradekey_0, material_fashiongradename_0, material_fueltypeofvehiclekey_0, material_functionclasskey_0, material_functionclassmediumname_0, material_genanalysischarkey_0, material_grosscontentkey_0, material_grossweightkey_0, material_hazardousmatlnokey_0, material_heightkey_0, material_horsepowerkey_0, material_indstddesckey_0, material_industrykey_0, material_key, material_lengthkey_0, material_localcurrencykey_0, material_localcurrencymediumname_0, material_localcurrencyname_0, material_manufactkey_0, material_manufactmediumname_0, material_manufmaterialnokey_0, material_masterdatarelstatkey_0, material_masterdatarelstatmediumname_0, material_materialcategorykey_0, material_materialcategorylongname_0, material_materialgroupkey_0, material_materialgrouplongkey_0, material_materialgroupname_0, material_materialtypekey_0, material_materialtypemediumname_0, material_mediumname_0, material_mgh1key_0, material_mgh1mediumname_0, material_mgh1name_0, material_mgh2key_0, material_mgh2mediumname_0, material_mgh2name_0, material_mgh3key_0, material_mgh3mediumname_0, material_mgh3name_0, material_mgh4key_0, material_mgh4mediumname_0, material_mgh4name_0, material_modelnamekey_0, material_modelphasecodekey_0, material_modelvehicledesckey_0, material_modelweightkey_0, material_modelyearkey_0, material_modelyearvaliditykey_0, material_modelyearvaliditykey_1, material_netcontentkey_0, material_netweightkey_0, material_nosofcylinderskey_0, material_orderunitkey_0, material_orderunitmediumname_0, material_orderunitname_0, material_plannedpurchpricekey_0, material_procurementrulekey_0, material_procurementrulemediumname_0, material_prodhierarchykey_0, material_prodhierarchyname_0, material_productkey_0, material_productkey_1, material_productkey_2, material_productlongname_0, material_productlongname_1, material_productmediumname_0, material_productmediumname_1, material_productmediumname_2, material_productname_0, material_productname_1, material_profilefordgskey_0, material_profilefordgslongname_0, material_seasonyearkey_0, material_seriesdescriptionkey_0, material_serieskey_0, material_seriesname_0, material_size2key_0, material_size2name_0, material_sizedimensionkey_0, material_sizekey_0, material_sizename_0, material_sourceofsupplykey_0, material_sourceofsupplymediumname_0, material_sourcesystemkey_0, material_sourcesystemmediumname_0, material_statuscodekey_0, material_stylekey_0, material_targetgroupkey_0, material_targetgroupmediumname_0, material_towingcapacitykey_0, material_transmissiontypekey_0, material_unitkey_0, material_unitmediumname_0, material_unitname_0, material_usagekey_0, material_usagelongname_0, material_vendorkey_0, material_vendormediumname_0, material_vmsindicatorkey_0, material_volumekey_0, material_volumeunitkey_0, material_volumeunitmediumname_0, material_volumeunitname_0, material_weightunitkey_0, material_weightunitmediumname_0, material_weightunitname_0, material_widthkey_0, materiallevel01_0, netvalue_0, numberofrecords_0, qtyinbaseuom_0
+        OUTPUTLIST (baseunitofmeasure_key_0, baseunitofmeasure_mediumname_0, baseunitofmeasure_name_0, baseunitofmeasurelevel01_0, currency_key, currency_mediumname_0, currency_name, currencylevel01_0, customer_accountgroupkey_0, customer_accountgroupmediumname_0, customer_addresskey_0, customer_apolocationkey_0, customer_apolocationmediumname_0, customer_bascitydistrictkey_0, customer_baspoboxlocationkey_0, customer_baspoboxpostalcodekey_0, customer_baspstcdegeorelkey_0, customer_bpcategorykey_0, customer_bpcategorylongname_0, customer_bpgroupingkey_0, customer_bpgroupingmediumname_0, customer_bpgroupingname_0, customer_bpgrouptypekey_0, customer_bpgrouptypemediumname_0, customer_bpgrouptypename_0, customer_branchcategorykey_0, customer_businesspartnerkey_0, customer_businesspartnerlongname_0, customer_businesspartnermediumname_0, customer_businesspartnername_0, customer_callfrequencykey_0, customer_countrykey_0, customer_countrylongname_0, customer_countryname_0, customer_custidpartnersyskey_0, customer_customerclassifickey_0, customer_customerclassificname_0, customer_customerisconsumerkey_0, customer_customermarketkey_0, customer_datsrcidofgeoloctkey_0, customer_distributionchannelkey_0, customer_distributionchannelname_0, customer_divisionkey_0, customer_divisionname_0, customer_dunsnumberkey_0, customer_dunsnumberlongname_0, customer_faxnumberkey_0, customer_fiscalyearvariantkey_0, customer_fiscalyearvariantmediumname_0, customer_geographicalheightkey_0, customer_geoprecisionkey_0, customer_geoprecisionlongname_0, customer_geoprecisionmediumname_0, customer_geoprecisionname_0, customer_identificationnumbekey_0, customer_identificationtypekey_0, customer_industrycode1key_0, customer_industrycode1name_0, customer_industrycode2key_0, customer_industrycode2name_0, customer_industrycode3key_0, customer_industrycode3name_0, customer_industrycode4key_0, customer_industrycode4name_0, customer_industrycode5key_0, customer_industrycode5name_0, customer_industrykey_0, customer_industryname_0, customer_key, customer_keyaccountkey_0, customer_languagekeykey_0, customer_languagekeyname_0, customer_latitudekey_0, customer_locationkey_0, customer_longitudekey_0, customer_mediumname_0, customer_name2key_0, customer_name3key_0, customer_namekey_0, customer_nielsenindicatorkey_0, customer_nielsenindicatorname_0, customer_nocustomerdckey_0, customer_onetimeaccountkey_0, customer_partnercompanykey_0, customer_partnercompanymediumname_0, customer_plantkey_0, customer_plantmediumname_0, customer_plantname_0, customer_poboxkey_0, customer_postalcodekey_0, customer_regionkey_0, customer_regionname_0, customer_salesareakey_0, customer_salesdistrictkey_0, customer_salesdistrictname_0, customer_salesdistricttextkey_0, customer_salesgroupkey_0, customer_salesgroupname_0, customer_salesgrouptextkey_0, customer_salesofficekey_0, customer_salesofficename_0, customer_salesofficetextkey_0, customer_salesorganizationkey_0, customer_salesorganizationlongname_0, customer_salesunitkey_0, customer_salesunitmediumname_0, customer_salesunitname_0, customer_searchtermakey_0, customer_searchtermbkey_0, customer_sortfieldkey_0, customer_sourcesystemkey_0, customer_sourcesystemmediumname_0, customer_statekey_0, customer_statename_0, customer_streetkey_0, customer_taxcode1key_0, customer_taxnumber2key_0, customer_taxnumber3key_0, customer_telephone1key_0, customer_usageindicatorkey_0, customer_usageindicatorname_0, customer_validfromkey_0, customer_validuntilkey_0, customer_vendorkey_0, customer_vendormediumname_0, customerlevel01_0, documentcurrency_key_0, documentcurrency_mediumname_0, documentcurrency_name_0, documentcurrencylevel01_0, grosslistpriceof_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, internalvehiclenum_actioncontrolmmctkey_0, internalvehiclenum_actioncontrolmmctmediumname_0, internalvehiclenum_actioncontrolsdctkey_0, internalvehiclenum_actioncontrolsdctmediumname_0, internalvehiclenum_allocationyearkey_0, internalvehiclenum_archivingflagkey_0, internalvehiclenum_authorizeflagkey_0, internalvehiclenum_availabilitystatuskey_0, internalvehiclenum_batchkey_0, internalvehiclenum_configurationinterkey_0, internalvehiclenum_counterreadingkey_0, internalvehiclenum_creationdatesdtspkey_0, internalvehiclenum_currencykey_0, internalvehiclenum_currencymediumname_0, internalvehiclenum_currencyname_0, internalvehiclenum_customerkey_0, internalvehiclenum_customermediumname_0, internalvehiclenum_dateofcreationmmkey_0, internalvehiclenum_dummyvinkey_0, internalvehiclenum_endcustomercentrakey_0, internalvehiclenum_endcustomercentramediumname_0, internalvehiclenum_equipmentkey_0, internalvehiclenum_equipmentmediumname_0, internalvehiclenum_etaarrivaltovpckey_0, internalvehiclenum_etaarrivaltovpckey_1, internalvehiclenum_externalvehiclenumkey_0, internalvehiclenum_flagindicatorusedkey_0, internalvehiclenum_fleetaccountnumberkey_0, internalvehiclenum_grosslistpriceofkey_0, internalvehiclenum_initialregistrationkey_0, internalvehiclenum_key_0, internalvehiclenum_modelphasecodekey_0, internalvehiclenum_modelyearkey_0, internalvehiclenum_name_0, internalvehiclenum_originalorderingpakey_0, internalvehiclenum_parkinglotlocationkey_0, internalvehiclenum_plantcodekey_0, internalvehiclenum_plantkey_0, internalvehiclenum_plantmediumname_0, internalvehiclenum_plantname_0, internalvehiclenum_primarystatuskey_0, internalvehiclenum_primarystatusmediumname_0, internalvehiclenum_railcarnumberkey_0, internalvehiclenum_railcarshippeddatekey_0, internalvehiclenum_regioncodekey_0, internalvehiclenum_salescampaignkey_0, internalvehiclenum_secondarystatuskey_0, internalvehiclenum_secondarystatusmediumname_0, internalvehiclenum_sharinglevelsforvkey_0, internalvehiclenum_shiptodealercodekey_0, internalvehiclenum_shiptoregioncodekey_0, internalvehiclenum_storagelocationkey_0, internalvehiclenum_storagelocationmediumname_0, internalvehiclenum_timestampforconfikey_0, internalvehiclenum_timestampforplannkey_0, internalvehiclenum_timestampforprodukey_0, internalvehiclenum_typeofdocumentforkey_0, internalvehiclenum_unitofmeasurekey_0, internalvehiclenum_unitofmeasuremediumname_0, internalvehiclenum_unitofmeasurename_0, internalvehiclenum_valuationtypekey_0, internalvehiclenum_vehicleexteriorcolkey_0, internalvehiclenum_vehicleidentificatikey_0, internalvehiclenum_vehicleinteriorcolkey_0, internalvehiclenum_vehiclemileskey_0, internalvehiclenum_vehiclemodelmatekey_0, internalvehiclenum_vehiclemodelmatemediumname_0, internalvehiclenum_vehiclenamekey_0, internalvehiclenum_vehicleorderyyyymmkey_0, internalvehiclenum_vehiclerdrdatekey_0, internalvehiclenum_vehiclesaletypekey_0, internalvehiclenum_vehiclesaletypelongname_0, internalvehiclenum_vehiclesearchareakey_0, internalvehiclenum_vehicleusagekey_0, internalvehiclenum_vendorkey_0, internalvehiclenum_vendormediumname_0, internalvehiclenum_vesselnumberkey_0, internalvehiclenum_vindealermatchdatkey_0, internalvehiclenum_visibilitykey_0, internalvehiclenum_vlcadddata10key_0, internalvehiclenum_vlcadddata1key_0, internalvehiclenum_vlcadddata2key_0, internalvehiclenum_vlcadddata3key_0, internalvehiclenum_vlcadddata4key_0, internalvehiclenum_vlcadddata5key_0, internalvehiclenum_vlcadddata6key_0, internalvehiclenum_vlcadddata7key_0, internalvehiclenum_vlcadddata8key_0, internalvehiclenum_vlcadddata9key_0, internalvehiclenum_vmsvehiclelocationkey_0, internalvehiclenumlevel01_0, material_afscolorkey_0, material_afscolormediumname_0, material_afsgridkey_0, material_afsgridname_0, material_baseunitofmeasurekey_0, material_baseunitofmeasuremediumname_0, material_baseunitofmeasurename_0, material_basicmaterialkey_0, material_bodidkey_0, material_bodystylekey_0, material_bodytypekey_0, material_brandkey_0, material_brandname_0, material_certificationtypekey_0, material_certificationtypemediumname_0, material_colorkey_0, material_colorname_0, material_competitorskey_0, material_competitorsmediumname_0, material_constructionclasskey_0, material_constructionclassmediumname_0, material_contentunitkey_0, material_contentunitmediumname_0, material_contentunitname_0, material_createdonkey_0, material_crossplantcmkey_0, material_curbweightkey_0, material_divisionkey_0, material_divisionname_0, material_eanupckey_0, material_engineprefixkey_0, material_extmatlgroupkey_0, material_fabriccontentcodekey_0, material_fabriccontentcodemediumname_0, material_fashiongradekey_0, material_fashiongradename_0, material_fueltypeofvehiclekey_0, material_functionclasskey_0, material_functionclassmediumname_0, material_genanalysischarkey_0, material_grosscontentkey_0, material_grossweightkey_0, material_hazardousmatlnokey_0, material_heightkey_0, material_horsepowerkey_0, material_indstddesckey_0, material_industrykey_0, material_key, material_lengthkey_0, material_localcurrencykey_0, material_localcurrencymediumname_0, material_localcurrencyname_0, material_manufactkey_0, material_manufactmediumname_0, material_manufmaterialnokey_0, material_masterdatarelstatkey_0, material_masterdatarelstatmediumname_0, material_materialcategorykey_0, material_materialcategorylongname_0, material_materialgroupkey_0, material_materialgrouplongkey_0, material_materialgroupname_0, material_materialtypekey_0, material_materialtypemediumname_0, material_mediumname_0, material_mgh1key_0, material_mgh1mediumname_0, material_mgh1name_0, material_mgh2key_0, material_mgh2mediumname_0, material_mgh2name_0, material_mgh3key_0, material_mgh3mediumname_0, material_mgh3name_0, material_mgh4key_0, material_mgh4mediumname_0, material_mgh4name_0, material_modelnamekey_0, material_modelphasecodekey_0, material_modelvehicledesckey_0, material_modelweightkey_0, material_modelyearkey_0, material_modelyearvaliditykey_0, material_modelyearvaliditykey_1, material_netcontentkey_0, material_netweightkey_0, material_nosofcylinderskey_0, material_orderunitkey_0, material_orderunitmediumname_0, material_orderunitname_0, material_plannedpurchpricekey_0, material_procurementrulekey_0, material_procurementrulemediumname_0, material_prodhierarchykey_0, material_prodhierarchyname_0, material_productkey_0, material_productkey_1, material_productkey_2, material_productlongname_0, material_productlongname_1, material_productmediumname_0, material_productmediumname_1, material_productmediumname_2, material_productname_0, material_productname_1, material_profilefordgskey_0, material_profilefordgslongname_0, material_seasonyearkey_0, material_seriesdescriptionkey_0, material_serieskey_0, material_seriesname_0, material_size2key_0, material_size2name_0, material_sizedimensionkey_0, material_sizekey_0, material_sizename_0, material_sourceofsupplykey_0, material_sourceofsupplymediumname_0, material_sourcesystemkey_0, material_sourcesystemmediumname_0, material_statuscodekey_0, material_stylekey_0, material_targetgroupkey_0, material_targetgroupmediumname_0, material_towingcapacitykey_0, material_transmissiontypekey_0, material_unitkey_0, material_unitmediumname_0, material_unitname_0, material_usagekey_0, material_usagelongname_0, material_vendorkey_0, material_vendormediumname_0, material_vmsindicatorkey_0, material_volumekey_0, material_volumeunitkey_0, material_volumeunitmediumname_0, material_volumeunitname_0, material_weightunitkey_0, material_weightunitmediumname_0, material_weightunitname_0, material_widthkey_0, materiallevel01_0, netvalue_0, numberofrecords_0, qtyinbaseuom_0
         )
         WRAPPER (sapbwbapi bv_zcp_v_sd003_copy)
     );
