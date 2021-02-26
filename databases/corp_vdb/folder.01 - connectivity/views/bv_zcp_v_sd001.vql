@@ -60,7 +60,7 @@
         subtotal6_0 = '[Measures].[0SUBTOT_6S]' : 'java.lang.Double' (OPT) MEASURE
     );
 
-CREATE OR REPLACE TABLE bv_zcp_sd001 I18N us_cst (
+CREATE OR REPLACE TABLE bv_zcp_v_sd001 I18N us_cst (
         baseunitofmeasurelevel01_0:text,
         conditiontypelevel01_0:text,
         countrylevel01_0:text,
