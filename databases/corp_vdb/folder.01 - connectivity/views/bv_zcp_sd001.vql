@@ -1,0 +1,178 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_sd001
+    FOLDER = '/01 - connectivity'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_V_SD001'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        baseunitofmeasurelevel01_0 = '[0BASE_UOM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' LEVELPOSITION=1,
+        conditiontypelevel01_0 = '[0KNART].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNART]' DIMENSIONNAME = '[0KNART]' LEVELPOSITION=1,
+        countrylevel01_0 = '[0COUNTRY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0COUNTRY]' DIMENSIONNAME = '[0COUNTRY]' LEVELPOSITION=1,
+        customerlevel01_0 = '[0CUSTOMER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' LEVELPOSITION=1,
+        customer_hlevel01_0 = '[ZCUS_NO_H].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZCUS_NO_H]' DIMENSIONNAME = '[ZCUS_NO_H]' LEVELPOSITION=1,
+        daydatelevel01_0 = '[ZDAYDATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' LEVELPOSITION=1,
+        daynamelevel01_0 = '[ZDAYNAME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYNAME]' DIMENSIONNAME = '[ZDAYNAME]' LEVELPOSITION=1,
+        documentcurrencylevel01_0 = '[0DOC_CURRCY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0DOC_CURRCY]' DIMENSIONNAME = '[0DOC_CURRCY]' LEVELPOSITION=1,
+        holidayflaglevel01_0 = '[ZHOLDYFLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZHOLDYFLG]' DIMENSIONNAME = '[ZHOLDYFLG]' LEVELPOSITION=1,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        itemlevel01_0 = '[0S_ORD_ITEM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0S_ORD_ITEM]' DIMENSIONNAME = '[0S_ORD_ITEM]' LEVELPOSITION=1,
+        mmsta_primarystatlevel01_0 = '[ZMMSTANEW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMMSTANEW]' DIMENSIONNAME = '[ZMMSTANEW]' LEVELPOSITION=1,
+        materiallevel01_0 = '[0MATERIAL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATERIAL]' DIMENSIONNAME = '[0MATERIAL]' LEVELPOSITION=1,
+        materialgrouplevel01_0 = '[0MATL_GROUP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATL_GROUP]' DIMENSIONNAME = '[0MATL_GROUP]' LEVELPOSITION=1,
+        materialgrouplongtextlevel01_0 = '[ZTXTLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTXTLG]' DIMENSIONNAME = '[ZTXTLG]' LEVELPOSITION=1,
+        modelnamelevel01_0 = '[ZMODELDE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODELDE]' DIMENSIONNAME = '[ZMODELDE]' LEVELPOSITION=1,
+        modelphasecodelevel01_0 = '[ZMDLPHCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMDLPHCD]' DIMENSIONNAME = '[ZMDLPHCD]' LEVELPOSITION=1,
+        modelvehicledesclevel01_0 = '[ZMODVDESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODVDESC]' DIMENSIONNAME = '[ZMODVDESC]' LEVELPOSITION=1,
+        modelyearlevel01_0 = '[ZMODELYR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODELYR]' DIMENSIONNAME = '[ZMODELYR]' LEVELPOSITION=1,
+        monthidyyyymmlevel01_0 = '[ZMONTHID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' LEVELPOSITION=1,
+        primarystatuslevel01_0 = '[ZPSTATUS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZPSTATUS]' DIMENSIONNAME = '[ZPSTATUS]' LEVELPOSITION=1,
+        prodhierarchylevel01_0 = '[0PROD_HIER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0PROD_HIER]' DIMENSIONNAME = '[0PROD_HIER]' LEVELPOSITION=1,
+        rdrreversaldatelevel01_0 = '[ZRDRRDT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZRDRRDT]' DIMENSIONNAME = '[ZRDRRDT]' LEVELPOSITION=1,
+        rdrreversalreasonlevel01_0 = '[ZVEHRRVCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRRVCD]' DIMENSIONNAME = '[ZVEHRRVCD]' LEVELPOSITION=1,
+        reasonforrdrreverlevel01_0 = '[ZVEHRDRR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRDRR]' DIMENSIONNAME = '[ZVEHRDRR]' LEVELPOSITION=1,
+        regionlevel01_0 = '[0REGION].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0REGION]' DIMENSIONNAME = '[0REGION]' LEVELPOSITION=1,
+        sdsta_secondarystatlevel01_0 = '[ZSDSTANEW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSDSTANEW]' DIMENSIONNAME = '[ZSDSTANEW]' LEVELPOSITION=1,
+        salesarealevel01_0 = '[ZSALE_ARE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSALE_ARE]' DIMENSIONNAME = '[ZSALE_ARE]' LEVELPOSITION=1,
+        salesdistrictlevel01_0 = '[ZSAL_DIST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_DIST]' DIMENSIONNAME = '[ZSAL_DIST]' LEVELPOSITION=1,
+        salesdistricttextlevel01_0 = '[ZSDISTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSDISTXT]' DIMENSIONNAME = '[ZSDISTXT]' LEVELPOSITION=1,
+        salesdocumentlevel01_0 = '[0DOC_NUMBER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0DOC_NUMBER]' DIMENSIONNAME = '[0DOC_NUMBER]' LEVELPOSITION=1,
+        salesgrouplevel01_0 = '[ZSAL_GRP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_GRP]' DIMENSIONNAME = '[ZSAL_GRP]' LEVELPOSITION=1,
+        salesgrouptextlevel01_0 = '[ZSGRPTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSGRPTXT]' DIMENSIONNAME = '[ZSGRPTXT]' LEVELPOSITION=1,
+        salesofficetextlevel01_0 = '[ZSOFFTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSOFFTXT]' DIMENSIONNAME = '[ZSOFFTXT]' LEVELPOSITION=1,
+        salesofficelevel01_0 = '[ZSAL_OFF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_OFF]' DIMENSIONNAME = '[ZSAL_OFF]' LEVELPOSITION=1,
+        secondarystatuslevel01_0 = '[ZSECSTAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSECSTAT]' DIMENSIONNAME = '[ZSECSTAT]' LEVELPOSITION=1,
+        serieslevel01_0 = '[ZSERIESCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERIESCD]' DIMENSIONNAME = '[ZSERIESCD]' LEVELPOSITION=1,
+        seriesdescriptionlevel01_0 = '[ZSERDESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERDESC]' DIMENSIONNAME = '[ZSERDESC]' LEVELPOSITION=1,
+        soldtopartylevel01_0 = '[0SOLD_TO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SOLD_TO]' DIMENSIONNAME = '[0SOLD_TO]' LEVELPOSITION=1,
+        vehicleguidgloballevel01_0 = '[ZVEGUID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEGUID]' DIMENSIONNAME = '[ZVEGUID]' LEVELPOSITION=1,
+        vehicleidentificatilevel01_0 = '[ZVEHIDNO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHIDNO]' DIMENSIONNAME = '[ZVEHIDNO]' LEVELPOSITION=1,
+        vehicleusagelevel01_0 = '[ZVEUSGE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEUSGE]' DIMENSIONNAME = '[ZVEUSGE]' LEVELPOSITION=1,
+        netvalue_0 = '[Measures].[0NET_VALUE]' : 'java.lang.Double' (OPT) MEASURE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        qtyinbaseuom_0 = '[Measures].[0QUANT_B]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal1_0 = '[Measures].[0SUBTOT_1S]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal2_0 = '[Measures].[0SUBTOT_2S]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal3_0 = '[Measures].[0SUBTOT_3S]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal4_0 = '[Measures].[0SUBTOT_4S]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal5_0 = '[Measures].[0SUBTOT_5S]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal6_0 = '[Measures].[0SUBTOT_6S]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_sd001 I18N us_cst (
+        baseunitofmeasurelevel01_0:text,
+        conditiontypelevel01_0:text,
+        countrylevel01_0:text,
+        customerlevel01_0:text,
+        customer_hlevel01_0:text,
+        daydatelevel01_0:text,
+        daynamelevel01_0:text,
+        documentcurrencylevel01_0:text,
+        holidayflaglevel01_0:text,
+        infoproviderlevel01_0:text,
+        itemlevel01_0:text,
+        mmsta_primarystatlevel01_0:text,
+        materiallevel01_0:text,
+        materialgrouplevel01_0:text,
+        materialgrouplongtextlevel01_0:text,
+        modelnamelevel01_0:text,
+        modelphasecodelevel01_0:text,
+        modelvehicledesclevel01_0:text,
+        modelyearlevel01_0:text,
+        monthidyyyymmlevel01_0:text,
+        primarystatuslevel01_0:text,
+        prodhierarchylevel01_0:text,
+        rdrreversaldatelevel01_0:text,
+        rdrreversalreasonlevel01_0:text,
+        reasonforrdrreverlevel01_0:text,
+        regionlevel01_0:text,
+        sdsta_secondarystatlevel01_0:text,
+        salesarealevel01_0:text,
+        salesdistrictlevel01_0:text,
+        salesdistricttextlevel01_0:text,
+        salesdocumentlevel01_0:text,
+        salesgrouplevel01_0:text,
+        salesgrouptextlevel01_0:text,
+        salesofficetextlevel01_0:text,
+        salesofficelevel01_0:text,
+        secondarystatuslevel01_0:text,
+        serieslevel01_0:text,
+        seriesdescriptionlevel01_0:text,
+        soldtopartylevel01_0:text,
+        vehicleguidgloballevel01_0:text,
+        vehicleidentificatilevel01_0:text,
+        vehicleusagelevel01_0:text,
+        netvalue_0:double,
+        numberofrecords_0:double,
+        qtyinbaseuom_0:double,
+        subtotal1_0:double,
+        subtotal2_0:double,
+        subtotal3_0:double,
+        subtotal4_0:double,
+        subtotal5_0:double,
+        subtotal6_0:double
+    )
+    FOLDER = '/01 - connectivity'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_sd001(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD baseunitofmeasurelevel01_0 (any) OPT ANY
+             ADD conditiontypelevel01_0 (any) OPT ANY
+             ADD countrylevel01_0 (any) OPT ANY
+             ADD customerlevel01_0 (any) OPT ANY
+             ADD customer_hlevel01_0 (any) OPT ANY
+             ADD daydatelevel01_0 (any) OPT ANY
+             ADD daynamelevel01_0 (any) OPT ANY
+             ADD documentcurrencylevel01_0 (any) OPT ANY
+             ADD holidayflaglevel01_0 (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD itemlevel01_0 (any) OPT ANY
+             ADD mmsta_primarystatlevel01_0 (any) OPT ANY
+             ADD materiallevel01_0 (any) OPT ANY
+             ADD materialgrouplevel01_0 (any) OPT ANY
+             ADD materialgrouplongtextlevel01_0 (any) OPT ANY
+             ADD modelnamelevel01_0 (any) OPT ANY
+             ADD modelphasecodelevel01_0 (any) OPT ANY
+             ADD modelvehicledesclevel01_0 (any) OPT ANY
+             ADD modelyearlevel01_0 (any) OPT ANY
+             ADD monthidyyyymmlevel01_0 (any) OPT ANY
+             ADD primarystatuslevel01_0 (any) OPT ANY
+             ADD prodhierarchylevel01_0 (any) OPT ANY
+             ADD rdrreversaldatelevel01_0 (any) OPT ANY
+             ADD rdrreversalreasonlevel01_0 (any) OPT ANY
+             ADD reasonforrdrreverlevel01_0 (any) OPT ANY
+             ADD regionlevel01_0 (any) OPT ANY
+             ADD sdsta_secondarystatlevel01_0 (any) OPT ANY
+             ADD salesarealevel01_0 (any) OPT ANY
+             ADD salesdistrictlevel01_0 (any) OPT ANY
+             ADD salesdistricttextlevel01_0 (any) OPT ANY
+             ADD salesdocumentlevel01_0 (any) OPT ANY
+             ADD salesgrouplevel01_0 (any) OPT ANY
+             ADD salesgrouptextlevel01_0 (any) OPT ANY
+             ADD salesofficetextlevel01_0 (any) OPT ANY
+             ADD salesofficelevel01_0 (any) OPT ANY
+             ADD secondarystatuslevel01_0 (any) OPT ANY
+             ADD serieslevel01_0 (any) OPT ANY
+             ADD seriesdescriptionlevel01_0 (any) OPT ANY
+             ADD soldtopartylevel01_0 (any) OPT ANY
+             ADD vehicleguidgloballevel01_0 (any) OPT ANY
+             ADD vehicleidentificatilevel01_0 (any) OPT ANY
+             ADD vehicleusagelevel01_0 (any) OPT ANY
+             ADD netvalue_0 (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+             ADD qtyinbaseuom_0 (any) OPT ANY
+             ADD subtotal1_0 (any) OPT ANY
+             ADD subtotal2_0 (any) OPT ANY
+             ADD subtotal3_0 (any) OPT ANY
+             ADD subtotal4_0 (any) OPT ANY
+             ADD subtotal5_0 (any) OPT ANY
+             ADD subtotal6_0 (any) OPT ANY
+        )
+        OUTPUTLIST (baseunitofmeasurelevel01_0, conditiontypelevel01_0, countrylevel01_0, customer_hlevel01_0, customerlevel01_0, daydatelevel01_0, daynamelevel01_0, documentcurrencylevel01_0, holidayflaglevel01_0, infoproviderlevel01_0, itemlevel01_0, materialgrouplevel01_0, materialgrouplongtextlevel01_0, materiallevel01_0, mmsta_primarystatlevel01_0, modelnamelevel01_0, modelphasecodelevel01_0, modelvehicledesclevel01_0, modelyearlevel01_0, monthidyyyymmlevel01_0, netvalue_0, numberofrecords_0, primarystatuslevel01_0, prodhierarchylevel01_0, qtyinbaseuom_0, rdrreversaldatelevel01_0, rdrreversalreasonlevel01_0, reasonforrdrreverlevel01_0, regionlevel01_0, salesarealevel01_0, salesdistrictlevel01_0, salesdistricttextlevel01_0, salesdocumentlevel01_0, salesgrouplevel01_0, salesgrouptextlevel01_0, salesofficelevel01_0, salesofficetextlevel01_0, sdsta_secondarystatlevel01_0, secondarystatuslevel01_0, seriesdescriptionlevel01_0, serieslevel01_0, soldtopartylevel01_0, subtotal1_0, subtotal2_0, subtotal3_0, subtotal4_0, subtotal5_0, subtotal6_0, vehicleguidgloballevel01_0, vehicleidentificatilevel01_0, vehicleusagelevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_sd001)
+    );
+
