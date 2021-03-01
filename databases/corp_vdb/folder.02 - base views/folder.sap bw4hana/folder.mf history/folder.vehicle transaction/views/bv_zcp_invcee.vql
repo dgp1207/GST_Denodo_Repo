@@ -1,0 +1,181 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_invcee
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_INVCEE'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = TRUE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_INVCEE-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEE-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_tslevel01_0 = '[4ZCP_INVCEE-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-CRE_TS]' DIMENSIONNAME = '[4ZCP_INVCEE-CRE_TS]' LEVELPOSITION=1,
+        invcee_key_filler01level01_0 = '[4ZCP_INVCEE-INVCEE_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INVCEE_KEY_F]' DIMENSIONNAME = '[4ZCP_INVCEE-INVCEE_KEY_F]' LEVELPOSITION=1,
+        inv_archive_inlevel01_0 = '[4ZCP_INVCEE-INV_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_ARCHIVE]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_ARCHIVE]' LEVELPOSITION=1,
+        inv_e_alc_nolevel01_0 = '[4ZCP_INVCEE-INV_E_ALC_NO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_ALC_NO]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_ALC_NO]' LEVELPOSITION=1,
+        inv_e_all_dtelevel01_0 = '[4ZCP_INVCEE-INV_E_ALL_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_ALL_DT]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_ALL_DT]' LEVELPOSITION=1,
+        inv_e_all_unitslevel01_0 = '[4ZCP_INVCEE-INV_E_ALL_UN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_ALL_UN]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_ALL_UN]' LEVELPOSITION=1,
+        inv_e_baylevel01_0 = '[4ZCP_INVCEE-INV_E_BAY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_BAY]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_BAY]' LEVELPOSITION=1,
+        inv_e_bol_numlevel01_0 = '[4ZCP_INVCEE-INV_E_BOL_NU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_BOL_NU]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_BOL_NU]' LEVELPOSITION=1,
+        inv_e_carrier_1level01_0 = '[4ZCP_INVCEE-INV_E_CARRIE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_CARRIE]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_CARRIE]' LEVELPOSITION=1,
+        inv_e_carrier_2level01_0 = '[4ZCP_INVCEE-INV_E_CARR_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_CARR_0]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_CARR_0]' LEVELPOSITION=1,
+        inv_e_carrier_3level01_0 = '[4ZCP_INVCEE-INV_E_CARR_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_CARR_1]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_CARR_1]' LEVELPOSITION=1,
+        inv_e_carrier_4level01_0 = '[4ZCP_INVCEE-INV_E_CARR_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_CARR_2]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_CARR_2]' LEVELPOSITION=1,
+        inv_e_dlrlevel01_0 = '[4ZCP_INVCEE-INV_E_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_DLR]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_DLR]' LEVELPOSITION=1,
+        inv_e_dolevel01_0 = '[4ZCP_INVCEE-INV_E_DO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_DO]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_DO]' LEVELPOSITION=1,
+        inv_e_ds_codelevel01_0 = '[4ZCP_INVCEE-INV_E_DS_COD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_DS_COD]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_DS_COD]' LEVELPOSITION=1,
+        inv_e_frtlevel01_0 = '[4ZCP_INVCEE-INV_E_FRT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_FRT]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_FRT]' LEVELPOSITION=1,
+        inv_e_holdlevel01_0 = '[4ZCP_INVCEE-INV_E_HOLD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_HOLD]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_HOLD]' LEVELPOSITION=1,
+        inv_e_inv_dte_1level01_0 = '[4ZCP_INVCEE-INV_E_INV_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_INV_DT]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_INV_DT]' LEVELPOSITION=1,
+        inv_e_inv_dte_2level01_0 = '[4ZCP_INVCEE-INV_E_INV_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_INV_0]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_INV_0]' LEVELPOSITION=1,
+        inv_e_inv_dte_3level01_0 = '[4ZCP_INVCEE-INV_E_INV_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_INV_1]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_INV_1]' LEVELPOSITION=1,
+        inv_e_inv_dte_4level01_0 = '[4ZCP_INVCEE-INV_E_INV_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_INV_2]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_INV_2]' LEVELPOSITION=1,
+        inv_e_inv_unt_1level01_0 = '[4ZCP_INVCEE-INV_E_INV_UN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_INV_UN]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_INV_UN]' LEVELPOSITION=1,
+        inv_e_inv_unt_2level01_0 = '[4ZCP_INVCEE-INV_E_INV_3].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_INV_3]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_INV_3]' LEVELPOSITION=1,
+        inv_e_inv_unt_3level01_0 = '[4ZCP_INVCEE-INV_E_INV_4].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_INV_4]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_INV_4]' LEVELPOSITION=1,
+        inv_e_inv_unt_4level01_0 = '[4ZCP_INVCEE-INV_E_INV_5].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_INV_5]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_INV_5]' LEVELPOSITION=1,
+        inv_e_loadlevel01_0 = '[4ZCP_INVCEE-INV_E_LOAD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_LOAD]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_LOAD]' LEVELPOSITION=1,
+        inv_e_portlevel01_0 = '[4ZCP_INVCEE-INV_E_PORT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_PORT]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_PORT]' LEVELPOSITION=1,
+        inv_e_ship_dte_1level01_0 = '[4ZCP_INVCEE-INV_E_SHIP_D].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_SHIP_D]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_SHIP_D]' LEVELPOSITION=1,
+        inv_e_ship_dte_2level01_0 = '[4ZCP_INVCEE-INV_E_SHIP_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_SHIP_0]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_SHIP_0]' LEVELPOSITION=1,
+        inv_e_ship_dte_3level01_0 = '[4ZCP_INVCEE-INV_E_SHIP_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_SHIP_1]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_SHIP_1]' LEVELPOSITION=1,
+        inv_e_ship_dte_4level01_0 = '[4ZCP_INVCEE-INV_E_SHIP_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_SHIP_2]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_SHIP_2]' LEVELPOSITION=1,
+        inv_e_ship_unt_1level01_0 = '[4ZCP_INVCEE-INV_E_SHIP_U].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_SHIP_U]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_SHIP_U]' LEVELPOSITION=1,
+        inv_e_ship_unt_2level01_0 = '[4ZCP_INVCEE-INV_E_SHIP_3].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_SHIP_3]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_SHIP_3]' LEVELPOSITION=1,
+        inv_e_ship_unt_3level01_0 = '[4ZCP_INVCEE-INV_E_SHIP_4].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_SHIP_4]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_SHIP_4]' LEVELPOSITION=1,
+        inv_e_ship_unt_4level01_0 = '[4ZCP_INVCEE-INV_E_SHIP_5].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_SHIP_5]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_SHIP_5]' LEVELPOSITION=1,
+        inv_e_s_carrier_1level01_0 = '[4ZCP_INVCEE-INV_E_S_CARR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_S_CARR]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_S_CARR]' LEVELPOSITION=1,
+        inv_e_s_carrier_2level01_0 = '[4ZCP_INVCEE-INV_E_S_CA_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_S_CA_0]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_S_CA_0]' LEVELPOSITION=1,
+        inv_e_s_carrier_3level01_0 = '[4ZCP_INVCEE-INV_E_S_CA_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_S_CA_1]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_S_CA_1]' LEVELPOSITION=1,
+        inv_e_s_carrier_4level01_0 = '[4ZCP_INVCEE-INV_E_S_CA_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_S_CA_2]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_S_CA_2]' LEVELPOSITION=1,
+        inv_e_tend_dte_1level01_0 = '[4ZCP_INVCEE-INV_E_TEND_D].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_TEND_D]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_TEND_D]' LEVELPOSITION=1,
+        inv_e_tend_dte_2level01_0 = '[4ZCP_INVCEE-INV_E_TEND_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_TEND_0]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_TEND_0]' LEVELPOSITION=1,
+        inv_e_tend_dte_3level01_0 = '[4ZCP_INVCEE-INV_E_TEND_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_TEND_1]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_TEND_1]' LEVELPOSITION=1,
+        inv_e_tend_dte_4level01_0 = '[4ZCP_INVCEE-INV_E_TEND_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_TEND_2]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_TEND_2]' LEVELPOSITION=1,
+        inv_e_tend_unt_1level01_0 = '[4ZCP_INVCEE-INV_E_TEND_U].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_TEND_U]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_TEND_U]' LEVELPOSITION=1,
+        inv_e_tend_unt_2level01_0 = '[4ZCP_INVCEE-INV_E_TEND_3].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_TEND_3]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_TEND_3]' LEVELPOSITION=1,
+        inv_e_tend_unt_3level01_0 = '[4ZCP_INVCEE-INV_E_TEND_4].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_TEND_4]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_TEND_4]' LEVELPOSITION=1,
+        inv_e_tend_unt_4level01_0 = '[4ZCP_INVCEE-INV_E_TEND_5].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-INV_E_TEND_5]' DIMENSIONNAME = '[4ZCP_INVCEE-INV_E_TEND_5]' LEVELPOSITION=1,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        upd_by_idlevel01_0 = '[4ZCP_INVCEE-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEE-UPD_BY_ID]' LEVELPOSITION=1,
+        upd_tslevel01_0 = '[4ZCP_INVCEE-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEE-UPD_TS]' DIMENSIONNAME = '[4ZCP_INVCEE-UPD_TS]' LEVELPOSITION=1,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_invcee I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_tslevel01_0:text,
+        invcee_key_filler01level01_0:text,
+        inv_archive_inlevel01_0:text,
+        inv_e_alc_nolevel01_0:text,
+        inv_e_all_dtelevel01_0:text,
+        inv_e_all_unitslevel01_0:text,
+        inv_e_baylevel01_0:text,
+        inv_e_bol_numlevel01_0:text,
+        inv_e_carrier_1level01_0:text,
+        inv_e_carrier_2level01_0:text,
+        inv_e_carrier_3level01_0:text,
+        inv_e_carrier_4level01_0:text,
+        inv_e_dlrlevel01_0:text,
+        inv_e_dolevel01_0:text,
+        inv_e_ds_codelevel01_0:text,
+        inv_e_frtlevel01_0:text,
+        inv_e_holdlevel01_0:text,
+        inv_e_inv_dte_1level01_0:text,
+        inv_e_inv_dte_2level01_0:text,
+        inv_e_inv_dte_3level01_0:text,
+        inv_e_inv_dte_4level01_0:text,
+        inv_e_inv_unt_1level01_0:text,
+        inv_e_inv_unt_2level01_0:text,
+        inv_e_inv_unt_3level01_0:text,
+        inv_e_inv_unt_4level01_0:text,
+        inv_e_loadlevel01_0:text,
+        inv_e_portlevel01_0:text,
+        inv_e_ship_dte_1level01_0:text,
+        inv_e_ship_dte_2level01_0:text,
+        inv_e_ship_dte_3level01_0:text,
+        inv_e_ship_dte_4level01_0:text,
+        inv_e_ship_unt_1level01_0:text,
+        inv_e_ship_unt_2level01_0:text,
+        inv_e_ship_unt_3level01_0:text,
+        inv_e_ship_unt_4level01_0:text,
+        inv_e_s_carrier_1level01_0:text,
+        inv_e_s_carrier_2level01_0:text,
+        inv_e_s_carrier_3level01_0:text,
+        inv_e_s_carrier_4level01_0:text,
+        inv_e_tend_dte_1level01_0:text,
+        inv_e_tend_dte_2level01_0:text,
+        inv_e_tend_dte_3level01_0:text,
+        inv_e_tend_dte_4level01_0:text,
+        inv_e_tend_unt_1level01_0:text,
+        inv_e_tend_unt_2level01_0:text,
+        inv_e_tend_unt_3level01_0:text,
+        inv_e_tend_unt_4level01_0:text,
+        infoproviderlevel01_0:text,
+        upd_by_idlevel01_0:text,
+        upd_tslevel01_0:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_invcee(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD invcee_key_filler01level01_0 (any) OPT ANY
+             ADD inv_archive_inlevel01_0 (any) OPT ANY
+             ADD inv_e_alc_nolevel01_0 (any) OPT ANY
+             ADD inv_e_all_dtelevel01_0 (any) OPT ANY
+             ADD inv_e_all_unitslevel01_0 (any) OPT ANY
+             ADD inv_e_baylevel01_0 (any) OPT ANY
+             ADD inv_e_bol_numlevel01_0 (any) OPT ANY
+             ADD inv_e_carrier_1level01_0 (any) OPT ANY
+             ADD inv_e_carrier_2level01_0 (any) OPT ANY
+             ADD inv_e_carrier_3level01_0 (any) OPT ANY
+             ADD inv_e_carrier_4level01_0 (any) OPT ANY
+             ADD inv_e_dlrlevel01_0 (any) OPT ANY
+             ADD inv_e_dolevel01_0 (any) OPT ANY
+             ADD inv_e_ds_codelevel01_0 (any) OPT ANY
+             ADD inv_e_frtlevel01_0 (any) OPT ANY
+             ADD inv_e_holdlevel01_0 (any) OPT ANY
+             ADD inv_e_inv_dte_1level01_0 (any) OPT ANY
+             ADD inv_e_inv_dte_2level01_0 (any) OPT ANY
+             ADD inv_e_inv_dte_3level01_0 (any) OPT ANY
+             ADD inv_e_inv_dte_4level01_0 (any) OPT ANY
+             ADD inv_e_inv_unt_1level01_0 (any) OPT ANY
+             ADD inv_e_inv_unt_2level01_0 (any) OPT ANY
+             ADD inv_e_inv_unt_3level01_0 (any) OPT ANY
+             ADD inv_e_inv_unt_4level01_0 (any) OPT ANY
+             ADD inv_e_loadlevel01_0 (any) OPT ANY
+             ADD inv_e_portlevel01_0 (any) OPT ANY
+             ADD inv_e_ship_dte_1level01_0 (any) OPT ANY
+             ADD inv_e_ship_dte_2level01_0 (any) OPT ANY
+             ADD inv_e_ship_dte_3level01_0 (any) OPT ANY
+             ADD inv_e_ship_dte_4level01_0 (any) OPT ANY
+             ADD inv_e_ship_unt_1level01_0 (any) OPT ANY
+             ADD inv_e_ship_unt_2level01_0 (any) OPT ANY
+             ADD inv_e_ship_unt_3level01_0 (any) OPT ANY
+             ADD inv_e_ship_unt_4level01_0 (any) OPT ANY
+             ADD inv_e_s_carrier_1level01_0 (any) OPT ANY
+             ADD inv_e_s_carrier_2level01_0 (any) OPT ANY
+             ADD inv_e_s_carrier_3level01_0 (any) OPT ANY
+             ADD inv_e_s_carrier_4level01_0 (any) OPT ANY
+             ADD inv_e_tend_dte_1level01_0 (any) OPT ANY
+             ADD inv_e_tend_dte_2level01_0 (any) OPT ANY
+             ADD inv_e_tend_dte_3level01_0 (any) OPT ANY
+             ADD inv_e_tend_dte_4level01_0 (any) OPT ANY
+             ADD inv_e_tend_unt_1level01_0 (any) OPT ANY
+             ADD inv_e_tend_unt_2level01_0 (any) OPT ANY
+             ADD inv_e_tend_unt_3level01_0 (any) OPT ANY
+             ADD inv_e_tend_unt_4level01_0 (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD upd_by_idlevel01_0 (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (cre_by_idlevel01_0, cre_tslevel01_0, infoproviderlevel01_0, inv_archive_inlevel01_0, inv_e_alc_nolevel01_0, inv_e_all_dtelevel01_0, inv_e_all_unitslevel01_0, inv_e_baylevel01_0, inv_e_bol_numlevel01_0, inv_e_carrier_1level01_0, inv_e_carrier_2level01_0, inv_e_carrier_3level01_0, inv_e_carrier_4level01_0, inv_e_dlrlevel01_0, inv_e_dolevel01_0, inv_e_ds_codelevel01_0, inv_e_frtlevel01_0, inv_e_holdlevel01_0, inv_e_inv_dte_1level01_0, inv_e_inv_dte_2level01_0, inv_e_inv_dte_3level01_0, inv_e_inv_dte_4level01_0, inv_e_inv_unt_1level01_0, inv_e_inv_unt_2level01_0, inv_e_inv_unt_3level01_0, inv_e_inv_unt_4level01_0, inv_e_loadlevel01_0, inv_e_portlevel01_0, inv_e_s_carrier_1level01_0, inv_e_s_carrier_2level01_0, inv_e_s_carrier_3level01_0, inv_e_s_carrier_4level01_0, inv_e_ship_dte_1level01_0, inv_e_ship_dte_2level01_0, inv_e_ship_dte_3level01_0, inv_e_ship_dte_4level01_0, inv_e_ship_unt_1level01_0, inv_e_ship_unt_2level01_0, inv_e_ship_unt_3level01_0, inv_e_ship_unt_4level01_0, inv_e_tend_dte_1level01_0, inv_e_tend_dte_2level01_0, inv_e_tend_dte_3level01_0, inv_e_tend_dte_4level01_0, inv_e_tend_unt_1level01_0, inv_e_tend_unt_2level01_0, inv_e_tend_unt_3level01_0, inv_e_tend_unt_4level01_0, invcee_key_filler01level01_0, numberofrecords_0, upd_by_idlevel01_0, upd_tslevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_invcee)
+    );
+

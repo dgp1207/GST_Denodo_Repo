@@ -1,0 +1,127 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_invcec
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_INVCEC'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = TRUE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_INVCEC-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEC-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_tslevel01_0 = '[4ZCP_INVCEC-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-CRE_TS]' DIMENSIONNAME = '[4ZCP_INVCEC-CRE_TS]' LEVELPOSITION=1,
+        invcec_key_filler01level01_0 = '[4ZCP_INVCEC-INVCEC_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INVCEC_KEY_F]' DIMENSIONNAME = '[4ZCP_INVCEC-INVCEC_KEY_F]' LEVELPOSITION=1,
+        inv_archive_inlevel01_0 = '[4ZCP_INVCEC-INV_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_ARCHIVE]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_ARCHIVE]' LEVELPOSITION=1,
+        inv_c_ach_dtlevel01_0 = '[4ZCP_INVCEC-INV_C_ACH_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_ACH_DT]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_ACH_DT]' LEVELPOSITION=1,
+        inv_c_bank_grplevel01_0 = '[4ZCP_INVCEC-INV_C_BANK_G].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_BANK_G]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_BANK_G]' LEVELPOSITION=1,
+        inv_c_btchlevel01_0 = '[4ZCP_INVCEC-INV_C_BTCH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_BTCH]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_BTCH]' LEVELPOSITION=1,
+        inv_c_cmtlevel01_0 = '[4ZCP_INVCEC-INV_C_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_CMT]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_CMT]' LEVELPOSITION=1,
+        inv_c_delivlevel01_0 = '[4ZCP_INVCEC-INV_C_DELIV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_DELIV]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_DELIV]' LEVELPOSITION=1,
+        inv_c_dlrlevel01_0 = '[4ZCP_INVCEC-INV_C_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_DLR]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_DLR]' LEVELPOSITION=1,
+        inv_c_drftlevel01_0 = '[4ZCP_INVCEC-INV_C_DRFT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_DRFT]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_DRFT]' LEVELPOSITION=1,
+        inv_c_drft_dtlevel01_0 = '[4ZCP_INVCEC-INV_C_DRFT_D].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_DRFT_D]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_DRFT_D]' LEVELPOSITION=1,
+        inv_c_flrlevel01_0 = '[4ZCP_INVCEC-INV_C_FLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_FLR]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_FLR]' LEVELPOSITION=1,
+        inv_c_fltlevel01_0 = '[4ZCP_INVCEC-INV_C_FLT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_FLT]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_FLT]' LEVELPOSITION=1,
+        inv_c_flt_acctlevel01_0 = '[4ZCP_INVCEC-INV_C_FLT_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_FLT_0]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_FLT_0]' LEVELPOSITION=1,
+        inv_c_flt_acct_billlevel01_0 = '[4ZCP_INVCEC-INV_C_FLT_AC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_FLT_AC]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_FLT_AC]' LEVELPOSITION=1,
+        inv_c_frgtlevel01_0 = '[4ZCP_INVCEC-INV_C_FRGT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_FRGT]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_FRGT]' LEVELPOSITION=1,
+        inv_c_invlevel01_0 = '[4ZCP_INVCEC-INV_C_INV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_INV]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_INV]' LEVELPOSITION=1,
+        inv_c_inv_dtlevel01_0 = '[4ZCP_INVCEC-INV_C_INV_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_INV_DT]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_INV_DT]' LEVELPOSITION=1,
+        inv_c_jpn_cclevel01_0 = '[4ZCP_INVCEC-INV_C_JPN_CC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_JPN_CC]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_JPN_CC]' LEVELPOSITION=1,
+        inv_c_mdllevel01_0 = '[4ZCP_INVCEC-INV_C_MDL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_MDL]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_MDL]' LEVELPOSITION=1,
+        inv_c_pd_dtlevel01_0 = '[4ZCP_INVCEC-INV_C_PD_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_PD_DT]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_PD_DT]' LEVELPOSITION=1,
+        inv_c_seqlevel01_0 = '[4ZCP_INVCEC-INV_C_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_SEQ]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_SEQ]' LEVELPOSITION=1,
+        inv_c_statlevel01_0 = '[4ZCP_INVCEC-INV_C_STAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_STAT]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_STAT]' LEVELPOSITION=1,
+        inv_c_unitlevel01_0 = '[4ZCP_INVCEC-INV_C_UNIT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_UNIT]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_UNIT]' LEVELPOSITION=1,
+        inv_c_unit_statlevel01_0 = '[4ZCP_INVCEC-INV_C_UNIT_S].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_UNIT_S]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_UNIT_S]' LEVELPOSITION=1,
+        inv_c_vd_dtlevel01_0 = '[4ZCP_INVCEC-INV_C_VD_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_VD_DT]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_VD_DT]' LEVELPOSITION=1,
+        inv_c_vesslevel01_0 = '[4ZCP_INVCEC-INV_C_VESS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_VESS]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_VESS]' LEVELPOSITION=1,
+        inv_c_vinlevel01_0 = '[4ZCP_INVCEC-INV_C_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_VIN]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_VIN]' LEVELPOSITION=1,
+        inv_c_wmilevel01_0 = '[4ZCP_INVCEC-INV_C_WMI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-INV_C_WMI]' DIMENSIONNAME = '[4ZCP_INVCEC-INV_C_WMI]' LEVELPOSITION=1,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        upd_by_idlevel01_0 = '[4ZCP_INVCEC-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEC-UPD_BY_ID]' LEVELPOSITION=1,
+        upd_tslevel01_0 = '[4ZCP_INVCEC-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEC-UPD_TS]' DIMENSIONNAME = '[4ZCP_INVCEC-UPD_TS]' LEVELPOSITION=1,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_invcec I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_tslevel01_0:text,
+        invcec_key_filler01level01_0:text,
+        inv_archive_inlevel01_0:text,
+        inv_c_ach_dtlevel01_0:text,
+        inv_c_bank_grplevel01_0:text,
+        inv_c_btchlevel01_0:text,
+        inv_c_cmtlevel01_0:text,
+        inv_c_delivlevel01_0:text,
+        inv_c_dlrlevel01_0:text,
+        inv_c_drftlevel01_0:text,
+        inv_c_drft_dtlevel01_0:text,
+        inv_c_flrlevel01_0:text,
+        inv_c_fltlevel01_0:text,
+        inv_c_flt_acctlevel01_0:text,
+        inv_c_flt_acct_billlevel01_0:text,
+        inv_c_frgtlevel01_0:text,
+        inv_c_invlevel01_0:text,
+        inv_c_inv_dtlevel01_0:text,
+        inv_c_jpn_cclevel01_0:text,
+        inv_c_mdllevel01_0:text,
+        inv_c_pd_dtlevel01_0:text,
+        inv_c_seqlevel01_0:text,
+        inv_c_statlevel01_0:text,
+        inv_c_unitlevel01_0:text,
+        inv_c_unit_statlevel01_0:text,
+        inv_c_vd_dtlevel01_0:text,
+        inv_c_vesslevel01_0:text,
+        inv_c_vinlevel01_0:text,
+        inv_c_wmilevel01_0:text,
+        infoproviderlevel01_0:text,
+        upd_by_idlevel01_0:text,
+        upd_tslevel01_0:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_invcec(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD invcec_key_filler01level01_0 (any) OPT ANY
+             ADD inv_archive_inlevel01_0 (any) OPT ANY
+             ADD inv_c_ach_dtlevel01_0 (any) OPT ANY
+             ADD inv_c_bank_grplevel01_0 (any) OPT ANY
+             ADD inv_c_btchlevel01_0 (any) OPT ANY
+             ADD inv_c_cmtlevel01_0 (any) OPT ANY
+             ADD inv_c_delivlevel01_0 (any) OPT ANY
+             ADD inv_c_dlrlevel01_0 (any) OPT ANY
+             ADD inv_c_drftlevel01_0 (any) OPT ANY
+             ADD inv_c_drft_dtlevel01_0 (any) OPT ANY
+             ADD inv_c_flrlevel01_0 (any) OPT ANY
+             ADD inv_c_fltlevel01_0 (any) OPT ANY
+             ADD inv_c_flt_acctlevel01_0 (any) OPT ANY
+             ADD inv_c_flt_acct_billlevel01_0 (any) OPT ANY
+             ADD inv_c_frgtlevel01_0 (any) OPT ANY
+             ADD inv_c_invlevel01_0 (any) OPT ANY
+             ADD inv_c_inv_dtlevel01_0 (any) OPT ANY
+             ADD inv_c_jpn_cclevel01_0 (any) OPT ANY
+             ADD inv_c_mdllevel01_0 (any) OPT ANY
+             ADD inv_c_pd_dtlevel01_0 (any) OPT ANY
+             ADD inv_c_seqlevel01_0 (any) OPT ANY
+             ADD inv_c_statlevel01_0 (any) OPT ANY
+             ADD inv_c_unitlevel01_0 (any) OPT ANY
+             ADD inv_c_unit_statlevel01_0 (any) OPT ANY
+             ADD inv_c_vd_dtlevel01_0 (any) OPT ANY
+             ADD inv_c_vesslevel01_0 (any) OPT ANY
+             ADD inv_c_vinlevel01_0 (any) OPT ANY
+             ADD inv_c_wmilevel01_0 (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD upd_by_idlevel01_0 (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (cre_by_idlevel01_0, cre_tslevel01_0, infoproviderlevel01_0, inv_archive_inlevel01_0, inv_c_ach_dtlevel01_0, inv_c_bank_grplevel01_0, inv_c_btchlevel01_0, inv_c_cmtlevel01_0, inv_c_delivlevel01_0, inv_c_dlrlevel01_0, inv_c_drft_dtlevel01_0, inv_c_drftlevel01_0, inv_c_flrlevel01_0, inv_c_flt_acct_billlevel01_0, inv_c_flt_acctlevel01_0, inv_c_fltlevel01_0, inv_c_frgtlevel01_0, inv_c_inv_dtlevel01_0, inv_c_invlevel01_0, inv_c_jpn_cclevel01_0, inv_c_mdllevel01_0, inv_c_pd_dtlevel01_0, inv_c_seqlevel01_0, inv_c_statlevel01_0, inv_c_unit_statlevel01_0, inv_c_unitlevel01_0, inv_c_vd_dtlevel01_0, inv_c_vesslevel01_0, inv_c_vinlevel01_0, inv_c_wmilevel01_0, invcec_key_filler01level01_0, numberofrecords_0, upd_by_idlevel01_0, upd_tslevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_invcec)
+    );
+

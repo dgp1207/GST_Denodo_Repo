@@ -1,0 +1,208 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_inhead
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_INHEAD'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = TRUE
+    OUTPUTSCHEMA (
+        inhead_cre_by_idlevel01_0 = '[4ZCP_INHEAD-INHEAD_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INHEAD_CRE_B]' DIMENSIONNAME = '[4ZCP_INHEAD-INHEAD_CRE_B]' LEVELPOSITION=1,
+        inhead_cre_by_id_key = '[4ZCP_INHEAD-INHEAD_CRE_B].[24ZCP_INHEAD-INHEAD_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INHEAD_CRE_B]' DIMENSIONNAME = '[4ZCP_INHEAD-INHEAD_CRE_B]' ATTRIBUTE,
+        inhead_cre_tslevel01_0 = '[4ZCP_INHEAD-INHEAD_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INHEAD_CRE_T]' DIMENSIONNAME = '[4ZCP_INHEAD-INHEAD_CRE_T]' LEVELPOSITION=1,
+        inhead_cre_ts_key = '[4ZCP_INHEAD-INHEAD_CRE_T].[24ZCP_INHEAD-INHEAD_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INHEAD_CRE_T]' DIMENSIONNAME = '[4ZCP_INHEAD-INHEAD_CRE_T]' ATTRIBUTE,
+        inhead_upd_by_idlevel01_0 = '[4ZCP_INHEAD-INHEAD_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INHEAD_UPD_B]' DIMENSIONNAME = '[4ZCP_INHEAD-INHEAD_UPD_B]' LEVELPOSITION=1,
+        inhead_upd_by_id_key = '[4ZCP_INHEAD-INHEAD_UPD_B].[24ZCP_INHEAD-INHEAD_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INHEAD_UPD_B]' DIMENSIONNAME = '[4ZCP_INHEAD-INHEAD_UPD_B]' ATTRIBUTE,
+        inhead_upd_tslevel01_0 = '[4ZCP_INHEAD-INHEAD_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INHEAD_UPD_T]' DIMENSIONNAME = '[4ZCP_INHEAD-INHEAD_UPD_T]' LEVELPOSITION=1,
+        inhead_upd_ts_key = '[4ZCP_INHEAD-INHEAD_UPD_T].[24ZCP_INHEAD-INHEAD_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INHEAD_UPD_T]' DIMENSIONNAME = '[4ZCP_INHEAD-INHEAD_UPD_T]' ATTRIBUTE,
+        inh_account_numlevel01_0 = '[4ZCP_INHEAD-INH_ACCOUNT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_ACCOUNT]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_ACCOUNT]' LEVELPOSITION=1,
+        inh_account_num_key = '[4ZCP_INHEAD-INH_ACCOUNT].[24ZCP_INHEAD-INH_ACCOUNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_ACCOUNT]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_ACCOUNT]' ATTRIBUTE,
+        inh_archive_inlevel01_0 = '[4ZCP_INHEAD-INH_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_ARCHIVE]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_ARCHIVE]' LEVELPOSITION=1,
+        inh_archive_in_key = '[4ZCP_INHEAD-INH_ARCHIVE].[24ZCP_INHEAD-INH_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_ARCHIVE]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_ARCHIVE]' ATTRIBUTE,
+        inh_case_tllevel01_0 = '[4ZCP_INHEAD-INH_CASE_TL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CASE_TL]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CASE_TL]' LEVELPOSITION=1,
+        inh_case_tl_key = '[4ZCP_INHEAD-INH_CASE_TL].[24ZCP_INHEAD-INH_CASE_TL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CASE_TL]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CASE_TL]' ATTRIBUTE,
+        inh_cmtlevel01_0 = '[4ZCP_INHEAD-INH_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CMT]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CMT]' LEVELPOSITION=1,
+        inh_cmt_key = '[4ZCP_INHEAD-INH_CMT].[24ZCP_INHEAD-INH_CMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CMT]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CMT]' ATTRIBUTE,
+        inh_cntnr_arrv_dtlevel01_0 = '[4ZCP_INHEAD-INH_CNTNR_AR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CNTNR_AR]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CNTNR_AR]' LEVELPOSITION=1,
+        inh_cntnr_arrv_dt_key = '[4ZCP_INHEAD-INH_CNTNR_AR].[24ZCP_INHEAD-INH_CNTNR_AR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CNTNR_AR]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CNTNR_AR]' ATTRIBUTE,
+        inh_cntnr_numlevel01_0 = '[4ZCP_INHEAD-INH_CNTNR_NU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CNTNR_NU]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CNTNR_NU]' LEVELPOSITION=1,
+        inh_cntnr_num_key = '[4ZCP_INHEAD-INH_CNTNR_NU].[24ZCP_INHEAD-INH_CNTNR_NU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CNTNR_NU]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CNTNR_NU]' ATTRIBUTE,
+        inh_cntnr_stat_cdlevel01_0 = '[4ZCP_INHEAD-INH_CNTNR_ST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CNTNR_ST]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CNTNR_ST]' LEVELPOSITION=1,
+        inh_cntnr_stat_cd_key = '[4ZCP_INHEAD-INH_CNTNR_ST].[24ZCP_INHEAD-INH_CNTNR_ST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CNTNR_ST]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CNTNR_ST]' ATTRIBUTE,
+        inh_cntnr_type_cdlevel01_0 = '[4ZCP_INHEAD-INH_CNTNR_TY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CNTNR_TY]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CNTNR_TY]' LEVELPOSITION=1,
+        inh_cntnr_type_cd_key = '[4ZCP_INHEAD-INH_CNTNR_TY].[24ZCP_INHEAD-INH_CNTNR_TY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CNTNR_TY]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CNTNR_TY]' ATTRIBUTE,
+        inh_crit_ln_tllevel01_0 = '[4ZCP_INHEAD-INH_CRIT_LN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CRIT_LN]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CRIT_LN]' LEVELPOSITION=1,
+        inh_crit_ln_tl_key = '[4ZCP_INHEAD-INH_CRIT_LN].[24ZCP_INHEAD-INH_CRIT_LN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_CRIT_LN]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_CRIT_LN]' ATTRIBUTE,
+        inh_eta_datelevel01_0 = '[4ZCP_INHEAD-INH_ETA_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_ETA_DATE]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_ETA_DATE]' LEVELPOSITION=1,
+        inh_eta_date_key = '[4ZCP_INHEAD-INH_ETA_DATE].[24ZCP_INHEAD-INH_ETA_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_ETA_DATE]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_ETA_DATE]' ATTRIBUTE,
+        inh_invoice_datelevel01_0 = '[4ZCP_INHEAD-INH_INVOIC_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_INVOIC_0]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_INVOIC_0]' LEVELPOSITION=1,
+        inh_invoice_date_key = '[4ZCP_INHEAD-INH_INVOIC_0].[24ZCP_INHEAD-INH_INVOIC_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_INVOIC_0]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_INVOIC_0]' ATTRIBUTE,
+        inh_invoice_numlevel01_0 = '[4ZCP_INHEAD-INH_INVOICE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_INVOICE]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_INVOICE]' LEVELPOSITION=1,
+        inh_invoice_num_key = '[4ZCP_INHEAD-INH_INVOICE].[24ZCP_INHEAD-INH_INVOICE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_INVOICE]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_INVOICE]' ATTRIBUTE,
+        inh_ln_tllevel01_0 = '[4ZCP_INHEAD-INH_LN_TL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_LN_TL]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_LN_TL]' LEVELPOSITION=1,
+        inh_ln_tl_key = '[4ZCP_INHEAD-INH_LN_TL].[24ZCP_INHEAD-INH_LN_TL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_LN_TL]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_LN_TL]' ATTRIBUTE,
+        inh_num_pieceslevel01_0 = '[4ZCP_INHEAD-INH_NUM_PIEC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_NUM_PIEC]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_NUM_PIEC]' LEVELPOSITION=1,
+        inh_num_pieces_key = '[4ZCP_INHEAD-INH_NUM_PIEC].[24ZCP_INHEAD-INH_NUM_PIEC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_NUM_PIEC]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_NUM_PIEC]' ATTRIBUTE,
+        inh_pend_rcv_ln_tllevel01_0 = '[4ZCP_INHEAD-INH_PEND_R_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_PEND_R_0]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_PEND_R_0]' LEVELPOSITION=1,
+        inh_pend_rcv_ln_tl_key = '[4ZCP_INHEAD-INH_PEND_R_0].[24ZCP_INHEAD-INH_PEND_R_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_PEND_R_0]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_PEND_R_0]' ATTRIBUTE,
+        inh_pend_rcv_piecelevel01_0 = '[4ZCP_INHEAD-INH_PEND_RCV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_PEND_RCV]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_PEND_RCV]' LEVELPOSITION=1,
+        inh_pend_rcv_piece_key = '[4ZCP_INHEAD-INH_PEND_RCV].[24ZCP_INHEAD-INH_PEND_RCV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_PEND_RCV]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_PEND_RCV]' ATTRIBUTE,
+        inh_rcv_rpt_numlevel01_0 = '[4ZCP_INHEAD-INH_RCV_RPT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_RCV_RPT]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_RCV_RPT]' LEVELPOSITION=1,
+        inh_rcv_rpt_num_key = '[4ZCP_INHEAD-INH_RCV_RPT].[24ZCP_INHEAD-INH_RCV_RPT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_RCV_RPT]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_RCV_RPT]' ATTRIBUTE,
+        inh_ship_datelevel01_0 = '[4ZCP_INHEAD-INH_SHIP_DAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_SHIP_DAT]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_SHIP_DAT]' LEVELPOSITION=1,
+        inh_ship_date_key = '[4ZCP_INHEAD-INH_SHIP_DAT].[24ZCP_INHEAD-INH_SHIP_DAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_SHIP_DAT]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_SHIP_DAT]' ATTRIBUTE,
+        inh_ship_vialevel01_0 = '[4ZCP_INHEAD-INH_SHIP_VIA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_SHIP_VIA]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_SHIP_VIA]' LEVELPOSITION=1,
+        inh_ship_via_key = '[4ZCP_INHEAD-INH_SHIP_VIA].[24ZCP_INHEAD-INH_SHIP_VIA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_SHIP_VIA]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_SHIP_VIA]' ATTRIBUTE,
+        inh_shpmnt_numlevel01_0 = '[4ZCP_INHEAD-INH_SHPMNT_N].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_SHPMNT_N]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_SHPMNT_N]' LEVELPOSITION=1,
+        inh_shpmnt_num_key = '[4ZCP_INHEAD-INH_SHPMNT_N].[24ZCP_INHEAD-INH_SHPMNT_N]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_SHPMNT_N]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_SHPMNT_N]' ATTRIBUTE,
+        inh_status_flaglevel01_0 = '[4ZCP_INHEAD-INH_STATUS_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_STATUS_F]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_STATUS_F]' LEVELPOSITION=1,
+        inh_status_flag_key = '[4ZCP_INHEAD-INH_STATUS_F].[24ZCP_INHEAD-INH_STATUS_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_STATUS_F]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_STATUS_F]' ATTRIBUTE,
+        inh_stat_date_timelevel01_0 = '[4ZCP_INHEAD-INH_STAT_DAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_STAT_DAT]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_STAT_DAT]' LEVELPOSITION=1,
+        inh_stat_date_time_key = '[4ZCP_INHEAD-INH_STAT_DAT].[24ZCP_INHEAD-INH_STAT_DAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_STAT_DAT]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_STAT_DAT]' ATTRIBUTE,
+        inh_vendor_numlevel01_0 = '[4ZCP_INHEAD-INH_VENDOR_N].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_VENDOR_N]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_VENDOR_N]' LEVELPOSITION=1,
+        inh_vendor_num_key = '[4ZCP_INHEAD-INH_VENDOR_N].[24ZCP_INHEAD-INH_VENDOR_N]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_VENDOR_N]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_VENDOR_N]' ATTRIBUTE,
+        inh_ven_inv_numlevel01_0 = '[4ZCP_INHEAD-INH_VEN_INV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_VEN_INV]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_VEN_INV]' LEVELPOSITION=1,
+        inh_ven_inv_num_key = '[4ZCP_INHEAD-INH_VEN_INV].[24ZCP_INHEAD-INH_VEN_INV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INHEAD-INH_VEN_INV]' DIMENSIONNAME = '[4ZCP_INHEAD-INH_VEN_INV]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_inhead I18N us_cst (
+        inhead_cre_by_idlevel01_0:text,
+        inhead_cre_by_id_key:text,
+        inhead_cre_tslevel01_0:text,
+        inhead_cre_ts_key:text,
+        inhead_upd_by_idlevel01_0:text,
+        inhead_upd_by_id_key:text,
+        inhead_upd_tslevel01_0:text,
+        inhead_upd_ts_key:text,
+        inh_account_numlevel01_0:text,
+        inh_account_num_key:text,
+        inh_archive_inlevel01_0:text,
+        inh_archive_in_key:text,
+        inh_case_tllevel01_0:text,
+        inh_case_tl_key:text,
+        inh_cmtlevel01_0:text,
+        inh_cmt_key:text,
+        inh_cntnr_arrv_dtlevel01_0:text,
+        inh_cntnr_arrv_dt_key:text,
+        inh_cntnr_numlevel01_0:text,
+        inh_cntnr_num_key:text,
+        inh_cntnr_stat_cdlevel01_0:text,
+        inh_cntnr_stat_cd_key:text,
+        inh_cntnr_type_cdlevel01_0:text,
+        inh_cntnr_type_cd_key:text,
+        inh_crit_ln_tllevel01_0:text,
+        inh_crit_ln_tl_key:text,
+        inh_eta_datelevel01_0:text,
+        inh_eta_date_key:text,
+        inh_invoice_datelevel01_0:text,
+        inh_invoice_date_key:text,
+        inh_invoice_numlevel01_0:text,
+        inh_invoice_num_key:text,
+        inh_ln_tllevel01_0:text,
+        inh_ln_tl_key:text,
+        inh_num_pieceslevel01_0:text,
+        inh_num_pieces_key:text,
+        inh_pend_rcv_ln_tllevel01_0:text,
+        inh_pend_rcv_ln_tl_key:text,
+        inh_pend_rcv_piecelevel01_0:text,
+        inh_pend_rcv_piece_key:text,
+        inh_rcv_rpt_numlevel01_0:text,
+        inh_rcv_rpt_num_key:text,
+        inh_ship_datelevel01_0:text,
+        inh_ship_date_key:text,
+        inh_ship_vialevel01_0:text,
+        inh_ship_via_key:text,
+        inh_shpmnt_numlevel01_0:text,
+        inh_shpmnt_num_key:text,
+        inh_status_flaglevel01_0:text,
+        inh_status_flag_key:text,
+        inh_stat_date_timelevel01_0:text,
+        inh_stat_date_time_key:text,
+        inh_vendor_numlevel01_0:text,
+        inh_vendor_num_key:text,
+        inh_ven_inv_numlevel01_0:text,
+        inh_ven_inv_num_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mf history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_inhead(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD inhead_cre_by_idlevel01_0 (any) OPT ANY
+             ADD inhead_cre_by_id_key (any) OPT ANY
+             ADD inhead_cre_tslevel01_0 (any) OPT ANY
+             ADD inhead_cre_ts_key (any) OPT ANY
+             ADD inhead_upd_by_idlevel01_0 (any) OPT ANY
+             ADD inhead_upd_by_id_key (any) OPT ANY
+             ADD inhead_upd_tslevel01_0 (any) OPT ANY
+             ADD inhead_upd_ts_key (any) OPT ANY
+             ADD inh_account_numlevel01_0 (any) OPT ANY
+             ADD inh_account_num_key (any) OPT ANY
+             ADD inh_archive_inlevel01_0 (any) OPT ANY
+             ADD inh_archive_in_key (any) OPT ANY
+             ADD inh_case_tllevel01_0 (any) OPT ANY
+             ADD inh_case_tl_key (any) OPT ANY
+             ADD inh_cmtlevel01_0 (any) OPT ANY
+             ADD inh_cmt_key (any) OPT ANY
+             ADD inh_cntnr_arrv_dtlevel01_0 (any) OPT ANY
+             ADD inh_cntnr_arrv_dt_key (any) OPT ANY
+             ADD inh_cntnr_numlevel01_0 (any) OPT ANY
+             ADD inh_cntnr_num_key (any) OPT ANY
+             ADD inh_cntnr_stat_cdlevel01_0 (any) OPT ANY
+             ADD inh_cntnr_stat_cd_key (any) OPT ANY
+             ADD inh_cntnr_type_cdlevel01_0 (any) OPT ANY
+             ADD inh_cntnr_type_cd_key (any) OPT ANY
+             ADD inh_crit_ln_tllevel01_0 (any) OPT ANY
+             ADD inh_crit_ln_tl_key (any) OPT ANY
+             ADD inh_eta_datelevel01_0 (any) OPT ANY
+             ADD inh_eta_date_key (any) OPT ANY
+             ADD inh_invoice_datelevel01_0 (any) OPT ANY
+             ADD inh_invoice_date_key (any) OPT ANY
+             ADD inh_invoice_numlevel01_0 (any) OPT ANY
+             ADD inh_invoice_num_key (any) OPT ANY
+             ADD inh_ln_tllevel01_0 (any) OPT ANY
+             ADD inh_ln_tl_key (any) OPT ANY
+             ADD inh_num_pieceslevel01_0 (any) OPT ANY
+             ADD inh_num_pieces_key (any) OPT ANY
+             ADD inh_pend_rcv_ln_tllevel01_0 (any) OPT ANY
+             ADD inh_pend_rcv_ln_tl_key (any) OPT ANY
+             ADD inh_pend_rcv_piecelevel01_0 (any) OPT ANY
+             ADD inh_pend_rcv_piece_key (any) OPT ANY
+             ADD inh_rcv_rpt_numlevel01_0 (any) OPT ANY
+             ADD inh_rcv_rpt_num_key (any) OPT ANY
+             ADD inh_ship_datelevel01_0 (any) OPT ANY
+             ADD inh_ship_date_key (any) OPT ANY
+             ADD inh_ship_vialevel01_0 (any) OPT ANY
+             ADD inh_ship_via_key (any) OPT ANY
+             ADD inh_shpmnt_numlevel01_0 (any) OPT ANY
+             ADD inh_shpmnt_num_key (any) OPT ANY
+             ADD inh_status_flaglevel01_0 (any) OPT ANY
+             ADD inh_status_flag_key (any) OPT ANY
+             ADD inh_stat_date_timelevel01_0 (any) OPT ANY
+             ADD inh_stat_date_time_key (any) OPT ANY
+             ADD inh_vendor_numlevel01_0 (any) OPT ANY
+             ADD inh_vendor_num_key (any) OPT ANY
+             ADD inh_ven_inv_numlevel01_0 (any) OPT ANY
+             ADD inh_ven_inv_num_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, inh_account_num_key, inh_account_numlevel01_0, inh_archive_in_key, inh_archive_inlevel01_0, inh_case_tl_key, inh_case_tllevel01_0, inh_cmt_key, inh_cmtlevel01_0, inh_cntnr_arrv_dt_key, inh_cntnr_arrv_dtlevel01_0, inh_cntnr_num_key, inh_cntnr_numlevel01_0, inh_cntnr_stat_cd_key, inh_cntnr_stat_cdlevel01_0, inh_cntnr_type_cd_key, inh_cntnr_type_cdlevel01_0, inh_crit_ln_tl_key, inh_crit_ln_tllevel01_0, inh_eta_date_key, inh_eta_datelevel01_0, inh_invoice_date_key, inh_invoice_datelevel01_0, inh_invoice_num_key, inh_invoice_numlevel01_0, inh_ln_tl_key, inh_ln_tllevel01_0, inh_num_pieces_key, inh_num_pieceslevel01_0, inh_pend_rcv_ln_tl_key, inh_pend_rcv_ln_tllevel01_0, inh_pend_rcv_piece_key, inh_pend_rcv_piecelevel01_0, inh_rcv_rpt_num_key, inh_rcv_rpt_numlevel01_0, inh_ship_date_key, inh_ship_datelevel01_0, inh_ship_via_key, inh_ship_vialevel01_0, inh_shpmnt_num_key, inh_shpmnt_numlevel01_0, inh_stat_date_time_key, inh_stat_date_timelevel01_0, inh_status_flag_key, inh_status_flaglevel01_0, inh_ven_inv_num_key, inh_ven_inv_numlevel01_0, inh_vendor_num_key, inh_vendor_numlevel01_0, inhead_cre_by_id_key, inhead_cre_by_idlevel01_0, inhead_cre_ts_key, inhead_cre_tslevel01_0, inhead_upd_by_id_key, inhead_upd_by_idlevel01_0, inhead_upd_ts_key, inhead_upd_tslevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_inhead)
+    );
+
