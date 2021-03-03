@@ -1,2 +1,0 @@
-﻿CREATE OR REPLACE FOLDER '/04 - business entities/sap bw4hana/SAPBW - PTP' DESCRIPTION 'Procure to Pay' ;
-

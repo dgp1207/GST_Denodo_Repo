@@ -1,0 +1,2 @@
+﻿CREATE OR REPLACE FOLDER '/04 - business views/sap s4hana/SAPS4H - OTC' DESCRIPTION 'Order to Cash' ;
+
