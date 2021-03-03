@@ -1,0 +1,106 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_dschng
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_DSCHNG'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        dschng_cre_by_idlevel01_0 = '[4ZCP_DSCHNG-DSCHNG_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSCHNG_CRE_B]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSCHNG_CRE_B]' LEVELPOSITION=1,
+        dschng_cre_by_id_key = '[4ZCP_DSCHNG-DSCHNG_CRE_B].[24ZCP_DSCHNG-DSCHNG_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSCHNG_CRE_B]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSCHNG_CRE_B]' ATTRIBUTE,
+        dschng_cre_tslevel01_0 = '[4ZCP_DSCHNG-DSCHNG_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSCHNG_CRE_T]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSCHNG_CRE_T]' LEVELPOSITION=1,
+        dschng_cre_ts_key = '[4ZCP_DSCHNG-DSCHNG_CRE_T].[24ZCP_DSCHNG-DSCHNG_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSCHNG_CRE_T]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSCHNG_CRE_T]' ATTRIBUTE,
+        dschng_upd_by_idlevel01_0 = '[4ZCP_DSCHNG-DSCHNG_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSCHNG_UPD_B]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSCHNG_UPD_B]' LEVELPOSITION=1,
+        dschng_upd_by_id_key = '[4ZCP_DSCHNG-DSCHNG_UPD_B].[24ZCP_DSCHNG-DSCHNG_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSCHNG_UPD_B]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSCHNG_UPD_B]' ATTRIBUTE,
+        dschng_upd_tslevel01_0 = '[4ZCP_DSCHNG-DSCHNG_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSCHNG_UPD_T]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSCHNG_UPD_T]' LEVELPOSITION=1,
+        dschng_upd_ts_key = '[4ZCP_DSCHNG-DSCHNG_UPD_T].[24ZCP_DSCHNG-DSCHNG_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSCHNG_UPD_T]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSCHNG_UPD_T]' ATTRIBUTE,
+        dsc_cmtlevel01_0 = '[4ZCP_DSCHNG-DSC_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_CMT]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_CMT]' LEVELPOSITION=1,
+        dsc_cmt_key = '[4ZCP_DSCHNG-DSC_CMT].[24ZCP_DSCHNG-DSC_CMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_CMT]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_CMT]' ATTRIBUTE,
+        dsc_new_ds_cdlevel01_0 = '[4ZCP_DSCHNG-DSC_NEW_DS_C].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_NEW_DS_C]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_NEW_DS_C]' LEVELPOSITION=1,
+        dsc_new_ds_cd_key = '[4ZCP_DSCHNG-DSC_NEW_DS_C].[24ZCP_DSCHNG-DSC_NEW_DS_C]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_NEW_DS_C]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_NEW_DS_C]' ATTRIBUTE,
+        dsc_orig_ds_cdlevel01_0 = '[4ZCP_DSCHNG-DSC_ORIG_DS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_ORIG_DS]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_ORIG_DS]' LEVELPOSITION=1,
+        dsc_orig_ds_cd_key = '[4ZCP_DSCHNG-DSC_ORIG_DS].[24ZCP_DSCHNG-DSC_ORIG_DS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_ORIG_DS]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_ORIG_DS]' ATTRIBUTE,
+        dsc_ssnlevel01_0 = '[4ZCP_DSCHNG-DSC_SSN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_SSN]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_SSN]' LEVELPOSITION=1,
+        dsc_ssn_key = '[4ZCP_DSCHNG-DSC_SSN].[24ZCP_DSCHNG-DSC_SSN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_SSN]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_SSN]' ATTRIBUTE,
+        dsc_statlevel01_0 = '[4ZCP_DSCHNG-DSC_STAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_STAT]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_STAT]' LEVELPOSITION=1,
+        dsc_stat_key = '[4ZCP_DSCHNG-DSC_STAT].[24ZCP_DSCHNG-DSC_STAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_STAT]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_STAT]' ATTRIBUTE,
+        dsc_tmstmplevel01_0 = '[4ZCP_DSCHNG-DSC_TMSTMP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_TMSTMP]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_TMSTMP]' LEVELPOSITION=1,
+        dsc_tmstmp_key = '[4ZCP_DSCHNG-DSC_TMSTMP].[24ZCP_DSCHNG-DSC_TMSTMP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_TMSTMP]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_TMSTMP]' ATTRIBUTE,
+        dsc_vinlevel01_0 = '[4ZCP_DSCHNG-DSC_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_VIN]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_VIN]' LEVELPOSITION=1,
+        dsc_vin_key = '[4ZCP_DSCHNG-DSC_VIN].[24ZCP_DSCHNG-DSC_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DSCHNG-DSC_VIN]' DIMENSIONNAME = '[4ZCP_DSCHNG-DSC_VIN]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_dschng I18N us_cst (
+        dschng_cre_by_idlevel01_0:text,
+        dschng_cre_by_id_key:text,
+        dschng_cre_tslevel01_0:text,
+        dschng_cre_ts_key:text,
+        dschng_upd_by_idlevel01_0:text,
+        dschng_upd_by_id_key:text,
+        dschng_upd_tslevel01_0:text,
+        dschng_upd_ts_key:text,
+        dsc_cmtlevel01_0:text,
+        dsc_cmt_key:text,
+        dsc_new_ds_cdlevel01_0:text,
+        dsc_new_ds_cd_key:text,
+        dsc_orig_ds_cdlevel01_0:text,
+        dsc_orig_ds_cd_key:text,
+        dsc_ssnlevel01_0:text,
+        dsc_ssn_key:text,
+        dsc_statlevel01_0:text,
+        dsc_stat_key:text,
+        dsc_tmstmplevel01_0:text,
+        dsc_tmstmp_key:text,
+        dsc_vinlevel01_0:text,
+        dsc_vin_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_dschng(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD dschng_cre_by_idlevel01_0 (any) OPT ANY
+             ADD dschng_cre_by_id_key (any) OPT ANY
+             ADD dschng_cre_tslevel01_0 (any) OPT ANY
+             ADD dschng_cre_ts_key (any) OPT ANY
+             ADD dschng_upd_by_idlevel01_0 (any) OPT ANY
+             ADD dschng_upd_by_id_key (any) OPT ANY
+             ADD dschng_upd_tslevel01_0 (any) OPT ANY
+             ADD dschng_upd_ts_key (any) OPT ANY
+             ADD dsc_cmtlevel01_0 (any) OPT ANY
+             ADD dsc_cmt_key (any) OPT ANY
+             ADD dsc_new_ds_cdlevel01_0 (any) OPT ANY
+             ADD dsc_new_ds_cd_key (any) OPT ANY
+             ADD dsc_orig_ds_cdlevel01_0 (any) OPT ANY
+             ADD dsc_orig_ds_cd_key (any) OPT ANY
+             ADD dsc_ssnlevel01_0 (any) OPT ANY
+             ADD dsc_ssn_key (any) OPT ANY
+             ADD dsc_statlevel01_0 (any) OPT ANY
+             ADD dsc_stat_key (any) OPT ANY
+             ADD dsc_tmstmplevel01_0 (any) OPT ANY
+             ADD dsc_tmstmp_key (any) OPT ANY
+             ADD dsc_vinlevel01_0 (any) OPT ANY
+             ADD dsc_vin_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (dsc_cmt_key, dsc_cmtlevel01_0, dsc_new_ds_cd_key, dsc_new_ds_cdlevel01_0, dsc_orig_ds_cd_key, dsc_orig_ds_cdlevel01_0, dsc_ssn_key, dsc_ssnlevel01_0, dsc_stat_key, dsc_statlevel01_0, dsc_tmstmp_key, dsc_tmstmplevel01_0, dsc_vin_key, dsc_vinlevel01_0, dschng_cre_by_id_key, dschng_cre_by_idlevel01_0, dschng_cre_ts_key, dschng_cre_tslevel01_0, dschng_upd_by_id_key, dschng_upd_by_idlevel01_0, dschng_upd_ts_key, dschng_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_dschng)
+    );
+

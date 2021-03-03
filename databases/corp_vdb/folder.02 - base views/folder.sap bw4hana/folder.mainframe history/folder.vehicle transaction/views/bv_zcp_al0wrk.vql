@@ -1,0 +1,214 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_al0wrk
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_AL0WRK'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        alc_0_w_226_seqlevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_226].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_226]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_226]' LEVELPOSITION=1,
+        alc_0_w_226_seq_key = '[4ZCP_AL0WRK-ALC_0_W_226].[24ZCP_AL0WRK-ALC_0_W_226]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_226]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_226]' ATTRIBUTE,
+        alc_0_w_226_sublevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_22_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_22_0]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_22_0]' LEVELPOSITION=1,
+        alc_0_w_226_sub_key = '[4ZCP_AL0WRK-ALC_0_W_22_0].[24ZCP_AL0WRK-ALC_0_W_22_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_22_0]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_22_0]' ATTRIBUTE,
+        alc_0_w_227_collevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_227].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_227]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_227]' LEVELPOSITION=1,
+        alc_0_w_227_col_key = '[4ZCP_AL0WRK-ALC_0_W_227].[24ZCP_AL0WRK-ALC_0_W_227]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_227]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_227]' ATTRIBUTE,
+        alc_0_w_alclevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_ALC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_ALC]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_ALC]' LEVELPOSITION=1,
+        alc_0_w_alc_key = '[4ZCP_AL0WRK-ALC_0_W_ALC].[24ZCP_AL0WRK-ALC_0_W_ALC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_ALC]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_ALC]' ATTRIBUTE,
+        alc_0_w_bodylevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_BODY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_BODY]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_BODY]' LEVELPOSITION=1,
+        alc_0_w_body_key = '[4ZCP_AL0WRK-ALC_0_W_BODY].[24ZCP_AL0WRK-ALC_0_W_BODY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_BODY]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_BODY]' ATTRIBUTE,
+        alc_0_w_car_trucklevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_CAR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_CAR]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_CAR]' LEVELPOSITION=1,
+        alc_0_w_car_truck_key = '[4ZCP_AL0WRK-ALC_0_W_CAR].[24ZCP_AL0WRK-ALC_0_W_CAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_CAR]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_CAR]' ATTRIBUTE,
+        alc_0_w_dfc_cdlevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_DFC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_DFC]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_DFC]' LEVELPOSITION=1,
+        alc_0_w_dfc_cd_key = '[4ZCP_AL0WRK-ALC_0_W_DFC].[24ZCP_AL0WRK-ALC_0_W_DFC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_DFC]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_DFC]' ATTRIBUTE,
+        alc_0_w_hold_dayslevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_HOLD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_HOLD]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_HOLD]' LEVELPOSITION=1,
+        alc_0_w_hold_days_key = '[4ZCP_AL0WRK-ALC_0_W_HOLD].[24ZCP_AL0WRK-ALC_0_W_HOLD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_HOLD]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_HOLD]' ATTRIBUTE,
+        alc_0_w_load_sizelevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_LOAD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_LOAD]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_LOAD]' LEVELPOSITION=1,
+        alc_0_w_load_size_key = '[4ZCP_AL0WRK-ALC_0_W_LOAD].[24ZCP_AL0WRK-ALC_0_W_LOAD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_LOAD]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_LOAD]' ATTRIBUTE,
+        alc_0_w_mdllevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_MDL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_MDL]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_MDL]' LEVELPOSITION=1,
+        alc_0_w_mdl_key = '[4ZCP_AL0WRK-ALC_0_W_MDL].[24ZCP_AL0WRK-ALC_0_W_MDL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_MDL]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_MDL]' ATTRIBUTE,
+        alc_0_w_monrny_lbllevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_MONR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_MONR]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_MONR]' LEVELPOSITION=1,
+        alc_0_w_monrny_lbl_key = '[4ZCP_AL0WRK-ALC_0_W_MONR].[24ZCP_AL0WRK-ALC_0_W_MONR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_MONR]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_MONR]' ATTRIBUTE,
+        alc_0_w_new_vdslevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_NEW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_NEW]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_NEW]' LEVELPOSITION=1,
+        alc_0_w_new_vds_key = '[4ZCP_AL0WRK-ALC_0_W_NEW].[24ZCP_AL0WRK-ALC_0_W_NEW]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_NEW]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_NEW]' ATTRIBUTE,
+        alc_0_w_old_vdslevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_OLD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_OLD]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_OLD]' LEVELPOSITION=1,
+        alc_0_w_old_vds_key = '[4ZCP_AL0WRK-ALC_0_W_OLD].[24ZCP_AL0WRK-ALC_0_W_OLD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_OLD]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_OLD]' ATTRIBUTE,
+        alc_0_w_p_acclevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_P_AC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_P_AC]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_P_AC]' LEVELPOSITION=1,
+        alc_0_w_p_acc_key = '[4ZCP_AL0WRK-ALC_0_W_P_AC].[24ZCP_AL0WRK-ALC_0_W_P_AC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_P_AC]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_P_AC]' ATTRIBUTE,
+        alc_0_w_rolluplevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_ROLL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_ROLL]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_ROLL]' LEVELPOSITION=1,
+        alc_0_w_rollup_key = '[4ZCP_AL0WRK-ALC_0_W_ROLL].[24ZCP_AL0WRK-ALC_0_W_ROLL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_ROLL]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_ROLL]' ATTRIBUTE,
+        alc_0_w_rpt_seqlevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_RPT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_RPT]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_RPT]' LEVELPOSITION=1,
+        alc_0_w_rpt_seq_key = '[4ZCP_AL0WRK-ALC_0_W_RPT].[24ZCP_AL0WRK-ALC_0_W_RPT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_RPT]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_RPT]' ATTRIBUTE,
+        alc_0_w_sa_barslevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_SA_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SA_B]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SA_B]' LEVELPOSITION=1,
+        alc_0_w_sa_bars_key = '[4ZCP_AL0WRK-ALC_0_W_SA_B].[24ZCP_AL0WRK-ALC_0_W_SA_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SA_B]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SA_B]' ATTRIBUTE,
+        alc_0_w_sa_stencilslevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_SA_S].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SA_S]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SA_S]' LEVELPOSITION=1,
+        alc_0_w_sa_stencils_key = '[4ZCP_AL0WRK-ALC_0_W_SA_S].[24ZCP_AL0WRK-ALC_0_W_SA_S]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SA_S]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SA_S]' ATTRIBUTE,
+        alc_0_w_sc_tolevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_SC_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SC_T]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SC_T]' LEVELPOSITION=1,
+        alc_0_w_sc_to_key = '[4ZCP_AL0WRK-ALC_0_W_SC_T].[24ZCP_AL0WRK-ALC_0_W_SC_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SC_T]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SC_T]' ATTRIBUTE,
+        alc_0_w_seqlevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SEQ]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SEQ]' LEVELPOSITION=1,
+        alc_0_w_seq_key = '[4ZCP_AL0WRK-ALC_0_W_SEQ].[24ZCP_AL0WRK-ALC_0_W_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SEQ]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SEQ]' ATTRIBUTE,
+        alc_0_w_serlevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_SER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SER]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SER]' LEVELPOSITION=1,
+        alc_0_w_ser_key = '[4ZCP_AL0WRK-ALC_0_W_SER].[24ZCP_AL0WRK-ALC_0_W_SER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SER]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SER]' ATTRIBUTE,
+        alc_0_w_ser_litlevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_SE_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SE_0]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SE_0]' LEVELPOSITION=1,
+        alc_0_w_ser_lit_key = '[4ZCP_AL0WRK-ALC_0_W_SE_0].[24ZCP_AL0WRK-ALC_0_W_SE_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SE_0]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SE_0]' ATTRIBUTE,
+        alc_0_w_ser_numlevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_SE_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SE_1]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SE_1]' LEVELPOSITION=1,
+        alc_0_w_ser_num_key = '[4ZCP_AL0WRK-ALC_0_W_SE_1].[24ZCP_AL0WRK-ALC_0_W_SE_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SE_1]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SE_1]' ATTRIBUTE,
+        alc_0_w_sublevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_SUB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SUB]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SUB]' LEVELPOSITION=1,
+        alc_0_w_sub_key = '[4ZCP_AL0WRK-ALC_0_W_SUB].[24ZCP_AL0WRK-ALC_0_W_SUB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_SUB]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_SUB]' ATTRIBUTE,
+        alc_0_w_tm_typelevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_TM_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_TM_T]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_TM_T]' LEVELPOSITION=1,
+        alc_0_w_tm_type_key = '[4ZCP_AL0WRK-ALC_0_W_TM_T].[24ZCP_AL0WRK-ALC_0_W_TM_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_TM_T]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_TM_T]' ATTRIBUTE,
+        alc_0_w_triallevel01_0 = '[4ZCP_AL0WRK-ALC_0_W_TRIA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_TRIA]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_TRIA]' LEVELPOSITION=1,
+        alc_0_w_trial_key = '[4ZCP_AL0WRK-ALC_0_W_TRIA].[24ZCP_AL0WRK-ALC_0_W_TRIA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-ALC_0_W_TRIA]' DIMENSIONNAME = '[4ZCP_AL0WRK-ALC_0_W_TRIA]' ATTRIBUTE,
+        cre_by_idlevel01_0 = '[4ZCP_AL0WRK-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_AL0WRK-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_by_id_key = '[4ZCP_AL0WRK-CRE_BY_ID].[24ZCP_AL0WRK-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_AL0WRK-CRE_BY_ID]' ATTRIBUTE,
+        cre_tslevel01_0 = '[4ZCP_AL0WRK-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-CRE_TS]' DIMENSIONNAME = '[4ZCP_AL0WRK-CRE_TS]' LEVELPOSITION=1,
+        cre_ts_key = '[4ZCP_AL0WRK-CRE_TS].[24ZCP_AL0WRK-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-CRE_TS]' DIMENSIONNAME = '[4ZCP_AL0WRK-CRE_TS]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        upd_tslevel01_0 = '[4ZCP_AL0WRK-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-UPD_TS]' DIMENSIONNAME = '[4ZCP_AL0WRK-UPD_TS]' LEVELPOSITION=1,
+        upd_ts_key = '[4ZCP_AL0WRK-UPD_TS].[24ZCP_AL0WRK-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AL0WRK-UPD_TS]' DIMENSIONNAME = '[4ZCP_AL0WRK-UPD_TS]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_al0wrk I18N us_cst (
+        alc_0_w_226_seqlevel01_0:text,
+        alc_0_w_226_seq_key:text,
+        alc_0_w_226_sublevel01_0:text,
+        alc_0_w_226_sub_key:text,
+        alc_0_w_227_collevel01_0:text,
+        alc_0_w_227_col_key:text,
+        alc_0_w_alclevel01_0:text,
+        alc_0_w_alc_key:text,
+        alc_0_w_bodylevel01_0:text,
+        alc_0_w_body_key:text,
+        alc_0_w_car_trucklevel01_0:text,
+        alc_0_w_car_truck_key:text,
+        alc_0_w_dfc_cdlevel01_0:text,
+        alc_0_w_dfc_cd_key:text,
+        alc_0_w_hold_dayslevel01_0:text,
+        alc_0_w_hold_days_key:text,
+        alc_0_w_load_sizelevel01_0:text,
+        alc_0_w_load_size_key:text,
+        alc_0_w_mdllevel01_0:text,
+        alc_0_w_mdl_key:text,
+        alc_0_w_monrny_lbllevel01_0:text,
+        alc_0_w_monrny_lbl_key:text,
+        alc_0_w_new_vdslevel01_0:text,
+        alc_0_w_new_vds_key:text,
+        alc_0_w_old_vdslevel01_0:text,
+        alc_0_w_old_vds_key:text,
+        alc_0_w_p_acclevel01_0:text,
+        alc_0_w_p_acc_key:text,
+        alc_0_w_rolluplevel01_0:text,
+        alc_0_w_rollup_key:text,
+        alc_0_w_rpt_seqlevel01_0:text,
+        alc_0_w_rpt_seq_key:text,
+        alc_0_w_sa_barslevel01_0:text,
+        alc_0_w_sa_bars_key:text,
+        alc_0_w_sa_stencilslevel01_0:text,
+        alc_0_w_sa_stencils_key:text,
+        alc_0_w_sc_tolevel01_0:text,
+        alc_0_w_sc_to_key:text,
+        alc_0_w_seqlevel01_0:text,
+        alc_0_w_seq_key:text,
+        alc_0_w_serlevel01_0:text,
+        alc_0_w_ser_key:text,
+        alc_0_w_ser_litlevel01_0:text,
+        alc_0_w_ser_lit_key:text,
+        alc_0_w_ser_numlevel01_0:text,
+        alc_0_w_ser_num_key:text,
+        alc_0_w_sublevel01_0:text,
+        alc_0_w_sub_key:text,
+        alc_0_w_tm_typelevel01_0:text,
+        alc_0_w_tm_type_key:text,
+        alc_0_w_triallevel01_0:text,
+        alc_0_w_trial_key:text,
+        cre_by_idlevel01_0:text,
+        cre_by_id_key:text,
+        cre_tslevel01_0:text,
+        cre_ts_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        upd_tslevel01_0:text,
+        upd_ts_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_al0wrk(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD alc_0_w_226_seqlevel01_0 (any) OPT ANY
+             ADD alc_0_w_226_seq_key (any) OPT ANY
+             ADD alc_0_w_226_sublevel01_0 (any) OPT ANY
+             ADD alc_0_w_226_sub_key (any) OPT ANY
+             ADD alc_0_w_227_collevel01_0 (any) OPT ANY
+             ADD alc_0_w_227_col_key (any) OPT ANY
+             ADD alc_0_w_alclevel01_0 (any) OPT ANY
+             ADD alc_0_w_alc_key (any) OPT ANY
+             ADD alc_0_w_bodylevel01_0 (any) OPT ANY
+             ADD alc_0_w_body_key (any) OPT ANY
+             ADD alc_0_w_car_trucklevel01_0 (any) OPT ANY
+             ADD alc_0_w_car_truck_key (any) OPT ANY
+             ADD alc_0_w_dfc_cdlevel01_0 (any) OPT ANY
+             ADD alc_0_w_dfc_cd_key (any) OPT ANY
+             ADD alc_0_w_hold_dayslevel01_0 (any) OPT ANY
+             ADD alc_0_w_hold_days_key (any) OPT ANY
+             ADD alc_0_w_load_sizelevel01_0 (any) OPT ANY
+             ADD alc_0_w_load_size_key (any) OPT ANY
+             ADD alc_0_w_mdllevel01_0 (any) OPT ANY
+             ADD alc_0_w_mdl_key (any) OPT ANY
+             ADD alc_0_w_monrny_lbllevel01_0 (any) OPT ANY
+             ADD alc_0_w_monrny_lbl_key (any) OPT ANY
+             ADD alc_0_w_new_vdslevel01_0 (any) OPT ANY
+             ADD alc_0_w_new_vds_key (any) OPT ANY
+             ADD alc_0_w_old_vdslevel01_0 (any) OPT ANY
+             ADD alc_0_w_old_vds_key (any) OPT ANY
+             ADD alc_0_w_p_acclevel01_0 (any) OPT ANY
+             ADD alc_0_w_p_acc_key (any) OPT ANY
+             ADD alc_0_w_rolluplevel01_0 (any) OPT ANY
+             ADD alc_0_w_rollup_key (any) OPT ANY
+             ADD alc_0_w_rpt_seqlevel01_0 (any) OPT ANY
+             ADD alc_0_w_rpt_seq_key (any) OPT ANY
+             ADD alc_0_w_sa_barslevel01_0 (any) OPT ANY
+             ADD alc_0_w_sa_bars_key (any) OPT ANY
+             ADD alc_0_w_sa_stencilslevel01_0 (any) OPT ANY
+             ADD alc_0_w_sa_stencils_key (any) OPT ANY
+             ADD alc_0_w_sc_tolevel01_0 (any) OPT ANY
+             ADD alc_0_w_sc_to_key (any) OPT ANY
+             ADD alc_0_w_seqlevel01_0 (any) OPT ANY
+             ADD alc_0_w_seq_key (any) OPT ANY
+             ADD alc_0_w_serlevel01_0 (any) OPT ANY
+             ADD alc_0_w_ser_key (any) OPT ANY
+             ADD alc_0_w_ser_litlevel01_0 (any) OPT ANY
+             ADD alc_0_w_ser_lit_key (any) OPT ANY
+             ADD alc_0_w_ser_numlevel01_0 (any) OPT ANY
+             ADD alc_0_w_ser_num_key (any) OPT ANY
+             ADD alc_0_w_sublevel01_0 (any) OPT ANY
+             ADD alc_0_w_sub_key (any) OPT ANY
+             ADD alc_0_w_tm_typelevel01_0 (any) OPT ANY
+             ADD alc_0_w_tm_type_key (any) OPT ANY
+             ADD alc_0_w_triallevel01_0 (any) OPT ANY
+             ADD alc_0_w_trial_key (any) OPT ANY
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_by_id_key (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD cre_ts_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD upd_ts_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (alc_0_w_226_seq_key, alc_0_w_226_seqlevel01_0, alc_0_w_226_sub_key, alc_0_w_226_sublevel01_0, alc_0_w_227_col_key, alc_0_w_227_collevel01_0, alc_0_w_alc_key, alc_0_w_alclevel01_0, alc_0_w_body_key, alc_0_w_bodylevel01_0, alc_0_w_car_truck_key, alc_0_w_car_trucklevel01_0, alc_0_w_dfc_cd_key, alc_0_w_dfc_cdlevel01_0, alc_0_w_hold_days_key, alc_0_w_hold_dayslevel01_0, alc_0_w_load_size_key, alc_0_w_load_sizelevel01_0, alc_0_w_mdl_key, alc_0_w_mdllevel01_0, alc_0_w_monrny_lbl_key, alc_0_w_monrny_lbllevel01_0, alc_0_w_new_vds_key, alc_0_w_new_vdslevel01_0, alc_0_w_old_vds_key, alc_0_w_old_vdslevel01_0, alc_0_w_p_acc_key, alc_0_w_p_acclevel01_0, alc_0_w_rollup_key, alc_0_w_rolluplevel01_0, alc_0_w_rpt_seq_key, alc_0_w_rpt_seqlevel01_0, alc_0_w_sa_bars_key, alc_0_w_sa_barslevel01_0, alc_0_w_sa_stencils_key, alc_0_w_sa_stencilslevel01_0, alc_0_w_sc_to_key, alc_0_w_sc_tolevel01_0, alc_0_w_seq_key, alc_0_w_seqlevel01_0, alc_0_w_ser_key, alc_0_w_ser_lit_key, alc_0_w_ser_litlevel01_0, alc_0_w_ser_num_key, alc_0_w_ser_numlevel01_0, alc_0_w_serlevel01_0, alc_0_w_sub_key, alc_0_w_sublevel01_0, alc_0_w_tm_type_key, alc_0_w_tm_typelevel01_0, alc_0_w_trial_key, alc_0_w_triallevel01_0, cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, upd_ts_key, upd_tslevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_al0wrk)
+    );
+

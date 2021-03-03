@@ -1,0 +1,112 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI accessorypenetrationsalesfacts_0
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_FCTBASE'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = TRUE
+    OUTPUTSCHEMA (
+        fab_acc_catg_base_obj_snlevel01_0 = '[4ZCP_FCTBASE-S2FT2H5EIURI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-S2FT2H5EIURI]' DIMENSIONNAME = '[4ZCP_FCTBASE-S2FT2H5EIURI]' LEVELPOSITION=1,
+        fab_acc_catg_base_obj_sn_key = '[4ZCP_FCTBASE-S2FT2H5EIURI].[24ZCP_FCTBASE-S2FT2H5EIURI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-S2FT2H5EIURI]' DIMENSIONNAME = '[4ZCP_FCTBASE-S2FT2H5EIURI]' ATTRIBUTE,
+        fab_acc_catg_clsn_snlevel01_0 = '[4ZCP_FCTBASE-SAE16CUGV752].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-SAE16CUGV752]' DIMENSIONNAME = '[4ZCP_FCTBASE-SAE16CUGV752]' LEVELPOSITION=1,
+        fab_acc_catg_clsn_sn_key = '[4ZCP_FCTBASE-SAE16CUGV752].[24ZCP_FCTBASE-SAE16CUGV752]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-SAE16CUGV752]' DIMENSIONNAME = '[4ZCP_FCTBASE-SAE16CUGV752]' ATTRIBUTE,
+        fab_appl_cnt_qtylevel01_0 = '[4ZCP_FCTBASE-FAB_APPL_CNT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_APPL_CNT]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_APPL_CNT]' LEVELPOSITION=1,
+        fab_appl_cnt_qty_key = '[4ZCP_FCTBASE-FAB_APPL_CNT].[24ZCP_FCTBASE-FAB_APPL_CNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_APPL_CNT]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_APPL_CNT]' ATTRIBUTE,
+        fab_archive_cdlevel01_0 = '[4ZCP_FCTBASE-FAB_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_ARCHIVE]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_ARCHIVE]' LEVELPOSITION=1,
+        fab_archive_cd_key = '[4ZCP_FCTBASE-FAB_ARCHIVE].[24ZCP_FCTBASE-FAB_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_ARCHIVE]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_ARCHIVE]' ATTRIBUTE,
+        fab_cre_by_idlevel01_0 = '[4ZCP_FCTBASE-FAB_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_CRE_BY_I]' LEVELPOSITION=1,
+        fab_cre_by_id_key = '[4ZCP_FCTBASE-FAB_CRE_BY_I].[24ZCP_FCTBASE-FAB_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_CRE_BY_I]' ATTRIBUTE,
+        fab_cre_tslevel01_0 = '[4ZCP_FCTBASE-FAB_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_CRE_TS]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_CRE_TS]' LEVELPOSITION=1,
+        fab_cre_ts_key = '[4ZCP_FCTBASE-FAB_CRE_TS].[24ZCP_FCTBASE-FAB_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_CRE_TS]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_CRE_TS]' ATTRIBUTE,
+        fab_cur_earnlevel01_0 = '[4ZCP_FCTBASE-FAB_CUR_EARN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_CUR_EARN]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_CUR_EARN]' LEVELPOSITION=1,
+        fab_cur_earn_key = '[4ZCP_FCTBASE-FAB_CUR_EARN].[24ZCP_FCTBASE-FAB_CUR_EARN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_CUR_EARN]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_CUR_EARN]' ATTRIBUTE,
+        fab_fct_dtlevel01_0 = '[4ZCP_FCTBASE-FAB_FCT_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_FCT_DT]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_FCT_DT]' LEVELPOSITION=1,
+        fab_fct_dt_key = '[4ZCP_FCTBASE-FAB_FCT_DT].[24ZCP_FCTBASE-FAB_FCT_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_FCT_DT]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_FCT_DT]' ATTRIBUTE,
+        fab_instl_cnt_qtylevel01_0 = '[4ZCP_FCTBASE-FAB_INSTL_CN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_INSTL_CN]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_INSTL_CN]' LEVELPOSITION=1,
+        fab_instl_cnt_qty_key = '[4ZCP_FCTBASE-FAB_INSTL_CN].[24ZCP_FCTBASE-FAB_INSTL_CN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_INSTL_CN]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_INSTL_CN]' ATTRIBUTE,
+        fab_pentr_pctlevel01_0 = '[4ZCP_FCTBASE-FAB_PENTR_PC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_PENTR_PC]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_PENTR_PC]' LEVELPOSITION=1,
+        fab_pentr_pct_key = '[4ZCP_FCTBASE-FAB_PENTR_PC].[24ZCP_FCTBASE-FAB_PENTR_PC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_PENTR_PC]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_PENTR_PC]' ATTRIBUTE,
+        fab_prty_org_lvl_snlevel01_0 = '[4ZCP_FCTBASE-FAB_PRTY_ORG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_PRTY_ORG]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_PRTY_ORG]' LEVELPOSITION=1,
+        fab_prty_org_lvl_sn_key = '[4ZCP_FCTBASE-FAB_PRTY_ORG].[24ZCP_FCTBASE-FAB_PRTY_ORG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_PRTY_ORG]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_PRTY_ORG]' ATTRIBUTE,
+        fab_tm_dimsn_snlevel01_0 = '[4ZCP_FCTBASE-FAB_TM_DIMSN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_TM_DIMSN]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_TM_DIMSN]' LEVELPOSITION=1,
+        fab_tm_dimsn_sn_key = '[4ZCP_FCTBASE-FAB_TM_DIMSN].[24ZCP_FCTBASE-FAB_TM_DIMSN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_TM_DIMSN]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_TM_DIMSN]' ATTRIBUTE,
+        fab_upd_by_idlevel01_0 = '[4ZCP_FCTBASE-FAB_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_UPD_BY_I]' LEVELPOSITION=1,
+        fab_upd_by_id_key = '[4ZCP_FCTBASE-FAB_UPD_BY_I].[24ZCP_FCTBASE-FAB_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_UPD_BY_I]' ATTRIBUTE,
+        fab_upd_tslevel01_0 = '[4ZCP_FCTBASE-FAB_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_UPD_TS]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_UPD_TS]' LEVELPOSITION=1,
+        fab_upd_ts_key = '[4ZCP_FCTBASE-FAB_UPD_TS].[24ZCP_FCTBASE-FAB_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_FCTBASE-FAB_UPD_TS]' DIMENSIONNAME = '[4ZCP_FCTBASE-FAB_UPD_TS]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_fctbase I18N us_cst (
+        fab_acc_catg_base_obj_snlevel01_0:text,
+        fab_acc_catg_base_obj_sn_key:text,
+        fab_acc_catg_clsn_snlevel01_0:text,
+        fab_acc_catg_clsn_sn_key:text,
+        fab_appl_cnt_qtylevel01_0:text,
+        fab_appl_cnt_qty_key:text,
+        fab_archive_cdlevel01_0:text,
+        fab_archive_cd_key:text,
+        fab_cre_by_idlevel01_0:text,
+        fab_cre_by_id_key:text,
+        fab_cre_tslevel01_0:text,
+        fab_cre_ts_key:text,
+        fab_cur_earnlevel01_0:text,
+        fab_cur_earn_key:text,
+        fab_fct_dtlevel01_0:text,
+        fab_fct_dt_key:text,
+        fab_instl_cnt_qtylevel01_0:text,
+        fab_instl_cnt_qty_key:text,
+        fab_pentr_pctlevel01_0:text,
+        fab_pentr_pct_key:text,
+        fab_prty_org_lvl_snlevel01_0:text,
+        fab_prty_org_lvl_sn_key:text,
+        fab_tm_dimsn_snlevel01_0:text,
+        fab_tm_dimsn_sn_key:text,
+        fab_upd_by_idlevel01_0:text,
+        fab_upd_by_id_key:text,
+        fab_upd_tslevel01_0:text,
+        fab_upd_ts_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD accessorypenetrationsalesfacts_0(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD fab_acc_catg_base_obj_snlevel01_0 (any) OPT ANY
+             ADD fab_acc_catg_base_obj_sn_key (any) OPT ANY
+             ADD fab_acc_catg_clsn_snlevel01_0 (any) OPT ANY
+             ADD fab_acc_catg_clsn_sn_key (any) OPT ANY
+             ADD fab_appl_cnt_qtylevel01_0 (any) OPT ANY
+             ADD fab_appl_cnt_qty_key (any) OPT ANY
+             ADD fab_archive_cdlevel01_0 (any) OPT ANY
+             ADD fab_archive_cd_key (any) OPT ANY
+             ADD fab_cre_by_idlevel01_0 (any) OPT ANY
+             ADD fab_cre_by_id_key (any) OPT ANY
+             ADD fab_cre_tslevel01_0 (any) OPT ANY
+             ADD fab_cre_ts_key (any) OPT ANY
+             ADD fab_cur_earnlevel01_0 (any) OPT ANY
+             ADD fab_cur_earn_key (any) OPT ANY
+             ADD fab_fct_dtlevel01_0 (any) OPT ANY
+             ADD fab_fct_dt_key (any) OPT ANY
+             ADD fab_instl_cnt_qtylevel01_0 (any) OPT ANY
+             ADD fab_instl_cnt_qty_key (any) OPT ANY
+             ADD fab_pentr_pctlevel01_0 (any) OPT ANY
+             ADD fab_pentr_pct_key (any) OPT ANY
+             ADD fab_prty_org_lvl_snlevel01_0 (any) OPT ANY
+             ADD fab_prty_org_lvl_sn_key (any) OPT ANY
+             ADD fab_tm_dimsn_snlevel01_0 (any) OPT ANY
+             ADD fab_tm_dimsn_sn_key (any) OPT ANY
+             ADD fab_upd_by_idlevel01_0 (any) OPT ANY
+             ADD fab_upd_by_id_key (any) OPT ANY
+             ADD fab_upd_tslevel01_0 (any) OPT ANY
+             ADD fab_upd_ts_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (fab_acc_catg_base_obj_sn_key, fab_acc_catg_base_obj_snlevel01_0, fab_acc_catg_clsn_sn_key, fab_acc_catg_clsn_snlevel01_0, fab_appl_cnt_qty_key, fab_appl_cnt_qtylevel01_0, fab_archive_cd_key, fab_archive_cdlevel01_0, fab_cre_by_id_key, fab_cre_by_idlevel01_0, fab_cre_ts_key, fab_cre_tslevel01_0, fab_cur_earn_key, fab_cur_earnlevel01_0, fab_fct_dt_key, fab_fct_dtlevel01_0, fab_instl_cnt_qty_key, fab_instl_cnt_qtylevel01_0, fab_pentr_pct_key, fab_pentr_pctlevel01_0, fab_prty_org_lvl_sn_key, fab_prty_org_lvl_snlevel01_0, fab_tm_dimsn_sn_key, fab_tm_dimsn_snlevel01_0, fab_upd_by_id_key, fab_upd_by_idlevel01_0, fab_upd_ts_key, fab_upd_tslevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi accessorypenetrationsalesfacts_0)
+    );
+

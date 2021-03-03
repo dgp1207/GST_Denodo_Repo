@@ -1,0 +1,46 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_genmod
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENMOD'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_GENMOD-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMOD-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENMOD-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_by_id_key = '[4ZCP_GENMOD-CRE_BY_ID].[24ZCP_GENMOD-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMOD-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENMOD-CRE_BY_ID]' ATTRIBUTE,
+        cre_tslevel01_0 = '[4ZCP_GENMOD-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMOD-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENMOD-CRE_TS]' LEVELPOSITION=1,
+        cre_ts_key = '[4ZCP_GENMOD-CRE_TS].[24ZCP_GENMOD-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMOD-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENMOD-CRE_TS]' ATTRIBUTE,
+        modcap = '[Measures].[4ZCP_GENMOD-MODCAP]' : 'java.lang.Double' (OPT) MEASURE,
+        modwgt = '[Measures].[4ZCP_GENMOD-MODWGT]' : 'java.lang.Double' (OPT) MEASURE,
+        mod_dlr = '[Measures].[4ZCP_GENMOD-MOD_DLR]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_genmod I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_by_id_key:text,
+        cre_tslevel01_0:text,
+        cre_ts_key:text,
+        modcap:double,
+        modwgt:double,
+        mod_dlr:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_genmod(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_by_id_key (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD cre_ts_key (any) OPT ANY
+             ADD modcap (any) OPT ANY
+             ADD modwgt (any) OPT ANY
+             ADD mod_dlr (any) OPT ANY
+        )
+        OUTPUTLIST (cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, mod_dlr, modcap, modwgt
+        )
+        WRAPPER (sapbwbapi bv_zcp_genmod)
+    );
+

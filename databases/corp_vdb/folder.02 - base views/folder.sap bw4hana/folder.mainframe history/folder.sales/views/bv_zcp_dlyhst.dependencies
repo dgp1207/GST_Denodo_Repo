@@ -1,0 +1,6 @@
+﻿/databases/corp_vdb/folder.02 - base views/02 - base views.vql
+/databases/corp_vdb/folder.02 - base views/folder.sap bw4hana/sap bw4hana.vql
+/databases/corp_vdb/folder.02 - base views/folder.sap bw4hana/folder.mainframe history/mainframe history.vql
+/databases/corp_vdb/folder.02 - base views/folder.sap bw4hana/folder.mainframe history/folder.sales/sales.vql
+/databases/corp_vdb/folder.01 - connectivity/01 - connectivity.vql
+/databases/corp_vdb/folder.01 - connectivity/datasources/sapbwbapi/ds_sap_hana.vql

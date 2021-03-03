@@ -1,0 +1,316 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_imsrev
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_IMSREV'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = TRUE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_IMSREV-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_IMSREV-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_by_id_key = '[4ZCP_IMSREV-CRE_BY_ID].[24ZCP_IMSREV-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_IMSREV-CRE_BY_ID]' ATTRIBUTE,
+        cre_tslevel01_0 = '[4ZCP_IMSREV-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-CRE_TS]' DIMENSIONNAME = '[4ZCP_IMSREV-CRE_TS]' LEVELPOSITION=1,
+        cre_ts_key = '[4ZCP_IMSREV-CRE_TS].[24ZCP_IMSREV-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-CRE_TS]' DIMENSIONNAME = '[4ZCP_IMSREV-CRE_TS]' ATTRIBUTE,
+        imstrans_codelevel01_0 = '[4ZCP_IMSREV-IMSTRANS_COD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_COD]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_COD]' LEVELPOSITION=1,
+        imstrans_code_key = '[4ZCP_IMSREV-IMSTRANS_COD].[24ZCP_IMSREV-IMSTRANS_COD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_COD]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_COD]' ATTRIBUTE,
+        imstrans_flevel01_0 = '[4ZCP_IMSREV-IMSTRANS_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_F]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_F]' LEVELPOSITION=1,
+        imstrans_f_key = '[4ZCP_IMSREV-IMSTRANS_F].[24ZCP_IMSREV-IMSTRANS_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_F]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_F]' ATTRIBUTE,
+        imstrans_modellevel01_0 = '[4ZCP_IMSREV-IMSTRANS_MOD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_MOD]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_MOD]' LEVELPOSITION=1,
+        imstrans_model_key = '[4ZCP_IMSREV-IMSTRANS_MOD].[24ZCP_IMSREV-IMSTRANS_MOD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_MOD]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_MOD]' ATTRIBUTE,
+        imstrans_phaselevel01_0 = '[4ZCP_IMSREV-IMSTRANS_PHA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_PHA]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_PHA]' LEVELPOSITION=1,
+        imstrans_phase_key = '[4ZCP_IMSREV-IMSTRANS_PHA].[24ZCP_IMSREV-IMSTRANS_PHA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_PHA]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_PHA]' ATTRIBUTE,
+        imstrans_respondedlevel01_0 = '[4ZCP_IMSREV-IMSTRANS_RES].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_RES]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_RES]' LEVELPOSITION=1,
+        imstrans_responded_key = '[4ZCP_IMSREV-IMSTRANS_RES].[24ZCP_IMSREV-IMSTRANS_RES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_RES]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_RES]' ATTRIBUTE,
+        imstrans_rev_car_trucklevel01_0 = '[4ZCP_IMSREV-KUX4MW65HXAF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-KUX4MW65HXAF]' DIMENSIONNAME = '[4ZCP_IMSREV-KUX4MW65HXAF]' LEVELPOSITION=1,
+        imstrans_rev_car_truck_key = '[4ZCP_IMSREV-KUX4MW65HXAF].[24ZCP_IMSREV-KUX4MW65HXAF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-KUX4MW65HXAF]' DIMENSIONNAME = '[4ZCP_IMSREV-KUX4MW65HXAF]' ATTRIBUTE,
+        imstrans_rev_cclevel01_0 = '[4ZCP_IMSREV-IMSTRANS_REV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_REV]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_REV]' LEVELPOSITION=1,
+        imstrans_rev_cc_key = '[4ZCP_IMSREV-IMSTRANS_REV].[24ZCP_IMSREV-IMSTRANS_REV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_REV]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_REV]' ATTRIBUTE,
+        imstrans_rev_dlrlevel01_0 = '[4ZCP_IMSREV-IMSTRANS_R_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_R_1]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_R_1]' LEVELPOSITION=1,
+        imstrans_rev_dlr_key = '[4ZCP_IMSREV-IMSTRANS_R_1].[24ZCP_IMSREV-IMSTRANS_R_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_R_1]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_R_1]' ATTRIBUTE,
+        imstrans_rev_fleetlevel01_0 = '[4ZCP_IMSREV-IMSTRANS_R_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_R_2]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_R_2]' LEVELPOSITION=1,
+        imstrans_rev_fleet_key = '[4ZCP_IMSREV-IMSTRANS_R_2].[24ZCP_IMSREV-IMSTRANS_R_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_R_2]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_R_2]' ATTRIBUTE,
+        imstrans_rev_reasonlevel01_0 = '[4ZCP_IMSREV-IMSTRANS_R_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_R_0]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_R_0]' LEVELPOSITION=1,
+        imstrans_rev_reason_key = '[4ZCP_IMSREV-IMSTRANS_R_0].[24ZCP_IMSREV-IMSTRANS_R_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_R_0]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_R_0]' ATTRIBUTE,
+        imstrans_rev_reasons_01level01_0 = '[4ZCP_IMSREV-JGL03PJRICCG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-JGL03PJRICCG]' DIMENSIONNAME = '[4ZCP_IMSREV-JGL03PJRICCG]' LEVELPOSITION=1,
+        imstrans_rev_reasons_01_key = '[4ZCP_IMSREV-JGL03PJRICCG].[24ZCP_IMSREV-JGL03PJRICCG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-JGL03PJRICCG]' DIMENSIONNAME = '[4ZCP_IMSREV-JGL03PJRICCG]' ATTRIBUTE,
+        imstrans_rev_reasons_02level01_0 = '[4ZCP_IMSREV-N6RCFZCFKFHW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-N6RCFZCFKFHW]' DIMENSIONNAME = '[4ZCP_IMSREV-N6RCFZCFKFHW]' LEVELPOSITION=1,
+        imstrans_rev_reasons_02_key = '[4ZCP_IMSREV-N6RCFZCFKFHW].[24ZCP_IMSREV-N6RCFZCFKFHW]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-N6RCFZCFKFHW]' DIMENSIONNAME = '[4ZCP_IMSREV-N6RCFZCFKFHW]' ATTRIBUTE,
+        imstrans_rev_reasons_03level01_0 = '[4ZCP_IMSREV-FA2AAV9KMPRD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-FA2AAV9KMPRD]' DIMENSIONNAME = '[4ZCP_IMSREV-FA2AAV9KMPRD]' LEVELPOSITION=1,
+        imstrans_rev_reasons_03_key = '[4ZCP_IMSREV-FA2AAV9KMPRD].[24ZCP_IMSREV-FA2AAV9KMPRD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-FA2AAV9KMPRD]' DIMENSIONNAME = '[4ZCP_IMSREV-FA2AAV9KMPRD]' ATTRIBUTE,
+        imstrans_rev_reasons_04level01_0 = '[4ZCP_IMSREV-N00YUMTDJVM7].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-N00YUMTDJVM7]' DIMENSIONNAME = '[4ZCP_IMSREV-N00YUMTDJVM7]' LEVELPOSITION=1,
+        imstrans_rev_reasons_04_key = '[4ZCP_IMSREV-N00YUMTDJVM7].[24ZCP_IMSREV-N00YUMTDJVM7]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-N00YUMTDJVM7]' DIMENSIONNAME = '[4ZCP_IMSREV-N00YUMTDJVM7]' ATTRIBUTE,
+        imstrans_rev_reasons_05level01_0 = '[4ZCP_IMSREV-N7VXFTLFEW3Z].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-N7VXFTLFEW3Z]' DIMENSIONNAME = '[4ZCP_IMSREV-N7VXFTLFEW3Z]' LEVELPOSITION=1,
+        imstrans_rev_reasons_05_key = '[4ZCP_IMSREV-N7VXFTLFEW3Z].[24ZCP_IMSREV-N7VXFTLFEW3Z]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-N7VXFTLFEW3Z]' DIMENSIONNAME = '[4ZCP_IMSREV-N7VXFTLFEW3Z]' ATTRIBUTE,
+        imstrans_rev_reasons_06level01_0 = '[4ZCP_IMSREV-HZSIE1AA5KRO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-HZSIE1AA5KRO]' DIMENSIONNAME = '[4ZCP_IMSREV-HZSIE1AA5KRO]' LEVELPOSITION=1,
+        imstrans_rev_reasons_06_key = '[4ZCP_IMSREV-HZSIE1AA5KRO].[24ZCP_IMSREV-HZSIE1AA5KRO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-HZSIE1AA5KRO]' DIMENSIONNAME = '[4ZCP_IMSREV-HZSIE1AA5KRO]' ATTRIBUTE,
+        imstrans_rev_reasons_07level01_0 = '[4ZCP_IMSREV-NF3JQ8RUT8QZ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-NF3JQ8RUT8QZ]' DIMENSIONNAME = '[4ZCP_IMSREV-NF3JQ8RUT8QZ]' LEVELPOSITION=1,
+        imstrans_rev_reasons_07_key = '[4ZCP_IMSREV-NF3JQ8RUT8QZ].[24ZCP_IMSREV-NF3JQ8RUT8QZ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-NF3JQ8RUT8QZ]' DIMENSIONNAME = '[4ZCP_IMSREV-NF3JQ8RUT8QZ]' ATTRIBUTE,
+        imstrans_rev_reasons_08level01_0 = '[4ZCP_IMSREV-MHIDKI5N5JTJ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-MHIDKI5N5JTJ]' DIMENSIONNAME = '[4ZCP_IMSREV-MHIDKI5N5JTJ]' LEVELPOSITION=1,
+        imstrans_rev_reasons_08_key = '[4ZCP_IMSREV-MHIDKI5N5JTJ].[24ZCP_IMSREV-MHIDKI5N5JTJ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-MHIDKI5N5JTJ]' DIMENSIONNAME = '[4ZCP_IMSREV-MHIDKI5N5JTJ]' ATTRIBUTE,
+        imstrans_rev_reasons_09level01_0 = '[4ZCP_IMSREV-PR7F9EXIKCUX].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-PR7F9EXIKCUX]' DIMENSIONNAME = '[4ZCP_IMSREV-PR7F9EXIKCUX]' LEVELPOSITION=1,
+        imstrans_rev_reasons_09_key = '[4ZCP_IMSREV-PR7F9EXIKCUX].[24ZCP_IMSREV-PR7F9EXIKCUX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-PR7F9EXIKCUX]' DIMENSIONNAME = '[4ZCP_IMSREV-PR7F9EXIKCUX]' ATTRIBUTE,
+        imstrans_rev_reasons_10level01_0 = '[4ZCP_IMSREV-IX2XQFQWU11T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IX2XQFQWU11T]' DIMENSIONNAME = '[4ZCP_IMSREV-IX2XQFQWU11T]' LEVELPOSITION=1,
+        imstrans_rev_reasons_10_key = '[4ZCP_IMSREV-IX2XQFQWU11T].[24ZCP_IMSREV-IX2XQFQWU11T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IX2XQFQWU11T]' DIMENSIONNAME = '[4ZCP_IMSREV-IX2XQFQWU11T]' ATTRIBUTE,
+        imstrans_rev_reasons_11level01_0 = '[4ZCP_IMSREV-S87EQXVAUR1V].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-S87EQXVAUR1V]' DIMENSIONNAME = '[4ZCP_IMSREV-S87EQXVAUR1V]' LEVELPOSITION=1,
+        imstrans_rev_reasons_11_key = '[4ZCP_IMSREV-S87EQXVAUR1V].[24ZCP_IMSREV-S87EQXVAUR1V]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-S87EQXVAUR1V]' DIMENSIONNAME = '[4ZCP_IMSREV-S87EQXVAUR1V]' ATTRIBUTE,
+        imstrans_rev_reasons_12level01_0 = '[4ZCP_IMSREV-F9K2CRISMFN7].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-F9K2CRISMFN7]' DIMENSIONNAME = '[4ZCP_IMSREV-F9K2CRISMFN7]' LEVELPOSITION=1,
+        imstrans_rev_reasons_12_key = '[4ZCP_IMSREV-F9K2CRISMFN7].[24ZCP_IMSREV-F9K2CRISMFN7]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-F9K2CRISMFN7]' DIMENSIONNAME = '[4ZCP_IMSREV-F9K2CRISMFN7]' ATTRIBUTE,
+        imstrans_rev_reasons_13level01_0 = '[4ZCP_IMSREV-IF2IP5ERY1WV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IF2IP5ERY1WV]' DIMENSIONNAME = '[4ZCP_IMSREV-IF2IP5ERY1WV]' LEVELPOSITION=1,
+        imstrans_rev_reasons_13_key = '[4ZCP_IMSREV-IF2IP5ERY1WV].[24ZCP_IMSREV-IF2IP5ERY1WV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IF2IP5ERY1WV]' DIMENSIONNAME = '[4ZCP_IMSREV-IF2IP5ERY1WV]' ATTRIBUTE,
+        imstrans_rev_reasons_14level01_0 = '[4ZCP_IMSREV-RI5077INFD2B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-RI5077INFD2B]' DIMENSIONNAME = '[4ZCP_IMSREV-RI5077INFD2B]' LEVELPOSITION=1,
+        imstrans_rev_reasons_14_key = '[4ZCP_IMSREV-RI5077INFD2B].[24ZCP_IMSREV-RI5077INFD2B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-RI5077INFD2B]' DIMENSIONNAME = '[4ZCP_IMSREV-RI5077INFD2B]' ATTRIBUTE,
+        imstrans_rev_reasons_15level01_0 = '[4ZCP_IMSREV-HDU0E832CT2B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-HDU0E832CT2B]' DIMENSIONNAME = '[4ZCP_IMSREV-HDU0E832CT2B]' LEVELPOSITION=1,
+        imstrans_rev_reasons_15_key = '[4ZCP_IMSREV-HDU0E832CT2B].[24ZCP_IMSREV-HDU0E832CT2B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-HDU0E832CT2B]' DIMENSIONNAME = '[4ZCP_IMSREV-HDU0E832CT2B]' ATTRIBUTE,
+        imstrans_rev_reasons_16level01_0 = '[4ZCP_IMSREV-R1NJ4EV3S5QW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-R1NJ4EV3S5QW]' DIMENSIONNAME = '[4ZCP_IMSREV-R1NJ4EV3S5QW]' LEVELPOSITION=1,
+        imstrans_rev_reasons_16_key = '[4ZCP_IMSREV-R1NJ4EV3S5QW].[24ZCP_IMSREV-R1NJ4EV3S5QW]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-R1NJ4EV3S5QW]' DIMENSIONNAME = '[4ZCP_IMSREV-R1NJ4EV3S5QW]' ATTRIBUTE,
+        imstrans_rev_reasons_17level01_0 = '[4ZCP_IMSREV-P6GD60U5XMA5].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-P6GD60U5XMA5]' DIMENSIONNAME = '[4ZCP_IMSREV-P6GD60U5XMA5]' LEVELPOSITION=1,
+        imstrans_rev_reasons_17_key = '[4ZCP_IMSREV-P6GD60U5XMA5].[24ZCP_IMSREV-P6GD60U5XMA5]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-P6GD60U5XMA5]' DIMENSIONNAME = '[4ZCP_IMSREV-P6GD60U5XMA5]' ATTRIBUTE,
+        imstrans_rev_reasons_18level01_0 = '[4ZCP_IMSREV-KT209M9XR0SD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-KT209M9XR0SD]' DIMENSIONNAME = '[4ZCP_IMSREV-KT209M9XR0SD]' LEVELPOSITION=1,
+        imstrans_rev_reasons_18_key = '[4ZCP_IMSREV-KT209M9XR0SD].[24ZCP_IMSREV-KT209M9XR0SD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-KT209M9XR0SD]' DIMENSIONNAME = '[4ZCP_IMSREV-KT209M9XR0SD]' ATTRIBUTE,
+        imstrans_rev_reasons_19level01_0 = '[4ZCP_IMSREV-HQDO2WQC770Y].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-HQDO2WQC770Y]' DIMENSIONNAME = '[4ZCP_IMSREV-HQDO2WQC770Y]' LEVELPOSITION=1,
+        imstrans_rev_reasons_19_key = '[4ZCP_IMSREV-HQDO2WQC770Y].[24ZCP_IMSREV-HQDO2WQC770Y]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-HQDO2WQC770Y]' DIMENSIONNAME = '[4ZCP_IMSREV-HQDO2WQC770Y]' ATTRIBUTE,
+        imstrans_rev_reasons_20level01_0 = '[4ZCP_IMSREV-M4JFBU8NQ0ZB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-M4JFBU8NQ0ZB]' DIMENSIONNAME = '[4ZCP_IMSREV-M4JFBU8NQ0ZB]' LEVELPOSITION=1,
+        imstrans_rev_reasons_20_key = '[4ZCP_IMSREV-M4JFBU8NQ0ZB].[24ZCP_IMSREV-M4JFBU8NQ0ZB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-M4JFBU8NQ0ZB]' DIMENSIONNAME = '[4ZCP_IMSREV-M4JFBU8NQ0ZB]' ATTRIBUTE,
+        imstrans_rev_reasons_21level01_0 = '[4ZCP_IMSREV-RCWPJ77O0E5Q].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-RCWPJ77O0E5Q]' DIMENSIONNAME = '[4ZCP_IMSREV-RCWPJ77O0E5Q]' LEVELPOSITION=1,
+        imstrans_rev_reasons_21_key = '[4ZCP_IMSREV-RCWPJ77O0E5Q].[24ZCP_IMSREV-RCWPJ77O0E5Q]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-RCWPJ77O0E5Q]' DIMENSIONNAME = '[4ZCP_IMSREV-RCWPJ77O0E5Q]' ATTRIBUTE,
+        imstrans_rev_reasons_22level01_0 = '[4ZCP_IMSREV-I3TGV6AIYAJV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-I3TGV6AIYAJV]' DIMENSIONNAME = '[4ZCP_IMSREV-I3TGV6AIYAJV]' LEVELPOSITION=1,
+        imstrans_rev_reasons_22_key = '[4ZCP_IMSREV-I3TGV6AIYAJV].[24ZCP_IMSREV-I3TGV6AIYAJV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-I3TGV6AIYAJV]' DIMENSIONNAME = '[4ZCP_IMSREV-I3TGV6AIYAJV]' ATTRIBUTE,
+        imstrans_rev_reasons_23level01_0 = '[4ZCP_IMSREV-GQ0ZCF3ORRS3].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-GQ0ZCF3ORRS3]' DIMENSIONNAME = '[4ZCP_IMSREV-GQ0ZCF3ORRS3]' LEVELPOSITION=1,
+        imstrans_rev_reasons_23_key = '[4ZCP_IMSREV-GQ0ZCF3ORRS3].[24ZCP_IMSREV-GQ0ZCF3ORRS3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-GQ0ZCF3ORRS3]' DIMENSIONNAME = '[4ZCP_IMSREV-GQ0ZCF3ORRS3]' ATTRIBUTE,
+        imstrans_rev_reasons_24level01_0 = '[4ZCP_IMSREV-QBLWG5NN8GQ5].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-QBLWG5NN8GQ5]' DIMENSIONNAME = '[4ZCP_IMSREV-QBLWG5NN8GQ5]' LEVELPOSITION=1,
+        imstrans_rev_reasons_24_key = '[4ZCP_IMSREV-QBLWG5NN8GQ5].[24ZCP_IMSREV-QBLWG5NN8GQ5]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-QBLWG5NN8GQ5]' DIMENSIONNAME = '[4ZCP_IMSREV-QBLWG5NN8GQ5]' ATTRIBUTE,
+        imstrans_rev_reasons_25level01_0 = '[4ZCP_IMSREV-KEQMY3DOM3SM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-KEQMY3DOM3SM]' DIMENSIONNAME = '[4ZCP_IMSREV-KEQMY3DOM3SM]' LEVELPOSITION=1,
+        imstrans_rev_reasons_25_key = '[4ZCP_IMSREV-KEQMY3DOM3SM].[24ZCP_IMSREV-KEQMY3DOM3SM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-KEQMY3DOM3SM]' DIMENSIONNAME = '[4ZCP_IMSREV-KEQMY3DOM3SM]' ATTRIBUTE,
+        imstrans_rev_respond_dtlevel01_0 = '[4ZCP_IMSREV-K7HT9V1DLJHI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-K7HT9V1DLJHI]' DIMENSIONNAME = '[4ZCP_IMSREV-K7HT9V1DLJHI]' LEVELPOSITION=1,
+        imstrans_rev_respond_dt_key = '[4ZCP_IMSREV-K7HT9V1DLJHI].[24ZCP_IMSREV-K7HT9V1DLJHI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-K7HT9V1DLJHI]' DIMENSIONNAME = '[4ZCP_IMSREV-K7HT9V1DLJHI]' ATTRIBUTE,
+        imstrans_rev_respond_tmlevel01_0 = '[4ZCP_IMSREV-QROVZ4EIJ5BH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-QROVZ4EIJ5BH]' DIMENSIONNAME = '[4ZCP_IMSREV-QROVZ4EIJ5BH]' LEVELPOSITION=1,
+        imstrans_rev_respond_tm_key = '[4ZCP_IMSREV-QROVZ4EIJ5BH].[24ZCP_IMSREV-QROVZ4EIJ5BH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-QROVZ4EIJ5BH]' DIMENSIONNAME = '[4ZCP_IMSREV-QROVZ4EIJ5BH]' ATTRIBUTE,
+        imstrans_rev_serieslevel01_0 = '[4ZCP_IMSREV-IMSTRANS_R_3].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_R_3]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_R_3]' LEVELPOSITION=1,
+        imstrans_rev_series_key = '[4ZCP_IMSREV-IMSTRANS_R_3].[24ZCP_IMSREV-IMSTRANS_R_3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_R_3]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_R_3]' ATTRIBUTE,
+        imstrans_transmittedlevel01_0 = '[4ZCP_IMSREV-IMSTRANS_TRA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_TRA]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_TRA]' LEVELPOSITION=1,
+        imstrans_transmitted_key = '[4ZCP_IMSREV-IMSTRANS_TRA].[24ZCP_IMSREV-IMSTRANS_TRA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_TRA]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_TRA]' ATTRIBUTE,
+        imstrans_vinlevel01_0 = '[4ZCP_IMSREV-IMSTRANS_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_VIN]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_VIN]' LEVELPOSITION=1,
+        imstrans_vin_key = '[4ZCP_IMSREV-IMSTRANS_VIN].[24ZCP_IMSREV-IMSTRANS_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_VIN]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_VIN]' ATTRIBUTE,
+        imstrans_xmit_datelevel01_0 = '[4ZCP_IMSREV-IMSTRANS_XMI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_XMI]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_XMI]' LEVELPOSITION=1,
+        imstrans_xmit_date_key = '[4ZCP_IMSREV-IMSTRANS_XMI].[24ZCP_IMSREV-IMSTRANS_XMI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_XMI]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_XMI]' ATTRIBUTE,
+        imstrans_xmit_timelevel01_0 = '[4ZCP_IMSREV-IMSTRANS_X_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_X_0]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_X_0]' LEVELPOSITION=1,
+        imstrans_xmit_time_key = '[4ZCP_IMSREV-IMSTRANS_X_0].[24ZCP_IMSREV-IMSTRANS_X_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-IMSTRANS_X_0]' DIMENSIONNAME = '[4ZCP_IMSREV-IMSTRANS_X_0]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        upd_by_idlevel01_0 = '[4ZCP_IMSREV-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_IMSREV-UPD_BY_ID]' LEVELPOSITION=1,
+        upd_by_id_key = '[4ZCP_IMSREV-UPD_BY_ID].[24ZCP_IMSREV-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_IMSREV-UPD_BY_ID]' ATTRIBUTE,
+        upd_tslevel01_0 = '[4ZCP_IMSREV-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-UPD_TS]' DIMENSIONNAME = '[4ZCP_IMSREV-UPD_TS]' LEVELPOSITION=1,
+        upd_ts_key = '[4ZCP_IMSREV-UPD_TS].[24ZCP_IMSREV-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_IMSREV-UPD_TS]' DIMENSIONNAME = '[4ZCP_IMSREV-UPD_TS]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_imsrev I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_by_id_key:text,
+        cre_tslevel01_0:text,
+        cre_ts_key:text,
+        imstrans_codelevel01_0:text,
+        imstrans_code_key:text,
+        imstrans_flevel01_0:text,
+        imstrans_f_key:text,
+        imstrans_modellevel01_0:text,
+        imstrans_model_key:text,
+        imstrans_phaselevel01_0:text,
+        imstrans_phase_key:text,
+        imstrans_respondedlevel01_0:text,
+        imstrans_responded_key:text,
+        imstrans_rev_car_trucklevel01_0:text,
+        imstrans_rev_car_truck_key:text,
+        imstrans_rev_cclevel01_0:text,
+        imstrans_rev_cc_key:text,
+        imstrans_rev_dlrlevel01_0:text,
+        imstrans_rev_dlr_key:text,
+        imstrans_rev_fleetlevel01_0:text,
+        imstrans_rev_fleet_key:text,
+        imstrans_rev_reasonlevel01_0:text,
+        imstrans_rev_reason_key:text,
+        imstrans_rev_reasons_01level01_0:text,
+        imstrans_rev_reasons_01_key:text,
+        imstrans_rev_reasons_02level01_0:text,
+        imstrans_rev_reasons_02_key:text,
+        imstrans_rev_reasons_03level01_0:text,
+        imstrans_rev_reasons_03_key:text,
+        imstrans_rev_reasons_04level01_0:text,
+        imstrans_rev_reasons_04_key:text,
+        imstrans_rev_reasons_05level01_0:text,
+        imstrans_rev_reasons_05_key:text,
+        imstrans_rev_reasons_06level01_0:text,
+        imstrans_rev_reasons_06_key:text,
+        imstrans_rev_reasons_07level01_0:text,
+        imstrans_rev_reasons_07_key:text,
+        imstrans_rev_reasons_08level01_0:text,
+        imstrans_rev_reasons_08_key:text,
+        imstrans_rev_reasons_09level01_0:text,
+        imstrans_rev_reasons_09_key:text,
+        imstrans_rev_reasons_10level01_0:text,
+        imstrans_rev_reasons_10_key:text,
+        imstrans_rev_reasons_11level01_0:text,
+        imstrans_rev_reasons_11_key:text,
+        imstrans_rev_reasons_12level01_0:text,
+        imstrans_rev_reasons_12_key:text,
+        imstrans_rev_reasons_13level01_0:text,
+        imstrans_rev_reasons_13_key:text,
+        imstrans_rev_reasons_14level01_0:text,
+        imstrans_rev_reasons_14_key:text,
+        imstrans_rev_reasons_15level01_0:text,
+        imstrans_rev_reasons_15_key:text,
+        imstrans_rev_reasons_16level01_0:text,
+        imstrans_rev_reasons_16_key:text,
+        imstrans_rev_reasons_17level01_0:text,
+        imstrans_rev_reasons_17_key:text,
+        imstrans_rev_reasons_18level01_0:text,
+        imstrans_rev_reasons_18_key:text,
+        imstrans_rev_reasons_19level01_0:text,
+        imstrans_rev_reasons_19_key:text,
+        imstrans_rev_reasons_20level01_0:text,
+        imstrans_rev_reasons_20_key:text,
+        imstrans_rev_reasons_21level01_0:text,
+        imstrans_rev_reasons_21_key:text,
+        imstrans_rev_reasons_22level01_0:text,
+        imstrans_rev_reasons_22_key:text,
+        imstrans_rev_reasons_23level01_0:text,
+        imstrans_rev_reasons_23_key:text,
+        imstrans_rev_reasons_24level01_0:text,
+        imstrans_rev_reasons_24_key:text,
+        imstrans_rev_reasons_25level01_0:text,
+        imstrans_rev_reasons_25_key:text,
+        imstrans_rev_respond_dtlevel01_0:text,
+        imstrans_rev_respond_dt_key:text,
+        imstrans_rev_respond_tmlevel01_0:text,
+        imstrans_rev_respond_tm_key:text,
+        imstrans_rev_serieslevel01_0:text,
+        imstrans_rev_series_key:text,
+        imstrans_transmittedlevel01_0:text,
+        imstrans_transmitted_key:text,
+        imstrans_vinlevel01_0:text,
+        imstrans_vin_key:text,
+        imstrans_xmit_datelevel01_0:text,
+        imstrans_xmit_date_key:text,
+        imstrans_xmit_timelevel01_0:text,
+        imstrans_xmit_time_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        upd_by_idlevel01_0:text,
+        upd_by_id_key:text,
+        upd_tslevel01_0:text,
+        upd_ts_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_imsrev(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_by_id_key (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD cre_ts_key (any) OPT ANY
+             ADD imstrans_codelevel01_0 (any) OPT ANY
+             ADD imstrans_code_key (any) OPT ANY
+             ADD imstrans_flevel01_0 (any) OPT ANY
+             ADD imstrans_f_key (any) OPT ANY
+             ADD imstrans_modellevel01_0 (any) OPT ANY
+             ADD imstrans_model_key (any) OPT ANY
+             ADD imstrans_phaselevel01_0 (any) OPT ANY
+             ADD imstrans_phase_key (any) OPT ANY
+             ADD imstrans_respondedlevel01_0 (any) OPT ANY
+             ADD imstrans_responded_key (any) OPT ANY
+             ADD imstrans_rev_car_trucklevel01_0 (any) OPT ANY
+             ADD imstrans_rev_car_truck_key (any) OPT ANY
+             ADD imstrans_rev_cclevel01_0 (any) OPT ANY
+             ADD imstrans_rev_cc_key (any) OPT ANY
+             ADD imstrans_rev_dlrlevel01_0 (any) OPT ANY
+             ADD imstrans_rev_dlr_key (any) OPT ANY
+             ADD imstrans_rev_fleetlevel01_0 (any) OPT ANY
+             ADD imstrans_rev_fleet_key (any) OPT ANY
+             ADD imstrans_rev_reasonlevel01_0 (any) OPT ANY
+             ADD imstrans_rev_reason_key (any) OPT ANY
+             ADD imstrans_rev_reasons_01level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_01_key (any) OPT ANY
+             ADD imstrans_rev_reasons_02level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_02_key (any) OPT ANY
+             ADD imstrans_rev_reasons_03level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_03_key (any) OPT ANY
+             ADD imstrans_rev_reasons_04level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_04_key (any) OPT ANY
+             ADD imstrans_rev_reasons_05level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_05_key (any) OPT ANY
+             ADD imstrans_rev_reasons_06level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_06_key (any) OPT ANY
+             ADD imstrans_rev_reasons_07level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_07_key (any) OPT ANY
+             ADD imstrans_rev_reasons_08level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_08_key (any) OPT ANY
+             ADD imstrans_rev_reasons_09level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_09_key (any) OPT ANY
+             ADD imstrans_rev_reasons_10level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_10_key (any) OPT ANY
+             ADD imstrans_rev_reasons_11level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_11_key (any) OPT ANY
+             ADD imstrans_rev_reasons_12level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_12_key (any) OPT ANY
+             ADD imstrans_rev_reasons_13level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_13_key (any) OPT ANY
+             ADD imstrans_rev_reasons_14level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_14_key (any) OPT ANY
+             ADD imstrans_rev_reasons_15level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_15_key (any) OPT ANY
+             ADD imstrans_rev_reasons_16level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_16_key (any) OPT ANY
+             ADD imstrans_rev_reasons_17level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_17_key (any) OPT ANY
+             ADD imstrans_rev_reasons_18level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_18_key (any) OPT ANY
+             ADD imstrans_rev_reasons_19level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_19_key (any) OPT ANY
+             ADD imstrans_rev_reasons_20level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_20_key (any) OPT ANY
+             ADD imstrans_rev_reasons_21level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_21_key (any) OPT ANY
+             ADD imstrans_rev_reasons_22level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_22_key (any) OPT ANY
+             ADD imstrans_rev_reasons_23level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_23_key (any) OPT ANY
+             ADD imstrans_rev_reasons_24level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_24_key (any) OPT ANY
+             ADD imstrans_rev_reasons_25level01_0 (any) OPT ANY
+             ADD imstrans_rev_reasons_25_key (any) OPT ANY
+             ADD imstrans_rev_respond_dtlevel01_0 (any) OPT ANY
+             ADD imstrans_rev_respond_dt_key (any) OPT ANY
+             ADD imstrans_rev_respond_tmlevel01_0 (any) OPT ANY
+             ADD imstrans_rev_respond_tm_key (any) OPT ANY
+             ADD imstrans_rev_serieslevel01_0 (any) OPT ANY
+             ADD imstrans_rev_series_key (any) OPT ANY
+             ADD imstrans_transmittedlevel01_0 (any) OPT ANY
+             ADD imstrans_transmitted_key (any) OPT ANY
+             ADD imstrans_vinlevel01_0 (any) OPT ANY
+             ADD imstrans_vin_key (any) OPT ANY
+             ADD imstrans_xmit_datelevel01_0 (any) OPT ANY
+             ADD imstrans_xmit_date_key (any) OPT ANY
+             ADD imstrans_xmit_timelevel01_0 (any) OPT ANY
+             ADD imstrans_xmit_time_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD upd_by_idlevel01_0 (any) OPT ANY
+             ADD upd_by_id_key (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD upd_ts_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, imstrans_code_key, imstrans_codelevel01_0, imstrans_f_key, imstrans_flevel01_0, imstrans_model_key, imstrans_modellevel01_0, imstrans_phase_key, imstrans_phaselevel01_0, imstrans_responded_key, imstrans_respondedlevel01_0, imstrans_rev_car_truck_key, imstrans_rev_car_trucklevel01_0, imstrans_rev_cc_key, imstrans_rev_cclevel01_0, imstrans_rev_dlr_key, imstrans_rev_dlrlevel01_0, imstrans_rev_fleet_key, imstrans_rev_fleetlevel01_0, imstrans_rev_reason_key, imstrans_rev_reasonlevel01_0, imstrans_rev_reasons_01_key, imstrans_rev_reasons_01level01_0, imstrans_rev_reasons_02_key, imstrans_rev_reasons_02level01_0, imstrans_rev_reasons_03_key, imstrans_rev_reasons_03level01_0, imstrans_rev_reasons_04_key, imstrans_rev_reasons_04level01_0, imstrans_rev_reasons_05_key, imstrans_rev_reasons_05level01_0, imstrans_rev_reasons_06_key, imstrans_rev_reasons_06level01_0, imstrans_rev_reasons_07_key, imstrans_rev_reasons_07level01_0, imstrans_rev_reasons_08_key, imstrans_rev_reasons_08level01_0, imstrans_rev_reasons_09_key, imstrans_rev_reasons_09level01_0, imstrans_rev_reasons_10_key, imstrans_rev_reasons_10level01_0, imstrans_rev_reasons_11_key, imstrans_rev_reasons_11level01_0, imstrans_rev_reasons_12_key, imstrans_rev_reasons_12level01_0, imstrans_rev_reasons_13_key, imstrans_rev_reasons_13level01_0, imstrans_rev_reasons_14_key, imstrans_rev_reasons_14level01_0, imstrans_rev_reasons_15_key, imstrans_rev_reasons_15level01_0, imstrans_rev_reasons_16_key, imstrans_rev_reasons_16level01_0, imstrans_rev_reasons_17_key, imstrans_rev_reasons_17level01_0, imstrans_rev_reasons_18_key, imstrans_rev_reasons_18level01_0, imstrans_rev_reasons_19_key, imstrans_rev_reasons_19level01_0, imstrans_rev_reasons_20_key, imstrans_rev_reasons_20level01_0, imstrans_rev_reasons_21_key, imstrans_rev_reasons_21level01_0, imstrans_rev_reasons_22_key, imstrans_rev_reasons_22level01_0, imstrans_rev_reasons_23_key, imstrans_rev_reasons_23level01_0, imstrans_rev_reasons_24_key, imstrans_rev_reasons_24level01_0, imstrans_rev_reasons_25_key, imstrans_rev_reasons_25level01_0, imstrans_rev_respond_dt_key, imstrans_rev_respond_dtlevel01_0, imstrans_rev_respond_tm_key, imstrans_rev_respond_tmlevel01_0, imstrans_rev_series_key, imstrans_rev_serieslevel01_0, imstrans_transmitted_key, imstrans_transmittedlevel01_0, imstrans_vin_key, imstrans_vinlevel01_0, imstrans_xmit_date_key, imstrans_xmit_datelevel01_0, imstrans_xmit_time_key, imstrans_xmit_timelevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, upd_by_id_key, upd_by_idlevel01_0, upd_ts_key, upd_tslevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_imsrev)
+    );
+

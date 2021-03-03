@@ -1,5 +1,0 @@
-﻿CREATE OR REPLACE VIEW zcp_genmod FOLDER = '/04 - business views/sap bw4hana/mf history/transaction' AS SELECT bv_zcp_genmod.cre_by_idlevel01_0 AS cre_by_idlevel01_0, bv_zcp_genmod.cre_by_id_key AS cre_by_id_key, bv_zcp_genmod.cre_tslevel01_0 AS cre_tslevel01_0, bv_zcp_genmod.cre_ts_key AS cre_ts_key, bv_zcp_genmod.modcap AS modcap, bv_zcp_genmod.modwgt AS modwgt, bv_zcp_genmod.mod_dlr AS mod_dlr FROM bv_zcp_genmod;
-
-ALTER VIEW zcp_genmod
- LAYOUT (bv_zcp_genmod = [20, 20, 212, 165]);
-
