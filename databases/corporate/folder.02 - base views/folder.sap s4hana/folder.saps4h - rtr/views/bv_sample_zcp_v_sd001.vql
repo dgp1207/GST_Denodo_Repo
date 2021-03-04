@@ -149,7 +149,7 @@
 
 CREATE OR REPLACE TABLE "bv_sample_ZCP_V_SD001" I18N us_cst (
         "Base Unit of Measure Level 01":text (description = 'Base view measure'),
-        "Base Unit of Measure_Key":text,
+        "Base Unit of Measure_Key":text (description = 'testing for GIT HUB'),
         "Base Unit of Measure_Medium Name":text,
         "Base Unit of Measure_Name":text,
         "Condition Type Level 01":text,
