@@ -1,0 +1,76 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_abatab
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/bom'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ABATAB'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        abatab_cre_by_idlevel01_0 = '[4ZCP_ABATAB-ABATAB_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABATAB_CRE_B]' DIMENSIONNAME = '[4ZCP_ABATAB-ABATAB_CRE_B]' LEVELPOSITION=1,
+        abatab_cre_by_id_key = '[4ZCP_ABATAB-ABATAB_CRE_B].[24ZCP_ABATAB-ABATAB_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABATAB_CRE_B]' DIMENSIONNAME = '[4ZCP_ABATAB-ABATAB_CRE_B]' ATTRIBUTE,
+        abatab_cre_tslevel01_0 = '[4ZCP_ABATAB-ABATAB_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABATAB_CRE_T]' DIMENSIONNAME = '[4ZCP_ABATAB-ABATAB_CRE_T]' LEVELPOSITION=1,
+        abatab_cre_ts_key = '[4ZCP_ABATAB-ABATAB_CRE_T].[24ZCP_ABATAB-ABATAB_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABATAB_CRE_T]' DIMENSIONNAME = '[4ZCP_ABATAB-ABATAB_CRE_T]' ATTRIBUTE,
+        abatab_upd_by_idlevel01_0 = '[4ZCP_ABATAB-ABATAB_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABATAB_UPD_B]' DIMENSIONNAME = '[4ZCP_ABATAB-ABATAB_UPD_B]' LEVELPOSITION=1,
+        abatab_upd_by_id_key = '[4ZCP_ABATAB-ABATAB_UPD_B].[24ZCP_ABATAB-ABATAB_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABATAB_UPD_B]' DIMENSIONNAME = '[4ZCP_ABATAB-ABATAB_UPD_B]' ATTRIBUTE,
+        abatab_upd_tslevel01_0 = '[4ZCP_ABATAB-ABATAB_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABATAB_UPD_T]' DIMENSIONNAME = '[4ZCP_ABATAB-ABATAB_UPD_T]' LEVELPOSITION=1,
+        abatab_upd_ts_key = '[4ZCP_ABATAB-ABATAB_UPD_T].[24ZCP_ABATAB-ABATAB_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABATAB_UPD_T]' DIMENSIONNAME = '[4ZCP_ABATAB-ABATAB_UPD_T]' ATTRIBUTE,
+        abat_bomlevel01_0 = '[4ZCP_ABATAB-ABAT_BOM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABAT_BOM]' DIMENSIONNAME = '[4ZCP_ABATAB-ABAT_BOM]' LEVELPOSITION=1,
+        abat_bom_key = '[4ZCP_ABATAB-ABAT_BOM].[24ZCP_ABATAB-ABAT_BOM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABAT_BOM]' DIMENSIONNAME = '[4ZCP_ABATAB-ABAT_BOM]' ATTRIBUTE,
+        abat_model_yearlevel01_0 = '[4ZCP_ABATAB-ABAT_MODEL_Y].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABAT_MODEL_Y]' DIMENSIONNAME = '[4ZCP_ABATAB-ABAT_MODEL_Y]' LEVELPOSITION=1,
+        abat_model_year_key = '[4ZCP_ABATAB-ABAT_MODEL_Y].[24ZCP_ABATAB-ABAT_MODEL_Y]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABAT_MODEL_Y]' DIMENSIONNAME = '[4ZCP_ABATAB-ABAT_MODEL_Y]' ATTRIBUTE,
+        abat_piolevel01_0 = '[4ZCP_ABATAB-ABAT_PIO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABAT_PIO]' DIMENSIONNAME = '[4ZCP_ABATAB-ABAT_PIO]' LEVELPOSITION=1,
+        abat_pio_key = '[4ZCP_ABATAB-ABAT_PIO].[24ZCP_ABATAB-ABAT_PIO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABAT_PIO]' DIMENSIONNAME = '[4ZCP_ABATAB-ABAT_PIO]' ATTRIBUTE,
+        abat_seqlevel01_0 = '[4ZCP_ABATAB-ABAT_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABAT_SEQ]' DIMENSIONNAME = '[4ZCP_ABATAB-ABAT_SEQ]' LEVELPOSITION=1,
+        abat_seq_key = '[4ZCP_ABATAB-ABAT_SEQ].[24ZCP_ABATAB-ABAT_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ABATAB-ABAT_SEQ]' DIMENSIONNAME = '[4ZCP_ABATAB-ABAT_SEQ]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_abatab I18N us_cst (
+        abatab_cre_by_idlevel01_0:text,
+        abatab_cre_by_id_key:text,
+        abatab_cre_tslevel01_0:text,
+        abatab_cre_ts_key:text,
+        abatab_upd_by_idlevel01_0:text,
+        abatab_upd_by_id_key:text,
+        abatab_upd_tslevel01_0:text,
+        abatab_upd_ts_key:text,
+        abat_bomlevel01_0:text,
+        abat_bom_key:text,
+        abat_model_yearlevel01_0:text,
+        abat_model_year_key:text,
+        abat_piolevel01_0:text,
+        abat_pio_key:text,
+        abat_seqlevel01_0:text,
+        abat_seq_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/bom'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_abatab(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD abatab_cre_by_idlevel01_0 (any) OPT ANY
+             ADD abatab_cre_by_id_key (any) OPT ANY
+             ADD abatab_cre_tslevel01_0 (any) OPT ANY
+             ADD abatab_cre_ts_key (any) OPT ANY
+             ADD abatab_upd_by_idlevel01_0 (any) OPT ANY
+             ADD abatab_upd_by_id_key (any) OPT ANY
+             ADD abatab_upd_tslevel01_0 (any) OPT ANY
+             ADD abatab_upd_ts_key (any) OPT ANY
+             ADD abat_bomlevel01_0 (any) OPT ANY
+             ADD abat_bom_key (any) OPT ANY
+             ADD abat_model_yearlevel01_0 (any) OPT ANY
+             ADD abat_model_year_key (any) OPT ANY
+             ADD abat_piolevel01_0 (any) OPT ANY
+             ADD abat_pio_key (any) OPT ANY
+             ADD abat_seqlevel01_0 (any) OPT ANY
+             ADD abat_seq_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (abat_bom_key, abat_bomlevel01_0, abat_model_year_key, abat_model_yearlevel01_0, abat_pio_key, abat_piolevel01_0, abat_seq_key, abat_seqlevel01_0, abatab_cre_by_id_key, abatab_cre_by_idlevel01_0, abatab_cre_ts_key, abatab_cre_tslevel01_0, abatab_upd_by_id_key, abatab_upd_by_idlevel01_0, abatab_upd_ts_key, abatab_upd_tslevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_abatab)
+    );
+

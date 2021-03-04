@@ -1,0 +1,208 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_arstmt
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accounting'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ARSTMT'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        arstmt_cre_by_idlevel01_0 = '[4ZCP_ARSTMT-ARSTMT_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARSTMT_CRE_B]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARSTMT_CRE_B]' LEVELPOSITION=1,
+        arstmt_cre_by_id_key = '[4ZCP_ARSTMT-ARSTMT_CRE_B].[24ZCP_ARSTMT-ARSTMT_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARSTMT_CRE_B]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARSTMT_CRE_B]' ATTRIBUTE,
+        arstmt_cre_tslevel01_0 = '[4ZCP_ARSTMT-ARSTMT_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARSTMT_CRE_T]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARSTMT_CRE_T]' LEVELPOSITION=1,
+        arstmt_cre_ts_key = '[4ZCP_ARSTMT-ARSTMT_CRE_T].[24ZCP_ARSTMT-ARSTMT_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARSTMT_CRE_T]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARSTMT_CRE_T]' ATTRIBUTE,
+        arstmt_upd_by_idlevel01_0 = '[4ZCP_ARSTMT-ARSTMT_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARSTMT_UPD_B]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARSTMT_UPD_B]' LEVELPOSITION=1,
+        arstmt_upd_by_id_key = '[4ZCP_ARSTMT-ARSTMT_UPD_B].[24ZCP_ARSTMT-ARSTMT_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARSTMT_UPD_B]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARSTMT_UPD_B]' ATTRIBUTE,
+        arstmt_upd_tslevel01_0 = '[4ZCP_ARSTMT-ARSTMT_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARSTMT_UPD_T]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARSTMT_UPD_T]' LEVELPOSITION=1,
+        arstmt_upd_ts_key = '[4ZCP_ARSTMT-ARSTMT_UPD_T].[24ZCP_ARSTMT-ARSTMT_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARSTMT_UPD_T]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARSTMT_UPD_T]' ATTRIBUTE,
+        ars_btch_dtlevel01_0 = '[4ZCP_ARSTMT-ARS_BTCH_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_BTCH_DT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_BTCH_DT]' LEVELPOSITION=1,
+        ars_btch_dt_key = '[4ZCP_ARSTMT-ARS_BTCH_DT].[24ZCP_ARSTMT-ARS_BTCH_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_BTCH_DT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_BTCH_DT]' ATTRIBUTE,
+        ars_btch_seqlevel01_0 = '[4ZCP_ARSTMT-ARS_BTCH_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_BTCH_SEQ]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_BTCH_SEQ]' LEVELPOSITION=1,
+        ars_btch_seq_key = '[4ZCP_ARSTMT-ARS_BTCH_SEQ].[24ZCP_ARSTMT-ARS_BTCH_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_BTCH_SEQ]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_BTCH_SEQ]' ATTRIBUTE,
+        ars_btch_statlevel01_0 = '[4ZCP_ARSTMT-ARS_BTCH_STA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_BTCH_STA]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_BTCH_STA]' LEVELPOSITION=1,
+        ars_btch_stat_key = '[4ZCP_ARSTMT-ARS_BTCH_STA].[24ZCP_ARSTMT-ARS_BTCH_STA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_BTCH_STA]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_BTCH_STA]' ATTRIBUTE,
+        ars_dlr_numlevel01_0 = '[4ZCP_ARSTMT-ARS_DLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DLR_NUM]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DLR_NUM]' LEVELPOSITION=1,
+        ars_dlr_num_key = '[4ZCP_ARSTMT-ARS_DLR_NUM].[24ZCP_ARSTMT-ARS_DLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DLR_NUM]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DLR_NUM]' ATTRIBUTE,
+        ars_doc_dtlevel01_0 = '[4ZCP_ARSTMT-ARS_DOC_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DOC_DT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DOC_DT]' LEVELPOSITION=1,
+        ars_doc_dt_key = '[4ZCP_ARSTMT-ARS_DOC_DT].[24ZCP_ARSTMT-ARS_DOC_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DOC_DT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DOC_DT]' ATTRIBUTE,
+        ars_doc_numlevel01_0 = '[4ZCP_ARSTMT-ARS_DOC_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DOC_NUM]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DOC_NUM]' LEVELPOSITION=1,
+        ars_doc_num_key = '[4ZCP_ARSTMT-ARS_DOC_NUM].[24ZCP_ARSTMT-ARS_DOC_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DOC_NUM]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DOC_NUM]' ATTRIBUTE,
+        ars_doc_seqlevel01_0 = '[4ZCP_ARSTMT-ARS_DOC_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DOC_SEQ]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DOC_SEQ]' LEVELPOSITION=1,
+        ars_doc_seq_key = '[4ZCP_ARSTMT-ARS_DOC_SEQ].[24ZCP_ARSTMT-ARS_DOC_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DOC_SEQ]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DOC_SEQ]' ATTRIBUTE,
+        ars_doc_statlevel01_0 = '[4ZCP_ARSTMT-ARS_DOC_STAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DOC_STAT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DOC_STAT]' LEVELPOSITION=1,
+        ars_doc_stat_key = '[4ZCP_ARSTMT-ARS_DOC_STAT].[24ZCP_ARSTMT-ARS_DOC_STAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DOC_STAT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DOC_STAT]' ATTRIBUTE,
+        ars_doc_typelevel01_0 = '[4ZCP_ARSTMT-ARS_DOC_TYPE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DOC_TYPE]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DOC_TYPE]' LEVELPOSITION=1,
+        ars_doc_type_key = '[4ZCP_ARSTMT-ARS_DOC_TYPE].[24ZCP_ARSTMT-ARS_DOC_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_DOC_TYPE]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_DOC_TYPE]' ATTRIBUTE,
+        ars_orig_namelevel01_0 = '[4ZCP_ARSTMT-ARS_ORIG_NAM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_ORIG_NAM]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_ORIG_NAM]' LEVELPOSITION=1,
+        ars_orig_name_key = '[4ZCP_ARSTMT-ARS_ORIG_NAM].[24ZCP_ARSTMT-ARS_ORIG_NAM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_ORIG_NAM]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_ORIG_NAM]' ATTRIBUTE,
+        ars_orig_seqlevel01_0 = '[4ZCP_ARSTMT-ARS_ORIG_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_ORIG_SEQ]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_ORIG_SEQ]' LEVELPOSITION=1,
+        ars_orig_seq_key = '[4ZCP_ARSTMT-ARS_ORIG_SEQ].[24ZCP_ARSTMT-ARS_ORIG_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_ORIG_SEQ]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_ORIG_SEQ]' ATTRIBUTE,
+        ars_part_tran_cdlevel01_0 = '[4ZCP_ARSTMT-ARS_PART_TRA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_PART_TRA]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_PART_TRA]' LEVELPOSITION=1,
+        ars_part_tran_cd_key = '[4ZCP_ARSTMT-ARS_PART_TRA].[24ZCP_ARSTMT-ARS_PART_TRA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_PART_TRA]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_PART_TRA]' ATTRIBUTE,
+        ars_pmt_dtlevel01_0 = '[4ZCP_ARSTMT-ARS_PMT_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_PMT_DT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_PMT_DT]' LEVELPOSITION=1,
+        ars_pmt_dt_key = '[4ZCP_ARSTMT-ARS_PMT_DT].[24ZCP_ARSTMT-ARS_PMT_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_PMT_DT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_PMT_DT]' ATTRIBUTE,
+        ars_pmt_numlevel01_0 = '[4ZCP_ARSTMT-ARS_PMT_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_PMT_NUM]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_PMT_NUM]' LEVELPOSITION=1,
+        ars_pmt_num_key = '[4ZCP_ARSTMT-ARS_PMT_NUM].[24ZCP_ARSTMT-ARS_PMT_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_PMT_NUM]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_PMT_NUM]' ATTRIBUTE,
+        ars_post_dtlevel01_0 = '[4ZCP_ARSTMT-ARS_POST_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_POST_DT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_POST_DT]' LEVELPOSITION=1,
+        ars_post_dt_key = '[4ZCP_ARSTMT-ARS_POST_DT].[24ZCP_ARSTMT-ARS_POST_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_POST_DT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_POST_DT]' ATTRIBUTE,
+        ars_post_flaglevel01_0 = '[4ZCP_ARSTMT-ARS_POST_FLA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_POST_FLA]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_POST_FLA]' LEVELPOSITION=1,
+        ars_post_flag_key = '[4ZCP_ARSTMT-ARS_POST_FLA].[24ZCP_ARSTMT-ARS_POST_FLA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_POST_FLA]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_POST_FLA]' ATTRIBUTE,
+        ars_prnt_cdlevel01_0 = '[4ZCP_ARSTMT-ARS_PRNT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_PRNT_CD]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_PRNT_CD]' LEVELPOSITION=1,
+        ars_prnt_cd_key = '[4ZCP_ARSTMT-ARS_PRNT_CD].[24ZCP_ARSTMT-ARS_PRNT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_PRNT_CD]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_PRNT_CD]' ATTRIBUTE,
+        ars_srcelevel01_0 = '[4ZCP_ARSTMT-ARS_SRCE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_SRCE]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_SRCE]' LEVELPOSITION=1,
+        ars_srce_key = '[4ZCP_ARSTMT-ARS_SRCE].[24ZCP_ARSTMT-ARS_SRCE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_SRCE]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_SRCE]' ATTRIBUTE,
+        ars_stmt_desclevel01_0 = '[4ZCP_ARSTMT-ARS_STMT_DES].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_STMT_DES]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_STMT_DES]' LEVELPOSITION=1,
+        ars_stmt_desc_key = '[4ZCP_ARSTMT-ARS_STMT_DES].[24ZCP_ARSTMT-ARS_STMT_DES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_STMT_DES]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_STMT_DES]' ATTRIBUTE,
+        ars_stmt_dtlevel01_0 = '[4ZCP_ARSTMT-ARS_STMT_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_STMT_DT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_STMT_DT]' LEVELPOSITION=1,
+        ars_stmt_dt_key = '[4ZCP_ARSTMT-ARS_STMT_DT].[24ZCP_ARSTMT-ARS_STMT_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_STMT_DT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_STMT_DT]' ATTRIBUTE,
+        ars_term_idlevel01_0 = '[4ZCP_ARSTMT-ARS_TERM_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_TERM_ID]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_TERM_ID]' LEVELPOSITION=1,
+        ars_term_id_key = '[4ZCP_ARSTMT-ARS_TERM_ID].[24ZCP_ARSTMT-ARS_TERM_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_TERM_ID]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_TERM_ID]' ATTRIBUTE,
+        ars_veh_sers_cdlevel01_0 = '[4ZCP_ARSTMT-ARS_VEH_SERS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_VEH_SERS]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_VEH_SERS]' LEVELPOSITION=1,
+        ars_veh_sers_cd_key = '[4ZCP_ARSTMT-ARS_VEH_SERS].[24ZCP_ARSTMT-ARS_VEH_SERS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_VEH_SERS]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_VEH_SERS]' ATTRIBUTE,
+        ars_vndr_cdlevel01_0 = '[4ZCP_ARSTMT-ARS_VNDR_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_VNDR_CD]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_VNDR_CD]' LEVELPOSITION=1,
+        ars_vndr_cd_key = '[4ZCP_ARSTMT-ARS_VNDR_CD].[24ZCP_ARSTMT-ARS_VNDR_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_VNDR_CD]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_VNDR_CD]' ATTRIBUTE,
+        ars_web_prnt_cdlevel01_0 = '[4ZCP_ARSTMT-ARS_WEB_PRNT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_WEB_PRNT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_WEB_PRNT]' LEVELPOSITION=1,
+        ars_web_prnt_cd_key = '[4ZCP_ARSTMT-ARS_WEB_PRNT].[24ZCP_ARSTMT-ARS_WEB_PRNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARSTMT-ARS_WEB_PRNT]' DIMENSIONNAME = '[4ZCP_ARSTMT-ARS_WEB_PRNT]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_arstmt I18N us_cst (
+        arstmt_cre_by_idlevel01_0:text,
+        arstmt_cre_by_id_key:text,
+        arstmt_cre_tslevel01_0:text,
+        arstmt_cre_ts_key:text,
+        arstmt_upd_by_idlevel01_0:text,
+        arstmt_upd_by_id_key:text,
+        arstmt_upd_tslevel01_0:text,
+        arstmt_upd_ts_key:text,
+        ars_btch_dtlevel01_0:text,
+        ars_btch_dt_key:text,
+        ars_btch_seqlevel01_0:text,
+        ars_btch_seq_key:text,
+        ars_btch_statlevel01_0:text,
+        ars_btch_stat_key:text,
+        ars_dlr_numlevel01_0:text,
+        ars_dlr_num_key:text,
+        ars_doc_dtlevel01_0:text,
+        ars_doc_dt_key:text,
+        ars_doc_numlevel01_0:text,
+        ars_doc_num_key:text,
+        ars_doc_seqlevel01_0:text,
+        ars_doc_seq_key:text,
+        ars_doc_statlevel01_0:text,
+        ars_doc_stat_key:text,
+        ars_doc_typelevel01_0:text,
+        ars_doc_type_key:text,
+        ars_orig_namelevel01_0:text,
+        ars_orig_name_key:text,
+        ars_orig_seqlevel01_0:text,
+        ars_orig_seq_key:text,
+        ars_part_tran_cdlevel01_0:text,
+        ars_part_tran_cd_key:text,
+        ars_pmt_dtlevel01_0:text,
+        ars_pmt_dt_key:text,
+        ars_pmt_numlevel01_0:text,
+        ars_pmt_num_key:text,
+        ars_post_dtlevel01_0:text,
+        ars_post_dt_key:text,
+        ars_post_flaglevel01_0:text,
+        ars_post_flag_key:text,
+        ars_prnt_cdlevel01_0:text,
+        ars_prnt_cd_key:text,
+        ars_srcelevel01_0:text,
+        ars_srce_key:text,
+        ars_stmt_desclevel01_0:text,
+        ars_stmt_desc_key:text,
+        ars_stmt_dtlevel01_0:text,
+        ars_stmt_dt_key:text,
+        ars_term_idlevel01_0:text,
+        ars_term_id_key:text,
+        ars_veh_sers_cdlevel01_0:text,
+        ars_veh_sers_cd_key:text,
+        ars_vndr_cdlevel01_0:text,
+        ars_vndr_cd_key:text,
+        ars_web_prnt_cdlevel01_0:text,
+        ars_web_prnt_cd_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accounting'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_arstmt(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD arstmt_cre_by_idlevel01_0 (any) OPT ANY
+             ADD arstmt_cre_by_id_key (any) OPT ANY
+             ADD arstmt_cre_tslevel01_0 (any) OPT ANY
+             ADD arstmt_cre_ts_key (any) OPT ANY
+             ADD arstmt_upd_by_idlevel01_0 (any) OPT ANY
+             ADD arstmt_upd_by_id_key (any) OPT ANY
+             ADD arstmt_upd_tslevel01_0 (any) OPT ANY
+             ADD arstmt_upd_ts_key (any) OPT ANY
+             ADD ars_btch_dtlevel01_0 (any) OPT ANY
+             ADD ars_btch_dt_key (any) OPT ANY
+             ADD ars_btch_seqlevel01_0 (any) OPT ANY
+             ADD ars_btch_seq_key (any) OPT ANY
+             ADD ars_btch_statlevel01_0 (any) OPT ANY
+             ADD ars_btch_stat_key (any) OPT ANY
+             ADD ars_dlr_numlevel01_0 (any) OPT ANY
+             ADD ars_dlr_num_key (any) OPT ANY
+             ADD ars_doc_dtlevel01_0 (any) OPT ANY
+             ADD ars_doc_dt_key (any) OPT ANY
+             ADD ars_doc_numlevel01_0 (any) OPT ANY
+             ADD ars_doc_num_key (any) OPT ANY
+             ADD ars_doc_seqlevel01_0 (any) OPT ANY
+             ADD ars_doc_seq_key (any) OPT ANY
+             ADD ars_doc_statlevel01_0 (any) OPT ANY
+             ADD ars_doc_stat_key (any) OPT ANY
+             ADD ars_doc_typelevel01_0 (any) OPT ANY
+             ADD ars_doc_type_key (any) OPT ANY
+             ADD ars_orig_namelevel01_0 (any) OPT ANY
+             ADD ars_orig_name_key (any) OPT ANY
+             ADD ars_orig_seqlevel01_0 (any) OPT ANY
+             ADD ars_orig_seq_key (any) OPT ANY
+             ADD ars_part_tran_cdlevel01_0 (any) OPT ANY
+             ADD ars_part_tran_cd_key (any) OPT ANY
+             ADD ars_pmt_dtlevel01_0 (any) OPT ANY
+             ADD ars_pmt_dt_key (any) OPT ANY
+             ADD ars_pmt_numlevel01_0 (any) OPT ANY
+             ADD ars_pmt_num_key (any) OPT ANY
+             ADD ars_post_dtlevel01_0 (any) OPT ANY
+             ADD ars_post_dt_key (any) OPT ANY
+             ADD ars_post_flaglevel01_0 (any) OPT ANY
+             ADD ars_post_flag_key (any) OPT ANY
+             ADD ars_prnt_cdlevel01_0 (any) OPT ANY
+             ADD ars_prnt_cd_key (any) OPT ANY
+             ADD ars_srcelevel01_0 (any) OPT ANY
+             ADD ars_srce_key (any) OPT ANY
+             ADD ars_stmt_desclevel01_0 (any) OPT ANY
+             ADD ars_stmt_desc_key (any) OPT ANY
+             ADD ars_stmt_dtlevel01_0 (any) OPT ANY
+             ADD ars_stmt_dt_key (any) OPT ANY
+             ADD ars_term_idlevel01_0 (any) OPT ANY
+             ADD ars_term_id_key (any) OPT ANY
+             ADD ars_veh_sers_cdlevel01_0 (any) OPT ANY
+             ADD ars_veh_sers_cd_key (any) OPT ANY
+             ADD ars_vndr_cdlevel01_0 (any) OPT ANY
+             ADD ars_vndr_cd_key (any) OPT ANY
+             ADD ars_web_prnt_cdlevel01_0 (any) OPT ANY
+             ADD ars_web_prnt_cd_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (ars_btch_dt_key, ars_btch_dtlevel01_0, ars_btch_seq_key, ars_btch_seqlevel01_0, ars_btch_stat_key, ars_btch_statlevel01_0, ars_dlr_num_key, ars_dlr_numlevel01_0, ars_doc_dt_key, ars_doc_dtlevel01_0, ars_doc_num_key, ars_doc_numlevel01_0, ars_doc_seq_key, ars_doc_seqlevel01_0, ars_doc_stat_key, ars_doc_statlevel01_0, ars_doc_type_key, ars_doc_typelevel01_0, ars_orig_name_key, ars_orig_namelevel01_0, ars_orig_seq_key, ars_orig_seqlevel01_0, ars_part_tran_cd_key, ars_part_tran_cdlevel01_0, ars_pmt_dt_key, ars_pmt_dtlevel01_0, ars_pmt_num_key, ars_pmt_numlevel01_0, ars_post_dt_key, ars_post_dtlevel01_0, ars_post_flag_key, ars_post_flaglevel01_0, ars_prnt_cd_key, ars_prnt_cdlevel01_0, ars_srce_key, ars_srcelevel01_0, ars_stmt_desc_key, ars_stmt_desclevel01_0, ars_stmt_dt_key, ars_stmt_dtlevel01_0, ars_term_id_key, ars_term_idlevel01_0, ars_veh_sers_cd_key, ars_veh_sers_cdlevel01_0, ars_vndr_cd_key, ars_vndr_cdlevel01_0, ars_web_prnt_cd_key, ars_web_prnt_cdlevel01_0, arstmt_cre_by_id_key, arstmt_cre_by_idlevel01_0, arstmt_cre_ts_key, arstmt_cre_tslevel01_0, arstmt_upd_by_id_key, arstmt_upd_by_idlevel01_0, arstmt_upd_ts_key, arstmt_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_arstmt)
+    );
+

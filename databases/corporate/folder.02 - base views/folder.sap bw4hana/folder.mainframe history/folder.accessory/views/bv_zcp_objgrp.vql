@@ -1,0 +1,76 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_objgrp
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_OBJGRP'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        aoj_acc_obj_grp_snlevel01_0 = '[4ZCP_OBJGRP-AOJ_ACC_OBJ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_ACC_OBJ]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_ACC_OBJ]' LEVELPOSITION=1,
+        aoj_acc_obj_grp_sn_key = '[4ZCP_OBJGRP-AOJ_ACC_OBJ].[24ZCP_OBJGRP-AOJ_ACC_OBJ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_ACC_OBJ]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_ACC_OBJ]' ATTRIBUTE,
+        aoj_acc_obj_pctlevel01_0 = '[4ZCP_OBJGRP-AOJ_ACC_OB_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_ACC_OB_0]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_ACC_OB_0]' LEVELPOSITION=1,
+        aoj_acc_obj_pct_key = '[4ZCP_OBJGRP-AOJ_ACC_OB_0].[24ZCP_OBJGRP-AOJ_ACC_OB_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_ACC_OB_0]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_ACC_OB_0]' ATTRIBUTE,
+        aoj_acc_prunit_pmt_amlevel01_0 = '[4ZCP_OBJGRP-PUWOF030VPDF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-PUWOF030VPDF]' DIMENSIONNAME = '[4ZCP_OBJGRP-PUWOF030VPDF]' LEVELPOSITION=1,
+        aoj_acc_prunit_pmt_am_key = '[4ZCP_OBJGRP-PUWOF030VPDF].[24ZCP_OBJGRP-PUWOF030VPDF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-PUWOF030VPDF]' DIMENSIONNAME = '[4ZCP_OBJGRP-PUWOF030VPDF]' ATTRIBUTE,
+        aoj_archive_cdlevel01_0 = '[4ZCP_OBJGRP-AOJ_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_ARCHIVE]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_ARCHIVE]' LEVELPOSITION=1,
+        aoj_archive_cd_key = '[4ZCP_OBJGRP-AOJ_ARCHIVE].[24ZCP_OBJGRP-AOJ_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_ARCHIVE]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_ARCHIVE]' ATTRIBUTE,
+        aoj_cre_by_idlevel01_0 = '[4ZCP_OBJGRP-AOJ_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_CRE_BY_I]' LEVELPOSITION=1,
+        aoj_cre_by_id_key = '[4ZCP_OBJGRP-AOJ_CRE_BY_I].[24ZCP_OBJGRP-AOJ_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_CRE_BY_I]' ATTRIBUTE,
+        aoj_cre_tslevel01_0 = '[4ZCP_OBJGRP-AOJ_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_CRE_TS]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_CRE_TS]' LEVELPOSITION=1,
+        aoj_cre_ts_key = '[4ZCP_OBJGRP-AOJ_CRE_TS].[24ZCP_OBJGRP-AOJ_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_CRE_TS]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_CRE_TS]' ATTRIBUTE,
+        aoj_upd_by_idlevel01_0 = '[4ZCP_OBJGRP-AOJ_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_UPD_BY_I]' LEVELPOSITION=1,
+        aoj_upd_by_id_key = '[4ZCP_OBJGRP-AOJ_UPD_BY_I].[24ZCP_OBJGRP-AOJ_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_UPD_BY_I]' ATTRIBUTE,
+        aoj_upd_tslevel01_0 = '[4ZCP_OBJGRP-AOJ_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_UPD_TS]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_UPD_TS]' LEVELPOSITION=1,
+        aoj_upd_ts_key = '[4ZCP_OBJGRP-AOJ_UPD_TS].[24ZCP_OBJGRP-AOJ_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_OBJGRP-AOJ_UPD_TS]' DIMENSIONNAME = '[4ZCP_OBJGRP-AOJ_UPD_TS]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_objgrp I18N us_cst (
+        aoj_acc_obj_grp_snlevel01_0:text,
+        aoj_acc_obj_grp_sn_key:text,
+        aoj_acc_obj_pctlevel01_0:text,
+        aoj_acc_obj_pct_key:text,
+        aoj_acc_prunit_pmt_amlevel01_0:text,
+        aoj_acc_prunit_pmt_am_key:text,
+        aoj_archive_cdlevel01_0:text,
+        aoj_archive_cd_key:text,
+        aoj_cre_by_idlevel01_0:text,
+        aoj_cre_by_id_key:text,
+        aoj_cre_tslevel01_0:text,
+        aoj_cre_ts_key:text,
+        aoj_upd_by_idlevel01_0:text,
+        aoj_upd_by_id_key:text,
+        aoj_upd_tslevel01_0:text,
+        aoj_upd_ts_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_objgrp(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD aoj_acc_obj_grp_snlevel01_0 (any) OPT ANY
+             ADD aoj_acc_obj_grp_sn_key (any) OPT ANY
+             ADD aoj_acc_obj_pctlevel01_0 (any) OPT ANY
+             ADD aoj_acc_obj_pct_key (any) OPT ANY
+             ADD aoj_acc_prunit_pmt_amlevel01_0 (any) OPT ANY
+             ADD aoj_acc_prunit_pmt_am_key (any) OPT ANY
+             ADD aoj_archive_cdlevel01_0 (any) OPT ANY
+             ADD aoj_archive_cd_key (any) OPT ANY
+             ADD aoj_cre_by_idlevel01_0 (any) OPT ANY
+             ADD aoj_cre_by_id_key (any) OPT ANY
+             ADD aoj_cre_tslevel01_0 (any) OPT ANY
+             ADD aoj_cre_ts_key (any) OPT ANY
+             ADD aoj_upd_by_idlevel01_0 (any) OPT ANY
+             ADD aoj_upd_by_id_key (any) OPT ANY
+             ADD aoj_upd_tslevel01_0 (any) OPT ANY
+             ADD aoj_upd_ts_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (aoj_acc_obj_grp_sn_key, aoj_acc_obj_grp_snlevel01_0, aoj_acc_obj_pct_key, aoj_acc_obj_pctlevel01_0, aoj_acc_prunit_pmt_am_key, aoj_acc_prunit_pmt_amlevel01_0, aoj_archive_cd_key, aoj_archive_cdlevel01_0, aoj_cre_by_id_key, aoj_cre_by_idlevel01_0, aoj_cre_ts_key, aoj_cre_tslevel01_0, aoj_upd_by_id_key, aoj_upd_by_idlevel01_0, aoj_upd_ts_key, aoj_upd_tslevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_objgrp)
+    );
+

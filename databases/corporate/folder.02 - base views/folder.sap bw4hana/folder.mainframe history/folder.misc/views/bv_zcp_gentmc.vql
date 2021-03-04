@@ -1,0 +1,112 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_gentmc
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/misc'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENTMC'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_GENTMC-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENTMC-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_by_id_key = '[4ZCP_GENTMC-CRE_BY_ID].[24ZCP_GENTMC-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENTMC-CRE_BY_ID]' ATTRIBUTE,
+        cre_tslevel01_0 = '[4ZCP_GENTMC-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENTMC-CRE_TS]' LEVELPOSITION=1,
+        cre_ts_key = '[4ZCP_GENTMC-CRE_TS].[24ZCP_GENTMC-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENTMC-CRE_TS]' ATTRIBUTE,
+        gentmc_key_filler01level01_0 = '[4ZCP_GENTMC-GENTMC_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-GENTMC_KEY_F]' DIMENSIONNAME = '[4ZCP_GENTMC-GENTMC_KEY_F]' LEVELPOSITION=1,
+        gentmc_key_filler01_key = '[4ZCP_GENTMC-GENTMC_KEY_F].[24ZCP_GENTMC-GENTMC_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-GENTMC_KEY_F]' DIMENSIONNAME = '[4ZCP_GENTMC-GENTMC_KEY_F]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        tmc_commentslevel01_0 = '[4ZCP_GENTMC-TMC_COMMENTS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_COMMENTS]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_COMMENTS]' LEVELPOSITION=1,
+        tmc_comments_key = '[4ZCP_GENTMC-TMC_COMMENTS].[24ZCP_GENTMC-TMC_COMMENTS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_COMMENTS]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_COMMENTS]' ATTRIBUTE,
+        tmc_date_offlevel01_0 = '[4ZCP_GENTMC-TMC_DATE_OFF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_DATE_OFF]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_DATE_OFF]' LEVELPOSITION=1,
+        tmc_date_off_key = '[4ZCP_GENTMC-TMC_DATE_OFF].[24ZCP_GENTMC-TMC_DATE_OFF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_DATE_OFF]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_DATE_OFF]' ATTRIBUTE,
+        tmc_date_onlevel01_0 = '[4ZCP_GENTMC-TMC_DATE_ON].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_DATE_ON]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_DATE_ON]' LEVELPOSITION=1,
+        tmc_date_on_key = '[4ZCP_GENTMC-TMC_DATE_ON].[24ZCP_GENTMC-TMC_DATE_ON]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_DATE_ON]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_DATE_ON]' ATTRIBUTE,
+        tmc_dlrlevel01_0 = '[4ZCP_GENTMC-TMC_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_DLR]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_DLR]' LEVELPOSITION=1,
+        tmc_dlr_key = '[4ZCP_GENTMC-TMC_DLR].[24ZCP_GENTMC-TMC_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_DLR]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_DLR]' ATTRIBUTE,
+        tmc_fleetlevel01_0 = '[4ZCP_GENTMC-TMC_FLEET].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_FLEET]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_FLEET]' LEVELPOSITION=1,
+        tmc_fleet_key = '[4ZCP_GENTMC-TMC_FLEET].[24ZCP_GENTMC-TMC_FLEET]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_FLEET]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_FLEET]' ATTRIBUTE,
+        tmc_rtllevel01_0 = '[4ZCP_GENTMC-TMC_RTL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_RTL]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_RTL]' LEVELPOSITION=1,
+        tmc_rtl_key = '[4ZCP_GENTMC-TMC_RTL].[24ZCP_GENTMC-TMC_RTL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_RTL]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_RTL]' ATTRIBUTE,
+        tmc_traclevel01_0 = '[4ZCP_GENTMC-TMC_TRAC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_TRAC]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_TRAC]' LEVELPOSITION=1,
+        tmc_trac_key = '[4ZCP_GENTMC-TMC_TRAC].[24ZCP_GENTMC-TMC_TRAC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-TMC_TRAC]' DIMENSIONNAME = '[4ZCP_GENTMC-TMC_TRAC]' ATTRIBUTE,
+        upd_by_idlevel01_0 = '[4ZCP_GENTMC-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENTMC-UPD_BY_ID]' LEVELPOSITION=1,
+        upd_by_id_key = '[4ZCP_GENTMC-UPD_BY_ID].[24ZCP_GENTMC-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENTMC-UPD_BY_ID]' ATTRIBUTE,
+        upd_tslevel01_0 = '[4ZCP_GENTMC-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENTMC-UPD_TS]' LEVELPOSITION=1,
+        upd_ts_key = '[4ZCP_GENTMC-UPD_TS].[24ZCP_GENTMC-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENTMC-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENTMC-UPD_TS]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_gentmc I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_by_id_key:text,
+        cre_tslevel01_0:text,
+        cre_ts_key:text,
+        gentmc_key_filler01level01_0:text,
+        gentmc_key_filler01_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        tmc_commentslevel01_0:text,
+        tmc_comments_key:text,
+        tmc_date_offlevel01_0:text,
+        tmc_date_off_key:text,
+        tmc_date_onlevel01_0:text,
+        tmc_date_on_key:text,
+        tmc_dlrlevel01_0:text,
+        tmc_dlr_key:text,
+        tmc_fleetlevel01_0:text,
+        tmc_fleet_key:text,
+        tmc_rtllevel01_0:text,
+        tmc_rtl_key:text,
+        tmc_traclevel01_0:text,
+        tmc_trac_key:text,
+        upd_by_idlevel01_0:text,
+        upd_by_id_key:text,
+        upd_tslevel01_0:text,
+        upd_ts_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/misc'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_gentmc(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_by_id_key (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD cre_ts_key (any) OPT ANY
+             ADD gentmc_key_filler01level01_0 (any) OPT ANY
+             ADD gentmc_key_filler01_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD tmc_commentslevel01_0 (any) OPT ANY
+             ADD tmc_comments_key (any) OPT ANY
+             ADD tmc_date_offlevel01_0 (any) OPT ANY
+             ADD tmc_date_off_key (any) OPT ANY
+             ADD tmc_date_onlevel01_0 (any) OPT ANY
+             ADD tmc_date_on_key (any) OPT ANY
+             ADD tmc_dlrlevel01_0 (any) OPT ANY
+             ADD tmc_dlr_key (any) OPT ANY
+             ADD tmc_fleetlevel01_0 (any) OPT ANY
+             ADD tmc_fleet_key (any) OPT ANY
+             ADD tmc_rtllevel01_0 (any) OPT ANY
+             ADD tmc_rtl_key (any) OPT ANY
+             ADD tmc_traclevel01_0 (any) OPT ANY
+             ADD tmc_trac_key (any) OPT ANY
+             ADD upd_by_idlevel01_0 (any) OPT ANY
+             ADD upd_by_id_key (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD upd_ts_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, gentmc_key_filler01_key, gentmc_key_filler01level01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, tmc_comments_key, tmc_commentslevel01_0, tmc_date_off_key, tmc_date_offlevel01_0, tmc_date_on_key, tmc_date_onlevel01_0, tmc_dlr_key, tmc_dlrlevel01_0, tmc_fleet_key, tmc_fleetlevel01_0, tmc_rtl_key, tmc_rtllevel01_0, tmc_trac_key, tmc_traclevel01_0, upd_by_id_key, upd_by_idlevel01_0, upd_ts_key, upd_tslevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_gentmc)
+    );
+

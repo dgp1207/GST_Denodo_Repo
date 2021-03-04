@@ -1,0 +1,124 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_empsls
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/dealer detail'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_EMPSLS'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = TRUE
+    OUTPUTSCHEMA (
+        empsls_cre_by_idlevel01_0 = '[4ZCP_EMPSLS-EMPSLS_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMPSLS_CRE_B]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMPSLS_CRE_B]' LEVELPOSITION=1,
+        empsls_cre_by_id_key = '[4ZCP_EMPSLS-EMPSLS_CRE_B].[24ZCP_EMPSLS-EMPSLS_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMPSLS_CRE_B]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMPSLS_CRE_B]' ATTRIBUTE,
+        empsls_cre_tslevel01_0 = '[4ZCP_EMPSLS-EMPSLS_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMPSLS_CRE_T]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMPSLS_CRE_T]' LEVELPOSITION=1,
+        empsls_cre_ts_key = '[4ZCP_EMPSLS-EMPSLS_CRE_T].[24ZCP_EMPSLS-EMPSLS_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMPSLS_CRE_T]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMPSLS_CRE_T]' ATTRIBUTE,
+        empsls_upd_by_idlevel01_0 = '[4ZCP_EMPSLS-EMPSLS_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMPSLS_UPD_B]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMPSLS_UPD_B]' LEVELPOSITION=1,
+        empsls_upd_by_id_key = '[4ZCP_EMPSLS-EMPSLS_UPD_B].[24ZCP_EMPSLS-EMPSLS_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMPSLS_UPD_B]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMPSLS_UPD_B]' ATTRIBUTE,
+        empsls_upd_tslevel01_0 = '[4ZCP_EMPSLS-EMPSLS_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMPSLS_UPD_T]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMPSLS_UPD_T]' LEVELPOSITION=1,
+        empsls_upd_ts_key = '[4ZCP_EMPSLS-EMPSLS_UPD_T].[24ZCP_EMPSLS-EMPSLS_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMPSLS_UPD_T]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMPSLS_UPD_T]' ATTRIBUTE,
+        ems_dlr_numlevel01_0 = '[4ZCP_EMPSLS-EMS_DLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_DLR_NUM]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_DLR_NUM]' LEVELPOSITION=1,
+        ems_dlr_num_key = '[4ZCP_EMPSLS-EMS_DLR_NUM].[24ZCP_EMPSLS-EMS_DLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_DLR_NUM]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_DLR_NUM]' ATTRIBUTE,
+        ems_dtlevel01_0 = '[4ZCP_EMPSLS-EMS_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_DT]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_DT]' LEVELPOSITION=1,
+        ems_dt_key = '[4ZCP_EMPSLS-EMS_DT].[24ZCP_EMPSLS-EMS_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_DT]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_DT]' ATTRIBUTE,
+        ems_emp_numlevel01_0 = '[4ZCP_EMPSLS-EMS_EMP_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_EMP_NUM]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_EMP_NUM]' LEVELPOSITION=1,
+        ems_emp_num_key = '[4ZCP_EMPSLS-EMS_EMP_NUM].[24ZCP_EMPSLS-EMS_EMP_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_EMP_NUM]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_EMP_NUM]' ATTRIBUTE,
+        ems_molevel01_0 = '[4ZCP_EMPSLS-EMS_MO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_MO]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_MO]' LEVELPOSITION=1,
+        ems_mo_key = '[4ZCP_EMPSLS-EMS_MO].[24ZCP_EMPSLS-EMS_MO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_MO]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_MO]' ATTRIBUTE,
+        ems_mtd_flt_rlbklevel01_0 = '[4ZCP_EMPSLS-EMS_MTD_FL_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_MTD_FL_0]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_MTD_FL_0]' LEVELPOSITION=1,
+        ems_mtd_flt_rlbk_key = '[4ZCP_EMPSLS-EMS_MTD_FL_0].[24ZCP_EMPSLS-EMS_MTD_FL_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_MTD_FL_0]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_MTD_FL_0]' ATTRIBUTE,
+        ems_mtd_flt_salelevel01_0 = '[4ZCP_EMPSLS-EMS_MTD_FLT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_MTD_FLT]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_MTD_FLT]' LEVELPOSITION=1,
+        ems_mtd_flt_sale_key = '[4ZCP_EMPSLS-EMS_MTD_FLT].[24ZCP_EMPSLS-EMS_MTD_FLT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_MTD_FLT]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_MTD_FLT]' ATTRIBUTE,
+        ems_mtd_rtl_rlbklevel01_0 = '[4ZCP_EMPSLS-EMS_MTD_RT_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_MTD_RT_0]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_MTD_RT_0]' LEVELPOSITION=1,
+        ems_mtd_rtl_rlbk_key = '[4ZCP_EMPSLS-EMS_MTD_RT_0].[24ZCP_EMPSLS-EMS_MTD_RT_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_MTD_RT_0]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_MTD_RT_0]' ATTRIBUTE,
+        ems_mtd_rtl_salelevel01_0 = '[4ZCP_EMPSLS-EMS_MTD_RTL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_MTD_RTL]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_MTD_RTL]' LEVELPOSITION=1,
+        ems_mtd_rtl_sale_key = '[4ZCP_EMPSLS-EMS_MTD_RTL].[24ZCP_EMPSLS-EMS_MTD_RTL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_MTD_RTL]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_MTD_RTL]' ATTRIBUTE,
+        ems_sers_cdlevel01_0 = '[4ZCP_EMPSLS-EMS_SERS_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_SERS_CD]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_SERS_CD]' LEVELPOSITION=1,
+        ems_sers_cd_key = '[4ZCP_EMPSLS-EMS_SERS_CD].[24ZCP_EMPSLS-EMS_SERS_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_SERS_CD]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_SERS_CD]' ATTRIBUTE,
+        ems_yrlevel01_0 = '[4ZCP_EMPSLS-EMS_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_YR]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_YR]' LEVELPOSITION=1,
+        ems_yr_key = '[4ZCP_EMPSLS-EMS_YR].[24ZCP_EMPSLS-EMS_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_EMPSLS-EMS_YR]' DIMENSIONNAME = '[4ZCP_EMPSLS-EMS_YR]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_empsls I18N us_cst (
+        empsls_cre_by_idlevel01_0:text,
+        empsls_cre_by_id_key:text,
+        empsls_cre_tslevel01_0:text,
+        empsls_cre_ts_key:text,
+        empsls_upd_by_idlevel01_0:text,
+        empsls_upd_by_id_key:text,
+        empsls_upd_tslevel01_0:text,
+        empsls_upd_ts_key:text,
+        ems_dlr_numlevel01_0:text,
+        ems_dlr_num_key:text,
+        ems_dtlevel01_0:text,
+        ems_dt_key:text,
+        ems_emp_numlevel01_0:text,
+        ems_emp_num_key:text,
+        ems_molevel01_0:text,
+        ems_mo_key:text,
+        ems_mtd_flt_rlbklevel01_0:text,
+        ems_mtd_flt_rlbk_key:text,
+        ems_mtd_flt_salelevel01_0:text,
+        ems_mtd_flt_sale_key:text,
+        ems_mtd_rtl_rlbklevel01_0:text,
+        ems_mtd_rtl_rlbk_key:text,
+        ems_mtd_rtl_salelevel01_0:text,
+        ems_mtd_rtl_sale_key:text,
+        ems_sers_cdlevel01_0:text,
+        ems_sers_cd_key:text,
+        ems_yrlevel01_0:text,
+        ems_yr_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/dealer detail'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_empsls(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD empsls_cre_by_idlevel01_0 (any) OPT ANY
+             ADD empsls_cre_by_id_key (any) OPT ANY
+             ADD empsls_cre_tslevel01_0 (any) OPT ANY
+             ADD empsls_cre_ts_key (any) OPT ANY
+             ADD empsls_upd_by_idlevel01_0 (any) OPT ANY
+             ADD empsls_upd_by_id_key (any) OPT ANY
+             ADD empsls_upd_tslevel01_0 (any) OPT ANY
+             ADD empsls_upd_ts_key (any) OPT ANY
+             ADD ems_dlr_numlevel01_0 (any) OPT ANY
+             ADD ems_dlr_num_key (any) OPT ANY
+             ADD ems_dtlevel01_0 (any) OPT ANY
+             ADD ems_dt_key (any) OPT ANY
+             ADD ems_emp_numlevel01_0 (any) OPT ANY
+             ADD ems_emp_num_key (any) OPT ANY
+             ADD ems_molevel01_0 (any) OPT ANY
+             ADD ems_mo_key (any) OPT ANY
+             ADD ems_mtd_flt_rlbklevel01_0 (any) OPT ANY
+             ADD ems_mtd_flt_rlbk_key (any) OPT ANY
+             ADD ems_mtd_flt_salelevel01_0 (any) OPT ANY
+             ADD ems_mtd_flt_sale_key (any) OPT ANY
+             ADD ems_mtd_rtl_rlbklevel01_0 (any) OPT ANY
+             ADD ems_mtd_rtl_rlbk_key (any) OPT ANY
+             ADD ems_mtd_rtl_salelevel01_0 (any) OPT ANY
+             ADD ems_mtd_rtl_sale_key (any) OPT ANY
+             ADD ems_sers_cdlevel01_0 (any) OPT ANY
+             ADD ems_sers_cd_key (any) OPT ANY
+             ADD ems_yrlevel01_0 (any) OPT ANY
+             ADD ems_yr_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (empsls_cre_by_id_key, empsls_cre_by_idlevel01_0, empsls_cre_ts_key, empsls_cre_tslevel01_0, empsls_upd_by_id_key, empsls_upd_by_idlevel01_0, empsls_upd_ts_key, empsls_upd_tslevel01_0, ems_dlr_num_key, ems_dlr_numlevel01_0, ems_dt_key, ems_dtlevel01_0, ems_emp_num_key, ems_emp_numlevel01_0, ems_mo_key, ems_molevel01_0, ems_mtd_flt_rlbk_key, ems_mtd_flt_rlbklevel01_0, ems_mtd_flt_sale_key, ems_mtd_flt_salelevel01_0, ems_mtd_rtl_rlbk_key, ems_mtd_rtl_rlbklevel01_0, ems_mtd_rtl_sale_key, ems_mtd_rtl_salelevel01_0, ems_sers_cd_key, ems_sers_cdlevel01_0, ems_yr_key, ems_yrlevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_empsls)
+    );
+

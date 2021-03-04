@@ -1,0 +1,115 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_v_sd003
+    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_V_SD003'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        baseunitofmeasurelevel01_0 = '[0BASE_UOM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' LEVELPOSITION=1,
+        currencylevel01_0 = '[0CURRENCY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CURRENCY]' DIMENSIONNAME = '[0CURRENCY]' LEVELPOSITION=1,
+        customerlevel01_0 = '[0CUSTOMER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' LEVELPOSITION=1,
+        documentcurrencylevel01_0 = '[0DOC_CURRCY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0DOC_CURRCY]' DIMENSIONNAME = '[0DOC_CURRCY]' LEVELPOSITION=1,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        internalvehiclenumlevel01_0 = '[ZINVEHNO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' LEVELPOSITION=1,
+        materiallevel01_0 = '[0MATERIAL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATERIAL]' DIMENSIONNAME = '[0MATERIAL]' LEVELPOSITION=1,
+        materialgrouplevel01_0 = '[0MATL_GROUP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATL_GROUP]' DIMENSIONNAME = '[0MATL_GROUP]' LEVELPOSITION=1,
+        monthidyyyymmlevel01_0 = '[ZMONTHID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' LEVELPOSITION=1,
+        rdrreversaldatelevel01_0 = '[ZRDRRDT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZRDRRDT]' DIMENSIONNAME = '[ZRDRRDT]' LEVELPOSITION=1,
+        salesarealevel01_0 = '[ZSALE_ARE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSALE_ARE]' DIMENSIONNAME = '[ZSALE_ARE]' LEVELPOSITION=1,
+        salesdistrictlevel01_0 = '[ZSAL_DIST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_DIST]' DIMENSIONNAME = '[ZSAL_DIST]' LEVELPOSITION=1,
+        salesdistricttextlevel01_0 = '[ZSDISTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSDISTXT]' DIMENSIONNAME = '[ZSDISTXT]' LEVELPOSITION=1,
+        salesgrouplevel01_0 = '[ZSAL_GRP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_GRP]' DIMENSIONNAME = '[ZSAL_GRP]' LEVELPOSITION=1,
+        salesgrouptextlevel01_0 = '[ZSGRPTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSGRPTXT]' DIMENSIONNAME = '[ZSGRPTXT]' LEVELPOSITION=1,
+        salesofficetextlevel01_0 = '[ZSOFFTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSOFFTXT]' DIMENSIONNAME = '[ZSOFFTXT]' LEVELPOSITION=1,
+        salesofficelevel01_0 = '[ZSAL_OFF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_OFF]' DIMENSIONNAME = '[ZSAL_OFF]' LEVELPOSITION=1,
+        soldtopartylevel01_0 = '[0SOLD_TO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SOLD_TO]' DIMENSIONNAME = '[0SOLD_TO]' LEVELPOSITION=1,
+        vt_53_rev_authlevel01_0 = '[4ZCP_V_SD003-VT_53_REV_AU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-VT_53_REV_AU]' DIMENSIONNAME = '[4ZCP_V_SD003-VT_53_REV_AU]' LEVELPOSITION=1,
+        vt_53_rev_to_dlrlevel01_0 = '[4ZCP_V_SD003-VT_53_REV_TO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-VT_53_REV_TO]' DIMENSIONNAME = '[4ZCP_V_SD003-VT_53_REV_TO]' LEVELPOSITION=1,
+        vehicleidentificatilevel01_0 = '[ZVEHIDNO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHIDNO]' DIMENSIONNAME = '[ZVEHIDNO]' LEVELPOSITION=1,
+        vehiclerdrdatelevel01_0 = '[ZVEHRDRDT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRDRDT]' DIMENSIONNAME = '[ZVEHRDRDT]' LEVELPOSITION=1,
+        zvehrdrdt__0calquart1level01_0 = '[0CALQUART1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALQUART1]' DIMENSIONNAME = '[0CALQUART1]' LEVELPOSITION=1,
+        zvehrdrdt__0calweeklevel01_0 = '[0CALWEEK].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALWEEK]' DIMENSIONNAME = '[0CALWEEK]' LEVELPOSITION=1,
+        zvehrdrdt__0calyearlevel01_0 = '[0CALYEAR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALYEAR]' DIMENSIONNAME = '[0CALYEAR]' LEVELPOSITION=1,
+        zvehrdrdt__0halfyear1level01_0 = '[0HALFYEAR1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0HALFYEAR1]' DIMENSIONNAME = '[0HALFYEAR1]' LEVELPOSITION=1,
+        grosslistpriceof_0 = '[Measures].[ZGLPRICEV]' : 'java.lang.Double' (OPT) MEASURE,
+        netvalue_0 = '[Measures].[0NET_VALUE]' : 'java.lang.Double' (OPT) MEASURE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        qtyinbaseuom_0 = '[Measures].[0QUANT_B]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_v_sd003 I18N us_cst (
+        baseunitofmeasurelevel01_0:text,
+        currencylevel01_0:text,
+        customerlevel01_0:text,
+        documentcurrencylevel01_0:text,
+        infoproviderlevel01_0:text,
+        internalvehiclenumlevel01_0:text,
+        materiallevel01_0:text,
+        materialgrouplevel01_0:text,
+        monthidyyyymmlevel01_0:text,
+        rdrreversaldatelevel01_0:text,
+        salesarealevel01_0:text,
+        salesdistrictlevel01_0:text,
+        salesdistricttextlevel01_0:text,
+        salesgrouplevel01_0:text,
+        salesgrouptextlevel01_0:text,
+        salesofficetextlevel01_0:text,
+        salesofficelevel01_0:text,
+        soldtopartylevel01_0:text,
+        vt_53_rev_authlevel01_0:text,
+        vt_53_rev_to_dlrlevel01_0:text,
+        vehicleidentificatilevel01_0:text,
+        vehiclerdrdatelevel01_0:text,
+        zvehrdrdt__0calquart1level01_0:text,
+        zvehrdrdt__0calweeklevel01_0:text,
+        zvehrdrdt__0calyearlevel01_0:text,
+        zvehrdrdt__0halfyear1level01_0:text,
+        grosslistpriceof_0:double,
+        netvalue_0:double,
+        numberofrecords_0:double,
+        qtyinbaseuom_0:double
+    )
+    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_v_sd003(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD baseunitofmeasurelevel01_0 (any) OPT ANY
+             ADD currencylevel01_0 (any) OPT ANY
+             ADD customerlevel01_0 (any) OPT ANY
+             ADD documentcurrencylevel01_0 (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD internalvehiclenumlevel01_0 (any) OPT ANY
+             ADD materiallevel01_0 (any) OPT ANY
+             ADD materialgrouplevel01_0 (any) OPT ANY
+             ADD monthidyyyymmlevel01_0 (any) OPT ANY
+             ADD rdrreversaldatelevel01_0 (any) OPT ANY
+             ADD salesarealevel01_0 (any) OPT ANY
+             ADD salesdistrictlevel01_0 (any) OPT ANY
+             ADD salesdistricttextlevel01_0 (any) OPT ANY
+             ADD salesgrouplevel01_0 (any) OPT ANY
+             ADD salesgrouptextlevel01_0 (any) OPT ANY
+             ADD salesofficetextlevel01_0 (any) OPT ANY
+             ADD salesofficelevel01_0 (any) OPT ANY
+             ADD soldtopartylevel01_0 (any) OPT ANY
+             ADD vt_53_rev_authlevel01_0 (any) OPT ANY
+             ADD vt_53_rev_to_dlrlevel01_0 (any) OPT ANY
+             ADD vehicleidentificatilevel01_0 (any) OPT ANY
+             ADD vehiclerdrdatelevel01_0 (any) OPT ANY
+             ADD zvehrdrdt__0calquart1level01_0 (any) OPT ANY
+             ADD zvehrdrdt__0calweeklevel01_0 (any) OPT ANY
+             ADD zvehrdrdt__0calyearlevel01_0 (any) OPT ANY
+             ADD zvehrdrdt__0halfyear1level01_0 (any) OPT ANY
+             ADD grosslistpriceof_0 (any) OPT ANY
+             ADD netvalue_0 (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+             ADD qtyinbaseuom_0 (any) OPT ANY
+        )
+        OUTPUTLIST (baseunitofmeasurelevel01_0, currencylevel01_0, customerlevel01_0, documentcurrencylevel01_0, grosslistpriceof_0, infoproviderlevel01_0, internalvehiclenumlevel01_0, materialgrouplevel01_0, materiallevel01_0, monthidyyyymmlevel01_0, netvalue_0, numberofrecords_0, qtyinbaseuom_0, rdrreversaldatelevel01_0, salesarealevel01_0, salesdistrictlevel01_0, salesdistricttextlevel01_0, salesgrouplevel01_0, salesgrouptextlevel01_0, salesofficelevel01_0, salesofficetextlevel01_0, soldtopartylevel01_0, vehicleidentificatilevel01_0, vehiclerdrdatelevel01_0, vt_53_rev_authlevel01_0, vt_53_rev_to_dlrlevel01_0, zvehrdrdt__0calquart1level01_0, zvehrdrdt__0calweeklevel01_0, zvehrdrdt__0calyearlevel01_0, zvehrdrdt__0halfyear1level01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_v_sd003)
+    );
+

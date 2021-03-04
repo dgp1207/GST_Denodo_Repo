@@ -1,0 +1,238 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_dohead
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_DOHEAD'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        dohead_cre_by_idlevel01_0 = '[4ZCP_DOHEAD-DOHEAD_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOHEAD_CRE_B]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOHEAD_CRE_B]' LEVELPOSITION=1,
+        dohead_cre_by_id_key = '[4ZCP_DOHEAD-DOHEAD_CRE_B].[24ZCP_DOHEAD-DOHEAD_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOHEAD_CRE_B]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOHEAD_CRE_B]' ATTRIBUTE,
+        dohead_cre_tslevel01_0 = '[4ZCP_DOHEAD-DOHEAD_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOHEAD_CRE_T]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOHEAD_CRE_T]' LEVELPOSITION=1,
+        dohead_cre_ts_key = '[4ZCP_DOHEAD-DOHEAD_CRE_T].[24ZCP_DOHEAD-DOHEAD_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOHEAD_CRE_T]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOHEAD_CRE_T]' ATTRIBUTE,
+        dohead_upd_by_idlevel01_0 = '[4ZCP_DOHEAD-DOHEAD_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOHEAD_UPD_B]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOHEAD_UPD_B]' LEVELPOSITION=1,
+        dohead_upd_by_id_key = '[4ZCP_DOHEAD-DOHEAD_UPD_B].[24ZCP_DOHEAD-DOHEAD_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOHEAD_UPD_B]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOHEAD_UPD_B]' ATTRIBUTE,
+        dohead_upd_tslevel01_0 = '[4ZCP_DOHEAD-DOHEAD_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOHEAD_UPD_T]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOHEAD_UPD_T]' LEVELPOSITION=1,
+        dohead_upd_ts_key = '[4ZCP_DOHEAD-DOHEAD_UPD_T].[24ZCP_DOHEAD-DOHEAD_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOHEAD_UPD_T]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOHEAD_UPD_T]' ATTRIBUTE,
+        doh_archive_inlevel01_0 = '[4ZCP_DOHEAD-DOH_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_ARCHIVE]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_ARCHIVE]' LEVELPOSITION=1,
+        doh_archive_in_key = '[4ZCP_DOHEAD-DOH_ARCHIVE].[24ZCP_DOHEAD-DOH_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_ARCHIVE]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_ARCHIVE]' ATTRIBUTE,
+        doh_bin_box_tllevel01_0 = '[4ZCP_DOHEAD-DOH_BIN_BOX].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_BIN_BOX]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_BIN_BOX]' LEVELPOSITION=1,
+        doh_bin_box_tl_key = '[4ZCP_DOHEAD-DOH_BIN_BOX].[24ZCP_DOHEAD-DOH_BIN_BOX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_BIN_BOX]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_BIN_BOX]' ATTRIBUTE,
+        doh_bin_lbl_cntlevel01_0 = '[4ZCP_DOHEAD-DOH_BIN_LBL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_BIN_LBL]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_BIN_LBL]' LEVELPOSITION=1,
+        doh_bin_lbl_cnt_key = '[4ZCP_DOHEAD-DOH_BIN_LBL].[24ZCP_DOHEAD-DOH_BIN_LBL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_BIN_LBL]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_BIN_LBL]' ATTRIBUTE,
+        doh_blk_box_tllevel01_0 = '[4ZCP_DOHEAD-DOH_BLK_BOX].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_BLK_BOX]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_BLK_BOX]' LEVELPOSITION=1,
+        doh_blk_box_tl_key = '[4ZCP_DOHEAD-DOH_BLK_BOX].[24ZCP_DOHEAD-DOH_BLK_BOX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_BLK_BOX]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_BLK_BOX]' ATTRIBUTE,
+        doh_blk_lbl_cntlevel01_0 = '[4ZCP_DOHEAD-DOH_BLK_LBL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_BLK_LBL]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_BLK_LBL]' LEVELPOSITION=1,
+        doh_blk_lbl_cnt_key = '[4ZCP_DOHEAD-DOH_BLK_LBL].[24ZCP_DOHEAD-DOH_BLK_LBL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_BLK_LBL]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_BLK_LBL]' ATTRIBUTE,
+        doh_box_tllevel01_0 = '[4ZCP_DOHEAD-DOH_BOX_TL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_BOX_TL]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_BOX_TL]' LEVELPOSITION=1,
+        doh_box_tl_key = '[4ZCP_DOHEAD-DOH_BOX_TL].[24ZCP_DOHEAD-DOH_BOX_TL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_BOX_TL]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_BOX_TL]' ATTRIBUTE,
+        doh_carr_cdlevel01_0 = '[4ZCP_DOHEAD-DOH_CARR_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_CARR_CD]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_CARR_CD]' LEVELPOSITION=1,
+        doh_carr_cd_key = '[4ZCP_DOHEAD-DOH_CARR_CD].[24ZCP_DOHEAD-DOH_CARR_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_CARR_CD]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_CARR_CD]' ATTRIBUTE,
+        doh_cmtlevel01_0 = '[4ZCP_DOHEAD-DOH_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_CMT]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_CMT]' LEVELPOSITION=1,
+        doh_cmt_key = '[4ZCP_DOHEAD-DOH_CMT].[24ZCP_DOHEAD-DOH_CMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_CMT]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_CMT]' ATTRIBUTE,
+        doh_crit_type_cdlevel01_0 = '[4ZCP_DOHEAD-DOH_CRIT_TYP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_CRIT_TYP]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_CRIT_TYP]' LEVELPOSITION=1,
+        doh_crit_type_cd_key = '[4ZCP_DOHEAD-DOH_CRIT_TYP].[24ZCP_DOHEAD-DOH_CRIT_TYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_CRIT_TYP]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_CRIT_TYP]' ATTRIBUTE,
+        doh_dlr_numlevel01_0 = '[4ZCP_DOHEAD-DOH_DLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_DLR_NUM]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_DLR_NUM]' LEVELPOSITION=1,
+        doh_dlr_num_key = '[4ZCP_DOHEAD-DOH_DLR_NUM].[24ZCP_DOHEAD-DOH_DLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_DLR_NUM]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_DLR_NUM]' ATTRIBUTE,
+        doh_dlr_ord_numlevel01_0 = '[4ZCP_DOHEAD-DOH_DLR_ORD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_DLR_ORD]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_DLR_ORD]' LEVELPOSITION=1,
+        doh_dlr_ord_num_key = '[4ZCP_DOHEAD-DOH_DLR_ORD].[24ZCP_DOHEAD-DOH_DLR_ORD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_DLR_ORD]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_DLR_ORD]' ATTRIBUTE,
+        doh_dlr_prnt_seqlevel01_0 = '[4ZCP_DOHEAD-DOH_DLR_PRNT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_DLR_PRNT]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_DLR_PRNT]' LEVELPOSITION=1,
+        doh_dlr_prnt_seq_key = '[4ZCP_DOHEAD-DOH_DLR_PRNT].[24ZCP_DOHEAD-DOH_DLR_PRNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_DLR_PRNT]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_DLR_PRNT]' ATTRIBUTE,
+        doh_doc_rtelevel01_0 = '[4ZCP_DOHEAD-DOH_DOC_RTE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_DOC_RTE]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_DOC_RTE]' LEVELPOSITION=1,
+        doh_doc_rte_key = '[4ZCP_DOHEAD-DOH_DOC_RTE].[24ZCP_DOHEAD-DOH_DOC_RTE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_DOC_RTE]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_DOC_RTE]' ATTRIBUTE,
+        doh_grid_numlevel01_0 = '[4ZCP_DOHEAD-DOH_GRID_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_GRID_NUM]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_GRID_NUM]' LEVELPOSITION=1,
+        doh_grid_num_key = '[4ZCP_DOHEAD-DOH_GRID_NUM].[24ZCP_DOHEAD-DOH_GRID_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_GRID_NUM]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_GRID_NUM]' ATTRIBUTE,
+        doh_ln_tllevel01_0 = '[4ZCP_DOHEAD-DOH_LN_TL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_LN_TL]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_LN_TL]' LEVELPOSITION=1,
+        doh_ln_tl_key = '[4ZCP_DOHEAD-DOH_LN_TL].[24ZCP_DOHEAD-DOH_LN_TL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_LN_TL]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_LN_TL]' ATTRIBUTE,
+        doh_ord_dtlevel01_0 = '[4ZCP_DOHEAD-DOH_ORD_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_ORD_DT]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_ORD_DT]' LEVELPOSITION=1,
+        doh_ord_dt_key = '[4ZCP_DOHEAD-DOH_ORD_DT].[24ZCP_DOHEAD-DOH_ORD_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_ORD_DT]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_ORD_DT]' ATTRIBUTE,
+        doh_ord_tmlevel01_0 = '[4ZCP_DOHEAD-DOH_ORD_TM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_ORD_TM]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_ORD_TM]' LEVELPOSITION=1,
+        doh_ord_tm_key = '[4ZCP_DOHEAD-DOH_ORD_TM].[24ZCP_DOHEAD-DOH_ORD_TM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_ORD_TM]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_ORD_TM]' ATTRIBUTE,
+        doh_part_distlevel01_0 = '[4ZCP_DOHEAD-DOH_PART_DIS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_PART_DIS]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_PART_DIS]' LEVELPOSITION=1,
+        doh_part_dist_key = '[4ZCP_DOHEAD-DOH_PART_DIS].[24ZCP_DOHEAD-DOH_PART_DIS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_PART_DIS]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_PART_DIS]' ATTRIBUTE,
+        doh_pick_day_cdlevel01_0 = '[4ZCP_DOHEAD-DOH_PICK_DAY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_PICK_DAY]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_PICK_DAY]' LEVELPOSITION=1,
+        doh_pick_day_cd_key = '[4ZCP_DOHEAD-DOH_PICK_DAY].[24ZCP_DOHEAD-DOH_PICK_DAY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_PICK_DAY]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_PICK_DAY]' ATTRIBUTE,
+        doh_po_numlevel01_0 = '[4ZCP_DOHEAD-DOH_PO_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_PO_NUM]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_PO_NUM]' LEVELPOSITION=1,
+        doh_po_num_key = '[4ZCP_DOHEAD-DOH_PO_NUM].[24ZCP_DOHEAD-DOH_PO_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_PO_NUM]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_PO_NUM]' ATTRIBUTE,
+        doh_proc_dtlevel01_0 = '[4ZCP_DOHEAD-DOH_PROC_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_PROC_DT]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_PROC_DT]' LEVELPOSITION=1,
+        doh_proc_dt_key = '[4ZCP_DOHEAD-DOH_PROC_DT].[24ZCP_DOHEAD-DOH_PROC_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_PROC_DT]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_PROC_DT]' ATTRIBUTE,
+        doh_sale_type_cdlevel01_0 = '[4ZCP_DOHEAD-DOH_SALE_TYP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_SALE_TYP]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_SALE_TYP]' LEVELPOSITION=1,
+        doh_sale_type_cd_key = '[4ZCP_DOHEAD-DOH_SALE_TYP].[24ZCP_DOHEAD-DOH_SALE_TYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_SALE_TYP]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_SALE_TYP]' ATTRIBUTE,
+        doh_ship_dlr_numlevel01_0 = '[4ZCP_DOHEAD-DOH_SHIP_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_SHIP_DLR]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_SHIP_DLR]' LEVELPOSITION=1,
+        doh_ship_dlr_num_key = '[4ZCP_DOHEAD-DOH_SHIP_DLR].[24ZCP_DOHEAD-DOH_SHIP_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_SHIP_DLR]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_SHIP_DLR]' ATTRIBUTE,
+        doh_stat_cdlevel01_0 = '[4ZCP_DOHEAD-DOH_STAT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_STAT_CD]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_STAT_CD]' LEVELPOSITION=1,
+        doh_stat_cd_key = '[4ZCP_DOHEAD-DOH_STAT_CD].[24ZCP_DOHEAD-DOH_STAT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_STAT_CD]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_STAT_CD]' ATTRIBUTE,
+        doh_stat_tmstmplevel01_0 = '[4ZCP_DOHEAD-DOH_STAT_TMS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_STAT_TMS]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_STAT_TMS]' LEVELPOSITION=1,
+        doh_stat_tmstmp_key = '[4ZCP_DOHEAD-DOH_STAT_TMS].[24ZCP_DOHEAD-DOH_STAT_TMS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_STAT_TMS]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_STAT_TMS]' ATTRIBUTE,
+        doh_term_idlevel01_0 = '[4ZCP_DOHEAD-DOH_TERM_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_TERM_ID]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_TERM_ID]' LEVELPOSITION=1,
+        doh_term_id_key = '[4ZCP_DOHEAD-DOH_TERM_ID].[24ZCP_DOHEAD-DOH_TERM_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_TERM_ID]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_TERM_ID]' ATTRIBUTE,
+        doh_trm_box_tllevel01_0 = '[4ZCP_DOHEAD-DOH_TRM_BOX].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_TRM_BOX]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_TRM_BOX]' LEVELPOSITION=1,
+        doh_trm_box_tl_key = '[4ZCP_DOHEAD-DOH_TRM_BOX].[24ZCP_DOHEAD-DOH_TRM_BOX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_TRM_BOX]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_TRM_BOX]' ATTRIBUTE,
+        doh_trm_lbl_cntlevel01_0 = '[4ZCP_DOHEAD-DOH_TRM_LBL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_TRM_LBL]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_TRM_LBL]' LEVELPOSITION=1,
+        doh_trm_lbl_cnt_key = '[4ZCP_DOHEAD-DOH_TRM_LBL].[24ZCP_DOHEAD-DOH_TRM_LBL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_TRM_LBL]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_TRM_LBL]' ATTRIBUTE,
+        doh_vinlevel01_0 = '[4ZCP_DOHEAD-DOH_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_VIN]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_VIN]' LEVELPOSITION=1,
+        doh_vin_key = '[4ZCP_DOHEAD-DOH_VIN].[24ZCP_DOHEAD-DOH_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DOHEAD-DOH_VIN]' DIMENSIONNAME = '[4ZCP_DOHEAD-DOH_VIN]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_dohead I18N us_cst (
+        dohead_cre_by_idlevel01_0:text,
+        dohead_cre_by_id_key:text,
+        dohead_cre_tslevel01_0:text,
+        dohead_cre_ts_key:text,
+        dohead_upd_by_idlevel01_0:text,
+        dohead_upd_by_id_key:text,
+        dohead_upd_tslevel01_0:text,
+        dohead_upd_ts_key:text,
+        doh_archive_inlevel01_0:text,
+        doh_archive_in_key:text,
+        doh_bin_box_tllevel01_0:text,
+        doh_bin_box_tl_key:text,
+        doh_bin_lbl_cntlevel01_0:text,
+        doh_bin_lbl_cnt_key:text,
+        doh_blk_box_tllevel01_0:text,
+        doh_blk_box_tl_key:text,
+        doh_blk_lbl_cntlevel01_0:text,
+        doh_blk_lbl_cnt_key:text,
+        doh_box_tllevel01_0:text,
+        doh_box_tl_key:text,
+        doh_carr_cdlevel01_0:text,
+        doh_carr_cd_key:text,
+        doh_cmtlevel01_0:text,
+        doh_cmt_key:text,
+        doh_crit_type_cdlevel01_0:text,
+        doh_crit_type_cd_key:text,
+        doh_dlr_numlevel01_0:text,
+        doh_dlr_num_key:text,
+        doh_dlr_ord_numlevel01_0:text,
+        doh_dlr_ord_num_key:text,
+        doh_dlr_prnt_seqlevel01_0:text,
+        doh_dlr_prnt_seq_key:text,
+        doh_doc_rtelevel01_0:text,
+        doh_doc_rte_key:text,
+        doh_grid_numlevel01_0:text,
+        doh_grid_num_key:text,
+        doh_ln_tllevel01_0:text,
+        doh_ln_tl_key:text,
+        doh_ord_dtlevel01_0:text,
+        doh_ord_dt_key:text,
+        doh_ord_tmlevel01_0:text,
+        doh_ord_tm_key:text,
+        doh_part_distlevel01_0:text,
+        doh_part_dist_key:text,
+        doh_pick_day_cdlevel01_0:text,
+        doh_pick_day_cd_key:text,
+        doh_po_numlevel01_0:text,
+        doh_po_num_key:text,
+        doh_proc_dtlevel01_0:text,
+        doh_proc_dt_key:text,
+        doh_sale_type_cdlevel01_0:text,
+        doh_sale_type_cd_key:text,
+        doh_ship_dlr_numlevel01_0:text,
+        doh_ship_dlr_num_key:text,
+        doh_stat_cdlevel01_0:text,
+        doh_stat_cd_key:text,
+        doh_stat_tmstmplevel01_0:text,
+        doh_stat_tmstmp_key:text,
+        doh_term_idlevel01_0:text,
+        doh_term_id_key:text,
+        doh_trm_box_tllevel01_0:text,
+        doh_trm_box_tl_key:text,
+        doh_trm_lbl_cntlevel01_0:text,
+        doh_trm_lbl_cnt_key:text,
+        doh_vinlevel01_0:text,
+        doh_vin_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_dohead(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD dohead_cre_by_idlevel01_0 (any) OPT ANY
+             ADD dohead_cre_by_id_key (any) OPT ANY
+             ADD dohead_cre_tslevel01_0 (any) OPT ANY
+             ADD dohead_cre_ts_key (any) OPT ANY
+             ADD dohead_upd_by_idlevel01_0 (any) OPT ANY
+             ADD dohead_upd_by_id_key (any) OPT ANY
+             ADD dohead_upd_tslevel01_0 (any) OPT ANY
+             ADD dohead_upd_ts_key (any) OPT ANY
+             ADD doh_archive_inlevel01_0 (any) OPT ANY
+             ADD doh_archive_in_key (any) OPT ANY
+             ADD doh_bin_box_tllevel01_0 (any) OPT ANY
+             ADD doh_bin_box_tl_key (any) OPT ANY
+             ADD doh_bin_lbl_cntlevel01_0 (any) OPT ANY
+             ADD doh_bin_lbl_cnt_key (any) OPT ANY
+             ADD doh_blk_box_tllevel01_0 (any) OPT ANY
+             ADD doh_blk_box_tl_key (any) OPT ANY
+             ADD doh_blk_lbl_cntlevel01_0 (any) OPT ANY
+             ADD doh_blk_lbl_cnt_key (any) OPT ANY
+             ADD doh_box_tllevel01_0 (any) OPT ANY
+             ADD doh_box_tl_key (any) OPT ANY
+             ADD doh_carr_cdlevel01_0 (any) OPT ANY
+             ADD doh_carr_cd_key (any) OPT ANY
+             ADD doh_cmtlevel01_0 (any) OPT ANY
+             ADD doh_cmt_key (any) OPT ANY
+             ADD doh_crit_type_cdlevel01_0 (any) OPT ANY
+             ADD doh_crit_type_cd_key (any) OPT ANY
+             ADD doh_dlr_numlevel01_0 (any) OPT ANY
+             ADD doh_dlr_num_key (any) OPT ANY
+             ADD doh_dlr_ord_numlevel01_0 (any) OPT ANY
+             ADD doh_dlr_ord_num_key (any) OPT ANY
+             ADD doh_dlr_prnt_seqlevel01_0 (any) OPT ANY
+             ADD doh_dlr_prnt_seq_key (any) OPT ANY
+             ADD doh_doc_rtelevel01_0 (any) OPT ANY
+             ADD doh_doc_rte_key (any) OPT ANY
+             ADD doh_grid_numlevel01_0 (any) OPT ANY
+             ADD doh_grid_num_key (any) OPT ANY
+             ADD doh_ln_tllevel01_0 (any) OPT ANY
+             ADD doh_ln_tl_key (any) OPT ANY
+             ADD doh_ord_dtlevel01_0 (any) OPT ANY
+             ADD doh_ord_dt_key (any) OPT ANY
+             ADD doh_ord_tmlevel01_0 (any) OPT ANY
+             ADD doh_ord_tm_key (any) OPT ANY
+             ADD doh_part_distlevel01_0 (any) OPT ANY
+             ADD doh_part_dist_key (any) OPT ANY
+             ADD doh_pick_day_cdlevel01_0 (any) OPT ANY
+             ADD doh_pick_day_cd_key (any) OPT ANY
+             ADD doh_po_numlevel01_0 (any) OPT ANY
+             ADD doh_po_num_key (any) OPT ANY
+             ADD doh_proc_dtlevel01_0 (any) OPT ANY
+             ADD doh_proc_dt_key (any) OPT ANY
+             ADD doh_sale_type_cdlevel01_0 (any) OPT ANY
+             ADD doh_sale_type_cd_key (any) OPT ANY
+             ADD doh_ship_dlr_numlevel01_0 (any) OPT ANY
+             ADD doh_ship_dlr_num_key (any) OPT ANY
+             ADD doh_stat_cdlevel01_0 (any) OPT ANY
+             ADD doh_stat_cd_key (any) OPT ANY
+             ADD doh_stat_tmstmplevel01_0 (any) OPT ANY
+             ADD doh_stat_tmstmp_key (any) OPT ANY
+             ADD doh_term_idlevel01_0 (any) OPT ANY
+             ADD doh_term_id_key (any) OPT ANY
+             ADD doh_trm_box_tllevel01_0 (any) OPT ANY
+             ADD doh_trm_box_tl_key (any) OPT ANY
+             ADD doh_trm_lbl_cntlevel01_0 (any) OPT ANY
+             ADD doh_trm_lbl_cnt_key (any) OPT ANY
+             ADD doh_vinlevel01_0 (any) OPT ANY
+             ADD doh_vin_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (doh_archive_in_key, doh_archive_inlevel01_0, doh_bin_box_tl_key, doh_bin_box_tllevel01_0, doh_bin_lbl_cnt_key, doh_bin_lbl_cntlevel01_0, doh_blk_box_tl_key, doh_blk_box_tllevel01_0, doh_blk_lbl_cnt_key, doh_blk_lbl_cntlevel01_0, doh_box_tl_key, doh_box_tllevel01_0, doh_carr_cd_key, doh_carr_cdlevel01_0, doh_cmt_key, doh_cmtlevel01_0, doh_crit_type_cd_key, doh_crit_type_cdlevel01_0, doh_dlr_num_key, doh_dlr_numlevel01_0, doh_dlr_ord_num_key, doh_dlr_ord_numlevel01_0, doh_dlr_prnt_seq_key, doh_dlr_prnt_seqlevel01_0, doh_doc_rte_key, doh_doc_rtelevel01_0, doh_grid_num_key, doh_grid_numlevel01_0, doh_ln_tl_key, doh_ln_tllevel01_0, doh_ord_dt_key, doh_ord_dtlevel01_0, doh_ord_tm_key, doh_ord_tmlevel01_0, doh_part_dist_key, doh_part_distlevel01_0, doh_pick_day_cd_key, doh_pick_day_cdlevel01_0, doh_po_num_key, doh_po_numlevel01_0, doh_proc_dt_key, doh_proc_dtlevel01_0, doh_sale_type_cd_key, doh_sale_type_cdlevel01_0, doh_ship_dlr_num_key, doh_ship_dlr_numlevel01_0, doh_stat_cd_key, doh_stat_cdlevel01_0, doh_stat_tmstmp_key, doh_stat_tmstmplevel01_0, doh_term_id_key, doh_term_idlevel01_0, doh_trm_box_tl_key, doh_trm_box_tllevel01_0, doh_trm_lbl_cnt_key, doh_trm_lbl_cntlevel01_0, doh_vin_key, doh_vinlevel01_0, dohead_cre_by_id_key, dohead_cre_by_idlevel01_0, dohead_cre_ts_key, dohead_cre_tslevel01_0, dohead_upd_by_id_key, dohead_upd_by_idlevel01_0, dohead_upd_ts_key, dohead_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_dohead)
+    );
+

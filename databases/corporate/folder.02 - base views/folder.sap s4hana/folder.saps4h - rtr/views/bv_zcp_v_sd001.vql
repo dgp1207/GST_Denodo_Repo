@@ -1,0 +1,544 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_v_sd001
+    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_V_SD001'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        baseunitofmeasurelevel01_0 = '[0BASE_UOM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' LEVELPOSITION=1,
+        conditiontypelevel01_0 = '[0KNART].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNART]' DIMENSIONNAME = '[0KNART]' LEVELPOSITION=1,
+        countrylevel01_0 = '[0COUNTRY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0COUNTRY]' DIMENSIONNAME = '[0COUNTRY]' LEVELPOSITION=1,
+        customerlevel01_0 = '[0CUSTOMER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' LEVELPOSITION=1,
+        customer_apolocationkey_0 = '[0CUSTOMER].[20APO_LOCNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_apolocationmediumname_0 = '[0CUSTOMER].[50APO_LOCNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_accountgroupkey_0 = '[0CUSTOMER].[20ACCNT_GRP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_accountgroupmediumname_0 = '[0CUSTOMER].[50ACCNT_GRP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_addresskey_0 = '[0CUSTOMER].[20ADDR_NUMBR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_bascitydistrictkey_0 = '[0CUSTOMER].[20CITY_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_baspoboxlocationkey_0 = '[0CUSTOMER].[20POBOX_LOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_baspoboxpostalcodekey_0 = '[0CUSTOMER].[20POSTCD_BOX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_baspstcdegeorelkey_0 = '[0CUSTOMER].[20POSTCD_GIS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_bpcategorykey_0 = '[0CUSTOMER].[20BP_CAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_bpcategorylongname_0 = '[0CUSTOMER].[40BP_CAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_bpgroupingkey_0 = '[0CUSTOMER].[20BP_GROUP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_bpgroupingmediumname_0 = '[0CUSTOMER].[50BP_GROUP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_bpgroupingname_0 = '[0CUSTOMER].[10BP_GROUP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_bpgrouptypekey_0 = '[0CUSTOMER].[20BP_GRPTYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_bpgrouptypemediumname_0 = '[0CUSTOMER].[50BP_GRPTYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_bpgrouptypename_0 = '[0CUSTOMER].[10BP_GRPTYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_branchcategorykey_0 = '[0CUSTOMER].[20OUTL_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_businesspartnerkey_0 = '[0CUSTOMER].[20BPARTNER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_businesspartnerlongname_0 = '[0CUSTOMER].[40BPARTNER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_businesspartnermediumname_0 = '[0CUSTOMER].[50BPARTNER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_businesspartnername_0 = '[0CUSTOMER].[10BPARTNER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_callfrequencykey_0 = '[0CUSTOMER].[20VISIT_RYT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_countrykey_0 = '[0CUSTOMER].[20COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_countrylongname_0 = '[0CUSTOMER].[40COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_countryname_0 = '[0CUSTOMER].[10COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_custidpartnersyskey_0 = '[0CUSTOMER].[20AF_CUSTID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_customermarketkey_0 = '[0CUSTOMER].[20CUST_MKT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_customerclassifickey_0 = '[0CUSTOMER].[20CUST_CLASS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_customerclassificname_0 = '[0CUSTOMER].[10CUST_CLASS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_customerisconsumerkey_0 = '[0CUSTOMER].[20CUS_F_CONS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_dunsnumberkey_0 = '[0CUSTOMER].[20DBDUNS_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_dunsnumberlongname_0 = '[0CUSTOMER].[40DBDUNS_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_datsrcidofgeoloctkey_0 = '[0CUSTOMER].[20SRCID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_distributionchannelkey_0 = '[0CUSTOMER].[20DISTR_CHAN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_distributionchannelname_0 = '[0CUSTOMER].[10DISTR_CHAN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_divisionkey_0 = '[0CUSTOMER].[20DIVISION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_divisionname_0 = '[0CUSTOMER].[10DIVISION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_faxnumberkey_0 = '[0CUSTOMER].[20FAX_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_fiscalyearvariantkey_0 = '[0CUSTOMER].[20FISCVARNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_fiscalyearvariantmediumname_0 = '[0CUSTOMER].[50FISCVARNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_geoprecisionkey_0 = '[0CUSTOMER].[20PRECISID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_geoprecisionlongname_0 = '[0CUSTOMER].[40PRECISID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_geoprecisionmediumname_0 = '[0CUSTOMER].[50PRECISID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_geoprecisionname_0 = '[0CUSTOMER].[10PRECISID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_geographicalheightkey_0 = '[0CUSTOMER].[20ALTITUDE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_identificationnumbekey_0 = '[0CUSTOMER].[2ZBPIDNUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_identificationtypekey_0 = '[0CUSTOMER].[2ZBPIDTYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrykey_0 = '[0CUSTOMER].[20INDUSTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industryname_0 = '[0CUSTOMER].[10INDUSTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrycode2key_0 = '[0CUSTOMER].[20IND_CODE_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrycode2name_0 = '[0CUSTOMER].[10IND_CODE_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrycode3key_0 = '[0CUSTOMER].[20IND_CODE_3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrycode3name_0 = '[0CUSTOMER].[10IND_CODE_3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrycode4key_0 = '[0CUSTOMER].[20IND_CODE_4]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrycode4name_0 = '[0CUSTOMER].[10IND_CODE_4]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrycode5key_0 = '[0CUSTOMER].[20IND_CODE_5]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrycode5name_0 = '[0CUSTOMER].[10IND_CODE_5]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrycode1key_0 = '[0CUSTOMER].[20IND_CODE_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_industrycode1name_0 = '[0CUSTOMER].[10IND_CODE_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_key = '[0CUSTOMER].[20CUSTOMER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_keyaccountkey_0 = '[0CUSTOMER].[20KEYACCOUNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_languagekeykey_0 = '[0CUSTOMER].[20LANGU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_languagekeyname_0 = '[0CUSTOMER].[10LANGU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_latitudekey_0 = '[0CUSTOMER].[20LATITUDE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_locationkey_0 = '[0CUSTOMER].[20CITY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_longitudekey_0 = '[0CUSTOMER].[20LONGITUDE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_mediumname_0 = '[0CUSTOMER].[50CUSTOMER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_namekey_0 = '[0CUSTOMER].[20NAME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_name2key_0 = '[0CUSTOMER].[20NAME2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_name3key_0 = '[0CUSTOMER].[20NAME3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_nielsenindicatorkey_0 = '[0CUSTOMER].[20NIELSEN_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_nielsenindicatorname_0 = '[0CUSTOMER].[10NIELSEN_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_nocustomerdckey_0 = '[0CUSTOMER].[20AF_CUSTDC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_onetimeaccountkey_0 = '[0CUSTOMER].[20ID_XCPD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_poboxkey_0 = '[0CUSTOMER].[20POBOX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_partnercompanykey_0 = '[0CUSTOMER].[20PCOMPANY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_partnercompanymediumname_0 = '[0CUSTOMER].[50PCOMPANY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_plantkey_0 = '[0CUSTOMER].[20PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_plantmediumname_0 = '[0CUSTOMER].[50PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_plantname_0 = '[0CUSTOMER].[10PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_postalcodekey_0 = '[0CUSTOMER].[20POSTAL_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_regionkey_0 = '[0CUSTOMER].[20REGION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_regionname_0 = '[0CUSTOMER].[10REGION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesareakey_0 = '[0CUSTOMER].[2ZSALE_ARE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesdistrictkey_0 = '[0CUSTOMER].[2ZSAL_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesdistrictname_0 = '[0CUSTOMER].[1ZSAL_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesdistricttextkey_0 = '[0CUSTOMER].[2ZSDISTXT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesgroupkey_0 = '[0CUSTOMER].[2ZSAL_GRP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesgroupname_0 = '[0CUSTOMER].[1ZSAL_GRP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesgrouptextkey_0 = '[0CUSTOMER].[2ZSGRPTXT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesofficetextkey_0 = '[0CUSTOMER].[2ZSOFFTXT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesorganizationkey_0 = '[0CUSTOMER].[20SALESORG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesorganizationlongname_0 = '[0CUSTOMER].[40SALESORG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesofficekey_0 = '[0CUSTOMER].[2ZSAL_OFF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesofficename_0 = '[0CUSTOMER].[1ZSAL_OFF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesunitkey_0 = '[0CUSTOMER].[20SALES_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesunitmediumname_0 = '[0CUSTOMER].[50SALES_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_salesunitname_0 = '[0CUSTOMER].[10SALES_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_searchtermakey_0 = '[0CUSTOMER].[2ZOI_SORT1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_searchtermbkey_0 = '[0CUSTOMER].[2ZOI_SORT2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_sortfieldkey_0 = '[0CUSTOMER].[20SORTL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_sourcesystemkey_0 = '[0CUSTOMER].[20LOGSYS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_sourcesystemmediumname_0 = '[0CUSTOMER].[50LOGSYS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_statekey_0 = '[0CUSTOMER].[2ZSTATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_statename_0 = '[0CUSTOMER].[1ZSTATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_streetkey_0 = '[0CUSTOMER].[20STREET]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_taxcode1key_0 = '[0CUSTOMER].[20TAX_NUMB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_taxnumber2key_0 = '[0CUSTOMER].[20TAX_NUMB2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_taxnumber3key_0 = '[0CUSTOMER].[20ID_TXNUMB3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_telephone1key_0 = '[0CUSTOMER].[20PHONE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_usageindicatorkey_0 = '[0CUSTOMER].[20USAGE_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_usageindicatorname_0 = '[0CUSTOMER].[10USAGE_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_validfromkey_0 = '[0CUSTOMER].[20VALIDFROM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_validuntilkey_0 = '[0CUSTOMER].[20VALIDTO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_vendorkey_0 = '[0CUSTOMER].[20VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_vendormediumname_0 = '[0CUSTOMER].[50VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        customer_hlevel01_0 = '[ZCUS_NO_H].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZCUS_NO_H]' DIMENSIONNAME = '[ZCUS_NO_H]' LEVELPOSITION=1,
+        daydatelevel01_0 = '[ZDAYDATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' LEVELPOSITION=1,
+        daynamelevel01_0 = '[ZDAYNAME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYNAME]' DIMENSIONNAME = '[ZDAYNAME]' LEVELPOSITION=1,
+        documentcurrencylevel01_0 = '[0DOC_CURRCY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0DOC_CURRCY]' DIMENSIONNAME = '[0DOC_CURRCY]' LEVELPOSITION=1,
+        holidayflaglevel01_0 = '[ZHOLDYFLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZHOLDYFLG]' DIMENSIONNAME = '[ZHOLDYFLG]' LEVELPOSITION=1,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        itemlevel01_0 = '[0S_ORD_ITEM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0S_ORD_ITEM]' DIMENSIONNAME = '[0S_ORD_ITEM]' LEVELPOSITION=1,
+        mmsta_primarystatlevel01_0 = '[ZMMSTANEW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMMSTANEW]' DIMENSIONNAME = '[ZMMSTANEW]' LEVELPOSITION=1,
+        materiallevel01_0 = '[0MATERIAL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATERIAL]' DIMENSIONNAME = '[0MATERIAL]' LEVELPOSITION=1,
+        materialgrouplevel01_0 = '[0MATL_GROUP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATL_GROUP]' DIMENSIONNAME = '[0MATL_GROUP]' LEVELPOSITION=1,
+        materialgrouplongtextlevel01_0 = '[ZTXTLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTXTLG]' DIMENSIONNAME = '[ZTXTLG]' LEVELPOSITION=1,
+        modelnamelevel01_0 = '[ZMODELDE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODELDE]' DIMENSIONNAME = '[ZMODELDE]' LEVELPOSITION=1,
+        modelphasecodelevel01_0 = '[ZMDLPHCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMDLPHCD]' DIMENSIONNAME = '[ZMDLPHCD]' LEVELPOSITION=1,
+        modelvehicledesclevel01_0 = '[ZMODVDESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODVDESC]' DIMENSIONNAME = '[ZMODVDESC]' LEVELPOSITION=1,
+        modelyearlevel01_0 = '[ZMODELYR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODELYR]' DIMENSIONNAME = '[ZMODELYR]' LEVELPOSITION=1,
+        monthidyyyymmlevel01_0 = '[ZMONTHID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' LEVELPOSITION=1,
+        primarystatuslevel01_0 = '[ZPSTATUS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZPSTATUS]' DIMENSIONNAME = '[ZPSTATUS]' LEVELPOSITION=1,
+        prodhierarchylevel01_0 = '[0PROD_HIER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0PROD_HIER]' DIMENSIONNAME = '[0PROD_HIER]' LEVELPOSITION=1,
+        rdrreversaldatelevel01_0 = '[ZRDRRDT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZRDRRDT]' DIMENSIONNAME = '[ZRDRRDT]' LEVELPOSITION=1,
+        rdrreversalreasonlevel01_0 = '[ZVEHRRVCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRRVCD]' DIMENSIONNAME = '[ZVEHRRVCD]' LEVELPOSITION=1,
+        reasonforrdrreverlevel01_0 = '[ZVEHRDRR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRDRR]' DIMENSIONNAME = '[ZVEHRDRR]' LEVELPOSITION=1,
+        regionlevel01_0 = '[0REGION].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0REGION]' DIMENSIONNAME = '[0REGION]' LEVELPOSITION=1,
+        sdsta_secondarystatlevel01_0 = '[ZSDSTANEW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSDSTANEW]' DIMENSIONNAME = '[ZSDSTANEW]' LEVELPOSITION=1,
+        salesarealevel01_0 = '[ZSALE_ARE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSALE_ARE]' DIMENSIONNAME = '[ZSALE_ARE]' LEVELPOSITION=1,
+        salesdistrictlevel01_0 = '[ZSAL_DIST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_DIST]' DIMENSIONNAME = '[ZSAL_DIST]' LEVELPOSITION=1,
+        salesdistricttextlevel01_0 = '[ZSDISTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSDISTXT]' DIMENSIONNAME = '[ZSDISTXT]' LEVELPOSITION=1,
+        salesdocumentlevel01_0 = '[0DOC_NUMBER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0DOC_NUMBER]' DIMENSIONNAME = '[0DOC_NUMBER]' LEVELPOSITION=1,
+        salesgrouplevel01_0 = '[ZSAL_GRP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_GRP]' DIMENSIONNAME = '[ZSAL_GRP]' LEVELPOSITION=1,
+        salesgrouptextlevel01_0 = '[ZSGRPTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSGRPTXT]' DIMENSIONNAME = '[ZSGRPTXT]' LEVELPOSITION=1,
+        salesofficetextlevel01_0 = '[ZSOFFTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSOFFTXT]' DIMENSIONNAME = '[ZSOFFTXT]' LEVELPOSITION=1,
+        salesofficelevel01_0 = '[ZSAL_OFF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_OFF]' DIMENSIONNAME = '[ZSAL_OFF]' LEVELPOSITION=1,
+        secondarystatuslevel01_0 = '[ZSECSTAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSECSTAT]' DIMENSIONNAME = '[ZSECSTAT]' LEVELPOSITION=1,
+        serieslevel01_0 = '[ZSERIESCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERIESCD]' DIMENSIONNAME = '[ZSERIESCD]' LEVELPOSITION=1,
+        series_key = '[ZSERIESCD].[2ZSERIESCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERIESCD]' DIMENSIONNAME = '[ZSERIESCD]' ATTRIBUTE,
+        series_name = '[ZSERIESCD].[1ZSERIESCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERIESCD]' DIMENSIONNAME = '[ZSERIESCD]' ATTRIBUTE,
+        series_seriesdescriptionkey_0 = '[ZSERIESCD].[2ZSERDESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERIESCD]' DIMENSIONNAME = '[ZSERIESCD]' ATTRIBUTE,
+        seriesdescriptionlevel01_0 = '[ZSERDESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERDESC]' DIMENSIONNAME = '[ZSERDESC]' LEVELPOSITION=1,
+        seriesdescription_key_0 = '[ZSERDESC].[2ZSERDESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERDESC]' DIMENSIONNAME = '[ZSERDESC]' ATTRIBUTE,
+        soldtopartylevel01_0 = '[0SOLD_TO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SOLD_TO]' DIMENSIONNAME = '[0SOLD_TO]' LEVELPOSITION=1,
+        vehicleguidgloballevel01_0 = '[ZVEGUID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEGUID]' DIMENSIONNAME = '[ZVEGUID]' LEVELPOSITION=1,
+        vehicleidentificatilevel01_0 = '[ZVEHIDNO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHIDNO]' DIMENSIONNAME = '[ZVEHIDNO]' LEVELPOSITION=1,
+        vehicleidentificati_key_0 = '[ZVEHIDNO].[2ZVEHIDNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHIDNO]' DIMENSIONNAME = '[ZVEHIDNO]' ATTRIBUTE,
+        vehicleusagelevel01_0 = '[ZVEUSGE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEUSGE]' DIMENSIONNAME = '[ZVEUSGE]' LEVELPOSITION=1,
+        netvalue_0 = '[Measures].[0NET_VALUE]' : 'java.lang.Double' (OPT) MEASURE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        qtyinbaseuom_0 = '[Measures].[0QUANT_B]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal1_0 = '[Measures].[0SUBTOT_1S]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal2_0 = '[Measures].[0SUBTOT_2S]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal3_0 = '[Measures].[0SUBTOT_3S]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal4_0 = '[Measures].[0SUBTOT_4S]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal5_0 = '[Measures].[0SUBTOT_5S]' : 'java.lang.Double' (OPT) MEASURE,
+        subtotal6_0 = '[Measures].[0SUBTOT_6S]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_v_sd001 I18N us_cst (
+        baseunitofmeasurelevel01_0:text,
+        conditiontypelevel01_0:text,
+        countrylevel01_0:text,
+        customerlevel01_0:text,
+        customer_apolocationkey_0:text,
+        customer_apolocationmediumname_0:text,
+        customer_accountgroupkey_0:text,
+        customer_accountgroupmediumname_0:text,
+        customer_addresskey_0:text,
+        customer_bascitydistrictkey_0:text,
+        customer_baspoboxlocationkey_0:text,
+        customer_baspoboxpostalcodekey_0:text,
+        customer_baspstcdegeorelkey_0:text,
+        customer_bpcategorykey_0:text,
+        customer_bpcategorylongname_0:text,
+        customer_bpgroupingkey_0:text,
+        customer_bpgroupingmediumname_0:text,
+        customer_bpgroupingname_0:text,
+        customer_bpgrouptypekey_0:text,
+        customer_bpgrouptypemediumname_0:text,
+        customer_bpgrouptypename_0:text,
+        customer_branchcategorykey_0:text,
+        customer_businesspartnerkey_0:text,
+        customer_businesspartnerlongname_0:text,
+        customer_businesspartnermediumname_0:text,
+        customer_businesspartnername_0:text,
+        customer_callfrequencykey_0:text,
+        customer_countrykey_0:text,
+        customer_countrylongname_0:text,
+        customer_countryname_0:text,
+        customer_custidpartnersyskey_0:text,
+        customer_customermarketkey_0:text,
+        customer_customerclassifickey_0:text,
+        customer_customerclassificname_0:text,
+        customer_customerisconsumerkey_0:text,
+        customer_dunsnumberkey_0:text,
+        customer_dunsnumberlongname_0:text,
+        customer_datsrcidofgeoloctkey_0:text,
+        customer_distributionchannelkey_0:text,
+        customer_distributionchannelname_0:text,
+        customer_divisionkey_0:text,
+        customer_divisionname_0:text,
+        customer_faxnumberkey_0:text,
+        customer_fiscalyearvariantkey_0:text,
+        customer_fiscalyearvariantmediumname_0:text,
+        customer_geoprecisionkey_0:text,
+        customer_geoprecisionlongname_0:text,
+        customer_geoprecisionmediumname_0:text,
+        customer_geoprecisionname_0:text,
+        customer_geographicalheightkey_0:text,
+        customer_identificationnumbekey_0:text,
+        customer_identificationtypekey_0:text,
+        customer_industrykey_0:text,
+        customer_industryname_0:text,
+        customer_industrycode2key_0:text,
+        customer_industrycode2name_0:text,
+        customer_industrycode3key_0:text,
+        customer_industrycode3name_0:text,
+        customer_industrycode4key_0:text,
+        customer_industrycode4name_0:text,
+        customer_industrycode5key_0:text,
+        customer_industrycode5name_0:text,
+        customer_industrycode1key_0:text,
+        customer_industrycode1name_0:text,
+        customer_key:text,
+        customer_keyaccountkey_0:text,
+        customer_languagekeykey_0:text,
+        customer_languagekeyname_0:text,
+        customer_latitudekey_0:text,
+        customer_locationkey_0:text,
+        customer_longitudekey_0:text,
+        customer_mediumname_0:text,
+        customer_namekey_0:text,
+        customer_name2key_0:text,
+        customer_name3key_0:text,
+        customer_nielsenindicatorkey_0:text,
+        customer_nielsenindicatorname_0:text,
+        customer_nocustomerdckey_0:text,
+        customer_onetimeaccountkey_0:text,
+        customer_poboxkey_0:text,
+        customer_partnercompanykey_0:text,
+        customer_partnercompanymediumname_0:text,
+        customer_plantkey_0:text,
+        customer_plantmediumname_0:text,
+        customer_plantname_0:text,
+        customer_postalcodekey_0:text,
+        customer_regionkey_0:text,
+        customer_regionname_0:text,
+        customer_salesareakey_0:text,
+        customer_salesdistrictkey_0:text,
+        customer_salesdistrictname_0:text,
+        customer_salesdistricttextkey_0:text,
+        customer_salesgroupkey_0:text,
+        customer_salesgroupname_0:text,
+        customer_salesgrouptextkey_0:text,
+        customer_salesofficetextkey_0:text,
+        customer_salesorganizationkey_0:text,
+        customer_salesorganizationlongname_0:text,
+        customer_salesofficekey_0:text,
+        customer_salesofficename_0:text,
+        customer_salesunitkey_0:text,
+        customer_salesunitmediumname_0:text,
+        customer_salesunitname_0:text,
+        customer_searchtermakey_0:text,
+        customer_searchtermbkey_0:text,
+        customer_sortfieldkey_0:text,
+        customer_sourcesystemkey_0:text,
+        customer_sourcesystemmediumname_0:text,
+        customer_statekey_0:text,
+        customer_statename_0:text,
+        customer_streetkey_0:text,
+        customer_taxcode1key_0:text,
+        customer_taxnumber2key_0:text,
+        customer_taxnumber3key_0:text,
+        customer_telephone1key_0:text,
+        customer_usageindicatorkey_0:text,
+        customer_usageindicatorname_0:text,
+        customer_validfromkey_0:text,
+        customer_validuntilkey_0:text,
+        customer_vendorkey_0:text,
+        customer_vendormediumname_0:text,
+        customer_hlevel01_0:text,
+        daydatelevel01_0:text,
+        daynamelevel01_0:text,
+        documentcurrencylevel01_0:text,
+        holidayflaglevel01_0:text,
+        infoproviderlevel01_0:text,
+        itemlevel01_0:text,
+        mmsta_primarystatlevel01_0:text,
+        materiallevel01_0:text,
+        materialgrouplevel01_0:text,
+        materialgrouplongtextlevel01_0:text,
+        modelnamelevel01_0:text,
+        modelphasecodelevel01_0:text,
+        modelvehicledesclevel01_0:text,
+        modelyearlevel01_0:text,
+        monthidyyyymmlevel01_0:text,
+        primarystatuslevel01_0:text,
+        prodhierarchylevel01_0:text,
+        rdrreversaldatelevel01_0:text,
+        rdrreversalreasonlevel01_0:text,
+        reasonforrdrreverlevel01_0:text,
+        regionlevel01_0:text,
+        sdsta_secondarystatlevel01_0:text,
+        salesarealevel01_0:text,
+        salesdistrictlevel01_0:text,
+        salesdistricttextlevel01_0:text,
+        salesdocumentlevel01_0:text,
+        salesgrouplevel01_0:text,
+        salesgrouptextlevel01_0:text,
+        salesofficetextlevel01_0:text,
+        salesofficelevel01_0:text,
+        secondarystatuslevel01_0:text,
+        serieslevel01_0:text,
+        series_key:text,
+        series_name:text,
+        series_seriesdescriptionkey_0:text,
+        seriesdescriptionlevel01_0:text,
+        seriesdescription_key_0:text,
+        soldtopartylevel01_0:text,
+        vehicleguidgloballevel01_0:text,
+        vehicleidentificatilevel01_0:text,
+        vehicleidentificati_key_0:text,
+        vehicleusagelevel01_0:text,
+        netvalue_0:double,
+        numberofrecords_0:double,
+        qtyinbaseuom_0:double,
+        subtotal1_0:double,
+        subtotal2_0:double,
+        subtotal3_0:double,
+        subtotal4_0:double,
+        subtotal5_0:double,
+        subtotal6_0:double
+    )
+    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_v_sd001(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD baseunitofmeasurelevel01_0 (any) OPT ANY
+             ADD conditiontypelevel01_0 (any) OPT ANY
+             ADD countrylevel01_0 (any) OPT ANY
+             ADD customerlevel01_0 (any) OPT ANY
+             ADD customer_apolocationkey_0 (any) OPT ANY
+             ADD customer_apolocationmediumname_0 (any) OPT ANY
+             ADD customer_accountgroupkey_0 (any) OPT ANY
+             ADD customer_accountgroupmediumname_0 (any) OPT ANY
+             ADD customer_addresskey_0 (any) OPT ANY
+             ADD customer_bascitydistrictkey_0 (any) OPT ANY
+             ADD customer_baspoboxlocationkey_0 (any) OPT ANY
+             ADD customer_baspoboxpostalcodekey_0 (any) OPT ANY
+             ADD customer_baspstcdegeorelkey_0 (any) OPT ANY
+             ADD customer_bpcategorykey_0 (any) OPT ANY
+             ADD customer_bpcategorylongname_0 (any) OPT ANY
+             ADD customer_bpgroupingkey_0 (any) OPT ANY
+             ADD customer_bpgroupingmediumname_0 (any) OPT ANY
+             ADD customer_bpgroupingname_0 (any) OPT ANY
+             ADD customer_bpgrouptypekey_0 (any) OPT ANY
+             ADD customer_bpgrouptypemediumname_0 (any) OPT ANY
+             ADD customer_bpgrouptypename_0 (any) OPT ANY
+             ADD customer_branchcategorykey_0 (any) OPT ANY
+             ADD customer_businesspartnerkey_0 (any) OPT ANY
+             ADD customer_businesspartnerlongname_0 (any) OPT ANY
+             ADD customer_businesspartnermediumname_0 (any) OPT ANY
+             ADD customer_businesspartnername_0 (any) OPT ANY
+             ADD customer_callfrequencykey_0 (any) OPT ANY
+             ADD customer_countrykey_0 (any) OPT ANY
+             ADD customer_countrylongname_0 (any) OPT ANY
+             ADD customer_countryname_0 (any) OPT ANY
+             ADD customer_custidpartnersyskey_0 (any) OPT ANY
+             ADD customer_customermarketkey_0 (any) OPT ANY
+             ADD customer_customerclassifickey_0 (any) OPT ANY
+             ADD customer_customerclassificname_0 (any) OPT ANY
+             ADD customer_customerisconsumerkey_0 (any) OPT ANY
+             ADD customer_dunsnumberkey_0 (any) OPT ANY
+             ADD customer_dunsnumberlongname_0 (any) OPT ANY
+             ADD customer_datsrcidofgeoloctkey_0 (any) OPT ANY
+             ADD customer_distributionchannelkey_0 (any) OPT ANY
+             ADD customer_distributionchannelname_0 (any) OPT ANY
+             ADD customer_divisionkey_0 (any) OPT ANY
+             ADD customer_divisionname_0 (any) OPT ANY
+             ADD customer_faxnumberkey_0 (any) OPT ANY
+             ADD customer_fiscalyearvariantkey_0 (any) OPT ANY
+             ADD customer_fiscalyearvariantmediumname_0 (any) OPT ANY
+             ADD customer_geoprecisionkey_0 (any) OPT ANY
+             ADD customer_geoprecisionlongname_0 (any) OPT ANY
+             ADD customer_geoprecisionmediumname_0 (any) OPT ANY
+             ADD customer_geoprecisionname_0 (any) OPT ANY
+             ADD customer_geographicalheightkey_0 (any) OPT ANY
+             ADD customer_identificationnumbekey_0 (any) OPT ANY
+             ADD customer_identificationtypekey_0 (any) OPT ANY
+             ADD customer_industrykey_0 (any) OPT ANY
+             ADD customer_industryname_0 (any) OPT ANY
+             ADD customer_industrycode2key_0 (any) OPT ANY
+             ADD customer_industrycode2name_0 (any) OPT ANY
+             ADD customer_industrycode3key_0 (any) OPT ANY
+             ADD customer_industrycode3name_0 (any) OPT ANY
+             ADD customer_industrycode4key_0 (any) OPT ANY
+             ADD customer_industrycode4name_0 (any) OPT ANY
+             ADD customer_industrycode5key_0 (any) OPT ANY
+             ADD customer_industrycode5name_0 (any) OPT ANY
+             ADD customer_industrycode1key_0 (any) OPT ANY
+             ADD customer_industrycode1name_0 (any) OPT ANY
+             ADD customer_key (any) OPT ANY
+             ADD customer_keyaccountkey_0 (any) OPT ANY
+             ADD customer_languagekeykey_0 (any) OPT ANY
+             ADD customer_languagekeyname_0 (any) OPT ANY
+             ADD customer_latitudekey_0 (any) OPT ANY
+             ADD customer_locationkey_0 (any) OPT ANY
+             ADD customer_longitudekey_0 (any) OPT ANY
+             ADD customer_mediumname_0 (any) OPT ANY
+             ADD customer_namekey_0 (any) OPT ANY
+             ADD customer_name2key_0 (any) OPT ANY
+             ADD customer_name3key_0 (any) OPT ANY
+             ADD customer_nielsenindicatorkey_0 (any) OPT ANY
+             ADD customer_nielsenindicatorname_0 (any) OPT ANY
+             ADD customer_nocustomerdckey_0 (any) OPT ANY
+             ADD customer_onetimeaccountkey_0 (any) OPT ANY
+             ADD customer_poboxkey_0 (any) OPT ANY
+             ADD customer_partnercompanykey_0 (any) OPT ANY
+             ADD customer_partnercompanymediumname_0 (any) OPT ANY
+             ADD customer_plantkey_0 (any) OPT ANY
+             ADD customer_plantmediumname_0 (any) OPT ANY
+             ADD customer_plantname_0 (any) OPT ANY
+             ADD customer_postalcodekey_0 (any) OPT ANY
+             ADD customer_regionkey_0 (any) OPT ANY
+             ADD customer_regionname_0 (any) OPT ANY
+             ADD customer_salesareakey_0 (any) OPT ANY
+             ADD customer_salesdistrictkey_0 (any) OPT ANY
+             ADD customer_salesdistrictname_0 (any) OPT ANY
+             ADD customer_salesdistricttextkey_0 (any) OPT ANY
+             ADD customer_salesgroupkey_0 (any) OPT ANY
+             ADD customer_salesgroupname_0 (any) OPT ANY
+             ADD customer_salesgrouptextkey_0 (any) OPT ANY
+             ADD customer_salesofficetextkey_0 (any) OPT ANY
+             ADD customer_salesorganizationkey_0 (any) OPT ANY
+             ADD customer_salesorganizationlongname_0 (any) OPT ANY
+             ADD customer_salesofficekey_0 (any) OPT ANY
+             ADD customer_salesofficename_0 (any) OPT ANY
+             ADD customer_salesunitkey_0 (any) OPT ANY
+             ADD customer_salesunitmediumname_0 (any) OPT ANY
+             ADD customer_salesunitname_0 (any) OPT ANY
+             ADD customer_searchtermakey_0 (any) OPT ANY
+             ADD customer_searchtermbkey_0 (any) OPT ANY
+             ADD customer_sortfieldkey_0 (any) OPT ANY
+             ADD customer_sourcesystemkey_0 (any) OPT ANY
+             ADD customer_sourcesystemmediumname_0 (any) OPT ANY
+             ADD customer_statekey_0 (any) OPT ANY
+             ADD customer_statename_0 (any) OPT ANY
+             ADD customer_streetkey_0 (any) OPT ANY
+             ADD customer_taxcode1key_0 (any) OPT ANY
+             ADD customer_taxnumber2key_0 (any) OPT ANY
+             ADD customer_taxnumber3key_0 (any) OPT ANY
+             ADD customer_telephone1key_0 (any) OPT ANY
+             ADD customer_usageindicatorkey_0 (any) OPT ANY
+             ADD customer_usageindicatorname_0 (any) OPT ANY
+             ADD customer_validfromkey_0 (any) OPT ANY
+             ADD customer_validuntilkey_0 (any) OPT ANY
+             ADD customer_vendorkey_0 (any) OPT ANY
+             ADD customer_vendormediumname_0 (any) OPT ANY
+             ADD customer_hlevel01_0 (any) OPT ANY
+             ADD daydatelevel01_0 (any) OPT ANY
+             ADD daynamelevel01_0 (any) OPT ANY
+             ADD documentcurrencylevel01_0 (any) OPT ANY
+             ADD holidayflaglevel01_0 (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD itemlevel01_0 (any) OPT ANY
+             ADD mmsta_primarystatlevel01_0 (any) OPT ANY
+             ADD materiallevel01_0 (any) OPT ANY
+             ADD materialgrouplevel01_0 (any) OPT ANY
+             ADD materialgrouplongtextlevel01_0 (any) OPT ANY
+             ADD modelnamelevel01_0 (any) OPT ANY
+             ADD modelphasecodelevel01_0 (any) OPT ANY
+             ADD modelvehicledesclevel01_0 (any) OPT ANY
+             ADD modelyearlevel01_0 (any) OPT ANY
+             ADD monthidyyyymmlevel01_0 (any) OPT ANY
+             ADD primarystatuslevel01_0 (any) OPT ANY
+             ADD prodhierarchylevel01_0 (any) OPT ANY
+             ADD rdrreversaldatelevel01_0 (any) OPT ANY
+             ADD rdrreversalreasonlevel01_0 (any) OPT ANY
+             ADD reasonforrdrreverlevel01_0 (any) OPT ANY
+             ADD regionlevel01_0 (any) OPT ANY
+             ADD sdsta_secondarystatlevel01_0 (any) OPT ANY
+             ADD salesarealevel01_0 (any) OPT ANY
+             ADD salesdistrictlevel01_0 (any) OPT ANY
+             ADD salesdistricttextlevel01_0 (any) OPT ANY
+             ADD salesdocumentlevel01_0 (any) OPT ANY
+             ADD salesgrouplevel01_0 (any) OPT ANY
+             ADD salesgrouptextlevel01_0 (any) OPT ANY
+             ADD salesofficetextlevel01_0 (any) OPT ANY
+             ADD salesofficelevel01_0 (any) OPT ANY
+             ADD secondarystatuslevel01_0 (any) OPT ANY
+             ADD serieslevel01_0 (any) OPT ANY
+             ADD series_key (any) OPT ANY
+             ADD series_name (any) OPT ANY
+             ADD series_seriesdescriptionkey_0 (any) OPT ANY
+             ADD seriesdescriptionlevel01_0 (any) OPT ANY
+             ADD seriesdescription_key_0 (any) OPT ANY
+             ADD soldtopartylevel01_0 (any) OPT ANY
+             ADD vehicleguidgloballevel01_0 (any) OPT ANY
+             ADD vehicleidentificatilevel01_0 (any) OPT ANY
+             ADD vehicleidentificati_key_0 (any) OPT ANY
+             ADD vehicleusagelevel01_0 (any) OPT ANY
+             ADD netvalue_0 (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+             ADD qtyinbaseuom_0 (any) OPT ANY
+             ADD subtotal1_0 (any) OPT ANY
+             ADD subtotal2_0 (any) OPT ANY
+             ADD subtotal3_0 (any) OPT ANY
+             ADD subtotal4_0 (any) OPT ANY
+             ADD subtotal5_0 (any) OPT ANY
+             ADD subtotal6_0 (any) OPT ANY
+        )
+        OUTPUTLIST (baseunitofmeasurelevel01_0, conditiontypelevel01_0, countrylevel01_0, customer_accountgroupkey_0, customer_accountgroupmediumname_0, customer_addresskey_0, customer_apolocationkey_0, customer_apolocationmediumname_0, customer_bascitydistrictkey_0, customer_baspoboxlocationkey_0, customer_baspoboxpostalcodekey_0, customer_baspstcdegeorelkey_0, customer_bpcategorykey_0, customer_bpcategorylongname_0, customer_bpgroupingkey_0, customer_bpgroupingmediumname_0, customer_bpgroupingname_0, customer_bpgrouptypekey_0, customer_bpgrouptypemediumname_0, customer_bpgrouptypename_0, customer_branchcategorykey_0, customer_businesspartnerkey_0, customer_businesspartnerlongname_0, customer_businesspartnermediumname_0, customer_businesspartnername_0, customer_callfrequencykey_0, customer_countrykey_0, customer_countrylongname_0, customer_countryname_0, customer_custidpartnersyskey_0, customer_customerclassifickey_0, customer_customerclassificname_0, customer_customerisconsumerkey_0, customer_customermarketkey_0, customer_datsrcidofgeoloctkey_0, customer_distributionchannelkey_0, customer_distributionchannelname_0, customer_divisionkey_0, customer_divisionname_0, customer_dunsnumberkey_0, customer_dunsnumberlongname_0, customer_faxnumberkey_0, customer_fiscalyearvariantkey_0, customer_fiscalyearvariantmediumname_0, customer_geographicalheightkey_0, customer_geoprecisionkey_0, customer_geoprecisionlongname_0, customer_geoprecisionmediumname_0, customer_geoprecisionname_0, customer_hlevel01_0, customer_identificationnumbekey_0, customer_identificationtypekey_0, customer_industrycode1key_0, customer_industrycode1name_0, customer_industrycode2key_0, customer_industrycode2name_0, customer_industrycode3key_0, customer_industrycode3name_0, customer_industrycode4key_0, customer_industrycode4name_0, customer_industrycode5key_0, customer_industrycode5name_0, customer_industrykey_0, customer_industryname_0, customer_key, customer_keyaccountkey_0, customer_languagekeykey_0, customer_languagekeyname_0, customer_latitudekey_0, customer_locationkey_0, customer_longitudekey_0, customer_mediumname_0, customer_name2key_0, customer_name3key_0, customer_namekey_0, customer_nielsenindicatorkey_0, customer_nielsenindicatorname_0, customer_nocustomerdckey_0, customer_onetimeaccountkey_0, customer_partnercompanykey_0, customer_partnercompanymediumname_0, customer_plantkey_0, customer_plantmediumname_0, customer_plantname_0, customer_poboxkey_0, customer_postalcodekey_0, customer_regionkey_0, customer_regionname_0, customer_salesareakey_0, customer_salesdistrictkey_0, customer_salesdistrictname_0, customer_salesdistricttextkey_0, customer_salesgroupkey_0, customer_salesgroupname_0, customer_salesgrouptextkey_0, customer_salesofficekey_0, customer_salesofficename_0, customer_salesofficetextkey_0, customer_salesorganizationkey_0, customer_salesorganizationlongname_0, customer_salesunitkey_0, customer_salesunitmediumname_0, customer_salesunitname_0, customer_searchtermakey_0, customer_searchtermbkey_0, customer_sortfieldkey_0, customer_sourcesystemkey_0, customer_sourcesystemmediumname_0, customer_statekey_0, customer_statename_0, customer_streetkey_0, customer_taxcode1key_0, customer_taxnumber2key_0, customer_taxnumber3key_0, customer_telephone1key_0, customer_usageindicatorkey_0, customer_usageindicatorname_0, customer_validfromkey_0, customer_validuntilkey_0, customer_vendorkey_0, customer_vendormediumname_0, customerlevel01_0, daydatelevel01_0, daynamelevel01_0, documentcurrencylevel01_0, holidayflaglevel01_0, infoproviderlevel01_0, itemlevel01_0, materialgrouplevel01_0, materialgrouplongtextlevel01_0, materiallevel01_0, mmsta_primarystatlevel01_0, modelnamelevel01_0, modelphasecodelevel01_0, modelvehicledesclevel01_0, modelyearlevel01_0, monthidyyyymmlevel01_0, netvalue_0, numberofrecords_0, primarystatuslevel01_0, prodhierarchylevel01_0, qtyinbaseuom_0, rdrreversaldatelevel01_0, rdrreversalreasonlevel01_0, reasonforrdrreverlevel01_0, regionlevel01_0, salesarealevel01_0, salesdistrictlevel01_0, salesdistricttextlevel01_0, salesdocumentlevel01_0, salesgrouplevel01_0, salesgrouptextlevel01_0, salesofficelevel01_0, salesofficetextlevel01_0, sdsta_secondarystatlevel01_0, secondarystatuslevel01_0, series_key, series_name, series_seriesdescriptionkey_0, seriesdescription_key_0, seriesdescriptionlevel01_0, serieslevel01_0, soldtopartylevel01_0, subtotal1_0, subtotal2_0, subtotal3_0, subtotal4_0, subtotal5_0, subtotal6_0, vehicleguidgloballevel01_0, vehicleidentificati_key_0, vehicleidentificatilevel01_0, vehicleusagelevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_v_sd001)
+    );
+

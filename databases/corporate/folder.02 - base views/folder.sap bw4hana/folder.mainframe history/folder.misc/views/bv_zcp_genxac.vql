@@ -1,0 +1,163 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_genxac
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/misc'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENXAC'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_GENXAC-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENXAC-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_by_id_key = '[4ZCP_GENXAC-CRE_BY_ID].[24ZCP_GENXAC-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENXAC-CRE_BY_ID]' ATTRIBUTE,
+        cre_tslevel01_0 = '[4ZCP_GENXAC-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENXAC-CRE_TS]' LEVELPOSITION=1,
+        cre_ts_key = '[4ZCP_GENXAC-CRE_TS].[24ZCP_GENXAC-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENXAC-CRE_TS]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        upd_by_idlevel01_0 = '[4ZCP_GENXAC-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENXAC-UPD_BY_ID]' LEVELPOSITION=1,
+        upd_by_id_key = '[4ZCP_GENXAC-UPD_BY_ID].[24ZCP_GENXAC-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENXAC-UPD_BY_ID]' ATTRIBUTE,
+        upd_tslevel01_0 = '[4ZCP_GENXAC-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENXAC-UPD_TS]' LEVELPOSITION=1,
+        upd_ts_key = '[4ZCP_GENXAC-UPD_TS].[24ZCP_GENXAC-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENXAC-UPD_TS]' ATTRIBUTE,
+        xac_99_abbrlevel01_0 = '[4ZCP_GENXAC-XAC_99_ABBR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_ABBR]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_ABBR]' LEVELPOSITION=1,
+        xac_99_abbr_key = '[4ZCP_GENXAC-XAC_99_ABBR].[24ZCP_GENXAC-XAC_99_ABBR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_ABBR]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_ABBR]' ATTRIBUTE,
+        xac_99_cdlevel01_0 = '[4ZCP_GENXAC-XAC_99_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_CD]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_CD]' LEVELPOSITION=1,
+        xac_99_cd_key = '[4ZCP_GENXAC-XAC_99_CD].[24ZCP_GENXAC-XAC_99_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_CD]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_CD]' ATTRIBUTE,
+        xac_99_desclevel01_0 = '[4ZCP_GENXAC-XAC_99_DESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_DESC]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_DESC]' LEVELPOSITION=1,
+        xac_99_desc_key = '[4ZCP_GENXAC-XAC_99_DESC].[24ZCP_GENXAC-XAC_99_DESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_DESC]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_DESC]' ATTRIBUTE,
+        xac_99_fill1level01_0 = '[4ZCP_GENXAC-XAC_99_FILL1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_FILL1]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_FILL1]' LEVELPOSITION=1,
+        xac_99_fill1_key = '[4ZCP_GENXAC-XAC_99_FILL1].[24ZCP_GENXAC-XAC_99_FILL1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_FILL1]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_FILL1]' ATTRIBUTE,
+        xac_99_mdllevel01_0 = '[4ZCP_GENXAC-XAC_99_MDL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_MDL]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_MDL]' LEVELPOSITION=1,
+        xac_99_mdl_key = '[4ZCP_GENXAC-XAC_99_MDL].[24ZCP_GENXAC-XAC_99_MDL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_MDL]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_MDL]' ATTRIBUTE,
+        xac_99_mdl_yrlevel01_0 = '[4ZCP_GENXAC-XAC_99_MDL_Y].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_MDL_Y]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_MDL_Y]' LEVELPOSITION=1,
+        xac_99_mdl_yr_key = '[4ZCP_GENXAC-XAC_99_MDL_Y].[24ZCP_GENXAC-XAC_99_MDL_Y]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_MDL_Y]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_MDL_Y]' ATTRIBUTE,
+        xac_99_seqlevel01_0 = '[4ZCP_GENXAC-XAC_99_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_SEQ]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_SEQ]' LEVELPOSITION=1,
+        xac_99_seq_key = '[4ZCP_GENXAC-XAC_99_SEQ].[24ZCP_GENXAC-XAC_99_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_SEQ]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_SEQ]' ATTRIBUTE,
+        xac_99_tmlevel01_0 = '[4ZCP_GENXAC-XAC_99_TM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_TM]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_TM]' LEVELPOSITION=1,
+        xac_99_tm_key = '[4ZCP_GENXAC-XAC_99_TM].[24ZCP_GENXAC-XAC_99_TM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_TM]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_TM]' ATTRIBUTE,
+        xac_99_typelevel01_0 = '[4ZCP_GENXAC-XAC_99_TYPE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_TYPE]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_TYPE]' LEVELPOSITION=1,
+        xac_99_type_key = '[4ZCP_GENXAC-XAC_99_TYPE].[24ZCP_GENXAC-XAC_99_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_TYPE]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_TYPE]' ATTRIBUTE,
+        xac_99_wo_acclevel01_0 = '[4ZCP_GENXAC-XAC_99_WO_AC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_WO_AC]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_WO_AC]' LEVELPOSITION=1,
+        xac_99_wo_acc_key = '[4ZCP_GENXAC-XAC_99_WO_AC].[24ZCP_GENXAC-XAC_99_WO_AC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_WO_AC]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_WO_AC]' ATTRIBUTE,
+        xac_99_wo_colrlevel01_0 = '[4ZCP_GENXAC-XAC_99_WO_CO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_WO_CO]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_WO_CO]' LEVELPOSITION=1,
+        xac_99_wo_colr_key = '[4ZCP_GENXAC-XAC_99_WO_CO].[24ZCP_GENXAC-XAC_99_WO_CO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_WO_CO]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_WO_CO]' ATTRIBUTE,
+        xac_99_w_acclevel01_0 = '[4ZCP_GENXAC-XAC_99_W_ACC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_W_ACC]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_W_ACC]' LEVELPOSITION=1,
+        xac_99_w_acc_key = '[4ZCP_GENXAC-XAC_99_W_ACC].[24ZCP_GENXAC-XAC_99_W_ACC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_W_ACC]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_W_ACC]' ATTRIBUTE,
+        xac_99_w_acc2level01_0 = '[4ZCP_GENXAC-XAC_99_W_A_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_W_A_0]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_W_A_0]' LEVELPOSITION=1,
+        xac_99_w_acc2_key = '[4ZCP_GENXAC-XAC_99_W_A_0].[24ZCP_GENXAC-XAC_99_W_A_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_W_A_0]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_W_A_0]' ATTRIBUTE,
+        xac_99_w_acc3level01_0 = '[4ZCP_GENXAC-XAC_99_W_A_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_W_A_1]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_W_A_1]' LEVELPOSITION=1,
+        xac_99_w_acc3_key = '[4ZCP_GENXAC-XAC_99_W_A_1].[24ZCP_GENXAC-XAC_99_W_A_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_W_A_1]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_W_A_1]' ATTRIBUTE,
+        xac_99_w_colrlevel01_0 = '[4ZCP_GENXAC-XAC_99_W_COL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_W_COL]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_W_COL]' LEVELPOSITION=1,
+        xac_99_w_colr_key = '[4ZCP_GENXAC-XAC_99_W_COL].[24ZCP_GENXAC-XAC_99_W_COL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENXAC-XAC_99_W_COL]' DIMENSIONNAME = '[4ZCP_GENXAC-XAC_99_W_COL]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        xac_99_dlr_amt = '[Measures].[4ZCP_GENXAC-XAC_99_DLR_A]' : 'java.lang.Double' (OPT) MEASURE,
+        xac_99_dst_amt = '[Measures].[4ZCP_GENXAC-XAC_99_DST_A]' : 'java.lang.Double' (OPT) MEASURE,
+        xac_99_rtl_amt = '[Measures].[4ZCP_GENXAC-XAC_99_RTL_A]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_genxac I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_by_id_key:text,
+        cre_tslevel01_0:text,
+        cre_ts_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        upd_by_idlevel01_0:text,
+        upd_by_id_key:text,
+        upd_tslevel01_0:text,
+        upd_ts_key:text,
+        xac_99_abbrlevel01_0:text,
+        xac_99_abbr_key:text,
+        xac_99_cdlevel01_0:text,
+        xac_99_cd_key:text,
+        xac_99_desclevel01_0:text,
+        xac_99_desc_key:text,
+        xac_99_fill1level01_0:text,
+        xac_99_fill1_key:text,
+        xac_99_mdllevel01_0:text,
+        xac_99_mdl_key:text,
+        xac_99_mdl_yrlevel01_0:text,
+        xac_99_mdl_yr_key:text,
+        xac_99_seqlevel01_0:text,
+        xac_99_seq_key:text,
+        xac_99_tmlevel01_0:text,
+        xac_99_tm_key:text,
+        xac_99_typelevel01_0:text,
+        xac_99_type_key:text,
+        xac_99_wo_acclevel01_0:text,
+        xac_99_wo_acc_key:text,
+        xac_99_wo_colrlevel01_0:text,
+        xac_99_wo_colr_key:text,
+        xac_99_w_acclevel01_0:text,
+        xac_99_w_acc_key:text,
+        xac_99_w_acc2level01_0:text,
+        xac_99_w_acc2_key:text,
+        xac_99_w_acc3level01_0:text,
+        xac_99_w_acc3_key:text,
+        xac_99_w_colrlevel01_0:text,
+        xac_99_w_colr_key:text,
+        numberofrecords_0:double,
+        xac_99_dlr_amt:double,
+        xac_99_dst_amt:double,
+        xac_99_rtl_amt:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/misc'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_genxac(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_by_id_key (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD cre_ts_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD upd_by_idlevel01_0 (any) OPT ANY
+             ADD upd_by_id_key (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD upd_ts_key (any) OPT ANY
+             ADD xac_99_abbrlevel01_0 (any) OPT ANY
+             ADD xac_99_abbr_key (any) OPT ANY
+             ADD xac_99_cdlevel01_0 (any) OPT ANY
+             ADD xac_99_cd_key (any) OPT ANY
+             ADD xac_99_desclevel01_0 (any) OPT ANY
+             ADD xac_99_desc_key (any) OPT ANY
+             ADD xac_99_fill1level01_0 (any) OPT ANY
+             ADD xac_99_fill1_key (any) OPT ANY
+             ADD xac_99_mdllevel01_0 (any) OPT ANY
+             ADD xac_99_mdl_key (any) OPT ANY
+             ADD xac_99_mdl_yrlevel01_0 (any) OPT ANY
+             ADD xac_99_mdl_yr_key (any) OPT ANY
+             ADD xac_99_seqlevel01_0 (any) OPT ANY
+             ADD xac_99_seq_key (any) OPT ANY
+             ADD xac_99_tmlevel01_0 (any) OPT ANY
+             ADD xac_99_tm_key (any) OPT ANY
+             ADD xac_99_typelevel01_0 (any) OPT ANY
+             ADD xac_99_type_key (any) OPT ANY
+             ADD xac_99_wo_acclevel01_0 (any) OPT ANY
+             ADD xac_99_wo_acc_key (any) OPT ANY
+             ADD xac_99_wo_colrlevel01_0 (any) OPT ANY
+             ADD xac_99_wo_colr_key (any) OPT ANY
+             ADD xac_99_w_acclevel01_0 (any) OPT ANY
+             ADD xac_99_w_acc_key (any) OPT ANY
+             ADD xac_99_w_acc2level01_0 (any) OPT ANY
+             ADD xac_99_w_acc2_key (any) OPT ANY
+             ADD xac_99_w_acc3level01_0 (any) OPT ANY
+             ADD xac_99_w_acc3_key (any) OPT ANY
+             ADD xac_99_w_colrlevel01_0 (any) OPT ANY
+             ADD xac_99_w_colr_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+             ADD xac_99_dlr_amt (any) OPT ANY
+             ADD xac_99_dst_amt (any) OPT ANY
+             ADD xac_99_rtl_amt (any) OPT ANY
+        )
+        OUTPUTLIST (cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, upd_by_id_key, upd_by_idlevel01_0, upd_ts_key, upd_tslevel01_0, xac_99_abbr_key, xac_99_abbrlevel01_0, xac_99_cd_key, xac_99_cdlevel01_0, xac_99_desc_key, xac_99_desclevel01_0, xac_99_dlr_amt, xac_99_dst_amt, xac_99_fill1_key, xac_99_fill1level01_0, xac_99_mdl_key, xac_99_mdl_yr_key, xac_99_mdl_yrlevel01_0, xac_99_mdllevel01_0, xac_99_rtl_amt, xac_99_seq_key, xac_99_seqlevel01_0, xac_99_tm_key, xac_99_tmlevel01_0, xac_99_type_key, xac_99_typelevel01_0, xac_99_w_acc2_key, xac_99_w_acc2level01_0, xac_99_w_acc3_key, xac_99_w_acc3level01_0, xac_99_w_acc_key, xac_99_w_acclevel01_0, xac_99_w_colr_key, xac_99_w_colrlevel01_0, xac_99_wo_acc_key, xac_99_wo_acclevel01_0, xac_99_wo_colr_key, xac_99_wo_colrlevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_genxac)
+    );
+

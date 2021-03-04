@@ -1,0 +1,388 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_asnhdr
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ASNHDR'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        ash_archive_inlevel01_0 = '[4ZCP_ASNHDR-ASH_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ARCHIVE]' LEVELPOSITION=1,
+        ash_archive_in_key = '[4ZCP_ASNHDR-ASH_ARCHIVE].[24ZCP_ASNHDR-ASH_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ARCHIVE]' ATTRIBUTE,
+        ash_arrv_dtlevel01_0 = '[4ZCP_ASNHDR-ASH_ARRV_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ARRV_DT]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ARRV_DT]' LEVELPOSITION=1,
+        ash_arrv_dt_key = '[4ZCP_ASNHDR-ASH_ARRV_DT].[24ZCP_ASNHDR-ASH_ARRV_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ARRV_DT]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ARRV_DT]' ATTRIBUTE,
+        ash_asn_dtl_typelevel01_0 = '[4ZCP_ASNHDR-ASH_ASN_DTL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ASN_DTL]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ASN_DTL]' LEVELPOSITION=1,
+        ash_asn_dtl_type_key = '[4ZCP_ASNHDR-ASH_ASN_DTL].[24ZCP_ASNHDR-ASH_ASN_DTL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ASN_DTL]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ASN_DTL]' ATTRIBUTE,
+        ash_asn_orgn_typelevel01_0 = '[4ZCP_ASNHDR-ASH_ASN_ORGN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ASN_ORGN]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ASN_ORGN]' LEVELPOSITION=1,
+        ash_asn_orgn_type_key = '[4ZCP_ASNHDR-ASH_ASN_ORGN].[24ZCP_ASNHDR-ASH_ASN_ORGN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ASN_ORGN]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ASN_ORGN]' ATTRIBUTE,
+        ash_asn_shpmt_typelevel01_0 = '[4ZCP_ASNHDR-ASH_ASN_SHPM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ASN_SHPM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ASN_SHPM]' LEVELPOSITION=1,
+        ash_asn_shpmt_type_key = '[4ZCP_ASNHDR-ASH_ASN_SHPM].[24ZCP_ASNHDR-ASH_ASN_SHPM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ASN_SHPM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ASN_SHPM]' ATTRIBUTE,
+        ash_bollevel01_0 = '[4ZCP_ASNHDR-ASH_BOL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_BOL]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_BOL]' LEVELPOSITION=1,
+        ash_bol_key = '[4ZCP_ASNHDR-ASH_BOL].[24ZCP_ASNHDR-ASH_BOL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_BOL]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_BOL]' ATTRIBUTE,
+        ash_buyer_cdlevel01_0 = '[4ZCP_ASNHDR-ASH_BUYER_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_BUYER_CD]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_BUYER_CD]' LEVELPOSITION=1,
+        ash_buyer_cd_key = '[4ZCP_ASNHDR-ASH_BUYER_CD].[24ZCP_ASNHDR-ASH_BUYER_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_BUYER_CD]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_BUYER_CD]' ATTRIBUTE,
+        ash_cases_shpdlevel01_0 = '[4ZCP_ASNHDR-ASH_CASES_SH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_CASES_SH]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_CASES_SH]' LEVELPOSITION=1,
+        ash_cases_shpd_key = '[4ZCP_ASNHDR-ASH_CASES_SH].[24ZCP_ASNHDR-ASH_CASES_SH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_CASES_SH]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_CASES_SH]' ATTRIBUTE,
+        ash_contrac_locnlevel01_0 = '[4ZCP_ASNHDR-ASH_CONTRAC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_CONTRAC]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_CONTRAC]' LEVELPOSITION=1,
+        ash_contrac_locn_key = '[4ZCP_ASNHDR-ASH_CONTRAC].[24ZCP_ASNHDR-ASH_CONTRAC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_CONTRAC]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_CONTRAC]' ATTRIBUTE,
+        ash_create_date_tmlevel01_0 = '[4ZCP_ASNHDR-ASH_CREATE_D].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_CREATE_D]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_CREATE_D]' LEVELPOSITION=1,
+        ash_create_date_tm_key = '[4ZCP_ASNHDR-ASH_CREATE_D].[24ZCP_ASNHDR-ASH_CREATE_D]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_CREATE_D]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_CREATE_D]' ATTRIBUTE,
+        ash_cut_numlevel01_0 = '[4ZCP_ASNHDR-ASH_CUT_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_CUT_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_CUT_NUM]' LEVELPOSITION=1,
+        ash_cut_num_key = '[4ZCP_ASNHDR-ASH_CUT_NUM].[24ZCP_ASNHDR-ASH_CUT_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_CUT_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_CUT_NUM]' ATTRIBUTE,
+        ash_dc_ord_numlevel01_0 = '[4ZCP_ASNHDR-ASH_DC_ORD_N].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_DC_ORD_N]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_DC_ORD_N]' LEVELPOSITION=1,
+        ash_dc_ord_num_key = '[4ZCP_ASNHDR-ASH_DC_ORD_N].[24ZCP_ASNHDR-ASH_DC_ORD_N]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_DC_ORD_N]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_DC_ORD_N]' ATTRIBUTE,
+        ash_door_schd_typelevel01_0 = '[4ZCP_ASNHDR-ASH_DOOR_SCH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_DOOR_SCH]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_DOOR_SCH]' LEVELPOSITION=1,
+        ash_door_schd_type_key = '[4ZCP_ASNHDR-ASH_DOOR_SCH].[24ZCP_ASNHDR-ASH_DOOR_SCH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_DOOR_SCH]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_DOOR_SCH]' ATTRIBUTE,
+        ash_error_seq_numlevel01_0 = '[4ZCP_ASNHDR-ASH_ERROR_SE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ERROR_SE]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ERROR_SE]' LEVELPOSITION=1,
+        ash_error_seq_num_key = '[4ZCP_ASNHDR-ASH_ERROR_SE].[24ZCP_ASNHDR-ASH_ERROR_SE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_ERROR_SE]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_ERROR_SE]' ATTRIBUTE,
+        ash_firm_appt_indclevel01_0 = '[4ZCP_ASNHDR-ASH_FIRM_APP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_FIRM_APP]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_FIRM_APP]' LEVELPOSITION=1,
+        ash_firm_appt_indc_key = '[4ZCP_ASNHDR-ASH_FIRM_APP].[24ZCP_ASNHDR-ASH_FIRM_APP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_FIRM_APP]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_FIRM_APP]' ATTRIBUTE,
+        ash_hdr_idlevel01_0 = '[4ZCP_ASNHDR-ASH_HDR_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_HDR_ID]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_HDR_ID]' LEVELPOSITION=1,
+        ash_hdr_id_key = '[4ZCP_ASNHDR-ASH_HDR_ID].[24ZCP_ASNHDR-ASH_HDR_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_HDR_ID]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_HDR_ID]' ATTRIBUTE,
+        ash_hld_qual_chklevel01_0 = '[4ZCP_ASNHDR-ASH_HLD_QUAL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_HLD_QUAL]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_HLD_QUAL]' LEVELPOSITION=1,
+        ash_hld_qual_chk_key = '[4ZCP_ASNHDR-ASH_HLD_QUAL].[24ZCP_ASNHDR-ASH_HLD_QUAL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_HLD_QUAL]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_HLD_QUAL]' ATTRIBUTE,
+        ash_host_inpt_idlevel01_0 = '[4ZCP_ASNHDR-ASH_HOST_INP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_HOST_INP]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_HOST_INP]' LEVELPOSITION=1,
+        ash_host_inpt_id_key = '[4ZCP_ASNHDR-ASH_HOST_INP].[24ZCP_ASNHDR-ASH_HOST_INP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_HOST_INP]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_HOST_INP]' ATTRIBUTE,
+        ash_manif_numlevel01_0 = '[4ZCP_ASNHDR-ASH_MANIF_NU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MANIF_NU]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MANIF_NU]' LEVELPOSITION=1,
+        ash_manif_num_key = '[4ZCP_ASNHDR-ASH_MANIF_NU].[24ZCP_ASNHDR-ASH_MANIF_NU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MANIF_NU]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MANIF_NU]' ATTRIBUTE,
+        ash_manif_typelevel01_0 = '[4ZCP_ASNHDR-ASH_MANIF_TY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MANIF_TY]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MANIF_TY]' LEVELPOSITION=1,
+        ash_manif_type_key = '[4ZCP_ASNHDR-ASH_MANIF_TY].[24ZCP_ASNHDR-ASH_MANIF_TY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MANIF_TY]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MANIF_TY]' ATTRIBUTE,
+        ash_mfg_plntlevel01_0 = '[4ZCP_ASNHDR-ASH_MFG_PLNT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MFG_PLNT]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MFG_PLNT]' LEVELPOSITION=1,
+        ash_mfg_plnt_key = '[4ZCP_ASNHDR-ASH_MFG_PLNT].[24ZCP_ASNHDR-ASH_MFG_PLNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MFG_PLNT]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MFG_PLNT]' ATTRIBUTE,
+        ash_misc_instr_cd1level01_0 = '[4ZCP_ASNHDR-ASH_MISC_INS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MISC_INS]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MISC_INS]' LEVELPOSITION=1,
+        ash_misc_instr_cd1_key = '[4ZCP_ASNHDR-ASH_MISC_INS].[24ZCP_ASNHDR-ASH_MISC_INS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MISC_INS]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MISC_INS]' ATTRIBUTE,
+        ash_misc_instr_cd2level01_0 = '[4ZCP_ASNHDR-ASH_MISC_I_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MISC_I_0]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MISC_I_0]' LEVELPOSITION=1,
+        ash_misc_instr_cd2_key = '[4ZCP_ASNHDR-ASH_MISC_I_0].[24ZCP_ASNHDR-ASH_MISC_I_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MISC_I_0]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MISC_I_0]' ATTRIBUTE,
+        ash_mod_date_tmlevel01_0 = '[4ZCP_ASNHDR-ASH_MOD_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MOD_DATE]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MOD_DATE]' LEVELPOSITION=1,
+        ash_mod_date_tm_key = '[4ZCP_ASNHDR-ASH_MOD_DATE].[24ZCP_ASNHDR-ASH_MOD_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_MOD_DATE]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_MOD_DATE]' ATTRIBUTE,
+        ash_po_numlevel01_0 = '[4ZCP_ASNHDR-ASH_PO_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_PO_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_PO_NUM]' LEVELPOSITION=1,
+        ash_po_num_key = '[4ZCP_ASNHDR-ASH_PO_NUM].[24ZCP_ASNHDR-ASH_PO_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_PO_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_PO_NUM]' ATTRIBUTE,
+        ash_proc_cmt_txlevel01_0 = '[4ZCP_ASNHDR-ASH_PROC_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_PROC_CMT]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_PROC_CMT]' LEVELPOSITION=1,
+        ash_proc_cmt_tx_key = '[4ZCP_ASNHDR-ASH_PROC_CMT].[24ZCP_ASNHDR-ASH_PROC_CMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_PROC_CMT]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_PROC_CMT]' ATTRIBUTE,
+        ash_proc_stat_cdlevel01_0 = '[4ZCP_ASNHDR-ASH_PROC_STA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_PROC_STA]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_PROC_STA]' LEVELPOSITION=1,
+        ash_proc_stat_cd_key = '[4ZCP_ASNHDR-ASH_PROC_STA].[24ZCP_ASNHDR-ASH_PROC_STA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_PROC_STA]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_PROC_STA]' ATTRIBUTE,
+        ash_proc_tslevel01_0 = '[4ZCP_ASNHDR-ASH_PROC_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_PROC_TS]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_PROC_TS]' LEVELPOSITION=1,
+        ash_proc_ts_key = '[4ZCP_ASNHDR-ASH_PROC_TS].[24ZCP_ASNHDR-ASH_PROC_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_PROC_TS]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_PROC_TS]' ATTRIBUTE,
+        ash_pro_numlevel01_0 = '[4ZCP_ASNHDR-ASH_PRO_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_PRO_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_PRO_NUM]' LEVELPOSITION=1,
+        ash_pro_num_key = '[4ZCP_ASNHDR-ASH_PRO_NUM].[24ZCP_ASNHDR-ASH_PRO_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_PRO_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_PRO_NUM]' ATTRIBUTE,
+        ash_redy_stat_cdlevel01_0 = '[4ZCP_ASNHDR-ASH_REDY_STA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REDY_STA]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REDY_STA]' LEVELPOSITION=1,
+        ash_redy_stat_cd_key = '[4ZCP_ASNHDR-ASH_REDY_STA].[24ZCP_ASNHDR-ASH_REDY_STA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REDY_STA]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REDY_STA]' ATTRIBUTE,
+        ash_ref_cd1level01_0 = '[4ZCP_ASNHDR-ASH_REF_CD1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_CD1]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_CD1]' LEVELPOSITION=1,
+        ash_ref_cd1_key = '[4ZCP_ASNHDR-ASH_REF_CD1].[24ZCP_ASNHDR-ASH_REF_CD1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_CD1]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_CD1]' ATTRIBUTE,
+        ash_ref_cd2level01_0 = '[4ZCP_ASNHDR-ASH_REF_CD2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_CD2]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_CD2]' LEVELPOSITION=1,
+        ash_ref_cd2_key = '[4ZCP_ASNHDR-ASH_REF_CD2].[24ZCP_ASNHDR-ASH_REF_CD2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_CD2]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_CD2]' ATTRIBUTE,
+        ash_ref_cd3level01_0 = '[4ZCP_ASNHDR-ASH_REF_CD3].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_CD3]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_CD3]' LEVELPOSITION=1,
+        ash_ref_cd3_key = '[4ZCP_ASNHDR-ASH_REF_CD3].[24ZCP_ASNHDR-ASH_REF_CD3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_CD3]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_CD3]' ATTRIBUTE,
+        ash_ref_field1level01_0 = '[4ZCP_ASNHDR-ASH_REF_FIEL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_FIEL]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_FIEL]' LEVELPOSITION=1,
+        ash_ref_field1_key = '[4ZCP_ASNHDR-ASH_REF_FIEL].[24ZCP_ASNHDR-ASH_REF_FIEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_FIEL]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_FIEL]' ATTRIBUTE,
+        ash_ref_field2level01_0 = '[4ZCP_ASNHDR-ASH_REF_FI_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_FI_0]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_FI_0]' LEVELPOSITION=1,
+        ash_ref_field2_key = '[4ZCP_ASNHDR-ASH_REF_FI_0].[24ZCP_ASNHDR-ASH_REF_FI_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_FI_0]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_FI_0]' ATTRIBUTE,
+        ash_ref_field3level01_0 = '[4ZCP_ASNHDR-ASH_REF_FI_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_FI_1]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_FI_1]' LEVELPOSITION=1,
+        ash_ref_field3_key = '[4ZCP_ASNHDR-ASH_REF_FI_1].[24ZCP_ASNHDR-ASH_REF_FI_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REF_FI_1]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REF_FI_1]' ATTRIBUTE,
+        ash_rep_namelevel01_0 = '[4ZCP_ASNHDR-ASH_REP_NAME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REP_NAME]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REP_NAME]' LEVELPOSITION=1,
+        ash_rep_name_key = '[4ZCP_ASNHDR-ASH_REP_NAME].[24ZCP_ASNHDR-ASH_REP_NAME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_REP_NAME]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_REP_NAME]' ATTRIBUTE,
+        ash_sched_apptlevel01_0 = '[4ZCP_ASNHDR-ASH_SCHED_AP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_SCHED_AP]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_SCHED_AP]' LEVELPOSITION=1,
+        ash_sched_appt_key = '[4ZCP_ASNHDR-ASH_SCHED_AP].[24ZCP_ASNHDR-ASH_SCHED_AP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_SCHED_AP]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_SCHED_AP]' ATTRIBUTE,
+        ash_ship_vialevel01_0 = '[4ZCP_ASNHDR-ASH_SHIP_VIA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_SHIP_VIA]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_SHIP_VIA]' LEVELPOSITION=1,
+        ash_ship_via_key = '[4ZCP_ASNHDR-ASH_SHIP_VIA].[24ZCP_ASNHDR-ASH_SHIP_VIA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_SHIP_VIA]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_SHIP_VIA]' ATTRIBUTE,
+        ash_shpd_datelevel01_0 = '[4ZCP_ASNHDR-ASH_SHPD_DAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_SHPD_DAT]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_SHPD_DAT]' LEVELPOSITION=1,
+        ash_shpd_date_key = '[4ZCP_ASNHDR-ASH_SHPD_DAT].[24ZCP_ASNHDR-ASH_SHPD_DAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_SHPD_DAT]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_SHPD_DAT]' ATTRIBUTE,
+        ash_shpmt_numlevel01_0 = '[4ZCP_ASNHDR-ASH_SHPMT_NU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_SHPMT_NU]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_SHPMT_NU]' LEVELPOSITION=1,
+        ash_shpmt_num_key = '[4ZCP_ASNHDR-ASH_SHPMT_NU].[24ZCP_ASNHDR-ASH_SHPMT_NU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_SHPMT_NU]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_SHPMT_NU]' ATTRIBUTE,
+        ash_stat_cdlevel01_0 = '[4ZCP_ASNHDR-ASH_STAT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_STAT_CD]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_STAT_CD]' LEVELPOSITION=1,
+        ash_stat_cd_key = '[4ZCP_ASNHDR-ASH_STAT_CD].[24ZCP_ASNHDR-ASH_STAT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_STAT_CD]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_STAT_CD]' ATTRIBUTE,
+        ash_stop_seqlevel01_0 = '[4ZCP_ASNHDR-ASH_STOP_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_STOP_SEQ]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_STOP_SEQ]' LEVELPOSITION=1,
+        ash_stop_seq_key = '[4ZCP_ASNHDR-ASH_STOP_SEQ].[24ZCP_ASNHDR-ASH_STOP_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_STOP_SEQ]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_STOP_SEQ]' ATTRIBUTE,
+        ash_tel_numlevel01_0 = '[4ZCP_ASNHDR-ASH_TEL_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_TEL_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_TEL_NUM]' LEVELPOSITION=1,
+        ash_tel_num_key = '[4ZCP_ASNHDR-ASH_TEL_NUM].[24ZCP_ASNHDR-ASH_TEL_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_TEL_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_TEL_NUM]' ATTRIBUTE,
+        ash_tnarnd_tmlevel01_0 = '[4ZCP_ASNHDR-ASH_TNARND_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_TNARND_T]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_TNARND_T]' LEVELPOSITION=1,
+        ash_tnarnd_tm_key = '[4ZCP_ASNHDR-ASH_TNARND_T].[24ZCP_ASNHDR-ASH_TNARND_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_TNARND_T]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_TNARND_T]' ATTRIBUTE,
+        ash_to_whselevel01_0 = '[4ZCP_ASNHDR-ASH_TO_WHSE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_TO_WHSE]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_TO_WHSE]' LEVELPOSITION=1,
+        ash_to_whse_key = '[4ZCP_ASNHDR-ASH_TO_WHSE].[24ZCP_ASNHDR-ASH_TO_WHSE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_TO_WHSE]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_TO_WHSE]' ATTRIBUTE,
+        ash_tractor_numlevel01_0 = '[4ZCP_ASNHDR-ASH_TRACTOR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_TRACTOR]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_TRACTOR]' LEVELPOSITION=1,
+        ash_tractor_num_key = '[4ZCP_ASNHDR-ASH_TRACTOR].[24ZCP_ASNHDR-ASH_TRACTOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_TRACTOR]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_TRACTOR]' ATTRIBUTE,
+        ash_trlr_numlevel01_0 = '[4ZCP_ASNHDR-ASH_TRLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_TRLR_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_TRLR_NUM]' LEVELPOSITION=1,
+        ash_trlr_num_key = '[4ZCP_ASNHDR-ASH_TRLR_NUM].[24ZCP_ASNHDR-ASH_TRLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_TRLR_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_TRLR_NUM]' ATTRIBUTE,
+        ash_user_idlevel01_0 = '[4ZCP_ASNHDR-ASH_USER_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_USER_ID]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_USER_ID]' LEVELPOSITION=1,
+        ash_user_id_key = '[4ZCP_ASNHDR-ASH_USER_ID].[24ZCP_ASNHDR-ASH_USER_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_USER_ID]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_USER_ID]' ATTRIBUTE,
+        ash_vndr_numlevel01_0 = '[4ZCP_ASNHDR-ASH_VNDR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_VNDR_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_VNDR_NUM]' LEVELPOSITION=1,
+        ash_vndr_num_key = '[4ZCP_ASNHDR-ASH_VNDR_NUM].[24ZCP_ASNHDR-ASH_VNDR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_VNDR_NUM]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_VNDR_NUM]' ATTRIBUTE,
+        ash_whse_xfer_flaglevel01_0 = '[4ZCP_ASNHDR-ASH_WHSE_XFE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_WHSE_XFE]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_WHSE_XFE]' LEVELPOSITION=1,
+        ash_whse_xfer_flag_key = '[4ZCP_ASNHDR-ASH_WHSE_XFE].[24ZCP_ASNHDR-ASH_WHSE_XFE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_WHSE_XFE]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_WHSE_XFE]' ATTRIBUTE,
+        ash_work_ord_numlevel01_0 = '[4ZCP_ASNHDR-ASH_WORK_ORD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_WORK_ORD]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_WORK_ORD]' LEVELPOSITION=1,
+        ash_work_ord_num_key = '[4ZCP_ASNHDR-ASH_WORK_ORD].[24ZCP_ASNHDR-ASH_WORK_ORD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_WORK_ORD]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_WORK_ORD]' ATTRIBUTE,
+        ash_xpec_end_datelevel01_0 = '[4ZCP_ASNHDR-ASH_XPEC_END].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_XPEC_END]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_XPEC_END]' LEVELPOSITION=1,
+        ash_xpec_end_date_key = '[4ZCP_ASNHDR-ASH_XPEC_END].[24ZCP_ASNHDR-ASH_XPEC_END]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_XPEC_END]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_XPEC_END]' ATTRIBUTE,
+        ash_xpec_strt_datelevel01_0 = '[4ZCP_ASNHDR-ASH_XPEC_STR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_XPEC_STR]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_XPEC_STR]' LEVELPOSITION=1,
+        ash_xpec_strt_date_key = '[4ZCP_ASNHDR-ASH_XPEC_STR].[24ZCP_ASNHDR-ASH_XPEC_STR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASH_XPEC_STR]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASH_XPEC_STR]' ATTRIBUTE,
+        asnhdr_cre_by_idlevel01_0 = '[4ZCP_ASNHDR-ASNHDR_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASNHDR_CRE_B]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASNHDR_CRE_B]' LEVELPOSITION=1,
+        asnhdr_cre_by_id_key = '[4ZCP_ASNHDR-ASNHDR_CRE_B].[24ZCP_ASNHDR-ASNHDR_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASNHDR_CRE_B]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASNHDR_CRE_B]' ATTRIBUTE,
+        asnhdr_cre_tslevel01_0 = '[4ZCP_ASNHDR-ASNHDR_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASNHDR_CRE_T]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASNHDR_CRE_T]' LEVELPOSITION=1,
+        asnhdr_cre_ts_key = '[4ZCP_ASNHDR-ASNHDR_CRE_T].[24ZCP_ASNHDR-ASNHDR_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASNHDR_CRE_T]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASNHDR_CRE_T]' ATTRIBUTE,
+        asnhdr_upd_by_idlevel01_0 = '[4ZCP_ASNHDR-ASNHDR_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASNHDR_UPD_B]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASNHDR_UPD_B]' LEVELPOSITION=1,
+        asnhdr_upd_by_id_key = '[4ZCP_ASNHDR-ASNHDR_UPD_B].[24ZCP_ASNHDR-ASNHDR_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASNHDR_UPD_B]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASNHDR_UPD_B]' ATTRIBUTE,
+        asnhdr_upd_tslevel01_0 = '[4ZCP_ASNHDR-ASNHDR_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASNHDR_UPD_T]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASNHDR_UPD_T]' LEVELPOSITION=1,
+        asnhdr_upd_ts_key = '[4ZCP_ASNHDR-ASNHDR_UPD_T].[24ZCP_ASNHDR-ASNHDR_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ASNHDR-ASNHDR_UPD_T]' DIMENSIONNAME = '[4ZCP_ASNHDR-ASNHDR_UPD_T]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_asnhdr I18N us_cst (
+        ash_archive_inlevel01_0:text,
+        ash_archive_in_key:text,
+        ash_arrv_dtlevel01_0:text,
+        ash_arrv_dt_key:text,
+        ash_asn_dtl_typelevel01_0:text,
+        ash_asn_dtl_type_key:text,
+        ash_asn_orgn_typelevel01_0:text,
+        ash_asn_orgn_type_key:text,
+        ash_asn_shpmt_typelevel01_0:text,
+        ash_asn_shpmt_type_key:text,
+        ash_bollevel01_0:text,
+        ash_bol_key:text,
+        ash_buyer_cdlevel01_0:text,
+        ash_buyer_cd_key:text,
+        ash_cases_shpdlevel01_0:text,
+        ash_cases_shpd_key:text,
+        ash_contrac_locnlevel01_0:text,
+        ash_contrac_locn_key:text,
+        ash_create_date_tmlevel01_0:text,
+        ash_create_date_tm_key:text,
+        ash_cut_numlevel01_0:text,
+        ash_cut_num_key:text,
+        ash_dc_ord_numlevel01_0:text,
+        ash_dc_ord_num_key:text,
+        ash_door_schd_typelevel01_0:text,
+        ash_door_schd_type_key:text,
+        ash_error_seq_numlevel01_0:text,
+        ash_error_seq_num_key:text,
+        ash_firm_appt_indclevel01_0:text,
+        ash_firm_appt_indc_key:text,
+        ash_hdr_idlevel01_0:text,
+        ash_hdr_id_key:text,
+        ash_hld_qual_chklevel01_0:text,
+        ash_hld_qual_chk_key:text,
+        ash_host_inpt_idlevel01_0:text,
+        ash_host_inpt_id_key:text,
+        ash_manif_numlevel01_0:text,
+        ash_manif_num_key:text,
+        ash_manif_typelevel01_0:text,
+        ash_manif_type_key:text,
+        ash_mfg_plntlevel01_0:text,
+        ash_mfg_plnt_key:text,
+        ash_misc_instr_cd1level01_0:text,
+        ash_misc_instr_cd1_key:text,
+        ash_misc_instr_cd2level01_0:text,
+        ash_misc_instr_cd2_key:text,
+        ash_mod_date_tmlevel01_0:text,
+        ash_mod_date_tm_key:text,
+        ash_po_numlevel01_0:text,
+        ash_po_num_key:text,
+        ash_proc_cmt_txlevel01_0:text,
+        ash_proc_cmt_tx_key:text,
+        ash_proc_stat_cdlevel01_0:text,
+        ash_proc_stat_cd_key:text,
+        ash_proc_tslevel01_0:text,
+        ash_proc_ts_key:text,
+        ash_pro_numlevel01_0:text,
+        ash_pro_num_key:text,
+        ash_redy_stat_cdlevel01_0:text,
+        ash_redy_stat_cd_key:text,
+        ash_ref_cd1level01_0:text,
+        ash_ref_cd1_key:text,
+        ash_ref_cd2level01_0:text,
+        ash_ref_cd2_key:text,
+        ash_ref_cd3level01_0:text,
+        ash_ref_cd3_key:text,
+        ash_ref_field1level01_0:text,
+        ash_ref_field1_key:text,
+        ash_ref_field2level01_0:text,
+        ash_ref_field2_key:text,
+        ash_ref_field3level01_0:text,
+        ash_ref_field3_key:text,
+        ash_rep_namelevel01_0:text,
+        ash_rep_name_key:text,
+        ash_sched_apptlevel01_0:text,
+        ash_sched_appt_key:text,
+        ash_ship_vialevel01_0:text,
+        ash_ship_via_key:text,
+        ash_shpd_datelevel01_0:text,
+        ash_shpd_date_key:text,
+        ash_shpmt_numlevel01_0:text,
+        ash_shpmt_num_key:text,
+        ash_stat_cdlevel01_0:text,
+        ash_stat_cd_key:text,
+        ash_stop_seqlevel01_0:text,
+        ash_stop_seq_key:text,
+        ash_tel_numlevel01_0:text,
+        ash_tel_num_key:text,
+        ash_tnarnd_tmlevel01_0:text,
+        ash_tnarnd_tm_key:text,
+        ash_to_whselevel01_0:text,
+        ash_to_whse_key:text,
+        ash_tractor_numlevel01_0:text,
+        ash_tractor_num_key:text,
+        ash_trlr_numlevel01_0:text,
+        ash_trlr_num_key:text,
+        ash_user_idlevel01_0:text,
+        ash_user_id_key:text,
+        ash_vndr_numlevel01_0:text,
+        ash_vndr_num_key:text,
+        ash_whse_xfer_flaglevel01_0:text,
+        ash_whse_xfer_flag_key:text,
+        ash_work_ord_numlevel01_0:text,
+        ash_work_ord_num_key:text,
+        ash_xpec_end_datelevel01_0:text,
+        ash_xpec_end_date_key:text,
+        ash_xpec_strt_datelevel01_0:text,
+        ash_xpec_strt_date_key:text,
+        asnhdr_cre_by_idlevel01_0:text,
+        asnhdr_cre_by_id_key:text,
+        asnhdr_cre_tslevel01_0:text,
+        asnhdr_cre_ts_key:text,
+        asnhdr_upd_by_idlevel01_0:text,
+        asnhdr_upd_by_id_key:text,
+        asnhdr_upd_tslevel01_0:text,
+        asnhdr_upd_ts_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_asnhdr(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD ash_archive_inlevel01_0 (any) OPT ANY
+             ADD ash_archive_in_key (any) OPT ANY
+             ADD ash_arrv_dtlevel01_0 (any) OPT ANY
+             ADD ash_arrv_dt_key (any) OPT ANY
+             ADD ash_asn_dtl_typelevel01_0 (any) OPT ANY
+             ADD ash_asn_dtl_type_key (any) OPT ANY
+             ADD ash_asn_orgn_typelevel01_0 (any) OPT ANY
+             ADD ash_asn_orgn_type_key (any) OPT ANY
+             ADD ash_asn_shpmt_typelevel01_0 (any) OPT ANY
+             ADD ash_asn_shpmt_type_key (any) OPT ANY
+             ADD ash_bollevel01_0 (any) OPT ANY
+             ADD ash_bol_key (any) OPT ANY
+             ADD ash_buyer_cdlevel01_0 (any) OPT ANY
+             ADD ash_buyer_cd_key (any) OPT ANY
+             ADD ash_cases_shpdlevel01_0 (any) OPT ANY
+             ADD ash_cases_shpd_key (any) OPT ANY
+             ADD ash_contrac_locnlevel01_0 (any) OPT ANY
+             ADD ash_contrac_locn_key (any) OPT ANY
+             ADD ash_create_date_tmlevel01_0 (any) OPT ANY
+             ADD ash_create_date_tm_key (any) OPT ANY
+             ADD ash_cut_numlevel01_0 (any) OPT ANY
+             ADD ash_cut_num_key (any) OPT ANY
+             ADD ash_dc_ord_numlevel01_0 (any) OPT ANY
+             ADD ash_dc_ord_num_key (any) OPT ANY
+             ADD ash_door_schd_typelevel01_0 (any) OPT ANY
+             ADD ash_door_schd_type_key (any) OPT ANY
+             ADD ash_error_seq_numlevel01_0 (any) OPT ANY
+             ADD ash_error_seq_num_key (any) OPT ANY
+             ADD ash_firm_appt_indclevel01_0 (any) OPT ANY
+             ADD ash_firm_appt_indc_key (any) OPT ANY
+             ADD ash_hdr_idlevel01_0 (any) OPT ANY
+             ADD ash_hdr_id_key (any) OPT ANY
+             ADD ash_hld_qual_chklevel01_0 (any) OPT ANY
+             ADD ash_hld_qual_chk_key (any) OPT ANY
+             ADD ash_host_inpt_idlevel01_0 (any) OPT ANY
+             ADD ash_host_inpt_id_key (any) OPT ANY
+             ADD ash_manif_numlevel01_0 (any) OPT ANY
+             ADD ash_manif_num_key (any) OPT ANY
+             ADD ash_manif_typelevel01_0 (any) OPT ANY
+             ADD ash_manif_type_key (any) OPT ANY
+             ADD ash_mfg_plntlevel01_0 (any) OPT ANY
+             ADD ash_mfg_plnt_key (any) OPT ANY
+             ADD ash_misc_instr_cd1level01_0 (any) OPT ANY
+             ADD ash_misc_instr_cd1_key (any) OPT ANY
+             ADD ash_misc_instr_cd2level01_0 (any) OPT ANY
+             ADD ash_misc_instr_cd2_key (any) OPT ANY
+             ADD ash_mod_date_tmlevel01_0 (any) OPT ANY
+             ADD ash_mod_date_tm_key (any) OPT ANY
+             ADD ash_po_numlevel01_0 (any) OPT ANY
+             ADD ash_po_num_key (any) OPT ANY
+             ADD ash_proc_cmt_txlevel01_0 (any) OPT ANY
+             ADD ash_proc_cmt_tx_key (any) OPT ANY
+             ADD ash_proc_stat_cdlevel01_0 (any) OPT ANY
+             ADD ash_proc_stat_cd_key (any) OPT ANY
+             ADD ash_proc_tslevel01_0 (any) OPT ANY
+             ADD ash_proc_ts_key (any) OPT ANY
+             ADD ash_pro_numlevel01_0 (any) OPT ANY
+             ADD ash_pro_num_key (any) OPT ANY
+             ADD ash_redy_stat_cdlevel01_0 (any) OPT ANY
+             ADD ash_redy_stat_cd_key (any) OPT ANY
+             ADD ash_ref_cd1level01_0 (any) OPT ANY
+             ADD ash_ref_cd1_key (any) OPT ANY
+             ADD ash_ref_cd2level01_0 (any) OPT ANY
+             ADD ash_ref_cd2_key (any) OPT ANY
+             ADD ash_ref_cd3level01_0 (any) OPT ANY
+             ADD ash_ref_cd3_key (any) OPT ANY
+             ADD ash_ref_field1level01_0 (any) OPT ANY
+             ADD ash_ref_field1_key (any) OPT ANY
+             ADD ash_ref_field2level01_0 (any) OPT ANY
+             ADD ash_ref_field2_key (any) OPT ANY
+             ADD ash_ref_field3level01_0 (any) OPT ANY
+             ADD ash_ref_field3_key (any) OPT ANY
+             ADD ash_rep_namelevel01_0 (any) OPT ANY
+             ADD ash_rep_name_key (any) OPT ANY
+             ADD ash_sched_apptlevel01_0 (any) OPT ANY
+             ADD ash_sched_appt_key (any) OPT ANY
+             ADD ash_ship_vialevel01_0 (any) OPT ANY
+             ADD ash_ship_via_key (any) OPT ANY
+             ADD ash_shpd_datelevel01_0 (any) OPT ANY
+             ADD ash_shpd_date_key (any) OPT ANY
+             ADD ash_shpmt_numlevel01_0 (any) OPT ANY
+             ADD ash_shpmt_num_key (any) OPT ANY
+             ADD ash_stat_cdlevel01_0 (any) OPT ANY
+             ADD ash_stat_cd_key (any) OPT ANY
+             ADD ash_stop_seqlevel01_0 (any) OPT ANY
+             ADD ash_stop_seq_key (any) OPT ANY
+             ADD ash_tel_numlevel01_0 (any) OPT ANY
+             ADD ash_tel_num_key (any) OPT ANY
+             ADD ash_tnarnd_tmlevel01_0 (any) OPT ANY
+             ADD ash_tnarnd_tm_key (any) OPT ANY
+             ADD ash_to_whselevel01_0 (any) OPT ANY
+             ADD ash_to_whse_key (any) OPT ANY
+             ADD ash_tractor_numlevel01_0 (any) OPT ANY
+             ADD ash_tractor_num_key (any) OPT ANY
+             ADD ash_trlr_numlevel01_0 (any) OPT ANY
+             ADD ash_trlr_num_key (any) OPT ANY
+             ADD ash_user_idlevel01_0 (any) OPT ANY
+             ADD ash_user_id_key (any) OPT ANY
+             ADD ash_vndr_numlevel01_0 (any) OPT ANY
+             ADD ash_vndr_num_key (any) OPT ANY
+             ADD ash_whse_xfer_flaglevel01_0 (any) OPT ANY
+             ADD ash_whse_xfer_flag_key (any) OPT ANY
+             ADD ash_work_ord_numlevel01_0 (any) OPT ANY
+             ADD ash_work_ord_num_key (any) OPT ANY
+             ADD ash_xpec_end_datelevel01_0 (any) OPT ANY
+             ADD ash_xpec_end_date_key (any) OPT ANY
+             ADD ash_xpec_strt_datelevel01_0 (any) OPT ANY
+             ADD ash_xpec_strt_date_key (any) OPT ANY
+             ADD asnhdr_cre_by_idlevel01_0 (any) OPT ANY
+             ADD asnhdr_cre_by_id_key (any) OPT ANY
+             ADD asnhdr_cre_tslevel01_0 (any) OPT ANY
+             ADD asnhdr_cre_ts_key (any) OPT ANY
+             ADD asnhdr_upd_by_idlevel01_0 (any) OPT ANY
+             ADD asnhdr_upd_by_id_key (any) OPT ANY
+             ADD asnhdr_upd_tslevel01_0 (any) OPT ANY
+             ADD asnhdr_upd_ts_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (ash_archive_in_key, ash_archive_inlevel01_0, ash_arrv_dt_key, ash_arrv_dtlevel01_0, ash_asn_dtl_type_key, ash_asn_dtl_typelevel01_0, ash_asn_orgn_type_key, ash_asn_orgn_typelevel01_0, ash_asn_shpmt_type_key, ash_asn_shpmt_typelevel01_0, ash_bol_key, ash_bollevel01_0, ash_buyer_cd_key, ash_buyer_cdlevel01_0, ash_cases_shpd_key, ash_cases_shpdlevel01_0, ash_contrac_locn_key, ash_contrac_locnlevel01_0, ash_create_date_tm_key, ash_create_date_tmlevel01_0, ash_cut_num_key, ash_cut_numlevel01_0, ash_dc_ord_num_key, ash_dc_ord_numlevel01_0, ash_door_schd_type_key, ash_door_schd_typelevel01_0, ash_error_seq_num_key, ash_error_seq_numlevel01_0, ash_firm_appt_indc_key, ash_firm_appt_indclevel01_0, ash_hdr_id_key, ash_hdr_idlevel01_0, ash_hld_qual_chk_key, ash_hld_qual_chklevel01_0, ash_host_inpt_id_key, ash_host_inpt_idlevel01_0, ash_manif_num_key, ash_manif_numlevel01_0, ash_manif_type_key, ash_manif_typelevel01_0, ash_mfg_plnt_key, ash_mfg_plntlevel01_0, ash_misc_instr_cd1_key, ash_misc_instr_cd1level01_0, ash_misc_instr_cd2_key, ash_misc_instr_cd2level01_0, ash_mod_date_tm_key, ash_mod_date_tmlevel01_0, ash_po_num_key, ash_po_numlevel01_0, ash_pro_num_key, ash_pro_numlevel01_0, ash_proc_cmt_tx_key, ash_proc_cmt_txlevel01_0, ash_proc_stat_cd_key, ash_proc_stat_cdlevel01_0, ash_proc_ts_key, ash_proc_tslevel01_0, ash_redy_stat_cd_key, ash_redy_stat_cdlevel01_0, ash_ref_cd1_key, ash_ref_cd1level01_0, ash_ref_cd2_key, ash_ref_cd2level01_0, ash_ref_cd3_key, ash_ref_cd3level01_0, ash_ref_field1_key, ash_ref_field1level01_0, ash_ref_field2_key, ash_ref_field2level01_0, ash_ref_field3_key, ash_ref_field3level01_0, ash_rep_name_key, ash_rep_namelevel01_0, ash_sched_appt_key, ash_sched_apptlevel01_0, ash_ship_via_key, ash_ship_vialevel01_0, ash_shpd_date_key, ash_shpd_datelevel01_0, ash_shpmt_num_key, ash_shpmt_numlevel01_0, ash_stat_cd_key, ash_stat_cdlevel01_0, ash_stop_seq_key, ash_stop_seqlevel01_0, ash_tel_num_key, ash_tel_numlevel01_0, ash_tnarnd_tm_key, ash_tnarnd_tmlevel01_0, ash_to_whse_key, ash_to_whselevel01_0, ash_tractor_num_key, ash_tractor_numlevel01_0, ash_trlr_num_key, ash_trlr_numlevel01_0, ash_user_id_key, ash_user_idlevel01_0, ash_vndr_num_key, ash_vndr_numlevel01_0, ash_whse_xfer_flag_key, ash_whse_xfer_flaglevel01_0, ash_work_ord_num_key, ash_work_ord_numlevel01_0, ash_xpec_end_date_key, ash_xpec_end_datelevel01_0, ash_xpec_strt_date_key, ash_xpec_strt_datelevel01_0, asnhdr_cre_by_id_key, asnhdr_cre_by_idlevel01_0, asnhdr_cre_ts_key, asnhdr_cre_tslevel01_0, asnhdr_upd_by_id_key, asnhdr_upd_by_idlevel01_0, asnhdr_upd_ts_key, asnhdr_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_asnhdr)
+    );
+

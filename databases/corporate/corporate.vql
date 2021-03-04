@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE DATABASE corporate '';
+
+ALTER DATABASE corporate
+  CHARSET DEFAULT;
+

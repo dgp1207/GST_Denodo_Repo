@@ -1,0 +1,190 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_gensmm
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/misc'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENSMM'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        cre_by_idlevel01_0 = '[4ZCP_GENSMM-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENSMM-CRE_BY_ID]' LEVELPOSITION=1,
+        cre_by_id_key = '[4ZCP_GENSMM-CRE_BY_ID].[24ZCP_GENSMM-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENSMM-CRE_BY_ID]' ATTRIBUTE,
+        cre_tslevel01_0 = '[4ZCP_GENSMM-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENSMM-CRE_TS]' LEVELPOSITION=1,
+        cre_ts_key = '[4ZCP_GENSMM-CRE_TS].[24ZCP_GENSMM-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENSMM-CRE_TS]' ATTRIBUTE,
+        gensmm_key_filler01level01_0 = '[4ZCP_GENSMM-GENSMM_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-GENSMM_KEY_F]' DIMENSIONNAME = '[4ZCP_GENSMM-GENSMM_KEY_F]' LEVELPOSITION=1,
+        gensmm_key_filler01_key = '[4ZCP_GENSMM-GENSMM_KEY_F].[24ZCP_GENSMM-GENSMM_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-GENSMM_KEY_F]' DIMENSIONNAME = '[4ZCP_GENSMM-GENSMM_KEY_F]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        sim_acclevel01_0 = '[4ZCP_GENSMM-SIM_ACC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_ACC]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_ACC]' LEVELPOSITION=1,
+        sim_acc_key = '[4ZCP_GENSMM-SIM_ACC].[24ZCP_GENSMM-SIM_ACC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_ACC]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_ACC]' ATTRIBUTE,
+        sim_mdllevel01_0 = '[4ZCP_GENSMM-SIM_MDL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_MDL]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_MDL]' LEVELPOSITION=1,
+        sim_mdl_key = '[4ZCP_GENSMM-SIM_MDL].[24ZCP_GENSMM-SIM_MDL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_MDL]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_MDL]' ATTRIBUTE,
+        sim_m_bodylevel01_0 = '[4ZCP_GENSMM-SIM_M_BODY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_BODY]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_BODY]' LEVELPOSITION=1,
+        sim_m_body_key = '[4ZCP_GENSMM-SIM_M_BODY].[24ZCP_GENSMM-SIM_M_BODY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_BODY]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_BODY]' ATTRIBUTE,
+        sim_m_caplevel01_0 = '[4ZCP_GENSMM-SIM_M_CAP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_CAP]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_CAP]' LEVELPOSITION=1,
+        sim_m_cap_key = '[4ZCP_GENSMM-SIM_M_CAP].[24ZCP_GENSMM-SIM_M_CAP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_CAP]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_CAP]' ATTRIBUTE,
+        sim_m_chg_userlevel01_0 = '[4ZCP_GENSMM-SIM_M_CHG_US].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_CHG_US]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_CHG_US]' LEVELPOSITION=1,
+        sim_m_chg_user_key = '[4ZCP_GENSMM-SIM_M_CHG_US].[24ZCP_GENSMM-SIM_M_CHG_US]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_CHG_US]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_CHG_US]' ATTRIBUTE,
+        sim_m_configlevel01_0 = '[4ZCP_GENSMM-SIM_M_CONFIG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_CONFIG]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_CONFIG]' LEVELPOSITION=1,
+        sim_m_config_key = '[4ZCP_GENSMM-SIM_M_CONFIG].[24ZCP_GENSMM-SIM_M_CONFIG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_CONFIG]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_CONFIG]' ATTRIBUTE,
+        sim_m_curb_wgtlevel01_0 = '[4ZCP_GENSMM-SIM_M_CURB_W].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_CURB_W]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_CURB_W]' LEVELPOSITION=1,
+        sim_m_curb_wgt_key = '[4ZCP_GENSMM-SIM_M_CURB_W].[24ZCP_GENSMM-SIM_M_CURB_W]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_CURB_W]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_CURB_W]' ATTRIBUTE,
+        sim_m_cyllevel01_0 = '[4ZCP_GENSMM-SIM_M_CYL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_CYL]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_CYL]' LEVELPOSITION=1,
+        sim_m_cyl_key = '[4ZCP_GENSMM-SIM_M_CYL].[24ZCP_GENSMM-SIM_M_CYL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_CYL]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_CYL]' ATTRIBUTE,
+        sim_m_hplevel01_0 = '[4ZCP_GENSMM-SIM_M_HP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_HP]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_HP]' LEVELPOSITION=1,
+        sim_m_hp_key = '[4ZCP_GENSMM-SIM_M_HP].[24ZCP_GENSMM-SIM_M_HP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_HP]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_HP]' ATTRIBUTE,
+        sim_m_namelevel01_0 = '[4ZCP_GENSMM-SIM_M_NAME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_NAME]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_NAME]' LEVELPOSITION=1,
+        sim_m_name_key = '[4ZCP_GENSMM-SIM_M_NAME].[24ZCP_GENSMM-SIM_M_NAME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_NAME]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_NAME]' ATTRIBUTE,
+        sim_m_neglevel01_0 = '[4ZCP_GENSMM-SIM_M_NEG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_NEG]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_NEG]' LEVELPOSITION=1,
+        sim_m_neg_key = '[4ZCP_GENSMM-SIM_M_NEG].[24ZCP_GENSMM-SIM_M_NEG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_NEG]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_NEG]' ATTRIBUTE,
+        sim_m_statuslevel01_0 = '[4ZCP_GENSMM-SIM_M_STATUS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_STATUS]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_STATUS]' LEVELPOSITION=1,
+        sim_m_status_key = '[4ZCP_GENSMM-SIM_M_STATUS].[24ZCP_GENSMM-SIM_M_STATUS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_STATUS]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_STATUS]' ATTRIBUTE,
+        sim_m_vdslevel01_0 = '[4ZCP_GENSMM-SIM_M_VDS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_VDS]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_VDS]' LEVELPOSITION=1,
+        sim_m_vds_key = '[4ZCP_GENSMM-SIM_M_VDS].[24ZCP_GENSMM-SIM_M_VDS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_VDS]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_VDS]' ATTRIBUTE,
+        sim_m_vehlevel01_0 = '[4ZCP_GENSMM-SIM_M_VEH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_VEH]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_VEH]' LEVELPOSITION=1,
+        sim_m_veh_key = '[4ZCP_GENSMM-SIM_M_VEH].[24ZCP_GENSMM-SIM_M_VEH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_M_VEH]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_M_VEH]' ATTRIBUTE,
+        sim_phaselevel01_0 = '[4ZCP_GENSMM-SIM_PHASE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_PHASE]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_PHASE]' LEVELPOSITION=1,
+        sim_phase_key = '[4ZCP_GENSMM-SIM_PHASE].[24ZCP_GENSMM-SIM_PHASE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_PHASE]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_PHASE]' ATTRIBUTE,
+        sim_seqlevel01_0 = '[4ZCP_GENSMM-SIM_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_SEQ]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_SEQ]' LEVELPOSITION=1,
+        sim_seq_key = '[4ZCP_GENSMM-SIM_SEQ].[24ZCP_GENSMM-SIM_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_SEQ]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_SEQ]' ATTRIBUTE,
+        sim_yrlevel01_0 = '[4ZCP_GENSMM-SIM_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_YR]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_YR]' LEVELPOSITION=1,
+        sim_yr_key = '[4ZCP_GENSMM-SIM_YR].[24ZCP_GENSMM-SIM_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-SIM_YR]' DIMENSIONNAME = '[4ZCP_GENSMM-SIM_YR]' ATTRIBUTE,
+        upd_by_idlevel01_0 = '[4ZCP_GENSMM-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENSMM-UPD_BY_ID]' LEVELPOSITION=1,
+        upd_by_id_key = '[4ZCP_GENSMM-UPD_BY_ID].[24ZCP_GENSMM-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENSMM-UPD_BY_ID]' ATTRIBUTE,
+        upd_tslevel01_0 = '[4ZCP_GENSMM-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENSMM-UPD_TS]' LEVELPOSITION=1,
+        upd_ts_key = '[4ZCP_GENSMM-UPD_TS].[24ZCP_GENSMM-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENSMM-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENSMM-UPD_TS]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        sim_mwgt = '[Measures].[4ZCP_GENSMM-SIM_MWGT]' : 'java.lang.Double' (OPT) MEASURE,
+        sim_m_dlr = '[Measures].[4ZCP_GENSMM-SIM_M_DLR]' : 'java.lang.Double' (OPT) MEASURE,
+        sim_m_dst = '[Measures].[4ZCP_GENSMM-SIM_M_DST]' : 'java.lang.Double' (OPT) MEASURE,
+        sim_m_exc = '[Measures].[4ZCP_GENSMM-SIM_M_EXC]' : 'java.lang.Double' (OPT) MEASURE,
+        sim_m_rtl = '[Measures].[4ZCP_GENSMM-SIM_M_RTL]' : 'java.lang.Double' (OPT) MEASURE,
+        sim_m_tms_dlr = '[Measures].[4ZCP_GENSMM-SIM_M_TMS_DL]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_gensmm I18N us_cst (
+        cre_by_idlevel01_0:text,
+        cre_by_id_key:text,
+        cre_tslevel01_0:text,
+        cre_ts_key:text,
+        gensmm_key_filler01level01_0:text,
+        gensmm_key_filler01_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        sim_acclevel01_0:text,
+        sim_acc_key:text,
+        sim_mdllevel01_0:text,
+        sim_mdl_key:text,
+        sim_m_bodylevel01_0:text,
+        sim_m_body_key:text,
+        sim_m_caplevel01_0:text,
+        sim_m_cap_key:text,
+        sim_m_chg_userlevel01_0:text,
+        sim_m_chg_user_key:text,
+        sim_m_configlevel01_0:text,
+        sim_m_config_key:text,
+        sim_m_curb_wgtlevel01_0:text,
+        sim_m_curb_wgt_key:text,
+        sim_m_cyllevel01_0:text,
+        sim_m_cyl_key:text,
+        sim_m_hplevel01_0:text,
+        sim_m_hp_key:text,
+        sim_m_namelevel01_0:text,
+        sim_m_name_key:text,
+        sim_m_neglevel01_0:text,
+        sim_m_neg_key:text,
+        sim_m_statuslevel01_0:text,
+        sim_m_status_key:text,
+        sim_m_vdslevel01_0:text,
+        sim_m_vds_key:text,
+        sim_m_vehlevel01_0:text,
+        sim_m_veh_key:text,
+        sim_phaselevel01_0:text,
+        sim_phase_key:text,
+        sim_seqlevel01_0:text,
+        sim_seq_key:text,
+        sim_yrlevel01_0:text,
+        sim_yr_key:text,
+        upd_by_idlevel01_0:text,
+        upd_by_id_key:text,
+        upd_tslevel01_0:text,
+        upd_ts_key:text,
+        numberofrecords_0:double,
+        sim_mwgt:double,
+        sim_m_dlr:double,
+        sim_m_dst:double,
+        sim_m_exc:double,
+        sim_m_rtl:double,
+        sim_m_tms_dlr:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/misc'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_gensmm(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD cre_by_idlevel01_0 (any) OPT ANY
+             ADD cre_by_id_key (any) OPT ANY
+             ADD cre_tslevel01_0 (any) OPT ANY
+             ADD cre_ts_key (any) OPT ANY
+             ADD gensmm_key_filler01level01_0 (any) OPT ANY
+             ADD gensmm_key_filler01_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD sim_acclevel01_0 (any) OPT ANY
+             ADD sim_acc_key (any) OPT ANY
+             ADD sim_mdllevel01_0 (any) OPT ANY
+             ADD sim_mdl_key (any) OPT ANY
+             ADD sim_m_bodylevel01_0 (any) OPT ANY
+             ADD sim_m_body_key (any) OPT ANY
+             ADD sim_m_caplevel01_0 (any) OPT ANY
+             ADD sim_m_cap_key (any) OPT ANY
+             ADD sim_m_chg_userlevel01_0 (any) OPT ANY
+             ADD sim_m_chg_user_key (any) OPT ANY
+             ADD sim_m_configlevel01_0 (any) OPT ANY
+             ADD sim_m_config_key (any) OPT ANY
+             ADD sim_m_curb_wgtlevel01_0 (any) OPT ANY
+             ADD sim_m_curb_wgt_key (any) OPT ANY
+             ADD sim_m_cyllevel01_0 (any) OPT ANY
+             ADD sim_m_cyl_key (any) OPT ANY
+             ADD sim_m_hplevel01_0 (any) OPT ANY
+             ADD sim_m_hp_key (any) OPT ANY
+             ADD sim_m_namelevel01_0 (any) OPT ANY
+             ADD sim_m_name_key (any) OPT ANY
+             ADD sim_m_neglevel01_0 (any) OPT ANY
+             ADD sim_m_neg_key (any) OPT ANY
+             ADD sim_m_statuslevel01_0 (any) OPT ANY
+             ADD sim_m_status_key (any) OPT ANY
+             ADD sim_m_vdslevel01_0 (any) OPT ANY
+             ADD sim_m_vds_key (any) OPT ANY
+             ADD sim_m_vehlevel01_0 (any) OPT ANY
+             ADD sim_m_veh_key (any) OPT ANY
+             ADD sim_phaselevel01_0 (any) OPT ANY
+             ADD sim_phase_key (any) OPT ANY
+             ADD sim_seqlevel01_0 (any) OPT ANY
+             ADD sim_seq_key (any) OPT ANY
+             ADD sim_yrlevel01_0 (any) OPT ANY
+             ADD sim_yr_key (any) OPT ANY
+             ADD upd_by_idlevel01_0 (any) OPT ANY
+             ADD upd_by_id_key (any) OPT ANY
+             ADD upd_tslevel01_0 (any) OPT ANY
+             ADD upd_ts_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+             ADD sim_mwgt (any) OPT ANY
+             ADD sim_m_dlr (any) OPT ANY
+             ADD sim_m_dst (any) OPT ANY
+             ADD sim_m_exc (any) OPT ANY
+             ADD sim_m_rtl (any) OPT ANY
+             ADD sim_m_tms_dlr (any) OPT ANY
+        )
+        OUTPUTLIST (cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, gensmm_key_filler01_key, gensmm_key_filler01level01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, sim_acc_key, sim_acclevel01_0, sim_m_body_key, sim_m_bodylevel01_0, sim_m_cap_key, sim_m_caplevel01_0, sim_m_chg_user_key, sim_m_chg_userlevel01_0, sim_m_config_key, sim_m_configlevel01_0, sim_m_curb_wgt_key, sim_m_curb_wgtlevel01_0, sim_m_cyl_key, sim_m_cyllevel01_0, sim_m_dlr, sim_m_dst, sim_m_exc, sim_m_hp_key, sim_m_hplevel01_0, sim_m_name_key, sim_m_namelevel01_0, sim_m_neg_key, sim_m_neglevel01_0, sim_m_rtl, sim_m_status_key, sim_m_statuslevel01_0, sim_m_tms_dlr, sim_m_vds_key, sim_m_vdslevel01_0, sim_m_veh_key, sim_m_vehlevel01_0, sim_mdl_key, sim_mdllevel01_0, sim_mwgt, sim_phase_key, sim_phaselevel01_0, sim_seq_key, sim_seqlevel01_0, sim_yr_key, sim_yrlevel01_0, upd_by_id_key, upd_by_idlevel01_0, upd_ts_key, upd_tslevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_gensmm)
+    );
+

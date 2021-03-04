@@ -1,0 +1,19 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE DATASOURCE SAPBWBAPI ds_sap_hana
+    FOLDER = '/01 - connectivity'
+    DATABASENAME = 'sap_bi_bapi'
+    DATABASEVERSION = '7x'
+    SYSTEMNAME = '${databases.corporate.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.SYSTEMNAME}'
+    LANGUAGE = '${databases.corporate.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.LANGUAGE}'
+    HOSTNAME = '${databases.corporate.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.HOSTNAME}'
+    CLIENTID = '${databases.corporate.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.CLIENTID}'
+    SYSTEMNUMBER = '${databases.corporate.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.SYSTEMNUMBER}'
+    USERNAME = '${databases.corporate.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.USERNAME}'
+    USERPASSWORD = '${databases.corporate.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.USERPASSWORD}' ${databases.corporate.folder.01 - connectivity.datasources.sapbwbapi.ds_sap_hana.USERPASSWORD.ENCRYPTED}
+    READBLOCKSIZE = 20000
+    MAXACTIVE = 2
+    MAXIDLE = 4
+    MAXWAIT = 60000
+    MINEVICTABLEIDLETIME = 100000
+    TIMEBETWEENEVICTION = 150000;
+

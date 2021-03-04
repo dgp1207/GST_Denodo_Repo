@@ -1,0 +1,118 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_ardtls
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accounting'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ARDTLS'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        ardtls_cre_by_idlevel01_0 = '[4ZCP_ARDTLS-ARDTLS_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARDTLS_CRE_B]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARDTLS_CRE_B]' LEVELPOSITION=1,
+        ardtls_cre_by_id_key = '[4ZCP_ARDTLS-ARDTLS_CRE_B].[24ZCP_ARDTLS-ARDTLS_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARDTLS_CRE_B]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARDTLS_CRE_B]' ATTRIBUTE,
+        ardtls_cre_tslevel01_0 = '[4ZCP_ARDTLS-ARDTLS_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARDTLS_CRE_T]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARDTLS_CRE_T]' LEVELPOSITION=1,
+        ardtls_cre_ts_key = '[4ZCP_ARDTLS-ARDTLS_CRE_T].[24ZCP_ARDTLS-ARDTLS_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARDTLS_CRE_T]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARDTLS_CRE_T]' ATTRIBUTE,
+        ardtls_upd_by_idlevel01_0 = '[4ZCP_ARDTLS-ARDTLS_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARDTLS_UPD_B]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARDTLS_UPD_B]' LEVELPOSITION=1,
+        ardtls_upd_by_id_key = '[4ZCP_ARDTLS-ARDTLS_UPD_B].[24ZCP_ARDTLS-ARDTLS_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARDTLS_UPD_B]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARDTLS_UPD_B]' ATTRIBUTE,
+        ardtls_upd_tslevel01_0 = '[4ZCP_ARDTLS-ARDTLS_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARDTLS_UPD_T]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARDTLS_UPD_T]' LEVELPOSITION=1,
+        ardtls_upd_ts_key = '[4ZCP_ARDTLS-ARDTLS_UPD_T].[24ZCP_ARDTLS-ARDTLS_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARDTLS_UPD_T]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARDTLS_UPD_T]' ATTRIBUTE,
+        ard_btch_dtlevel01_0 = '[4ZCP_ARDTLS-ARD_BTCH_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_BTCH_DT]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_BTCH_DT]' LEVELPOSITION=1,
+        ard_btch_dt_key = '[4ZCP_ARDTLS-ARD_BTCH_DT].[24ZCP_ARDTLS-ARD_BTCH_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_BTCH_DT]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_BTCH_DT]' ATTRIBUTE,
+        ard_btch_seqlevel01_0 = '[4ZCP_ARDTLS-ARD_BTCH_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_BTCH_SEQ]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_BTCH_SEQ]' LEVELPOSITION=1,
+        ard_btch_seq_key = '[4ZCP_ARDTLS-ARD_BTCH_SEQ].[24ZCP_ARDTLS-ARD_BTCH_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_BTCH_SEQ]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_BTCH_SEQ]' ATTRIBUTE,
+        ard_doc_seqlevel01_0 = '[4ZCP_ARDTLS-ARD_DOC_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_DOC_SEQ]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_DOC_SEQ]' LEVELPOSITION=1,
+        ard_doc_seq_key = '[4ZCP_ARDTLS-ARD_DOC_SEQ].[24ZCP_ARDTLS-ARD_DOC_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_DOC_SEQ]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_DOC_SEQ]' ATTRIBUTE,
+        ard_dtl_seqlevel01_0 = '[4ZCP_ARDTLS-ARD_DTL_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_DTL_SEQ]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_DTL_SEQ]' LEVELPOSITION=1,
+        ard_dtl_seq_key = '[4ZCP_ARDTLS-ARD_DTL_SEQ].[24ZCP_ARDTLS-ARD_DTL_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_DTL_SEQ]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_DTL_SEQ]' ATTRIBUTE,
+        ard_line_desclevel01_0 = '[4ZCP_ARDTLS-ARD_LINE_DES].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_LINE_DES]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_LINE_DES]' LEVELPOSITION=1,
+        ard_line_desc_key = '[4ZCP_ARDTLS-ARD_LINE_DES].[24ZCP_ARDTLS-ARD_LINE_DES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_LINE_DES]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_LINE_DES]' ATTRIBUTE,
+        ard_part_numlevel01_0 = '[4ZCP_ARDTLS-ARD_PART_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_PART_NUM]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_PART_NUM]' LEVELPOSITION=1,
+        ard_part_num_key = '[4ZCP_ARDTLS-ARD_PART_NUM].[24ZCP_ARDTLS-ARD_PART_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_PART_NUM]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_PART_NUM]' ATTRIBUTE,
+        ard_qtylevel01_0 = '[4ZCP_ARDTLS-ARD_QTY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_QTY]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_QTY]' LEVELPOSITION=1,
+        ard_qty_key = '[4ZCP_ARDTLS-ARD_QTY].[24ZCP_ARDTLS-ARD_QTY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_QTY]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_QTY]' ATTRIBUTE,
+        ard_ref_numlevel01_0 = '[4ZCP_ARDTLS-ARD_REF_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_REF_NUM]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_REF_NUM]' LEVELPOSITION=1,
+        ard_ref_num_key = '[4ZCP_ARDTLS-ARD_REF_NUM].[24ZCP_ARDTLS-ARD_REF_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_REF_NUM]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_REF_NUM]' ATTRIBUTE,
+        ard_srcelevel01_0 = '[4ZCP_ARDTLS-ARD_SRCE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_SRCE]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_SRCE]' LEVELPOSITION=1,
+        ard_srce_key = '[4ZCP_ARDTLS-ARD_SRCE].[24ZCP_ARDTLS-ARD_SRCE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARDTLS-ARD_SRCE]' DIMENSIONNAME = '[4ZCP_ARDTLS-ARD_SRCE]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_ardtls I18N us_cst (
+        ardtls_cre_by_idlevel01_0:text,
+        ardtls_cre_by_id_key:text,
+        ardtls_cre_tslevel01_0:text,
+        ardtls_cre_ts_key:text,
+        ardtls_upd_by_idlevel01_0:text,
+        ardtls_upd_by_id_key:text,
+        ardtls_upd_tslevel01_0:text,
+        ardtls_upd_ts_key:text,
+        ard_btch_dtlevel01_0:text,
+        ard_btch_dt_key:text,
+        ard_btch_seqlevel01_0:text,
+        ard_btch_seq_key:text,
+        ard_doc_seqlevel01_0:text,
+        ard_doc_seq_key:text,
+        ard_dtl_seqlevel01_0:text,
+        ard_dtl_seq_key:text,
+        ard_line_desclevel01_0:text,
+        ard_line_desc_key:text,
+        ard_part_numlevel01_0:text,
+        ard_part_num_key:text,
+        ard_qtylevel01_0:text,
+        ard_qty_key:text,
+        ard_ref_numlevel01_0:text,
+        ard_ref_num_key:text,
+        ard_srcelevel01_0:text,
+        ard_srce_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accounting'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_ardtls(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD ardtls_cre_by_idlevel01_0 (any) OPT ANY
+             ADD ardtls_cre_by_id_key (any) OPT ANY
+             ADD ardtls_cre_tslevel01_0 (any) OPT ANY
+             ADD ardtls_cre_ts_key (any) OPT ANY
+             ADD ardtls_upd_by_idlevel01_0 (any) OPT ANY
+             ADD ardtls_upd_by_id_key (any) OPT ANY
+             ADD ardtls_upd_tslevel01_0 (any) OPT ANY
+             ADD ardtls_upd_ts_key (any) OPT ANY
+             ADD ard_btch_dtlevel01_0 (any) OPT ANY
+             ADD ard_btch_dt_key (any) OPT ANY
+             ADD ard_btch_seqlevel01_0 (any) OPT ANY
+             ADD ard_btch_seq_key (any) OPT ANY
+             ADD ard_doc_seqlevel01_0 (any) OPT ANY
+             ADD ard_doc_seq_key (any) OPT ANY
+             ADD ard_dtl_seqlevel01_0 (any) OPT ANY
+             ADD ard_dtl_seq_key (any) OPT ANY
+             ADD ard_line_desclevel01_0 (any) OPT ANY
+             ADD ard_line_desc_key (any) OPT ANY
+             ADD ard_part_numlevel01_0 (any) OPT ANY
+             ADD ard_part_num_key (any) OPT ANY
+             ADD ard_qtylevel01_0 (any) OPT ANY
+             ADD ard_qty_key (any) OPT ANY
+             ADD ard_ref_numlevel01_0 (any) OPT ANY
+             ADD ard_ref_num_key (any) OPT ANY
+             ADD ard_srcelevel01_0 (any) OPT ANY
+             ADD ard_srce_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (ard_btch_dt_key, ard_btch_dtlevel01_0, ard_btch_seq_key, ard_btch_seqlevel01_0, ard_doc_seq_key, ard_doc_seqlevel01_0, ard_dtl_seq_key, ard_dtl_seqlevel01_0, ard_line_desc_key, ard_line_desclevel01_0, ard_part_num_key, ard_part_numlevel01_0, ard_qty_key, ard_qtylevel01_0, ard_ref_num_key, ard_ref_numlevel01_0, ard_srce_key, ard_srcelevel01_0, ardtls_cre_by_id_key, ardtls_cre_by_idlevel01_0, ardtls_cre_ts_key, ardtls_cre_tslevel01_0, ardtls_upd_by_id_key, ardtls_upd_by_idlevel01_0, ardtls_upd_ts_key, ardtls_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_ardtls)
+    );
+

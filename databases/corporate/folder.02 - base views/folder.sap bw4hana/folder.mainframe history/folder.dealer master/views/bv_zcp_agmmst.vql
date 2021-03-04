@@ -1,0 +1,94 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_agmmst
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/dealer master'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_AGMMST'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        agmmst_cre_by_idlevel01_0 = '[4ZCP_AGMMST-AGMMST_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGMMST_CRE_B]' DIMENSIONNAME = '[4ZCP_AGMMST-AGMMST_CRE_B]' LEVELPOSITION=1,
+        agmmst_cre_by_id_key = '[4ZCP_AGMMST-AGMMST_CRE_B].[24ZCP_AGMMST-AGMMST_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGMMST_CRE_B]' DIMENSIONNAME = '[4ZCP_AGMMST-AGMMST_CRE_B]' ATTRIBUTE,
+        agmmst_cre_tslevel01_0 = '[4ZCP_AGMMST-AGMMST_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGMMST_CRE_T]' DIMENSIONNAME = '[4ZCP_AGMMST-AGMMST_CRE_T]' LEVELPOSITION=1,
+        agmmst_cre_ts_key = '[4ZCP_AGMMST-AGMMST_CRE_T].[24ZCP_AGMMST-AGMMST_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGMMST_CRE_T]' DIMENSIONNAME = '[4ZCP_AGMMST-AGMMST_CRE_T]' ATTRIBUTE,
+        agmmst_upd_by_idlevel01_0 = '[4ZCP_AGMMST-AGMMST_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGMMST_UPD_B]' DIMENSIONNAME = '[4ZCP_AGMMST-AGMMST_UPD_B]' LEVELPOSITION=1,
+        agmmst_upd_by_id_key = '[4ZCP_AGMMST-AGMMST_UPD_B].[24ZCP_AGMMST-AGMMST_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGMMST_UPD_B]' DIMENSIONNAME = '[4ZCP_AGMMST-AGMMST_UPD_B]' ATTRIBUTE,
+        agmmst_upd_tslevel01_0 = '[4ZCP_AGMMST-AGMMST_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGMMST_UPD_T]' DIMENSIONNAME = '[4ZCP_AGMMST-AGMMST_UPD_T]' LEVELPOSITION=1,
+        agmmst_upd_ts_key = '[4ZCP_AGMMST-AGMMST_UPD_T].[24ZCP_AGMMST-AGMMST_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGMMST_UPD_T]' DIMENSIONNAME = '[4ZCP_AGMMST-AGMMST_UPD_T]' ATTRIBUTE,
+        agm_crte_pgmlevel01_0 = '[4ZCP_AGMMST-AGM_CRTE_PGM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_CRTE_PGM]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_CRTE_PGM]' LEVELPOSITION=1,
+        agm_crte_pgm_key = '[4ZCP_AGMMST-AGM_CRTE_PGM].[24ZCP_AGMMST-AGM_CRTE_PGM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_CRTE_PGM]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_CRTE_PGM]' ATTRIBUTE,
+        agm_crte_tmstmplevel01_0 = '[4ZCP_AGMMST-AGM_CRTE_TMS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_CRTE_TMS]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_CRTE_TMS]' LEVELPOSITION=1,
+        agm_crte_tmstmp_key = '[4ZCP_AGMMST-AGM_CRTE_TMS].[24ZCP_AGMMST-AGM_CRTE_TMS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_CRTE_TMS]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_CRTE_TMS]' ATTRIBUTE,
+        agm_namelevel01_0 = '[4ZCP_AGMMST-AGM_NAME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_NAME]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_NAME]' LEVELPOSITION=1,
+        agm_name_key = '[4ZCP_AGMMST-AGM_NAME].[24ZCP_AGMMST-AGM_NAME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_NAME]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_NAME]' ATTRIBUTE,
+        agm_numlevel01_0 = '[4ZCP_AGMMST-AGM_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_NUM]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_NUM]' LEVELPOSITION=1,
+        agm_num_key = '[4ZCP_AGMMST-AGM_NUM].[24ZCP_AGMMST-AGM_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_NUM]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_NUM]' ATTRIBUTE,
+        agm_updt_idlevel01_0 = '[4ZCP_AGMMST-AGM_UPDT_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_UPDT_ID]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_UPDT_ID]' LEVELPOSITION=1,
+        agm_updt_id_key = '[4ZCP_AGMMST-AGM_UPDT_ID].[24ZCP_AGMMST-AGM_UPDT_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_UPDT_ID]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_UPDT_ID]' ATTRIBUTE,
+        agm_updt_pgmlevel01_0 = '[4ZCP_AGMMST-AGM_UPDT_PGM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_UPDT_PGM]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_UPDT_PGM]' LEVELPOSITION=1,
+        agm_updt_pgm_key = '[4ZCP_AGMMST-AGM_UPDT_PGM].[24ZCP_AGMMST-AGM_UPDT_PGM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_UPDT_PGM]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_UPDT_PGM]' ATTRIBUTE,
+        agm_updt_tmstmplevel01_0 = '[4ZCP_AGMMST-AGM_UPDT_TMS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_UPDT_TMS]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_UPDT_TMS]' LEVELPOSITION=1,
+        agm_updt_tmstmp_key = '[4ZCP_AGMMST-AGM_UPDT_TMS].[24ZCP_AGMMST-AGM_UPDT_TMS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_AGMMST-AGM_UPDT_TMS]' DIMENSIONNAME = '[4ZCP_AGMMST-AGM_UPDT_TMS]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_agmmst I18N us_cst (
+        agmmst_cre_by_idlevel01_0:text,
+        agmmst_cre_by_id_key:text,
+        agmmst_cre_tslevel01_0:text,
+        agmmst_cre_ts_key:text,
+        agmmst_upd_by_idlevel01_0:text,
+        agmmst_upd_by_id_key:text,
+        agmmst_upd_tslevel01_0:text,
+        agmmst_upd_ts_key:text,
+        agm_crte_pgmlevel01_0:text,
+        agm_crte_pgm_key:text,
+        agm_crte_tmstmplevel01_0:text,
+        agm_crte_tmstmp_key:text,
+        agm_namelevel01_0:text,
+        agm_name_key:text,
+        agm_numlevel01_0:text,
+        agm_num_key:text,
+        agm_updt_idlevel01_0:text,
+        agm_updt_id_key:text,
+        agm_updt_pgmlevel01_0:text,
+        agm_updt_pgm_key:text,
+        agm_updt_tmstmplevel01_0:text,
+        agm_updt_tmstmp_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/dealer master'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_agmmst(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD agmmst_cre_by_idlevel01_0 (any) OPT ANY
+             ADD agmmst_cre_by_id_key (any) OPT ANY
+             ADD agmmst_cre_tslevel01_0 (any) OPT ANY
+             ADD agmmst_cre_ts_key (any) OPT ANY
+             ADD agmmst_upd_by_idlevel01_0 (any) OPT ANY
+             ADD agmmst_upd_by_id_key (any) OPT ANY
+             ADD agmmst_upd_tslevel01_0 (any) OPT ANY
+             ADD agmmst_upd_ts_key (any) OPT ANY
+             ADD agm_crte_pgmlevel01_0 (any) OPT ANY
+             ADD agm_crte_pgm_key (any) OPT ANY
+             ADD agm_crte_tmstmplevel01_0 (any) OPT ANY
+             ADD agm_crte_tmstmp_key (any) OPT ANY
+             ADD agm_namelevel01_0 (any) OPT ANY
+             ADD agm_name_key (any) OPT ANY
+             ADD agm_numlevel01_0 (any) OPT ANY
+             ADD agm_num_key (any) OPT ANY
+             ADD agm_updt_idlevel01_0 (any) OPT ANY
+             ADD agm_updt_id_key (any) OPT ANY
+             ADD agm_updt_pgmlevel01_0 (any) OPT ANY
+             ADD agm_updt_pgm_key (any) OPT ANY
+             ADD agm_updt_tmstmplevel01_0 (any) OPT ANY
+             ADD agm_updt_tmstmp_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (agm_crte_pgm_key, agm_crte_pgmlevel01_0, agm_crte_tmstmp_key, agm_crte_tmstmplevel01_0, agm_name_key, agm_namelevel01_0, agm_num_key, agm_numlevel01_0, agm_updt_id_key, agm_updt_idlevel01_0, agm_updt_pgm_key, agm_updt_pgmlevel01_0, agm_updt_tmstmp_key, agm_updt_tmstmplevel01_0, agmmst_cre_by_id_key, agmmst_cre_by_idlevel01_0, agmmst_cre_ts_key, agmmst_cre_tslevel01_0, agmmst_upd_by_id_key, agmmst_upd_by_idlevel01_0, agmmst_upd_ts_key, agmmst_upd_tslevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_agmmst)
+    );
+

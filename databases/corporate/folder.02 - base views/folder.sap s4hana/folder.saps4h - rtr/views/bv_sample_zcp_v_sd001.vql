@@ -1,0 +1,439 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "bv_sample_ZCP_V_SD001"
+    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_V_SD001'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "Base Unit of Measure Level 01" = '[0BASE_UOM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' LEVELPOSITION=1,
+        "Base Unit of Measure_Key" = '[0BASE_UOM].[20BASE_UOM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' ATTRIBUTE,
+        "Base Unit of Measure_Medium Name" = '[0BASE_UOM].[50BASE_UOM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' ATTRIBUTE,
+        "Base Unit of Measure_Name" = '[0BASE_UOM].[10BASE_UOM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' ATTRIBUTE,
+        "Condition Type Level 01" = '[0KNART].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNART]' DIMENSIONNAME = '[0KNART]' LEVELPOSITION=1,
+        "Condition Type_Key" = '[0KNART].[20KNART]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNART]' DIMENSIONNAME = '[0KNART]' ATTRIBUTE,
+        "Condition Type_Name" = '[0KNART].[10KNART]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNART]' DIMENSIONNAME = '[0KNART]' ATTRIBUTE,
+        "Country Level 01" = '[0COUNTRY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0COUNTRY]' DIMENSIONNAME = '[0COUNTRY]' LEVELPOSITION=1,
+        "Country_Key" = '[0COUNTRY].[20COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0COUNTRY]' DIMENSIONNAME = '[0COUNTRY]' ATTRIBUTE,
+        "Country_Long Name" = '[0COUNTRY].[40COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0COUNTRY]' DIMENSIONNAME = '[0COUNTRY]' ATTRIBUTE,
+        "Country_Name" = '[0COUNTRY].[10COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0COUNTRY]' DIMENSIONNAME = '[0COUNTRY]' ATTRIBUTE,
+        "Customer Level 01" = '[0CUSTOMER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' LEVELPOSITION=1,
+        "Customer_APO Location (Key)" = '[0CUSTOMER].[20APO_LOCNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_APO Location (Medium Name)" = '[0CUSTOMER].[50APO_LOCNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Account Group (Key)" = '[0CUSTOMER].[20ACCNT_GRP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Account Group (Medium Name)" = '[0CUSTOMER].[50ACCNT_GRP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Address (Key)" = '[0CUSTOMER].[20ADDR_NUMBR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BAS: City District (Key)" = '[0CUSTOMER].[20CITY_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BAS: PO Box Location (Key)" = '[0CUSTOMER].[20POBOX_LOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BAS:POBox PostalCode (Key)" = '[0CUSTOMER].[20POSTCD_BOX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BAS:PstCde(Geo-Rel.) (Key)" = '[0CUSTOMER].[20POSTCD_GIS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BP Category (Key)" = '[0CUSTOMER].[20BP_CAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BP Category (Long Name)" = '[0CUSTOMER].[40BP_CAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BP Grouping (Key)" = '[0CUSTOMER].[20BP_GROUP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BP Grouping (Medium Name)" = '[0CUSTOMER].[50BP_GROUP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BP Grouping (Name)" = '[0CUSTOMER].[10BP_GROUP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BP: Group Type (Key)" = '[0CUSTOMER].[20BP_GRPTYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BP: Group Type (Medium Name)" = '[0CUSTOMER].[50BP_GRPTYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_BP: Group Type (Name)" = '[0CUSTOMER].[10BP_GRPTYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Branch Category (Key)" = '[0CUSTOMER].[20OUTL_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Business Partner (Key)" = '[0CUSTOMER].[20BPARTNER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Business Partner (Long Name)" = '[0CUSTOMER].[40BPARTNER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Business Partner (Medium Name)" = '[0CUSTOMER].[50BPARTNER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Business Partner (Name)" = '[0CUSTOMER].[10BPARTNER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Call Frequency (Key)" = '[0CUSTOMER].[20VISIT_RYT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Country (Key)" = '[0CUSTOMER].[20COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Country (Long Name)" = '[0CUSTOMER].[40COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Country (Name)" = '[0CUSTOMER].[10COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Cust.ID Partner Sys. (Key)" = '[0CUSTOMER].[20AF_CUSTID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Customer Market (Key)" = '[0CUSTOMER].[20CUST_MKT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Customer classific. (Key)" = '[0CUSTOMER].[20CUST_CLASS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Customer classific. (Name)" = '[0CUSTOMER].[10CUST_CLASS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Customer is Consumer (Key)" = '[0CUSTOMER].[20CUS_F_CONS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_D-U-N-S Number (Key)" = '[0CUSTOMER].[20DBDUNS_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_D-U-N-S Number (Long Name)" = '[0CUSTOMER].[40DBDUNS_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_DatSrc.ID of GeoLoct (Key)" = '[0CUSTOMER].[20SRCID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Distribution Channel (Key)" = '[0CUSTOMER].[20DISTR_CHAN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Distribution Channel (Name)" = '[0CUSTOMER].[10DISTR_CHAN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Division (Key)" = '[0CUSTOMER].[20DIVISION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Division (Name)" = '[0CUSTOMER].[10DIVISION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Fax number (Key)" = '[0CUSTOMER].[20FAX_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Fiscal Year Variant (Key)" = '[0CUSTOMER].[20FISCVARNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Fiscal Year Variant (Medium Name)" = '[0CUSTOMER].[50FISCVARNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Geo-precision (Key)" = '[0CUSTOMER].[20PRECISID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Geo-precision (Long Name)" = '[0CUSTOMER].[40PRECISID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Geo-precision (Medium Name)" = '[0CUSTOMER].[50PRECISID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Geo-precision (Name)" = '[0CUSTOMER].[10PRECISID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Geographical Height (Key)" = '[0CUSTOMER].[20ALTITUDE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Identification Numbe (Key)" = '[0CUSTOMER].[2ZBPIDNUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Identification Type (Key)" = '[0CUSTOMER].[2ZBPIDTYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry (Key)" = '[0CUSTOMER].[20INDUSTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry (Name)" = '[0CUSTOMER].[10INDUSTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry Code 2 (Key)" = '[0CUSTOMER].[20IND_CODE_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry Code 2 (Name)" = '[0CUSTOMER].[10IND_CODE_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry Code 3 (Key)" = '[0CUSTOMER].[20IND_CODE_3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry Code 3 (Name)" = '[0CUSTOMER].[10IND_CODE_3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry Code 4 (Key)" = '[0CUSTOMER].[20IND_CODE_4]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry Code 4 (Name)" = '[0CUSTOMER].[10IND_CODE_4]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry Code 5 (Key)" = '[0CUSTOMER].[20IND_CODE_5]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry Code 5 (Name)" = '[0CUSTOMER].[10IND_CODE_5]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry code 1 (Key)" = '[0CUSTOMER].[20IND_CODE_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Industry code 1 (Name)" = '[0CUSTOMER].[10IND_CODE_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Key" = '[0CUSTOMER].[20CUSTOMER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Key Account (Key)" = '[0CUSTOMER].[20KEYACCOUNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Language key (Key)" = '[0CUSTOMER].[20LANGU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Language key (Name)" = '[0CUSTOMER].[10LANGU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Latitude (Key)" = '[0CUSTOMER].[20LATITUDE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Location (Key)" = '[0CUSTOMER].[20CITY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Longitude (Key)" = '[0CUSTOMER].[20LONGITUDE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Medium Name" = '[0CUSTOMER].[50CUSTOMER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Name (Key)" = '[0CUSTOMER].[20NAME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Name 2 (Key)" = '[0CUSTOMER].[20NAME2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Name 3 (Key)" = '[0CUSTOMER].[20NAME3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Nielsen Indicator (Key)" = '[0CUSTOMER].[20NIELSEN_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Nielsen Indicator (Name)" = '[0CUSTOMER].[10NIELSEN_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_No. Customer DC (Key)" = '[0CUSTOMER].[20AF_CUSTDC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_One-Time Account (Key)" = '[0CUSTOMER].[20ID_XCPD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_P.O. Box (Key)" = '[0CUSTOMER].[20POBOX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Partner Company (Key)" = '[0CUSTOMER].[20PCOMPANY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Partner Company (Medium Name)" = '[0CUSTOMER].[50PCOMPANY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Plant (Key)" = '[0CUSTOMER].[20PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Plant (Medium Name)" = '[0CUSTOMER].[50PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Plant (Name)" = '[0CUSTOMER].[10PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Postal Code (Key)" = '[0CUSTOMER].[20POSTAL_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Region (Key)" = '[0CUSTOMER].[20REGION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Region (Name)" = '[0CUSTOMER].[10REGION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales Area (Key)" = '[0CUSTOMER].[2ZSALE_ARE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales District (Key)" = '[0CUSTOMER].[2ZSAL_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales District (Name)" = '[0CUSTOMER].[1ZSAL_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales District Text (Key)" = '[0CUSTOMER].[2ZSDISTXT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales Group (Key)" = '[0CUSTOMER].[2ZSAL_GRP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales Group (Name)" = '[0CUSTOMER].[1ZSAL_GRP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales Group Text (Key)" = '[0CUSTOMER].[2ZSGRPTXT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales Office Text (Key)" = '[0CUSTOMER].[2ZSOFFTXT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales Organization (Key)" = '[0CUSTOMER].[20SALESORG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales Organization (Long Name)" = '[0CUSTOMER].[40SALESORG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales office (Key)" = '[0CUSTOMER].[2ZSAL_OFF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales office (Name)" = '[0CUSTOMER].[1ZSAL_OFF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales unit (Key)" = '[0CUSTOMER].[20SALES_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales unit (Medium Name)" = '[0CUSTOMER].[50SALES_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sales unit (Name)" = '[0CUSTOMER].[10SALES_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Search term A (Key)" = '[0CUSTOMER].[2ZOI_SORT1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Search term B (Key)" = '[0CUSTOMER].[2ZOI_SORT2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Sort Field (Key)" = '[0CUSTOMER].[20SORTL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Source System (Key)" = '[0CUSTOMER].[20LOGSYS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Source System (Medium Name)" = '[0CUSTOMER].[50LOGSYS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_State (Key)" = '[0CUSTOMER].[2ZSTATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_State (Name)" = '[0CUSTOMER].[1ZSTATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Street (Key)" = '[0CUSTOMER].[20STREET]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Tax Code 1 (Key)" = '[0CUSTOMER].[20TAX_NUMB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Tax Number 2 (Key)" = '[0CUSTOMER].[20TAX_NUMB2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Tax Number 3 (Key)" = '[0CUSTOMER].[20ID_TXNUMB3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Telephone 1 (Key)" = '[0CUSTOMER].[20PHONE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Usage Indicator (Key)" = '[0CUSTOMER].[20USAGE_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Usage Indicator (Name)" = '[0CUSTOMER].[10USAGE_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Valid From (Key)" = '[0CUSTOMER].[20VALIDFROM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Valid until (Key)" = '[0CUSTOMER].[20VALIDTO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Vendor (Key)" = '[0CUSTOMER].[20VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_Vendor (Medium Name)" = '[0CUSTOMER].[50VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
+        "Customer_H Level 01" = '[ZCUS_NO_H].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZCUS_NO_H]' DIMENSIONNAME = '[ZCUS_NO_H]' LEVELPOSITION=1,
+        "Customer_H_Key" = '[ZCUS_NO_H].[2ZCUS_NO_H]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZCUS_NO_H]' DIMENSIONNAME = '[ZCUS_NO_H]' ATTRIBUTE,
+        "Net Value" = '[Measures].[0NET_VALUE]' : 'java.lang.Double' (OPT) MEASURE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        "Qty in Base UoM" = '[Measures].[0QUANT_B]' : 'java.lang.Double' (OPT) MEASURE,
+        "Subtotal 1" = '[Measures].[0SUBTOT_1S]' : 'java.lang.Double' (OPT) MEASURE,
+        "Subtotal 2" = '[Measures].[0SUBTOT_2S]' : 'java.lang.Double' (OPT) MEASURE,
+        "Subtotal 3" = '[Measures].[0SUBTOT_3S]' : 'java.lang.Double' (OPT) MEASURE,
+        "Subtotal 4" = '[Measures].[0SUBTOT_4S]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE "bv_sample_ZCP_V_SD001" I18N us_cst (
+        "Base Unit of Measure Level 01":text (description = 'Base view measure'),
+        "Base Unit of Measure_Key":text,
+        "Base Unit of Measure_Medium Name":text,
+        "Base Unit of Measure_Name":text,
+        "Condition Type Level 01":text,
+        "Condition Type_Key":text,
+        "Condition Type_Name":text,
+        "Country Level 01":text,
+        "Country_Key":text,
+        "Country_Long Name":text,
+        "Country_Name":text,
+        "Customer Level 01":text,
+        "Customer_APO Location (Key)":text,
+        "Customer_APO Location (Medium Name)":text,
+        "Customer_Account Group (Key)":text,
+        "Customer_Account Group (Medium Name)":text,
+        "Customer_Address (Key)":text,
+        "Customer_BAS: City District (Key)":text,
+        "Customer_BAS: PO Box Location (Key)":text,
+        "Customer_BAS:POBox PostalCode (Key)":text,
+        "Customer_BAS:PstCde(Geo-Rel.) (Key)":text,
+        "Customer_BP Category (Key)":text,
+        "Customer_BP Category (Long Name)":text,
+        "Customer_BP Grouping (Key)":text,
+        "Customer_BP Grouping (Medium Name)":text,
+        "Customer_BP Grouping (Name)":text,
+        "Customer_BP: Group Type (Key)":text,
+        "Customer_BP: Group Type (Medium Name)":text,
+        "Customer_BP: Group Type (Name)":text,
+        "Customer_Branch Category (Key)":text,
+        "Customer_Business Partner (Key)":text,
+        "Customer_Business Partner (Long Name)":text,
+        "Customer_Business Partner (Medium Name)":text,
+        "Customer_Business Partner (Name)":text,
+        "Customer_Call Frequency (Key)":text,
+        "Customer_Country (Key)":text,
+        "Customer_Country (Long Name)":text,
+        "Customer_Country (Name)":text,
+        "Customer_Cust.ID Partner Sys. (Key)":text,
+        "Customer_Customer Market (Key)":text,
+        "Customer_Customer classific. (Key)":text,
+        "Customer_Customer classific. (Name)":text,
+        "Customer_Customer is Consumer (Key)":text,
+        "Customer_D-U-N-S Number (Key)":text,
+        "Customer_D-U-N-S Number (Long Name)":text,
+        "Customer_DatSrc.ID of GeoLoct (Key)":text,
+        "Customer_Distribution Channel (Key)":text,
+        "Customer_Distribution Channel (Name)":text,
+        "Customer_Division (Key)":text,
+        "Customer_Division (Name)":text,
+        "Customer_Fax number (Key)":text,
+        "Customer_Fiscal Year Variant (Key)":text,
+        "Customer_Fiscal Year Variant (Medium Name)":text,
+        "Customer_Geo-precision (Key)":text,
+        "Customer_Geo-precision (Long Name)":text,
+        "Customer_Geo-precision (Medium Name)":text,
+        "Customer_Geo-precision (Name)":text,
+        "Customer_Geographical Height (Key)":text,
+        "Customer_Identification Numbe (Key)":text,
+        "Customer_Identification Type (Key)":text,
+        "Customer_Industry (Key)":text,
+        "Customer_Industry (Name)":text,
+        "Customer_Industry Code 2 (Key)":text,
+        "Customer_Industry Code 2 (Name)":text,
+        "Customer_Industry Code 3 (Key)":text,
+        "Customer_Industry Code 3 (Name)":text,
+        "Customer_Industry Code 4 (Key)":text,
+        "Customer_Industry Code 4 (Name)":text,
+        "Customer_Industry Code 5 (Key)":text,
+        "Customer_Industry Code 5 (Name)":text,
+        "Customer_Industry code 1 (Key)":text,
+        "Customer_Industry code 1 (Name)":text,
+        "Customer_Key":text,
+        "Customer_Key Account (Key)":text,
+        "Customer_Language key (Key)":text,
+        "Customer_Language key (Name)":text,
+        "Customer_Latitude (Key)":text,
+        "Customer_Location (Key)":text,
+        "Customer_Longitude (Key)":text,
+        "Customer_Medium Name":text,
+        "Customer_Name (Key)":text,
+        "Customer_Name 2 (Key)":text,
+        "Customer_Name 3 (Key)":text,
+        "Customer_Nielsen Indicator (Key)":text,
+        "Customer_Nielsen Indicator (Name)":text,
+        "Customer_No. Customer DC (Key)":text,
+        "Customer_One-Time Account (Key)":text,
+        "Customer_P.O. Box (Key)":text,
+        "Customer_Partner Company (Key)":text,
+        "Customer_Partner Company (Medium Name)":text,
+        "Customer_Plant (Key)":text,
+        "Customer_Plant (Medium Name)":text,
+        "Customer_Plant (Name)":text,
+        "Customer_Postal Code (Key)":text,
+        "Customer_Region (Key)":text,
+        "Customer_Region (Name)":text,
+        "Customer_Sales Area (Key)":text,
+        "Customer_Sales District (Key)":text,
+        "Customer_Sales District (Name)":text,
+        "Customer_Sales District Text (Key)":text,
+        "Customer_Sales Group (Key)":text,
+        "Customer_Sales Group (Name)":text,
+        "Customer_Sales Group Text (Key)":text,
+        "Customer_Sales Office Text (Key)":text,
+        "Customer_Sales Organization (Key)":text,
+        "Customer_Sales Organization (Long Name)":text,
+        "Customer_Sales office (Key)":text,
+        "Customer_Sales office (Name)":text,
+        "Customer_Sales unit (Key)":text,
+        "Customer_Sales unit (Medium Name)":text,
+        "Customer_Sales unit (Name)":text,
+        "Customer_Search term A (Key)":text,
+        "Customer_Search term B (Key)":text,
+        "Customer_Sort Field (Key)":text,
+        "Customer_Source System (Key)":text,
+        "Customer_Source System (Medium Name)":text,
+        "Customer_State (Key)":text,
+        "Customer_State (Name)":text,
+        "Customer_Street (Key)":text,
+        "Customer_Tax Code 1 (Key)":text,
+        "Customer_Tax Number 2 (Key)":text,
+        "Customer_Tax Number 3 (Key)":text,
+        "Customer_Telephone 1 (Key)":text,
+        "Customer_Usage Indicator (Key)":text,
+        "Customer_Usage Indicator (Name)":text,
+        "Customer_Valid From (Key)":text,
+        "Customer_Valid until (Key)":text,
+        "Customer_Vendor (Key)":text,
+        "Customer_Vendor (Medium Name)":text,
+        "Customer_H Level 01":text,
+        "Customer_H_Key":text,
+        "Net Value":double,
+        "Number of Records":double,
+        "Qty in Base UoM":double,
+        "Subtotal 1":double,
+        "Subtotal 2":double,
+        "Subtotal 3":double,
+        "Subtotal 4":double
+    )
+    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD "bv_sample_ZCP_V_SD001"(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "Base Unit of Measure Level 01" (any) OPT ANY
+             ADD "Base Unit of Measure_Key" (any) OPT ANY
+             ADD "Base Unit of Measure_Medium Name" (any) OPT ANY
+             ADD "Base Unit of Measure_Name" (any) OPT ANY
+             ADD "Condition Type Level 01" (any) OPT ANY
+             ADD "Condition Type_Key" (any) OPT ANY
+             ADD "Condition Type_Name" (any) OPT ANY
+             ADD "Country Level 01" (any) OPT ANY
+             ADD "Country_Key" (any) OPT ANY
+             ADD "Country_Long Name" (any) OPT ANY
+             ADD "Country_Name" (any) OPT ANY
+             ADD "Customer Level 01" (any) OPT ANY
+             ADD "Customer_APO Location (Key)" (any) OPT ANY
+             ADD "Customer_APO Location (Medium Name)" (any) OPT ANY
+             ADD "Customer_Account Group (Key)" (any) OPT ANY
+             ADD "Customer_Account Group (Medium Name)" (any) OPT ANY
+             ADD "Customer_Address (Key)" (any) OPT ANY
+             ADD "Customer_BAS: City District (Key)" (any) OPT ANY
+             ADD "Customer_BAS: PO Box Location (Key)" (any) OPT ANY
+             ADD "Customer_BAS:POBox PostalCode (Key)" (any) OPT ANY
+             ADD "Customer_BAS:PstCde(Geo-Rel.) (Key)" (any) OPT ANY
+             ADD "Customer_BP Category (Key)" (any) OPT ANY
+             ADD "Customer_BP Category (Long Name)" (any) OPT ANY
+             ADD "Customer_BP Grouping (Key)" (any) OPT ANY
+             ADD "Customer_BP Grouping (Medium Name)" (any) OPT ANY
+             ADD "Customer_BP Grouping (Name)" (any) OPT ANY
+             ADD "Customer_BP: Group Type (Key)" (any) OPT ANY
+             ADD "Customer_BP: Group Type (Medium Name)" (any) OPT ANY
+             ADD "Customer_BP: Group Type (Name)" (any) OPT ANY
+             ADD "Customer_Branch Category (Key)" (any) OPT ANY
+             ADD "Customer_Business Partner (Key)" (any) OPT ANY
+             ADD "Customer_Business Partner (Long Name)" (any) OPT ANY
+             ADD "Customer_Business Partner (Medium Name)" (any) OPT ANY
+             ADD "Customer_Business Partner (Name)" (any) OPT ANY
+             ADD "Customer_Call Frequency (Key)" (any) OPT ANY
+             ADD "Customer_Country (Key)" (any) OPT ANY
+             ADD "Customer_Country (Long Name)" (any) OPT ANY
+             ADD "Customer_Country (Name)" (any) OPT ANY
+             ADD "Customer_Cust.ID Partner Sys. (Key)" (any) OPT ANY
+             ADD "Customer_Customer Market (Key)" (any) OPT ANY
+             ADD "Customer_Customer classific. (Key)" (any) OPT ANY
+             ADD "Customer_Customer classific. (Name)" (any) OPT ANY
+             ADD "Customer_Customer is Consumer (Key)" (any) OPT ANY
+             ADD "Customer_D-U-N-S Number (Key)" (any) OPT ANY
+             ADD "Customer_D-U-N-S Number (Long Name)" (any) OPT ANY
+             ADD "Customer_DatSrc.ID of GeoLoct (Key)" (any) OPT ANY
+             ADD "Customer_Distribution Channel (Key)" (any) OPT ANY
+             ADD "Customer_Distribution Channel (Name)" (any) OPT ANY
+             ADD "Customer_Division (Key)" (any) OPT ANY
+             ADD "Customer_Division (Name)" (any) OPT ANY
+             ADD "Customer_Fax number (Key)" (any) OPT ANY
+             ADD "Customer_Fiscal Year Variant (Key)" (any) OPT ANY
+             ADD "Customer_Fiscal Year Variant (Medium Name)" (any) OPT ANY
+             ADD "Customer_Geo-precision (Key)" (any) OPT ANY
+             ADD "Customer_Geo-precision (Long Name)" (any) OPT ANY
+             ADD "Customer_Geo-precision (Medium Name)" (any) OPT ANY
+             ADD "Customer_Geo-precision (Name)" (any) OPT ANY
+             ADD "Customer_Geographical Height (Key)" (any) OPT ANY
+             ADD "Customer_Identification Numbe (Key)" (any) OPT ANY
+             ADD "Customer_Identification Type (Key)" (any) OPT ANY
+             ADD "Customer_Industry (Key)" (any) OPT ANY
+             ADD "Customer_Industry (Name)" (any) OPT ANY
+             ADD "Customer_Industry Code 2 (Key)" (any) OPT ANY
+             ADD "Customer_Industry Code 2 (Name)" (any) OPT ANY
+             ADD "Customer_Industry Code 3 (Key)" (any) OPT ANY
+             ADD "Customer_Industry Code 3 (Name)" (any) OPT ANY
+             ADD "Customer_Industry Code 4 (Key)" (any) OPT ANY
+             ADD "Customer_Industry Code 4 (Name)" (any) OPT ANY
+             ADD "Customer_Industry Code 5 (Key)" (any) OPT ANY
+             ADD "Customer_Industry Code 5 (Name)" (any) OPT ANY
+             ADD "Customer_Industry code 1 (Key)" (any) OPT ANY
+             ADD "Customer_Industry code 1 (Name)" (any) OPT ANY
+             ADD "Customer_Key" (any) OPT ANY
+             ADD "Customer_Key Account (Key)" (any) OPT ANY
+             ADD "Customer_Language key (Key)" (any) OPT ANY
+             ADD "Customer_Language key (Name)" (any) OPT ANY
+             ADD "Customer_Latitude (Key)" (any) OPT ANY
+             ADD "Customer_Location (Key)" (any) OPT ANY
+             ADD "Customer_Longitude (Key)" (any) OPT ANY
+             ADD "Customer_Medium Name" (any) OPT ANY
+             ADD "Customer_Name (Key)" (any) OPT ANY
+             ADD "Customer_Name 2 (Key)" (any) OPT ANY
+             ADD "Customer_Name 3 (Key)" (any) OPT ANY
+             ADD "Customer_Nielsen Indicator (Key)" (any) OPT ANY
+             ADD "Customer_Nielsen Indicator (Name)" (any) OPT ANY
+             ADD "Customer_No. Customer DC (Key)" (any) OPT ANY
+             ADD "Customer_One-Time Account (Key)" (any) OPT ANY
+             ADD "Customer_P.O. Box (Key)" (any) OPT ANY
+             ADD "Customer_Partner Company (Key)" (any) OPT ANY
+             ADD "Customer_Partner Company (Medium Name)" (any) OPT ANY
+             ADD "Customer_Plant (Key)" (any) OPT ANY
+             ADD "Customer_Plant (Medium Name)" (any) OPT ANY
+             ADD "Customer_Plant (Name)" (any) OPT ANY
+             ADD "Customer_Postal Code (Key)" (any) OPT ANY
+             ADD "Customer_Region (Key)" (any) OPT ANY
+             ADD "Customer_Region (Name)" (any) OPT ANY
+             ADD "Customer_Sales Area (Key)" (any) OPT ANY
+             ADD "Customer_Sales District (Key)" (any) OPT ANY
+             ADD "Customer_Sales District (Name)" (any) OPT ANY
+             ADD "Customer_Sales District Text (Key)" (any) OPT ANY
+             ADD "Customer_Sales Group (Key)" (any) OPT ANY
+             ADD "Customer_Sales Group (Name)" (any) OPT ANY
+             ADD "Customer_Sales Group Text (Key)" (any) OPT ANY
+             ADD "Customer_Sales Office Text (Key)" (any) OPT ANY
+             ADD "Customer_Sales Organization (Key)" (any) OPT ANY
+             ADD "Customer_Sales Organization (Long Name)" (any) OPT ANY
+             ADD "Customer_Sales office (Key)" (any) OPT ANY
+             ADD "Customer_Sales office (Name)" (any) OPT ANY
+             ADD "Customer_Sales unit (Key)" (any) OPT ANY
+             ADD "Customer_Sales unit (Medium Name)" (any) OPT ANY
+             ADD "Customer_Sales unit (Name)" (any) OPT ANY
+             ADD "Customer_Search term A (Key)" (any) OPT ANY
+             ADD "Customer_Search term B (Key)" (any) OPT ANY
+             ADD "Customer_Sort Field (Key)" (any) OPT ANY
+             ADD "Customer_Source System (Key)" (any) OPT ANY
+             ADD "Customer_Source System (Medium Name)" (any) OPT ANY
+             ADD "Customer_State (Key)" (any) OPT ANY
+             ADD "Customer_State (Name)" (any) OPT ANY
+             ADD "Customer_Street (Key)" (any) OPT ANY
+             ADD "Customer_Tax Code 1 (Key)" (any) OPT ANY
+             ADD "Customer_Tax Number 2 (Key)" (any) OPT ANY
+             ADD "Customer_Tax Number 3 (Key)" (any) OPT ANY
+             ADD "Customer_Telephone 1 (Key)" (any) OPT ANY
+             ADD "Customer_Usage Indicator (Key)" (any) OPT ANY
+             ADD "Customer_Usage Indicator (Name)" (any) OPT ANY
+             ADD "Customer_Valid From (Key)" (any) OPT ANY
+             ADD "Customer_Valid until (Key)" (any) OPT ANY
+             ADD "Customer_Vendor (Key)" (any) OPT ANY
+             ADD "Customer_Vendor (Medium Name)" (any) OPT ANY
+             ADD "Customer_H Level 01" (any) OPT ANY
+             ADD "Customer_H_Key" (any) OPT ANY
+             ADD "Net Value" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+             ADD "Qty in Base UoM" (any) OPT ANY
+             ADD "Subtotal 1" (any) OPT ANY
+             ADD "Subtotal 2" (any) OPT ANY
+             ADD "Subtotal 3" (any) OPT ANY
+             ADD "Subtotal 4" (any) OPT ANY
+        )
+        OUTPUTLIST ("Base Unit of Measure Level 01", "Base Unit of Measure_Key", "Base Unit of Measure_Medium Name", "Base Unit of Measure_Name", "Condition Type Level 01", "Condition Type_Key", "Condition Type_Name", "Country Level 01", "Country_Key", "Country_Long Name", "Country_Name", "Customer Level 01", "Customer_APO Location (Key)", "Customer_APO Location (Medium Name)", "Customer_Account Group (Key)", "Customer_Account Group (Medium Name)", "Customer_Address (Key)", "Customer_BAS: City District (Key)", "Customer_BAS: PO Box Location (Key)", "Customer_BAS:POBox PostalCode (Key)", "Customer_BAS:PstCde(Geo-Rel.) (Key)", "Customer_BP Category (Key)", "Customer_BP Category (Long Name)", "Customer_BP Grouping (Key)", "Customer_BP Grouping (Medium Name)", "Customer_BP Grouping (Name)", "Customer_BP: Group Type (Key)", "Customer_BP: Group Type (Medium Name)", "Customer_BP: Group Type (Name)", "Customer_Branch Category (Key)", "Customer_Business Partner (Key)", "Customer_Business Partner (Long Name)", "Customer_Business Partner (Medium Name)", "Customer_Business Partner (Name)", "Customer_Call Frequency (Key)", "Customer_Country (Key)", "Customer_Country (Long Name)", "Customer_Country (Name)", "Customer_Cust.ID Partner Sys. (Key)", "Customer_Customer Market (Key)", "Customer_Customer classific. (Key)", "Customer_Customer classific. (Name)", "Customer_Customer is Consumer (Key)", "Customer_D-U-N-S Number (Key)", "Customer_D-U-N-S Number (Long Name)", "Customer_DatSrc.ID of GeoLoct (Key)", "Customer_Distribution Channel (Key)", "Customer_Distribution Channel (Name)", "Customer_Division (Key)", "Customer_Division (Name)", "Customer_Fax number (Key)", "Customer_Fiscal Year Variant (Key)", "Customer_Fiscal Year Variant (Medium Name)", "Customer_Geo-precision (Key)", "Customer_Geo-precision (Long Name)", "Customer_Geo-precision (Medium Name)", "Customer_Geo-precision (Name)", "Customer_Geographical Height (Key)", "Customer_H Level 01", "Customer_H_Key", "Customer_Identification Numbe (Key)", "Customer_Identification Type (Key)", "Customer_Industry (Key)", "Customer_Industry (Name)", "Customer_Industry Code 2 (Key)", "Customer_Industry Code 2 (Name)", "Customer_Industry Code 3 (Key)", "Customer_Industry Code 3 (Name)", "Customer_Industry Code 4 (Key)", "Customer_Industry Code 4 (Name)", "Customer_Industry Code 5 (Key)", "Customer_Industry Code 5 (Name)", "Customer_Industry code 1 (Key)", "Customer_Industry code 1 (Name)", "Customer_Key", "Customer_Key Account (Key)", "Customer_Language key (Key)", "Customer_Language key (Name)", "Customer_Latitude (Key)", "Customer_Location (Key)", "Customer_Longitude (Key)", "Customer_Medium Name", "Customer_Name (Key)", "Customer_Name 2 (Key)", "Customer_Name 3 (Key)", "Customer_Nielsen Indicator (Key)", "Customer_Nielsen Indicator (Name)", "Customer_No. Customer DC (Key)", "Customer_One-Time Account (Key)", "Customer_P.O. Box (Key)", "Customer_Partner Company (Key)", "Customer_Partner Company (Medium Name)", "Customer_Plant (Key)", "Customer_Plant (Medium Name)", "Customer_Plant (Name)", "Customer_Postal Code (Key)", "Customer_Region (Key)", "Customer_Region (Name)", "Customer_Sales Area (Key)", "Customer_Sales District (Key)", "Customer_Sales District (Name)", "Customer_Sales District Text (Key)", "Customer_Sales Group (Key)", "Customer_Sales Group (Name)", "Customer_Sales Group Text (Key)", "Customer_Sales Office Text (Key)", "Customer_Sales Organization (Key)", "Customer_Sales Organization (Long Name)", "Customer_Sales office (Key)", "Customer_Sales office (Name)", "Customer_Sales unit (Key)", "Customer_Sales unit (Medium Name)", "Customer_Sales unit (Name)", "Customer_Search term A (Key)", "Customer_Search term B (Key)", "Customer_Sort Field (Key)", "Customer_Source System (Key)", "Customer_Source System (Medium Name)", "Customer_State (Key)", "Customer_State (Name)", "Customer_Street (Key)", "Customer_Tax Code 1 (Key)", "Customer_Tax Number 2 (Key)", "Customer_Tax Number 3 (Key)", "Customer_Telephone 1 (Key)", "Customer_Usage Indicator (Key)", "Customer_Usage Indicator (Name)", "Customer_Valid From (Key)", "Customer_Valid until (Key)", "Customer_Vendor (Key)", "Customer_Vendor (Medium Name)", "Net Value", "Number of Records", "Qty in Base UoM", "Subtotal 1", "Subtotal 2", "Subtotal 3", "Subtotal 4"
+        )
+        WRAPPER (sapbwbapi "bv_sample_ZCP_V_SD001")
+    );
+

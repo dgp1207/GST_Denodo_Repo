@@ -1,0 +1,130 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_arng
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accounting'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ARNG'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        arn_archive_cdlevel01_0 = '[4ZCP_ARNG-ARN_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_ARCHIVE]' LEVELPOSITION=1,
+        arn_archive_cd_key = '[4ZCP_ARNG-ARN_ARCHIVE].[24ZCP_ARNG-ARN_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_ARCHIVE]' ATTRIBUTE,
+        arn_arng_snlevel01_0 = '[4ZCP_ARNG-ARN_ARNG_SN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_ARNG_SN]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_ARNG_SN]' LEVELPOSITION=1,
+        arn_arng_sn_key = '[4ZCP_ARNG-ARN_ARNG_SN].[24ZCP_ARNG-ARN_ARNG_SN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_ARNG_SN]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_ARNG_SN]' ATTRIBUTE,
+        arn_arng_type_snlevel01_0 = '[4ZCP_ARNG-ARN_ARNG_TYP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_ARNG_TYP]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_ARNG_TYP]' LEVELPOSITION=1,
+        arn_arng_type_sn_key = '[4ZCP_ARNG-ARN_ARNG_TYP].[24ZCP_ARNG-ARN_ARNG_TYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_ARNG_TYP]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_ARNG_TYP]' ATTRIBUTE,
+        arn_ar_delevel01_0 = '[4ZCP_ARNG-ARN_AR_DE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_AR_DE]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_AR_DE]' LEVELPOSITION=1,
+        arn_ar_de_key = '[4ZCP_ARNG-ARN_AR_DE].[24ZCP_ARNG-ARN_AR_DE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_AR_DE]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_AR_DE]' ATTRIBUTE,
+        arn_ar_nmlevel01_0 = '[4ZCP_ARNG-ARN_AR_NM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_AR_NM]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_AR_NM]' LEVELPOSITION=1,
+        arn_ar_nm_key = '[4ZCP_ARNG-ARN_AR_NM].[24ZCP_ARNG-ARN_AR_NM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_AR_NM]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_AR_NM]' ATTRIBUTE,
+        arn_ar_nolevel01_0 = '[4ZCP_ARNG-ARN_AR_NO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_AR_NO]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_AR_NO]' LEVELPOSITION=1,
+        arn_ar_no_key = '[4ZCP_ARNG-ARN_AR_NO].[24ZCP_ARNG-ARN_AR_NO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_AR_NO]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_AR_NO]' ATTRIBUTE,
+        arn_cre_by_cntl_data_srce_snlevel01_0 = '[4ZCP_ARNG-OCBQ7ZG0HMT7].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-OCBQ7ZG0HMT7]' DIMENSIONNAME = '[4ZCP_ARNG-OCBQ7ZG0HMT7]' LEVELPOSITION=1,
+        arn_cre_by_cntl_data_srce_sn_key = '[4ZCP_ARNG-OCBQ7ZG0HMT7].[24ZCP_ARNG-OCBQ7ZG0HMT7]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-OCBQ7ZG0HMT7]' DIMENSIONNAME = '[4ZCP_ARNG-OCBQ7ZG0HMT7]' ATTRIBUTE,
+        arn_cre_by_idlevel01_0 = '[4ZCP_ARNG-ARN_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_CRE_BY_I]' LEVELPOSITION=1,
+        arn_cre_by_id_key = '[4ZCP_ARNG-ARN_CRE_BY_I].[24ZCP_ARNG-ARN_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_CRE_BY_I]' ATTRIBUTE,
+        arn_cre_tslevel01_0 = '[4ZCP_ARNG-ARN_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_CRE_TS]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_CRE_TS]' LEVELPOSITION=1,
+        arn_cre_ts_key = '[4ZCP_ARNG-ARN_CRE_TS].[24ZCP_ARNG-ARN_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_CRE_TS]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_CRE_TS]' ATTRIBUTE,
+        arn_proj_idlevel01_0 = '[4ZCP_ARNG-ARN_PROJ_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_PROJ_ID]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_PROJ_ID]' LEVELPOSITION=1,
+        arn_proj_id_key = '[4ZCP_ARNG-ARN_PROJ_ID].[24ZCP_ARNG-ARN_PROJ_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_PROJ_ID]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_PROJ_ID]' ATTRIBUTE,
+        arn_sort_ord_nolevel01_0 = '[4ZCP_ARNG-ARN_SORT_ORD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_SORT_ORD]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_SORT_ORD]' LEVELPOSITION=1,
+        arn_sort_ord_no_key = '[4ZCP_ARNG-ARN_SORT_ORD].[24ZCP_ARNG-ARN_SORT_ORD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_SORT_ORD]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_SORT_ORD]' ATTRIBUTE,
+        arn_uniq_indx_idlevel01_0 = '[4ZCP_ARNG-ARN_UNIQ_IND].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_UNIQ_IND]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_UNIQ_IND]' LEVELPOSITION=1,
+        arn_uniq_indx_id_key = '[4ZCP_ARNG-ARN_UNIQ_IND].[24ZCP_ARNG-ARN_UNIQ_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_UNIQ_IND]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_UNIQ_IND]' ATTRIBUTE,
+        arn_upd_by_cntl_data_srce_snlevel01_0 = '[4ZCP_ARNG-G7BBYTYHV065].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-G7BBYTYHV065]' DIMENSIONNAME = '[4ZCP_ARNG-G7BBYTYHV065]' LEVELPOSITION=1,
+        arn_upd_by_cntl_data_srce_sn_key = '[4ZCP_ARNG-G7BBYTYHV065].[24ZCP_ARNG-G7BBYTYHV065]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-G7BBYTYHV065]' DIMENSIONNAME = '[4ZCP_ARNG-G7BBYTYHV065]' ATTRIBUTE,
+        arn_upd_by_idlevel01_0 = '[4ZCP_ARNG-ARN_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_UPD_BY_I]' LEVELPOSITION=1,
+        arn_upd_by_id_key = '[4ZCP_ARNG-ARN_UPD_BY_I].[24ZCP_ARNG-ARN_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_UPD_BY_I]' ATTRIBUTE,
+        arn_upd_tslevel01_0 = '[4ZCP_ARNG-ARN_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_UPD_TS]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_UPD_TS]' LEVELPOSITION=1,
+        arn_upd_ts_key = '[4ZCP_ARNG-ARN_UPD_TS].[24ZCP_ARNG-ARN_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARNG-ARN_UPD_TS]' DIMENSIONNAME = '[4ZCP_ARNG-ARN_UPD_TS]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_arng I18N us_cst (
+        arn_archive_cdlevel01_0:text,
+        arn_archive_cd_key:text,
+        arn_arng_snlevel01_0:text,
+        arn_arng_sn_key:text,
+        arn_arng_type_snlevel01_0:text,
+        arn_arng_type_sn_key:text,
+        arn_ar_delevel01_0:text,
+        arn_ar_de_key:text,
+        arn_ar_nmlevel01_0:text,
+        arn_ar_nm_key:text,
+        arn_ar_nolevel01_0:text,
+        arn_ar_no_key:text,
+        arn_cre_by_cntl_data_srce_snlevel01_0:text,
+        arn_cre_by_cntl_data_srce_sn_key:text,
+        arn_cre_by_idlevel01_0:text,
+        arn_cre_by_id_key:text,
+        arn_cre_tslevel01_0:text,
+        arn_cre_ts_key:text,
+        arn_proj_idlevel01_0:text,
+        arn_proj_id_key:text,
+        arn_sort_ord_nolevel01_0:text,
+        arn_sort_ord_no_key:text,
+        arn_uniq_indx_idlevel01_0:text,
+        arn_uniq_indx_id_key:text,
+        arn_upd_by_cntl_data_srce_snlevel01_0:text,
+        arn_upd_by_cntl_data_srce_sn_key:text,
+        arn_upd_by_idlevel01_0:text,
+        arn_upd_by_id_key:text,
+        arn_upd_tslevel01_0:text,
+        arn_upd_ts_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accounting'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_arng(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD arn_archive_cdlevel01_0 (any) OPT ANY
+             ADD arn_archive_cd_key (any) OPT ANY
+             ADD arn_arng_snlevel01_0 (any) OPT ANY
+             ADD arn_arng_sn_key (any) OPT ANY
+             ADD arn_arng_type_snlevel01_0 (any) OPT ANY
+             ADD arn_arng_type_sn_key (any) OPT ANY
+             ADD arn_ar_delevel01_0 (any) OPT ANY
+             ADD arn_ar_de_key (any) OPT ANY
+             ADD arn_ar_nmlevel01_0 (any) OPT ANY
+             ADD arn_ar_nm_key (any) OPT ANY
+             ADD arn_ar_nolevel01_0 (any) OPT ANY
+             ADD arn_ar_no_key (any) OPT ANY
+             ADD arn_cre_by_cntl_data_srce_snlevel01_0 (any) OPT ANY
+             ADD arn_cre_by_cntl_data_srce_sn_key (any) OPT ANY
+             ADD arn_cre_by_idlevel01_0 (any) OPT ANY
+             ADD arn_cre_by_id_key (any) OPT ANY
+             ADD arn_cre_tslevel01_0 (any) OPT ANY
+             ADD arn_cre_ts_key (any) OPT ANY
+             ADD arn_proj_idlevel01_0 (any) OPT ANY
+             ADD arn_proj_id_key (any) OPT ANY
+             ADD arn_sort_ord_nolevel01_0 (any) OPT ANY
+             ADD arn_sort_ord_no_key (any) OPT ANY
+             ADD arn_uniq_indx_idlevel01_0 (any) OPT ANY
+             ADD arn_uniq_indx_id_key (any) OPT ANY
+             ADD arn_upd_by_cntl_data_srce_snlevel01_0 (any) OPT ANY
+             ADD arn_upd_by_cntl_data_srce_sn_key (any) OPT ANY
+             ADD arn_upd_by_idlevel01_0 (any) OPT ANY
+             ADD arn_upd_by_id_key (any) OPT ANY
+             ADD arn_upd_tslevel01_0 (any) OPT ANY
+             ADD arn_upd_ts_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (arn_ar_de_key, arn_ar_delevel01_0, arn_ar_nm_key, arn_ar_nmlevel01_0, arn_ar_no_key, arn_ar_nolevel01_0, arn_archive_cd_key, arn_archive_cdlevel01_0, arn_arng_sn_key, arn_arng_snlevel01_0, arn_arng_type_sn_key, arn_arng_type_snlevel01_0, arn_cre_by_cntl_data_srce_sn_key, arn_cre_by_cntl_data_srce_snlevel01_0, arn_cre_by_id_key, arn_cre_by_idlevel01_0, arn_cre_ts_key, arn_cre_tslevel01_0, arn_proj_id_key, arn_proj_idlevel01_0, arn_sort_ord_no_key, arn_sort_ord_nolevel01_0, arn_uniq_indx_id_key, arn_uniq_indx_idlevel01_0, arn_upd_by_cntl_data_srce_sn_key, arn_upd_by_cntl_data_srce_snlevel01_0, arn_upd_by_id_key, arn_upd_by_idlevel01_0, arn_upd_ts_key, arn_upd_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_arng)
+    );
+

@@ -1,0 +1,118 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_chgopt
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_CHGOPT'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        accy_cdlevel01_0 = '[4ZCP_CHGOPT-ACCY_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-ACCY_CD]' DIMENSIONNAME = '[4ZCP_CHGOPT-ACCY_CD]' LEVELPOSITION=1,
+        accy_cd_key = '[4ZCP_CHGOPT-ACCY_CD].[24ZCP_CHGOPT-ACCY_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-ACCY_CD]' DIMENSIONNAME = '[4ZCP_CHGOPT-ACCY_CD]' ATTRIBUTE,
+        accy_desclevel01_0 = '[4ZCP_CHGOPT-ACCY_DESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-ACCY_DESC]' DIMENSIONNAME = '[4ZCP_CHGOPT-ACCY_DESC]' LEVELPOSITION=1,
+        accy_desc_key = '[4ZCP_CHGOPT-ACCY_DESC].[24ZCP_CHGOPT-ACCY_DESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-ACCY_DESC]' DIMENSIONNAME = '[4ZCP_CHGOPT-ACCY_DESC]' ATTRIBUTE,
+        accy_typelevel01_0 = '[4ZCP_CHGOPT-ACCY_TYPE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-ACCY_TYPE]' DIMENSIONNAME = '[4ZCP_CHGOPT-ACCY_TYPE]' LEVELPOSITION=1,
+        accy_type_key = '[4ZCP_CHGOPT-ACCY_TYPE].[24ZCP_CHGOPT-ACCY_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-ACCY_TYPE]' DIMENSIONNAME = '[4ZCP_CHGOPT-ACCY_TYPE]' ATTRIBUTE,
+        chgopt_cre_by_idlevel01_0 = '[4ZCP_CHGOPT-CHGOPT_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-CHGOPT_CRE_B]' DIMENSIONNAME = '[4ZCP_CHGOPT-CHGOPT_CRE_B]' LEVELPOSITION=1,
+        chgopt_cre_by_id_key = '[4ZCP_CHGOPT-CHGOPT_CRE_B].[24ZCP_CHGOPT-CHGOPT_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-CHGOPT_CRE_B]' DIMENSIONNAME = '[4ZCP_CHGOPT-CHGOPT_CRE_B]' ATTRIBUTE,
+        chgopt_cre_tslevel01_0 = '[4ZCP_CHGOPT-CHGOPT_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-CHGOPT_CRE_T]' DIMENSIONNAME = '[4ZCP_CHGOPT-CHGOPT_CRE_T]' LEVELPOSITION=1,
+        chgopt_cre_ts_key = '[4ZCP_CHGOPT-CHGOPT_CRE_T].[24ZCP_CHGOPT-CHGOPT_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-CHGOPT_CRE_T]' DIMENSIONNAME = '[4ZCP_CHGOPT-CHGOPT_CRE_T]' ATTRIBUTE,
+        chgopt_upd_by_idlevel01_0 = '[4ZCP_CHGOPT-CHGOPT_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-CHGOPT_UPD_B]' DIMENSIONNAME = '[4ZCP_CHGOPT-CHGOPT_UPD_B]' LEVELPOSITION=1,
+        chgopt_upd_by_id_key = '[4ZCP_CHGOPT-CHGOPT_UPD_B].[24ZCP_CHGOPT-CHGOPT_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-CHGOPT_UPD_B]' DIMENSIONNAME = '[4ZCP_CHGOPT-CHGOPT_UPD_B]' ATTRIBUTE,
+        chgopt_upd_tslevel01_0 = '[4ZCP_CHGOPT-CHGOPT_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-CHGOPT_UPD_T]' DIMENSIONNAME = '[4ZCP_CHGOPT-CHGOPT_UPD_T]' LEVELPOSITION=1,
+        chgopt_upd_ts_key = '[4ZCP_CHGOPT-CHGOPT_UPD_T].[24ZCP_CHGOPT-CHGOPT_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-CHGOPT_UPD_T]' DIMENSIONNAME = '[4ZCP_CHGOPT-CHGOPT_UPD_T]' ATTRIBUTE,
+        crtn_tslevel01_0 = '[4ZCP_CHGOPT-CRTN_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-CRTN_TS]' DIMENSIONNAME = '[4ZCP_CHGOPT-CRTN_TS]' LEVELPOSITION=1,
+        crtn_ts_key = '[4ZCP_CHGOPT-CRTN_TS].[24ZCP_CHGOPT-CRTN_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-CRTN_TS]' DIMENSIONNAME = '[4ZCP_CHGOPT-CRTN_TS]' ATTRIBUTE,
+        dlr_nblevel01_0 = '[4ZCP_CHGOPT-DLR_NB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-DLR_NB]' DIMENSIONNAME = '[4ZCP_CHGOPT-DLR_NB]' LEVELPOSITION=1,
+        dlr_nb_key = '[4ZCP_CHGOPT-DLR_NB].[24ZCP_CHGOPT-DLR_NB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-DLR_NB]' DIMENSIONNAME = '[4ZCP_CHGOPT-DLR_NB]' ATTRIBUTE,
+        infoproviderlevel01_0 = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        infoprovider_key = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_longname_0 = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        infoprovider_name = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        mdl_yr_nblevel01_0 = '[4ZCP_CHGOPT-MDL_YR_NB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-MDL_YR_NB]' DIMENSIONNAME = '[4ZCP_CHGOPT-MDL_YR_NB]' LEVELPOSITION=1,
+        mdl_yr_nb_key = '[4ZCP_CHGOPT-MDL_YR_NB].[24ZCP_CHGOPT-MDL_YR_NB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-MDL_YR_NB]' DIMENSIONNAME = '[4ZCP_CHGOPT-MDL_YR_NB]' ATTRIBUTE,
+        pgm_nmlevel01_0 = '[4ZCP_CHGOPT-PGM_NM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-PGM_NM]' DIMENSIONNAME = '[4ZCP_CHGOPT-PGM_NM]' LEVELPOSITION=1,
+        pgm_nm_key = '[4ZCP_CHGOPT-PGM_NM].[24ZCP_CHGOPT-PGM_NM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-PGM_NM]' DIMENSIONNAME = '[4ZCP_CHGOPT-PGM_NM]' ATTRIBUTE,
+        tms_guid_nblevel01_0 = '[4ZCP_CHGOPT-TMS_GUID_NB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-TMS_GUID_NB]' DIMENSIONNAME = '[4ZCP_CHGOPT-TMS_GUID_NB]' LEVELPOSITION=1,
+        tms_guid_nb_key = '[4ZCP_CHGOPT-TMS_GUID_NB].[24ZCP_CHGOPT-TMS_GUID_NB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-TMS_GUID_NB]' DIMENSIONNAME = '[4ZCP_CHGOPT-TMS_GUID_NB]' ATTRIBUTE,
+        veh_mdl_nblevel01_0 = '[4ZCP_CHGOPT-VEH_MDL_NB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-VEH_MDL_NB]' DIMENSIONNAME = '[4ZCP_CHGOPT-VEH_MDL_NB]' LEVELPOSITION=1,
+        veh_mdl_nb_key = '[4ZCP_CHGOPT-VEH_MDL_NB].[24ZCP_CHGOPT-VEH_MDL_NB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_CHGOPT-VEH_MDL_NB]' DIMENSIONNAME = '[4ZCP_CHGOPT-VEH_MDL_NB]' ATTRIBUTE,
+        numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_chgopt I18N us_cst (
+        accy_cdlevel01_0:text,
+        accy_cd_key:text,
+        accy_desclevel01_0:text,
+        accy_desc_key:text,
+        accy_typelevel01_0:text,
+        accy_type_key:text,
+        chgopt_cre_by_idlevel01_0:text,
+        chgopt_cre_by_id_key:text,
+        chgopt_cre_tslevel01_0:text,
+        chgopt_cre_ts_key:text,
+        chgopt_upd_by_idlevel01_0:text,
+        chgopt_upd_by_id_key:text,
+        chgopt_upd_tslevel01_0:text,
+        chgopt_upd_ts_key:text,
+        crtn_tslevel01_0:text,
+        crtn_ts_key:text,
+        dlr_nblevel01_0:text,
+        dlr_nb_key:text,
+        infoproviderlevel01_0:text,
+        infoprovider_key:text,
+        infoprovider_longname_0:text,
+        infoprovider_name:text,
+        mdl_yr_nblevel01_0:text,
+        mdl_yr_nb_key:text,
+        pgm_nmlevel01_0:text,
+        pgm_nm_key:text,
+        tms_guid_nblevel01_0:text,
+        tms_guid_nb_key:text,
+        veh_mdl_nblevel01_0:text,
+        veh_mdl_nb_key:text,
+        numberofrecords_0:double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_chgopt(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD accy_cdlevel01_0 (any) OPT ANY
+             ADD accy_cd_key (any) OPT ANY
+             ADD accy_desclevel01_0 (any) OPT ANY
+             ADD accy_desc_key (any) OPT ANY
+             ADD accy_typelevel01_0 (any) OPT ANY
+             ADD accy_type_key (any) OPT ANY
+             ADD chgopt_cre_by_idlevel01_0 (any) OPT ANY
+             ADD chgopt_cre_by_id_key (any) OPT ANY
+             ADD chgopt_cre_tslevel01_0 (any) OPT ANY
+             ADD chgopt_cre_ts_key (any) OPT ANY
+             ADD chgopt_upd_by_idlevel01_0 (any) OPT ANY
+             ADD chgopt_upd_by_id_key (any) OPT ANY
+             ADD chgopt_upd_tslevel01_0 (any) OPT ANY
+             ADD chgopt_upd_ts_key (any) OPT ANY
+             ADD crtn_tslevel01_0 (any) OPT ANY
+             ADD crtn_ts_key (any) OPT ANY
+             ADD dlr_nblevel01_0 (any) OPT ANY
+             ADD dlr_nb_key (any) OPT ANY
+             ADD infoproviderlevel01_0 (any) OPT ANY
+             ADD infoprovider_key (any) OPT ANY
+             ADD infoprovider_longname_0 (any) OPT ANY
+             ADD infoprovider_name (any) OPT ANY
+             ADD mdl_yr_nblevel01_0 (any) OPT ANY
+             ADD mdl_yr_nb_key (any) OPT ANY
+             ADD pgm_nmlevel01_0 (any) OPT ANY
+             ADD pgm_nm_key (any) OPT ANY
+             ADD tms_guid_nblevel01_0 (any) OPT ANY
+             ADD tms_guid_nb_key (any) OPT ANY
+             ADD veh_mdl_nblevel01_0 (any) OPT ANY
+             ADD veh_mdl_nb_key (any) OPT ANY
+             ADD numberofrecords_0 (any) OPT ANY
+        )
+        OUTPUTLIST (accy_cd_key, accy_cdlevel01_0, accy_desc_key, accy_desclevel01_0, accy_type_key, accy_typelevel01_0, chgopt_cre_by_id_key, chgopt_cre_by_idlevel01_0, chgopt_cre_ts_key, chgopt_cre_tslevel01_0, chgopt_upd_by_id_key, chgopt_upd_by_idlevel01_0, chgopt_upd_ts_key, chgopt_upd_tslevel01_0, crtn_ts_key, crtn_tslevel01_0, dlr_nb_key, dlr_nblevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, mdl_yr_nb_key, mdl_yr_nblevel01_0, numberofrecords_0, pgm_nm_key, pgm_nmlevel01_0, tms_guid_nb_key, tms_guid_nblevel01_0, veh_mdl_nb_key, veh_mdl_nblevel01_0
+        )
+        WRAPPER (sapbwbapi bv_zcp_chgopt)
+    );
+
