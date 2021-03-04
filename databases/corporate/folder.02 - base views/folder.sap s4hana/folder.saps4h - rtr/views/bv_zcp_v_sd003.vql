@@ -72,6 +72,7 @@ CREATE OR REPLACE TABLE bv_zcp_v_sd003 I18N us_cst (
         qtyinbaseuom_0:double
     )
     FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    DESCRIPTION = 'Retail Sales and Objectives.  Contains actual, history, and objectives.  This will be key for reporting that Tableau will use as its base.  It contains everything.'
     CACHE OFF
     TIMETOLIVEINCACHE DEFAULT
     ADD SEARCHMETHOD bv_zcp_v_sd003(

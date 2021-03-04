@@ -358,6 +358,7 @@ CREATE OR REPLACE TABLE bv_zcp_v_sd001 I18N us_cst (
         subtotal6_0:double
     )
     FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    DESCRIPTION = 'Contains actuals from S4 only.  It does not contain any historical data or objectives.'
     CACHE OFF
     TIMETOLIVEINCACHE DEFAULT
     ADD SEARCHMETHOD bv_zcp_v_sd001(
