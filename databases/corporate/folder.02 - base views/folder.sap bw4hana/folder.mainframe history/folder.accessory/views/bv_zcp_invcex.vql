@@ -1,0 +1,202 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_invcex
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_INVCEX'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "CRE_BY_ID Level 01" = '[4ZCP_INVCEX-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEX-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_INVCEX-CRE_BY_ID].[24ZCP_INVCEX-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEX-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_INVCEX-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-CRE_TS]' DIMENSIONNAME = '[4ZCP_INVCEX-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_INVCEX-CRE_TS].[24ZCP_INVCEX-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-CRE_TS]' DIMENSIONNAME = '[4ZCP_INVCEX-CRE_TS]' ATTRIBUTE,
+        "INVCEX_KEY_FILLER01 Level 01" = '[4ZCP_INVCEX-INVCEX_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INVCEX_KEY_F]' DIMENSIONNAME = '[4ZCP_INVCEX-INVCEX_KEY_F]' LEVELPOSITION=1,
+        "INVCEX_KEY_FILLER01_Key" = '[4ZCP_INVCEX-INVCEX_KEY_F].[24ZCP_INVCEX-INVCEX_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INVCEX_KEY_F]' DIMENSIONNAME = '[4ZCP_INVCEX-INVCEX_KEY_F]' ATTRIBUTE,
+        "INV_X_ACC_01 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_01].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_01]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_01]' LEVELPOSITION=1,
+        "INV_X_ACC_01_Key" = '[4ZCP_INVCEX-INV_X_ACC_01].[24ZCP_INVCEX-INV_X_ACC_01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_01]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_01]' ATTRIBUTE,
+        "INV_X_ACC_02 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_02].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_02]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_02]' LEVELPOSITION=1,
+        "INV_X_ACC_02_Key" = '[4ZCP_INVCEX-INV_X_ACC_02].[24ZCP_INVCEX-INV_X_ACC_02]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_02]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_02]' ATTRIBUTE,
+        "INV_X_ACC_03 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_03].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_03]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_03]' LEVELPOSITION=1,
+        "INV_X_ACC_03_Key" = '[4ZCP_INVCEX-INV_X_ACC_03].[24ZCP_INVCEX-INV_X_ACC_03]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_03]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_03]' ATTRIBUTE,
+        "INV_X_ACC_04 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_04].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_04]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_04]' LEVELPOSITION=1,
+        "INV_X_ACC_04_Key" = '[4ZCP_INVCEX-INV_X_ACC_04].[24ZCP_INVCEX-INV_X_ACC_04]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_04]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_04]' ATTRIBUTE,
+        "INV_X_ACC_05 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_05].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_05]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_05]' LEVELPOSITION=1,
+        "INV_X_ACC_05_Key" = '[4ZCP_INVCEX-INV_X_ACC_05].[24ZCP_INVCEX-INV_X_ACC_05]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_05]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_05]' ATTRIBUTE,
+        "INV_X_ACC_06 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_06].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_06]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_06]' LEVELPOSITION=1,
+        "INV_X_ACC_06_Key" = '[4ZCP_INVCEX-INV_X_ACC_06].[24ZCP_INVCEX-INV_X_ACC_06]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_06]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_06]' ATTRIBUTE,
+        "INV_X_ACC_07 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_07].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_07]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_07]' LEVELPOSITION=1,
+        "INV_X_ACC_07_Key" = '[4ZCP_INVCEX-INV_X_ACC_07].[24ZCP_INVCEX-INV_X_ACC_07]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_07]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_07]' ATTRIBUTE,
+        "INV_X_ACC_08 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_08].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_08]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_08]' LEVELPOSITION=1,
+        "INV_X_ACC_08_Key" = '[4ZCP_INVCEX-INV_X_ACC_08].[24ZCP_INVCEX-INV_X_ACC_08]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_08]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_08]' ATTRIBUTE,
+        "INV_X_ACC_09 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_09].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_09]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_09]' LEVELPOSITION=1,
+        "INV_X_ACC_09_Key" = '[4ZCP_INVCEX-INV_X_ACC_09].[24ZCP_INVCEX-INV_X_ACC_09]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_09]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_09]' ATTRIBUTE,
+        "INV_X_ACC_10 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_10].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_10]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_10]' LEVELPOSITION=1,
+        "INV_X_ACC_10_Key" = '[4ZCP_INVCEX-INV_X_ACC_10].[24ZCP_INVCEX-INV_X_ACC_10]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_10]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_10]' ATTRIBUTE,
+        "INV_X_ACC_11 Level 01" = '[4ZCP_INVCEX-INV_X_ACC_11].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_11]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_11]' LEVELPOSITION=1,
+        "INV_X_ACC_11_Key" = '[4ZCP_INVCEX-INV_X_ACC_11].[24ZCP_INVCEX-INV_X_ACC_11]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_ACC_11]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_ACC_11]' ATTRIBUTE,
+        "INV_X_CAR Level 01" = '[4ZCP_INVCEX-INV_X_CAR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_CAR]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_CAR]' LEVELPOSITION=1,
+        "INV_X_CAR_Key" = '[4ZCP_INVCEX-INV_X_CAR].[24ZCP_INVCEX-INV_X_CAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_CAR]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_CAR]' ATTRIBUTE,
+        "INV_X_DLR Level 01" = '[4ZCP_INVCEX-INV_X_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_DLR]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_DLR]' LEVELPOSITION=1,
+        "INV_X_DLR_Key" = '[4ZCP_INVCEX-INV_X_DLR].[24ZCP_INVCEX-INV_X_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_DLR]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_DLR]' ATTRIBUTE,
+        "INV_X_DO Level 01" = '[4ZCP_INVCEX-INV_X_DO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_DO]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_DO]' LEVELPOSITION=1,
+        "INV_X_DO_Key" = '[4ZCP_INVCEX-INV_X_DO].[24ZCP_INVCEX-INV_X_DO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_DO]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_DO]' ATTRIBUTE,
+        "INV_X_EXC_1 Level 01" = '[4ZCP_INVCEX-INV_X_EXC_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_EXC_1]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_EXC_1]' LEVELPOSITION=1,
+        "INV_X_EXC_1_Key" = '[4ZCP_INVCEX-INV_X_EXC_1].[24ZCP_INVCEX-INV_X_EXC_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_EXC_1]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_EXC_1]' ATTRIBUTE,
+        "INV_X_EXC_2 Level 01" = '[4ZCP_INVCEX-INV_X_EXC_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_EXC_2]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_EXC_2]' LEVELPOSITION=1,
+        "INV_X_EXC_2_Key" = '[4ZCP_INVCEX-INV_X_EXC_2].[24ZCP_INVCEX-INV_X_EXC_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_EXC_2]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_EXC_2]' ATTRIBUTE,
+        "INV_X_FRT Level 01" = '[4ZCP_INVCEX-INV_X_FRT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_FRT]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_FRT]' LEVELPOSITION=1,
+        "INV_X_FRT_Key" = '[4ZCP_INVCEX-INV_X_FRT].[24ZCP_INVCEX-INV_X_FRT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_FRT]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_FRT]' ATTRIBUTE,
+        "INV_X_PORT Level 01" = '[4ZCP_INVCEX-INV_X_PORT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_PORT]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_PORT]' LEVELPOSITION=1,
+        "INV_X_PORT_Key" = '[4ZCP_INVCEX-INV_X_PORT].[24ZCP_INVCEX-INV_X_PORT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_PORT]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_PORT]' ATTRIBUTE,
+        "INV_X_QTY Level 01" = '[4ZCP_INVCEX-INV_X_QTY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_QTY]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_QTY]' LEVELPOSITION=1,
+        "INV_X_QTY_Key" = '[4ZCP_INVCEX-INV_X_QTY].[24ZCP_INVCEX-INV_X_QTY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_QTY]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_QTY]' ATTRIBUTE,
+        "INV_X_SHIP Level 01" = '[4ZCP_INVCEX-INV_X_SHIP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_SHIP]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_SHIP]' LEVELPOSITION=1,
+        "INV_X_SHIP_Key" = '[4ZCP_INVCEX-INV_X_SHIP].[24ZCP_INVCEX-INV_X_SHIP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_SHIP]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_SHIP]' ATTRIBUTE,
+        "INV_X_STATUS Level 01" = '[4ZCP_INVCEX-INV_X_STATUS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_STATUS]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_STATUS]' LEVELPOSITION=1,
+        "INV_X_STATUS_Key" = '[4ZCP_INVCEX-INV_X_STATUS].[24ZCP_INVCEX-INV_X_STATUS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_STATUS]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_STATUS]' ATTRIBUTE,
+        "INV_X_VIN Level 01" = '[4ZCP_INVCEX-INV_X_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_VIN]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_VIN]' LEVELPOSITION=1,
+        "INV_X_VIN_Key" = '[4ZCP_INVCEX-INV_X_VIN].[24ZCP_INVCEX-INV_X_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-INV_X_VIN]' DIMENSIONNAME = '[4ZCP_INVCEX-INV_X_VIN]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_INVCEX-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEX-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_INVCEX-UPD_BY_ID].[24ZCP_INVCEX-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEX-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_INVCEX-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-UPD_TS]' DIMENSIONNAME = '[4ZCP_INVCEX-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_INVCEX-UPD_TS].[24ZCP_INVCEX-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEX-UPD_TS]' DIMENSIONNAME = '[4ZCP_INVCEX-UPD_TS]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_invcex I18N us_cst (
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "INVCEX_KEY_FILLER01 Level 01":text,
+        "INVCEX_KEY_FILLER01_Key":text,
+        "INV_X_ACC_01 Level 01":text,
+        "INV_X_ACC_01_Key":text,
+        "INV_X_ACC_02 Level 01":text,
+        "INV_X_ACC_02_Key":text,
+        "INV_X_ACC_03 Level 01":text,
+        "INV_X_ACC_03_Key":text,
+        "INV_X_ACC_04 Level 01":text,
+        "INV_X_ACC_04_Key":text,
+        "INV_X_ACC_05 Level 01":text,
+        "INV_X_ACC_05_Key":text,
+        "INV_X_ACC_06 Level 01":text,
+        "INV_X_ACC_06_Key":text,
+        "INV_X_ACC_07 Level 01":text,
+        "INV_X_ACC_07_Key":text,
+        "INV_X_ACC_08 Level 01":text,
+        "INV_X_ACC_08_Key":text,
+        "INV_X_ACC_09 Level 01":text,
+        "INV_X_ACC_09_Key":text,
+        "INV_X_ACC_10 Level 01":text,
+        "INV_X_ACC_10_Key":text,
+        "INV_X_ACC_11 Level 01":text,
+        "INV_X_ACC_11_Key":text,
+        "INV_X_CAR Level 01":text,
+        "INV_X_CAR_Key":text,
+        "INV_X_DLR Level 01":text,
+        "INV_X_DLR_Key":text,
+        "INV_X_DO Level 01":text,
+        "INV_X_DO_Key":text,
+        "INV_X_EXC_1 Level 01":text,
+        "INV_X_EXC_1_Key":text,
+        "INV_X_EXC_2 Level 01":text,
+        "INV_X_EXC_2_Key":text,
+        "INV_X_FRT Level 01":text,
+        "INV_X_FRT_Key":text,
+        "INV_X_PORT Level 01":text,
+        "INV_X_PORT_Key":text,
+        "INV_X_QTY Level 01":text,
+        "INV_X_QTY_Key":text,
+        "INV_X_SHIP Level 01":text,
+        "INV_X_SHIP_Key":text,
+        "INV_X_STATUS Level 01":text,
+        "INV_X_STATUS_Key":text,
+        "INV_X_VIN Level 01":text,
+        "INV_X_VIN_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_invcex(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "INVCEX_KEY_FILLER01 Level 01" (any) OPT ANY
+             ADD "INVCEX_KEY_FILLER01_Key" (any) OPT ANY
+             ADD "INV_X_ACC_01 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_01_Key" (any) OPT ANY
+             ADD "INV_X_ACC_02 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_02_Key" (any) OPT ANY
+             ADD "INV_X_ACC_03 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_03_Key" (any) OPT ANY
+             ADD "INV_X_ACC_04 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_04_Key" (any) OPT ANY
+             ADD "INV_X_ACC_05 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_05_Key" (any) OPT ANY
+             ADD "INV_X_ACC_06 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_06_Key" (any) OPT ANY
+             ADD "INV_X_ACC_07 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_07_Key" (any) OPT ANY
+             ADD "INV_X_ACC_08 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_08_Key" (any) OPT ANY
+             ADD "INV_X_ACC_09 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_09_Key" (any) OPT ANY
+             ADD "INV_X_ACC_10 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_10_Key" (any) OPT ANY
+             ADD "INV_X_ACC_11 Level 01" (any) OPT ANY
+             ADD "INV_X_ACC_11_Key" (any) OPT ANY
+             ADD "INV_X_CAR Level 01" (any) OPT ANY
+             ADD "INV_X_CAR_Key" (any) OPT ANY
+             ADD "INV_X_DLR Level 01" (any) OPT ANY
+             ADD "INV_X_DLR_Key" (any) OPT ANY
+             ADD "INV_X_DO Level 01" (any) OPT ANY
+             ADD "INV_X_DO_Key" (any) OPT ANY
+             ADD "INV_X_EXC_1 Level 01" (any) OPT ANY
+             ADD "INV_X_EXC_1_Key" (any) OPT ANY
+             ADD "INV_X_EXC_2 Level 01" (any) OPT ANY
+             ADD "INV_X_EXC_2_Key" (any) OPT ANY
+             ADD "INV_X_FRT Level 01" (any) OPT ANY
+             ADD "INV_X_FRT_Key" (any) OPT ANY
+             ADD "INV_X_PORT Level 01" (any) OPT ANY
+             ADD "INV_X_PORT_Key" (any) OPT ANY
+             ADD "INV_X_QTY Level 01" (any) OPT ANY
+             ADD "INV_X_QTY_Key" (any) OPT ANY
+             ADD "INV_X_SHIP Level 01" (any) OPT ANY
+             ADD "INV_X_SHIP_Key" (any) OPT ANY
+             ADD "INV_X_STATUS Level 01" (any) OPT ANY
+             ADD "INV_X_STATUS_Key" (any) OPT ANY
+             ADD "INV_X_VIN Level 01" (any) OPT ANY
+             ADD "INV_X_VIN_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "INVCEX_KEY_FILLER01 Level 01", "INVCEX_KEY_FILLER01_Key", "INV_X_ACC_01 Level 01", "INV_X_ACC_01_Key", "INV_X_ACC_02 Level 01", "INV_X_ACC_02_Key", "INV_X_ACC_03 Level 01", "INV_X_ACC_03_Key", "INV_X_ACC_04 Level 01", "INV_X_ACC_04_Key", "INV_X_ACC_05 Level 01", "INV_X_ACC_05_Key", "INV_X_ACC_06 Level 01", "INV_X_ACC_06_Key", "INV_X_ACC_07 Level 01", "INV_X_ACC_07_Key", "INV_X_ACC_08 Level 01", "INV_X_ACC_08_Key", "INV_X_ACC_09 Level 01", "INV_X_ACC_09_Key", "INV_X_ACC_10 Level 01", "INV_X_ACC_10_Key", "INV_X_ACC_11 Level 01", "INV_X_ACC_11_Key", "INV_X_CAR Level 01", "INV_X_CAR_Key", "INV_X_DLR Level 01", "INV_X_DLR_Key", "INV_X_DO Level 01", "INV_X_DO_Key", "INV_X_EXC_1 Level 01", "INV_X_EXC_1_Key", "INV_X_EXC_2 Level 01", "INV_X_EXC_2_Key", "INV_X_FRT Level 01", "INV_X_FRT_Key", "INV_X_PORT Level 01", "INV_X_PORT_Key", "INV_X_QTY Level 01", "INV_X_QTY_Key", "INV_X_SHIP Level 01", "INV_X_SHIP_Key", "INV_X_STATUS Level 01", "INV_X_STATUS_Key", "INV_X_VIN Level 01", "INV_X_VIN_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_invcex)
+    );
+
