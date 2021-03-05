@@ -1,0 +1,106 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_genapl
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENAPL'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "APD_ACC_CODE Level 01" = '[4ZCP_GENAPL-APD_ACC_CODE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-APD_ACC_CODE]' DIMENSIONNAME = '[4ZCP_GENAPL-APD_ACC_CODE]' LEVELPOSITION=1,
+        "APD_ACC_CODE_Key" = '[4ZCP_GENAPL-APD_ACC_CODE].[24ZCP_GENAPL-APD_ACC_CODE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-APD_ACC_CODE]' DIMENSIONNAME = '[4ZCP_GENAPL-APD_ACC_CODE]' ATTRIBUTE,
+        "APD_DESC Level 01" = '[4ZCP_GENAPL-APD_DESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-APD_DESC]' DIMENSIONNAME = '[4ZCP_GENAPL-APD_DESC]' LEVELPOSITION=1,
+        "APD_DESC_Key" = '[4ZCP_GENAPL-APD_DESC].[24ZCP_GENAPL-APD_DESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-APD_DESC]' DIMENSIONNAME = '[4ZCP_GENAPL-APD_DESC]' ATTRIBUTE,
+        "APD_MDL_YR Level 01" = '[4ZCP_GENAPL-APD_MDL_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-APD_MDL_YR]' DIMENSIONNAME = '[4ZCP_GENAPL-APD_MDL_YR]' LEVELPOSITION=1,
+        "APD_MDL_YR_Key" = '[4ZCP_GENAPL-APD_MDL_YR].[24ZCP_GENAPL-APD_MDL_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-APD_MDL_YR]' DIMENSIONNAME = '[4ZCP_GENAPL-APD_MDL_YR]' ATTRIBUTE,
+        "APD_PAC Level 01" = '[4ZCP_GENAPL-APD_PAC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-APD_PAC]' DIMENSIONNAME = '[4ZCP_GENAPL-APD_PAC]' LEVELPOSITION=1,
+        "APD_PAC_Key" = '[4ZCP_GENAPL-APD_PAC].[24ZCP_GENAPL-APD_PAC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-APD_PAC]' DIMENSIONNAME = '[4ZCP_GENAPL-APD_PAC]' ATTRIBUTE,
+        "APD_SEQ Level 01" = '[4ZCP_GENAPL-APD_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-APD_SEQ]' DIMENSIONNAME = '[4ZCP_GENAPL-APD_SEQ]' LEVELPOSITION=1,
+        "APD_SEQ_Key" = '[4ZCP_GENAPL-APD_SEQ].[24ZCP_GENAPL-APD_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-APD_SEQ]' DIMENSIONNAME = '[4ZCP_GENAPL-APD_SEQ]' ATTRIBUTE,
+        "CRE_BY_ID Level 01" = '[4ZCP_GENAPL-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENAPL-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_GENAPL-CRE_BY_ID].[24ZCP_GENAPL-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENAPL-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_GENAPL-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENAPL-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_GENAPL-CRE_TS].[24ZCP_GENAPL-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENAPL-CRE_TS]' ATTRIBUTE,
+        "GENAPD_KEY_FILLER01 Level 01" = '[4ZCP_GENAPL-GENAPD_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-GENAPD_KEY_F]' DIMENSIONNAME = '[4ZCP_GENAPL-GENAPD_KEY_F]' LEVELPOSITION=1,
+        "GENAPD_KEY_FILLER01_Key" = '[4ZCP_GENAPL-GENAPD_KEY_F].[24ZCP_GENAPL-GENAPD_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-GENAPD_KEY_F]' DIMENSIONNAME = '[4ZCP_GENAPL-GENAPD_KEY_F]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_GENAPL-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENAPL-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_GENAPL-UPD_BY_ID].[24ZCP_GENAPL-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENAPL-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_GENAPL-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENAPL-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_GENAPL-UPD_TS].[24ZCP_GENAPL-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENAPL-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENAPL-UPD_TS]' ATTRIBUTE,
+        "ARRAY_INDEX_0" = '[Measures].[4ZCP_GENAPL-ARRAY_INDEX]' : 'java.lang.Integer' (OPT) MEASURE,
+        "ARRAY_INDEX" = '[Measures].[4ZCP_GENAPL-ARRAY_INDE_0]' : 'java.lang.Integer' (OPT) MEASURE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_genapl I18N us_cst (
+        "APD_ACC_CODE Level 01":text,
+        "APD_ACC_CODE_Key":text,
+        "APD_DESC Level 01":text,
+        "APD_DESC_Key":text,
+        "APD_MDL_YR Level 01":text,
+        "APD_MDL_YR_Key":text,
+        "APD_PAC Level 01":text,
+        "APD_PAC_Key":text,
+        "APD_SEQ Level 01":text,
+        "APD_SEQ_Key":text,
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "GENAPD_KEY_FILLER01 Level 01":text,
+        "GENAPD_KEY_FILLER01_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "ARRAY_INDEX_0":int,
+        "ARRAY_INDEX":int,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_genapl(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "APD_ACC_CODE Level 01" (any) OPT ANY
+             ADD "APD_ACC_CODE_Key" (any) OPT ANY
+             ADD "APD_DESC Level 01" (any) OPT ANY
+             ADD "APD_DESC_Key" (any) OPT ANY
+             ADD "APD_MDL_YR Level 01" (any) OPT ANY
+             ADD "APD_MDL_YR_Key" (any) OPT ANY
+             ADD "APD_PAC Level 01" (any) OPT ANY
+             ADD "APD_PAC_Key" (any) OPT ANY
+             ADD "APD_SEQ Level 01" (any) OPT ANY
+             ADD "APD_SEQ_Key" (any) OPT ANY
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "GENAPD_KEY_FILLER01 Level 01" (any) OPT ANY
+             ADD "GENAPD_KEY_FILLER01_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "ARRAY_INDEX_0" (any) OPT ANY
+             ADD "ARRAY_INDEX" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("APD_ACC_CODE Level 01", "APD_ACC_CODE_Key", "APD_DESC Level 01", "APD_DESC_Key", "APD_MDL_YR Level 01", "APD_MDL_YR_Key", "APD_PAC Level 01", "APD_PAC_Key", "APD_SEQ Level 01", "APD_SEQ_Key", "ARRAY_INDEX", "ARRAY_INDEX_0", "CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "GENAPD_KEY_FILLER01 Level 01", "GENAPD_KEY_FILLER01_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_genapl)
+    );
+
