@@ -1,0 +1,304 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "FIO/LIO Master"
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENACC'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "ACC_ABREV Level 01" = '[4ZCP_GENACC-ACC_ABREV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_ABREV]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_ABREV]' LEVELPOSITION=1,
+        "ACC_ABREV_Key" = '[4ZCP_GENACC-ACC_ABREV].[24ZCP_GENACC-ACC_ABREV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_ABREV]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_ABREV]' ATTRIBUTE,
+        "ACC_CHG_USER Level 01" = '[4ZCP_GENACC-ACC_CHG_USER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_CHG_USER]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_CHG_USER]' LEVELPOSITION=1,
+        "ACC_CHG_USER_Key" = '[4ZCP_GENACC-ACC_CHG_USER].[24ZCP_GENACC-ACC_CHG_USER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_CHG_USER]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_CHG_USER]' ATTRIBUTE,
+        "ACC_CODE Level 01" = '[4ZCP_GENACC-ACC_CODE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_CODE]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_CODE]' LEVELPOSITION=1,
+        "ACC_CODE_Key" = '[4ZCP_GENACC-ACC_CODE].[24ZCP_GENACC-ACC_CODE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_CODE]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_CODE]' ATTRIBUTE,
+        "ACC_CPS_XMIT_CD Level 01" = '[4ZCP_GENACC-ACC_CPS_XMIT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_CPS_XMIT]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_CPS_XMIT]' LEVELPOSITION=1,
+        "ACC_CPS_XMIT_CD_Key" = '[4ZCP_GENACC-ACC_CPS_XMIT].[24ZCP_GENACC-ACC_CPS_XMIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_CPS_XMIT]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_CPS_XMIT]' ATTRIBUTE,
+        "ACC_DESC Level 01" = '[4ZCP_GENACC-ACC_DESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_DESC]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_DESC]' LEVELPOSITION=1,
+        "ACC_DESC_Key" = '[4ZCP_GENACC-ACC_DESC].[24ZCP_GENACC-ACC_DESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_DESC]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_DESC]' ATTRIBUTE,
+        "ACC_EM_IND Level 01" = '[4ZCP_GENACC-ACC_EM_IND].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_EM_IND]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_EM_IND]' LEVELPOSITION=1,
+        "ACC_EM_IND_Key" = '[4ZCP_GENACC-ACC_EM_IND].[24ZCP_GENACC-ACC_EM_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_EM_IND]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_EM_IND]' ATTRIBUTE,
+        "ACC_FL_1 Level 01" = '[4ZCP_GENACC-ACC_FL_1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FL_1]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FL_1]' LEVELPOSITION=1,
+        "ACC_FL_1_Key" = '[4ZCP_GENACC-ACC_FL_1].[24ZCP_GENACC-ACC_FL_1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FL_1]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FL_1]' ATTRIBUTE,
+        "ACC_FL_2 Level 01" = '[4ZCP_GENACC-ACC_FL_2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FL_2]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FL_2]' LEVELPOSITION=1,
+        "ACC_FL_2_Key" = '[4ZCP_GENACC-ACC_FL_2].[24ZCP_GENACC-ACC_FL_2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FL_2]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FL_2]' ATTRIBUTE,
+        "ACC_FL_3 Level 01" = '[4ZCP_GENACC-ACC_FL_3].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FL_3]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FL_3]' LEVELPOSITION=1,
+        "ACC_FL_3_Key" = '[4ZCP_GENACC-ACC_FL_3].[24ZCP_GENACC-ACC_FL_3]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FL_3]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FL_3]' ATTRIBUTE,
+        "ACC_FL_4 Level 01" = '[4ZCP_GENACC-ACC_FL_4].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FL_4]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FL_4]' LEVELPOSITION=1,
+        "ACC_FL_4_Key" = '[4ZCP_GENACC-ACC_FL_4].[24ZCP_GENACC-ACC_FL_4]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FL_4]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FL_4]' ATTRIBUTE,
+        "ACC_FL_5 Level 01" = '[4ZCP_GENACC-ACC_FL_5].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FL_5]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FL_5]' LEVELPOSITION=1,
+        "ACC_FL_5_Key" = '[4ZCP_GENACC-ACC_FL_5].[24ZCP_GENACC-ACC_FL_5]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FL_5]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FL_5]' ATTRIBUTE,
+        "ACC_FW_IND Level 01" = '[4ZCP_GENACC-ACC_FW_IND].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FW_IND]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FW_IND]' LEVELPOSITION=1,
+        "ACC_FW_IND_Key" = '[4ZCP_GENACC-ACC_FW_IND].[24ZCP_GENACC-ACC_FW_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_FW_IND]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_FW_IND]' ATTRIBUTE,
+        "ACC_KIT_01 Level 01" = '[4ZCP_GENACC-ACC_KIT_01].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_01]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_01]' LEVELPOSITION=1,
+        "ACC_KIT_01_Key" = '[4ZCP_GENACC-ACC_KIT_01].[24ZCP_GENACC-ACC_KIT_01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_01]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_01]' ATTRIBUTE,
+        "ACC_KIT_02 Level 01" = '[4ZCP_GENACC-ACC_KIT_02].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_02]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_02]' LEVELPOSITION=1,
+        "ACC_KIT_02_Key" = '[4ZCP_GENACC-ACC_KIT_02].[24ZCP_GENACC-ACC_KIT_02]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_02]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_02]' ATTRIBUTE,
+        "ACC_KIT_03 Level 01" = '[4ZCP_GENACC-ACC_KIT_03].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_03]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_03]' LEVELPOSITION=1,
+        "ACC_KIT_03_Key" = '[4ZCP_GENACC-ACC_KIT_03].[24ZCP_GENACC-ACC_KIT_03]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_03]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_03]' ATTRIBUTE,
+        "ACC_KIT_04 Level 01" = '[4ZCP_GENACC-ACC_KIT_04].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_04]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_04]' LEVELPOSITION=1,
+        "ACC_KIT_04_Key" = '[4ZCP_GENACC-ACC_KIT_04].[24ZCP_GENACC-ACC_KIT_04]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_04]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_04]' ATTRIBUTE,
+        "ACC_KIT_05 Level 01" = '[4ZCP_GENACC-ACC_KIT_05].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_05]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_05]' LEVELPOSITION=1,
+        "ACC_KIT_05_Key" = '[4ZCP_GENACC-ACC_KIT_05].[24ZCP_GENACC-ACC_KIT_05]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_05]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_05]' ATTRIBUTE,
+        "ACC_KIT_06 Level 01" = '[4ZCP_GENACC-ACC_KIT_06].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_06]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_06]' LEVELPOSITION=1,
+        "ACC_KIT_06_Key" = '[4ZCP_GENACC-ACC_KIT_06].[24ZCP_GENACC-ACC_KIT_06]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_06]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_06]' ATTRIBUTE,
+        "ACC_KIT_07 Level 01" = '[4ZCP_GENACC-ACC_KIT_07].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_07]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_07]' LEVELPOSITION=1,
+        "ACC_KIT_07_Key" = '[4ZCP_GENACC-ACC_KIT_07].[24ZCP_GENACC-ACC_KIT_07]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_07]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_07]' ATTRIBUTE,
+        "ACC_KIT_08 Level 01" = '[4ZCP_GENACC-ACC_KIT_08].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_08]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_08]' LEVELPOSITION=1,
+        "ACC_KIT_08_Key" = '[4ZCP_GENACC-ACC_KIT_08].[24ZCP_GENACC-ACC_KIT_08]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_08]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_08]' ATTRIBUTE,
+        "ACC_KIT_09 Level 01" = '[4ZCP_GENACC-ACC_KIT_09].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_09]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_09]' LEVELPOSITION=1,
+        "ACC_KIT_09_Key" = '[4ZCP_GENACC-ACC_KIT_09].[24ZCP_GENACC-ACC_KIT_09]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_09]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_09]' ATTRIBUTE,
+        "ACC_KIT_10 Level 01" = '[4ZCP_GENACC-ACC_KIT_10].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_10]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_10]' LEVELPOSITION=1,
+        "ACC_KIT_10_Key" = '[4ZCP_GENACC-ACC_KIT_10].[24ZCP_GENACC-ACC_KIT_10]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_KIT_10]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_KIT_10]' ATTRIBUTE,
+        "ACC_MDL Level 01" = '[4ZCP_GENACC-ACC_MDL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_MDL]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_MDL]' LEVELPOSITION=1,
+        "ACC_MDL_Key" = '[4ZCP_GENACC-ACC_MDL].[24ZCP_GENACC-ACC_MDL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_MDL]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_MDL]' ATTRIBUTE,
+        "ACC_NEG_FLAG Level 01" = '[4ZCP_GENACC-ACC_NEG_FLAG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_NEG_FLAG]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_NEG_FLAG]' LEVELPOSITION=1,
+        "ACC_NEG_FLAG_Key" = '[4ZCP_GENACC-ACC_NEG_FLAG].[24ZCP_GENACC-ACC_NEG_FLAG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_NEG_FLAG]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_NEG_FLAG]' ATTRIBUTE,
+        "ACC_PAC Level 01" = '[4ZCP_GENACC-ACC_PAC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PAC]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PAC]' LEVELPOSITION=1,
+        "ACC_PAC_Key" = '[4ZCP_GENACC-ACC_PAC].[24ZCP_GENACC-ACC_PAC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PAC]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PAC]' ATTRIBUTE,
+        "ACC_PAC_LINES Level 01" = '[4ZCP_GENACC-ACC_PAC_LINE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PAC_LINE]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PAC_LINE]' LEVELPOSITION=1,
+        "ACC_PAC_LINES_Key" = '[4ZCP_GENACC-ACC_PAC_LINE].[24ZCP_GENACC-ACC_PAC_LINE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PAC_LINE]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PAC_LINE]' ATTRIBUTE,
+        "ACC_PAC_NO Level 01" = '[4ZCP_GENACC-ACC_PAC_NO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PAC_NO]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PAC_NO]' LEVELPOSITION=1,
+        "ACC_PAC_NO_Key" = '[4ZCP_GENACC-ACC_PAC_NO].[24ZCP_GENACC-ACC_PAC_NO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PAC_NO]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PAC_NO]' ATTRIBUTE,
+        "ACC_PHASE_CD Level 01" = '[4ZCP_GENACC-ACC_PHASE_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PHASE_CD]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PHASE_CD]' LEVELPOSITION=1,
+        "ACC_PHASE_CD_Key" = '[4ZCP_GENACC-ACC_PHASE_CD].[24ZCP_GENACC-ACC_PHASE_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PHASE_CD]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PHASE_CD]' ATTRIBUTE,
+        "ACC_PLUSER Level 01" = '[4ZCP_GENACC-ACC_PLUSER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PLUSER]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PLUSER]' LEVELPOSITION=1,
+        "ACC_PLUSER_Key" = '[4ZCP_GENACC-ACC_PLUSER].[24ZCP_GENACC-ACC_PLUSER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PLUSER]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PLUSER]' ATTRIBUTE,
+        "ACC_PRE Level 01" = '[4ZCP_GENACC-ACC_PRE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PRE]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PRE]' LEVELPOSITION=1,
+        "ACC_PRE_Key" = '[4ZCP_GENACC-ACC_PRE].[24ZCP_GENACC-ACC_PRE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_PRE]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_PRE]' ATTRIBUTE,
+        "ACC_RA_IND Level 01" = '[4ZCP_GENACC-ACC_RA_IND].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_RA_IND]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_RA_IND]' LEVELPOSITION=1,
+        "ACC_RA_IND_Key" = '[4ZCP_GENACC-ACC_RA_IND].[24ZCP_GENACC-ACC_RA_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_RA_IND]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_RA_IND]' ATTRIBUTE,
+        "ACC_RH_IND Level 01" = '[4ZCP_GENACC-ACC_RH_IND].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_RH_IND]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_RH_IND]' LEVELPOSITION=1,
+        "ACC_RH_IND_Key" = '[4ZCP_GENACC-ACC_RH_IND].[24ZCP_GENACC-ACC_RH_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_RH_IND]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_RH_IND]' ATTRIBUTE,
+        "ACC_RR_IND Level 01" = '[4ZCP_GENACC-ACC_RR_IND].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_RR_IND]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_RR_IND]' LEVELPOSITION=1,
+        "ACC_RR_IND_Key" = '[4ZCP_GENACC-ACC_RR_IND].[24ZCP_GENACC-ACC_RR_IND]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_RR_IND]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_RR_IND]' ATTRIBUTE,
+        "ACC_SERIES Level 01" = '[4ZCP_GENACC-ACC_SERIES].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_SERIES]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_SERIES]' LEVELPOSITION=1,
+        "ACC_SERIES_Key" = '[4ZCP_GENACC-ACC_SERIES].[24ZCP_GENACC-ACC_SERIES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_SERIES]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_SERIES]' ATTRIBUTE,
+        "ACC_TMS_CODE Level 01" = '[4ZCP_GENACC-ACC_TMS_CODE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_TMS_CODE]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_TMS_CODE]' LEVELPOSITION=1,
+        "ACC_TMS_CODE_Key" = '[4ZCP_GENACC-ACC_TMS_CODE].[24ZCP_GENACC-ACC_TMS_CODE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_TMS_CODE]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_TMS_CODE]' ATTRIBUTE,
+        "ACC_YR Level 01" = '[4ZCP_GENACC-ACC_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_YR]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_YR]' LEVELPOSITION=1,
+        "ACC_YR_Key" = '[4ZCP_GENACC-ACC_YR].[24ZCP_GENACC-ACC_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-ACC_YR]' DIMENSIONNAME = '[4ZCP_GENACC-ACC_YR]' ATTRIBUTE,
+        "CRE_BY_ID Level 01" = '[4ZCP_GENACC-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENACC-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_GENACC-CRE_BY_ID].[24ZCP_GENACC-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENACC-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_GENACC-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENACC-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_GENACC-CRE_TS].[24ZCP_GENACC-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENACC-CRE_TS]' ATTRIBUTE,
+        "GENACC_KEY_FILLER01 Level 01" = '[4ZCP_GENACC-GENACC_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-GENACC_KEY_F]' DIMENSIONNAME = '[4ZCP_GENACC-GENACC_KEY_F]' LEVELPOSITION=1,
+        "GENACC_KEY_FILLER01_Key" = '[4ZCP_GENACC-GENACC_KEY_F].[24ZCP_GENACC-GENACC_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-GENACC_KEY_F]' DIMENSIONNAME = '[4ZCP_GENACC-GENACC_KEY_F]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_GENACC-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENACC-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_GENACC-UPD_BY_ID].[24ZCP_GENACC-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENACC-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_GENACC-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENACC-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_GENACC-UPD_TS].[24ZCP_GENACC-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENACC-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENACC-UPD_TS]' ATTRIBUTE,
+        "ACC_DLR" = '[Measures].[4ZCP_GENACC-ACC_DLR]' : 'java.lang.Integer' (OPT) MEASURE,
+        "ACC_DST" = '[Measures].[4ZCP_GENACC-ACC_DST]' : 'java.lang.Integer' (OPT) MEASURE,
+        "ACC_FEE" = '[Measures].[4ZCP_GENACC-ACC_FEE]' : 'java.lang.Integer' (OPT) MEASURE,
+        "ACC_LBR" = '[Measures].[4ZCP_GENACC-ACC_LBR]' : 'java.lang.Integer' (OPT) MEASURE,
+        "ACC_MSRP_DISC" = '[Measures].[4ZCP_GENACC-ACC_MSRP_DIS]' : 'java.lang.Integer' (OPT) MEASURE,
+        "ACC_RTL" = '[Measures].[4ZCP_GENACC-ACC_RTL]' : 'java.lang.Integer' (OPT) MEASURE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_genacc I18N us_cst (
+        "ACC_ABREV Level 01":text,
+        "ACC_ABREV_Key":text,
+        "ACC_CHG_USER Level 01":text,
+        "ACC_CHG_USER_Key":text,
+        "ACC_CODE Level 01":text,
+        "ACC_CODE_Key":text,
+        "ACC_CPS_XMIT_CD Level 01":text,
+        "ACC_CPS_XMIT_CD_Key":text,
+        "ACC_DESC Level 01":text,
+        "ACC_DESC_Key":text,
+        "ACC_EM_IND Level 01":text,
+        "ACC_EM_IND_Key":text,
+        "ACC_FL_1 Level 01":text,
+        "ACC_FL_1_Key":text,
+        "ACC_FL_2 Level 01":text,
+        "ACC_FL_2_Key":text,
+        "ACC_FL_3 Level 01":text,
+        "ACC_FL_3_Key":text,
+        "ACC_FL_4 Level 01":text,
+        "ACC_FL_4_Key":text,
+        "ACC_FL_5 Level 01":text,
+        "ACC_FL_5_Key":text,
+        "ACC_FW_IND Level 01":text,
+        "ACC_FW_IND_Key":text,
+        "ACC_KIT_01 Level 01":text,
+        "ACC_KIT_01_Key":text,
+        "ACC_KIT_02 Level 01":text,
+        "ACC_KIT_02_Key":text,
+        "ACC_KIT_03 Level 01":text,
+        "ACC_KIT_03_Key":text,
+        "ACC_KIT_04 Level 01":text,
+        "ACC_KIT_04_Key":text,
+        "ACC_KIT_05 Level 01":text,
+        "ACC_KIT_05_Key":text,
+        "ACC_KIT_06 Level 01":text,
+        "ACC_KIT_06_Key":text,
+        "ACC_KIT_07 Level 01":text,
+        "ACC_KIT_07_Key":text,
+        "ACC_KIT_08 Level 01":text,
+        "ACC_KIT_08_Key":text,
+        "ACC_KIT_09 Level 01":text,
+        "ACC_KIT_09_Key":text,
+        "ACC_KIT_10 Level 01":text,
+        "ACC_KIT_10_Key":text,
+        "ACC_MDL Level 01":text,
+        "ACC_MDL_Key":text,
+        "ACC_NEG_FLAG Level 01":text,
+        "ACC_NEG_FLAG_Key":text,
+        "ACC_PAC Level 01":text,
+        "ACC_PAC_Key":text,
+        "ACC_PAC_LINES Level 01":text,
+        "ACC_PAC_LINES_Key":text,
+        "ACC_PAC_NO Level 01":text,
+        "ACC_PAC_NO_Key":text,
+        "ACC_PHASE_CD Level 01":text,
+        "ACC_PHASE_CD_Key":text,
+        "ACC_PLUSER Level 01":text,
+        "ACC_PLUSER_Key":text,
+        "ACC_PRE Level 01":text,
+        "ACC_PRE_Key":text,
+        "ACC_RA_IND Level 01":text,
+        "ACC_RA_IND_Key":text,
+        "ACC_RH_IND Level 01":text,
+        "ACC_RH_IND_Key":text,
+        "ACC_RR_IND Level 01":text,
+        "ACC_RR_IND_Key":text,
+        "ACC_SERIES Level 01":text,
+        "ACC_SERIES_Key":text,
+        "ACC_TMS_CODE Level 01":text,
+        "ACC_TMS_CODE_Key":text,
+        "ACC_YR Level 01":text,
+        "ACC_YR_Key":text,
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "GENACC_KEY_FILLER01 Level 01":text,
+        "GENACC_KEY_FILLER01_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "ACC_DLR":int,
+        "ACC_DST":int,
+        "ACC_FEE":int,
+        "ACC_LBR":int,
+        "ACC_MSRP_DISC":int,
+        "ACC_RTL":int,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD "FIO/LIO Master"(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "ACC_ABREV Level 01" (any) OPT ANY
+             ADD "ACC_ABREV_Key" (any) OPT ANY
+             ADD "ACC_CHG_USER Level 01" (any) OPT ANY
+             ADD "ACC_CHG_USER_Key" (any) OPT ANY
+             ADD "ACC_CODE Level 01" (any) OPT ANY
+             ADD "ACC_CODE_Key" (any) OPT ANY
+             ADD "ACC_CPS_XMIT_CD Level 01" (any) OPT ANY
+             ADD "ACC_CPS_XMIT_CD_Key" (any) OPT ANY
+             ADD "ACC_DESC Level 01" (any) OPT ANY
+             ADD "ACC_DESC_Key" (any) OPT ANY
+             ADD "ACC_EM_IND Level 01" (any) OPT ANY
+             ADD "ACC_EM_IND_Key" (any) OPT ANY
+             ADD "ACC_FL_1 Level 01" (any) OPT ANY
+             ADD "ACC_FL_1_Key" (any) OPT ANY
+             ADD "ACC_FL_2 Level 01" (any) OPT ANY
+             ADD "ACC_FL_2_Key" (any) OPT ANY
+             ADD "ACC_FL_3 Level 01" (any) OPT ANY
+             ADD "ACC_FL_3_Key" (any) OPT ANY
+             ADD "ACC_FL_4 Level 01" (any) OPT ANY
+             ADD "ACC_FL_4_Key" (any) OPT ANY
+             ADD "ACC_FL_5 Level 01" (any) OPT ANY
+             ADD "ACC_FL_5_Key" (any) OPT ANY
+             ADD "ACC_FW_IND Level 01" (any) OPT ANY
+             ADD "ACC_FW_IND_Key" (any) OPT ANY
+             ADD "ACC_KIT_01 Level 01" (any) OPT ANY
+             ADD "ACC_KIT_01_Key" (any) OPT ANY
+             ADD "ACC_KIT_02 Level 01" (any) OPT ANY
+             ADD "ACC_KIT_02_Key" (any) OPT ANY
+             ADD "ACC_KIT_03 Level 01" (any) OPT ANY
+             ADD "ACC_KIT_03_Key" (any) OPT ANY
+             ADD "ACC_KIT_04 Level 01" (any) OPT ANY
+             ADD "ACC_KIT_04_Key" (any) OPT ANY
+             ADD "ACC_KIT_05 Level 01" (any) OPT ANY
+             ADD "ACC_KIT_05_Key" (any) OPT ANY
+             ADD "ACC_KIT_06 Level 01" (any) OPT ANY
+             ADD "ACC_KIT_06_Key" (any) OPT ANY
+             ADD "ACC_KIT_07 Level 01" (any) OPT ANY
+             ADD "ACC_KIT_07_Key" (any) OPT ANY
+             ADD "ACC_KIT_08 Level 01" (any) OPT ANY
+             ADD "ACC_KIT_08_Key" (any) OPT ANY
+             ADD "ACC_KIT_09 Level 01" (any) OPT ANY
+             ADD "ACC_KIT_09_Key" (any) OPT ANY
+             ADD "ACC_KIT_10 Level 01" (any) OPT ANY
+             ADD "ACC_KIT_10_Key" (any) OPT ANY
+             ADD "ACC_MDL Level 01" (any) OPT ANY
+             ADD "ACC_MDL_Key" (any) OPT ANY
+             ADD "ACC_NEG_FLAG Level 01" (any) OPT ANY
+             ADD "ACC_NEG_FLAG_Key" (any) OPT ANY
+             ADD "ACC_PAC Level 01" (any) OPT ANY
+             ADD "ACC_PAC_Key" (any) OPT ANY
+             ADD "ACC_PAC_LINES Level 01" (any) OPT ANY
+             ADD "ACC_PAC_LINES_Key" (any) OPT ANY
+             ADD "ACC_PAC_NO Level 01" (any) OPT ANY
+             ADD "ACC_PAC_NO_Key" (any) OPT ANY
+             ADD "ACC_PHASE_CD Level 01" (any) OPT ANY
+             ADD "ACC_PHASE_CD_Key" (any) OPT ANY
+             ADD "ACC_PLUSER Level 01" (any) OPT ANY
+             ADD "ACC_PLUSER_Key" (any) OPT ANY
+             ADD "ACC_PRE Level 01" (any) OPT ANY
+             ADD "ACC_PRE_Key" (any) OPT ANY
+             ADD "ACC_RA_IND Level 01" (any) OPT ANY
+             ADD "ACC_RA_IND_Key" (any) OPT ANY
+             ADD "ACC_RH_IND Level 01" (any) OPT ANY
+             ADD "ACC_RH_IND_Key" (any) OPT ANY
+             ADD "ACC_RR_IND Level 01" (any) OPT ANY
+             ADD "ACC_RR_IND_Key" (any) OPT ANY
+             ADD "ACC_SERIES Level 01" (any) OPT ANY
+             ADD "ACC_SERIES_Key" (any) OPT ANY
+             ADD "ACC_TMS_CODE Level 01" (any) OPT ANY
+             ADD "ACC_TMS_CODE_Key" (any) OPT ANY
+             ADD "ACC_YR Level 01" (any) OPT ANY
+             ADD "ACC_YR_Key" (any) OPT ANY
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "GENACC_KEY_FILLER01 Level 01" (any) OPT ANY
+             ADD "GENACC_KEY_FILLER01_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "ACC_DLR" (any) OPT ANY
+             ADD "ACC_DST" (any) OPT ANY
+             ADD "ACC_FEE" (any) OPT ANY
+             ADD "ACC_LBR" (any) OPT ANY
+             ADD "ACC_MSRP_DISC" (any) OPT ANY
+             ADD "ACC_RTL" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("ACC_ABREV Level 01", "ACC_ABREV_Key", "ACC_CHG_USER Level 01", "ACC_CHG_USER_Key", "ACC_CODE Level 01", "ACC_CODE_Key", "ACC_CPS_XMIT_CD Level 01", "ACC_CPS_XMIT_CD_Key", "ACC_DESC Level 01", "ACC_DESC_Key", "ACC_DLR", "ACC_DST", "ACC_EM_IND Level 01", "ACC_EM_IND_Key", "ACC_FEE", "ACC_FL_1 Level 01", "ACC_FL_1_Key", "ACC_FL_2 Level 01", "ACC_FL_2_Key", "ACC_FL_3 Level 01", "ACC_FL_3_Key", "ACC_FL_4 Level 01", "ACC_FL_4_Key", "ACC_FL_5 Level 01", "ACC_FL_5_Key", "ACC_FW_IND Level 01", "ACC_FW_IND_Key", "ACC_KIT_01 Level 01", "ACC_KIT_01_Key", "ACC_KIT_02 Level 01", "ACC_KIT_02_Key", "ACC_KIT_03 Level 01", "ACC_KIT_03_Key", "ACC_KIT_04 Level 01", "ACC_KIT_04_Key", "ACC_KIT_05 Level 01", "ACC_KIT_05_Key", "ACC_KIT_06 Level 01", "ACC_KIT_06_Key", "ACC_KIT_07 Level 01", "ACC_KIT_07_Key", "ACC_KIT_08 Level 01", "ACC_KIT_08_Key", "ACC_KIT_09 Level 01", "ACC_KIT_09_Key", "ACC_KIT_10 Level 01", "ACC_KIT_10_Key", "ACC_LBR", "ACC_MDL Level 01", "ACC_MDL_Key", "ACC_MSRP_DISC", "ACC_NEG_FLAG Level 01", "ACC_NEG_FLAG_Key", "ACC_PAC Level 01", "ACC_PAC_Key", "ACC_PAC_LINES Level 01", "ACC_PAC_LINES_Key", "ACC_PAC_NO Level 01", "ACC_PAC_NO_Key", "ACC_PHASE_CD Level 01", "ACC_PHASE_CD_Key", "ACC_PLUSER Level 01", "ACC_PLUSER_Key", "ACC_PRE Level 01", "ACC_PRE_Key", "ACC_RA_IND Level 01", "ACC_RA_IND_Key", "ACC_RH_IND Level 01", "ACC_RH_IND_Key", "ACC_RR_IND Level 01", "ACC_RR_IND_Key", "ACC_RTL", "ACC_SERIES Level 01", "ACC_SERIES_Key", "ACC_TMS_CODE Level 01", "ACC_TMS_CODE_Key", "ACC_YR Level 01", "ACC_YR_Key", "CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "GENACC_KEY_FILLER01 Level 01", "GENACC_KEY_FILLER01_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi "FIO/LIO Master")
+    );
+
