@@ -1,0 +1,100 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_invdtl
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_INVDTL'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "IND_ARCHIVE_IN Level 01" = '[4ZCP_INVDTL-IND_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_ARCHIVE]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_ARCHIVE]' LEVELPOSITION=1,
+        "IND_ARCHIVE_IN_Key" = '[4ZCP_INVDTL-IND_ARCHIVE].[24ZCP_INVDTL-IND_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_ARCHIVE]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_ARCHIVE]' ATTRIBUTE,
+        "IND_INV_DATE Level 01" = '[4ZCP_INVDTL-IND_INV_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_INV_DATE]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_INV_DATE]' LEVELPOSITION=1,
+        "IND_INV_DATE_Key" = '[4ZCP_INVDTL-IND_INV_DATE].[24ZCP_INVDTL-IND_INV_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_INV_DATE]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_INV_DATE]' ATTRIBUTE,
+        "IND_INV_DTL_LINE Level 01" = '[4ZCP_INVDTL-IND_INV_DTL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_INV_DTL]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_INV_DTL]' LEVELPOSITION=1,
+        "IND_INV_DTL_LINE_Key" = '[4ZCP_INVDTL-IND_INV_DTL].[24ZCP_INVDTL-IND_INV_DTL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_INV_DTL]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_INV_DTL]' ATTRIBUTE,
+        "IND_INV_LINE_NUM Level 01" = '[4ZCP_INVDTL-IND_INV_LINE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_INV_LINE]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_INV_LINE]' LEVELPOSITION=1,
+        "IND_INV_LINE_NUM_Key" = '[4ZCP_INVDTL-IND_INV_LINE].[24ZCP_INVDTL-IND_INV_LINE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_INV_LINE]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_INV_LINE]' ATTRIBUTE,
+        "IND_INV_NUM Level 01" = '[4ZCP_INVDTL-IND_INV_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_INV_NUM]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_INV_NUM]' LEVELPOSITION=1,
+        "IND_INV_NUM_Key" = '[4ZCP_INVDTL-IND_INV_NUM].[24ZCP_INVDTL-IND_INV_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_INV_NUM]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_INV_NUM]' ATTRIBUTE,
+        "IND_INV_VIN Level 01" = '[4ZCP_INVDTL-IND_INV_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_INV_VIN]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_INV_VIN]' LEVELPOSITION=1,
+        "IND_INV_VIN_Key" = '[4ZCP_INVDTL-IND_INV_VIN].[24ZCP_INVDTL-IND_INV_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-IND_INV_VIN]' DIMENSIONNAME = '[4ZCP_INVDTL-IND_INV_VIN]' ATTRIBUTE,
+        "INVDTL_CRE_BY_ID Level 01" = '[4ZCP_INVDTL-INVDTL_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-INVDTL_CRE_B]' DIMENSIONNAME = '[4ZCP_INVDTL-INVDTL_CRE_B]' LEVELPOSITION=1,
+        "INVDTL_CRE_BY_ID_Key" = '[4ZCP_INVDTL-INVDTL_CRE_B].[24ZCP_INVDTL-INVDTL_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-INVDTL_CRE_B]' DIMENSIONNAME = '[4ZCP_INVDTL-INVDTL_CRE_B]' ATTRIBUTE,
+        "INVDTL_CRE_TS Level 01" = '[4ZCP_INVDTL-INVDTL_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-INVDTL_CRE_T]' DIMENSIONNAME = '[4ZCP_INVDTL-INVDTL_CRE_T]' LEVELPOSITION=1,
+        "INVDTL_CRE_TS_Key" = '[4ZCP_INVDTL-INVDTL_CRE_T].[24ZCP_INVDTL-INVDTL_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-INVDTL_CRE_T]' DIMENSIONNAME = '[4ZCP_INVDTL-INVDTL_CRE_T]' ATTRIBUTE,
+        "INVDTL_UPD_BY_ID Level 01" = '[4ZCP_INVDTL-INVDTL_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-INVDTL_UPD_B]' DIMENSIONNAME = '[4ZCP_INVDTL-INVDTL_UPD_B]' LEVELPOSITION=1,
+        "INVDTL_UPD_BY_ID_Key" = '[4ZCP_INVDTL-INVDTL_UPD_B].[24ZCP_INVDTL-INVDTL_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-INVDTL_UPD_B]' DIMENSIONNAME = '[4ZCP_INVDTL-INVDTL_UPD_B]' ATTRIBUTE,
+        "INVDTL_UPD_TS Level 01" = '[4ZCP_INVDTL-INVDTL_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-INVDTL_UPD_T]' DIMENSIONNAME = '[4ZCP_INVDTL-INVDTL_UPD_T]' LEVELPOSITION=1,
+        "INVDTL_UPD_TS_Key" = '[4ZCP_INVDTL-INVDTL_UPD_T].[24ZCP_INVDTL-INVDTL_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVDTL-INVDTL_UPD_T]' DIMENSIONNAME = '[4ZCP_INVDTL-INVDTL_UPD_T]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_invdtl I18N us_cst (
+        "IND_ARCHIVE_IN Level 01":text,
+        "IND_ARCHIVE_IN_Key":text,
+        "IND_INV_DATE Level 01":text,
+        "IND_INV_DATE_Key":text,
+        "IND_INV_DTL_LINE Level 01":text,
+        "IND_INV_DTL_LINE_Key":text,
+        "IND_INV_LINE_NUM Level 01":text,
+        "IND_INV_LINE_NUM_Key":text,
+        "IND_INV_NUM Level 01":text,
+        "IND_INV_NUM_Key":text,
+        "IND_INV_VIN Level 01":text,
+        "IND_INV_VIN_Key":text,
+        "INVDTL_CRE_BY_ID Level 01":text,
+        "INVDTL_CRE_BY_ID_Key":text,
+        "INVDTL_CRE_TS Level 01":text,
+        "INVDTL_CRE_TS_Key":text,
+        "INVDTL_UPD_BY_ID Level 01":text,
+        "INVDTL_UPD_BY_ID_Key":text,
+        "INVDTL_UPD_TS Level 01":text,
+        "INVDTL_UPD_TS_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_invdtl(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "IND_ARCHIVE_IN Level 01" (any) OPT ANY
+             ADD "IND_ARCHIVE_IN_Key" (any) OPT ANY
+             ADD "IND_INV_DATE Level 01" (any) OPT ANY
+             ADD "IND_INV_DATE_Key" (any) OPT ANY
+             ADD "IND_INV_DTL_LINE Level 01" (any) OPT ANY
+             ADD "IND_INV_DTL_LINE_Key" (any) OPT ANY
+             ADD "IND_INV_LINE_NUM Level 01" (any) OPT ANY
+             ADD "IND_INV_LINE_NUM_Key" (any) OPT ANY
+             ADD "IND_INV_NUM Level 01" (any) OPT ANY
+             ADD "IND_INV_NUM_Key" (any) OPT ANY
+             ADD "IND_INV_VIN Level 01" (any) OPT ANY
+             ADD "IND_INV_VIN_Key" (any) OPT ANY
+             ADD "INVDTL_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "INVDTL_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "INVDTL_CRE_TS Level 01" (any) OPT ANY
+             ADD "INVDTL_CRE_TS_Key" (any) OPT ANY
+             ADD "INVDTL_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "INVDTL_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "INVDTL_UPD_TS Level 01" (any) OPT ANY
+             ADD "INVDTL_UPD_TS_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("IND_ARCHIVE_IN Level 01", "IND_ARCHIVE_IN_Key", "IND_INV_DATE Level 01", "IND_INV_DATE_Key", "IND_INV_DTL_LINE Level 01", "IND_INV_DTL_LINE_Key", "IND_INV_LINE_NUM Level 01", "IND_INV_LINE_NUM_Key", "IND_INV_NUM Level 01", "IND_INV_NUM_Key", "IND_INV_VIN Level 01", "IND_INV_VIN_Key", "INVDTL_CRE_BY_ID Level 01", "INVDTL_CRE_BY_ID_Key", "INVDTL_CRE_TS Level 01", "INVDTL_CRE_TS_Key", "INVDTL_UPD_BY_ID Level 01", "INVDTL_UPD_BY_ID_Key", "INVDTL_UPD_TS Level 01", "INVDTL_UPD_TS_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records"
+        )
+        WRAPPER (sapbwbapi bv_zcp_invdtl)
+    );
+
