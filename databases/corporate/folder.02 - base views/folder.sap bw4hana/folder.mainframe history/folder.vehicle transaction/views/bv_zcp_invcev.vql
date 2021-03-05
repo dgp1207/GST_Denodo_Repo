@@ -1,0 +1,136 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_invcev
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_INVCEV'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "CRE_BY_ID Level 01" = '[4ZCP_INVCEV-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEV-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_INVCEV-CRE_BY_ID].[24ZCP_INVCEV-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEV-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_INVCEV-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-CRE_TS]' DIMENSIONNAME = '[4ZCP_INVCEV-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_INVCEV-CRE_TS].[24ZCP_INVCEV-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-CRE_TS]' DIMENSIONNAME = '[4ZCP_INVCEV-CRE_TS]' ATTRIBUTE,
+        "INVCEV_KEY_FILLER01 Level 01" = '[4ZCP_INVCEV-INVCEV_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INVCEV_KEY_F]' DIMENSIONNAME = '[4ZCP_INVCEV-INVCEV_KEY_F]' LEVELPOSITION=1,
+        "INVCEV_KEY_FILLER01_Key" = '[4ZCP_INVCEV-INVCEV_KEY_F].[24ZCP_INVCEV-INVCEV_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INVCEV_KEY_F]' DIMENSIONNAME = '[4ZCP_INVCEV-INVCEV_KEY_F]' ATTRIBUTE,
+        "INV_ARCHIVE_IN Level 01" = '[4ZCP_INVCEV-INV_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_ARCHIVE]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_ARCHIVE]' LEVELPOSITION=1,
+        "INV_ARCHIVE_IN_Key" = '[4ZCP_INVCEV-INV_ARCHIVE].[24ZCP_INVCEV-INV_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_ARCHIVE]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_ARCHIVE]' ATTRIBUTE,
+        "INV_V_DLR Level 01" = '[4ZCP_INVCEV-INV_V_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_DLR]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_DLR]' LEVELPOSITION=1,
+        "INV_V_DLR_Key" = '[4ZCP_INVCEV-INV_V_DLR].[24ZCP_INVCEV-INV_V_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_DLR]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_DLR]' ATTRIBUTE,
+        "INV_V_DO Level 01" = '[4ZCP_INVCEV-INV_V_DO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_DO]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_DO]' LEVELPOSITION=1,
+        "INV_V_DO_Key" = '[4ZCP_INVCEV-INV_V_DO].[24ZCP_INVCEV-INV_V_DO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_DO]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_DO]' ATTRIBUTE,
+        "INV_V_DRAFT Level 01" = '[4ZCP_INVCEV-INV_V_DRAFT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_DRAFT]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_DRAFT]' LEVELPOSITION=1,
+        "INV_V_DRAFT_Key" = '[4ZCP_INVCEV-INV_V_DRAFT].[24ZCP_INVCEV-INV_V_DRAFT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_DRAFT]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_DRAFT]' ATTRIBUTE,
+        "INV_V_DRAFT_DTE Level 01" = '[4ZCP_INVCEV-INV_V_DRAF_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_DRAF_0]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_DRAF_0]' LEVELPOSITION=1,
+        "INV_V_DRAFT_DTE_Key" = '[4ZCP_INVCEV-INV_V_DRAF_0].[24ZCP_INVCEV-INV_V_DRAF_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_DRAF_0]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_DRAF_0]' ATTRIBUTE,
+        "INV_V_INV Level 01" = '[4ZCP_INVCEV-INV_V_INV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_INV]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_INV]' LEVELPOSITION=1,
+        "INV_V_INV_Key" = '[4ZCP_INVCEV-INV_V_INV].[24ZCP_INVCEV-INV_V_INV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_INV]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_INV]' ATTRIBUTE,
+        "INV_V_INV_DTE Level 01" = '[4ZCP_INVCEV-INV_V_INV_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_INV_DT]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_INV_DT]' LEVELPOSITION=1,
+        "INV_V_INV_DTE_Key" = '[4ZCP_INVCEV-INV_V_INV_DT].[24ZCP_INVCEV-INV_V_INV_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_INV_DT]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_INV_DT]' ATTRIBUTE,
+        "INV_V_OPR_ID Level 01" = '[4ZCP_INVCEV-INV_V_OPR_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_OPR_ID]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_OPR_ID]' LEVELPOSITION=1,
+        "INV_V_OPR_ID_Key" = '[4ZCP_INVCEV-INV_V_OPR_ID].[24ZCP_INVCEV-INV_V_OPR_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_OPR_ID]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_OPR_ID]' ATTRIBUTE,
+        "INV_V_REMARKS Level 01" = '[4ZCP_INVCEV-INV_V_REMARK].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_REMARK]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_REMARK]' LEVELPOSITION=1,
+        "INV_V_REMARKS_Key" = '[4ZCP_INVCEV-INV_V_REMARK].[24ZCP_INVCEV-INV_V_REMARK]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_REMARK]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_REMARK]' ATTRIBUTE,
+        "INV_V_STATUS Level 01" = '[4ZCP_INVCEV-INV_V_STATUS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_STATUS]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_STATUS]' LEVELPOSITION=1,
+        "INV_V_STATUS_Key" = '[4ZCP_INVCEV-INV_V_STATUS].[24ZCP_INVCEV-INV_V_STATUS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_STATUS]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_STATUS]' ATTRIBUTE,
+        "INV_V_VIN Level 01" = '[4ZCP_INVCEV-INV_V_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_VIN]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_VIN]' LEVELPOSITION=1,
+        "INV_V_VIN_Key" = '[4ZCP_INVCEV-INV_V_VIN].[24ZCP_INVCEV-INV_V_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-INV_V_VIN]' DIMENSIONNAME = '[4ZCP_INVCEV-INV_V_VIN]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_INVCEV-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEV-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_INVCEV-UPD_BY_ID].[24ZCP_INVCEV-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_INVCEV-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_INVCEV-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-UPD_TS]' DIMENSIONNAME = '[4ZCP_INVCEV-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_INVCEV-UPD_TS].[24ZCP_INVCEV-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVCEV-UPD_TS]' DIMENSIONNAME = '[4ZCP_INVCEV-UPD_TS]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_invcev I18N us_cst (
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "INVCEV_KEY_FILLER01 Level 01":text,
+        "INVCEV_KEY_FILLER01_Key":text,
+        "INV_ARCHIVE_IN Level 01":text,
+        "INV_ARCHIVE_IN_Key":text,
+        "INV_V_DLR Level 01":text,
+        "INV_V_DLR_Key":text,
+        "INV_V_DO Level 01":text,
+        "INV_V_DO_Key":text,
+        "INV_V_DRAFT Level 01":text,
+        "INV_V_DRAFT_Key":text,
+        "INV_V_DRAFT_DTE Level 01":text,
+        "INV_V_DRAFT_DTE_Key":text,
+        "INV_V_INV Level 01":text,
+        "INV_V_INV_Key":text,
+        "INV_V_INV_DTE Level 01":text,
+        "INV_V_INV_DTE_Key":text,
+        "INV_V_OPR_ID Level 01":text,
+        "INV_V_OPR_ID_Key":text,
+        "INV_V_REMARKS Level 01":text,
+        "INV_V_REMARKS_Key":text,
+        "INV_V_STATUS Level 01":text,
+        "INV_V_STATUS_Key":text,
+        "INV_V_VIN Level 01":text,
+        "INV_V_VIN_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_invcev(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "INVCEV_KEY_FILLER01 Level 01" (any) OPT ANY
+             ADD "INVCEV_KEY_FILLER01_Key" (any) OPT ANY
+             ADD "INV_ARCHIVE_IN Level 01" (any) OPT ANY
+             ADD "INV_ARCHIVE_IN_Key" (any) OPT ANY
+             ADD "INV_V_DLR Level 01" (any) OPT ANY
+             ADD "INV_V_DLR_Key" (any) OPT ANY
+             ADD "INV_V_DO Level 01" (any) OPT ANY
+             ADD "INV_V_DO_Key" (any) OPT ANY
+             ADD "INV_V_DRAFT Level 01" (any) OPT ANY
+             ADD "INV_V_DRAFT_Key" (any) OPT ANY
+             ADD "INV_V_DRAFT_DTE Level 01" (any) OPT ANY
+             ADD "INV_V_DRAFT_DTE_Key" (any) OPT ANY
+             ADD "INV_V_INV Level 01" (any) OPT ANY
+             ADD "INV_V_INV_Key" (any) OPT ANY
+             ADD "INV_V_INV_DTE Level 01" (any) OPT ANY
+             ADD "INV_V_INV_DTE_Key" (any) OPT ANY
+             ADD "INV_V_OPR_ID Level 01" (any) OPT ANY
+             ADD "INV_V_OPR_ID_Key" (any) OPT ANY
+             ADD "INV_V_REMARKS Level 01" (any) OPT ANY
+             ADD "INV_V_REMARKS_Key" (any) OPT ANY
+             ADD "INV_V_STATUS Level 01" (any) OPT ANY
+             ADD "INV_V_STATUS_Key" (any) OPT ANY
+             ADD "INV_V_VIN Level 01" (any) OPT ANY
+             ADD "INV_V_VIN_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "INVCEV_KEY_FILLER01 Level 01", "INVCEV_KEY_FILLER01_Key", "INV_ARCHIVE_IN Level 01", "INV_ARCHIVE_IN_Key", "INV_V_DLR Level 01", "INV_V_DLR_Key", "INV_V_DO Level 01", "INV_V_DO_Key", "INV_V_DRAFT Level 01", "INV_V_DRAFT_DTE Level 01", "INV_V_DRAFT_DTE_Key", "INV_V_DRAFT_Key", "INV_V_INV Level 01", "INV_V_INV_DTE Level 01", "INV_V_INV_DTE_Key", "INV_V_INV_Key", "INV_V_OPR_ID Level 01", "INV_V_OPR_ID_Key", "INV_V_REMARKS Level 01", "INV_V_REMARKS_Key", "INV_V_STATUS Level 01", "INV_V_STATUS_Key", "INV_V_VIN Level 01", "INV_V_VIN_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_invcev)
+    );
+
