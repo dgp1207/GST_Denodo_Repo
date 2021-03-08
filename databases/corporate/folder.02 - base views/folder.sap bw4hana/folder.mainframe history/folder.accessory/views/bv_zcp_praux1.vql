@@ -1,0 +1,58 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "bv_zcp_praux1_f00ad329-627d-48b4-8235-acdb353550cd"
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_PRAUX1'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "AUXID Level 01" = '[4ZCP_PRAUX1-AUXID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRAUX1-AUXID]' DIMENSIONNAME = '[4ZCP_PRAUX1-AUXID]' LEVELPOSITION=1,
+        "AUXID_Key" = '[4ZCP_PRAUX1-AUXID].[24ZCP_PRAUX1-AUXID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRAUX1-AUXID]' DIMENSIONNAME = '[4ZCP_PRAUX1-AUXID]' ATTRIBUTE,
+        "AUXVALUE Level 01" = '[4ZCP_PRAUX1-AUXVALUE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRAUX1-AUXVALUE]' DIMENSIONNAME = '[4ZCP_PRAUX1-AUXVALUE]' LEVELPOSITION=1,
+        "AUXVALUE_Key" = '[4ZCP_PRAUX1-AUXVALUE].[24ZCP_PRAUX1-AUXVALUE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRAUX1-AUXVALUE]' DIMENSIONNAME = '[4ZCP_PRAUX1-AUXVALUE]' ATTRIBUTE,
+        "AUXVER Level 01" = '[4ZCP_PRAUX1-AUXVER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRAUX1-AUXVER]' DIMENSIONNAME = '[4ZCP_PRAUX1-AUXVER]' LEVELPOSITION=1,
+        "AUXVER_Key" = '[4ZCP_PRAUX1-AUXVER].[24ZCP_PRAUX1-AUXVER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRAUX1-AUXVER]' DIMENSIONNAME = '[4ZCP_PRAUX1-AUXVER]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_praux1 I18N us_cst (
+        "AUXID Level 01":text,
+        "AUXID_Key":text,
+        "AUXVALUE Level 01":text,
+        "AUXVALUE_Key":text,
+        "AUXVER Level 01":text,
+        "AUXVER_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_praux1(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "AUXID Level 01" (any) OPT ANY
+             ADD "AUXID_Key" (any) OPT ANY
+             ADD "AUXVALUE Level 01" (any) OPT ANY
+             ADD "AUXVALUE_Key" (any) OPT ANY
+             ADD "AUXVER Level 01" (any) OPT ANY
+             ADD "AUXVER_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("AUXID Level 01", "AUXID_Key", "AUXVALUE Level 01", "AUXVALUE_Key", "AUXVER Level 01", "AUXVER_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records"
+        )
+        WRAPPER (sapbwbapi "bv_zcp_praux1_f00ad329-627d-48b4-8235-acdb353550cd")
+    );
+
