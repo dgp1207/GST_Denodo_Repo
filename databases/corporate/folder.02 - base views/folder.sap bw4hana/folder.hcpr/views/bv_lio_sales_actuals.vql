@@ -1,0 +1,208 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "bv_LIO_Sales_Actuals"
+    FOLDER = '/02 - base views/sap bw4hana/hcpr'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_V_SD002'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "Base Unit of Measure Level 01" = '[0BASE_UOM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' LEVELPOSITION=1,
+        "Condition Category Level 01" = '[0KNTYP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNTYP]' DIMENSIONNAME = '[0KNTYP]' LEVELPOSITION=1,
+        "Condition Class Level 01" = '[0KNCLASS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNCLASS]' DIMENSIONNAME = '[0KNCLASS]' LEVELPOSITION=1,
+        "Condition Type Level 01" = '[0KNART].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNART]' DIMENSIONNAME = '[0KNART]' LEVELPOSITION=1,
+        "Country Level 01" = '[0COUNTRY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0COUNTRY]' DIMENSIONNAME = '[0COUNTRY]' LEVELPOSITION=1,
+        "Currency Level 01" = '[4ZCP_V_SD002-0DOC_CURRC_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD002-0DOC_CURRC_0]' DIMENSIONNAME = '[4ZCP_V_SD002-0DOC_CURRC_0]' LEVELPOSITION=1,
+        "Customer Level 01" = '[0CUSTOMER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' LEVELPOSITION=1,
+        "Customer_H Level 01" = '[ZCUS_NO_H].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZCUS_NO_H]' DIMENSIONNAME = '[ZCUS_NO_H]' LEVELPOSITION=1,
+        "Day Date Level 01" = '[ZDAYDATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' LEVELPOSITION=1,
+        "Day Name Level 01" = '[ZDAYNAME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYNAME]' DIMENSIONNAME = '[ZDAYNAME]' LEVELPOSITION=1,
+        "Document Currency Level 01" = '[0DOC_CURRCY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0DOC_CURRCY]' DIMENSIONNAME = '[0DOC_CURRCY]' LEVELPOSITION=1,
+        "Holiday Flag Level 01" = '[ZHOLDYFLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZHOLDYFLG]' DIMENSIONNAME = '[ZHOLDYFLG]' LEVELPOSITION=1,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "Item Level 01" = '[0S_ORD_ITEM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0S_ORD_ITEM]' DIMENSIONNAME = '[0S_ORD_ITEM]' LEVELPOSITION=1,
+        "LIO Code Level 01" = '[ZLIO_CODE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZLIO_CODE]' DIMENSIONNAME = '[ZLIO_CODE]' LEVELPOSITION=1,
+        "Local Currency Level 01" = '[0LOC_CURRCY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0LOC_CURRCY]' DIMENSIONNAME = '[0LOC_CURRCY]' LEVELPOSITION=1,
+        "MMSTA_Primary Stat Level 01" = '[ZMMSTANEW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMMSTANEW]' DIMENSIONNAME = '[ZMMSTANEW]' LEVELPOSITION=1,
+        "Material Level 01" = '[0MATERIAL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATERIAL]' DIMENSIONNAME = '[0MATERIAL]' LEVELPOSITION=1,
+        "Material Group Level 01" = '[0MATL_GROUP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATL_GROUP]' DIMENSIONNAME = '[0MATL_GROUP]' LEVELPOSITION=1,
+        "Material Group Long Text Level 01" = '[ZTXTLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTXTLG]' DIMENSIONNAME = '[ZTXTLG]' LEVELPOSITION=1,
+        "Model Name Level 01" = '[ZMODELDE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODELDE]' DIMENSIONNAME = '[ZMODELDE]' LEVELPOSITION=1,
+        "Model Phase Code Level 01" = '[ZMDLPHCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMDLPHCD]' DIMENSIONNAME = '[ZMDLPHCD]' LEVELPOSITION=1,
+        "Model Vehicle Desc Level 01" = '[ZMODVDESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODVDESC]' DIMENSIONNAME = '[ZMODVDESC]' LEVELPOSITION=1,
+        "Model Year Level 01" = '[ZMODELYR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODELYR]' DIMENSIONNAME = '[ZMODELYR]' LEVELPOSITION=1,
+        "Month ID ( YYYYMM) Level 01" = '[ZMONTHID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' LEVELPOSITION=1,
+        "Primary Status Level 01" = '[ZPSTATUS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZPSTATUS]' DIMENSIONNAME = '[ZPSTATUS]' LEVELPOSITION=1,
+        "Prod.hierarchy Level 01" = '[0PROD_HIER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0PROD_HIER]' DIMENSIONNAME = '[0PROD_HIER]' LEVELPOSITION=1,
+        "RDR Reversal Date Level 01" = '[ZRDRRDT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZRDRRDT]' DIMENSIONNAME = '[ZRDRRDT]' LEVELPOSITION=1,
+        "RDR Reversal Reason Level 01" = '[ZVEHRRVCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRRVCD]' DIMENSIONNAME = '[ZVEHRRVCD]' LEVELPOSITION=1,
+        "Reason for RDR Rever Level 01" = '[ZVEHRDRR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRDRR]' DIMENSIONNAME = '[ZVEHRDRR]' LEVELPOSITION=1,
+        "Region Level 01" = '[0REGION].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0REGION]' DIMENSIONNAME = '[0REGION]' LEVELPOSITION=1,
+        "SDSTA_Secondary Stat Level 01" = '[ZSDSTANEW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSDSTANEW]' DIMENSIONNAME = '[ZSDSTANEW]' LEVELPOSITION=1,
+        "Sales Area Level 01" = '[ZSALE_ARE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSALE_ARE]' DIMENSIONNAME = '[ZSALE_ARE]' LEVELPOSITION=1,
+        "Sales District Level 01" = '[ZSAL_DIST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_DIST]' DIMENSIONNAME = '[ZSAL_DIST]' LEVELPOSITION=1,
+        "Sales District Text Level 01" = '[ZSDISTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSDISTXT]' DIMENSIONNAME = '[ZSDISTXT]' LEVELPOSITION=1,
+        "Sales Document Level 01" = '[0DOC_NUMBER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0DOC_NUMBER]' DIMENSIONNAME = '[0DOC_NUMBER]' LEVELPOSITION=1,
+        "Sales Group Level 01" = '[ZSAL_GRP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_GRP]' DIMENSIONNAME = '[ZSAL_GRP]' LEVELPOSITION=1,
+        "Sales Group Text Level 01" = '[ZSGRPTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSGRPTXT]' DIMENSIONNAME = '[ZSGRPTXT]' LEVELPOSITION=1,
+        "Sales Office Text Level 01" = '[ZSOFFTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSOFFTXT]' DIMENSIONNAME = '[ZSOFFTXT]' LEVELPOSITION=1,
+        "Sales office Level 01" = '[ZSAL_OFF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_OFF]' DIMENSIONNAME = '[ZSAL_OFF]' LEVELPOSITION=1,
+        "Sales unit Level 01" = '[0SALES_UNIT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_UNIT]' DIMENSIONNAME = '[0SALES_UNIT]' LEVELPOSITION=1,
+        "Secondary Status Level 01" = '[ZSECSTAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSECSTAT]' DIMENSIONNAME = '[ZSECSTAT]' LEVELPOSITION=1,
+        "Series Level 01" = '[ZSERIESCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERIESCD]' DIMENSIONNAME = '[ZSERIESCD]' LEVELPOSITION=1,
+        "Series Description Level 01" = '[ZSERDESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERDESC]' DIMENSIONNAME = '[ZSERDESC]' LEVELPOSITION=1,
+        "Sold-to Party Level 01" = '[0SOLD_TO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SOLD_TO]' DIMENSIONNAME = '[0SOLD_TO]' LEVELPOSITION=1,
+        "Variant Cond. Key Level 01" = '[0VARCONDK].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0VARCONDK]' DIMENSIONNAME = '[0VARCONDK]' LEVELPOSITION=1,
+        "Vehicle GUID (Global Level 01" = '[ZVEGUID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEGUID]' DIMENSIONNAME = '[ZVEGUID]' LEVELPOSITION=1,
+        "Vehicle Identificati Level 01" = '[ZVEHIDNO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHIDNO]' DIMENSIONNAME = '[ZVEHIDNO]' LEVELPOSITION=1,
+        "Vehicle Usage Level 01" = '[ZVEUSGE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEUSGE]' DIMENSIONNAME = '[ZVEUSGE]' LEVELPOSITION=1,
+        "Condition Rate" = '[Measures].[0KPRICE]' : 'java.lang.Double' (OPT) MEASURE,
+        "Condition Value" = '[Measures].[4ZCP_V_SD002-0KNVAL]' : 'java.lang.Double' (OPT) MEASURE,
+        "Net Value" = '[Measures].[0NET_VALUE]' : 'java.lang.Double' (OPT) MEASURE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        "Order quantity" = '[Measures].[0CML_OR_QTY]' : 'java.lang.Double' (OPT) MEASURE,
+        "Qty in Base UoM" = '[Measures].[0QUANT_B]' : 'java.lang.Double' (OPT) MEASURE,
+        "Subtotal 1" = '[Measures].[0SUBTOT_1S]' : 'java.lang.Double' (OPT) MEASURE,
+        "Subtotal 2" = '[Measures].[0SUBTOT_2S]' : 'java.lang.Double' (OPT) MEASURE,
+        "Subtotal 3" = '[Measures].[0SUBTOT_3S]' : 'java.lang.Double' (OPT) MEASURE,
+        "Subtotal 4" = '[Measures].[0SUBTOT_4S]' : 'java.lang.Double' (OPT) MEASURE,
+        "Subtotal 5" = '[Measures].[0SUBTOT_5S]' : 'java.lang.Double' (OPT) MEASURE,
+        "Subtotal 6" = '[Measures].[0SUBTOT_6S]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_lio_sales_actuals I18N us_cst (
+        "Base Unit of Measure Level 01":text,
+        "Condition Category Level 01":text,
+        "Condition Class Level 01":text,
+        "Condition Type Level 01":text,
+        "Country Level 01":text,
+        "Currency Level 01":text,
+        "Customer Level 01":text,
+        "Customer_H Level 01":text,
+        "Day Date Level 01":text,
+        "Day Name Level 01":text,
+        "Document Currency Level 01":text,
+        "Holiday Flag Level 01":text,
+        "InfoProvider Level 01":text,
+        "Item Level 01":text,
+        "LIO Code Level 01":text,
+        "Local Currency Level 01":text,
+        "MMSTA_Primary Stat Level 01":text,
+        "Material Level 01":text,
+        "Material Group Level 01":text,
+        "Material Group Long Text Level 01":text,
+        "Model Name Level 01":text,
+        "Model Phase Code Level 01":text,
+        "Model Vehicle Desc Level 01":text,
+        "Model Year Level 01":text,
+        "Month ID ( YYYYMM) Level 01":text,
+        "Primary Status Level 01":text,
+        "Prod.hierarchy Level 01":text,
+        "RDR Reversal Date Level 01":text,
+        "RDR Reversal Reason Level 01":text,
+        "Reason for RDR Rever Level 01":text,
+        "Region Level 01":text,
+        "SDSTA_Secondary Stat Level 01":text,
+        "Sales Area Level 01":text,
+        "Sales District Level 01":text,
+        "Sales District Text Level 01":text,
+        "Sales Document Level 01":text,
+        "Sales Group Level 01":text,
+        "Sales Group Text Level 01":text,
+        "Sales Office Text Level 01":text,
+        "Sales office Level 01":text,
+        "Sales unit Level 01":text,
+        "Secondary Status Level 01":text,
+        "Series Level 01":text,
+        "Series Description Level 01":text,
+        "Sold-to Party Level 01":text,
+        "Variant Cond. Key Level 01":text,
+        "Vehicle GUID (Global Level 01":text,
+        "Vehicle Identificati Level 01":text,
+        "Vehicle Usage Level 01":text,
+        "Condition Rate":double,
+        "Condition Value":double,
+        "Net Value":double,
+        "Number of Records":double,
+        "Order quantity":double,
+        "Qty in Base UoM":double,
+        "Subtotal 1":double,
+        "Subtotal 2":double,
+        "Subtotal 3":double,
+        "Subtotal 4":double,
+        "Subtotal 5":double,
+        "Subtotal 6":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/hcpr'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD "bv_LIO_Sales_Actuals"(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "Base Unit of Measure Level 01" (any) OPT ANY
+             ADD "Condition Category Level 01" (any) OPT ANY
+             ADD "Condition Class Level 01" (any) OPT ANY
+             ADD "Condition Type Level 01" (any) OPT ANY
+             ADD "Country Level 01" (any) OPT ANY
+             ADD "Currency Level 01" (any) OPT ANY
+             ADD "Customer Level 01" (any) OPT ANY
+             ADD "Customer_H Level 01" (any) OPT ANY
+             ADD "Day Date Level 01" (any) OPT ANY
+             ADD "Day Name Level 01" (any) OPT ANY
+             ADD "Document Currency Level 01" (any) OPT ANY
+             ADD "Holiday Flag Level 01" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "Item Level 01" (any) OPT ANY
+             ADD "LIO Code Level 01" (any) OPT ANY
+             ADD "Local Currency Level 01" (any) OPT ANY
+             ADD "MMSTA_Primary Stat Level 01" (any) OPT ANY
+             ADD "Material Level 01" (any) OPT ANY
+             ADD "Material Group Level 01" (any) OPT ANY
+             ADD "Material Group Long Text Level 01" (any) OPT ANY
+             ADD "Model Name Level 01" (any) OPT ANY
+             ADD "Model Phase Code Level 01" (any) OPT ANY
+             ADD "Model Vehicle Desc Level 01" (any) OPT ANY
+             ADD "Model Year Level 01" (any) OPT ANY
+             ADD "Month ID ( YYYYMM) Level 01" (any) OPT ANY
+             ADD "Primary Status Level 01" (any) OPT ANY
+             ADD "Prod.hierarchy Level 01" (any) OPT ANY
+             ADD "RDR Reversal Date Level 01" (any) OPT ANY
+             ADD "RDR Reversal Reason Level 01" (any) OPT ANY
+             ADD "Reason for RDR Rever Level 01" (any) OPT ANY
+             ADD "Region Level 01" (any) OPT ANY
+             ADD "SDSTA_Secondary Stat Level 01" (any) OPT ANY
+             ADD "Sales Area Level 01" (any) OPT ANY
+             ADD "Sales District Level 01" (any) OPT ANY
+             ADD "Sales District Text Level 01" (any) OPT ANY
+             ADD "Sales Document Level 01" (any) OPT ANY
+             ADD "Sales Group Level 01" (any) OPT ANY
+             ADD "Sales Group Text Level 01" (any) OPT ANY
+             ADD "Sales Office Text Level 01" (any) OPT ANY
+             ADD "Sales office Level 01" (any) OPT ANY
+             ADD "Sales unit Level 01" (any) OPT ANY
+             ADD "Secondary Status Level 01" (any) OPT ANY
+             ADD "Series Level 01" (any) OPT ANY
+             ADD "Series Description Level 01" (any) OPT ANY
+             ADD "Sold-to Party Level 01" (any) OPT ANY
+             ADD "Variant Cond. Key Level 01" (any) OPT ANY
+             ADD "Vehicle GUID (Global Level 01" (any) OPT ANY
+             ADD "Vehicle Identificati Level 01" (any) OPT ANY
+             ADD "Vehicle Usage Level 01" (any) OPT ANY
+             ADD "Condition Rate" (any) OPT ANY
+             ADD "Condition Value" (any) OPT ANY
+             ADD "Net Value" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+             ADD "Order quantity" (any) OPT ANY
+             ADD "Qty in Base UoM" (any) OPT ANY
+             ADD "Subtotal 1" (any) OPT ANY
+             ADD "Subtotal 2" (any) OPT ANY
+             ADD "Subtotal 3" (any) OPT ANY
+             ADD "Subtotal 4" (any) OPT ANY
+             ADD "Subtotal 5" (any) OPT ANY
+             ADD "Subtotal 6" (any) OPT ANY
+        )
+        OUTPUTLIST ("Base Unit of Measure Level 01", "Condition Category Level 01", "Condition Class Level 01", "Condition Rate", "Condition Type Level 01", "Condition Value", "Country Level 01", "Currency Level 01", "Customer Level 01", "Customer_H Level 01", "Day Date Level 01", "Day Name Level 01", "Document Currency Level 01", "Holiday Flag Level 01", "InfoProvider Level 01", "Item Level 01", "LIO Code Level 01", "Local Currency Level 01", "MMSTA_Primary Stat Level 01", "Material Group Level 01", "Material Group Long Text Level 01", "Material Level 01", "Model Name Level 01", "Model Phase Code Level 01", "Model Vehicle Desc Level 01", "Model Year Level 01", "Month ID ( YYYYMM) Level 01", "Net Value", "Number of Records", "Order quantity", "Primary Status Level 01", "Prod.hierarchy Level 01", "Qty in Base UoM", "RDR Reversal Date Level 01", "RDR Reversal Reason Level 01", "Reason for RDR Rever Level 01", "Region Level 01", "SDSTA_Secondary Stat Level 01", "Sales Area Level 01", "Sales District Level 01", "Sales District Text Level 01", "Sales Document Level 01", "Sales Group Level 01", "Sales Group Text Level 01", "Sales Office Text Level 01", "Sales office Level 01", "Sales unit Level 01", "Secondary Status Level 01", "Series Description Level 01", "Series Level 01", "Sold-to Party Level 01", "Subtotal 1", "Subtotal 2", "Subtotal 3", "Subtotal 4", "Subtotal 5", "Subtotal 6", "Variant Cond. Key Level 01", "Vehicle GUID (Global Level 01", "Vehicle Identificati Level 01", "Vehicle Usage Level 01"
+        )
+        WRAPPER (sapbwbapi "bv_LIO_Sales_Actuals")
+    );
+
