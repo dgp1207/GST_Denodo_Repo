@@ -1,0 +1,118 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_accspl
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/monroney'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ACCSPL'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "ACCSPL_CRE_BY_ID Level 01" = '[4ZCP_ACCSPL-ACCSPL_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCSPL_CRE_B]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCSPL_CRE_B]' LEVELPOSITION=1,
+        "ACCSPL_CRE_BY_ID_Key" = '[4ZCP_ACCSPL-ACCSPL_CRE_B].[24ZCP_ACCSPL-ACCSPL_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCSPL_CRE_B]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCSPL_CRE_B]' ATTRIBUTE,
+        "ACCSPL_CRE_TS Level 01" = '[4ZCP_ACCSPL-ACCSPL_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCSPL_CRE_T]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCSPL_CRE_T]' LEVELPOSITION=1,
+        "ACCSPL_CRE_TS_Key" = '[4ZCP_ACCSPL-ACCSPL_CRE_T].[24ZCP_ACCSPL-ACCSPL_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCSPL_CRE_T]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCSPL_CRE_T]' ATTRIBUTE,
+        "ACCSPL_UPD_BY_ID Level 01" = '[4ZCP_ACCSPL-ACCSPL_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCSPL_UPD_B]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCSPL_UPD_B]' LEVELPOSITION=1,
+        "ACCSPL_UPD_BY_ID_Key" = '[4ZCP_ACCSPL-ACCSPL_UPD_B].[24ZCP_ACCSPL-ACCSPL_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCSPL_UPD_B]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCSPL_UPD_B]' ATTRIBUTE,
+        "ACCSPL_UPD_TS Level 01" = '[4ZCP_ACCSPL-ACCSPL_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCSPL_UPD_T]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCSPL_UPD_T]' LEVELPOSITION=1,
+        "ACCSPL_UPD_TS_Key" = '[4ZCP_ACCSPL-ACCSPL_UPD_T].[24ZCP_ACCSPL-ACCSPL_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCSPL_UPD_T]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCSPL_UPD_T]' ATTRIBUTE,
+        "ACCY_CD Level 01" = '[4ZCP_ACCSPL-ACCY_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCY_CD]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCY_CD]' LEVELPOSITION=1,
+        "ACCY_CD_Key" = '[4ZCP_ACCSPL-ACCY_CD].[24ZCP_ACCSPL-ACCY_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCY_CD]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCY_CD]' ATTRIBUTE,
+        "ACCY_DESC Level 01" = '[4ZCP_ACCSPL-ACCY_DESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCY_DESC]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCY_DESC]' LEVELPOSITION=1,
+        "ACCY_DESC_Key" = '[4ZCP_ACCSPL-ACCY_DESC].[24ZCP_ACCSPL-ACCY_DESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCY_DESC]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCY_DESC]' ATTRIBUTE,
+        "ACCY_SPCL_IN Level 01" = '[4ZCP_ACCSPL-ACCY_SPCL_IN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCY_SPCL_IN]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCY_SPCL_IN]' LEVELPOSITION=1,
+        "ACCY_SPCL_IN_Key" = '[4ZCP_ACCSPL-ACCY_SPCL_IN].[24ZCP_ACCSPL-ACCY_SPCL_IN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-ACCY_SPCL_IN]' DIMENSIONNAME = '[4ZCP_ACCSPL-ACCY_SPCL_IN]' ATTRIBUTE,
+        "CRTN_TS Level 01" = '[4ZCP_ACCSPL-CRTN_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-CRTN_TS]' DIMENSIONNAME = '[4ZCP_ACCSPL-CRTN_TS]' LEVELPOSITION=1,
+        "CRTN_TS_Key" = '[4ZCP_ACCSPL-CRTN_TS].[24ZCP_ACCSPL-CRTN_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-CRTN_TS]' DIMENSIONNAME = '[4ZCP_ACCSPL-CRTN_TS]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "MDL_YR_NB Level 01" = '[4ZCP_ACCSPL-MDL_YR_NB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-MDL_YR_NB]' DIMENSIONNAME = '[4ZCP_ACCSPL-MDL_YR_NB]' LEVELPOSITION=1,
+        "MDL_YR_NB_Key" = '[4ZCP_ACCSPL-MDL_YR_NB].[24ZCP_ACCSPL-MDL_YR_NB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-MDL_YR_NB]' DIMENSIONNAME = '[4ZCP_ACCSPL-MDL_YR_NB]' ATTRIBUTE,
+        "PGM_NM Level 01" = '[4ZCP_ACCSPL-PGM_NM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-PGM_NM]' DIMENSIONNAME = '[4ZCP_ACCSPL-PGM_NM]' LEVELPOSITION=1,
+        "PGM_NM_Key" = '[4ZCP_ACCSPL-PGM_NM].[24ZCP_ACCSPL-PGM_NM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-PGM_NM]' DIMENSIONNAME = '[4ZCP_ACCSPL-PGM_NM]' ATTRIBUTE,
+        "Record Counter Level 01" = '[ZIO_DUMMY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZIO_DUMMY]' DIMENSIONNAME = '[ZIO_DUMMY]' LEVELPOSITION=1,
+        "Record Counter_Key" = '[ZIO_DUMMY].[2ZIO_DUMMY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZIO_DUMMY]' DIMENSIONNAME = '[ZIO_DUMMY]' ATTRIBUTE,
+        "SAFE_FEATURE_CATG Level 01" = '[4ZCP_ACCSPL-SAFE_FEATURE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-SAFE_FEATURE]' DIMENSIONNAME = '[4ZCP_ACCSPL-SAFE_FEATURE]' LEVELPOSITION=1,
+        "SAFE_FEATURE_CATG_Key" = '[4ZCP_ACCSPL-SAFE_FEATURE].[24ZCP_ACCSPL-SAFE_FEATURE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-SAFE_FEATURE]' DIMENSIONNAME = '[4ZCP_ACCSPL-SAFE_FEATURE]' ATTRIBUTE,
+        "VEH_MDL_NB Level 01" = '[4ZCP_ACCSPL-VEH_MDL_NB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-VEH_MDL_NB]' DIMENSIONNAME = '[4ZCP_ACCSPL-VEH_MDL_NB]' LEVELPOSITION=1,
+        "VEH_MDL_NB_Key" = '[4ZCP_ACCSPL-VEH_MDL_NB].[24ZCP_ACCSPL-VEH_MDL_NB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ACCSPL-VEH_MDL_NB]' DIMENSIONNAME = '[4ZCP_ACCSPL-VEH_MDL_NB]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_accspl I18N us_cst (
+        "ACCSPL_CRE_BY_ID Level 01":text,
+        "ACCSPL_CRE_BY_ID_Key":text,
+        "ACCSPL_CRE_TS Level 01":text,
+        "ACCSPL_CRE_TS_Key":text,
+        "ACCSPL_UPD_BY_ID Level 01":text,
+        "ACCSPL_UPD_BY_ID_Key":text,
+        "ACCSPL_UPD_TS Level 01":text,
+        "ACCSPL_UPD_TS_Key":text,
+        "ACCY_CD Level 01":text,
+        "ACCY_CD_Key":text,
+        "ACCY_DESC Level 01":text,
+        "ACCY_DESC_Key":text,
+        "ACCY_SPCL_IN Level 01":text,
+        "ACCY_SPCL_IN_Key":text,
+        "CRTN_TS Level 01":text,
+        "CRTN_TS_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "MDL_YR_NB Level 01":text,
+        "MDL_YR_NB_Key":text,
+        "PGM_NM Level 01":text,
+        "PGM_NM_Key":text,
+        "Record Counter Level 01":text,
+        "Record Counter_Key":text,
+        "SAFE_FEATURE_CATG Level 01":text,
+        "SAFE_FEATURE_CATG_Key":text,
+        "VEH_MDL_NB Level 01":text,
+        "VEH_MDL_NB_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/monroney'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_accspl(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "ACCSPL_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "ACCSPL_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "ACCSPL_CRE_TS Level 01" (any) OPT ANY
+             ADD "ACCSPL_CRE_TS_Key" (any) OPT ANY
+             ADD "ACCSPL_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "ACCSPL_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "ACCSPL_UPD_TS Level 01" (any) OPT ANY
+             ADD "ACCSPL_UPD_TS_Key" (any) OPT ANY
+             ADD "ACCY_CD Level 01" (any) OPT ANY
+             ADD "ACCY_CD_Key" (any) OPT ANY
+             ADD "ACCY_DESC Level 01" (any) OPT ANY
+             ADD "ACCY_DESC_Key" (any) OPT ANY
+             ADD "ACCY_SPCL_IN Level 01" (any) OPT ANY
+             ADD "ACCY_SPCL_IN_Key" (any) OPT ANY
+             ADD "CRTN_TS Level 01" (any) OPT ANY
+             ADD "CRTN_TS_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "MDL_YR_NB Level 01" (any) OPT ANY
+             ADD "MDL_YR_NB_Key" (any) OPT ANY
+             ADD "PGM_NM Level 01" (any) OPT ANY
+             ADD "PGM_NM_Key" (any) OPT ANY
+             ADD "Record Counter Level 01" (any) OPT ANY
+             ADD "Record Counter_Key" (any) OPT ANY
+             ADD "SAFE_FEATURE_CATG Level 01" (any) OPT ANY
+             ADD "SAFE_FEATURE_CATG_Key" (any) OPT ANY
+             ADD "VEH_MDL_NB Level 01" (any) OPT ANY
+             ADD "VEH_MDL_NB_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("ACCSPL_CRE_BY_ID Level 01", "ACCSPL_CRE_BY_ID_Key", "ACCSPL_CRE_TS Level 01", "ACCSPL_CRE_TS_Key", "ACCSPL_UPD_BY_ID Level 01", "ACCSPL_UPD_BY_ID_Key", "ACCSPL_UPD_TS Level 01", "ACCSPL_UPD_TS_Key", "ACCY_CD Level 01", "ACCY_CD_Key", "ACCY_DESC Level 01", "ACCY_DESC_Key", "ACCY_SPCL_IN Level 01", "ACCY_SPCL_IN_Key", "CRTN_TS Level 01", "CRTN_TS_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "MDL_YR_NB Level 01", "MDL_YR_NB_Key", "Number of Records", "PGM_NM Level 01", "PGM_NM_Key", "Record Counter Level 01", "Record Counter_Key", "SAFE_FEATURE_CATG Level 01", "SAFE_FEATURE_CATG_Key", "VEH_MDL_NB Level 01", "VEH_MDL_NB_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_accspl)
+    );
+
