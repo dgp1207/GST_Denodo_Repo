@@ -1,0 +1,118 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_refsld
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_REFSLD'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "REFSLD_CRE_BY_ID Level 01" = '[4ZCP_REFSLD-REFSLD_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-REFSLD_CRE_B]' DIMENSIONNAME = '[4ZCP_REFSLD-REFSLD_CRE_B]' LEVELPOSITION=1,
+        "REFSLD_CRE_BY_ID_Key" = '[4ZCP_REFSLD-REFSLD_CRE_B].[24ZCP_REFSLD-REFSLD_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-REFSLD_CRE_B]' DIMENSIONNAME = '[4ZCP_REFSLD-REFSLD_CRE_B]' ATTRIBUTE,
+        "REFSLD_CRE_TS Level 01" = '[4ZCP_REFSLD-REFSLD_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-REFSLD_CRE_T]' DIMENSIONNAME = '[4ZCP_REFSLD-REFSLD_CRE_T]' LEVELPOSITION=1,
+        "REFSLD_CRE_TS_Key" = '[4ZCP_REFSLD-REFSLD_CRE_T].[24ZCP_REFSLD-REFSLD_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-REFSLD_CRE_T]' DIMENSIONNAME = '[4ZCP_REFSLD-REFSLD_CRE_T]' ATTRIBUTE,
+        "REFSLD_UPD_BY_ID Level 01" = '[4ZCP_REFSLD-REFSLD_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-REFSLD_UPD_B]' DIMENSIONNAME = '[4ZCP_REFSLD-REFSLD_UPD_B]' LEVELPOSITION=1,
+        "REFSLD_UPD_BY_ID_Key" = '[4ZCP_REFSLD-REFSLD_UPD_B].[24ZCP_REFSLD-REFSLD_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-REFSLD_UPD_B]' DIMENSIONNAME = '[4ZCP_REFSLD-REFSLD_UPD_B]' ATTRIBUTE,
+        "REFSLD_UPD_TS Level 01" = '[4ZCP_REFSLD-REFSLD_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-REFSLD_UPD_T]' DIMENSIONNAME = '[4ZCP_REFSLD-REFSLD_UPD_T]' LEVELPOSITION=1,
+        "REFSLD_UPD_TS_Key" = '[4ZCP_REFSLD-REFSLD_UPD_T].[24ZCP_REFSLD-REFSLD_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-REFSLD_UPD_T]' DIMENSIONNAME = '[4ZCP_REFSLD-REFSLD_UPD_T]' ATTRIBUTE,
+        "SLD_DLR_CD Level 01" = '[4ZCP_REFSLD-SLD_DLR_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_DLR_CD]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_DLR_CD]' LEVELPOSITION=1,
+        "SLD_DLR_CD_Key" = '[4ZCP_REFSLD-SLD_DLR_CD].[24ZCP_REFSLD-SLD_DLR_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_DLR_CD]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_DLR_CD]' ATTRIBUTE,
+        "SLD_DT Level 01" = '[4ZCP_REFSLD-SLD_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_DT]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_DT]' LEVELPOSITION=1,
+        "SLD_DT_Key" = '[4ZCP_REFSLD-SLD_DT].[24ZCP_REFSLD-SLD_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_DT]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_DT]' ATTRIBUTE,
+        "SLD_EMP_FEE_DT Level 01" = '[4ZCP_REFSLD-SLD_EMP_FEE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_EMP_FEE]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_EMP_FEE]' LEVELPOSITION=1,
+        "SLD_EMP_FEE_DT_Key" = '[4ZCP_REFSLD-SLD_EMP_FEE].[24ZCP_REFSLD-SLD_EMP_FEE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_EMP_FEE]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_EMP_FEE]' ATTRIBUTE,
+        "SLD_EMP_NOTFY_DT Level 01" = '[4ZCP_REFSLD-SLD_EMP_NOTF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_EMP_NOTF]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_EMP_NOTF]' LEVELPOSITION=1,
+        "SLD_EMP_NOTFY_DT_Key" = '[4ZCP_REFSLD-SLD_EMP_NOTF].[24ZCP_REFSLD-SLD_EMP_NOTF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_EMP_NOTF]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_EMP_NOTF]' ATTRIBUTE,
+        "SLD_MODEL Level 01" = '[4ZCP_REFSLD-SLD_MODEL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_MODEL]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_MODEL]' LEVELPOSITION=1,
+        "SLD_MODEL_Key" = '[4ZCP_REFSLD-SLD_MODEL].[24ZCP_REFSLD-SLD_MODEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_MODEL]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_MODEL]' ATTRIBUTE,
+        "SLD_OSI_DT Level 01" = '[4ZCP_REFSLD-SLD_OSI_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_OSI_DT]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_OSI_DT]' LEVELPOSITION=1,
+        "SLD_OSI_DT_Key" = '[4ZCP_REFSLD-SLD_OSI_DT].[24ZCP_REFSLD-SLD_OSI_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_OSI_DT]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_OSI_DT]' ATTRIBUTE,
+        "SLD_REF_NO Level 01" = '[4ZCP_REFSLD-SLD_REF_NO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_REF_NO]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_REF_NO]' LEVELPOSITION=1,
+        "SLD_REF_NO_Key" = '[4ZCP_REFSLD-SLD_REF_NO].[24ZCP_REFSLD-SLD_REF_NO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_REF_NO]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_REF_NO]' ATTRIBUTE,
+        "SLD_VIN Level 01" = '[4ZCP_REFSLD-SLD_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_VIN]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_VIN]' LEVELPOSITION=1,
+        "SLD_VIN_Key" = '[4ZCP_REFSLD-SLD_VIN].[24ZCP_REFSLD-SLD_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_VIN]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_VIN]' ATTRIBUTE,
+        "SLD_YR Level 01" = '[4ZCP_REFSLD-SLD_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_YR]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_YR]' LEVELPOSITION=1,
+        "SLD_YR_Key" = '[4ZCP_REFSLD-SLD_YR].[24ZCP_REFSLD-SLD_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REFSLD-SLD_YR]' DIMENSIONNAME = '[4ZCP_REFSLD-SLD_YR]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_refsld I18N us_cst (
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "REFSLD_CRE_BY_ID Level 01":text,
+        "REFSLD_CRE_BY_ID_Key":text,
+        "REFSLD_CRE_TS Level 01":text,
+        "REFSLD_CRE_TS_Key":text,
+        "REFSLD_UPD_BY_ID Level 01":text,
+        "REFSLD_UPD_BY_ID_Key":text,
+        "REFSLD_UPD_TS Level 01":text,
+        "REFSLD_UPD_TS_Key":text,
+        "SLD_DLR_CD Level 01":text,
+        "SLD_DLR_CD_Key":text,
+        "SLD_DT Level 01":text,
+        "SLD_DT_Key":text,
+        "SLD_EMP_FEE_DT Level 01":text,
+        "SLD_EMP_FEE_DT_Key":text,
+        "SLD_EMP_NOTFY_DT Level 01":text,
+        "SLD_EMP_NOTFY_DT_Key":text,
+        "SLD_MODEL Level 01":text,
+        "SLD_MODEL_Key":text,
+        "SLD_OSI_DT Level 01":text,
+        "SLD_OSI_DT_Key":text,
+        "SLD_REF_NO Level 01":text,
+        "SLD_REF_NO_Key":text,
+        "SLD_VIN Level 01":text,
+        "SLD_VIN_Key":text,
+        "SLD_YR Level 01":text,
+        "SLD_YR_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_refsld(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "REFSLD_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "REFSLD_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "REFSLD_CRE_TS Level 01" (any) OPT ANY
+             ADD "REFSLD_CRE_TS_Key" (any) OPT ANY
+             ADD "REFSLD_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "REFSLD_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "REFSLD_UPD_TS Level 01" (any) OPT ANY
+             ADD "REFSLD_UPD_TS_Key" (any) OPT ANY
+             ADD "SLD_DLR_CD Level 01" (any) OPT ANY
+             ADD "SLD_DLR_CD_Key" (any) OPT ANY
+             ADD "SLD_DT Level 01" (any) OPT ANY
+             ADD "SLD_DT_Key" (any) OPT ANY
+             ADD "SLD_EMP_FEE_DT Level 01" (any) OPT ANY
+             ADD "SLD_EMP_FEE_DT_Key" (any) OPT ANY
+             ADD "SLD_EMP_NOTFY_DT Level 01" (any) OPT ANY
+             ADD "SLD_EMP_NOTFY_DT_Key" (any) OPT ANY
+             ADD "SLD_MODEL Level 01" (any) OPT ANY
+             ADD "SLD_MODEL_Key" (any) OPT ANY
+             ADD "SLD_OSI_DT Level 01" (any) OPT ANY
+             ADD "SLD_OSI_DT_Key" (any) OPT ANY
+             ADD "SLD_REF_NO Level 01" (any) OPT ANY
+             ADD "SLD_REF_NO_Key" (any) OPT ANY
+             ADD "SLD_VIN Level 01" (any) OPT ANY
+             ADD "SLD_VIN_Key" (any) OPT ANY
+             ADD "SLD_YR Level 01" (any) OPT ANY
+             ADD "SLD_YR_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "REFSLD_CRE_BY_ID Level 01", "REFSLD_CRE_BY_ID_Key", "REFSLD_CRE_TS Level 01", "REFSLD_CRE_TS_Key", "REFSLD_UPD_BY_ID Level 01", "REFSLD_UPD_BY_ID_Key", "REFSLD_UPD_TS Level 01", "REFSLD_UPD_TS_Key", "SLD_DLR_CD Level 01", "SLD_DLR_CD_Key", "SLD_DT Level 01", "SLD_DT_Key", "SLD_EMP_FEE_DT Level 01", "SLD_EMP_FEE_DT_Key", "SLD_EMP_NOTFY_DT Level 01", "SLD_EMP_NOTFY_DT_Key", "SLD_MODEL Level 01", "SLD_MODEL_Key", "SLD_OSI_DT Level 01", "SLD_OSI_DT_Key", "SLD_REF_NO Level 01", "SLD_REF_NO_Key", "SLD_VIN Level 01", "SLD_VIN_Key", "SLD_YR Level 01", "SLD_YR_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_refsld)
+    );
+

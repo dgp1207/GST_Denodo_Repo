@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_mdlyrph
-    FOLDER = '/01 - connectivity'
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
     DATASOURCENAME = ds_sap_hana
     SCHEMANAME = ''
     CUBENAME = '$$ZCP_MDLYRPH'
@@ -69,7 +69,7 @@ CREATE OR REPLACE TABLE bv_zcp_mdlyrph I18N us_cst (
         "PVP_VIN_DE_SECT_SN_Key":text,
         "Number of Records":double
     )
-    FOLDER = '/01 - connectivity'
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
     CACHE OFF
     TIMETOLIVEINCACHE DEFAULT
     ADD SEARCHMETHOD bv_zcp_mdlyrph(
