@@ -1,0 +1,112 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_invhdr
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_INVHDR'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "INH_ARCHIVE_IN Level 01" = '[4ZCP_INVHDR-INH_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_ARCHIVE]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_ARCHIVE]' LEVELPOSITION=1,
+        "INH_ARCHIVE_IN_Key" = '[4ZCP_INVHDR-INH_ARCHIVE].[24ZCP_INVHDR-INH_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_ARCHIVE]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_ARCHIVE]' ATTRIBUTE,
+        "INH_INV_DATE Level 01" = '[4ZCP_INVHDR-INH_INV_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_DATE]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_DATE]' LEVELPOSITION=1,
+        "INH_INV_DATE_Key" = '[4ZCP_INVHDR-INH_INV_DATE].[24ZCP_INVHDR-INH_INV_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_DATE]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_DATE]' ATTRIBUTE,
+        "INH_INV_DLR Level 01" = '[4ZCP_INVHDR-INH_INV_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_DLR]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_DLR]' LEVELPOSITION=1,
+        "INH_INV_DLR_Key" = '[4ZCP_INVHDR-INH_INV_DLR].[24ZCP_INVHDR-INH_INV_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_DLR]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_DLR]' ATTRIBUTE,
+        "INH_INV_NUM Level 01" = '[4ZCP_INVHDR-INH_INV_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_NUM]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_NUM]' LEVELPOSITION=1,
+        "INH_INV_NUM_Key" = '[4ZCP_INVHDR-INH_INV_NUM].[24ZCP_INVHDR-INH_INV_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_NUM]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_NUM]' ATTRIBUTE,
+        "INH_INV_PRT_SW Level 01" = '[4ZCP_INVHDR-INH_INV_PRT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_PRT]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_PRT]' LEVELPOSITION=1,
+        "INH_INV_PRT_SW_Key" = '[4ZCP_INVHDR-INH_INV_PRT].[24ZCP_INVHDR-INH_INV_PRT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_PRT]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_PRT]' ATTRIBUTE,
+        "INH_INV_STAT Level 01" = '[4ZCP_INVHDR-INH_INV_STAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_STAT]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_STAT]' LEVELPOSITION=1,
+        "INH_INV_STAT_Key" = '[4ZCP_INVHDR-INH_INV_STAT].[24ZCP_INVHDR-INH_INV_STAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_STAT]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_STAT]' ATTRIBUTE,
+        "INH_INV_TYPE Level 01" = '[4ZCP_INVHDR-INH_INV_TYPE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_TYPE]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_TYPE]' LEVELPOSITION=1,
+        "INH_INV_TYPE_Key" = '[4ZCP_INVHDR-INH_INV_TYPE].[24ZCP_INVHDR-INH_INV_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_TYPE]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_TYPE]' ATTRIBUTE,
+        "INH_INV_VIN Level 01" = '[4ZCP_INVHDR-INH_INV_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_VIN]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_VIN]' LEVELPOSITION=1,
+        "INH_INV_VIN_Key" = '[4ZCP_INVHDR-INH_INV_VIN].[24ZCP_INVHDR-INH_INV_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INH_INV_VIN]' DIMENSIONNAME = '[4ZCP_INVHDR-INH_INV_VIN]' ATTRIBUTE,
+        "INVHDR_CRE_BY_ID Level 01" = '[4ZCP_INVHDR-INVHDR_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INVHDR_CRE_B]' DIMENSIONNAME = '[4ZCP_INVHDR-INVHDR_CRE_B]' LEVELPOSITION=1,
+        "INVHDR_CRE_BY_ID_Key" = '[4ZCP_INVHDR-INVHDR_CRE_B].[24ZCP_INVHDR-INVHDR_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INVHDR_CRE_B]' DIMENSIONNAME = '[4ZCP_INVHDR-INVHDR_CRE_B]' ATTRIBUTE,
+        "INVHDR_CRE_TS Level 01" = '[4ZCP_INVHDR-INVHDR_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INVHDR_CRE_T]' DIMENSIONNAME = '[4ZCP_INVHDR-INVHDR_CRE_T]' LEVELPOSITION=1,
+        "INVHDR_CRE_TS_Key" = '[4ZCP_INVHDR-INVHDR_CRE_T].[24ZCP_INVHDR-INVHDR_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INVHDR_CRE_T]' DIMENSIONNAME = '[4ZCP_INVHDR-INVHDR_CRE_T]' ATTRIBUTE,
+        "INVHDR_UPD_BY_ID Level 01" = '[4ZCP_INVHDR-INVHDR_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INVHDR_UPD_B]' DIMENSIONNAME = '[4ZCP_INVHDR-INVHDR_UPD_B]' LEVELPOSITION=1,
+        "INVHDR_UPD_BY_ID_Key" = '[4ZCP_INVHDR-INVHDR_UPD_B].[24ZCP_INVHDR-INVHDR_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INVHDR_UPD_B]' DIMENSIONNAME = '[4ZCP_INVHDR-INVHDR_UPD_B]' ATTRIBUTE,
+        "INVHDR_UPD_TS Level 01" = '[4ZCP_INVHDR-INVHDR_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INVHDR_UPD_T]' DIMENSIONNAME = '[4ZCP_INVHDR-INVHDR_UPD_T]' LEVELPOSITION=1,
+        "INVHDR_UPD_TS_Key" = '[4ZCP_INVHDR-INVHDR_UPD_T].[24ZCP_INVHDR-INVHDR_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVHDR-INVHDR_UPD_T]' DIMENSIONNAME = '[4ZCP_INVHDR-INVHDR_UPD_T]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_invhdr I18N us_cst (
+        "INH_ARCHIVE_IN Level 01":text,
+        "INH_ARCHIVE_IN_Key":text,
+        "INH_INV_DATE Level 01":text,
+        "INH_INV_DATE_Key":text,
+        "INH_INV_DLR Level 01":text,
+        "INH_INV_DLR_Key":text,
+        "INH_INV_NUM Level 01":text,
+        "INH_INV_NUM_Key":text,
+        "INH_INV_PRT_SW Level 01":text,
+        "INH_INV_PRT_SW_Key":text,
+        "INH_INV_STAT Level 01":text,
+        "INH_INV_STAT_Key":text,
+        "INH_INV_TYPE Level 01":text,
+        "INH_INV_TYPE_Key":text,
+        "INH_INV_VIN Level 01":text,
+        "INH_INV_VIN_Key":text,
+        "INVHDR_CRE_BY_ID Level 01":text,
+        "INVHDR_CRE_BY_ID_Key":text,
+        "INVHDR_CRE_TS Level 01":text,
+        "INVHDR_CRE_TS_Key":text,
+        "INVHDR_UPD_BY_ID Level 01":text,
+        "INVHDR_UPD_BY_ID_Key":text,
+        "INVHDR_UPD_TS Level 01":text,
+        "INVHDR_UPD_TS_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_invhdr(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "INH_ARCHIVE_IN Level 01" (any) OPT ANY
+             ADD "INH_ARCHIVE_IN_Key" (any) OPT ANY
+             ADD "INH_INV_DATE Level 01" (any) OPT ANY
+             ADD "INH_INV_DATE_Key" (any) OPT ANY
+             ADD "INH_INV_DLR Level 01" (any) OPT ANY
+             ADD "INH_INV_DLR_Key" (any) OPT ANY
+             ADD "INH_INV_NUM Level 01" (any) OPT ANY
+             ADD "INH_INV_NUM_Key" (any) OPT ANY
+             ADD "INH_INV_PRT_SW Level 01" (any) OPT ANY
+             ADD "INH_INV_PRT_SW_Key" (any) OPT ANY
+             ADD "INH_INV_STAT Level 01" (any) OPT ANY
+             ADD "INH_INV_STAT_Key" (any) OPT ANY
+             ADD "INH_INV_TYPE Level 01" (any) OPT ANY
+             ADD "INH_INV_TYPE_Key" (any) OPT ANY
+             ADD "INH_INV_VIN Level 01" (any) OPT ANY
+             ADD "INH_INV_VIN_Key" (any) OPT ANY
+             ADD "INVHDR_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "INVHDR_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "INVHDR_CRE_TS Level 01" (any) OPT ANY
+             ADD "INVHDR_CRE_TS_Key" (any) OPT ANY
+             ADD "INVHDR_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "INVHDR_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "INVHDR_UPD_TS Level 01" (any) OPT ANY
+             ADD "INVHDR_UPD_TS_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("INH_ARCHIVE_IN Level 01", "INH_ARCHIVE_IN_Key", "INH_INV_DATE Level 01", "INH_INV_DATE_Key", "INH_INV_DLR Level 01", "INH_INV_DLR_Key", "INH_INV_NUM Level 01", "INH_INV_NUM_Key", "INH_INV_PRT_SW Level 01", "INH_INV_PRT_SW_Key", "INH_INV_STAT Level 01", "INH_INV_STAT_Key", "INH_INV_TYPE Level 01", "INH_INV_TYPE_Key", "INH_INV_VIN Level 01", "INH_INV_VIN_Key", "INVHDR_CRE_BY_ID Level 01", "INVHDR_CRE_BY_ID_Key", "INVHDR_CRE_TS Level 01", "INVHDR_CRE_TS_Key", "INVHDR_UPD_BY_ID Level 01", "INVHDR_UPD_BY_ID_Key", "INVHDR_UPD_TS Level 01", "INVHDR_UPD_TS_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records"
+        )
+        WRAPPER (sapbwbapi bv_zcp_invhdr)
+    );
+

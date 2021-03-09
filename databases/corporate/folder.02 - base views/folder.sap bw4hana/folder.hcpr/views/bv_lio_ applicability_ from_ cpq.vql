@@ -1,0 +1,133 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "bv_lio_ applicability_ from_ CPQ"
+    FOLDER = '/02 - base views/sap bw4hana/hcpr'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_V_SD004'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = TRUE
+    OUTPUTSCHEMA (
+        "CPQ TimeStamp Level 01" = '[ZTIMESTM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTIMESTM]' DIMENSIONNAME = '[ZTIMESTM]' LEVELPOSITION=1,
+        "CPQ TimeStamp_Key" = '[ZTIMESTM].[2ZTIMESTM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTIMESTM]' DIMENSIONNAME = '[ZTIMESTM]' ATTRIBUTE,
+        "Flag for Applicabili Level 01" = '[ZAPL_FLAG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZAPL_FLAG]' DIMENSIONNAME = '[ZAPL_FLAG]' LEVELPOSITION=1,
+        "Flag for Applicabili_Key" = '[ZAPL_FLAG].[2ZAPL_FLAG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZAPL_FLAG]' DIMENSIONNAME = '[ZAPL_FLAG]' ATTRIBUTE,
+        "Flag for Applied Level 01" = '[ZAPP_FLAG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZAPP_FLAG]' DIMENSIONNAME = '[ZAPP_FLAG]' LEVELPOSITION=1,
+        "Flag for Applied_Key" = '[ZAPP_FLAG].[2ZAPP_FLAG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZAPP_FLAG]' DIMENSIONNAME = '[ZAPP_FLAG]' ATTRIBUTE,
+        "Flag for Sold Level 01" = '[ZSOLD_FLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSOLD_FLG]' DIMENSIONNAME = '[ZSOLD_FLG]' LEVELPOSITION=1,
+        "Flag for Sold_Key" = '[ZSOLD_FLG].[2ZSOLD_FLG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSOLD_FLG]' DIMENSIONNAME = '[ZSOLD_FLG]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "LIO Code Level 01" = '[ZLIO_CODE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZLIO_CODE]' DIMENSIONNAME = '[ZLIO_CODE]' LEVELPOSITION=1,
+        "LIO Code_Key" = '[ZLIO_CODE].[2ZLIO_CODE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZLIO_CODE]' DIMENSIONNAME = '[ZLIO_CODE]' ATTRIBUTE,
+        "Long time Stamp Level 01" = '[ZTIMESTMP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTIMESTMP]' DIMENSIONNAME = '[ZTIMESTMP]' LEVELPOSITION=1,
+        "Long time Stamp_Key" = '[ZTIMESTMP].[2ZTIMESTMP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTIMESTMP]' DIMENSIONNAME = '[ZTIMESTMP]' ATTRIBUTE,
+        "Vehicle Identificati Level 01" = '[ZVEHIDNO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHIDNO]' DIMENSIONNAME = '[ZVEHIDNO]' LEVELPOSITION=1,
+        "Vehicle Identificati_Key" = '[ZVEHIDNO].[2ZVEHIDNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHIDNO]' DIMENSIONNAME = '[ZVEHIDNO]' ATTRIBUTE,
+        "Wholesale Date Level 01" = '[ZWHS_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' LEVELPOSITION=1,
+        "Wholesale Date_Calendar Year (Key)" = '[ZWHS_DATE].[20CALYEAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Calendar Year/Month (Key)" = '[ZWHS_DATE].[20CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Calendar Year/Month (Long Name)" = '[ZWHS_DATE].[40CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Calendar Year/Month (Medium Name)" = '[ZWHS_DATE].[50CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Calendar Year/Quarte (Key)" = '[ZWHS_DATE].[20CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Calendar Year/Quarte (Long Name)" = '[ZWHS_DATE].[40CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Calendar Year/Quarte (Name)" = '[ZWHS_DATE].[10CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Calendar Year/Week (Key)" = '[ZWHS_DATE].[20CALWEEK]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Calendar month (Key)" = '[ZWHS_DATE].[20CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Calendar month (Long Name)" = '[ZWHS_DATE].[40CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Calendar month (Medium Name)" = '[ZWHS_DATE].[50CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Halfyear (Key)" = '[ZWHS_DATE].[20HALFYEAR1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Key" = '[ZWHS_DATE].[2ZWHS_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Quarter (Key)" = '[ZWHS_DATE].[20CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Quarter (Long Name)" = '[ZWHS_DATE].[40CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Wholesale Date_Quarter (Name)" = '[ZWHS_DATE].[10CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZWHS_DATE]' DIMENSIONNAME = '[ZWHS_DATE]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE "bv_lio_ applicability_ from_ CPQ" I18N us_cst (
+        "CPQ TimeStamp Level 01":text,
+        "CPQ TimeStamp_Key":text,
+        "Flag for Applicabili Level 01":text,
+        "Flag for Applicabili_Key":text,
+        "Flag for Applied Level 01":text,
+        "Flag for Applied_Key":text,
+        "Flag for Sold Level 01":text,
+        "Flag for Sold_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "LIO Code Level 01":text,
+        "LIO Code_Key":text,
+        "Long time Stamp Level 01":text,
+        "Long time Stamp_Key":text,
+        "Vehicle Identificati Level 01":text,
+        "Vehicle Identificati_Key":text,
+        "Wholesale Date Level 01":text,
+        "Wholesale Date_Calendar Year (Key)":text,
+        "Wholesale Date_Calendar Year/Month (Key)":text,
+        "Wholesale Date_Calendar Year/Month (Long Name)":text,
+        "Wholesale Date_Calendar Year/Month (Medium Name)":text,
+        "Wholesale Date_Calendar Year/Quarte (Key)":text,
+        "Wholesale Date_Calendar Year/Quarte (Long Name)":text,
+        "Wholesale Date_Calendar Year/Quarte (Name)":text,
+        "Wholesale Date_Calendar Year/Week (Key)":text,
+        "Wholesale Date_Calendar month (Key)":text,
+        "Wholesale Date_Calendar month (Long Name)":text,
+        "Wholesale Date_Calendar month (Medium Name)":text,
+        "Wholesale Date_Halfyear (Key)":text,
+        "Wholesale Date_Key":text,
+        "Wholesale Date_Quarter (Key)":text,
+        "Wholesale Date_Quarter (Long Name)":text,
+        "Wholesale Date_Quarter (Name)":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/hcpr'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD "bv_lio_ applicability_ from_ CPQ"(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "CPQ TimeStamp Level 01" (any) OPT ANY
+             ADD "CPQ TimeStamp_Key" (any) OPT ANY
+             ADD "Flag for Applicabili Level 01" (any) OPT ANY
+             ADD "Flag for Applicabili_Key" (any) OPT ANY
+             ADD "Flag for Applied Level 01" (any) OPT ANY
+             ADD "Flag for Applied_Key" (any) OPT ANY
+             ADD "Flag for Sold Level 01" (any) OPT ANY
+             ADD "Flag for Sold_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "LIO Code Level 01" (any) OPT ANY
+             ADD "LIO Code_Key" (any) OPT ANY
+             ADD "Long time Stamp Level 01" (any) OPT ANY
+             ADD "Long time Stamp_Key" (any) OPT ANY
+             ADD "Vehicle Identificati Level 01" (any) OPT ANY
+             ADD "Vehicle Identificati_Key" (any) OPT ANY
+             ADD "Wholesale Date Level 01" (any) OPT ANY
+             ADD "Wholesale Date_Calendar Year (Key)" (any) OPT ANY
+             ADD "Wholesale Date_Calendar Year/Month (Key)" (any) OPT ANY
+             ADD "Wholesale Date_Calendar Year/Month (Long Name)" (any) OPT ANY
+             ADD "Wholesale Date_Calendar Year/Month (Medium Name)" (any) OPT ANY
+             ADD "Wholesale Date_Calendar Year/Quarte (Key)" (any) OPT ANY
+             ADD "Wholesale Date_Calendar Year/Quarte (Long Name)" (any) OPT ANY
+             ADD "Wholesale Date_Calendar Year/Quarte (Name)" (any) OPT ANY
+             ADD "Wholesale Date_Calendar Year/Week (Key)" (any) OPT ANY
+             ADD "Wholesale Date_Calendar month (Key)" (any) OPT ANY
+             ADD "Wholesale Date_Calendar month (Long Name)" (any) OPT ANY
+             ADD "Wholesale Date_Calendar month (Medium Name)" (any) OPT ANY
+             ADD "Wholesale Date_Halfyear (Key)" (any) OPT ANY
+             ADD "Wholesale Date_Key" (any) OPT ANY
+             ADD "Wholesale Date_Quarter (Key)" (any) OPT ANY
+             ADD "Wholesale Date_Quarter (Long Name)" (any) OPT ANY
+             ADD "Wholesale Date_Quarter (Name)" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("CPQ TimeStamp Level 01", "CPQ TimeStamp_Key", "Flag for Applicabili Level 01", "Flag for Applicabili_Key", "Flag for Applied Level 01", "Flag for Applied_Key", "Flag for Sold Level 01", "Flag for Sold_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "LIO Code Level 01", "LIO Code_Key", "Long time Stamp Level 01", "Long time Stamp_Key", "Number of Records", "Vehicle Identificati Level 01", "Vehicle Identificati_Key", "Wholesale Date Level 01", "Wholesale Date_Calendar Year (Key)", "Wholesale Date_Calendar Year/Month (Key)", "Wholesale Date_Calendar Year/Month (Long Name)", "Wholesale Date_Calendar Year/Month (Medium Name)", "Wholesale Date_Calendar Year/Quarte (Key)", "Wholesale Date_Calendar Year/Quarte (Long Name)", "Wholesale Date_Calendar Year/Quarte (Name)", "Wholesale Date_Calendar Year/Week (Key)", "Wholesale Date_Calendar month (Key)", "Wholesale Date_Calendar month (Long Name)", "Wholesale Date_Calendar month (Medium Name)", "Wholesale Date_Halfyear (Key)", "Wholesale Date_Key", "Wholesale Date_Quarter (Key)", "Wholesale Date_Quarter (Long Name)", "Wholesale Date_Quarter (Name)"
+        )
+        WRAPPER (sapbwbapi "bv_lio_ applicability_ from_ CPQ")
+    );
+

@@ -1,22 +1,45 @@
-﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "bv_retail_sales_S4_history_objectives"
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "bv_lio -_sales _s/4 _historical _and _objectives"
     FOLDER = '/02 - base views/sap bw4hana/hcpr'
     DATASOURCENAME = ds_sap_hana
     SCHEMANAME = ''
-    CUBENAME = '$$ZCP_V_SD003'
+    CUBENAME = '$$ZCP_V_SD005'
     DIMENSIONKEYFIELDS = FALSE
     LEAFLEVELMEMBERSONLY = TRUE
     INCLUDEEMPTYROWS = TRUE
     OUTPUTSCHEMA (
         "ALC Available to Dlr Level 01" = '[ZALCATFLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZALCATFLG]' DIMENSIONNAME = '[ZALCATFLG]' LEVELPOSITION=1,
         "ALC Available to Dlr_Key" = '[ZALCATFLG].[2ZALCATFLG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZALCATFLG]' DIMENSIONNAME = '[ZALCATFLG]' ATTRIBUTE,
+        "Acc_Code Level 01" = '[ZACC_CODE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZACC_CODE]' DIMENSIONNAME = '[ZACC_CODE]' LEVELPOSITION=1,
+        "Acc_Code_Key" = '[ZACC_CODE].[2ZACC_CODE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZACC_CODE]' DIMENSIONNAME = '[ZACC_CODE]' ATTRIBUTE,
         "Base Unit of Measure Level 01" = '[0BASE_UOM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' LEVELPOSITION=1,
         "Base Unit of Measure_Key" = '[0BASE_UOM].[20BASE_UOM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' ATTRIBUTE,
         "Base Unit of Measure_Medium Name" = '[0BASE_UOM].[50BASE_UOM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' ATTRIBUTE,
         "Base Unit of Measure_Name" = '[0BASE_UOM].[10BASE_UOM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BASE_UOM]' DIMENSIONNAME = '[0BASE_UOM]' ATTRIBUTE,
-        "Batch Level 01" = '[0BATCH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BATCH]' DIMENSIONNAME = '[0BATCH]' LEVELPOSITION=1,
-        "Batch_Key" = '[0BATCH].[20BATCH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0BATCH]' DIMENSIONNAME = '[0BATCH]' ATTRIBUTE,
-        "Body Type Level 01" = '[ZBODYTYCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZBODYTYCD]' DIMENSIONNAME = '[ZBODYTYCD]' LEVELPOSITION=1,
-        "Body Type_Key" = '[ZBODYTYCD].[2ZBODYTYCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZBODYTYCD]' DIMENSIONNAME = '[ZBODYTYCD]' ATTRIBUTE,
+        "Calendar Year/Month Level 01" = '[0CALMONTH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' LEVELPOSITION=1,
+        "Calendar Year/Month_Calendar Year (Key)" = '[0CALMONTH].[20CALYEAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Calendar Year/Quarte (Key)" = '[0CALMONTH].[20CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Calendar Year/Quarte (Long Name)" = '[0CALMONTH].[40CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Calendar Year/Quarte (Name)" = '[0CALMONTH].[10CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Calendar month (Key)" = '[0CALMONTH].[20CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Calendar month (Long Name)" = '[0CALMONTH].[40CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Calendar month (Medium Name)" = '[0CALMONTH].[50CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Halfyear (Key)" = '[0CALMONTH].[20HALFYEAR1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Key" = '[0CALMONTH].[20CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Long Name" = '[0CALMONTH].[40CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Medium Name" = '[0CALMONTH].[50CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Number of Days (Key)" = '[0CALMONTH].[20NUMDAY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Number of Workdays (Key)" = '[0CALMONTH].[20NUMWDAY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Quarter (Key)" = '[0CALMONTH].[20CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Quarter (Long Name)" = '[0CALMONTH].[40CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Quarter (Name)" = '[0CALMONTH].[10CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Valid From (Key)" = '[0CALMONTH].[20DATEFROM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Calendar Year/Month_Valid To (Key)" = '[0CALMONTH].[20DATETO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CALMONTH]' DIMENSIONNAME = '[0CALMONTH]' ATTRIBUTE,
+        "Condition Category Level 01" = '[0KNTYP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNTYP]' DIMENSIONNAME = '[0KNTYP]' LEVELPOSITION=1,
+        "Condition Category_Key" = '[0KNTYP].[20KNTYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNTYP]' DIMENSIONNAME = '[0KNTYP]' ATTRIBUTE,
+        "Condition Category_Long Name" = '[0KNTYP].[40KNTYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNTYP]' DIMENSIONNAME = '[0KNTYP]' ATTRIBUTE,
+        "Condition Class Level 01" = '[0KNCLASS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNCLASS]' DIMENSIONNAME = '[0KNCLASS]' LEVELPOSITION=1,
+        "Condition Class_Key" = '[0KNCLASS].[20KNCLASS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNCLASS]' DIMENSIONNAME = '[0KNCLASS]' ATTRIBUTE,
+        "Condition Class_Long Name" = '[0KNCLASS].[40KNCLASS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNCLASS]' DIMENSIONNAME = '[0KNCLASS]' ATTRIBUTE,
         "Condition Type Level 01" = '[0KNART].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNART]' DIMENSIONNAME = '[0KNART]' LEVELPOSITION=1,
         "Condition Type_Key" = '[0KNART].[20KNART]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNART]' DIMENSIONNAME = '[0KNART]' ATTRIBUTE,
         "Condition Type_Name" = '[0KNART].[10KNART]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0KNART]' DIMENSIONNAME = '[0KNART]' ATTRIBUTE,
@@ -24,10 +47,10 @@
         "Country_Key" = '[0COUNTRY].[20COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0COUNTRY]' DIMENSIONNAME = '[0COUNTRY]' ATTRIBUTE,
         "Country_Long Name" = '[0COUNTRY].[40COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0COUNTRY]' DIMENSIONNAME = '[0COUNTRY]' ATTRIBUTE,
         "Country_Name" = '[0COUNTRY].[10COUNTRY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0COUNTRY]' DIMENSIONNAME = '[0COUNTRY]' ATTRIBUTE,
-        "Currency Level 01" = '[0CURRENCY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CURRENCY]' DIMENSIONNAME = '[0CURRENCY]' LEVELPOSITION=1,
-        "Currency_Key" = '[0CURRENCY].[20CURRENCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CURRENCY]' DIMENSIONNAME = '[0CURRENCY]' ATTRIBUTE,
-        "Currency_Medium Name" = '[0CURRENCY].[50CURRENCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CURRENCY]' DIMENSIONNAME = '[0CURRENCY]' ATTRIBUTE,
-        "Currency_Name" = '[0CURRENCY].[10CURRENCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CURRENCY]' DIMENSIONNAME = '[0CURRENCY]' ATTRIBUTE,
+        "Currency Key Level 01" = '[4ZCP_V_SD005-0DOC_CURRC_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-0DOC_CURRC_0]' DIMENSIONNAME = '[4ZCP_V_SD005-0DOC_CURRC_0]' LEVELPOSITION=1,
+        "Currency Key_Key" = '[4ZCP_V_SD005-0DOC_CURRC_0].[24ZCP_V_SD005-0DOC_CURRC_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-0DOC_CURRC_0]' DIMENSIONNAME = '[4ZCP_V_SD005-0DOC_CURRC_0]' ATTRIBUTE,
+        "Currency Key_Medium Name" = '[4ZCP_V_SD005-0DOC_CURRC_0].[54ZCP_V_SD005-0DOC_CURRC_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-0DOC_CURRC_0]' DIMENSIONNAME = '[4ZCP_V_SD005-0DOC_CURRC_0]' ATTRIBUTE,
+        "Currency Key_Name" = '[4ZCP_V_SD005-0DOC_CURRC_0].[14ZCP_V_SD005-0DOC_CURRC_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-0DOC_CURRC_0]' DIMENSIONNAME = '[4ZCP_V_SD005-0DOC_CURRC_0]' ATTRIBUTE,
         "Customer Level 01" = '[0CUSTOMER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' LEVELPOSITION=1,
         "Customer_APO Location (Key)" = '[0CUSTOMER].[20APO_LOCNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
         "Customer_APO Location (Medium Name)" = '[0CUSTOMER].[50APO_LOCNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
@@ -146,8 +169,8 @@
         "Customer_Valid until (Key)" = '[0CUSTOMER].[20VALIDTO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
         "Customer_Vendor (Key)" = '[0CUSTOMER].[20VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
         "Customer_Vendor (Medium Name)" = '[0CUSTOMER].[50VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0CUSTOMER]' DIMENSIONNAME = '[0CUSTOMER]' ATTRIBUTE,
-        "Customer_H Level 01" = '[ZCUS_NO_H].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZCUS_NO_H]' DIMENSIONNAME = '[ZCUS_NO_H]' LEVELPOSITION=1,
-        "Customer_H_Key" = '[ZCUS_NO_H].[2ZCUS_NO_H]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZCUS_NO_H]' DIMENSIONNAME = '[ZCUS_NO_H]' ATTRIBUTE,
+        "DIM Series ID Level 01" = '[ZDIMSERID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDIMSERID]' DIMENSIONNAME = '[ZDIMSERID]' LEVELPOSITION=1,
+        "DIM Series ID_Key" = '[ZDIMSERID].[2ZDIMSERID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDIMSERID]' DIMENSIONNAME = '[ZDIMSERID]' ATTRIBUTE,
         "Day Abbreviated Level 01" = '[ZDAYBBR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYBBR]' DIMENSIONNAME = '[ZDAYBBR]' LEVELPOSITION=1,
         "Day Abbreviated_Key" = '[ZDAYBBR].[2ZDAYBBR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYBBR]' DIMENSIONNAME = '[ZDAYBBR]' ATTRIBUTE,
         "Day Date Level 01" = '[ZDAYDATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' LEVELPOSITION=1,
@@ -179,115 +202,34 @@
         "Document Currency_Key" = '[0DOC_CURRCY].[20DOC_CURRCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0DOC_CURRCY]' DIMENSIONNAME = '[0DOC_CURRCY]' ATTRIBUTE,
         "Document Currency_Medium Name" = '[0DOC_CURRCY].[50DOC_CURRCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0DOC_CURRCY]' DIMENSIONNAME = '[0DOC_CURRCY]' ATTRIBUTE,
         "Document Currency_Name" = '[0DOC_CURRCY].[10DOC_CURRCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0DOC_CURRCY]' DIMENSIONNAME = '[0DOC_CURRCY]' ATTRIBUTE,
-        "End Customer (Centra Level 01" = '[ZENDCUST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZENDCUST]' DIMENSIONNAME = '[ZENDCUST]' LEVELPOSITION=1,
-        "End Customer (Centra_Key" = '[ZENDCUST].[2ZENDCUST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZENDCUST]' DIMENSIONNAME = '[ZENDCUST]' ATTRIBUTE,
-        "End Customer (Centra_Medium Name" = '[ZENDCUST].[5ZENDCUST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZENDCUST]' DIMENSIONNAME = '[ZENDCUST]' ATTRIBUTE,
-        "Fiscal Year Variant Level 01" = '[0FISCVARNT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0FISCVARNT]' DIMENSIONNAME = '[0FISCVARNT]' LEVELPOSITION=1,
-        "Fiscal Year Variant_Key" = '[0FISCVARNT].[20FISCVARNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0FISCVARNT]' DIMENSIONNAME = '[0FISCVARNT]' ATTRIBUTE,
-        "Fiscal Year Variant_Medium Name" = '[0FISCVARNT].[50FISCVARNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0FISCVARNT]' DIMENSIONNAME = '[0FISCVARNT]' ATTRIBUTE,
+        "GST AREA SN Level 01" = '[4ZCP_V_SD005-ZGST_AREA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_AREA]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_AREA]' LEVELPOSITION=1,
+        "GST AREA SN_Key" = '[4ZCP_V_SD005-ZGST_AREA].[24ZCP_V_SD005-ZGST_AREA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_AREA]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_AREA]' ATTRIBUTE,
+        "GST Created By Level 01" = '[4ZCP_V_SD005-ZGST_CREBY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_CREBY]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_CREBY]' LEVELPOSITION=1,
+        "GST Created By_Key" = '[4ZCP_V_SD005-ZGST_CREBY].[24ZCP_V_SD005-ZGST_CREBY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_CREBY]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_CREBY]' ATTRIBUTE,
+        "GST Created Date Level 01" = '[4ZCP_V_SD005-ZGST_CREDATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_CREDATE]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_CREDATE]' LEVELPOSITION=1,
+        "GST Created Date_Key" = '[4ZCP_V_SD005-ZGST_CREDATE].[24ZCP_V_SD005-ZGST_CREDATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_CREDATE]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_CREDATE]' ATTRIBUTE,
+        "GST Legacy Series Level 01" = '[4ZCP_V_SD005-ZGST_LSER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_LSER]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_LSER]' LEVELPOSITION=1,
+        "GST Legacy Series_Key" = '[4ZCP_V_SD005-ZGST_LSER].[24ZCP_V_SD005-ZGST_LSER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_LSER]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_LSER]' ATTRIBUTE,
+        "GST Series Name Level 01" = '[4ZCP_V_SD005-ZGST_SERNAME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_SERNAME]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_SERNAME]' LEVELPOSITION=1,
+        "GST Series Name_Key" = '[4ZCP_V_SD005-ZGST_SERNAME].[24ZCP_V_SD005-ZGST_SERNAME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_SERNAME]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_SERNAME]' ATTRIBUTE,
+        "GST Updated BY Level 01" = '[4ZCP_V_SD005-ZGST_UPDBY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_UPDBY]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_UPDBY]' LEVELPOSITION=1,
+        "GST Updated BY_Key" = '[4ZCP_V_SD005-ZGST_UPDBY].[24ZCP_V_SD005-ZGST_UPDBY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_UPDBY]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_UPDBY]' ATTRIBUTE,
+        "GST Updated Date Level 01" = '[4ZCP_V_SD005-ZGST_UPDDATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_UPDDATE]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_UPDDATE]' LEVELPOSITION=1,
+        "GST Updated Date_Key" = '[4ZCP_V_SD005-ZGST_UPDDATE].[24ZCP_V_SD005-ZGST_UPDDATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZGST_UPDDATE]' DIMENSIONNAME = '[4ZCP_V_SD005-ZGST_UPDDATE]' ATTRIBUTE,
         "Holiday Flag Level 01" = '[ZHOLDYFLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZHOLDYFLG]' DIMENSIONNAME = '[ZHOLDYFLG]' LEVELPOSITION=1,
         "Holiday Flag_Key" = '[ZHOLDYFLG].[2ZHOLDYFLG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZHOLDYFLG]' DIMENSIONNAME = '[ZHOLDYFLG]' ATTRIBUTE,
         "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
         "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
         "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
         "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
-        "Internal Vehicle Num Level 01" = '[ZINVEHNO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' LEVELPOSITION=1,
-        "Internal Vehicle Num_Action Control (MMCT (Key)" = '[ZINVEHNO].[2ZACTCTRL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Action Control (MMCT (Medium Name)" = '[ZINVEHNO].[5ZACTCTRL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Action Control (SDCT (Key)" = '[ZINVEHNO].[2ZACTCTRL1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Action Control (SDCT (Medium Name)" = '[ZINVEHNO].[5ZACTCTRL1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Allocation Year (Key)" = '[ZINVEHNO].[2ZALCTNYR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Archiving Flag (Key)" = '[ZINVEHNO].[2ZARCHFLAG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Authorize Flag (Key)" = '[ZINVEHNO].[2ZAUTH_FG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Availability Status (Key)" = '[ZINVEHNO].[2ZAVASTAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Batch (Key)" = '[ZINVEHNO].[20BATCH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Configuration (inter (Key)" = '[ZINVEHNO].[2ZCUOBJ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Counter Reading (Key)" = '[ZINVEHNO].[2ZPCOUNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Creation Date (SDTSP (Key)" = '[ZINVEHNO].[2ZSDTSP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Currency (Key)" = '[ZINVEHNO].[20CURRENCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Currency (Medium Name)" = '[ZINVEHNO].[50CURRENCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Currency (Name)" = '[ZINVEHNO].[10CURRENCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Customer (Key)" = '[ZINVEHNO].[20CUSTOMER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Customer (Medium Name)" = '[ZINVEHNO].[50CUSTOMER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Date of creation (MM (Key)" = '[ZINVEHNO].[2ZMMTSP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Dummy VIN (Key)" = '[ZINVEHNO].[2ZDUMMYVIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "InternalVehicleNum_ETAArrivaltoVPCKey" = '[ZINVEHNO].[2ZETAVPCDT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_ETA Arrival to VPC (Key)" = '[ZINVEHNO].[2ZVPCETADT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_End Customer (Centra (Key)" = '[ZINVEHNO].[2ZENDCUST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_End Customer (Centra (Medium Name)" = '[ZINVEHNO].[5ZENDCUST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Equipment (Key)" = '[ZINVEHNO].[20EQUIPMENT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Equipment (Medium Name)" = '[ZINVEHNO].[50EQUIPMENT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_External Vehicle Num (Key)" = '[ZINVEHNO].[2ZEXTVENO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Flag indicator Used (Key)" = '[ZINVEHNO].[2ZUSEDVEH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Fleet Account Number (Key)" = '[ZINVEHNO].[2ZFLETACNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Gross List Price of (Key)" = '[ZINVEHNO].[2ZGLPRICEV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Initial Registration (Key)" = '[ZINVEHNO].[2ZSCAMPGIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Key" = '[ZINVEHNO].[2ZINVEHNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Model Phase Code (Key)" = '[ZINVEHNO].[2ZMDLPHCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Model Year (Key)" = '[ZINVEHNO].[2ZMODELYR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Name" = '[ZINVEHNO].[1ZINVEHNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Original Ordering Pa (Key)" = '[ZINVEHNO].[2ZOOPOVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Parking lot location (Key)" = '[ZINVEHNO].[2ZPRKLOCCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Plant (Key)" = '[ZINVEHNO].[20PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Plant (Medium Name)" = '[ZINVEHNO].[50PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Plant (Name)" = '[ZINVEHNO].[10PLANT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Plant Code (Key)" = '[ZINVEHNO].[2ZMFGPLTCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Primary Status (Key)" = '[ZINVEHNO].[2ZPSTATUS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Primary Status (Medium Name)" = '[ZINVEHNO].[5ZPSTATUS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Railcar Number (Key)" = '[ZINVEHNO].[2ZRILCARNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Railcar Shipped Date (Key)" = '[ZINVEHNO].[2ZRCARSHPD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Region Code (Key)" = '[ZINVEHNO].[2ZREGIONCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Sales Campaign (Key)" = '[ZINVEHNO].[2ZSALCAMGN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Secondary Status (Key)" = '[ZINVEHNO].[2ZSECSTAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Secondary Status (Medium Name)" = '[ZINVEHNO].[5ZSECSTAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Sharing Levels for V (Key)" = '[ZINVEHNO].[2ZSLVESRCH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Ship To Dealer Code (Key)" = '[ZINVEHNO].[2ZSHIPTOCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Ship To Region Code (Key)" = '[ZINVEHNO].[2ZSHIPRGCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Storage Location (Key)" = '[ZINVEHNO].[20STOR_LOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Storage Location (Medium Name)" = '[ZINVEHNO].[50STOR_LOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Time Stamp for Confi (Key)" = '[ZINVEHNO].[2ZCDTSP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Time Stamp for Plann (Key)" = '[ZINVEHNO].[2ZPSTSP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Time Stamp for Produ (Key)" = '[ZINVEHNO].[2ZPDTSP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Type of Document for (Key)" = '[ZINVEHNO].[2ZCUABA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Unit of Measure (Key)" = '[ZINVEHNO].[20UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Unit of Measure (Medium Name)" = '[ZINVEHNO].[50UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Unit of Measure (Name)" = '[ZINVEHNO].[10UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VIN-Dealer Match Dat (Key)" = '[ZINVEHNO].[2ZVMATCHDT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VLC Add. Data 1 (Key)" = '[ZINVEHNO].[2ZVLCAD1TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VLC Add. Data 10 (Key)" = '[ZINVEHNO].[2ZVLAD10TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VLC Add. Data 2 (Key)" = '[ZINVEHNO].[2ZVLCAD2TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VLC Add. Data 3 (Key)" = '[ZINVEHNO].[2ZVLCAD3TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VLC Add. Data 4 (Key)" = '[ZINVEHNO].[2ZVLCAD4TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VLC Add. Data 5 (Key)" = '[ZINVEHNO].[2ZVLCAD5TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VLC Add. Data 6 (Key)" = '[ZINVEHNO].[2ZVLCAD6TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VLC Add. Data 7 (Key)" = '[ZINVEHNO].[2ZVLCAD7TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VLC Add. Data 8 (Key)" = '[ZINVEHNO].[2ZVLCAD8TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VLC Add. Data 9 (Key)" = '[ZINVEHNO].[2ZVLCAD9TX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_VMS-Vehicle Location (Key)" = '[ZINVEHNO].[2ZVMSVELOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Valuation type (Key)" = '[ZINVEHNO].[20VAL_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle - Name (Key)" = '[ZINVEHNO].[2ZERNAM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Exterior Col (Key)" = '[ZINVEHNO].[2ZEXTCLRCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Identificati (Key)" = '[ZINVEHNO].[2ZVEHIDNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Interior Col (Key)" = '[ZINVEHNO].[2ZINTCLRCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Miles (Key)" = '[ZINVEHNO].[2ZVEHMILES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Model ( Mate (Key)" = '[ZINVEHNO].[2ZVEMODEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Model ( Mate (Medium Name)" = '[ZINVEHNO].[5ZVEMODEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Order YYYYMM (Key)" = '[ZINVEHNO].[2ZVEHOYYM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle RDR Date (Key)" = '[ZINVEHNO].[2ZVEHRDRDT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Sale Type (Key)" = '[ZINVEHNO].[2ZVSALETYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Sale Type (Long Name)" = '[ZINVEHNO].[4ZVSALETYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Search Area (Key)" = '[ZINVEHNO].[2ZVESAREA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vehicle Usage (Key)" = '[ZINVEHNO].[2ZVEUSGE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vendor (Key)" = '[ZINVEHNO].[20VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vendor (Medium Name)" = '[ZINVEHNO].[50VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Vessel Number (Key)" = '[ZINVEHNO].[2ZVSL_NO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
-        "Internal Vehicle Num_Visibility (Key)" = '[ZINVEHNO].[2ZVISBLTY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINVEHNO]' DIMENSIONNAME = '[ZINVEHNO]' ATTRIBUTE,
         "Item Level 01" = '[0S_ORD_ITEM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0S_ORD_ITEM]' DIMENSIONNAME = '[0S_ORD_ITEM]' LEVELPOSITION=1,
         "Item_Key" = '[0S_ORD_ITEM].[20S_ORD_ITEM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0S_ORD_ITEM]' DIMENSIONNAME = '[0S_ORD_ITEM]' ATTRIBUTE,
-        "Legacy Series Level 01" = '[4ZCP_V_SD003-SERIES].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-SERIES]' DIMENSIONNAME = '[4ZCP_V_SD003-SERIES]' LEVELPOSITION=1,
-        "Legacy Series_Key" = '[4ZCP_V_SD003-SERIES].[24ZCP_V_SD003-SERIES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-SERIES]' DIMENSIONNAME = '[4ZCP_V_SD003-SERIES]' ATTRIBUTE,
-        "MMSTA_Primary Stat Level 01" = '[ZMMSTANEW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMMSTANEW]' DIMENSIONNAME = '[ZMMSTANEW]' LEVELPOSITION=1,
-        "MMSTA_Primary Stat_Key" = '[ZMMSTANEW].[2ZMMSTANEW]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMMSTANEW]' DIMENSIONNAME = '[ZMMSTANEW]' ATTRIBUTE,
+        "LIO Code Level 01" = '[ZLIO_CODE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZLIO_CODE]' DIMENSIONNAME = '[ZLIO_CODE]' LEVELPOSITION=1,
+        "LIO Code_Key" = '[ZLIO_CODE].[2ZLIO_CODE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZLIO_CODE]' DIMENSIONNAME = '[ZLIO_CODE]' ATTRIBUTE,
+        "Local Currency Level 01" = '[0LOC_CURRCY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0LOC_CURRCY]' DIMENSIONNAME = '[0LOC_CURRCY]' LEVELPOSITION=1,
+        "Local Currency_Key" = '[0LOC_CURRCY].[20LOC_CURRCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0LOC_CURRCY]' DIMENSIONNAME = '[0LOC_CURRCY]' ATTRIBUTE,
+        "Local Currency_Medium Name" = '[0LOC_CURRCY].[50LOC_CURRCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0LOC_CURRCY]' DIMENSIONNAME = '[0LOC_CURRCY]' ATTRIBUTE,
+        "Local Currency_Name" = '[0LOC_CURRCY].[10LOC_CURRCY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0LOC_CURRCY]' DIMENSIONNAME = '[0LOC_CURRCY]' ATTRIBUTE,
         "MTD Rtl RNK Level 01" = '[ZMTDRNK].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMTDRNK]' DIMENSIONNAME = '[ZMTDRNK]' LEVELPOSITION=1,
         "MTD Rtl RNK_Key" = '[ZMTDRNK].[2ZMTDRNK]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMTDRNK]' DIMENSIONNAME = '[ZMTDRNK]' ATTRIBUTE,
         "Material Level 01" = '[0MATERIAL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0MATERIAL]' DIMENSIONNAME = '[0MATERIAL]' LEVELPOSITION=1,
@@ -472,6 +414,25 @@
         "Model Vehicle Desc_Key" = '[ZMODVDESC].[2ZMODVDESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODVDESC]' DIMENSIONNAME = '[ZMODVDESC]' ATTRIBUTE,
         "Model Year Level 01" = '[ZMODELYR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODELYR]' DIMENSIONNAME = '[ZMODELYR]' LEVELPOSITION=1,
         "Model Year_Key" = '[ZMODELYR].[2ZMODELYR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMODELYR]' DIMENSIONNAME = '[ZMODELYR]' ATTRIBUTE,
+        "MonthIDYYYYMMLevel01" = '[4ZCP_V_SD005-ZMONTHID_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' LEVELPOSITION=1,
+        "MonthIDYYYYMM_CalendarYearKey" = '[4ZCP_V_SD005-ZMONTHID_0].[20CALYEAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_CalendarYearQuarteKey" = '[4ZCP_V_SD005-ZMONTHID_0].[20CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_CalendarYearQuarteLongName" = '[4ZCP_V_SD005-ZMONTHID_0].[40CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_CalendarYearQuarteName" = '[4ZCP_V_SD005-ZMONTHID_0].[10CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_CalendarmonthKey" = '[4ZCP_V_SD005-ZMONTHID_0].[20CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_CalendarmonthLongName" = '[4ZCP_V_SD005-ZMONTHID_0].[40CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_CalendarmonthMediumName" = '[4ZCP_V_SD005-ZMONTHID_0].[50CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_HalfyearKey" = '[4ZCP_V_SD005-ZMONTHID_0].[20HALFYEAR1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_Key" = '[4ZCP_V_SD005-ZMONTHID_0].[24ZCP_V_SD005-ZMONTHID_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_LongName" = '[4ZCP_V_SD005-ZMONTHID_0].[44ZCP_V_SD005-ZMONTHID_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_MediumName" = '[4ZCP_V_SD005-ZMONTHID_0].[54ZCP_V_SD005-ZMONTHID_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_NumberofDaysKey" = '[4ZCP_V_SD005-ZMONTHID_0].[20NUMDAY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_NumberofWorkdaysKey" = '[4ZCP_V_SD005-ZMONTHID_0].[20NUMWDAY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_QuarterKey" = '[4ZCP_V_SD005-ZMONTHID_0].[20CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_QuarterLongName" = '[4ZCP_V_SD005-ZMONTHID_0].[40CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_QuarterName" = '[4ZCP_V_SD005-ZMONTHID_0].[10CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_ValidFromKey" = '[4ZCP_V_SD005-ZMONTHID_0].[20DATEFROM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
+        "MonthIDYYYYMM_ValidToKey" = '[4ZCP_V_SD005-ZMONTHID_0].[20DATETO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-ZMONTHID_0]' DIMENSIONNAME = '[4ZCP_V_SD005-ZMONTHID_0]' ATTRIBUTE,
         "Month ID ( YYYYMM) Level 01" = '[ZMONTHID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' LEVELPOSITION=1,
         "Month ID ( YYYYMM)_Calendar Year (Key)" = '[ZMONTHID].[20CALYEAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
         "Month ID ( YYYYMM)_Calendar Year/Quarte (Key)" = '[ZMONTHID].[20CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
@@ -491,12 +452,13 @@
         "Month ID ( YYYYMM)_Quarter (Name)" = '[ZMONTHID].[10CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
         "Month ID ( YYYYMM)_Valid From (Key)" = '[ZMONTHID].[20DATEFROM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
         "Month ID ( YYYYMM)_Valid To (Key)" = '[ZMONTHID].[20DATETO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Objective Sale Area Level 01" = '[ZSALDISAR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSALDISAR]' DIMENSIONNAME = '[ZSALDISAR]' LEVELPOSITION=1,
+        "Objective Sale Area_Key" = '[ZSALDISAR].[2ZSALDISAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSALDISAR]' DIMENSIONNAME = '[ZSALDISAR]' ATTRIBUTE,
+        "Objective TMNA Ser Level 01" = '[ZTMNASER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTMNASER]' DIMENSIONNAME = '[ZTMNASER]' LEVELPOSITION=1,
+        "Objective TMNA Ser_Key" = '[ZTMNASER].[2ZTMNASER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTMNASER]' DIMENSIONNAME = '[ZTMNASER]' ATTRIBUTE,
         "Primary Status Level 01" = '[ZPSTATUS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZPSTATUS]' DIMENSIONNAME = '[ZPSTATUS]' LEVELPOSITION=1,
         "Primary Status_Key" = '[ZPSTATUS].[2ZPSTATUS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZPSTATUS]' DIMENSIONNAME = '[ZPSTATUS]' ATTRIBUTE,
         "Primary Status_Medium Name" = '[ZPSTATUS].[5ZPSTATUS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZPSTATUS]' DIMENSIONNAME = '[ZPSTATUS]' ATTRIBUTE,
-        "Prod.hierarchy Level 01" = '[0PROD_HIER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0PROD_HIER]' DIMENSIONNAME = '[0PROD_HIER]' LEVELPOSITION=1,
-        "Prod.hierarchy_Key" = '[0PROD_HIER].[20PROD_HIER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0PROD_HIER]' DIMENSIONNAME = '[0PROD_HIER]' ATTRIBUTE,
-        "Prod.hierarchy_Name" = '[0PROD_HIER].[10PROD_HIER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0PROD_HIER]' DIMENSIONNAME = '[0PROD_HIER]' ATTRIBUTE,
         "RDR Reversal Date Level 01" = '[ZRDRRDT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZRDRRDT]' DIMENSIONNAME = '[ZRDRRDT]' LEVELPOSITION=1,
         "RDR Reversal Date_Calendar Year (Key)" = '[ZRDRRDT].[20CALYEAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZRDRRDT]' DIMENSIONNAME = '[ZRDRRDT]' ATTRIBUTE,
         "RDR Reversal Date_Calendar Year/Month (Key)" = '[ZRDRRDT].[20CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZRDRRDT]' DIMENSIONNAME = '[ZRDRRDT]' ATTRIBUTE,
@@ -524,17 +486,12 @@
         "Region_Key" = '[0REGION].[20REGION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0REGION]' DIMENSIONNAME = '[0REGION]' ATTRIBUTE,
         "Region_Key (Not Compounded)" = '[0REGION].[80REGION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0REGION]' DIMENSIONNAME = '[0REGION]' ATTRIBUTE,
         "Region_Name" = '[0REGION].[10REGION]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0REGION]' DIMENSIONNAME = '[0REGION]' ATTRIBUTE,
-        "SDSTA_Secondary Stat Level 01" = '[ZSDSTANEW].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSDSTANEW]' DIMENSIONNAME = '[ZSDSTANEW]' LEVELPOSITION=1,
-        "SDSTA_Secondary Stat_Key" = '[ZSDSTANEW].[2ZSDSTANEW]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSDSTANEW]' DIMENSIONNAME = '[ZSDSTANEW]' ATTRIBUTE,
         "Sale Close Flag Level 01" = '[ZSCLOFLAG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSCLOFLAG]' DIMENSIONNAME = '[ZSCLOFLAG]' LEVELPOSITION=1,
         "Sale Close Flag_Key" = '[ZSCLOFLAG].[2ZSCLOFLAG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSCLOFLAG]' DIMENSIONNAME = '[ZSCLOFLAG]' ATTRIBUTE,
         "SaleBase Mid Month F Level 01" = '[ZSBMMTHF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSBMMTHF]' DIMENSIONNAME = '[ZSBMMTHF]' LEVELPOSITION=1,
         "SaleBase Mid Month F_Key" = '[ZSBMMTHF].[2ZSBMMTHF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSBMMTHF]' DIMENSIONNAME = '[ZSBMMTHF]' ATTRIBUTE,
         "Sales Area Level 01" = '[ZSALE_ARE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSALE_ARE]' DIMENSIONNAME = '[ZSALE_ARE]' LEVELPOSITION=1,
         "Sales Area_Key" = '[ZSALE_ARE].[2ZSALE_ARE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSALE_ARE]' DIMENSIONNAME = '[ZSALE_ARE]' ATTRIBUTE,
-        "SalesDistrictLevel01" = '[0SALES_DIST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_DIST]' DIMENSIONNAME = '[0SALES_DIST]' LEVELPOSITION=1,
-        "SalesDistrict_Key" = '[0SALES_DIST].[20SALES_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_DIST]' DIMENSIONNAME = '[0SALES_DIST]' ATTRIBUTE,
-        "SalesDistrict_Name" = '[0SALES_DIST].[10SALES_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_DIST]' DIMENSIONNAME = '[0SALES_DIST]' ATTRIBUTE,
         "Sales District Level 01" = '[ZSAL_DIST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_DIST]' DIMENSIONNAME = '[ZSAL_DIST]' LEVELPOSITION=1,
         "Sales District_Key" = '[ZSAL_DIST].[2ZSAL_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_DIST]' DIMENSIONNAME = '[ZSAL_DIST]' ATTRIBUTE,
         "Sales District_Name" = '[ZSAL_DIST].[1ZSAL_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_DIST]' DIMENSIONNAME = '[ZSAL_DIST]' ATTRIBUTE,
@@ -557,15 +514,16 @@
         "Sales Group_Sales Group Text (Key)" = '[ZSAL_GRP].[2ZSGRPTXT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_GRP]' DIMENSIONNAME = '[ZSAL_GRP]' ATTRIBUTE,
         "Sales Group Text Level 01" = '[ZSGRPTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSGRPTXT]' DIMENSIONNAME = '[ZSGRPTXT]' LEVELPOSITION=1,
         "Sales Group Text_Key" = '[ZSGRPTXT].[2ZSGRPTXT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSGRPTXT]' DIMENSIONNAME = '[ZSGRPTXT]' ATTRIBUTE,
-        "Sales office Level 01_copy" = '[0SALES_OFF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_OFF]' DIMENSIONNAME = '[0SALES_OFF]' LEVELPOSITION=1,
-        "Sales office_Key_copy" = '[0SALES_OFF].[20SALES_OFF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_OFF]' DIMENSIONNAME = '[0SALES_OFF]' ATTRIBUTE,
-        "Sales office_Name_copy" = '[0SALES_OFF].[10SALES_OFF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_OFF]' DIMENSIONNAME = '[0SALES_OFF]' ATTRIBUTE,
         "Sales Office Text Level 01" = '[ZSOFFTXT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSOFFTXT]' DIMENSIONNAME = '[ZSOFFTXT]' LEVELPOSITION=1,
         "Sales Office Text_Key" = '[ZSOFFTXT].[2ZSOFFTXT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSOFFTXT]' DIMENSIONNAME = '[ZSOFFTXT]' ATTRIBUTE,
         "Sales office Level 01" = '[ZSAL_OFF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_OFF]' DIMENSIONNAME = '[ZSAL_OFF]' LEVELPOSITION=1,
         "Sales office_Key" = '[ZSAL_OFF].[2ZSAL_OFF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_OFF]' DIMENSIONNAME = '[ZSAL_OFF]' ATTRIBUTE,
         "Sales office_Name" = '[ZSAL_OFF].[1ZSAL_OFF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_OFF]' DIMENSIONNAME = '[ZSAL_OFF]' ATTRIBUTE,
         "Sales office_Sales Office Text (Key)" = '[ZSAL_OFF].[2ZSOFFTXT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSAL_OFF]' DIMENSIONNAME = '[ZSAL_OFF]' ATTRIBUTE,
+        "Sales unit Level 01" = '[0SALES_UNIT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_UNIT]' DIMENSIONNAME = '[0SALES_UNIT]' LEVELPOSITION=1,
+        "Sales unit_Key" = '[0SALES_UNIT].[20SALES_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_UNIT]' DIMENSIONNAME = '[0SALES_UNIT]' ATTRIBUTE,
+        "Sales unit_Medium Name" = '[0SALES_UNIT].[50SALES_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_UNIT]' DIMENSIONNAME = '[0SALES_UNIT]' ATTRIBUTE,
+        "Sales unit_Name" = '[0SALES_UNIT].[10SALES_UNIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SALES_UNIT]' DIMENSIONNAME = '[0SALES_UNIT]' ATTRIBUTE,
         "Secondary Status Level 01" = '[ZSECSTAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSECSTAT]' DIMENSIONNAME = '[ZSECSTAT]' LEVELPOSITION=1,
         "Secondary Status_Key" = '[ZSECSTAT].[2ZSECSTAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSECSTAT]' DIMENSIONNAME = '[ZSECSTAT]' ATTRIBUTE,
         "Secondary Status_Medium Name" = '[ZSECSTAT].[5ZSECSTAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSECSTAT]' DIMENSIONNAME = '[ZSECSTAT]' ATTRIBUTE,
@@ -575,8 +533,10 @@
         "Series_Series Description (Key)" = '[ZSERIESCD].[2ZSERDESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERIESCD]' DIMENSIONNAME = '[ZSERIESCD]' ATTRIBUTE,
         "Series Description Level 01" = '[ZSERDESC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERDESC]' DIMENSIONNAME = '[ZSERDESC]' LEVELPOSITION=1,
         "Series Description_Key" = '[ZSERDESC].[2ZSERDESC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSERDESC]' DIMENSIONNAME = '[ZSERDESC]' ATTRIBUTE,
-        "Series/Group Level 01" = '[4ZCP_V_SD003-SERIESGRP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-SERIESGRP]' DIMENSIONNAME = '[4ZCP_V_SD003-SERIESGRP]' LEVELPOSITION=1,
-        "Series/Group_Key" = '[4ZCP_V_SD003-SERIESGRP].[24ZCP_V_SD003-SERIESGRP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-SERIESGRP]' DIMENSIONNAME = '[4ZCP_V_SD003-SERIESGRP]' ATTRIBUTE,
+        "Series Name Level 01" = '[4ZCP_V_SD005-SERIES_NAME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-SERIES_NAME]' DIMENSIONNAME = '[4ZCP_V_SD005-SERIES_NAME]' LEVELPOSITION=1,
+        "Series Name_Key" = '[4ZCP_V_SD005-SERIES_NAME].[24ZCP_V_SD005-SERIES_NAME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-SERIES_NAME]' DIMENSIONNAME = '[4ZCP_V_SD005-SERIES_NAME]' ATTRIBUTE,
+        "Series SN Level 01" = '[4ZCP_V_SD005-SERIES_SN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-SERIES_SN]' DIMENSIONNAME = '[4ZCP_V_SD005-SERIES_SN]' LEVELPOSITION=1,
+        "Series SN_Key" = '[4ZCP_V_SD005-SERIES_SN].[24ZCP_V_SD005-SERIES_SN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD005-SERIES_SN]' DIMENSIONNAME = '[4ZCP_V_SD005-SERIES_SN]' ATTRIBUTE,
         "Sold-to Party Level 01" = '[0SOLD_TO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SOLD_TO]' DIMENSIONNAME = '[0SOLD_TO]' LEVELPOSITION=1,
         "Sold-to Party_APO Location (Key)" = '[0SOLD_TO].[20APO_LOCNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SOLD_TO]' DIMENSIONNAME = '[0SOLD_TO]' ATTRIBUTE,
         "Sold-to Party_APO Location (Medium Name)" = '[0SOLD_TO].[50APO_LOCNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SOLD_TO]' DIMENSIONNAME = '[0SOLD_TO]' ATTRIBUTE,
@@ -697,14 +657,6 @@
         "Sold-to Party_Vendor (Medium Name)" = '[0SOLD_TO].[50VENDOR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0SOLD_TO]' DIMENSIONNAME = '[0SOLD_TO]' ATTRIBUTE,
         "TMS Holiday Flag Level 01" = '[ZTMSHFLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTMSHFLG]' DIMENSIONNAME = '[ZTMSHFLG]' LEVELPOSITION=1,
         "TMS Holiday Flag_Key" = '[ZTMSHFLG].[2ZTMSHFLG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTMSHFLG]' DIMENSIONNAME = '[ZTMSHFLG]' ATTRIBUTE,
-        "VT_53_REV_AUTH Level 01" = '[4ZCP_V_SD003-VT_53_REV_AU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-VT_53_REV_AU]' DIMENSIONNAME = '[4ZCP_V_SD003-VT_53_REV_AU]' LEVELPOSITION=1,
-        "VT_53_REV_AUTH_Key" = '[4ZCP_V_SD003-VT_53_REV_AU].[24ZCP_V_SD003-VT_53_REV_AU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-VT_53_REV_AU]' DIMENSIONNAME = '[4ZCP_V_SD003-VT_53_REV_AU]' ATTRIBUTE,
-        "VT_53_REV_REASON Level 01" = '[4ZCP_V_SD003-VT_53_REV_RE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-VT_53_REV_RE]' DIMENSIONNAME = '[4ZCP_V_SD003-VT_53_REV_RE]' LEVELPOSITION=1,
-        "VT_53_REV_REASON_Key" = '[4ZCP_V_SD003-VT_53_REV_RE].[24ZCP_V_SD003-VT_53_REV_RE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-VT_53_REV_RE]' DIMENSIONNAME = '[4ZCP_V_SD003-VT_53_REV_RE]' ATTRIBUTE,
-        "VT_53_REV_TO_DLR Level 01" = '[4ZCP_V_SD003-VT_53_REV_TO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-VT_53_REV_TO]' DIMENSIONNAME = '[4ZCP_V_SD003-VT_53_REV_TO]' LEVELPOSITION=1,
-        "VT_53_REV_TO_DLR_Key" = '[4ZCP_V_SD003-VT_53_REV_TO].[24ZCP_V_SD003-VT_53_REV_TO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_V_SD003-VT_53_REV_TO]' DIMENSIONNAME = '[4ZCP_V_SD003-VT_53_REV_TO]' ATTRIBUTE,
-        "Vehicle Exterior Col Level 01" = '[ZEXTCLRCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZEXTCLRCD]' DIMENSIONNAME = '[ZEXTCLRCD]' LEVELPOSITION=1,
-        "Vehicle Exterior Col_Key" = '[ZEXTCLRCD].[2ZEXTCLRCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZEXTCLRCD]' DIMENSIONNAME = '[ZEXTCLRCD]' ATTRIBUTE,
         "Vehicle GUID (Global Level 01" = '[ZVEGUID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEGUID]' DIMENSIONNAME = '[ZVEGUID]' LEVELPOSITION=1,
         "Vehicle GUID (Global_Key" = '[ZVEGUID].[2ZVEGUID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEGUID]' DIMENSIONNAME = '[ZVEGUID]' ATTRIBUTE,
         "Vehicle GUID (Global_Name" = '[ZVEGUID].[1ZVEGUID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEGUID]' DIMENSIONNAME = '[ZVEGUID]' ATTRIBUTE,
@@ -734,8 +686,6 @@
         "Vehicle GUID (Global_Vehicle Wheel (Name)" = '[ZVEGUID].[1ZWHEEL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEGUID]' DIMENSIONNAME = '[ZVEGUID]' ATTRIBUTE,
         "Vehicle Identificati Level 01" = '[ZVEHIDNO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHIDNO]' DIMENSIONNAME = '[ZVEHIDNO]' LEVELPOSITION=1,
         "Vehicle Identificati_Key" = '[ZVEHIDNO].[2ZVEHIDNO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHIDNO]' DIMENSIONNAME = '[ZVEHIDNO]' ATTRIBUTE,
-        "Vehicle Interior Col Level 01" = '[ZINTCLRCD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINTCLRCD]' DIMENSIONNAME = '[ZINTCLRCD]' LEVELPOSITION=1,
-        "Vehicle Interior Col_Key" = '[ZINTCLRCD].[2ZINTCLRCD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZINTCLRCD]' DIMENSIONNAME = '[ZINTCLRCD]' ATTRIBUTE,
         "Vehicle RDR Date Level 01" = '[ZVEHRDRDT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRDRDT]' DIMENSIONNAME = '[ZVEHRDRDT]' LEVELPOSITION=1,
         "Vehicle RDR Date_Calendar Year (Key)" = '[ZVEHRDRDT].[20CALYEAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRDRDT]' DIMENSIONNAME = '[ZVEHRDRDT]' ATTRIBUTE,
         "Vehicle RDR Date_Calendar Year/Month (Key)" = '[ZVEHRDRDT].[20CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRDRDT]' DIMENSIONNAME = '[ZVEHRDRDT]' ATTRIBUTE,
@@ -755,30 +705,62 @@
         "Vehicle RDR Date_Quarter (Name)" = '[ZVEHRDRDT].[10CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEHRDRDT]' DIMENSIONNAME = '[ZVEHRDRDT]' ATTRIBUTE,
         "Vehicle Usage Level 01" = '[ZVEUSGE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEUSGE]' DIMENSIONNAME = '[ZVEUSGE]' LEVELPOSITION=1,
         "Vehicle Usage_Key" = '[ZVEUSGE].[2ZVEUSGE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZVEUSGE]' DIMENSIONNAME = '[ZVEUSGE]' ATTRIBUTE,
+        "YTD Rtl RNK Level 01" = '[ZYTDRNK].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZYTDRNK]' DIMENSIONNAME = '[ZYTDRNK]' LEVELPOSITION=1,
+        "YTD Rtl RNK_Key" = '[ZYTDRNK].[2ZYTDRNK]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZYTDRNK]' DIMENSIONNAME = '[ZYTDRNK]' ATTRIBUTE,
+        "Condition Rate" = '[Measures].[0KPRICE]' : 'java.lang.Double' (OPT) MEASURE,
+        "Condition Value" = '[Measures].[4ZCP_V_SD005-0KNVAL]' : 'java.lang.Double' (OPT) MEASURE,
         "GPP Objective" = '[Measures].[ZGPP_OB]' : 'java.lang.Double' (OPT) MEASURE,
-        "Gross List Price of" = '[Measures].[ZGLPRICEV]' : 'java.lang.Double' (OPT) MEASURE,
         "Net Value" = '[Measures].[0NET_VALUE]' : 'java.lang.Double' (OPT) MEASURE,
         "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        "Order quantity" = '[Measures].[0CML_OR_QTY]' : 'java.lang.Double' (OPT) MEASURE,
         "Qty in Base UoM" = '[Measures].[0QUANT_B]' : 'java.lang.Double' (OPT) MEASURE,
         "Subtotal 1" = '[Measures].[0SUBTOT_1S]' : 'java.lang.Double' (OPT) MEASURE,
         "Subtotal 2" = '[Measures].[0SUBTOT_2S]' : 'java.lang.Double' (OPT) MEASURE,
         "Subtotal 3" = '[Measures].[0SUBTOT_3S]' : 'java.lang.Double' (OPT) MEASURE,
         "Subtotal 4" = '[Measures].[0SUBTOT_4S]' : 'java.lang.Double' (OPT) MEASURE,
         "Subtotal 5" = '[Measures].[0SUBTOT_5S]' : 'java.lang.Double' (OPT) MEASURE,
-        "Subtotal 6" = '[Measures].[0SUBTOT_6S]' : 'java.lang.Double' (OPT) MEASURE
+        "Subtotal 6" = '[Measures].[0SUBTOT_6S]' : 'java.lang.Double' (OPT) MEASURE,
+        "VM_ACC_DLR" = '[Measures].[4ZCP_V_SD005-VM_ACC_DLR]' : 'java.lang.Double' (OPT) MEASURE,
+        "VM_ACC_DST" = '[Measures].[4ZCP_V_SD005-VM_ACC_DST]' : 'java.lang.Double' (OPT) MEASURE,
+        "VM_ACC_HB" = '[Measures].[4ZCP_V_SD005-VM_ACC_HB]' : 'java.lang.Double' (OPT) MEASURE,
+        "VM_ACC_RTL" = '[Measures].[4ZCP_V_SD005-VM_ACC_RTL]' : 'java.lang.Double' (OPT) MEASURE,
+        "VM_MSRP_DISC" = '[Measures].[4ZCP_V_SD005-VM_MSRP_DISC]' : 'java.lang.Double' (OPT) MEASURE
     );
 
-CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
+CREATE OR REPLACE TABLE "bv_lio -_sales _s/4 _historical _and _objectives" I18N us_cst (
         "ALC Available to Dlr Level 01":text,
         "ALC Available to Dlr_Key":text,
+        "Acc_Code Level 01":text,
+        "Acc_Code_Key":text,
         "Base Unit of Measure Level 01":text,
         "Base Unit of Measure_Key":text,
         "Base Unit of Measure_Medium Name":text,
         "Base Unit of Measure_Name":text,
-        "Batch Level 01":text,
-        "Batch_Key":text,
-        "Body Type Level 01":text,
-        "Body Type_Key":text,
+        "Calendar Year/Month Level 01":text,
+        "Calendar Year/Month_Calendar Year (Key)":text,
+        "Calendar Year/Month_Calendar Year/Quarte (Key)":text,
+        "Calendar Year/Month_Calendar Year/Quarte (Long Name)":text,
+        "Calendar Year/Month_Calendar Year/Quarte (Name)":text,
+        "Calendar Year/Month_Calendar month (Key)":text,
+        "Calendar Year/Month_Calendar month (Long Name)":text,
+        "Calendar Year/Month_Calendar month (Medium Name)":text,
+        "Calendar Year/Month_Halfyear (Key)":text,
+        "Calendar Year/Month_Key":text,
+        "Calendar Year/Month_Long Name":text,
+        "Calendar Year/Month_Medium Name":text,
+        "Calendar Year/Month_Number of Days (Key)":text,
+        "Calendar Year/Month_Number of Workdays (Key)":text,
+        "Calendar Year/Month_Quarter (Key)":text,
+        "Calendar Year/Month_Quarter (Long Name)":text,
+        "Calendar Year/Month_Quarter (Name)":text,
+        "Calendar Year/Month_Valid From (Key)":text,
+        "Calendar Year/Month_Valid To (Key)":text,
+        "Condition Category Level 01":text,
+        "Condition Category_Key":text,
+        "Condition Category_Long Name":text,
+        "Condition Class Level 01":text,
+        "Condition Class_Key":text,
+        "Condition Class_Long Name":text,
         "Condition Type Level 01":text,
         "Condition Type_Key":text,
         "Condition Type_Name":text,
@@ -786,10 +768,10 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Country_Key":text,
         "Country_Long Name":text,
         "Country_Name":text,
-        "Currency Level 01":text,
-        "Currency_Key":text,
-        "Currency_Medium Name":text,
-        "Currency_Name":text,
+        "Currency Key Level 01":text,
+        "Currency Key_Key":text,
+        "Currency Key_Medium Name":text,
+        "Currency Key_Name":text,
         "Customer Level 01":text,
         "Customer_APO Location (Key)":text,
         "Customer_APO Location (Medium Name)":text,
@@ -908,8 +890,8 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Customer_Valid until (Key)":text,
         "Customer_Vendor (Key)":text,
         "Customer_Vendor (Medium Name)":text,
-        "Customer_H Level 01":text,
-        "Customer_H_Key":text,
+        "DIM Series ID Level 01":text,
+        "DIM Series ID_Key":text,
         "Day Abbreviated Level 01":text,
         "Day Abbreviated_Key":text,
         "Day Date Level 01":text,
@@ -941,115 +923,34 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Document Currency_Key":text,
         "Document Currency_Medium Name":text,
         "Document Currency_Name":text,
-        "End Customer (Centra Level 01":text,
-        "End Customer (Centra_Key":text,
-        "End Customer (Centra_Medium Name":text,
-        "Fiscal Year Variant Level 01":text,
-        "Fiscal Year Variant_Key":text,
-        "Fiscal Year Variant_Medium Name":text,
+        "GST AREA SN Level 01":text,
+        "GST AREA SN_Key":text,
+        "GST Created By Level 01":text,
+        "GST Created By_Key":text,
+        "GST Created Date Level 01":text,
+        "GST Created Date_Key":text,
+        "GST Legacy Series Level 01":text,
+        "GST Legacy Series_Key":text,
+        "GST Series Name Level 01":text,
+        "GST Series Name_Key":text,
+        "GST Updated BY Level 01":text,
+        "GST Updated BY_Key":text,
+        "GST Updated Date Level 01":text,
+        "GST Updated Date_Key":text,
         "Holiday Flag Level 01":text,
         "Holiday Flag_Key":text,
         "InfoProvider Level 01":text,
         "InfoProvider_Key":text,
         "InfoProvider_Long Name":text,
         "InfoProvider_Name":text,
-        "Internal Vehicle Num Level 01":text,
-        "Internal Vehicle Num_Action Control (MMCT (Key)":text,
-        "Internal Vehicle Num_Action Control (MMCT (Medium Name)":text,
-        "Internal Vehicle Num_Action Control (SDCT (Key)":text,
-        "Internal Vehicle Num_Action Control (SDCT (Medium Name)":text,
-        "Internal Vehicle Num_Allocation Year (Key)":text,
-        "Internal Vehicle Num_Archiving Flag (Key)":text,
-        "Internal Vehicle Num_Authorize Flag (Key)":text,
-        "Internal Vehicle Num_Availability Status (Key)":text,
-        "Internal Vehicle Num_Batch (Key)":text,
-        "Internal Vehicle Num_Configuration (inter (Key)":text,
-        "Internal Vehicle Num_Counter Reading (Key)":text,
-        "Internal Vehicle Num_Creation Date (SDTSP (Key)":text,
-        "Internal Vehicle Num_Currency (Key)":text,
-        "Internal Vehicle Num_Currency (Medium Name)":text,
-        "Internal Vehicle Num_Currency (Name)":text,
-        "Internal Vehicle Num_Customer (Key)":text,
-        "Internal Vehicle Num_Customer (Medium Name)":text,
-        "Internal Vehicle Num_Date of creation (MM (Key)":text,
-        "Internal Vehicle Num_Dummy VIN (Key)":text,
-        "InternalVehicleNum_ETAArrivaltoVPCKey":text,
-        "Internal Vehicle Num_ETA Arrival to VPC (Key)":text,
-        "Internal Vehicle Num_End Customer (Centra (Key)":text,
-        "Internal Vehicle Num_End Customer (Centra (Medium Name)":text,
-        "Internal Vehicle Num_Equipment (Key)":text,
-        "Internal Vehicle Num_Equipment (Medium Name)":text,
-        "Internal Vehicle Num_External Vehicle Num (Key)":text,
-        "Internal Vehicle Num_Flag indicator Used (Key)":text,
-        "Internal Vehicle Num_Fleet Account Number (Key)":text,
-        "Internal Vehicle Num_Gross List Price of (Key)":text,
-        "Internal Vehicle Num_Initial Registration (Key)":text,
-        "Internal Vehicle Num_Key":text,
-        "Internal Vehicle Num_Model Phase Code (Key)":text,
-        "Internal Vehicle Num_Model Year (Key)":text,
-        "Internal Vehicle Num_Name":text,
-        "Internal Vehicle Num_Original Ordering Pa (Key)":text,
-        "Internal Vehicle Num_Parking lot location (Key)":text,
-        "Internal Vehicle Num_Plant (Key)":text,
-        "Internal Vehicle Num_Plant (Medium Name)":text,
-        "Internal Vehicle Num_Plant (Name)":text,
-        "Internal Vehicle Num_Plant Code (Key)":text,
-        "Internal Vehicle Num_Primary Status (Key)":text,
-        "Internal Vehicle Num_Primary Status (Medium Name)":text,
-        "Internal Vehicle Num_Railcar Number (Key)":text,
-        "Internal Vehicle Num_Railcar Shipped Date (Key)":text,
-        "Internal Vehicle Num_Region Code (Key)":text,
-        "Internal Vehicle Num_Sales Campaign (Key)":text,
-        "Internal Vehicle Num_Secondary Status (Key)":text,
-        "Internal Vehicle Num_Secondary Status (Medium Name)":text,
-        "Internal Vehicle Num_Sharing Levels for V (Key)":text,
-        "Internal Vehicle Num_Ship To Dealer Code (Key)":text,
-        "Internal Vehicle Num_Ship To Region Code (Key)":text,
-        "Internal Vehicle Num_Storage Location (Key)":text,
-        "Internal Vehicle Num_Storage Location (Medium Name)":text,
-        "Internal Vehicle Num_Time Stamp for Confi (Key)":text,
-        "Internal Vehicle Num_Time Stamp for Plann (Key)":text,
-        "Internal Vehicle Num_Time Stamp for Produ (Key)":text,
-        "Internal Vehicle Num_Type of Document for (Key)":text,
-        "Internal Vehicle Num_Unit of Measure (Key)":text,
-        "Internal Vehicle Num_Unit of Measure (Medium Name)":text,
-        "Internal Vehicle Num_Unit of Measure (Name)":text,
-        "Internal Vehicle Num_VIN-Dealer Match Dat (Key)":text,
-        "Internal Vehicle Num_VLC Add. Data 1 (Key)":text,
-        "Internal Vehicle Num_VLC Add. Data 10 (Key)":text,
-        "Internal Vehicle Num_VLC Add. Data 2 (Key)":text,
-        "Internal Vehicle Num_VLC Add. Data 3 (Key)":text,
-        "Internal Vehicle Num_VLC Add. Data 4 (Key)":text,
-        "Internal Vehicle Num_VLC Add. Data 5 (Key)":text,
-        "Internal Vehicle Num_VLC Add. Data 6 (Key)":text,
-        "Internal Vehicle Num_VLC Add. Data 7 (Key)":text,
-        "Internal Vehicle Num_VLC Add. Data 8 (Key)":text,
-        "Internal Vehicle Num_VLC Add. Data 9 (Key)":text,
-        "Internal Vehicle Num_VMS-Vehicle Location (Key)":text,
-        "Internal Vehicle Num_Valuation type (Key)":text,
-        "Internal Vehicle Num_Vehicle - Name (Key)":text,
-        "Internal Vehicle Num_Vehicle Exterior Col (Key)":text,
-        "Internal Vehicle Num_Vehicle Identificati (Key)":text,
-        "Internal Vehicle Num_Vehicle Interior Col (Key)":text,
-        "Internal Vehicle Num_Vehicle Miles (Key)":text,
-        "Internal Vehicle Num_Vehicle Model ( Mate (Key)":text,
-        "Internal Vehicle Num_Vehicle Model ( Mate (Medium Name)":text,
-        "Internal Vehicle Num_Vehicle Order YYYYMM (Key)":text,
-        "Internal Vehicle Num_Vehicle RDR Date (Key)":text,
-        "Internal Vehicle Num_Vehicle Sale Type (Key)":text,
-        "Internal Vehicle Num_Vehicle Sale Type (Long Name)":text,
-        "Internal Vehicle Num_Vehicle Search Area (Key)":text,
-        "Internal Vehicle Num_Vehicle Usage (Key)":text,
-        "Internal Vehicle Num_Vendor (Key)":text,
-        "Internal Vehicle Num_Vendor (Medium Name)":text,
-        "Internal Vehicle Num_Vessel Number (Key)":text,
-        "Internal Vehicle Num_Visibility (Key)":text,
         "Item Level 01":text,
         "Item_Key":text,
-        "Legacy Series Level 01":text,
-        "Legacy Series_Key":text,
-        "MMSTA_Primary Stat Level 01":text,
-        "MMSTA_Primary Stat_Key":text,
+        "LIO Code Level 01":text,
+        "LIO Code_Key":text,
+        "Local Currency Level 01":text,
+        "Local Currency_Key":text,
+        "Local Currency_Medium Name":text,
+        "Local Currency_Name":text,
         "MTD Rtl RNK Level 01":text,
         "MTD Rtl RNK_Key":text,
         "Material Level 01":text,
@@ -1234,6 +1135,25 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Model Vehicle Desc_Key":text,
         "Model Year Level 01":text,
         "Model Year_Key":text,
+        "MonthIDYYYYMMLevel01":text,
+        "MonthIDYYYYMM_CalendarYearKey":text,
+        "MonthIDYYYYMM_CalendarYearQuarteKey":text,
+        "MonthIDYYYYMM_CalendarYearQuarteLongName":text,
+        "MonthIDYYYYMM_CalendarYearQuarteName":text,
+        "MonthIDYYYYMM_CalendarmonthKey":text,
+        "MonthIDYYYYMM_CalendarmonthLongName":text,
+        "MonthIDYYYYMM_CalendarmonthMediumName":text,
+        "MonthIDYYYYMM_HalfyearKey":text,
+        "MonthIDYYYYMM_Key":text,
+        "MonthIDYYYYMM_LongName":text,
+        "MonthIDYYYYMM_MediumName":text,
+        "MonthIDYYYYMM_NumberofDaysKey":text,
+        "MonthIDYYYYMM_NumberofWorkdaysKey":text,
+        "MonthIDYYYYMM_QuarterKey":text,
+        "MonthIDYYYYMM_QuarterLongName":text,
+        "MonthIDYYYYMM_QuarterName":text,
+        "MonthIDYYYYMM_ValidFromKey":text,
+        "MonthIDYYYYMM_ValidToKey":text,
         "Month ID ( YYYYMM) Level 01":text,
         "Month ID ( YYYYMM)_Calendar Year (Key)":text,
         "Month ID ( YYYYMM)_Calendar Year/Quarte (Key)":text,
@@ -1253,12 +1173,13 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Month ID ( YYYYMM)_Quarter (Name)":text,
         "Month ID ( YYYYMM)_Valid From (Key)":text,
         "Month ID ( YYYYMM)_Valid To (Key)":text,
+        "Objective Sale Area Level 01":text,
+        "Objective Sale Area_Key":text,
+        "Objective TMNA Ser Level 01":text,
+        "Objective TMNA Ser_Key":text,
         "Primary Status Level 01":text,
         "Primary Status_Key":text,
         "Primary Status_Medium Name":text,
-        "Prod.hierarchy Level 01":text,
-        "Prod.hierarchy_Key":text,
-        "Prod.hierarchy_Name":text,
         "RDR Reversal Date Level 01":text,
         "RDR Reversal Date_Calendar Year (Key)":text,
         "RDR Reversal Date_Calendar Year/Month (Key)":text,
@@ -1286,17 +1207,12 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Region_Key":text,
         "Region_Key (Not Compounded)":text,
         "Region_Name":text,
-        "SDSTA_Secondary Stat Level 01":text,
-        "SDSTA_Secondary Stat_Key":text,
         "Sale Close Flag Level 01":text,
         "Sale Close Flag_Key":text,
         "SaleBase Mid Month F Level 01":text,
         "SaleBase Mid Month F_Key":text,
         "Sales Area Level 01":text,
         "Sales Area_Key":text,
-        "SalesDistrictLevel01":text,
-        "SalesDistrict_Key":text,
-        "SalesDistrict_Name":text,
         "Sales District Level 01":text,
         "Sales District_Key":text,
         "Sales District_Name":text,
@@ -1319,15 +1235,16 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Sales Group_Sales Group Text (Key)":text,
         "Sales Group Text Level 01":text,
         "Sales Group Text_Key":text,
-        "Sales Office Level 01":text,
-        "Sales Office_Key":text,
-        "Sales Office_Name":text,
         "Sales Office Text Level 01":text,
         "Sales Office Text_Key":text,
-        "Sales office Level 01_copy":text,
-        "Sales office_Key_copy":text,
-        "Sales office_Name_copy":text,
+        "Sales office Level 01":text,
+        "Sales office_Key":text,
+        "Sales office_Name":text,
         "Sales office_Sales Office Text (Key)":text,
+        "Sales unit Level 01":text,
+        "Sales unit_Key":text,
+        "Sales unit_Medium Name":text,
+        "Sales unit_Name":text,
         "Secondary Status Level 01":text,
         "Secondary Status_Key":text,
         "Secondary Status_Medium Name":text,
@@ -1337,8 +1254,10 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Series_Series Description (Key)":text,
         "Series Description Level 01":text,
         "Series Description_Key":text,
-        "Series/Group Level 01":text,
-        "Series/Group_Key":text,
+        "Series Name Level 01":text,
+        "Series Name_Key":text,
+        "Series SN Level 01":text,
+        "Series SN_Key":text,
         "Sold-to Party Level 01":text,
         "Sold-to Party_APO Location (Key)":text,
         "Sold-to Party_APO Location (Medium Name)":text,
@@ -1459,14 +1378,6 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Sold-to Party_Vendor (Medium Name)":text,
         "TMS Holiday Flag Level 01":text,
         "TMS Holiday Flag_Key":text,
-        "VT_53_REV_AUTH Level 01":text,
-        "VT_53_REV_AUTH_Key":text,
-        "VT_53_REV_REASON Level 01":text,
-        "VT_53_REV_REASON_Key":text,
-        "VT_53_REV_TO_DLR Level 01":text,
-        "VT_53_REV_TO_DLR_Key":text,
-        "Vehicle Exterior Col Level 01":text,
-        "Vehicle Exterior Col_Key":text,
         "Vehicle GUID (Global Level 01":text,
         "Vehicle GUID (Global_Key":text,
         "Vehicle GUID (Global_Name":text,
@@ -1496,8 +1407,6 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Vehicle GUID (Global_Vehicle Wheel (Name)":text,
         "Vehicle Identificati Level 01":text,
         "Vehicle Identificati_Key":text,
-        "Vehicle Interior Col Level 01":text,
-        "Vehicle Interior Col_Key":text,
         "Vehicle RDR Date Level 01":text,
         "Vehicle RDR Date_Calendar Year (Key)":text,
         "Vehicle RDR Date_Calendar Year/Month (Key)":text,
@@ -1517,34 +1426,66 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
         "Vehicle RDR Date_Quarter (Name)":text,
         "Vehicle Usage Level 01":text,
         "Vehicle Usage_Key":text,
+        "YTD Rtl RNK Level 01":text,
+        "YTD Rtl RNK_Key":text,
+        "Condition Rate":double,
+        "Condition Value":double,
         "GPP Objective":double,
-        "Gross List Price of":double,
         "Net Value":double,
         "Number of Records":double,
+        "Order quantity":double,
         "Qty in Base UoM":double,
         "Subtotal 1":double,
         "Subtotal 2":double,
         "Subtotal 3":double,
         "Subtotal 4":double,
         "Subtotal 5":double,
-        "Subtotal 6":double
+        "Subtotal 6":double,
+        "VM_ACC_DLR":double,
+        "VM_ACC_DST":double,
+        "VM_ACC_HB":double,
+        "VM_ACC_RTL":double,
+        "VM_MSRP_DISC":double
     )
     FOLDER = '/02 - base views/sap bw4hana/hcpr'
     CACHE OFF
     TIMETOLIVEINCACHE DEFAULT
-    ADD SEARCHMETHOD "bv_retail_sales_S4_history_objectives"(
+    ADD SEARCHMETHOD "bv_lio -_sales _s/4 _historical _and _objectives"(
         I18N us_cst
         CONSTRAINTS (
              ADD "ALC Available to Dlr Level 01" (any) OPT ANY
              ADD "ALC Available to Dlr_Key" (any) OPT ANY
+             ADD "Acc_Code Level 01" (any) OPT ANY
+             ADD "Acc_Code_Key" (any) OPT ANY
              ADD "Base Unit of Measure Level 01" (any) OPT ANY
              ADD "Base Unit of Measure_Key" (any) OPT ANY
              ADD "Base Unit of Measure_Medium Name" (any) OPT ANY
              ADD "Base Unit of Measure_Name" (any) OPT ANY
-             ADD "Batch Level 01" (any) OPT ANY
-             ADD "Batch_Key" (any) OPT ANY
-             ADD "Body Type Level 01" (any) OPT ANY
-             ADD "Body Type_Key" (any) OPT ANY
+             ADD "Calendar Year/Month Level 01" (any) OPT ANY
+             ADD "Calendar Year/Month_Calendar Year (Key)" (any) OPT ANY
+             ADD "Calendar Year/Month_Calendar Year/Quarte (Key)" (any) OPT ANY
+             ADD "Calendar Year/Month_Calendar Year/Quarte (Long Name)" (any) OPT ANY
+             ADD "Calendar Year/Month_Calendar Year/Quarte (Name)" (any) OPT ANY
+             ADD "Calendar Year/Month_Calendar month (Key)" (any) OPT ANY
+             ADD "Calendar Year/Month_Calendar month (Long Name)" (any) OPT ANY
+             ADD "Calendar Year/Month_Calendar month (Medium Name)" (any) OPT ANY
+             ADD "Calendar Year/Month_Halfyear (Key)" (any) OPT ANY
+             ADD "Calendar Year/Month_Key" (any) OPT ANY
+             ADD "Calendar Year/Month_Long Name" (any) OPT ANY
+             ADD "Calendar Year/Month_Medium Name" (any) OPT ANY
+             ADD "Calendar Year/Month_Number of Days (Key)" (any) OPT ANY
+             ADD "Calendar Year/Month_Number of Workdays (Key)" (any) OPT ANY
+             ADD "Calendar Year/Month_Quarter (Key)" (any) OPT ANY
+             ADD "Calendar Year/Month_Quarter (Long Name)" (any) OPT ANY
+             ADD "Calendar Year/Month_Quarter (Name)" (any) OPT ANY
+             ADD "Calendar Year/Month_Valid From (Key)" (any) OPT ANY
+             ADD "Calendar Year/Month_Valid To (Key)" (any) OPT ANY
+             ADD "Condition Category Level 01" (any) OPT ANY
+             ADD "Condition Category_Key" (any) OPT ANY
+             ADD "Condition Category_Long Name" (any) OPT ANY
+             ADD "Condition Class Level 01" (any) OPT ANY
+             ADD "Condition Class_Key" (any) OPT ANY
+             ADD "Condition Class_Long Name" (any) OPT ANY
              ADD "Condition Type Level 01" (any) OPT ANY
              ADD "Condition Type_Key" (any) OPT ANY
              ADD "Condition Type_Name" (any) OPT ANY
@@ -1552,10 +1493,10 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Country_Key" (any) OPT ANY
              ADD "Country_Long Name" (any) OPT ANY
              ADD "Country_Name" (any) OPT ANY
-             ADD "Currency Level 01" (any) OPT ANY
-             ADD "Currency_Key" (any) OPT ANY
-             ADD "Currency_Medium Name" (any) OPT ANY
-             ADD "Currency_Name" (any) OPT ANY
+             ADD "Currency Key Level 01" (any) OPT ANY
+             ADD "Currency Key_Key" (any) OPT ANY
+             ADD "Currency Key_Medium Name" (any) OPT ANY
+             ADD "Currency Key_Name" (any) OPT ANY
              ADD "Customer Level 01" (any) OPT ANY
              ADD "Customer_APO Location (Key)" (any) OPT ANY
              ADD "Customer_APO Location (Medium Name)" (any) OPT ANY
@@ -1674,8 +1615,8 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Customer_Valid until (Key)" (any) OPT ANY
              ADD "Customer_Vendor (Key)" (any) OPT ANY
              ADD "Customer_Vendor (Medium Name)" (any) OPT ANY
-             ADD "Customer_H Level 01" (any) OPT ANY
-             ADD "Customer_H_Key" (any) OPT ANY
+             ADD "DIM Series ID Level 01" (any) OPT ANY
+             ADD "DIM Series ID_Key" (any) OPT ANY
              ADD "Day Abbreviated Level 01" (any) OPT ANY
              ADD "Day Abbreviated_Key" (any) OPT ANY
              ADD "Day Date Level 01" (any) OPT ANY
@@ -1707,115 +1648,34 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Document Currency_Key" (any) OPT ANY
              ADD "Document Currency_Medium Name" (any) OPT ANY
              ADD "Document Currency_Name" (any) OPT ANY
-             ADD "End Customer (Centra Level 01" (any) OPT ANY
-             ADD "End Customer (Centra_Key" (any) OPT ANY
-             ADD "End Customer (Centra_Medium Name" (any) OPT ANY
-             ADD "Fiscal Year Variant Level 01" (any) OPT ANY
-             ADD "Fiscal Year Variant_Key" (any) OPT ANY
-             ADD "Fiscal Year Variant_Medium Name" (any) OPT ANY
+             ADD "GST AREA SN Level 01" (any) OPT ANY
+             ADD "GST AREA SN_Key" (any) OPT ANY
+             ADD "GST Created By Level 01" (any) OPT ANY
+             ADD "GST Created By_Key" (any) OPT ANY
+             ADD "GST Created Date Level 01" (any) OPT ANY
+             ADD "GST Created Date_Key" (any) OPT ANY
+             ADD "GST Legacy Series Level 01" (any) OPT ANY
+             ADD "GST Legacy Series_Key" (any) OPT ANY
+             ADD "GST Series Name Level 01" (any) OPT ANY
+             ADD "GST Series Name_Key" (any) OPT ANY
+             ADD "GST Updated BY Level 01" (any) OPT ANY
+             ADD "GST Updated BY_Key" (any) OPT ANY
+             ADD "GST Updated Date Level 01" (any) OPT ANY
+             ADD "GST Updated Date_Key" (any) OPT ANY
              ADD "Holiday Flag Level 01" (any) OPT ANY
              ADD "Holiday Flag_Key" (any) OPT ANY
              ADD "InfoProvider Level 01" (any) OPT ANY
              ADD "InfoProvider_Key" (any) OPT ANY
              ADD "InfoProvider_Long Name" (any) OPT ANY
              ADD "InfoProvider_Name" (any) OPT ANY
-             ADD "Internal Vehicle Num Level 01" (any) OPT ANY
-             ADD "Internal Vehicle Num_Action Control (MMCT (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Action Control (MMCT (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Action Control (SDCT (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Action Control (SDCT (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Allocation Year (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Archiving Flag (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Authorize Flag (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Availability Status (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Batch (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Configuration (inter (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Counter Reading (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Creation Date (SDTSP (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Currency (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Currency (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Currency (Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Customer (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Customer (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Date of creation (MM (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Dummy VIN (Key)" (any) OPT ANY
-             ADD "InternalVehicleNum_ETAArrivaltoVPCKey" (any) OPT ANY
-             ADD "Internal Vehicle Num_ETA Arrival to VPC (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_End Customer (Centra (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_End Customer (Centra (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Equipment (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Equipment (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_External Vehicle Num (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Flag indicator Used (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Fleet Account Number (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Gross List Price of (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Initial Registration (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Key" (any) OPT ANY
-             ADD "Internal Vehicle Num_Model Phase Code (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Model Year (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Name" (any) OPT ANY
-             ADD "Internal Vehicle Num_Original Ordering Pa (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Parking lot location (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Plant (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Plant (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Plant (Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Plant Code (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Primary Status (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Primary Status (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Railcar Number (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Railcar Shipped Date (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Region Code (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Sales Campaign (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Secondary Status (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Secondary Status (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Sharing Levels for V (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Ship To Dealer Code (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Ship To Region Code (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Storage Location (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Storage Location (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Time Stamp for Confi (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Time Stamp for Plann (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Time Stamp for Produ (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Type of Document for (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Unit of Measure (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Unit of Measure (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Unit of Measure (Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VIN-Dealer Match Dat (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VLC Add. Data 1 (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VLC Add. Data 10 (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VLC Add. Data 2 (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VLC Add. Data 3 (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VLC Add. Data 4 (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VLC Add. Data 5 (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VLC Add. Data 6 (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VLC Add. Data 7 (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VLC Add. Data 8 (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VLC Add. Data 9 (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_VMS-Vehicle Location (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Valuation type (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle - Name (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Exterior Col (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Identificati (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Interior Col (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Miles (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Model ( Mate (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Model ( Mate (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Order YYYYMM (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle RDR Date (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Sale Type (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Sale Type (Long Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Search Area (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vehicle Usage (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vendor (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vendor (Medium Name)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Vessel Number (Key)" (any) OPT ANY
-             ADD "Internal Vehicle Num_Visibility (Key)" (any) OPT ANY
              ADD "Item Level 01" (any) OPT ANY
              ADD "Item_Key" (any) OPT ANY
-             ADD "Legacy Series Level 01" (any) OPT ANY
-             ADD "Legacy Series_Key" (any) OPT ANY
-             ADD "MMSTA_Primary Stat Level 01" (any) OPT ANY
-             ADD "MMSTA_Primary Stat_Key" (any) OPT ANY
+             ADD "LIO Code Level 01" (any) OPT ANY
+             ADD "LIO Code_Key" (any) OPT ANY
+             ADD "Local Currency Level 01" (any) OPT ANY
+             ADD "Local Currency_Key" (any) OPT ANY
+             ADD "Local Currency_Medium Name" (any) OPT ANY
+             ADD "Local Currency_Name" (any) OPT ANY
              ADD "MTD Rtl RNK Level 01" (any) OPT ANY
              ADD "MTD Rtl RNK_Key" (any) OPT ANY
              ADD "Material Level 01" (any) OPT ANY
@@ -2000,6 +1860,25 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Model Vehicle Desc_Key" (any) OPT ANY
              ADD "Model Year Level 01" (any) OPT ANY
              ADD "Model Year_Key" (any) OPT ANY
+             ADD "MonthIDYYYYMMLevel01" (any) OPT ANY
+             ADD "MonthIDYYYYMM_CalendarYearKey" (any) OPT ANY
+             ADD "MonthIDYYYYMM_CalendarYearQuarteKey" (any) OPT ANY
+             ADD "MonthIDYYYYMM_CalendarYearQuarteLongName" (any) OPT ANY
+             ADD "MonthIDYYYYMM_CalendarYearQuarteName" (any) OPT ANY
+             ADD "MonthIDYYYYMM_CalendarmonthKey" (any) OPT ANY
+             ADD "MonthIDYYYYMM_CalendarmonthLongName" (any) OPT ANY
+             ADD "MonthIDYYYYMM_CalendarmonthMediumName" (any) OPT ANY
+             ADD "MonthIDYYYYMM_HalfyearKey" (any) OPT ANY
+             ADD "MonthIDYYYYMM_Key" (any) OPT ANY
+             ADD "MonthIDYYYYMM_LongName" (any) OPT ANY
+             ADD "MonthIDYYYYMM_MediumName" (any) OPT ANY
+             ADD "MonthIDYYYYMM_NumberofDaysKey" (any) OPT ANY
+             ADD "MonthIDYYYYMM_NumberofWorkdaysKey" (any) OPT ANY
+             ADD "MonthIDYYYYMM_QuarterKey" (any) OPT ANY
+             ADD "MonthIDYYYYMM_QuarterLongName" (any) OPT ANY
+             ADD "MonthIDYYYYMM_QuarterName" (any) OPT ANY
+             ADD "MonthIDYYYYMM_ValidFromKey" (any) OPT ANY
+             ADD "MonthIDYYYYMM_ValidToKey" (any) OPT ANY
              ADD "Month ID ( YYYYMM) Level 01" (any) OPT ANY
              ADD "Month ID ( YYYYMM)_Calendar Year (Key)" (any) OPT ANY
              ADD "Month ID ( YYYYMM)_Calendar Year/Quarte (Key)" (any) OPT ANY
@@ -2019,12 +1898,13 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Month ID ( YYYYMM)_Quarter (Name)" (any) OPT ANY
              ADD "Month ID ( YYYYMM)_Valid From (Key)" (any) OPT ANY
              ADD "Month ID ( YYYYMM)_Valid To (Key)" (any) OPT ANY
+             ADD "Objective Sale Area Level 01" (any) OPT ANY
+             ADD "Objective Sale Area_Key" (any) OPT ANY
+             ADD "Objective TMNA Ser Level 01" (any) OPT ANY
+             ADD "Objective TMNA Ser_Key" (any) OPT ANY
              ADD "Primary Status Level 01" (any) OPT ANY
              ADD "Primary Status_Key" (any) OPT ANY
              ADD "Primary Status_Medium Name" (any) OPT ANY
-             ADD "Prod.hierarchy Level 01" (any) OPT ANY
-             ADD "Prod.hierarchy_Key" (any) OPT ANY
-             ADD "Prod.hierarchy_Name" (any) OPT ANY
              ADD "RDR Reversal Date Level 01" (any) OPT ANY
              ADD "RDR Reversal Date_Calendar Year (Key)" (any) OPT ANY
              ADD "RDR Reversal Date_Calendar Year/Month (Key)" (any) OPT ANY
@@ -2052,17 +1932,12 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Region_Key" (any) OPT ANY
              ADD "Region_Key (Not Compounded)" (any) OPT ANY
              ADD "Region_Name" (any) OPT ANY
-             ADD "SDSTA_Secondary Stat Level 01" (any) OPT ANY
-             ADD "SDSTA_Secondary Stat_Key" (any) OPT ANY
              ADD "Sale Close Flag Level 01" (any) OPT ANY
              ADD "Sale Close Flag_Key" (any) OPT ANY
              ADD "SaleBase Mid Month F Level 01" (any) OPT ANY
              ADD "SaleBase Mid Month F_Key" (any) OPT ANY
              ADD "Sales Area Level 01" (any) OPT ANY
              ADD "Sales Area_Key" (any) OPT ANY
-             ADD "SalesDistrictLevel01" (any) OPT ANY
-             ADD "SalesDistrict_Key" (any) OPT ANY
-             ADD "SalesDistrict_Name" (any) OPT ANY
              ADD "Sales District Level 01" (any) OPT ANY
              ADD "Sales District_Key" (any) OPT ANY
              ADD "Sales District_Name" (any) OPT ANY
@@ -2085,15 +1960,16 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Sales Group_Sales Group Text (Key)" (any) OPT ANY
              ADD "Sales Group Text Level 01" (any) OPT ANY
              ADD "Sales Group Text_Key" (any) OPT ANY
-             ADD "Sales Office Level 01" (any) OPT ANY
-             ADD "Sales Office_Key" (any) OPT ANY
-             ADD "Sales Office_Name" (any) OPT ANY
              ADD "Sales Office Text Level 01" (any) OPT ANY
              ADD "Sales Office Text_Key" (any) OPT ANY
-             ADD "Sales office Level 01_copy" (any) OPT ANY
-             ADD "Sales office_Key_copy" (any) OPT ANY
-             ADD "Sales office_Name_copy" (any) OPT ANY
+             ADD "Sales office Level 01" (any) OPT ANY
+             ADD "Sales office_Key" (any) OPT ANY
+             ADD "Sales office_Name" (any) OPT ANY
              ADD "Sales office_Sales Office Text (Key)" (any) OPT ANY
+             ADD "Sales unit Level 01" (any) OPT ANY
+             ADD "Sales unit_Key" (any) OPT ANY
+             ADD "Sales unit_Medium Name" (any) OPT ANY
+             ADD "Sales unit_Name" (any) OPT ANY
              ADD "Secondary Status Level 01" (any) OPT ANY
              ADD "Secondary Status_Key" (any) OPT ANY
              ADD "Secondary Status_Medium Name" (any) OPT ANY
@@ -2103,8 +1979,10 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Series_Series Description (Key)" (any) OPT ANY
              ADD "Series Description Level 01" (any) OPT ANY
              ADD "Series Description_Key" (any) OPT ANY
-             ADD "Series/Group Level 01" (any) OPT ANY
-             ADD "Series/Group_Key" (any) OPT ANY
+             ADD "Series Name Level 01" (any) OPT ANY
+             ADD "Series Name_Key" (any) OPT ANY
+             ADD "Series SN Level 01" (any) OPT ANY
+             ADD "Series SN_Key" (any) OPT ANY
              ADD "Sold-to Party Level 01" (any) OPT ANY
              ADD "Sold-to Party_APO Location (Key)" (any) OPT ANY
              ADD "Sold-to Party_APO Location (Medium Name)" (any) OPT ANY
@@ -2225,14 +2103,6 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Sold-to Party_Vendor (Medium Name)" (any) OPT ANY
              ADD "TMS Holiday Flag Level 01" (any) OPT ANY
              ADD "TMS Holiday Flag_Key" (any) OPT ANY
-             ADD "VT_53_REV_AUTH Level 01" (any) OPT ANY
-             ADD "VT_53_REV_AUTH_Key" (any) OPT ANY
-             ADD "VT_53_REV_REASON Level 01" (any) OPT ANY
-             ADD "VT_53_REV_REASON_Key" (any) OPT ANY
-             ADD "VT_53_REV_TO_DLR Level 01" (any) OPT ANY
-             ADD "VT_53_REV_TO_DLR_Key" (any) OPT ANY
-             ADD "Vehicle Exterior Col Level 01" (any) OPT ANY
-             ADD "Vehicle Exterior Col_Key" (any) OPT ANY
              ADD "Vehicle GUID (Global Level 01" (any) OPT ANY
              ADD "Vehicle GUID (Global_Key" (any) OPT ANY
              ADD "Vehicle GUID (Global_Name" (any) OPT ANY
@@ -2262,8 +2132,6 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Vehicle GUID (Global_Vehicle Wheel (Name)" (any) OPT ANY
              ADD "Vehicle Identificati Level 01" (any) OPT ANY
              ADD "Vehicle Identificati_Key" (any) OPT ANY
-             ADD "Vehicle Interior Col Level 01" (any) OPT ANY
-             ADD "Vehicle Interior Col_Key" (any) OPT ANY
              ADD "Vehicle RDR Date Level 01" (any) OPT ANY
              ADD "Vehicle RDR Date_Calendar Year (Key)" (any) OPT ANY
              ADD "Vehicle RDR Date_Calendar Year/Month (Key)" (any) OPT ANY
@@ -2283,10 +2151,14 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Vehicle RDR Date_Quarter (Name)" (any) OPT ANY
              ADD "Vehicle Usage Level 01" (any) OPT ANY
              ADD "Vehicle Usage_Key" (any) OPT ANY
+             ADD "YTD Rtl RNK Level 01" (any) OPT ANY
+             ADD "YTD Rtl RNK_Key" (any) OPT ANY
+             ADD "Condition Rate" (any) OPT ANY
+             ADD "Condition Value" (any) OPT ANY
              ADD "GPP Objective" (any) OPT ANY
-             ADD "Gross List Price of" (any) OPT ANY
              ADD "Net Value" (any) OPT ANY
              ADD "Number of Records" (any) OPT ANY
+             ADD "Order quantity" (any) OPT ANY
              ADD "Qty in Base UoM" (any) OPT ANY
              ADD "Subtotal 1" (any) OPT ANY
              ADD "Subtotal 2" (any) OPT ANY
@@ -2294,9 +2166,14 @@ CREATE OR REPLACE TABLE "bv_retail_sales_S4_history_objectives" I18N us_cst (
              ADD "Subtotal 4" (any) OPT ANY
              ADD "Subtotal 5" (any) OPT ANY
              ADD "Subtotal 6" (any) OPT ANY
+             ADD "VM_ACC_DLR" (any) OPT ANY
+             ADD "VM_ACC_DST" (any) OPT ANY
+             ADD "VM_ACC_HB" (any) OPT ANY
+             ADD "VM_ACC_RTL" (any) OPT ANY
+             ADD "VM_MSRP_DISC" (any) OPT ANY
         )
-        OUTPUTLIST ("ALC Available to Dlr Level 01", "ALC Available to Dlr_Key", "Base Unit of Measure Level 01", "Base Unit of Measure_Key", "Base Unit of Measure_Medium Name", "Base Unit of Measure_Name", "Batch Level 01", "Batch_Key", "Body Type Level 01", "Body Type_Key", "Condition Type Level 01", "Condition Type_Key", "Condition Type_Name", "Country Level 01", "Country_Key", "Country_Long Name", "Country_Name", "Currency Level 01", "Currency_Key", "Currency_Medium Name", "Currency_Name", "Customer Level 01", "Customer_APO Location (Key)", "Customer_APO Location (Medium Name)", "Customer_Account Group (Key)", "Customer_Account Group (Medium Name)", "Customer_Address (Key)", "Customer_BAS: City District (Key)", "Customer_BAS: PO Box Location (Key)", "Customer_BAS:POBox PostalCode (Key)", "Customer_BAS:PstCde(Geo-Rel.) (Key)", "Customer_BP Category (Key)", "Customer_BP Category (Long Name)", "Customer_BP Grouping (Key)", "Customer_BP Grouping (Medium Name)", "Customer_BP Grouping (Name)", "Customer_BP: Group Type (Key)", "Customer_BP: Group Type (Medium Name)", "Customer_BP: Group Type (Name)", "Customer_Branch Category (Key)", "Customer_Business Partner (Key)", "Customer_Business Partner (Long Name)", "Customer_Business Partner (Medium Name)", "Customer_Business Partner (Name)", "Customer_Call Frequency (Key)", "Customer_Country (Key)", "Customer_Country (Long Name)", "Customer_Country (Name)", "Customer_Cust.ID Partner Sys. (Key)", "Customer_Customer Market (Key)", "Customer_Customer classific. (Key)", "Customer_Customer classific. (Name)", "Customer_Customer is Consumer (Key)", "Customer_D-U-N-S Number (Key)", "Customer_D-U-N-S Number (Long Name)", "Customer_DatSrc.ID of GeoLoct (Key)", "Customer_Distribution Channel (Key)", "Customer_Distribution Channel (Name)", "Customer_Division (Key)", "Customer_Division (Name)", "Customer_Fax number (Key)", "Customer_Fiscal Year Variant (Key)", "Customer_Fiscal Year Variant (Medium Name)", "Customer_Geo-precision (Key)", "Customer_Geo-precision (Long Name)", "Customer_Geo-precision (Medium Name)", "Customer_Geo-precision (Name)", "Customer_Geographical Height (Key)", "Customer_H Level 01", "Customer_H_Key", "Customer_Identification Numbe (Key)", "Customer_Identification Type (Key)", "Customer_Industry (Key)", "Customer_Industry (Name)", "Customer_Industry Code 2 (Key)", "Customer_Industry Code 2 (Name)", "Customer_Industry Code 3 (Key)", "Customer_Industry Code 3 (Name)", "Customer_Industry Code 4 (Key)", "Customer_Industry Code 4 (Name)", "Customer_Industry Code 5 (Key)", "Customer_Industry Code 5 (Name)", "Customer_Industry code 1 (Key)", "Customer_Industry code 1 (Name)", "Customer_Key", "Customer_Key Account (Key)", "Customer_Language key (Key)", "Customer_Language key (Name)", "Customer_Latitude (Key)", "Customer_Location (Key)", "Customer_Longitude (Key)", "Customer_Medium Name", "Customer_Name (Key)", "Customer_Name 2 (Key)", "Customer_Name 3 (Key)", "Customer_Nielsen Indicator (Key)", "Customer_Nielsen Indicator (Name)", "Customer_No. Customer DC (Key)", "Customer_One-Time Account (Key)", "Customer_P.O. Box (Key)", "Customer_Partner Company (Key)", "Customer_Partner Company (Medium Name)", "Customer_Plant (Key)", "Customer_Plant (Medium Name)", "Customer_Plant (Name)", "Customer_Postal Code (Key)", "Customer_Region (Key)", "Customer_Region (Name)", "Customer_Sales Area (Key)", "Customer_Sales District (Key)", "Customer_Sales District (Name)", "Customer_Sales District Text (Key)", "Customer_Sales Group (Key)", "Customer_Sales Group (Name)", "Customer_Sales Group Text (Key)", "Customer_Sales Office Text (Key)", "Customer_Sales Organization (Key)", "Customer_Sales Organization (Long Name)", "Customer_Sales office (Key)", "Customer_Sales office (Name)", "Customer_Sales unit (Key)", "Customer_Sales unit (Medium Name)", "Customer_Sales unit (Name)", "Customer_Search term A (Key)", "Customer_Search term B (Key)", "Customer_Sort Field (Key)", "Customer_Source System (Key)", "Customer_Source System (Medium Name)", "Customer_State (Key)", "Customer_State (Name)", "Customer_Street (Key)", "Customer_Tax Code 1 (Key)", "Customer_Tax Number 2 (Key)", "Customer_Tax Number 3 (Key)", "Customer_Telephone 1 (Key)", "Customer_Usage Indicator (Key)", "Customer_Usage Indicator (Name)", "Customer_Valid From (Key)", "Customer_Valid until (Key)", "Customer_Vendor (Key)", "Customer_Vendor (Medium Name)", "Day Abbreviated Level 01", "Day Abbreviated_Key", "Day Date Level 01", "Day Date_Calendar Year (Key)", "Day Date_Calendar Year/Month (Key)", "Day Date_Calendar Year/Month (Long Name)", "Day Date_Calendar Year/Month (Medium Name)", "Day Date_Calendar Year/Quarte (Key)", "Day Date_Calendar Year/Quarte (Long Name)", "Day Date_Calendar Year/Quarte (Name)", "Day Date_Calendar Year/Week (Key)", "Day Date_Calendar month (Key)", "Day Date_Calendar month (Long Name)", "Day Date_Calendar month (Medium Name)", "Day Date_Halfyear (Key)", "Day Date_Key", "Day Date_Quarter (Key)", "Day Date_Quarter (Long Name)", "Day Date_Quarter (Name)", "Day Name Level 01", "Day Name_Key", "Day Of Month Level 01", "Day Of Month_Key", "Day Of Year Level 01", "Day Of Year_Key", "Day in Month Level 01", "Day in Month_Key", "Document Currency Level 01", "Document Currency_Key", "Document Currency_Medium Name", "Document Currency_Name", "End Customer (Centra Level 01", "End Customer (Centra_Key", "End Customer (Centra_Medium Name", "Fiscal Year Variant Level 01", "Fiscal Year Variant_Key", "Fiscal Year Variant_Medium Name", "GPP Objective", "Gross List Price of", "Holiday Flag Level 01", "Holiday Flag_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Internal Vehicle Num Level 01", "Internal Vehicle Num_Action Control (MMCT (Key)", "Internal Vehicle Num_Action Control (MMCT (Medium Name)", "Internal Vehicle Num_Action Control (SDCT (Key)", "Internal Vehicle Num_Action Control (SDCT (Medium Name)", "Internal Vehicle Num_Allocation Year (Key)", "Internal Vehicle Num_Archiving Flag (Key)", "Internal Vehicle Num_Authorize Flag (Key)", "Internal Vehicle Num_Availability Status (Key)", "Internal Vehicle Num_Batch (Key)", "Internal Vehicle Num_Configuration (inter (Key)", "Internal Vehicle Num_Counter Reading (Key)", "Internal Vehicle Num_Creation Date (SDTSP (Key)", "Internal Vehicle Num_Currency (Key)", "Internal Vehicle Num_Currency (Medium Name)", "Internal Vehicle Num_Currency (Name)", "Internal Vehicle Num_Customer (Key)", "Internal Vehicle Num_Customer (Medium Name)", "Internal Vehicle Num_Date of creation (MM (Key)", "Internal Vehicle Num_Dummy VIN (Key)", "Internal Vehicle Num_ETA Arrival to VPC (Key)", "Internal Vehicle Num_End Customer (Centra (Key)", "Internal Vehicle Num_End Customer (Centra (Medium Name)", "Internal Vehicle Num_Equipment (Key)", "Internal Vehicle Num_Equipment (Medium Name)", "Internal Vehicle Num_External Vehicle Num (Key)", "Internal Vehicle Num_Flag indicator Used (Key)", "Internal Vehicle Num_Fleet Account Number (Key)", "Internal Vehicle Num_Gross List Price of (Key)", "Internal Vehicle Num_Initial Registration (Key)", "Internal Vehicle Num_Key", "Internal Vehicle Num_Model Phase Code (Key)", "Internal Vehicle Num_Model Year (Key)", "Internal Vehicle Num_Name", "Internal Vehicle Num_Original Ordering Pa (Key)", "Internal Vehicle Num_Parking lot location (Key)", "Internal Vehicle Num_Plant (Key)", "Internal Vehicle Num_Plant (Medium Name)", "Internal Vehicle Num_Plant (Name)", "Internal Vehicle Num_Plant Code (Key)", "Internal Vehicle Num_Primary Status (Key)", "Internal Vehicle Num_Primary Status (Medium Name)", "Internal Vehicle Num_Railcar Number (Key)", "Internal Vehicle Num_Railcar Shipped Date (Key)", "Internal Vehicle Num_Region Code (Key)", "Internal Vehicle Num_Sales Campaign (Key)", "Internal Vehicle Num_Secondary Status (Key)", "Internal Vehicle Num_Secondary Status (Medium Name)", "Internal Vehicle Num_Sharing Levels for V (Key)", "Internal Vehicle Num_Ship To Dealer Code (Key)", "Internal Vehicle Num_Ship To Region Code (Key)", "Internal Vehicle Num_Storage Location (Key)", "Internal Vehicle Num_Storage Location (Medium Name)", "Internal Vehicle Num_Time Stamp for Confi (Key)", "Internal Vehicle Num_Time Stamp for Plann (Key)", "Internal Vehicle Num_Time Stamp for Produ (Key)", "Internal Vehicle Num_Type of Document for (Key)", "Internal Vehicle Num_Unit of Measure (Key)", "Internal Vehicle Num_Unit of Measure (Medium Name)", "Internal Vehicle Num_Unit of Measure (Name)", "Internal Vehicle Num_VIN-Dealer Match Dat (Key)", "Internal Vehicle Num_VLC Add. Data 1 (Key)", "Internal Vehicle Num_VLC Add. Data 10 (Key)", "Internal Vehicle Num_VLC Add. Data 2 (Key)", "Internal Vehicle Num_VLC Add. Data 3 (Key)", "Internal Vehicle Num_VLC Add. Data 4 (Key)", "Internal Vehicle Num_VLC Add. Data 5 (Key)", "Internal Vehicle Num_VLC Add. Data 6 (Key)", "Internal Vehicle Num_VLC Add. Data 7 (Key)", "Internal Vehicle Num_VLC Add. Data 8 (Key)", "Internal Vehicle Num_VLC Add. Data 9 (Key)", "Internal Vehicle Num_VMS-Vehicle Location (Key)", "Internal Vehicle Num_Valuation type (Key)", "Internal Vehicle Num_Vehicle - Name (Key)", "Internal Vehicle Num_Vehicle Exterior Col (Key)", "Internal Vehicle Num_Vehicle Identificati (Key)", "Internal Vehicle Num_Vehicle Interior Col (Key)", "Internal Vehicle Num_Vehicle Miles (Key)", "Internal Vehicle Num_Vehicle Model ( Mate (Key)", "Internal Vehicle Num_Vehicle Model ( Mate (Medium Name)", "Internal Vehicle Num_Vehicle Order YYYYMM (Key)", "Internal Vehicle Num_Vehicle RDR Date (Key)", "Internal Vehicle Num_Vehicle Sale Type (Key)", "Internal Vehicle Num_Vehicle Sale Type (Long Name)", "Internal Vehicle Num_Vehicle Search Area (Key)", "Internal Vehicle Num_Vehicle Usage (Key)", "Internal Vehicle Num_Vendor (Key)", "Internal Vehicle Num_Vendor (Medium Name)", "Internal Vehicle Num_Vessel Number (Key)", "Internal Vehicle Num_Visibility (Key)", "InternalVehicleNum_ETAArrivaltoVPCKey", "Item Level 01", "Item_Key", "Legacy Series Level 01", "Legacy Series_Key", "MMSTA_Primary Stat Level 01", "MMSTA_Primary Stat_Key", "MTD Rtl RNK Level 01", "MTD Rtl RNK_Key", "Material Group Level 01", "Material Group Long Level 01", "Material Group Long_Key", "Material Group_Asset Class (Key)", "Material Group_Asset Class (Long Name)", "Material Group_Asset Class (Name)", "Material Group_Authorization Group (Key)", "Material Group_Authorization Group (Medium Name)", "Material Group_Brazilian NCM Code (Key)", "Material Group_Department (Key)", "Material Group_Department (Medium Name)", "Material Group_Division (Key)", "Material Group_Division (Name)", "Material Group_Key", "Material Group_Material Group Long (Key)", "Material Group_Material group mater (Key)", "Material Group_Material group refer (Key)", "Material Group_Material group-relat (Key)", "Material Group_Name", "Material Group_Product Category (Key)", "Material Group_Product Category (Long Name)", "Material Group_Product Category (Medium Name)", "Material Group_Product Category (Name)", "Material Group_Purchasing Value Key (Key)", "Material Group_Source System (Key)", "Material Group_Source System (Medium Name)", "Material Group_Valuation Class (Key)", "Material Group_Valuation Class (Medium Name)", "Material Group_Weight unit (Key)", "Material Group_Weight unit (Medium Name)", "Material Group_Weight unit (Name)", "Material Level 01", "Material_AFS Grid (Key)", "Material_AFS Grid (Name)", "Material_AFS: Color (Key)", "Material_AFS: Color (Medium Name)", "Material_BOD Id (Key)", "Material_Base Unit of Measure (Key)", "Material_Base Unit of Measure (Medium Name)", "Material_Base Unit of Measure (Name)", "Material_Basic Material (Key)", "Material_Body Style (Key)", "Material_Body Type (Key)", "Material_Brand (Key)", "Material_Brand (Name)", "Material_Certification Type (Key)", "Material_Certification Type (Medium Name)", "Material_Color (Key)", "Material_Color (Name)", "Material_Competitors (Key)", "Material_Competitors (Medium Name)", "Material_Construction Class (Key)", "Material_Construction Class (Medium Name)", "Material_Content Unit (Key)", "Material_Content Unit (Medium Name)", "Material_Content Unit (Name)", "Material_Created On (Key)", "Material_Cross-Plant CM (Key)", "Material_Curb Weight (Key)", "Material_Division (Key)", "Material_Division (Name)", "Material_EAN/UPC (Key)", "Material_Engine Prefix (Key)", "Material_Ext. Matl Group (Key)", "Material_Fabric Content Code (Key)", "Material_Fabric Content Code (Medium Name)", "Material_Fashion Grade (Key)", "Material_Fashion Grade (Name)", "Material_Fuel Type of vehicle (Key)", "Material_Function Class (Key)", "Material_Function Class (Medium Name)", "Material_Gen. Analysis Char. (Key)", "Material_Gross Content (Key)", "Material_Gross Weight (Key)", "Material_Hazardous Matl No. (Key)", "Material_Height (Key)", "Material_Horse Power (Key)", "Material_Ind. Std Desc. (Key)", "Material_Industry (Key)", "Material_Key", "Material_Length (Key)", "Material_Local Currency (Key)", "Material_Local Currency (Medium Name)", "Material_Local Currency (Name)", "Material_MGH 1 (Key)", "Material_MGH 1 (Medium Name)", "Material_MGH 1 (Name)", "Material_MGH 2 (Key)", "Material_MGH 2 (Medium Name)", "Material_MGH 2 (Name)", "Material_MGH 3 (Key)", "Material_MGH 3 (Medium Name)", "Material_MGH 3 (Name)", "Material_MGH 4 (Key)", "Material_MGH 4 (Medium Name)", "Material_MGH 4 (Name)", "Material_Manuf. Material No. (Key)", "Material_Manufact. (Key)", "Material_Manufact. (Medium Name)", "Material_Master Data Rel.Stat (Key)", "Material_Master Data Rel.Stat (Medium Name)", "Material_Material Category (Key)", "Material_Material Category (Long Name)", "Material_Material Group (Key)", "Material_Material Group (Name)", "Material_Material Group Long (Key)", "Material_Material Type (Key)", "Material_Material Type (Medium Name)", "Material_Medium Name", "Material_Model Name (Key)", "Material_Model Phase Code (Key)", "Material_Model Vehicle Desc (Key)", "Material_Model Weight (Key)", "Material_Model Year (Key)", "Material_Model Year Validity (Key)", "Material_ModelYearValidityKey", "Material_Net Content (Key)", "Material_Net Weight (Key)", "Material_Nos of Cylinders (Key)", "Material_Order unit (Key)", "Material_Order unit (Medium Name)", "Material_Order unit (Name)", "Material_Planned Purch. Price (Key)", "Material_Procurement Rule (Key)", "Material_Procurement Rule (Medium Name)", "Material_Prod.hierarchy (Key)", "Material_Prod.hierarchy (Name)", "Material_Product (Key)", "Material_Product (Long Name)", "Material_Product (Medium Name)", "Material_Product (Name)", "Material_ProductKey", "Material_ProductKey_0", "Material_ProductLongName", "Material_ProductMediumName", "Material_ProductMediumName_0", "Material_ProductName", "Material_Profile for DGs (Key)", "Material_Profile for DGs (Long Name)", "Material_Season Year (Key)", "Material_Series (Key)", "Material_Series (Name)", "Material_Series Description (Key)", "Material_Size (Key)", "Material_Size (Name)", "Material_Size 2 (Key)", "Material_Size 2 (Name)", "Material_Size/Dimension (Key)", "Material_Source System (Key)", "Material_Source System (Medium Name)", "Material_Source of Supply (Key)", "Material_Source of Supply (Medium Name)", "Material_Status Code (Key)", "Material_Style (Key)", "Material_Target Group (Key)", "Material_Target Group (Medium Name)", "Material_Towing Capacity (Key)", "Material_Transmission Type (Key)", "Material_Unit (Key)", "Material_Unit (Medium Name)", "Material_Unit (Name)", "Material_Usage (Key)", "Material_Usage (Long Name)", "Material_VMS Indicator (Key)", "Material_Vendor (Key)", "Material_Vendor (Medium Name)", "Material_Volume (Key)", "Material_Volume unit (Key)", "Material_Volume unit (Medium Name)", "Material_Volume unit (Name)", "Material_Weight unit (Key)", "Material_Weight unit (Medium Name)", "Material_Weight unit (Name)", "Material_Width (Key)", "Model Name Level 01", "Model Name_Key", "Model Phase Code Level 01", "Model Phase Code_Key", "Model Vehicle Desc Level 01", "Model Vehicle Desc_Key", "Model Year Level 01", "Model Year_Key", "Month ID ( YYYYMM) Level 01", "Month ID ( YYYYMM)_Calendar Year (Key)", "Month ID ( YYYYMM)_Calendar Year/Quarte (Key)", "Month ID ( YYYYMM)_Calendar Year/Quarte (Long Name)", "Month ID ( YYYYMM)_Calendar Year/Quarte (Name)", "Month ID ( YYYYMM)_Calendar month (Key)", "Month ID ( YYYYMM)_Calendar month (Long Name)", "Month ID ( YYYYMM)_Calendar month (Medium Name)", "Month ID ( YYYYMM)_Halfyear (Key)", "Month ID ( YYYYMM)_Key", "Month ID ( YYYYMM)_Long Name", "Month ID ( YYYYMM)_Medium Name", "Month ID ( YYYYMM)_Number of Days (Key)", "Month ID ( YYYYMM)_Number of Workdays (Key)", "Month ID ( YYYYMM)_Quarter (Key)", "Month ID ( YYYYMM)_Quarter (Long Name)", "Month ID ( YYYYMM)_Quarter (Name)", "Month ID ( YYYYMM)_Valid From (Key)", "Month ID ( YYYYMM)_Valid To (Key)", "Net Value", "Number of Records", "Primary Status Level 01", "Primary Status_Key", "Primary Status_Medium Name", "Prod.hierarchy Level 01", "Prod.hierarchy_Key", "Prod.hierarchy_Name", "Qty in Base UoM", "RDR Reversal Date Level 01", "RDR Reversal Date_Calendar Year (Key)", "RDR Reversal Date_Calendar Year/Month (Key)", "RDR Reversal Date_Calendar Year/Month (Long Name)", "RDR Reversal Date_Calendar Year/Month (Medium Name)", "RDR Reversal Date_Calendar Year/Quarte (Key)", "RDR Reversal Date_Calendar Year/Quarte (Long Name)", "RDR Reversal Date_Calendar Year/Quarte (Name)", "RDR Reversal Date_Calendar Year/Week (Key)", "RDR Reversal Date_Calendar month (Key)", "RDR Reversal Date_Calendar month (Long Name)", "RDR Reversal Date_Calendar month (Medium Name)", "RDR Reversal Date_Halfyear (Key)", "RDR Reversal Date_Key", "RDR Reversal Date_Quarter (Key)", "RDR Reversal Date_Quarter (Long Name)", "RDR Reversal Date_Quarter (Name)", "RDR Reversal Reason Level 01", "RDR Reversal Reason_Key", "RTL Day Level 01", "RTL Day_Key", "Reason for RDR Rever Level 01", "Reason for RDR Rever_Key", "Region Level 01", "Region_Key", "Region_Key (Not Compounded)", "Region_Name", "SDSTA_Secondary Stat Level 01", "SDSTA_Secondary Stat_Key", "Sale Close Flag Level 01", "Sale Close Flag_Key", "SaleBase Mid Month F Level 01", "SaleBase Mid Month F_Key", "Sales Area Level 01", "Sales Area_Key", "Sales District Level 01", "Sales District Text Level 01", "Sales District Text_Key", "Sales District_Key", "Sales District_Name", "Sales District_Sales District Text (Key)", "Sales District_Sales Group Text (Key)", "Sales Document Level 01", "Sales Document_(obsolete) (Key)", "Sales Document_Key", "Sales Document_Name", "Sales Document_Source System (Key)", "Sales Document_Source System (Medium Name)", "Sales Group Level 01", "Sales Group Text Level 01", "Sales Group Text_Key", "Sales Group_Key", "Sales Group_Name", "Sales Group_Sales Group Text (Key)", "Sales Office Level 01", "Sales Office Text Level 01", "Sales Office Text_Key", "Sales Office_Key", "Sales Office_Name", "Sales office Level 01_copy", "Sales office_Key_copy", "Sales office_Name_copy", "Sales office_Sales Office Text (Key)", "SalesDistrictLevel01", "SalesDistrict_Key", "SalesDistrict_Name", "SalesDocument_obsoleteKey", "SalesDocument_obsoleteKey_0", "SalesDocument_obsoleteKey_1", "Secondary Status Level 01", "Secondary Status_Key", "Secondary Status_Medium Name", "Series Description Level 01", "Series Description_Key", "Series Level 01", "Series/Group Level 01", "Series/Group_Key", "Series_Key", "Series_Name", "Series_Series Description (Key)", "Sold-to Party Level 01", "Sold-to Party_APO Location (Key)", "Sold-to Party_APO Location (Medium Name)", "Sold-to Party_Account Group (Key)", "Sold-to Party_Account Group (Medium Name)", "Sold-to Party_Address (Key)", "Sold-to Party_BAS: City District (Key)", "Sold-to Party_BAS: PO Box Location (Key)", "Sold-to Party_BAS:POBox PostalCode (Key)", "Sold-to Party_BAS:PstCde(Geo-Rel.) (Key)", "Sold-to Party_BP Category (Key)", "Sold-to Party_BP Category (Long Name)", "Sold-to Party_BP Grouping (Key)", "Sold-to Party_BP Grouping (Medium Name)", "Sold-to Party_BP Grouping (Name)", "Sold-to Party_BP: Group Type (Key)", "Sold-to Party_BP: Group Type (Medium Name)", "Sold-to Party_BP: Group Type (Name)", "Sold-to Party_Branch Category (Key)", "Sold-to Party_Business Partner (Key)", "Sold-to Party_Business Partner (Long Name)", "Sold-to Party_Business Partner (Medium Name)", "Sold-to Party_Business Partner (Name)", "Sold-to Party_Call Frequency (Key)", "Sold-to Party_Country (Key)", "Sold-to Party_Country (Long Name)", "Sold-to Party_Country (Name)", "Sold-to Party_Cust.ID Partner Sys. (Key)", "Sold-to Party_Customer Market (Key)", "Sold-to Party_Customer classific. (Key)", "Sold-to Party_Customer classific. (Name)", "Sold-to Party_Customer is Consumer (Key)", "Sold-to Party_D-U-N-S Number (Key)", "Sold-to Party_D-U-N-S Number (Long Name)", "Sold-to Party_DatSrc.ID of GeoLoct (Key)", "Sold-to Party_Distribution Channel (Key)", "Sold-to Party_Distribution Channel (Name)", "Sold-to Party_Division (Key)", "Sold-to Party_Division (Name)", "Sold-to Party_Fax number (Key)", "Sold-to Party_Fiscal Year Variant (Key)", "Sold-to Party_Fiscal Year Variant (Medium Name)", "Sold-to Party_Geo-precision (Key)", "Sold-to Party_Geo-precision (Long Name)", "Sold-to Party_Geo-precision (Medium Name)", "Sold-to Party_Geo-precision (Name)", "Sold-to Party_Geographical Height (Key)", "Sold-to Party_Identification Numbe (Key)", "Sold-to Party_Identification Type (Key)", "Sold-to Party_Industry (Key)", "Sold-to Party_Industry (Name)", "Sold-to Party_Industry Code 2 (Key)", "Sold-to Party_Industry Code 2 (Name)", "Sold-to Party_Industry Code 3 (Key)", "Sold-to Party_Industry Code 3 (Name)", "Sold-to Party_Industry Code 4 (Key)", "Sold-to Party_Industry Code 4 (Name)", "Sold-to Party_Industry Code 5 (Key)", "Sold-to Party_Industry Code 5 (Name)", "Sold-to Party_Industry code 1 (Key)", "Sold-to Party_Industry code 1 (Name)", "Sold-to Party_Key", "Sold-to Party_Key Account (Key)", "Sold-to Party_Language key (Key)", "Sold-to Party_Language key (Name)", "Sold-to Party_Latitude (Key)", "Sold-to Party_Location (Key)", "Sold-to Party_Longitude (Key)", "Sold-to Party_Medium Name", "Sold-to Party_Name (Key)", "Sold-to Party_Name 2 (Key)", "Sold-to Party_Name 3 (Key)", "Sold-to Party_Nielsen Indicator (Key)", "Sold-to Party_Nielsen Indicator (Name)", "Sold-to Party_No. Customer DC (Key)", "Sold-to Party_One-Time Account (Key)", "Sold-to Party_P.O. Box (Key)", "Sold-to Party_Partner Company (Key)", "Sold-to Party_Partner Company (Medium Name)", "Sold-to Party_Plant (Key)", "Sold-to Party_Plant (Medium Name)", "Sold-to Party_Plant (Name)", "Sold-to Party_Postal Code (Key)", "Sold-to Party_Region (Key)", "Sold-to Party_Region (Name)", "Sold-to Party_Sales Area (Key)", "Sold-to Party_Sales District (Key)", "Sold-to Party_Sales District (Name)", "Sold-to Party_Sales District Text (Key)", "Sold-to Party_Sales Group (Key)", "Sold-to Party_Sales Group (Name)", "Sold-to Party_Sales Group Text (Key)", "Sold-to Party_Sales Office Text (Key)", "Sold-to Party_Sales Organization (Key)", "Sold-to Party_Sales Organization (Long Name)", "Sold-to Party_Sales office (Key)", "Sold-to Party_Sales office (Name)", "Sold-to Party_Sales unit (Key)", "Sold-to Party_Sales unit (Medium Name)", "Sold-to Party_Sales unit (Name)", "Sold-to Party_Search term A (Key)", "Sold-to Party_Search term B (Key)", "Sold-to Party_Sort Field (Key)", "Sold-to Party_Source System (Key)", "Sold-to Party_Source System (Medium Name)", "Sold-to Party_State (Key)", "Sold-to Party_State (Name)", "Sold-to Party_Street (Key)", "Sold-to Party_Tax Code 1 (Key)", "Sold-to Party_Tax Number 2 (Key)", "Sold-to Party_Tax Number 3 (Key)", "Sold-to Party_Telephone 1 (Key)", "Sold-to Party_Usage Indicator (Key)", "Sold-to Party_Usage Indicator (Name)", "Sold-to Party_Valid From (Key)", "Sold-to Party_Valid until (Key)", "Sold-to Party_Vendor (Key)", "Sold-to Party_Vendor (Medium Name)", "Subtotal 1", "Subtotal 2", "Subtotal 3", "Subtotal 4", "Subtotal 5", "Subtotal 6", "TMS Holiday Flag Level 01", "TMS Holiday Flag_Key", "VT_53_REV_AUTH Level 01", "VT_53_REV_AUTH_Key", "VT_53_REV_REASON Level 01", "VT_53_REV_REASON_Key", "VT_53_REV_TO_DLR Level 01", "VT_53_REV_TO_DLR_Key", "Vehicle Exterior Col Level 01", "Vehicle Exterior Col_Key", "Vehicle GUID (Global Level 01", "Vehicle GUID (Global_Key", "Vehicle GUID (Global_Name", "Vehicle GUID (Global_Vehicle Color (Key)", "Vehicle GUID (Global_Vehicle Color (Name)", "Vehicle GUID (Global_Vehicle Engine (Key)", "Vehicle GUID (Global_Vehicle Engine (Name)", "Vehicle GUID (Global_Vehicle Family (Key)", "Vehicle GUID (Global_Vehicle Family (Name)", "Vehicle GUID (Global_Vehicle Gear Box (Key)", "Vehicle GUID (Global_Vehicle Gear Box (Name)", "Vehicle GUID (Global_Vehicle Model (Key)", "Vehicle GUID (Global_Vehicle Model (Name)", "Vehicle GUID (Global_Vehicle Motor (Key)", "Vehicle GUID (Global_Vehicle Motor (Name)", "Vehicle GUID (Global_Vehicle Power (Key)", "Vehicle GUID (Global_Vehicle Power (Name)", "Vehicle GUID (Global_Vehicle Radio (Key)", "Vehicle GUID (Global_Vehicle Radio (Name)", "Vehicle GUID (Global_Vehicle Seat (Key)", "Vehicle GUID (Global_Vehicle Seat (Name)", "Vehicle GUID (Global_Vehicle Trim Value (Key)", "Vehicle GUID (Global_Vehicle Trim Value (Name)", "Vehicle GUID (Global_Vehicle Type (Key)", "Vehicle GUID (Global_Vehicle Type (Name)", "Vehicle GUID (Global_Vehicle Wheel (Key)", "Vehicle GUID (Global_Vehicle Wheel (Name)", "Vehicle Identificati Level 01", "Vehicle Identificati_Key", "Vehicle Interior Col Level 01", "Vehicle Interior Col_Key", "Vehicle RDR Date Level 01", "Vehicle RDR Date_Calendar Year (Key)", "Vehicle RDR Date_Calendar Year/Month (Key)", "Vehicle RDR Date_Calendar Year/Month (Long Name)", "Vehicle RDR Date_Calendar Year/Month (Medium Name)", "Vehicle RDR Date_Calendar Year/Quarte (Key)", "Vehicle RDR Date_Calendar Year/Quarte (Long Name)", "Vehicle RDR Date_Calendar Year/Quarte (Name)", "Vehicle RDR Date_Calendar Year/Week (Key)", "Vehicle RDR Date_Calendar month (Key)", "Vehicle RDR Date_Calendar month (Long Name)", "Vehicle RDR Date_Calendar month (Medium Name)", "Vehicle RDR Date_Halfyear (Key)", "Vehicle RDR Date_Key", "Vehicle RDR Date_Quarter (Key)", "Vehicle RDR Date_Quarter (Long Name)", "Vehicle RDR Date_Quarter (Name)", "Vehicle Usage Level 01", "Vehicle Usage_Key"
+        OUTPUTLIST ("ALC Available to Dlr Level 01", "ALC Available to Dlr_Key", "Acc_Code Level 01", "Acc_Code_Key", "Base Unit of Measure Level 01", "Base Unit of Measure_Key", "Base Unit of Measure_Medium Name", "Base Unit of Measure_Name", "Calendar Year/Month Level 01", "Calendar Year/Month_Calendar Year (Key)", "Calendar Year/Month_Calendar Year/Quarte (Key)", "Calendar Year/Month_Calendar Year/Quarte (Long Name)", "Calendar Year/Month_Calendar Year/Quarte (Name)", "Calendar Year/Month_Calendar month (Key)", "Calendar Year/Month_Calendar month (Long Name)", "Calendar Year/Month_Calendar month (Medium Name)", "Calendar Year/Month_Halfyear (Key)", "Calendar Year/Month_Key", "Calendar Year/Month_Long Name", "Calendar Year/Month_Medium Name", "Calendar Year/Month_Number of Days (Key)", "Calendar Year/Month_Number of Workdays (Key)", "Calendar Year/Month_Quarter (Key)", "Calendar Year/Month_Quarter (Long Name)", "Calendar Year/Month_Quarter (Name)", "Calendar Year/Month_Valid From (Key)", "Calendar Year/Month_Valid To (Key)", "Condition Category Level 01", "Condition Category_Key", "Condition Category_Long Name", "Condition Class Level 01", "Condition Class_Key", "Condition Class_Long Name", "Condition Rate", "Condition Type Level 01", "Condition Type_Key", "Condition Type_Name", "Condition Value", "Country Level 01", "Country_Key", "Country_Long Name", "Country_Name", "Currency Key Level 01", "Currency Key_Key", "Currency Key_Medium Name", "Currency Key_Name", "Customer Level 01", "Customer_APO Location (Key)", "Customer_APO Location (Medium Name)", "Customer_Account Group (Key)", "Customer_Account Group (Medium Name)", "Customer_Address (Key)", "Customer_BAS: City District (Key)", "Customer_BAS: PO Box Location (Key)", "Customer_BAS:POBox PostalCode (Key)", "Customer_BAS:PstCde(Geo-Rel.) (Key)", "Customer_BP Category (Key)", "Customer_BP Category (Long Name)", "Customer_BP Grouping (Key)", "Customer_BP Grouping (Medium Name)", "Customer_BP Grouping (Name)", "Customer_BP: Group Type (Key)", "Customer_BP: Group Type (Medium Name)", "Customer_BP: Group Type (Name)", "Customer_Branch Category (Key)", "Customer_Business Partner (Key)", "Customer_Business Partner (Long Name)", "Customer_Business Partner (Medium Name)", "Customer_Business Partner (Name)", "Customer_Call Frequency (Key)", "Customer_Country (Key)", "Customer_Country (Long Name)", "Customer_Country (Name)", "Customer_Cust.ID Partner Sys. (Key)", "Customer_Customer Market (Key)", "Customer_Customer classific. (Key)", "Customer_Customer classific. (Name)", "Customer_Customer is Consumer (Key)", "Customer_D-U-N-S Number (Key)", "Customer_D-U-N-S Number (Long Name)", "Customer_DatSrc.ID of GeoLoct (Key)", "Customer_Distribution Channel (Key)", "Customer_Distribution Channel (Name)", "Customer_Division (Key)", "Customer_Division (Name)", "Customer_Fax number (Key)", "Customer_Fiscal Year Variant (Key)", "Customer_Fiscal Year Variant (Medium Name)", "Customer_Geo-precision (Key)", "Customer_Geo-precision (Long Name)", "Customer_Geo-precision (Medium Name)", "Customer_Geo-precision (Name)", "Customer_Geographical Height (Key)", "Customer_Identification Numbe (Key)", "Customer_Identification Type (Key)", "Customer_Industry (Key)", "Customer_Industry (Name)", "Customer_Industry Code 2 (Key)", "Customer_Industry Code 2 (Name)", "Customer_Industry Code 3 (Key)", "Customer_Industry Code 3 (Name)", "Customer_Industry Code 4 (Key)", "Customer_Industry Code 4 (Name)", "Customer_Industry Code 5 (Key)", "Customer_Industry Code 5 (Name)", "Customer_Industry code 1 (Key)", "Customer_Industry code 1 (Name)", "Customer_Key", "Customer_Key Account (Key)", "Customer_Language key (Key)", "Customer_Language key (Name)", "Customer_Latitude (Key)", "Customer_Location (Key)", "Customer_Longitude (Key)", "Customer_Medium Name", "Customer_Name (Key)", "Customer_Name 2 (Key)", "Customer_Name 3 (Key)", "Customer_Nielsen Indicator (Key)", "Customer_Nielsen Indicator (Name)", "Customer_No. Customer DC (Key)", "Customer_One-Time Account (Key)", "Customer_P.O. Box (Key)", "Customer_Partner Company (Key)", "Customer_Partner Company (Medium Name)", "Customer_Plant (Key)", "Customer_Plant (Medium Name)", "Customer_Plant (Name)", "Customer_Postal Code (Key)", "Customer_Region (Key)", "Customer_Region (Name)", "Customer_Sales Area (Key)", "Customer_Sales District (Key)", "Customer_Sales District (Name)", "Customer_Sales District Text (Key)", "Customer_Sales Group (Key)", "Customer_Sales Group (Name)", "Customer_Sales Group Text (Key)", "Customer_Sales Office Text (Key)", "Customer_Sales Organization (Key)", "Customer_Sales Organization (Long Name)", "Customer_Sales office (Key)", "Customer_Sales office (Name)", "Customer_Sales unit (Key)", "Customer_Sales unit (Medium Name)", "Customer_Sales unit (Name)", "Customer_Search term A (Key)", "Customer_Search term B (Key)", "Customer_Sort Field (Key)", "Customer_Source System (Key)", "Customer_Source System (Medium Name)", "Customer_State (Key)", "Customer_State (Name)", "Customer_Street (Key)", "Customer_Tax Code 1 (Key)", "Customer_Tax Number 2 (Key)", "Customer_Tax Number 3 (Key)", "Customer_Telephone 1 (Key)", "Customer_Usage Indicator (Key)", "Customer_Usage Indicator (Name)", "Customer_Valid From (Key)", "Customer_Valid until (Key)", "Customer_Vendor (Key)", "Customer_Vendor (Medium Name)", "DIM Series ID Level 01", "DIM Series ID_Key", "Day Abbreviated Level 01", "Day Abbreviated_Key", "Day Date Level 01", "Day Date_Calendar Year (Key)", "Day Date_Calendar Year/Month (Key)", "Day Date_Calendar Year/Month (Long Name)", "Day Date_Calendar Year/Month (Medium Name)", "Day Date_Calendar Year/Quarte (Key)", "Day Date_Calendar Year/Quarte (Long Name)", "Day Date_Calendar Year/Quarte (Name)", "Day Date_Calendar Year/Week (Key)", "Day Date_Calendar month (Key)", "Day Date_Calendar month (Long Name)", "Day Date_Calendar month (Medium Name)", "Day Date_Halfyear (Key)", "Day Date_Key", "Day Date_Quarter (Key)", "Day Date_Quarter (Long Name)", "Day Date_Quarter (Name)", "Day Name Level 01", "Day Name_Key", "Day Of Month Level 01", "Day Of Month_Key", "Day Of Year Level 01", "Day Of Year_Key", "Day in Month Level 01", "Day in Month_Key", "Document Currency Level 01", "Document Currency_Key", "Document Currency_Medium Name", "Document Currency_Name", "GPP Objective", "GST AREA SN Level 01", "GST AREA SN_Key", "GST Created By Level 01", "GST Created By_Key", "GST Created Date Level 01", "GST Created Date_Key", "GST Legacy Series Level 01", "GST Legacy Series_Key", "GST Series Name Level 01", "GST Series Name_Key", "GST Updated BY Level 01", "GST Updated BY_Key", "GST Updated Date Level 01", "GST Updated Date_Key", "Holiday Flag Level 01", "Holiday Flag_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Item Level 01", "Item_Key", "LIO Code Level 01", "LIO Code_Key", "Local Currency Level 01", "Local Currency_Key", "Local Currency_Medium Name", "Local Currency_Name", "MTD Rtl RNK Level 01", "MTD Rtl RNK_Key", "Material Group Level 01", "Material Group Long Level 01", "Material Group Long_Key", "Material Group_Asset Class (Key)", "Material Group_Asset Class (Long Name)", "Material Group_Asset Class (Name)", "Material Group_Authorization Group (Key)", "Material Group_Authorization Group (Medium Name)", "Material Group_Brazilian NCM Code (Key)", "Material Group_Department (Key)", "Material Group_Department (Medium Name)", "Material Group_Division (Key)", "Material Group_Division (Name)", "Material Group_Key", "Material Group_Material Group Long (Key)", "Material Group_Material group mater (Key)", "Material Group_Material group refer (Key)", "Material Group_Material group-relat (Key)", "Material Group_Name", "Material Group_Product Category (Key)", "Material Group_Product Category (Long Name)", "Material Group_Product Category (Medium Name)", "Material Group_Product Category (Name)", "Material Group_Purchasing Value Key (Key)", "Material Group_Source System (Key)", "Material Group_Source System (Medium Name)", "Material Group_Valuation Class (Key)", "Material Group_Valuation Class (Medium Name)", "Material Group_Weight unit (Key)", "Material Group_Weight unit (Medium Name)", "Material Group_Weight unit (Name)", "Material Level 01", "Material_AFS Grid (Key)", "Material_AFS Grid (Name)", "Material_AFS: Color (Key)", "Material_AFS: Color (Medium Name)", "Material_BOD Id (Key)", "Material_Base Unit of Measure (Key)", "Material_Base Unit of Measure (Medium Name)", "Material_Base Unit of Measure (Name)", "Material_Basic Material (Key)", "Material_Body Style (Key)", "Material_Body Type (Key)", "Material_Brand (Key)", "Material_Brand (Name)", "Material_Certification Type (Key)", "Material_Certification Type (Medium Name)", "Material_Color (Key)", "Material_Color (Name)", "Material_Competitors (Key)", "Material_Competitors (Medium Name)", "Material_Construction Class (Key)", "Material_Construction Class (Medium Name)", "Material_Content Unit (Key)", "Material_Content Unit (Medium Name)", "Material_Content Unit (Name)", "Material_Created On (Key)", "Material_Cross-Plant CM (Key)", "Material_Curb Weight (Key)", "Material_Division (Key)", "Material_Division (Name)", "Material_EAN/UPC (Key)", "Material_Engine Prefix (Key)", "Material_Ext. Matl Group (Key)", "Material_Fabric Content Code (Key)", "Material_Fabric Content Code (Medium Name)", "Material_Fashion Grade (Key)", "Material_Fashion Grade (Name)", "Material_Fuel Type of vehicle (Key)", "Material_Function Class (Key)", "Material_Function Class (Medium Name)", "Material_Gen. Analysis Char. (Key)", "Material_Gross Content (Key)", "Material_Gross Weight (Key)", "Material_Hazardous Matl No. (Key)", "Material_Height (Key)", "Material_Horse Power (Key)", "Material_Ind. Std Desc. (Key)", "Material_Industry (Key)", "Material_Key", "Material_Length (Key)", "Material_Local Currency (Key)", "Material_Local Currency (Medium Name)", "Material_Local Currency (Name)", "Material_MGH 1 (Key)", "Material_MGH 1 (Medium Name)", "Material_MGH 1 (Name)", "Material_MGH 2 (Key)", "Material_MGH 2 (Medium Name)", "Material_MGH 2 (Name)", "Material_MGH 3 (Key)", "Material_MGH 3 (Medium Name)", "Material_MGH 3 (Name)", "Material_MGH 4 (Key)", "Material_MGH 4 (Medium Name)", "Material_MGH 4 (Name)", "Material_Manuf. Material No. (Key)", "Material_Manufact. (Key)", "Material_Manufact. (Medium Name)", "Material_Master Data Rel.Stat (Key)", "Material_Master Data Rel.Stat (Medium Name)", "Material_Material Category (Key)", "Material_Material Category (Long Name)", "Material_Material Group (Key)", "Material_Material Group (Name)", "Material_Material Group Long (Key)", "Material_Material Type (Key)", "Material_Material Type (Medium Name)", "Material_Medium Name", "Material_Model Name (Key)", "Material_Model Phase Code (Key)", "Material_Model Vehicle Desc (Key)", "Material_Model Weight (Key)", "Material_Model Year (Key)", "Material_Model Year Validity (Key)", "Material_ModelYearValidityKey", "Material_Net Content (Key)", "Material_Net Weight (Key)", "Material_Nos of Cylinders (Key)", "Material_Order unit (Key)", "Material_Order unit (Medium Name)", "Material_Order unit (Name)", "Material_Planned Purch. Price (Key)", "Material_Procurement Rule (Key)", "Material_Procurement Rule (Medium Name)", "Material_Prod.hierarchy (Key)", "Material_Prod.hierarchy (Name)", "Material_Product (Key)", "Material_Product (Long Name)", "Material_Product (Medium Name)", "Material_Product (Name)", "Material_ProductKey", "Material_ProductKey_0", "Material_ProductLongName", "Material_ProductMediumName", "Material_ProductMediumName_0", "Material_ProductName", "Material_Profile for DGs (Key)", "Material_Profile for DGs (Long Name)", "Material_Season Year (Key)", "Material_Series (Key)", "Material_Series (Name)", "Material_Series Description (Key)", "Material_Size (Key)", "Material_Size (Name)", "Material_Size 2 (Key)", "Material_Size 2 (Name)", "Material_Size/Dimension (Key)", "Material_Source System (Key)", "Material_Source System (Medium Name)", "Material_Source of Supply (Key)", "Material_Source of Supply (Medium Name)", "Material_Status Code (Key)", "Material_Style (Key)", "Material_Target Group (Key)", "Material_Target Group (Medium Name)", "Material_Towing Capacity (Key)", "Material_Transmission Type (Key)", "Material_Unit (Key)", "Material_Unit (Medium Name)", "Material_Unit (Name)", "Material_Usage (Key)", "Material_Usage (Long Name)", "Material_VMS Indicator (Key)", "Material_Vendor (Key)", "Material_Vendor (Medium Name)", "Material_Volume (Key)", "Material_Volume unit (Key)", "Material_Volume unit (Medium Name)", "Material_Volume unit (Name)", "Material_Weight unit (Key)", "Material_Weight unit (Medium Name)", "Material_Weight unit (Name)", "Material_Width (Key)", "Model Name Level 01", "Model Name_Key", "Model Phase Code Level 01", "Model Phase Code_Key", "Model Vehicle Desc Level 01", "Model Vehicle Desc_Key", "Model Year Level 01", "Model Year_Key", "Month ID ( YYYYMM) Level 01", "Month ID ( YYYYMM)_Calendar Year (Key)", "Month ID ( YYYYMM)_Calendar Year/Quarte (Key)", "Month ID ( YYYYMM)_Calendar Year/Quarte (Long Name)", "Month ID ( YYYYMM)_Calendar Year/Quarte (Name)", "Month ID ( YYYYMM)_Calendar month (Key)", "Month ID ( YYYYMM)_Calendar month (Long Name)", "Month ID ( YYYYMM)_Calendar month (Medium Name)", "Month ID ( YYYYMM)_Halfyear (Key)", "Month ID ( YYYYMM)_Key", "Month ID ( YYYYMM)_Long Name", "Month ID ( YYYYMM)_Medium Name", "Month ID ( YYYYMM)_Number of Days (Key)", "Month ID ( YYYYMM)_Number of Workdays (Key)", "Month ID ( YYYYMM)_Quarter (Key)", "Month ID ( YYYYMM)_Quarter (Long Name)", "Month ID ( YYYYMM)_Quarter (Name)", "Month ID ( YYYYMM)_Valid From (Key)", "Month ID ( YYYYMM)_Valid To (Key)", "MonthIDYYYYMMLevel01", "MonthIDYYYYMM_CalendarYearKey", "MonthIDYYYYMM_CalendarYearQuarteKey", "MonthIDYYYYMM_CalendarYearQuarteLongName", "MonthIDYYYYMM_CalendarYearQuarteName", "MonthIDYYYYMM_CalendarmonthKey", "MonthIDYYYYMM_CalendarmonthLongName", "MonthIDYYYYMM_CalendarmonthMediumName", "MonthIDYYYYMM_HalfyearKey", "MonthIDYYYYMM_Key", "MonthIDYYYYMM_LongName", "MonthIDYYYYMM_MediumName", "MonthIDYYYYMM_NumberofDaysKey", "MonthIDYYYYMM_NumberofWorkdaysKey", "MonthIDYYYYMM_QuarterKey", "MonthIDYYYYMM_QuarterLongName", "MonthIDYYYYMM_QuarterName", "MonthIDYYYYMM_ValidFromKey", "MonthIDYYYYMM_ValidToKey", "Net Value", "Number of Records", "Objective Sale Area Level 01", "Objective Sale Area_Key", "Objective TMNA Ser Level 01", "Objective TMNA Ser_Key", "Order quantity", "Primary Status Level 01", "Primary Status_Key", "Primary Status_Medium Name", "Qty in Base UoM", "RDR Reversal Date Level 01", "RDR Reversal Date_Calendar Year (Key)", "RDR Reversal Date_Calendar Year/Month (Key)", "RDR Reversal Date_Calendar Year/Month (Long Name)", "RDR Reversal Date_Calendar Year/Month (Medium Name)", "RDR Reversal Date_Calendar Year/Quarte (Key)", "RDR Reversal Date_Calendar Year/Quarte (Long Name)", "RDR Reversal Date_Calendar Year/Quarte (Name)", "RDR Reversal Date_Calendar Year/Week (Key)", "RDR Reversal Date_Calendar month (Key)", "RDR Reversal Date_Calendar month (Long Name)", "RDR Reversal Date_Calendar month (Medium Name)", "RDR Reversal Date_Halfyear (Key)", "RDR Reversal Date_Key", "RDR Reversal Date_Quarter (Key)", "RDR Reversal Date_Quarter (Long Name)", "RDR Reversal Date_Quarter (Name)", "RDR Reversal Reason Level 01", "RDR Reversal Reason_Key", "RTL Day Level 01", "RTL Day_Key", "Reason for RDR Rever Level 01", "Reason for RDR Rever_Key", "Region Level 01", "Region_Key", "Region_Key (Not Compounded)", "Region_Name", "Sale Close Flag Level 01", "Sale Close Flag_Key", "SaleBase Mid Month F Level 01", "SaleBase Mid Month F_Key", "Sales Area Level 01", "Sales Area_Key", "Sales District Level 01", "Sales District Text Level 01", "Sales District Text_Key", "Sales District_Key", "Sales District_Name", "Sales District_Sales District Text (Key)", "Sales District_Sales Group Text (Key)", "Sales Document Level 01", "Sales Document_(obsolete) (Key)", "Sales Document_Key", "Sales Document_Name", "Sales Document_Source System (Key)", "Sales Document_Source System (Medium Name)", "Sales Group Level 01", "Sales Group Text Level 01", "Sales Group Text_Key", "Sales Group_Key", "Sales Group_Name", "Sales Group_Sales Group Text (Key)", "Sales Office Text Level 01", "Sales Office Text_Key", "Sales office Level 01", "Sales office_Key", "Sales office_Name", "Sales office_Sales Office Text (Key)", "Sales unit Level 01", "Sales unit_Key", "Sales unit_Medium Name", "Sales unit_Name", "SalesDocument_obsoleteKey", "SalesDocument_obsoleteKey_0", "SalesDocument_obsoleteKey_1", "Secondary Status Level 01", "Secondary Status_Key", "Secondary Status_Medium Name", "Series Description Level 01", "Series Description_Key", "Series Level 01", "Series Name Level 01", "Series Name_Key", "Series SN Level 01", "Series SN_Key", "Series_Key", "Series_Name", "Series_Series Description (Key)", "Sold-to Party Level 01", "Sold-to Party_APO Location (Key)", "Sold-to Party_APO Location (Medium Name)", "Sold-to Party_Account Group (Key)", "Sold-to Party_Account Group (Medium Name)", "Sold-to Party_Address (Key)", "Sold-to Party_BAS: City District (Key)", "Sold-to Party_BAS: PO Box Location (Key)", "Sold-to Party_BAS:POBox PostalCode (Key)", "Sold-to Party_BAS:PstCde(Geo-Rel.) (Key)", "Sold-to Party_BP Category (Key)", "Sold-to Party_BP Category (Long Name)", "Sold-to Party_BP Grouping (Key)", "Sold-to Party_BP Grouping (Medium Name)", "Sold-to Party_BP Grouping (Name)", "Sold-to Party_BP: Group Type (Key)", "Sold-to Party_BP: Group Type (Medium Name)", "Sold-to Party_BP: Group Type (Name)", "Sold-to Party_Branch Category (Key)", "Sold-to Party_Business Partner (Key)", "Sold-to Party_Business Partner (Long Name)", "Sold-to Party_Business Partner (Medium Name)", "Sold-to Party_Business Partner (Name)", "Sold-to Party_Call Frequency (Key)", "Sold-to Party_Country (Key)", "Sold-to Party_Country (Long Name)", "Sold-to Party_Country (Name)", "Sold-to Party_Cust.ID Partner Sys. (Key)", "Sold-to Party_Customer Market (Key)", "Sold-to Party_Customer classific. (Key)", "Sold-to Party_Customer classific. (Name)", "Sold-to Party_Customer is Consumer (Key)", "Sold-to Party_D-U-N-S Number (Key)", "Sold-to Party_D-U-N-S Number (Long Name)", "Sold-to Party_DatSrc.ID of GeoLoct (Key)", "Sold-to Party_Distribution Channel (Key)", "Sold-to Party_Distribution Channel (Name)", "Sold-to Party_Division (Key)", "Sold-to Party_Division (Name)", "Sold-to Party_Fax number (Key)", "Sold-to Party_Fiscal Year Variant (Key)", "Sold-to Party_Fiscal Year Variant (Medium Name)", "Sold-to Party_Geo-precision (Key)", "Sold-to Party_Geo-precision (Long Name)", "Sold-to Party_Geo-precision (Medium Name)", "Sold-to Party_Geo-precision (Name)", "Sold-to Party_Geographical Height (Key)", "Sold-to Party_Identification Numbe (Key)", "Sold-to Party_Identification Type (Key)", "Sold-to Party_Industry (Key)", "Sold-to Party_Industry (Name)", "Sold-to Party_Industry Code 2 (Key)", "Sold-to Party_Industry Code 2 (Name)", "Sold-to Party_Industry Code 3 (Key)", "Sold-to Party_Industry Code 3 (Name)", "Sold-to Party_Industry Code 4 (Key)", "Sold-to Party_Industry Code 4 (Name)", "Sold-to Party_Industry Code 5 (Key)", "Sold-to Party_Industry Code 5 (Name)", "Sold-to Party_Industry code 1 (Key)", "Sold-to Party_Industry code 1 (Name)", "Sold-to Party_Key", "Sold-to Party_Key Account (Key)", "Sold-to Party_Language key (Key)", "Sold-to Party_Language key (Name)", "Sold-to Party_Latitude (Key)", "Sold-to Party_Location (Key)", "Sold-to Party_Longitude (Key)", "Sold-to Party_Medium Name", "Sold-to Party_Name (Key)", "Sold-to Party_Name 2 (Key)", "Sold-to Party_Name 3 (Key)", "Sold-to Party_Nielsen Indicator (Key)", "Sold-to Party_Nielsen Indicator (Name)", "Sold-to Party_No. Customer DC (Key)", "Sold-to Party_One-Time Account (Key)", "Sold-to Party_P.O. Box (Key)", "Sold-to Party_Partner Company (Key)", "Sold-to Party_Partner Company (Medium Name)", "Sold-to Party_Plant (Key)", "Sold-to Party_Plant (Medium Name)", "Sold-to Party_Plant (Name)", "Sold-to Party_Postal Code (Key)", "Sold-to Party_Region (Key)", "Sold-to Party_Region (Name)", "Sold-to Party_Sales Area (Key)", "Sold-to Party_Sales District (Key)", "Sold-to Party_Sales District (Name)", "Sold-to Party_Sales District Text (Key)", "Sold-to Party_Sales Group (Key)", "Sold-to Party_Sales Group (Name)", "Sold-to Party_Sales Group Text (Key)", "Sold-to Party_Sales Office Text (Key)", "Sold-to Party_Sales Organization (Key)", "Sold-to Party_Sales Organization (Long Name)", "Sold-to Party_Sales office (Key)", "Sold-to Party_Sales office (Name)", "Sold-to Party_Sales unit (Key)", "Sold-to Party_Sales unit (Medium Name)", "Sold-to Party_Sales unit (Name)", "Sold-to Party_Search term A (Key)", "Sold-to Party_Search term B (Key)", "Sold-to Party_Sort Field (Key)", "Sold-to Party_Source System (Key)", "Sold-to Party_Source System (Medium Name)", "Sold-to Party_State (Key)", "Sold-to Party_State (Name)", "Sold-to Party_Street (Key)", "Sold-to Party_Tax Code 1 (Key)", "Sold-to Party_Tax Number 2 (Key)", "Sold-to Party_Tax Number 3 (Key)", "Sold-to Party_Telephone 1 (Key)", "Sold-to Party_Usage Indicator (Key)", "Sold-to Party_Usage Indicator (Name)", "Sold-to Party_Valid From (Key)", "Sold-to Party_Valid until (Key)", "Sold-to Party_Vendor (Key)", "Sold-to Party_Vendor (Medium Name)", "Subtotal 1", "Subtotal 2", "Subtotal 3", "Subtotal 4", "Subtotal 5", "Subtotal 6", "TMS Holiday Flag Level 01", "TMS Holiday Flag_Key", "VM_ACC_DLR", "VM_ACC_DST", "VM_ACC_HB", "VM_ACC_RTL", "VM_MSRP_DISC", "Vehicle GUID (Global Level 01", "Vehicle GUID (Global_Key", "Vehicle GUID (Global_Name", "Vehicle GUID (Global_Vehicle Color (Key)", "Vehicle GUID (Global_Vehicle Color (Name)", "Vehicle GUID (Global_Vehicle Engine (Key)", "Vehicle GUID (Global_Vehicle Engine (Name)", "Vehicle GUID (Global_Vehicle Family (Key)", "Vehicle GUID (Global_Vehicle Family (Name)", "Vehicle GUID (Global_Vehicle Gear Box (Key)", "Vehicle GUID (Global_Vehicle Gear Box (Name)", "Vehicle GUID (Global_Vehicle Model (Key)", "Vehicle GUID (Global_Vehicle Model (Name)", "Vehicle GUID (Global_Vehicle Motor (Key)", "Vehicle GUID (Global_Vehicle Motor (Name)", "Vehicle GUID (Global_Vehicle Power (Key)", "Vehicle GUID (Global_Vehicle Power (Name)", "Vehicle GUID (Global_Vehicle Radio (Key)", "Vehicle GUID (Global_Vehicle Radio (Name)", "Vehicle GUID (Global_Vehicle Seat (Key)", "Vehicle GUID (Global_Vehicle Seat (Name)", "Vehicle GUID (Global_Vehicle Trim Value (Key)", "Vehicle GUID (Global_Vehicle Trim Value (Name)", "Vehicle GUID (Global_Vehicle Type (Key)", "Vehicle GUID (Global_Vehicle Type (Name)", "Vehicle GUID (Global_Vehicle Wheel (Key)", "Vehicle GUID (Global_Vehicle Wheel (Name)", "Vehicle Identificati Level 01", "Vehicle Identificati_Key", "Vehicle RDR Date Level 01", "Vehicle RDR Date_Calendar Year (Key)", "Vehicle RDR Date_Calendar Year/Month (Key)", "Vehicle RDR Date_Calendar Year/Month (Long Name)", "Vehicle RDR Date_Calendar Year/Month (Medium Name)", "Vehicle RDR Date_Calendar Year/Quarte (Key)", "Vehicle RDR Date_Calendar Year/Quarte (Long Name)", "Vehicle RDR Date_Calendar Year/Quarte (Name)", "Vehicle RDR Date_Calendar Year/Week (Key)", "Vehicle RDR Date_Calendar month (Key)", "Vehicle RDR Date_Calendar month (Long Name)", "Vehicle RDR Date_Calendar month (Medium Name)", "Vehicle RDR Date_Halfyear (Key)", "Vehicle RDR Date_Key", "Vehicle RDR Date_Quarter (Key)", "Vehicle RDR Date_Quarter (Long Name)", "Vehicle RDR Date_Quarter (Name)", "Vehicle Usage Level 01", "Vehicle Usage_Key", "YTD Rtl RNK Level 01", "YTD Rtl RNK_Key"
         )
-        WRAPPER (sapbwbapi "bv_retail_sales_S4_history_objectives")
+        WRAPPER (sapbwbapi "bv_lio -_sales _s/4 _historical _and _objectives")
     );
 
