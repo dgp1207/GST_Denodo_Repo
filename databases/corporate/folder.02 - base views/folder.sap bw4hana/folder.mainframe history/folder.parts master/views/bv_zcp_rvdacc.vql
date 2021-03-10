@@ -1,0 +1,112 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_rvdacc
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts master'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_RVDACC'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "ARRAY_INDEX Level 01" = '[4ZCP_RVDACC-ARRAY_INDEX].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-ARRAY_INDEX]' DIMENSIONNAME = '[4ZCP_RVDACC-ARRAY_INDEX]' LEVELPOSITION=1,
+        "ARRAY_INDEX_Key" = '[4ZCP_RVDACC-ARRAY_INDEX].[24ZCP_RVDACC-ARRAY_INDEX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-ARRAY_INDEX]' DIMENSIONNAME = '[4ZCP_RVDACC-ARRAY_INDEX]' ATTRIBUTE,
+        "CRE_BY_ID Level 01" = '[4ZCP_RVDACC-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_RVDACC-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_RVDACC-CRE_BY_ID].[24ZCP_RVDACC-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_RVDACC-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_RVDACC-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-CRE_TS]' DIMENSIONNAME = '[4ZCP_RVDACC-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_RVDACC-CRE_TS].[24ZCP_RVDACC-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-CRE_TS]' DIMENSIONNAME = '[4ZCP_RVDACC-CRE_TS]' ATTRIBUTE,
+        "DLR_ADDED_ABREV Level 01" = '[4ZCP_RVDACC-DLR_ADDED_AB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_AB]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_AB]' LEVELPOSITION=1,
+        "DLR_ADDED_ABREV_Key" = '[4ZCP_RVDACC-DLR_ADDED_AB].[24ZCP_RVDACC-DLR_ADDED_AB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_AB]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_AB]' ATTRIBUTE,
+        "DLR_ADDED_DESC Level 01" = '[4ZCP_RVDACC-DLR_ADDED_DE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_DE]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_DE]' LEVELPOSITION=1,
+        "DLR_ADDED_DESC_Key" = '[4ZCP_RVDACC-DLR_ADDED_DE].[24ZCP_RVDACC-DLR_ADDED_DE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_DE]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_DE]' ATTRIBUTE,
+        "DLR_ADDED_DLR Level 01" = '[4ZCP_RVDACC-DLR_ADDED_DL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_DL]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_DL]' LEVELPOSITION=1,
+        "DLR_ADDED_DLR_Key" = '[4ZCP_RVDACC-DLR_ADDED_DL].[24ZCP_RVDACC-DLR_ADDED_DL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_DL]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_DL]' ATTRIBUTE,
+        "DLR_ADDED_RTL_COST Level 01" = '[4ZCP_RVDACC-DLR_ADDED_RT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_RT]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_RT]' LEVELPOSITION=1,
+        "DLR_ADDED_RTL_COST_Key" = '[4ZCP_RVDACC-DLR_ADDED_RT].[24ZCP_RVDACC-DLR_ADDED_RT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_RT]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_RT]' ATTRIBUTE,
+        "DLR_ADDED_SEQ Level 01" = '[4ZCP_RVDACC-DLR_ADDED_SE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_SE]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_SE]' LEVELPOSITION=1,
+        "DLR_ADDED_SEQ_Key" = '[4ZCP_RVDACC-DLR_ADDED_SE].[24ZCP_RVDACC-DLR_ADDED_SE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_SE]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_SE]' ATTRIBUTE,
+        "DLR_ADDED_VIN Level 01" = '[4ZCP_RVDACC-DLR_ADDED_VI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_VI]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_VI]' LEVELPOSITION=1,
+        "DLR_ADDED_VIN_Key" = '[4ZCP_RVDACC-DLR_ADDED_VI].[24ZCP_RVDACC-DLR_ADDED_VI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-DLR_ADDED_VI]' DIMENSIONNAME = '[4ZCP_RVDACC-DLR_ADDED_VI]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "RVDADV_KEY_FILLER01 Level 01" = '[4ZCP_RVDACC-RVDADV_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-RVDADV_KEY_F]' DIMENSIONNAME = '[4ZCP_RVDACC-RVDADV_KEY_F]' LEVELPOSITION=1,
+        "RVDADV_KEY_FILLER01_Key" = '[4ZCP_RVDACC-RVDADV_KEY_F].[24ZCP_RVDACC-RVDADV_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-RVDADV_KEY_F]' DIMENSIONNAME = '[4ZCP_RVDACC-RVDADV_KEY_F]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_RVDACC-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_RVDACC-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_RVDACC-UPD_BY_ID].[24ZCP_RVDACC-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_RVDACC-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_RVDACC-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-UPD_TS]' DIMENSIONNAME = '[4ZCP_RVDACC-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_RVDACC-UPD_TS].[24ZCP_RVDACC-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVDACC-UPD_TS]' DIMENSIONNAME = '[4ZCP_RVDACC-UPD_TS]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_rvdacc I18N us_cst (
+        "ARRAY_INDEX Level 01":text,
+        "ARRAY_INDEX_Key":text,
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "DLR_ADDED_ABREV Level 01":text,
+        "DLR_ADDED_ABREV_Key":text,
+        "DLR_ADDED_DESC Level 01":text,
+        "DLR_ADDED_DESC_Key":text,
+        "DLR_ADDED_DLR Level 01":text,
+        "DLR_ADDED_DLR_Key":text,
+        "DLR_ADDED_RTL_COST Level 01":text,
+        "DLR_ADDED_RTL_COST_Key":text,
+        "DLR_ADDED_SEQ Level 01":text,
+        "DLR_ADDED_SEQ_Key":text,
+        "DLR_ADDED_VIN Level 01":text,
+        "DLR_ADDED_VIN_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "RVDADV_KEY_FILLER01 Level 01":text,
+        "RVDADV_KEY_FILLER01_Key":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts master'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_rvdacc(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "ARRAY_INDEX Level 01" (any) OPT ANY
+             ADD "ARRAY_INDEX_Key" (any) OPT ANY
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "DLR_ADDED_ABREV Level 01" (any) OPT ANY
+             ADD "DLR_ADDED_ABREV_Key" (any) OPT ANY
+             ADD "DLR_ADDED_DESC Level 01" (any) OPT ANY
+             ADD "DLR_ADDED_DESC_Key" (any) OPT ANY
+             ADD "DLR_ADDED_DLR Level 01" (any) OPT ANY
+             ADD "DLR_ADDED_DLR_Key" (any) OPT ANY
+             ADD "DLR_ADDED_RTL_COST Level 01" (any) OPT ANY
+             ADD "DLR_ADDED_RTL_COST_Key" (any) OPT ANY
+             ADD "DLR_ADDED_SEQ Level 01" (any) OPT ANY
+             ADD "DLR_ADDED_SEQ_Key" (any) OPT ANY
+             ADD "DLR_ADDED_VIN Level 01" (any) OPT ANY
+             ADD "DLR_ADDED_VIN_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "RVDADV_KEY_FILLER01 Level 01" (any) OPT ANY
+             ADD "RVDADV_KEY_FILLER01_Key" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("ARRAY_INDEX Level 01", "ARRAY_INDEX_Key", "CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "DLR_ADDED_ABREV Level 01", "DLR_ADDED_ABREV_Key", "DLR_ADDED_DESC Level 01", "DLR_ADDED_DESC_Key", "DLR_ADDED_DLR Level 01", "DLR_ADDED_DLR_Key", "DLR_ADDED_RTL_COST Level 01", "DLR_ADDED_RTL_COST_Key", "DLR_ADDED_SEQ Level 01", "DLR_ADDED_SEQ_Key", "DLR_ADDED_VIN Level 01", "DLR_ADDED_VIN_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "RVDADV_KEY_FILLER01 Level 01", "RVDADV_KEY_FILLER01_Key", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_rvdacc)
+    );
+
