@@ -1,0 +1,112 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_partsm
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts master'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_PARTSM'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "PARTS_CRE_BY_ID Level 01" = '[4ZCP_PARTSM-PARTS_CRE_BY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PARTS_CRE_BY]' DIMENSIONNAME = '[4ZCP_PARTSM-PARTS_CRE_BY]' LEVELPOSITION=1,
+        "PARTS_CRE_BY_ID_Key" = '[4ZCP_PARTSM-PARTS_CRE_BY].[24ZCP_PARTSM-PARTS_CRE_BY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PARTS_CRE_BY]' DIMENSIONNAME = '[4ZCP_PARTSM-PARTS_CRE_BY]' ATTRIBUTE,
+        "PARTS_CRE_TS Level 01" = '[4ZCP_PARTSM-PARTS_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PARTS_CRE_TS]' DIMENSIONNAME = '[4ZCP_PARTSM-PARTS_CRE_TS]' LEVELPOSITION=1,
+        "PARTS_CRE_TS_Key" = '[4ZCP_PARTSM-PARTS_CRE_TS].[24ZCP_PARTSM-PARTS_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PARTS_CRE_TS]' DIMENSIONNAME = '[4ZCP_PARTSM-PARTS_CRE_TS]' ATTRIBUTE,
+        "PARTS_UPD_BY_ID Level 01" = '[4ZCP_PARTSM-PARTS_UPD_BY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PARTS_UPD_BY]' DIMENSIONNAME = '[4ZCP_PARTSM-PARTS_UPD_BY]' LEVELPOSITION=1,
+        "PARTS_UPD_BY_ID_Key" = '[4ZCP_PARTSM-PARTS_UPD_BY].[24ZCP_PARTSM-PARTS_UPD_BY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PARTS_UPD_BY]' DIMENSIONNAME = '[4ZCP_PARTSM-PARTS_UPD_BY]' ATTRIBUTE,
+        "PARTS_UPD_TS Level 01" = '[4ZCP_PARTSM-PARTS_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PARTS_UPD_TS]' DIMENSIONNAME = '[4ZCP_PARTSM-PARTS_UPD_TS]' LEVELPOSITION=1,
+        "PARTS_UPD_TS_Key" = '[4ZCP_PARTSM-PARTS_UPD_TS].[24ZCP_PARTSM-PARTS_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PARTS_UPD_TS]' DIMENSIONNAME = '[4ZCP_PARTSM-PARTS_UPD_TS]' ATTRIBUTE,
+        "PRT_LOC Level 01" = '[4ZCP_PARTSM-PRT_LOC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_LOC]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_LOC]' LEVELPOSITION=1,
+        "PRT_LOC_Key" = '[4ZCP_PARTSM-PRT_LOC].[24ZCP_PARTSM-PRT_LOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_LOC]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_LOC]' ATTRIBUTE,
+        "PRT_LOC_CAP Level 01" = '[4ZCP_PARTSM-PRT_LOC_CAP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_LOC_CAP]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_LOC_CAP]' LEVELPOSITION=1,
+        "PRT_LOC_CAP_Key" = '[4ZCP_PARTSM-PRT_LOC_CAP].[24ZCP_PARTSM-PRT_LOC_CAP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_LOC_CAP]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_LOC_CAP]' ATTRIBUTE,
+        "PRT_LOC_OP Level 01" = '[4ZCP_PARTSM-PRT_LOC_OP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_LOC_OP]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_LOC_OP]' LEVELPOSITION=1,
+        "PRT_LOC_OP_Key" = '[4ZCP_PARTSM-PRT_LOC_OP].[24ZCP_PARTSM-PRT_LOC_OP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_LOC_OP]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_LOC_OP]' ATTRIBUTE,
+        "PRT_LOC_QTY Level 01" = '[4ZCP_PARTSM-PRT_LOC_QTY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_LOC_QTY]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_LOC_QTY]' LEVELPOSITION=1,
+        "PRT_LOC_QTY_Key" = '[4ZCP_PARTSM-PRT_LOC_QTY].[24ZCP_PARTSM-PRT_LOC_QTY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_LOC_QTY]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_LOC_QTY]' ATTRIBUTE,
+        "PRT_LOC_TYPE Level 01" = '[4ZCP_PARTSM-PRT_LOC_TYPE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_LOC_TYPE]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_LOC_TYPE]' LEVELPOSITION=1,
+        "PRT_LOC_TYPE_Key" = '[4ZCP_PARTSM-PRT_LOC_TYPE].[24ZCP_PARTSM-PRT_LOC_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_LOC_TYPE]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_LOC_TYPE]' ATTRIBUTE,
+        "PRT_NOT_USED_FLAG Level 01" = '[4ZCP_PARTSM-PRT_NOT_USED].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_NOT_USED]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_NOT_USED]' LEVELPOSITION=1,
+        "PRT_NOT_USED_FLAG_Key" = '[4ZCP_PARTSM-PRT_NOT_USED].[24ZCP_PARTSM-PRT_NOT_USED]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_NOT_USED]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_NOT_USED]' ATTRIBUTE,
+        "PRT_PART_NO Level 01" = '[4ZCP_PARTSM-PRT_PART_NO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_PART_NO]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_PART_NO]' LEVELPOSITION=1,
+        "PRT_PART_NO_Key" = '[4ZCP_PARTSM-PRT_PART_NO].[24ZCP_PARTSM-PRT_PART_NO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_PART_NO]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_PART_NO]' ATTRIBUTE,
+        "PRT_UNIQUE_NO Level 01" = '[4ZCP_PARTSM-PRT_UNIQUE_N].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_UNIQUE_N]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_UNIQUE_N]' LEVELPOSITION=1,
+        "PRT_UNIQUE_NO_Key" = '[4ZCP_PARTSM-PRT_UNIQUE_N].[24ZCP_PARTSM-PRT_UNIQUE_N]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PARTSM-PRT_UNIQUE_N]' DIMENSIONNAME = '[4ZCP_PARTSM-PRT_UNIQUE_N]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_partsm I18N us_cst (
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "PARTS_CRE_BY_ID Level 01":text,
+        "PARTS_CRE_BY_ID_Key":text,
+        "PARTS_CRE_TS Level 01":text,
+        "PARTS_CRE_TS_Key":text,
+        "PARTS_UPD_BY_ID Level 01":text,
+        "PARTS_UPD_BY_ID_Key":text,
+        "PARTS_UPD_TS Level 01":text,
+        "PARTS_UPD_TS_Key":text,
+        "PRT_LOC Level 01":text,
+        "PRT_LOC_Key":text,
+        "PRT_LOC_CAP Level 01":text,
+        "PRT_LOC_CAP_Key":text,
+        "PRT_LOC_OP Level 01":text,
+        "PRT_LOC_OP_Key":text,
+        "PRT_LOC_QTY Level 01":text,
+        "PRT_LOC_QTY_Key":text,
+        "PRT_LOC_TYPE Level 01":text,
+        "PRT_LOC_TYPE_Key":text,
+        "PRT_NOT_USED_FLAG Level 01":text,
+        "PRT_NOT_USED_FLAG_Key":text,
+        "PRT_PART_NO Level 01":text,
+        "PRT_PART_NO_Key":text,
+        "PRT_UNIQUE_NO Level 01":text,
+        "PRT_UNIQUE_NO_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts master'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_partsm(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "PARTS_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "PARTS_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "PARTS_CRE_TS Level 01" (any) OPT ANY
+             ADD "PARTS_CRE_TS_Key" (any) OPT ANY
+             ADD "PARTS_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "PARTS_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "PARTS_UPD_TS Level 01" (any) OPT ANY
+             ADD "PARTS_UPD_TS_Key" (any) OPT ANY
+             ADD "PRT_LOC Level 01" (any) OPT ANY
+             ADD "PRT_LOC_Key" (any) OPT ANY
+             ADD "PRT_LOC_CAP Level 01" (any) OPT ANY
+             ADD "PRT_LOC_CAP_Key" (any) OPT ANY
+             ADD "PRT_LOC_OP Level 01" (any) OPT ANY
+             ADD "PRT_LOC_OP_Key" (any) OPT ANY
+             ADD "PRT_LOC_QTY Level 01" (any) OPT ANY
+             ADD "PRT_LOC_QTY_Key" (any) OPT ANY
+             ADD "PRT_LOC_TYPE Level 01" (any) OPT ANY
+             ADD "PRT_LOC_TYPE_Key" (any) OPT ANY
+             ADD "PRT_NOT_USED_FLAG Level 01" (any) OPT ANY
+             ADD "PRT_NOT_USED_FLAG_Key" (any) OPT ANY
+             ADD "PRT_PART_NO Level 01" (any) OPT ANY
+             ADD "PRT_PART_NO_Key" (any) OPT ANY
+             ADD "PRT_UNIQUE_NO Level 01" (any) OPT ANY
+             ADD "PRT_UNIQUE_NO_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "PARTS_CRE_BY_ID Level 01", "PARTS_CRE_BY_ID_Key", "PARTS_CRE_TS Level 01", "PARTS_CRE_TS_Key", "PARTS_UPD_BY_ID Level 01", "PARTS_UPD_BY_ID_Key", "PARTS_UPD_TS Level 01", "PARTS_UPD_TS_Key", "PRT_LOC Level 01", "PRT_LOC_CAP Level 01", "PRT_LOC_CAP_Key", "PRT_LOC_Key", "PRT_LOC_OP Level 01", "PRT_LOC_OP_Key", "PRT_LOC_QTY Level 01", "PRT_LOC_QTY_Key", "PRT_LOC_TYPE Level 01", "PRT_LOC_TYPE_Key", "PRT_NOT_USED_FLAG Level 01", "PRT_NOT_USED_FLAG_Key", "PRT_PART_NO Level 01", "PRT_PART_NO_Key", "PRT_UNIQUE_NO Level 01", "PRT_UNIQUE_NO_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_partsm)
+    );
+
