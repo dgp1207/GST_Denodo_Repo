@@ -1,0 +1,94 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_genmso
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts master'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENMSO'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "CRE_BY_ID Level 01" = '[4ZCP_GENMSO-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENMSO-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_GENMSO-CRE_BY_ID].[24ZCP_GENMSO-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENMSO-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_GENMSO-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENMSO-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_GENMSO-CRE_TS].[24ZCP_GENMSO-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENMSO-CRE_TS]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "MSO_F Level 01" = '[4ZCP_GENMSO-MSO_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-MSO_F]' DIMENSIONNAME = '[4ZCP_GENMSO-MSO_F]' LEVELPOSITION=1,
+        "MSO_F_Key" = '[4ZCP_GENMSO-MSO_F].[24ZCP_GENMSO-MSO_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-MSO_F]' DIMENSIONNAME = '[4ZCP_GENMSO-MSO_F]' ATTRIBUTE,
+        "MSO_FAC Level 01" = '[4ZCP_GENMSO-MSO_FAC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-MSO_FAC]' DIMENSIONNAME = '[4ZCP_GENMSO-MSO_FAC]' LEVELPOSITION=1,
+        "MSO_FAC_Key" = '[4ZCP_GENMSO-MSO_FAC].[24ZCP_GENMSO-MSO_FAC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-MSO_FAC]' DIMENSIONNAME = '[4ZCP_GENMSO-MSO_FAC]' ATTRIBUTE,
+        "MSO_MDL Level 01" = '[4ZCP_GENMSO-MSO_MDL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-MSO_MDL]' DIMENSIONNAME = '[4ZCP_GENMSO-MSO_MDL]' LEVELPOSITION=1,
+        "MSO_MDL_Key" = '[4ZCP_GENMSO-MSO_MDL].[24ZCP_GENMSO-MSO_MDL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-MSO_MDL]' DIMENSIONNAME = '[4ZCP_GENMSO-MSO_MDL]' ATTRIBUTE,
+        "MSO_MYR Level 01" = '[4ZCP_GENMSO-MSO_MYR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-MSO_MYR]' DIMENSIONNAME = '[4ZCP_GENMSO-MSO_MYR]' LEVELPOSITION=1,
+        "MSO_MYR_Key" = '[4ZCP_GENMSO-MSO_MYR].[24ZCP_GENMSO-MSO_MYR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-MSO_MYR]' DIMENSIONNAME = '[4ZCP_GENMSO-MSO_MYR]' ATTRIBUTE,
+        "MSO_SEQ Level 01" = '[4ZCP_GENMSO-MSO_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-MSO_SEQ]' DIMENSIONNAME = '[4ZCP_GENMSO-MSO_SEQ]' LEVELPOSITION=1,
+        "MSO_SEQ_Key" = '[4ZCP_GENMSO-MSO_SEQ].[24ZCP_GENMSO-MSO_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-MSO_SEQ]' DIMENSIONNAME = '[4ZCP_GENMSO-MSO_SEQ]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_GENMSO-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENMSO-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_GENMSO-UPD_BY_ID].[24ZCP_GENMSO-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENMSO-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_GENMSO-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENMSO-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_GENMSO-UPD_TS].[24ZCP_GENMSO-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENMSO-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENMSO-UPD_TS]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_genmso I18N us_cst (
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "MSO_F Level 01":text,
+        "MSO_F_Key":text,
+        "MSO_FAC Level 01":text,
+        "MSO_FAC_Key":text,
+        "MSO_MDL Level 01":text,
+        "MSO_MDL_Key":text,
+        "MSO_MYR Level 01":text,
+        "MSO_MYR_Key":text,
+        "MSO_SEQ Level 01":text,
+        "MSO_SEQ_Key":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts master'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_genmso(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "MSO_F Level 01" (any) OPT ANY
+             ADD "MSO_F_Key" (any) OPT ANY
+             ADD "MSO_FAC Level 01" (any) OPT ANY
+             ADD "MSO_FAC_Key" (any) OPT ANY
+             ADD "MSO_MDL Level 01" (any) OPT ANY
+             ADD "MSO_MDL_Key" (any) OPT ANY
+             ADD "MSO_MYR Level 01" (any) OPT ANY
+             ADD "MSO_MYR_Key" (any) OPT ANY
+             ADD "MSO_SEQ Level 01" (any) OPT ANY
+             ADD "MSO_SEQ_Key" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "MSO_F Level 01", "MSO_FAC Level 01", "MSO_FAC_Key", "MSO_F_Key", "MSO_MDL Level 01", "MSO_MDL_Key", "MSO_MYR Level 01", "MSO_MYR_Key", "MSO_SEQ Level 01", "MSO_SEQ_Key", "Number of Records", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_genmso)
+    );
+
