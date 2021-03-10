@@ -1,0 +1,100 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_adjqty
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts master'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ADJQTY'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "PSR_ADJ_QTY Level 01" = '[4ZCP_ADJQTY-PSR_ADJ_QT_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_ADJ_QT_0]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_ADJ_QT_0]' LEVELPOSITION=1,
+        "PSR_ADJ_QTY_Key" = '[4ZCP_ADJQTY-PSR_ADJ_QT_0].[24ZCP_ADJQTY-PSR_ADJ_QT_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_ADJ_QT_0]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_ADJ_QT_0]' ATTRIBUTE,
+        "PSR_ADJ_QTY_SN Level 01" = '[4ZCP_ADJQTY-PSR_ADJ_QTY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_ADJ_QTY]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_ADJ_QTY]' LEVELPOSITION=1,
+        "PSR_ADJ_QTY_SN_Key" = '[4ZCP_ADJQTY-PSR_ADJ_QTY].[24ZCP_ADJQTY-PSR_ADJ_QTY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_ADJ_QTY]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_ADJ_QTY]' ATTRIBUTE,
+        "PSR_ARCHIVE_IN Level 01" = '[4ZCP_ADJQTY-PSR_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_ARCHIVE]' LEVELPOSITION=1,
+        "PSR_ARCHIVE_IN_Key" = '[4ZCP_ADJQTY-PSR_ARCHIVE].[24ZCP_ADJQTY-PSR_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_ARCHIVE]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_ARCHIVE]' ATTRIBUTE,
+        "PSR_CRE_BY_ID Level 01" = '[4ZCP_ADJQTY-PSR_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_CRE_BY_I]' LEVELPOSITION=1,
+        "PSR_CRE_BY_ID_Key" = '[4ZCP_ADJQTY-PSR_CRE_BY_I].[24ZCP_ADJQTY-PSR_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_CRE_BY_I]' ATTRIBUTE,
+        "PSR_CRE_TS Level 01" = '[4ZCP_ADJQTY-PSR_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_CRE_TS]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_CRE_TS]' LEVELPOSITION=1,
+        "PSR_CRE_TS_Key" = '[4ZCP_ADJQTY-PSR_CRE_TS].[24ZCP_ADJQTY-PSR_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_CRE_TS]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_CRE_TS]' ATTRIBUTE,
+        "PSR_END_DT Level 01" = '[4ZCP_ADJQTY-PSR_END_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_END_DT]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_END_DT]' LEVELPOSITION=1,
+        "PSR_END_DT_Key" = '[4ZCP_ADJQTY-PSR_END_DT].[24ZCP_ADJQTY-PSR_END_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_END_DT]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_END_DT]' ATTRIBUTE,
+        "PSR_PART_NO Level 01" = '[4ZCP_ADJQTY-PSR_PART_NO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_PART_NO]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_PART_NO]' LEVELPOSITION=1,
+        "PSR_PART_NO_Key" = '[4ZCP_ADJQTY-PSR_PART_NO].[24ZCP_ADJQTY-PSR_PART_NO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_PART_NO]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_PART_NO]' ATTRIBUTE,
+        "PSR_STRT_DT Level 01" = '[4ZCP_ADJQTY-PSR_STRT_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_STRT_DT]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_STRT_DT]' LEVELPOSITION=1,
+        "PSR_STRT_DT_Key" = '[4ZCP_ADJQTY-PSR_STRT_DT].[24ZCP_ADJQTY-PSR_STRT_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_STRT_DT]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_STRT_DT]' ATTRIBUTE,
+        "PSR_UPD_BY_ID Level 01" = '[4ZCP_ADJQTY-PSR_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_UPD_BY_I]' LEVELPOSITION=1,
+        "PSR_UPD_BY_ID_Key" = '[4ZCP_ADJQTY-PSR_UPD_BY_I].[24ZCP_ADJQTY-PSR_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_UPD_BY_I]' ATTRIBUTE,
+        "PSR_UPD_TS Level 01" = '[4ZCP_ADJQTY-PSR_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_UPD_TS]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_UPD_TS]' LEVELPOSITION=1,
+        "PSR_UPD_TS_Key" = '[4ZCP_ADJQTY-PSR_UPD_TS].[24ZCP_ADJQTY-PSR_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ADJQTY-PSR_UPD_TS]' DIMENSIONNAME = '[4ZCP_ADJQTY-PSR_UPD_TS]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_adjqty I18N us_cst (
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "PSR_ADJ_QTY Level 01":text,
+        "PSR_ADJ_QTY_Key":text,
+        "PSR_ADJ_QTY_SN Level 01":text,
+        "PSR_ADJ_QTY_SN_Key":text,
+        "PSR_ARCHIVE_IN Level 01":text,
+        "PSR_ARCHIVE_IN_Key":text,
+        "PSR_CRE_BY_ID Level 01":text,
+        "PSR_CRE_BY_ID_Key":text,
+        "PSR_CRE_TS Level 01":text,
+        "PSR_CRE_TS_Key":text,
+        "PSR_END_DT Level 01":text,
+        "PSR_END_DT_Key":text,
+        "PSR_PART_NO Level 01":text,
+        "PSR_PART_NO_Key":text,
+        "PSR_STRT_DT Level 01":text,
+        "PSR_STRT_DT_Key":text,
+        "PSR_UPD_BY_ID Level 01":text,
+        "PSR_UPD_BY_ID_Key":text,
+        "PSR_UPD_TS Level 01":text,
+        "PSR_UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts master'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_adjqty(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "PSR_ADJ_QTY Level 01" (any) OPT ANY
+             ADD "PSR_ADJ_QTY_Key" (any) OPT ANY
+             ADD "PSR_ADJ_QTY_SN Level 01" (any) OPT ANY
+             ADD "PSR_ADJ_QTY_SN_Key" (any) OPT ANY
+             ADD "PSR_ARCHIVE_IN Level 01" (any) OPT ANY
+             ADD "PSR_ARCHIVE_IN_Key" (any) OPT ANY
+             ADD "PSR_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "PSR_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "PSR_CRE_TS Level 01" (any) OPT ANY
+             ADD "PSR_CRE_TS_Key" (any) OPT ANY
+             ADD "PSR_END_DT Level 01" (any) OPT ANY
+             ADD "PSR_END_DT_Key" (any) OPT ANY
+             ADD "PSR_PART_NO Level 01" (any) OPT ANY
+             ADD "PSR_PART_NO_Key" (any) OPT ANY
+             ADD "PSR_STRT_DT Level 01" (any) OPT ANY
+             ADD "PSR_STRT_DT_Key" (any) OPT ANY
+             ADD "PSR_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "PSR_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "PSR_UPD_TS Level 01" (any) OPT ANY
+             ADD "PSR_UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "PSR_ADJ_QTY Level 01", "PSR_ADJ_QTY_Key", "PSR_ADJ_QTY_SN Level 01", "PSR_ADJ_QTY_SN_Key", "PSR_ARCHIVE_IN Level 01", "PSR_ARCHIVE_IN_Key", "PSR_CRE_BY_ID Level 01", "PSR_CRE_BY_ID_Key", "PSR_CRE_TS Level 01", "PSR_CRE_TS_Key", "PSR_END_DT Level 01", "PSR_END_DT_Key", "PSR_PART_NO Level 01", "PSR_PART_NO_Key", "PSR_STRT_DT Level 01", "PSR_STRT_DT_Key", "PSR_UPD_BY_ID Level 01", "PSR_UPD_BY_ID_Key", "PSR_UPD_TS Level 01", "PSR_UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_adjqty)
+    );
+
