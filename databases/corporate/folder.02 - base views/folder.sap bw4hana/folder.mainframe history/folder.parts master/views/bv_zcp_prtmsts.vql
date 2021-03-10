@@ -1,0 +1,94 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_prtmsts
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts master'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_PRTMSTS'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "PSL_ARCHIVE_CD Level 01" = '[4ZCP_PRTMSTS-PSL_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_ARCHIVE]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_ARCHIVE]' LEVELPOSITION=1,
+        "PSL_ARCHIVE_CD_Key" = '[4ZCP_PRTMSTS-PSL_ARCHIVE].[24ZCP_PRTMSTS-PSL_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_ARCHIVE]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_ARCHIVE]' ATTRIBUTE,
+        "PSL_CRE_BY_ID Level 01" = '[4ZCP_PRTMSTS-PSL_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_CRE_BY_I]' LEVELPOSITION=1,
+        "PSL_CRE_BY_ID_Key" = '[4ZCP_PRTMSTS-PSL_CRE_BY_I].[24ZCP_PRTMSTS-PSL_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_CRE_BY_I]' ATTRIBUTE,
+        "PSL_CRE_TS Level 01" = '[4ZCP_PRTMSTS-PSL_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_CRE_TS]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_CRE_TS]' LEVELPOSITION=1,
+        "PSL_CRE_TS_Key" = '[4ZCP_PRTMSTS-PSL_CRE_TS].[24ZCP_PRTMSTS-PSL_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_CRE_TS]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_CRE_TS]' ATTRIBUTE,
+        "PSL_PART_NO Level 01" = '[4ZCP_PRTMSTS-PSL_PART_NO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_PART_NO]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_PART_NO]' LEVELPOSITION=1,
+        "PSL_PART_NO_Key" = '[4ZCP_PRTMSTS-PSL_PART_NO].[24ZCP_PRTMSTS-PSL_PART_NO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_PART_NO]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_PART_NO]' ATTRIBUTE,
+        "PSL_SLS_YM_CD Level 01" = '[4ZCP_PRTMSTS-PSL_SLS_YM_C].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_SLS_YM_C]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_SLS_YM_C]' LEVELPOSITION=1,
+        "PSL_SLS_YM_CD_Key" = '[4ZCP_PRTMSTS-PSL_SLS_YM_C].[24ZCP_PRTMSTS-PSL_SLS_YM_C]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_SLS_YM_C]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_SLS_YM_C]' ATTRIBUTE,
+        "PSL_UPD_BY_ID Level 01" = '[4ZCP_PRTMSTS-PSL_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_UPD_BY_I]' LEVELPOSITION=1,
+        "PSL_UPD_BY_ID_Key" = '[4ZCP_PRTMSTS-PSL_UPD_BY_I].[24ZCP_PRTMSTS-PSL_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_UPD_BY_I]' ATTRIBUTE,
+        "PSL_UPD_TS Level 01" = '[4ZCP_PRTMSTS-PSL_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_UPD_TS]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_UPD_TS]' LEVELPOSITION=1,
+        "PSL_UPD_TS_Key" = '[4ZCP_PRTMSTS-PSL_UPD_TS].[24ZCP_PRTMSTS-PSL_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PRTMSTS-PSL_UPD_TS]' DIMENSIONNAME = '[4ZCP_PRTMSTS-PSL_UPD_TS]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE,
+        "PSL_PDC_ORD_FREQ_MTD_QTY" = '[Measures].[4ZCP_PRTMSTS-LVYBJPXBLG1G]' : 'java.lang.Integer' (OPT) MEASURE,
+        "PSL_PDC_SOLD_MTD_QTY" = '[Measures].[4ZCP_PRTMSTS-IOFLQKIAXIBI]' : 'java.lang.Integer' (OPT) MEASURE,
+        "PSL_VPC_ORD_FREQ_MTD_QT" = '[Measures].[4ZCP_PRTMSTS-IJ76NO6A96SS]' : 'java.lang.Integer' (OPT) MEASURE,
+        "PSL_VPC_SOLD_MTD_QTY" = '[Measures].[4ZCP_PRTMSTS-K6SQ6D26SVSI]' : 'java.lang.Integer' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_prtmsts I18N us_cst (
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "PSL_ARCHIVE_CD Level 01":text,
+        "PSL_ARCHIVE_CD_Key":text,
+        "PSL_CRE_BY_ID Level 01":text,
+        "PSL_CRE_BY_ID_Key":text,
+        "PSL_CRE_TS Level 01":text,
+        "PSL_CRE_TS_Key":text,
+        "PSL_PART_NO Level 01":text,
+        "PSL_PART_NO_Key":text,
+        "PSL_SLS_YM_CD Level 01":text,
+        "PSL_SLS_YM_CD_Key":text,
+        "PSL_UPD_BY_ID Level 01":text,
+        "PSL_UPD_BY_ID_Key":text,
+        "PSL_UPD_TS Level 01":text,
+        "PSL_UPD_TS_Key":text,
+        "Number of Records":double,
+        "PSL_PDC_ORD_FREQ_MTD_QTY":int,
+        "PSL_PDC_SOLD_MTD_QTY":int,
+        "PSL_VPC_ORD_FREQ_MTD_QT":int,
+        "PSL_VPC_SOLD_MTD_QTY":int
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts master'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_prtmsts(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "PSL_ARCHIVE_CD Level 01" (any) OPT ANY
+             ADD "PSL_ARCHIVE_CD_Key" (any) OPT ANY
+             ADD "PSL_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "PSL_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "PSL_CRE_TS Level 01" (any) OPT ANY
+             ADD "PSL_CRE_TS_Key" (any) OPT ANY
+             ADD "PSL_PART_NO Level 01" (any) OPT ANY
+             ADD "PSL_PART_NO_Key" (any) OPT ANY
+             ADD "PSL_SLS_YM_CD Level 01" (any) OPT ANY
+             ADD "PSL_SLS_YM_CD_Key" (any) OPT ANY
+             ADD "PSL_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "PSL_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "PSL_UPD_TS Level 01" (any) OPT ANY
+             ADD "PSL_UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+             ADD "PSL_PDC_ORD_FREQ_MTD_QTY" (any) OPT ANY
+             ADD "PSL_PDC_SOLD_MTD_QTY" (any) OPT ANY
+             ADD "PSL_VPC_ORD_FREQ_MTD_QT" (any) OPT ANY
+             ADD "PSL_VPC_SOLD_MTD_QTY" (any) OPT ANY
+        )
+        OUTPUTLIST ("InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "PSL_ARCHIVE_CD Level 01", "PSL_ARCHIVE_CD_Key", "PSL_CRE_BY_ID Level 01", "PSL_CRE_BY_ID_Key", "PSL_CRE_TS Level 01", "PSL_CRE_TS_Key", "PSL_PART_NO Level 01", "PSL_PART_NO_Key", "PSL_PDC_ORD_FREQ_MTD_QTY", "PSL_PDC_SOLD_MTD_QTY", "PSL_SLS_YM_CD Level 01", "PSL_SLS_YM_CD_Key", "PSL_UPD_BY_ID Level 01", "PSL_UPD_BY_ID_Key", "PSL_UPD_TS Level 01", "PSL_UPD_TS_Key", "PSL_VPC_ORD_FREQ_MTD_QT", "PSL_VPC_SOLD_MTD_QTY"
+        )
+        WRAPPER (sapbwbapi bv_zcp_prtmsts)
+    );
+
