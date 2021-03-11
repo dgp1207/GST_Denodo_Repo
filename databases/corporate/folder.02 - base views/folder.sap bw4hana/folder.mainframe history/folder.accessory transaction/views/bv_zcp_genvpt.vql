@@ -1,0 +1,106 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_genvpt
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENVPT'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "CRE_BY_IDF Level 01" = '[4ZCP_GENVPT-CRE_BY_IDF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-CRE_BY_IDF]' DIMENSIONNAME = '[4ZCP_GENVPT-CRE_BY_IDF]' LEVELPOSITION=1,
+        "CRE_BY_IDF_Key" = '[4ZCP_GENVPT-CRE_BY_IDF].[24ZCP_GENVPT-CRE_BY_IDF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-CRE_BY_IDF]' DIMENSIONNAME = '[4ZCP_GENVPT-CRE_BY_IDF]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_GENVPT-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENVPT-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_GENVPT-CRE_TS].[24ZCP_GENVPT-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENVPT-CRE_TS]' ATTRIBUTE,
+        "GENVPT_KEY_FILLER01 Level 01" = '[4ZCP_GENVPT-GENVPT_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-GENVPT_KEY_F]' DIMENSIONNAME = '[4ZCP_GENVPT-GENVPT_KEY_F]' LEVELPOSITION=1,
+        "GENVPT_KEY_FILLER01_Key" = '[4ZCP_GENVPT-GENVPT_KEY_F].[24ZCP_GENVPT-GENVPT_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-GENVPT_KEY_F]' DIMENSIONNAME = '[4ZCP_GENVPT-GENVPT_KEY_F]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_GENVPT-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENVPT-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_GENVPT-UPD_BY_ID].[24ZCP_GENVPT-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENVPT-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_GENVPT-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENVPT-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_GENVPT-UPD_TS].[24ZCP_GENVPT-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENVPT-UPD_TS]' ATTRIBUTE,
+        "VPT_COD Level 01" = '[4ZCP_GENVPT-VPT_COD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_COD]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_COD]' LEVELPOSITION=1,
+        "VPT_COD_Key" = '[4ZCP_GENVPT-VPT_COD].[24ZCP_GENVPT-VPT_COD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_COD]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_COD]' ATTRIBUTE,
+        "VPT_DOM_IMP_FLAG Level 01" = '[4ZCP_GENVPT-VPT_DOM_IMP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_DOM_IMP]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_DOM_IMP]' LEVELPOSITION=1,
+        "VPT_DOM_IMP_FLAG_Key" = '[4ZCP_GENVPT-VPT_DOM_IMP].[24ZCP_GENVPT-VPT_DOM_IMP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_DOM_IMP]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_DOM_IMP]' ATTRIBUTE,
+        "VPT_FAC Level 01" = '[4ZCP_GENVPT-VPT_FAC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_FAC]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_FAC]' LEVELPOSITION=1,
+        "VPT_FAC_Key" = '[4ZCP_GENVPT-VPT_FAC].[24ZCP_GENVPT-VPT_FAC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_FAC]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_FAC]' ATTRIBUTE,
+        "VPT_MYR Level 01" = '[4ZCP_GENVPT-VPT_MYR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_MYR]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_MYR]' LEVELPOSITION=1,
+        "VPT_MYR_Key" = '[4ZCP_GENVPT-VPT_MYR].[24ZCP_GENVPT-VPT_MYR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_MYR]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_MYR]' ATTRIBUTE,
+        "VPT_RBT Level 01" = '[4ZCP_GENVPT-VPT_RBT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_RBT]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_RBT]' LEVELPOSITION=1,
+        "VPT_RBT_Key" = '[4ZCP_GENVPT-VPT_RBT].[24ZCP_GENVPT-VPT_RBT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_RBT]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_RBT]' ATTRIBUTE,
+        "VPT_SEQ Level 01" = '[4ZCP_GENVPT-VPT_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_SEQ]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_SEQ]' LEVELPOSITION=1,
+        "VPT_SEQ_Key" = '[4ZCP_GENVPT-VPT_SEQ].[24ZCP_GENVPT-VPT_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENVPT-VPT_SEQ]' DIMENSIONNAME = '[4ZCP_GENVPT-VPT_SEQ]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_genvpt I18N us_cst (
+        "CRE_BY_IDF Level 01":text,
+        "CRE_BY_IDF_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "GENVPT_KEY_FILLER01 Level 01":text,
+        "GENVPT_KEY_FILLER01_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "VPT_COD Level 01":text,
+        "VPT_COD_Key":text,
+        "VPT_DOM_IMP_FLAG Level 01":text,
+        "VPT_DOM_IMP_FLAG_Key":text,
+        "VPT_FAC Level 01":text,
+        "VPT_FAC_Key":text,
+        "VPT_MYR Level 01":text,
+        "VPT_MYR_Key":text,
+        "VPT_RBT Level 01":text,
+        "VPT_RBT_Key":text,
+        "VPT_SEQ Level 01":text,
+        "VPT_SEQ_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accessory transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_genvpt(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "CRE_BY_IDF Level 01" (any) OPT ANY
+             ADD "CRE_BY_IDF_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "GENVPT_KEY_FILLER01 Level 01" (any) OPT ANY
+             ADD "GENVPT_KEY_FILLER01_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "VPT_COD Level 01" (any) OPT ANY
+             ADD "VPT_COD_Key" (any) OPT ANY
+             ADD "VPT_DOM_IMP_FLAG Level 01" (any) OPT ANY
+             ADD "VPT_DOM_IMP_FLAG_Key" (any) OPT ANY
+             ADD "VPT_FAC Level 01" (any) OPT ANY
+             ADD "VPT_FAC_Key" (any) OPT ANY
+             ADD "VPT_MYR Level 01" (any) OPT ANY
+             ADD "VPT_MYR_Key" (any) OPT ANY
+             ADD "VPT_RBT Level 01" (any) OPT ANY
+             ADD "VPT_RBT_Key" (any) OPT ANY
+             ADD "VPT_SEQ Level 01" (any) OPT ANY
+             ADD "VPT_SEQ_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("CRE_BY_IDF Level 01", "CRE_BY_IDF_Key", "CRE_TS Level 01", "CRE_TS_Key", "GENVPT_KEY_FILLER01 Level 01", "GENVPT_KEY_FILLER01_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key", "VPT_COD Level 01", "VPT_COD_Key", "VPT_DOM_IMP_FLAG Level 01", "VPT_DOM_IMP_FLAG_Key", "VPT_FAC Level 01", "VPT_FAC_Key", "VPT_MYR Level 01", "VPT_MYR_Key", "VPT_RBT Level 01", "VPT_RBT_Key", "VPT_SEQ Level 01", "VPT_SEQ_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_genvpt)
+    );
+

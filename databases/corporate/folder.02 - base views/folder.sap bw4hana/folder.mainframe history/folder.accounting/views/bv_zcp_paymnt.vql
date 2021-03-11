@@ -1,0 +1,118 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "bv_ZCP_PAYMNT"
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accounting'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_PAYMNT'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = TRUE
+    OUTPUTSCHEMA (
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "PAYMNT_CRE_BY_ID Level 01" = '[4ZCP_PAYMNT-PAYMNT_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAYMNT_CRE_B]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAYMNT_CRE_B]' LEVELPOSITION=1,
+        "PAYMNT_CRE_BY_ID_Key" = '[4ZCP_PAYMNT-PAYMNT_CRE_B].[24ZCP_PAYMNT-PAYMNT_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAYMNT_CRE_B]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAYMNT_CRE_B]' ATTRIBUTE,
+        "PAYMNT_CRE_TS Level 01" = '[4ZCP_PAYMNT-PAYMNT_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAYMNT_CRE_T]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAYMNT_CRE_T]' LEVELPOSITION=1,
+        "PAYMNT_CRE_TS_Key" = '[4ZCP_PAYMNT-PAYMNT_CRE_T].[24ZCP_PAYMNT-PAYMNT_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAYMNT_CRE_T]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAYMNT_CRE_T]' ATTRIBUTE,
+        "PAYMNT_UPD_BY_ID Level 01" = '[4ZCP_PAYMNT-PAYMNT_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAYMNT_UPD_B]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAYMNT_UPD_B]' LEVELPOSITION=1,
+        "PAYMNT_UPD_BY_ID_Key" = '[4ZCP_PAYMNT-PAYMNT_UPD_B].[24ZCP_PAYMNT-PAYMNT_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAYMNT_UPD_B]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAYMNT_UPD_B]' ATTRIBUTE,
+        "PAYMNT_UPD_TS Level 01" = '[4ZCP_PAYMNT-PAYMNT_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAYMNT_UPD_T]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAYMNT_UPD_T]' LEVELPOSITION=1,
+        "PAYMNT_UPD_TS_Key" = '[4ZCP_PAYMNT-PAYMNT_UPD_T].[24ZCP_PAYMNT-PAYMNT_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAYMNT_UPD_T]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAYMNT_UPD_T]' ATTRIBUTE,
+        "PAY_AMT Level 01" = '[4ZCP_PAYMNT-PAY_AMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_AMT]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_AMT]' LEVELPOSITION=1,
+        "PAY_AMT_Key" = '[4ZCP_PAYMNT-PAY_AMT].[24ZCP_PAYMNT-PAY_AMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_AMT]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_AMT]' ATTRIBUTE,
+        "PAY_CMT Level 01" = '[4ZCP_PAYMNT-PAY_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_CMT]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_CMT]' LEVELPOSITION=1,
+        "PAY_CMT_Key" = '[4ZCP_PAYMNT-PAY_CMT].[24ZCP_PAYMNT-PAY_CMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_CMT]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_CMT]' ATTRIBUTE,
+        "PAY_DLR_NUM Level 01" = '[4ZCP_PAYMNT-PAY_DLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_DLR_NUM]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_DLR_NUM]' LEVELPOSITION=1,
+        "PAY_DLR_NUM_Key" = '[4ZCP_PAYMNT-PAY_DLR_NUM].[24ZCP_PAYMNT-PAY_DLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_DLR_NUM]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_DLR_NUM]' ATTRIBUTE,
+        "PAY_DOC_NUM Level 01" = '[4ZCP_PAYMNT-PAY_DOC_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_DOC_NUM]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_DOC_NUM]' LEVELPOSITION=1,
+        "PAY_DOC_NUM_Key" = '[4ZCP_PAYMNT-PAY_DOC_NUM].[24ZCP_PAYMNT-PAY_DOC_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_DOC_NUM]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_DOC_NUM]' ATTRIBUTE,
+        "PAY_PGM_NUM Level 01" = '[4ZCP_PAYMNT-PAY_PGM_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_PGM_NUM]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_PGM_NUM]' LEVELPOSITION=1,
+        "PAY_PGM_NUM_Key" = '[4ZCP_PAYMNT-PAY_PGM_NUM].[24ZCP_PAYMNT-PAY_PGM_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_PGM_NUM]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_PGM_NUM]' ATTRIBUTE,
+        "PAY_PGM_YR Level 01" = '[4ZCP_PAYMNT-PAY_PGM_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_PGM_YR]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_PGM_YR]' LEVELPOSITION=1,
+        "PAY_PGM_YR_Key" = '[4ZCP_PAYMNT-PAY_PGM_YR].[24ZCP_PAYMNT-PAY_PGM_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_PGM_YR]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_PGM_YR]' ATTRIBUTE,
+        "PAY_PROC_DT Level 01" = '[4ZCP_PAYMNT-PAY_PROC_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_PROC_DT]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_PROC_DT]' LEVELPOSITION=1,
+        "PAY_PROC_DT_Key" = '[4ZCP_PAYMNT-PAY_PROC_DT].[24ZCP_PAYMNT-PAY_PROC_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_PROC_DT]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_PROC_DT]' ATTRIBUTE,
+        "PAY_STAT_CD Level 01" = '[4ZCP_PAYMNT-PAY_STAT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_STAT_CD]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_STAT_CD]' LEVELPOSITION=1,
+        "PAY_STAT_CD_Key" = '[4ZCP_PAYMNT-PAY_STAT_CD].[24ZCP_PAYMNT-PAY_STAT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_STAT_CD]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_STAT_CD]' ATTRIBUTE,
+        "PAY_TYPE Level 01" = '[4ZCP_PAYMNT-PAY_TYPE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_TYPE]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_TYPE]' LEVELPOSITION=1,
+        "PAY_TYPE_Key" = '[4ZCP_PAYMNT-PAY_TYPE].[24ZCP_PAYMNT-PAY_TYPE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_PAYMNT-PAY_TYPE]' DIMENSIONNAME = '[4ZCP_PAYMNT-PAY_TYPE]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE "bv_ZCP_PAYMNT" I18N us_cst (
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "PAYMNT_CRE_BY_ID Level 01":text,
+        "PAYMNT_CRE_BY_ID_Key":text,
+        "PAYMNT_CRE_TS Level 01":text,
+        "PAYMNT_CRE_TS_Key":text,
+        "PAYMNT_UPD_BY_ID Level 01":text,
+        "PAYMNT_UPD_BY_ID_Key":text,
+        "PAYMNT_UPD_TS Level 01":text,
+        "PAYMNT_UPD_TS_Key":text,
+        "PAY_AMT Level 01":text,
+        "PAY_AMT_Key":text,
+        "PAY_CMT Level 01":text,
+        "PAY_CMT_Key":text,
+        "PAY_DLR_NUM Level 01":text,
+        "PAY_DLR_NUM_Key":text,
+        "PAY_DOC_NUM Level 01":text,
+        "PAY_DOC_NUM_Key":text,
+        "PAY_PGM_NUM Level 01":text,
+        "PAY_PGM_NUM_Key":text,
+        "PAY_PGM_YR Level 01":text,
+        "PAY_PGM_YR_Key":text,
+        "PAY_PROC_DT Level 01":text,
+        "PAY_PROC_DT_Key":text,
+        "PAY_STAT_CD Level 01":text,
+        "PAY_STAT_CD_Key":text,
+        "PAY_TYPE Level 01":text,
+        "PAY_TYPE_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accounting'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD "bv_ZCP_PAYMNT"(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "PAYMNT_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "PAYMNT_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "PAYMNT_CRE_TS Level 01" (any) OPT ANY
+             ADD "PAYMNT_CRE_TS_Key" (any) OPT ANY
+             ADD "PAYMNT_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "PAYMNT_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "PAYMNT_UPD_TS Level 01" (any) OPT ANY
+             ADD "PAYMNT_UPD_TS_Key" (any) OPT ANY
+             ADD "PAY_AMT Level 01" (any) OPT ANY
+             ADD "PAY_AMT_Key" (any) OPT ANY
+             ADD "PAY_CMT Level 01" (any) OPT ANY
+             ADD "PAY_CMT_Key" (any) OPT ANY
+             ADD "PAY_DLR_NUM Level 01" (any) OPT ANY
+             ADD "PAY_DLR_NUM_Key" (any) OPT ANY
+             ADD "PAY_DOC_NUM Level 01" (any) OPT ANY
+             ADD "PAY_DOC_NUM_Key" (any) OPT ANY
+             ADD "PAY_PGM_NUM Level 01" (any) OPT ANY
+             ADD "PAY_PGM_NUM_Key" (any) OPT ANY
+             ADD "PAY_PGM_YR Level 01" (any) OPT ANY
+             ADD "PAY_PGM_YR_Key" (any) OPT ANY
+             ADD "PAY_PROC_DT Level 01" (any) OPT ANY
+             ADD "PAY_PROC_DT_Key" (any) OPT ANY
+             ADD "PAY_STAT_CD Level 01" (any) OPT ANY
+             ADD "PAY_STAT_CD_Key" (any) OPT ANY
+             ADD "PAY_TYPE Level 01" (any) OPT ANY
+             ADD "PAY_TYPE_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "PAYMNT_CRE_BY_ID Level 01", "PAYMNT_CRE_BY_ID_Key", "PAYMNT_CRE_TS Level 01", "PAYMNT_CRE_TS_Key", "PAYMNT_UPD_BY_ID Level 01", "PAYMNT_UPD_BY_ID_Key", "PAYMNT_UPD_TS Level 01", "PAYMNT_UPD_TS_Key", "PAY_AMT Level 01", "PAY_AMT_Key", "PAY_CMT Level 01", "PAY_CMT_Key", "PAY_DLR_NUM Level 01", "PAY_DLR_NUM_Key", "PAY_DOC_NUM Level 01", "PAY_DOC_NUM_Key", "PAY_PGM_NUM Level 01", "PAY_PGM_NUM_Key", "PAY_PGM_YR Level 01", "PAY_PGM_YR_Key", "PAY_PROC_DT Level 01", "PAY_PROC_DT_Key", "PAY_STAT_CD Level 01", "PAY_STAT_CD_Key", "PAY_TYPE Level 01", "PAY_TYPE_Key"
+        )
+        WRAPPER (sapbwbapi "bv_ZCP_PAYMNT")
+    );
+

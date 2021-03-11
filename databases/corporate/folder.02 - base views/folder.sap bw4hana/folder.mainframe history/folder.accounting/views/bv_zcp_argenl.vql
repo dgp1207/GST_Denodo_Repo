@@ -1,0 +1,127 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "bv_ZCP_ARGENL"
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accounting'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_ARGENL'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = TRUE
+    OUTPUTSCHEMA (
+        "ARGENL_CRE_BY_ID Level 01" = '[4ZCP_ARGENL-ARGENL_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARGENL_CRE_B]' DIMENSIONNAME = '[4ZCP_ARGENL-ARGENL_CRE_B]' LEVELPOSITION=1,
+        "ARGENL_CRE_BY_ID_Key" = '[4ZCP_ARGENL-ARGENL_CRE_B].[24ZCP_ARGENL-ARGENL_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARGENL_CRE_B]' DIMENSIONNAME = '[4ZCP_ARGENL-ARGENL_CRE_B]' ATTRIBUTE,
+        "ARGENL_CRE_TS Level 01" = '[4ZCP_ARGENL-ARGENL_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARGENL_CRE_T]' DIMENSIONNAME = '[4ZCP_ARGENL-ARGENL_CRE_T]' LEVELPOSITION=1,
+        "ARGENL_CRE_TS_Key" = '[4ZCP_ARGENL-ARGENL_CRE_T].[24ZCP_ARGENL-ARGENL_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARGENL_CRE_T]' DIMENSIONNAME = '[4ZCP_ARGENL-ARGENL_CRE_T]' ATTRIBUTE,
+        "ARGENL_UPD_BY_ID Level 01" = '[4ZCP_ARGENL-ARGENL_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARGENL_UPD_B]' DIMENSIONNAME = '[4ZCP_ARGENL-ARGENL_UPD_B]' LEVELPOSITION=1,
+        "ARGENL_UPD_BY_ID_Key" = '[4ZCP_ARGENL-ARGENL_UPD_B].[24ZCP_ARGENL-ARGENL_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARGENL_UPD_B]' DIMENSIONNAME = '[4ZCP_ARGENL-ARGENL_UPD_B]' ATTRIBUTE,
+        "ARGENL_UPD_TS Level 01" = '[4ZCP_ARGENL-ARGENL_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARGENL_UPD_T]' DIMENSIONNAME = '[4ZCP_ARGENL-ARGENL_UPD_T]' LEVELPOSITION=1,
+        "ARGENL_UPD_TS_Key" = '[4ZCP_ARGENL-ARGENL_UPD_T].[24ZCP_ARGENL-ARGENL_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARGENL_UPD_T]' DIMENSIONNAME = '[4ZCP_ARGENL-ARGENL_UPD_T]' ATTRIBUTE,
+        "ARG_ACCT_NUM Level 01" = '[4ZCP_ARGENL-ARG_ACCT_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_ACCT_NUM]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_ACCT_NUM]' LEVELPOSITION=1,
+        "ARG_ACCT_NUM_Key" = '[4ZCP_ARGENL-ARG_ACCT_NUM].[24ZCP_ARGENL-ARG_ACCT_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_ACCT_NUM]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_ACCT_NUM]' ATTRIBUTE,
+        "ARG_BTCH_DT Level 01" = '[4ZCP_ARGENL-ARG_BTCH_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_BTCH_DT]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_BTCH_DT]' LEVELPOSITION=1,
+        "ARG_BTCH_DT_Key" = '[4ZCP_ARGENL-ARG_BTCH_DT].[24ZCP_ARGENL-ARG_BTCH_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_BTCH_DT]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_BTCH_DT]' ATTRIBUTE,
+        "ARG_BTCH_SEQ Level 01" = '[4ZCP_ARGENL-ARG_BTCH_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_BTCH_SEQ]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_BTCH_SEQ]' LEVELPOSITION=1,
+        "ARG_BTCH_SEQ_Key" = '[4ZCP_ARGENL-ARG_BTCH_SEQ].[24ZCP_ARGENL-ARG_BTCH_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_BTCH_SEQ]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_BTCH_SEQ]' ATTRIBUTE,
+        "ARG_CMPY_NUM Level 01" = '[4ZCP_ARGENL-ARG_CMPY_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_CMPY_NUM]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_CMPY_NUM]' LEVELPOSITION=1,
+        "ARG_CMPY_NUM_Key" = '[4ZCP_ARGENL-ARG_CMPY_NUM].[24ZCP_ARGENL-ARG_CMPY_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_CMPY_NUM]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_CMPY_NUM]' ATTRIBUTE,
+        "ARG_DEPT_NUM Level 01" = '[4ZCP_ARGENL-ARG_DEPT_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_DEPT_NUM]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_DEPT_NUM]' LEVELPOSITION=1,
+        "ARG_DEPT_NUM_Key" = '[4ZCP_ARGENL-ARG_DEPT_NUM].[24ZCP_ARGENL-ARG_DEPT_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_DEPT_NUM]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_DEPT_NUM]' ATTRIBUTE,
+        "ARG_DOC_SEQ Level 01" = '[4ZCP_ARGENL-ARG_DOC_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_DOC_SEQ]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_DOC_SEQ]' LEVELPOSITION=1,
+        "ARG_DOC_SEQ_Key" = '[4ZCP_ARGENL-ARG_DOC_SEQ].[24ZCP_ARGENL-ARG_DOC_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_DOC_SEQ]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_DOC_SEQ]' ATTRIBUTE,
+        "ARG_GL_SEQ Level 01" = '[4ZCP_ARGENL-ARG_GL_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_GL_SEQ]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_GL_SEQ]' LEVELPOSITION=1,
+        "ARG_GL_SEQ_Key" = '[4ZCP_ARGENL-ARG_GL_SEQ].[24ZCP_ARGENL-ARG_GL_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_GL_SEQ]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_GL_SEQ]' ATTRIBUTE,
+        "ARG_PRD_NUM Level 01" = '[4ZCP_ARGENL-ARG_PRD_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_PRD_NUM]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_PRD_NUM]' LEVELPOSITION=1,
+        "ARG_PRD_NUM_Key" = '[4ZCP_ARGENL-ARG_PRD_NUM].[24ZCP_ARGENL-ARG_PRD_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_PRD_NUM]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_PRD_NUM]' ATTRIBUTE,
+        "ARG_PROJ_NUM Level 01" = '[4ZCP_ARGENL-ARG_PROJ_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_PROJ_NUM]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_PROJ_NUM]' LEVELPOSITION=1,
+        "ARG_PROJ_NUM_Key" = '[4ZCP_ARGENL-ARG_PROJ_NUM].[24ZCP_ARGENL-ARG_PROJ_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_PROJ_NUM]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_PROJ_NUM]' ATTRIBUTE,
+        "ARG_SRCE Level 01" = '[4ZCP_ARGENL-ARG_SRCE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_SRCE]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_SRCE]' LEVELPOSITION=1,
+        "ARG_SRCE_Key" = '[4ZCP_ARGENL-ARG_SRCE].[24ZCP_ARGENL-ARG_SRCE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_ARGENL-ARG_SRCE]' DIMENSIONNAME = '[4ZCP_ARGENL-ARG_SRCE]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "ARG_POST_AMT" = '[Measures].[4ZCP_ARGENL-ARG_POST_AMT]' : 'java.lang.Double' (OPT) MEASURE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE "bv_ZCP_ARGENL" I18N us_cst (
+        "ARGENL_CRE_BY_ID Level 01":text,
+        "ARGENL_CRE_BY_ID_Key":text,
+        "ARGENL_CRE_TS Level 01":text,
+        "ARGENL_CRE_TS_Key":text,
+        "ARGENL_UPD_BY_ID Level 01":text,
+        "ARGENL_UPD_BY_ID_Key":text,
+        "ARGENL_UPD_TS Level 01":text,
+        "ARGENL_UPD_TS_Key":text,
+        "ARG_ACCT_NUM Level 01":text,
+        "ARG_ACCT_NUM_Key":text,
+        "ARG_BTCH_DT Level 01":text,
+        "ARG_BTCH_DT_Key":text,
+        "ARG_BTCH_SEQ Level 01":text,
+        "ARG_BTCH_SEQ_Key":text,
+        "ARG_CMPY_NUM Level 01":text,
+        "ARG_CMPY_NUM_Key":text,
+        "ARG_DEPT_NUM Level 01":text,
+        "ARG_DEPT_NUM_Key":text,
+        "ARG_DOC_SEQ Level 01":text,
+        "ARG_DOC_SEQ_Key":text,
+        "ARG_GL_SEQ Level 01":text,
+        "ARG_GL_SEQ_Key":text,
+        "ARG_PRD_NUM Level 01":text,
+        "ARG_PRD_NUM_Key":text,
+        "ARG_PROJ_NUM Level 01":text,
+        "ARG_PROJ_NUM_Key":text,
+        "ARG_SRCE Level 01":text,
+        "ARG_SRCE_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "ARG_POST_AMT":double,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/accounting'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD "bv_ZCP_ARGENL"(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "ARGENL_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "ARGENL_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "ARGENL_CRE_TS Level 01" (any) OPT ANY
+             ADD "ARGENL_CRE_TS_Key" (any) OPT ANY
+             ADD "ARGENL_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "ARGENL_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "ARGENL_UPD_TS Level 01" (any) OPT ANY
+             ADD "ARGENL_UPD_TS_Key" (any) OPT ANY
+             ADD "ARG_ACCT_NUM Level 01" (any) OPT ANY
+             ADD "ARG_ACCT_NUM_Key" (any) OPT ANY
+             ADD "ARG_BTCH_DT Level 01" (any) OPT ANY
+             ADD "ARG_BTCH_DT_Key" (any) OPT ANY
+             ADD "ARG_BTCH_SEQ Level 01" (any) OPT ANY
+             ADD "ARG_BTCH_SEQ_Key" (any) OPT ANY
+             ADD "ARG_CMPY_NUM Level 01" (any) OPT ANY
+             ADD "ARG_CMPY_NUM_Key" (any) OPT ANY
+             ADD "ARG_DEPT_NUM Level 01" (any) OPT ANY
+             ADD "ARG_DEPT_NUM_Key" (any) OPT ANY
+             ADD "ARG_DOC_SEQ Level 01" (any) OPT ANY
+             ADD "ARG_DOC_SEQ_Key" (any) OPT ANY
+             ADD "ARG_GL_SEQ Level 01" (any) OPT ANY
+             ADD "ARG_GL_SEQ_Key" (any) OPT ANY
+             ADD "ARG_PRD_NUM Level 01" (any) OPT ANY
+             ADD "ARG_PRD_NUM_Key" (any) OPT ANY
+             ADD "ARG_PROJ_NUM Level 01" (any) OPT ANY
+             ADD "ARG_PROJ_NUM_Key" (any) OPT ANY
+             ADD "ARG_SRCE Level 01" (any) OPT ANY
+             ADD "ARG_SRCE_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "ARG_POST_AMT" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("ARGENL_CRE_BY_ID Level 01", "ARGENL_CRE_BY_ID_Key", "ARGENL_CRE_TS Level 01", "ARGENL_CRE_TS_Key", "ARGENL_UPD_BY_ID Level 01", "ARGENL_UPD_BY_ID_Key", "ARGENL_UPD_TS Level 01", "ARGENL_UPD_TS_Key", "ARG_ACCT_NUM Level 01", "ARG_ACCT_NUM_Key", "ARG_BTCH_DT Level 01", "ARG_BTCH_DT_Key", "ARG_BTCH_SEQ Level 01", "ARG_BTCH_SEQ_Key", "ARG_CMPY_NUM Level 01", "ARG_CMPY_NUM_Key", "ARG_DEPT_NUM Level 01", "ARG_DEPT_NUM_Key", "ARG_DOC_SEQ Level 01", "ARG_DOC_SEQ_Key", "ARG_GL_SEQ Level 01", "ARG_GL_SEQ_Key", "ARG_POST_AMT", "ARG_PRD_NUM Level 01", "ARG_PRD_NUM_Key", "ARG_PROJ_NUM Level 01", "ARG_PROJ_NUM_Key", "ARG_SRCE Level 01", "ARG_SRCE_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records"
+        )
+        WRAPPER (sapbwbapi "bv_ZCP_ARGENL")
+    );
+
