@@ -1,0 +1,100 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_invtrf
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_INVTRF'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "INT_CMT Level 01" = '[4ZCP_INVTRF-INT_CMT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_CMT]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_CMT]' LEVELPOSITION=1,
+        "INT_CMT_Key" = '[4ZCP_INVTRF-INT_CMT].[24ZCP_INVTRF-INT_CMT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_CMT]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_CMT]' ATTRIBUTE,
+        "INT_FRM_CD Level 01" = '[4ZCP_INVTRF-INT_FRM_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_FRM_CD]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_FRM_CD]' LEVELPOSITION=1,
+        "INT_FRM_CD_Key" = '[4ZCP_INVTRF-INT_FRM_CD].[24ZCP_INVTRF-INT_FRM_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_FRM_CD]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_FRM_CD]' ATTRIBUTE,
+        "INT_PART_NUM Level 01" = '[4ZCP_INVTRF-INT_PART_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_PART_NUM]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_PART_NUM]' LEVELPOSITION=1,
+        "INT_PART_NUM_Key" = '[4ZCP_INVTRF-INT_PART_NUM].[24ZCP_INVTRF-INT_PART_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_PART_NUM]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_PART_NUM]' ATTRIBUTE,
+        "INT_TO_CD Level 01" = '[4ZCP_INVTRF-INT_TO_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_TO_CD]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_TO_CD]' LEVELPOSITION=1,
+        "INT_TO_CD_Key" = '[4ZCP_INVTRF-INT_TO_CD].[24ZCP_INVTRF-INT_TO_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_TO_CD]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_TO_CD]' ATTRIBUTE,
+        "INT_TRAN_DT Level 01" = '[4ZCP_INVTRF-INT_TRAN_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_TRAN_DT]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_TRAN_DT]' LEVELPOSITION=1,
+        "INT_TRAN_DT_Key" = '[4ZCP_INVTRF-INT_TRAN_DT].[24ZCP_INVTRF-INT_TRAN_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_TRAN_DT]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_TRAN_DT]' ATTRIBUTE,
+        "INT_UNIQ_NUM Level 01" = '[4ZCP_INVTRF-INT_UNIQ_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_UNIQ_NUM]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_UNIQ_NUM]' LEVELPOSITION=1,
+        "INT_UNIQ_NUM_Key" = '[4ZCP_INVTRF-INT_UNIQ_NUM].[24ZCP_INVTRF-INT_UNIQ_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INT_UNIQ_NUM]' DIMENSIONNAME = '[4ZCP_INVTRF-INT_UNIQ_NUM]' ATTRIBUTE,
+        "INVTRF_CRE_BY_ID Level 01" = '[4ZCP_INVTRF-INVTRF_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INVTRF_CRE_B]' DIMENSIONNAME = '[4ZCP_INVTRF-INVTRF_CRE_B]' LEVELPOSITION=1,
+        "INVTRF_CRE_BY_ID_Key" = '[4ZCP_INVTRF-INVTRF_CRE_B].[24ZCP_INVTRF-INVTRF_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INVTRF_CRE_B]' DIMENSIONNAME = '[4ZCP_INVTRF-INVTRF_CRE_B]' ATTRIBUTE,
+        "INVTRF_CRE_TS Level 01" = '[4ZCP_INVTRF-INVTRF_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INVTRF_CRE_T]' DIMENSIONNAME = '[4ZCP_INVTRF-INVTRF_CRE_T]' LEVELPOSITION=1,
+        "INVTRF_CRE_TS_Key" = '[4ZCP_INVTRF-INVTRF_CRE_T].[24ZCP_INVTRF-INVTRF_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INVTRF_CRE_T]' DIMENSIONNAME = '[4ZCP_INVTRF-INVTRF_CRE_T]' ATTRIBUTE,
+        "INVTRF_UPD_BY_ID Level 01" = '[4ZCP_INVTRF-INVTRF_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INVTRF_UPD_B]' DIMENSIONNAME = '[4ZCP_INVTRF-INVTRF_UPD_B]' LEVELPOSITION=1,
+        "INVTRF_UPD_BY_ID_Key" = '[4ZCP_INVTRF-INVTRF_UPD_B].[24ZCP_INVTRF-INVTRF_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INVTRF_UPD_B]' DIMENSIONNAME = '[4ZCP_INVTRF-INVTRF_UPD_B]' ATTRIBUTE,
+        "INVTRF_UPD_TS Level 01" = '[4ZCP_INVTRF-INVTRF_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INVTRF_UPD_T]' DIMENSIONNAME = '[4ZCP_INVTRF-INVTRF_UPD_T]' LEVELPOSITION=1,
+        "INVTRF_UPD_TS_Key" = '[4ZCP_INVTRF-INVTRF_UPD_T].[24ZCP_INVTRF-INVTRF_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_INVTRF-INVTRF_UPD_T]' DIMENSIONNAME = '[4ZCP_INVTRF-INVTRF_UPD_T]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_invtrf I18N us_cst (
+        "INT_CMT Level 01":text,
+        "INT_CMT_Key":text,
+        "INT_FRM_CD Level 01":text,
+        "INT_FRM_CD_Key":text,
+        "INT_PART_NUM Level 01":text,
+        "INT_PART_NUM_Key":text,
+        "INT_TO_CD Level 01":text,
+        "INT_TO_CD_Key":text,
+        "INT_TRAN_DT Level 01":text,
+        "INT_TRAN_DT_Key":text,
+        "INT_UNIQ_NUM Level 01":text,
+        "INT_UNIQ_NUM_Key":text,
+        "INVTRF_CRE_BY_ID Level 01":text,
+        "INVTRF_CRE_BY_ID_Key":text,
+        "INVTRF_CRE_TS Level 01":text,
+        "INVTRF_CRE_TS_Key":text,
+        "INVTRF_UPD_BY_ID Level 01":text,
+        "INVTRF_UPD_BY_ID_Key":text,
+        "INVTRF_UPD_TS Level 01":text,
+        "INVTRF_UPD_TS_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_invtrf(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "INT_CMT Level 01" (any) OPT ANY
+             ADD "INT_CMT_Key" (any) OPT ANY
+             ADD "INT_FRM_CD Level 01" (any) OPT ANY
+             ADD "INT_FRM_CD_Key" (any) OPT ANY
+             ADD "INT_PART_NUM Level 01" (any) OPT ANY
+             ADD "INT_PART_NUM_Key" (any) OPT ANY
+             ADD "INT_TO_CD Level 01" (any) OPT ANY
+             ADD "INT_TO_CD_Key" (any) OPT ANY
+             ADD "INT_TRAN_DT Level 01" (any) OPT ANY
+             ADD "INT_TRAN_DT_Key" (any) OPT ANY
+             ADD "INT_UNIQ_NUM Level 01" (any) OPT ANY
+             ADD "INT_UNIQ_NUM_Key" (any) OPT ANY
+             ADD "INVTRF_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "INVTRF_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "INVTRF_CRE_TS Level 01" (any) OPT ANY
+             ADD "INVTRF_CRE_TS_Key" (any) OPT ANY
+             ADD "INVTRF_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "INVTRF_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "INVTRF_UPD_TS Level 01" (any) OPT ANY
+             ADD "INVTRF_UPD_TS_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("INT_CMT Level 01", "INT_CMT_Key", "INT_FRM_CD Level 01", "INT_FRM_CD_Key", "INT_PART_NUM Level 01", "INT_PART_NUM_Key", "INT_TO_CD Level 01", "INT_TO_CD_Key", "INT_TRAN_DT Level 01", "INT_TRAN_DT_Key", "INT_UNIQ_NUM Level 01", "INT_UNIQ_NUM_Key", "INVTRF_CRE_BY_ID Level 01", "INVTRF_CRE_BY_ID_Key", "INVTRF_CRE_TS Level 01", "INVTRF_CRE_TS_Key", "INVTRF_UPD_BY_ID Level 01", "INVTRF_UPD_BY_ID_Key", "INVTRF_UPD_TS Level 01", "INVTRF_UPD_TS_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records"
+        )
+        WRAPPER (sapbwbapi bv_zcp_invtrf)
+    );
+

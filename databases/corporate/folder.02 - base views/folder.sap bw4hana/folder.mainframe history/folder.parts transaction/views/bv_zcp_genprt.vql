@@ -1,0 +1,76 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_genprt
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_GENPRT'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "CRE_BY_ID Level 01" = '[4ZCP_GENPRT-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENPRT-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_GENPRT-CRE_BY_ID].[24ZCP_GENPRT-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_GENPRT-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_GENPRT-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENPRT-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_GENPRT-CRE_TS].[24ZCP_GENPRT-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-CRE_TS]' DIMENSIONNAME = '[4ZCP_GENPRT-CRE_TS]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "PRT_FILL1 Level 01" = '[4ZCP_GENPRT-PRT_FILL1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-PRT_FILL1]' DIMENSIONNAME = '[4ZCP_GENPRT-PRT_FILL1]' LEVELPOSITION=1,
+        "PRT_FILL1_Key" = '[4ZCP_GENPRT-PRT_FILL1].[24ZCP_GENPRT-PRT_FILL1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-PRT_FILL1]' DIMENSIONNAME = '[4ZCP_GENPRT-PRT_FILL1]' ATTRIBUTE,
+        "PRT_YR Level 01" = '[4ZCP_GENPRT-PRT_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-PRT_YR]' DIMENSIONNAME = '[4ZCP_GENPRT-PRT_YR]' LEVELPOSITION=1,
+        "PRT_YR_Key" = '[4ZCP_GENPRT-PRT_YR].[24ZCP_GENPRT-PRT_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-PRT_YR]' DIMENSIONNAME = '[4ZCP_GENPRT-PRT_YR]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_GENPRT-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENPRT-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_GENPRT-UPD_BY_ID].[24ZCP_GENPRT-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_GENPRT-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_GENPRT-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENPRT-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_GENPRT-UPD_TS].[24ZCP_GENPRT-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_GENPRT-UPD_TS]' DIMENSIONNAME = '[4ZCP_GENPRT-UPD_TS]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_genprt I18N us_cst (
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "PRT_FILL1 Level 01":text,
+        "PRT_FILL1_Key":text,
+        "PRT_YR Level 01":text,
+        "PRT_YR_Key":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_genprt(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "PRT_FILL1 Level 01" (any) OPT ANY
+             ADD "PRT_FILL1_Key" (any) OPT ANY
+             ADD "PRT_YR Level 01" (any) OPT ANY
+             ADD "PRT_YR_Key" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "PRT_FILL1 Level 01", "PRT_FILL1_Key", "PRT_YR Level 01", "PRT_YR_Key", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_genprt)
+    );
+
