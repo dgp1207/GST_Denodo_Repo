@@ -1,0 +1,106 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_rvbest
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_RVBEST'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "BEST_ALT_DLR Level 01" = '[4ZCP_RVBEST-BEST_ALT_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-BEST_ALT_DLR]' DIMENSIONNAME = '[4ZCP_RVBEST-BEST_ALT_DLR]' LEVELPOSITION=1,
+        "BEST_ALT_DLR_Key" = '[4ZCP_RVBEST-BEST_ALT_DLR].[24ZCP_RVBEST-BEST_ALT_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-BEST_ALT_DLR]' DIMENSIONNAME = '[4ZCP_RVBEST-BEST_ALT_DLR]' ATTRIBUTE,
+        "BEST_ALT_SEQ Level 01" = '[4ZCP_RVBEST-BEST_ALT_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-BEST_ALT_SEQ]' DIMENSIONNAME = '[4ZCP_RVBEST-BEST_ALT_SEQ]' LEVELPOSITION=1,
+        "BEST_ALT_SEQ_Key" = '[4ZCP_RVBEST-BEST_ALT_SEQ].[24ZCP_RVBEST-BEST_ALT_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-BEST_ALT_SEQ]' DIMENSIONNAME = '[4ZCP_RVBEST-BEST_ALT_SEQ]' ATTRIBUTE,
+        "BEST_ALT_SUB Level 01" = '[4ZCP_RVBEST-BEST_ALT_SUB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-BEST_ALT_SUB]' DIMENSIONNAME = '[4ZCP_RVBEST-BEST_ALT_SUB]' LEVELPOSITION=1,
+        "BEST_ALT_SUB_Key" = '[4ZCP_RVBEST-BEST_ALT_SUB].[24ZCP_RVBEST-BEST_ALT_SUB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-BEST_ALT_SUB]' DIMENSIONNAME = '[4ZCP_RVBEST-BEST_ALT_SUB]' ATTRIBUTE,
+        "BEST_DLR Level 01" = '[4ZCP_RVBEST-BEST_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-BEST_DLR]' DIMENSIONNAME = '[4ZCP_RVBEST-BEST_DLR]' LEVELPOSITION=1,
+        "BEST_DLR_Key" = '[4ZCP_RVBEST-BEST_DLR].[24ZCP_RVBEST-BEST_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-BEST_DLR]' DIMENSIONNAME = '[4ZCP_RVBEST-BEST_DLR]' ATTRIBUTE,
+        "BEST_SEQ Level 01" = '[4ZCP_RVBEST-BEST_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-BEST_SEQ]' DIMENSIONNAME = '[4ZCP_RVBEST-BEST_SEQ]' LEVELPOSITION=1,
+        "BEST_SEQ_Key" = '[4ZCP_RVBEST-BEST_SEQ].[24ZCP_RVBEST-BEST_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-BEST_SEQ]' DIMENSIONNAME = '[4ZCP_RVBEST-BEST_SEQ]' ATTRIBUTE,
+        "CRE_BY_ID Level 01" = '[4ZCP_RVBEST-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_RVBEST-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_RVBEST-CRE_BY_ID].[24ZCP_RVBEST-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_RVBEST-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_RVBEST-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-CRE_TS]' DIMENSIONNAME = '[4ZCP_RVBEST-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_RVBEST-CRE_TS].[24ZCP_RVBEST-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-CRE_TS]' DIMENSIONNAME = '[4ZCP_RVBEST-CRE_TS]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "RVBEST_ALT_KEY_FILLER01 Level 01" = '[4ZCP_RVBEST-U8CJSE95UQ6L].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-U8CJSE95UQ6L]' DIMENSIONNAME = '[4ZCP_RVBEST-U8CJSE95UQ6L]' LEVELPOSITION=1,
+        "RVBEST_ALT_KEY_FILLER01_Key" = '[4ZCP_RVBEST-U8CJSE95UQ6L].[24ZCP_RVBEST-U8CJSE95UQ6L]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-U8CJSE95UQ6L]' DIMENSIONNAME = '[4ZCP_RVBEST-U8CJSE95UQ6L]' ATTRIBUTE,
+        "RVBEST_KEY_FILLER01 Level 01" = '[4ZCP_RVBEST-RVBEST_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-RVBEST_KEY_F]' DIMENSIONNAME = '[4ZCP_RVBEST-RVBEST_KEY_F]' LEVELPOSITION=1,
+        "RVBEST_KEY_FILLER01_Key" = '[4ZCP_RVBEST-RVBEST_KEY_F].[24ZCP_RVBEST-RVBEST_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-RVBEST_KEY_F]' DIMENSIONNAME = '[4ZCP_RVBEST-RVBEST_KEY_F]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_RVBEST-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_RVBEST-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_RVBEST-UPD_BY_ID].[24ZCP_RVBEST-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_RVBEST-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_RVBEST-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-UPD_TS]' DIMENSIONNAME = '[4ZCP_RVBEST-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_RVBEST-UPD_TS].[24ZCP_RVBEST-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVBEST-UPD_TS]' DIMENSIONNAME = '[4ZCP_RVBEST-UPD_TS]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_rvbest I18N us_cst (
+        "BEST_ALT_DLR Level 01":text,
+        "BEST_ALT_DLR_Key":text,
+        "BEST_ALT_SEQ Level 01":text,
+        "BEST_ALT_SEQ_Key":text,
+        "BEST_ALT_SUB Level 01":text,
+        "BEST_ALT_SUB_Key":text,
+        "BEST_DLR Level 01":text,
+        "BEST_DLR_Key":text,
+        "BEST_SEQ Level 01":text,
+        "BEST_SEQ_Key":text,
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "RVBEST_ALT_KEY_FILLER01 Level 01":text,
+        "RVBEST_ALT_KEY_FILLER01_Key":text,
+        "RVBEST_KEY_FILLER01 Level 01":text,
+        "RVBEST_KEY_FILLER01_Key":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_rvbest(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "BEST_ALT_DLR Level 01" (any) OPT ANY
+             ADD "BEST_ALT_DLR_Key" (any) OPT ANY
+             ADD "BEST_ALT_SEQ Level 01" (any) OPT ANY
+             ADD "BEST_ALT_SEQ_Key" (any) OPT ANY
+             ADD "BEST_ALT_SUB Level 01" (any) OPT ANY
+             ADD "BEST_ALT_SUB_Key" (any) OPT ANY
+             ADD "BEST_DLR Level 01" (any) OPT ANY
+             ADD "BEST_DLR_Key" (any) OPT ANY
+             ADD "BEST_SEQ Level 01" (any) OPT ANY
+             ADD "BEST_SEQ_Key" (any) OPT ANY
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "RVBEST_ALT_KEY_FILLER01 Level 01" (any) OPT ANY
+             ADD "RVBEST_ALT_KEY_FILLER01_Key" (any) OPT ANY
+             ADD "RVBEST_KEY_FILLER01 Level 01" (any) OPT ANY
+             ADD "RVBEST_KEY_FILLER01_Key" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("BEST_ALT_DLR Level 01", "BEST_ALT_DLR_Key", "BEST_ALT_SEQ Level 01", "BEST_ALT_SEQ_Key", "BEST_ALT_SUB Level 01", "BEST_ALT_SUB_Key", "BEST_DLR Level 01", "BEST_DLR_Key", "BEST_SEQ Level 01", "BEST_SEQ_Key", "CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "RVBEST_ALT_KEY_FILLER01 Level 01", "RVBEST_ALT_KEY_FILLER01_Key", "RVBEST_KEY_FILLER01 Level 01", "RVBEST_KEY_FILLER01_Key", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_rvbest)
+    );
+
