@@ -1,0 +1,118 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_rvxacr
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_RVXACR'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "CRE_BY_ID Level 01" = '[4ZCP_RVXACR-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_RVXACR-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_RVXACR-CRE_BY_ID].[24ZCP_RVXACR-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_RVXACR-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_RVXACR-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-CRE_TS]' DIMENSIONNAME = '[4ZCP_RVXACR-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_RVXACR-CRE_TS].[24ZCP_RVXACR-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-CRE_TS]' DIMENSIONNAME = '[4ZCP_RVXACR-CRE_TS]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "RVXACS_KEY_FILLER01 Level 01" = '[4ZCP_RVXACR-RVXACS_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-RVXACS_KEY_F]' DIMENSIONNAME = '[4ZCP_RVXACR-RVXACS_KEY_F]' LEVELPOSITION=1,
+        "RVXACS_KEY_FILLER01_Key" = '[4ZCP_RVXACR-RVXACS_KEY_F].[24ZCP_RVXACR-RVXACS_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-RVXACS_KEY_F]' DIMENSIONNAME = '[4ZCP_RVXACR-RVXACS_KEY_F]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_RVXACR-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_RVXACR-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_RVXACR-UPD_BY_ID].[24ZCP_RVXACR-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_RVXACR-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_RVXACR-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-UPD_TS]' DIMENSIONNAME = '[4ZCP_RVXACR-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_RVXACR-UPD_TS].[24ZCP_RVXACR-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-UPD_TS]' DIMENSIONNAME = '[4ZCP_RVXACR-UPD_TS]' ATTRIBUTE,
+        "XAC_ACC_ALPH Level 01" = '[4ZCP_RVXACR-XAC_ACC_ALPH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_ACC_ALPH]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_ACC_ALPH]' LEVELPOSITION=1,
+        "XAC_ACC_ALPH_Key" = '[4ZCP_RVXACR-XAC_ACC_ALPH].[24ZCP_RVXACR-XAC_ACC_ALPH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_ACC_ALPH]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_ACC_ALPH]' ATTRIBUTE,
+        "XAC_ACC_NUM Level 01" = '[4ZCP_RVXACR-XAC_ACC_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_ACC_NUM]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_ACC_NUM]' LEVELPOSITION=1,
+        "XAC_ACC_NUM_Key" = '[4ZCP_RVXACR-XAC_ACC_NUM].[24ZCP_RVXACR-XAC_ACC_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_ACC_NUM]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_ACC_NUM]' ATTRIBUTE,
+        "XAC_ALLO_NUM Level 01" = '[4ZCP_RVXACR-XAC_ALLO_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_ALLO_NUM]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_ALLO_NUM]' LEVELPOSITION=1,
+        "XAC_ALLO_NUM_Key" = '[4ZCP_RVXACR-XAC_ALLO_NUM].[24ZCP_RVXACR-XAC_ALLO_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_ALLO_NUM]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_ALLO_NUM]' ATTRIBUTE,
+        "XAC_ARCHIVE_IN Level 01" = '[4ZCP_RVXACR-XAC_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_ARCHIVE]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_ARCHIVE]' LEVELPOSITION=1,
+        "XAC_ARCHIVE_IN_Key" = '[4ZCP_RVXACR-XAC_ARCHIVE].[24ZCP_RVXACR-XAC_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_ARCHIVE]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_ARCHIVE]' ATTRIBUTE,
+        "XAC_CAL_YR Level 01" = '[4ZCP_RVXACR-XAC_CAL_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_CAL_YR]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_CAL_YR]' LEVELPOSITION=1,
+        "XAC_CAL_YR_Key" = '[4ZCP_RVXACR-XAC_CAL_YR].[24ZCP_RVXACR-XAC_CAL_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_CAL_YR]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_CAL_YR]' ATTRIBUTE,
+        "XAC_MDL Level 01" = '[4ZCP_RVXACR-XAC_MDL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_MDL]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_MDL]' LEVELPOSITION=1,
+        "XAC_MDL_Key" = '[4ZCP_RVXACR-XAC_MDL].[24ZCP_RVXACR-XAC_MDL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_MDL]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_MDL]' ATTRIBUTE,
+        "XAC_MDL_YR Level 01" = '[4ZCP_RVXACR-XAC_MDL_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_MDL_YR]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_MDL_YR]' LEVELPOSITION=1,
+        "XAC_MDL_YR_Key" = '[4ZCP_RVXACR-XAC_MDL_YR].[24ZCP_RVXACR-XAC_MDL_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_MDL_YR]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_MDL_YR]' ATTRIBUTE,
+        "XAC_SEQ_NUM Level 01" = '[4ZCP_RVXACR-XAC_SEQ_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_SEQ_NUM]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_SEQ_NUM]' LEVELPOSITION=1,
+        "XAC_SEQ_NUM_Key" = '[4ZCP_RVXACR-XAC_SEQ_NUM].[24ZCP_RVXACR-XAC_SEQ_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RVXACR-XAC_SEQ_NUM]' DIMENSIONNAME = '[4ZCP_RVXACR-XAC_SEQ_NUM]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_rvxacr I18N us_cst (
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "RVXACS_KEY_FILLER01 Level 01":text,
+        "RVXACS_KEY_FILLER01_Key":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "XAC_ACC_ALPH Level 01":text,
+        "XAC_ACC_ALPH_Key":text,
+        "XAC_ACC_NUM Level 01":text,
+        "XAC_ACC_NUM_Key":text,
+        "XAC_ALLO_NUM Level 01":text,
+        "XAC_ALLO_NUM_Key":text,
+        "XAC_ARCHIVE_IN Level 01":text,
+        "XAC_ARCHIVE_IN_Key":text,
+        "XAC_CAL_YR Level 01":text,
+        "XAC_CAL_YR_Key":text,
+        "XAC_MDL Level 01":text,
+        "XAC_MDL_Key":text,
+        "XAC_MDL_YR Level 01":text,
+        "XAC_MDL_YR_Key":text,
+        "XAC_SEQ_NUM Level 01":text,
+        "XAC_SEQ_NUM_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_rvxacr(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "RVXACS_KEY_FILLER01 Level 01" (any) OPT ANY
+             ADD "RVXACS_KEY_FILLER01_Key" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "XAC_ACC_ALPH Level 01" (any) OPT ANY
+             ADD "XAC_ACC_ALPH_Key" (any) OPT ANY
+             ADD "XAC_ACC_NUM Level 01" (any) OPT ANY
+             ADD "XAC_ACC_NUM_Key" (any) OPT ANY
+             ADD "XAC_ALLO_NUM Level 01" (any) OPT ANY
+             ADD "XAC_ALLO_NUM_Key" (any) OPT ANY
+             ADD "XAC_ARCHIVE_IN Level 01" (any) OPT ANY
+             ADD "XAC_ARCHIVE_IN_Key" (any) OPT ANY
+             ADD "XAC_CAL_YR Level 01" (any) OPT ANY
+             ADD "XAC_CAL_YR_Key" (any) OPT ANY
+             ADD "XAC_MDL Level 01" (any) OPT ANY
+             ADD "XAC_MDL_Key" (any) OPT ANY
+             ADD "XAC_MDL_YR Level 01" (any) OPT ANY
+             ADD "XAC_MDL_YR_Key" (any) OPT ANY
+             ADD "XAC_SEQ_NUM Level 01" (any) OPT ANY
+             ADD "XAC_SEQ_NUM_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "RVXACS_KEY_FILLER01 Level 01", "RVXACS_KEY_FILLER01_Key", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key", "XAC_ACC_ALPH Level 01", "XAC_ACC_ALPH_Key", "XAC_ACC_NUM Level 01", "XAC_ACC_NUM_Key", "XAC_ALLO_NUM Level 01", "XAC_ALLO_NUM_Key", "XAC_ARCHIVE_IN Level 01", "XAC_ARCHIVE_IN_Key", "XAC_CAL_YR Level 01", "XAC_CAL_YR_Key", "XAC_MDL Level 01", "XAC_MDL_Key", "XAC_MDL_YR Level 01", "XAC_MDL_YR_Key", "XAC_SEQ_NUM Level 01", "XAC_SEQ_NUM_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_rvxacr)
+    );
+
