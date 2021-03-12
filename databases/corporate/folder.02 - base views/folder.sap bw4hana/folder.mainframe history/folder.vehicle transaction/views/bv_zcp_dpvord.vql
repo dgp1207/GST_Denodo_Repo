@@ -23,74 +23,74 @@
         vehord_act_clr_key = '[4ZCP_DPVORD-VEHORD_ACT_C].[24ZCP_DPVORD-VEHORD_ACT_C]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ACT_C]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ACT_C]' ATTRIBUTE,
         vehord_act_datelevel01_0 = '[4ZCP_DPVORD-VEHORD_ACT_D].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ACT_D]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ACT_D]' LEVELPOSITION=1,
         vehord_act_date_key = '[4ZCP_DPVORD-VEHORD_ACT_D].[24ZCP_DPVORD-VEHORD_ACT_D]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ACT_D]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ACT_D]' ATTRIBUTE,
-        vehord_alllevel01_0 = '[4ZCP_DPVORD-VEHORD_ALL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ALL]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ALL]' LEVELPOSITION=1,
-        vehord_all_key = '[4ZCP_DPVORD-VEHORD_ALL].[24ZCP_DPVORD-VEHORD_ALL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ALL]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ALL]' ATTRIBUTE,
-        vehord_allo_yrlevel01_0 = '[4ZCP_DPVORD-VEHORD_ALLO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ALLO]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ALLO]' LEVELPOSITION=1,
-        vehord_allo_yr_key = '[4ZCP_DPVORD-VEHORD_ALLO].[24ZCP_DPVORD-VEHORD_ALLO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ALLO]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ALLO]' ATTRIBUTE,
-        vehord_archive_inlevel01_0 = '[4ZCP_DPVORD-VEHORD_ARCHI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ARCHI]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ARCHI]' LEVELPOSITION=1,
-        vehord_archive_in_key = '[4ZCP_DPVORD-VEHORD_ARCHI].[24ZCP_DPVORD-VEHORD_ARCHI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ARCHI]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ARCHI]' ATTRIBUTE,
-        vehord_auth_indlevel01_0 = '[4ZCP_DPVORD-VEHORD_AUTH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_AUTH]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_AUTH]' LEVELPOSITION=1,
-        vehord_auth_ind_key = '[4ZCP_DPVORD-VEHORD_AUTH].[24ZCP_DPVORD-VEHORD_AUTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_AUTH]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_AUTH]' ATTRIBUTE,
-        vehord_car_trucklevel01_0 = '[4ZCP_DPVORD-VEHORD_CAR_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CAR_T]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CAR_T]' LEVELPOSITION=1,
-        vehord_car_truck_key = '[4ZCP_DPVORD-VEHORD_CAR_T].[24ZCP_DPVORD-VEHORD_CAR_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CAR_T]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CAR_T]' ATTRIBUTE,
-        vehord_clrlevel01_0 = '[4ZCP_DPVORD-VEHORD_CLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR]' LEVELPOSITION=1,
-        vehord_clr_key = '[4ZCP_DPVORD-VEHORD_CLR].[24ZCP_DPVORD-VEHORD_CLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR]' ATTRIBUTE,
-        vehord_clr1_elevel01_0 = '[4ZCP_DPVORD-VEHORD_CLR1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR1]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR1]' LEVELPOSITION=1,
-        vehord_clr1_e_key = '[4ZCP_DPVORD-VEHORD_CLR1].[24ZCP_DPVORD-VEHORD_CLR1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR1]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR1]' ATTRIBUTE,
-        vehord_clr2_elevel01_0 = '[4ZCP_DPVORD-VEHORD_CLR2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR2]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR2]' LEVELPOSITION=1,
-        vehord_clr2_e_key = '[4ZCP_DPVORD-VEHORD_CLR2].[24ZCP_DPVORD-VEHORD_CLR2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR2]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR2]' ATTRIBUTE,
-        vehord_cust_nolevel01_0 = '[4ZCP_DPVORD-VEHORD_CUST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CUST]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CUST]' LEVELPOSITION=1,
-        vehord_cust_no_key = '[4ZCP_DPVORD-VEHORD_CUST].[24ZCP_DPVORD-VEHORD_CUST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CUST]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CUST]' ATTRIBUTE,
-        vehord_distlevel01_0 = '[4ZCP_DPVORD-VEHORD_DIST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DIST]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DIST]' LEVELPOSITION=1,
-        vehord_dist_key = '[4ZCP_DPVORD-VEHORD_DIST].[24ZCP_DPVORD-VEHORD_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DIST]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DIST]' ATTRIBUTE,
-        vehord_dlrlevel01_0 = '[4ZCP_DPVORD-VEHORD_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DLR]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DLR]' LEVELPOSITION=1,
-        vehord_dlr_key = '[4ZCP_DPVORD-VEHORD_DLR].[24ZCP_DPVORD-VEHORD_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DLR]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DLR]' ATTRIBUTE,
-        vehord_ds_codelevel01_0 = '[4ZCP_DPVORD-VEHORD_DS_CO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DS_CO]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DS_CO]' LEVELPOSITION=1,
-        vehord_ds_code_key = '[4ZCP_DPVORD-VEHORD_DS_CO].[24ZCP_DPVORD-VEHORD_DS_CO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DS_CO]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DS_CO]' ATTRIBUTE,
-        vehord_fleetlevel01_0 = '[4ZCP_DPVORD-VEHORD_FLEET].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_FLEET]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_FLEET]' LEVELPOSITION=1,
-        vehord_fleet_key = '[4ZCP_DPVORD-VEHORD_FLEET].[24ZCP_DPVORD-VEHORD_FLEET]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_FLEET]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_FLEET]' ATTRIBUTE,
-        vehord_int_clrlevel01_0 = '[4ZCP_DPVORD-VEHORD_INT_C].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_INT_C]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_INT_C]' LEVELPOSITION=1,
-        vehord_int_clr_key = '[4ZCP_DPVORD-VEHORD_INT_C].[24ZCP_DPVORD-VEHORD_INT_C]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_INT_C]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_INT_C]' ATTRIBUTE,
-        vehord_ld_indlevel01_0 = '[4ZCP_DPVORD-VEHORD_LD_IN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_LD_IN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_LD_IN]' LEVELPOSITION=1,
-        vehord_ld_ind_key = '[4ZCP_DPVORD-VEHORD_LD_IN].[24ZCP_DPVORD-VEHORD_LD_IN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_LD_IN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_LD_IN]' ATTRIBUTE,
-        vehord_loadlevel01_0 = '[4ZCP_DPVORD-VEHORD_LOAD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_LOAD]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_LOAD]' LEVELPOSITION=1,
-        vehord_load_key = '[4ZCP_DPVORD-VEHORD_LOAD].[24ZCP_DPVORD-VEHORD_LOAD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_LOAD]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_LOAD]' ATTRIBUTE,
-        vehord_mch_statuslevel01_0 = '[4ZCP_DPVORD-VEHORD_MCH_S].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MCH_S]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MCH_S]' LEVELPOSITION=1,
-        vehord_mch_status_key = '[4ZCP_DPVORD-VEHORD_MCH_S].[24ZCP_DPVORD-VEHORD_MCH_S]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MCH_S]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MCH_S]' ATTRIBUTE,
-        vehord_mdllevel01_0 = '[4ZCP_DPVORD-VEHORD_MDL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL]' LEVELPOSITION=1,
-        vehord_mdl_key = '[4ZCP_DPVORD-VEHORD_MDL].[24ZCP_DPVORD-VEHORD_MDL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL]' ATTRIBUTE,
-        vehord_mdl_elevel01_0 = '[4ZCP_DPVORD-VEHORD_MDL_E].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL_E]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL_E]' LEVELPOSITION=1,
-        vehord_mdl_e_key = '[4ZCP_DPVORD-VEHORD_MDL_E].[24ZCP_DPVORD-VEHORD_MDL_E]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL_E]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL_E]' ATTRIBUTE,
-        vehord_mdl_yrlevel01_0 = '[4ZCP_DPVORD-VEHORD_MDL_Y].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL_Y]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL_Y]' LEVELPOSITION=1,
-        vehord_mdl_yr_key = '[4ZCP_DPVORD-VEHORD_MDL_Y].[24ZCP_DPVORD-VEHORD_MDL_Y]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL_Y]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL_Y]' ATTRIBUTE,
-        vehord_nos_cyclelevel01_0 = '[4ZCP_DPVORD-VEHORD_NOS_C].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_NOS_C]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_NOS_C]' LEVELPOSITION=1,
-        vehord_nos_cycle_key = '[4ZCP_DPVORD-VEHORD_NOS_C].[24ZCP_DPVORD-VEHORD_NOS_C]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_NOS_C]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_NOS_C]' ATTRIBUTE,
-        vehord_noteslevel01_0 = '[4ZCP_DPVORD-VEHORD_NOTES].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_NOTES]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_NOTES]' LEVELPOSITION=1,
-        vehord_notes_key = '[4ZCP_DPVORD-VEHORD_NOTES].[24ZCP_DPVORD-VEHORD_NOTES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_NOTES]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_NOTES]' ATTRIBUTE,
-        vehord_pdslevel01_0 = '[4ZCP_DPVORD-VEHORD_PDS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PDS]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PDS]' LEVELPOSITION=1,
-        vehord_pds_key = '[4ZCP_DPVORD-VEHORD_PDS].[24ZCP_DPVORD-VEHORD_PDS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PDS]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PDS]' ATTRIBUTE,
-        vehord_piplnlevel01_0 = '[4ZCP_DPVORD-VEHORD_PIPLN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PIPLN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PIPLN]' LEVELPOSITION=1,
-        vehord_pipln_key = '[4ZCP_DPVORD-VEHORD_PIPLN].[24ZCP_DPVORD-VEHORD_PIPLN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PIPLN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PIPLN]' ATTRIBUTE,
-        vehord_pref_fulfilllevel01_0 = '[4ZCP_DPVORD-VEHORD_PREF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PREF]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PREF]' LEVELPOSITION=1,
-        vehord_pref_fulfill_key = '[4ZCP_DPVORD-VEHORD_PREF].[24ZCP_DPVORD-VEHORD_PREF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PREF]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PREF]' ATTRIBUTE,
-        vehord_rsvlevel01_0 = '[4ZCP_DPVORD-VEHORD_RSV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_RSV]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_RSV]' LEVELPOSITION=1,
-        vehord_rsv_key = '[4ZCP_DPVORD-VEHORD_RSV].[24ZCP_DPVORD-VEHORD_RSV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_RSV]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_RSV]' ATTRIBUTE,
-        vehord_serieslevel01_0 = '[4ZCP_DPVORD-VEHORD_SERIE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_SERIE]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_SERIE]' LEVELPOSITION=1,
-        vehord_series_key = '[4ZCP_DPVORD-VEHORD_SERIE].[24ZCP_DPVORD-VEHORD_SERIE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_SERIE]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_SERIE]' ATTRIBUTE,
-        vehord_soldlevel01_0 = '[4ZCP_DPVORD-VEHORD_SOLD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_SOLD]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_SOLD]' LEVELPOSITION=1,
-        vehord_sold_key = '[4ZCP_DPVORD-VEHORD_SOLD].[24ZCP_DPVORD-VEHORD_SOLD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_SOLD]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_SOLD]' ATTRIBUTE,
-        vehord_statuslevel01_0 = '[4ZCP_DPVORD-VEHORD_STATU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_STATU]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_STATU]' LEVELPOSITION=1,
-        vehord_status_key = '[4ZCP_DPVORD-VEHORD_STATU].[24ZCP_DPVORD-VEHORD_STATU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_STATU]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_STATU]' ATTRIBUTE,
-        vehord_temp_levellevel01_0 = '[4ZCP_DPVORD-VEHORD_TEMP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TEMP]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TEMP]' LEVELPOSITION=1,
-        vehord_temp_level_key = '[4ZCP_DPVORD-VEHORD_TEMP].[24ZCP_DPVORD-VEHORD_TEMP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TEMP]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TEMP]' ATTRIBUTE,
-        vehord_trade_seqlevel01_0 = '[4ZCP_DPVORD-VEHORD_TRADE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TRADE]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TRADE]' LEVELPOSITION=1,
-        vehord_trade_seq_key = '[4ZCP_DPVORD-VEHORD_TRADE].[24ZCP_DPVORD-VEHORD_TRADE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TRADE]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TRADE]' ATTRIBUTE,
-        vehord_trade_statuslevel01_0 = '[4ZCP_DPVORD-VEHORD_TRA_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TRA_0]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TRA_0]' LEVELPOSITION=1,
-        vehord_trade_status_key = '[4ZCP_DPVORD-VEHORD_TRA_0].[24ZCP_DPVORD-VEHORD_TRA_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TRA_0]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TRA_0]' ATTRIBUTE,
-        vehord_vesslevel01_0 = '[4ZCP_DPVORD-VEHORD_VESS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_VESS]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_VESS]' LEVELPOSITION=1,
-        vehord_vess_key = '[4ZCP_DPVORD-VEHORD_VESS].[24ZCP_DPVORD-VEHORD_VESS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_VESS]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_VESS]' ATTRIBUTE,
-        vehord_vinlevel01_0 = '[4ZCP_DPVORD-VEHORD_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_VIN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_VIN]' LEVELPOSITION=1,
-        vehord_vin_key = '[4ZCP_DPVORD-VEHORD_VIN].[24ZCP_DPVORD-VEHORD_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_VIN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_VIN]' ATTRIBUTE,
+        "VEHORD_ALL Level 01" = '[4ZCP_DPVORD-VEHORD_ALL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ALL]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ALL]' LEVELPOSITION=1,
+        "VEHORD_ALL_Key" = '[4ZCP_DPVORD-VEHORD_ALL].[24ZCP_DPVORD-VEHORD_ALL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ALL]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ALL]' ATTRIBUTE,
+        "VEHORD_ALLO_YR Level 01" = '[4ZCP_DPVORD-VEHORD_ALLO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ALLO]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ALLO]' LEVELPOSITION=1,
+        "VEHORD_ALLO_YR_Key" = '[4ZCP_DPVORD-VEHORD_ALLO].[24ZCP_DPVORD-VEHORD_ALLO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ALLO]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ALLO]' ATTRIBUTE,
+        "VEHORD_ARCHIVE_IN Level 01" = '[4ZCP_DPVORD-VEHORD_ARCHI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ARCHI]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ARCHI]' LEVELPOSITION=1,
+        "VEHORD_ARCHIVE_IN_Key" = '[4ZCP_DPVORD-VEHORD_ARCHI].[24ZCP_DPVORD-VEHORD_ARCHI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_ARCHI]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_ARCHI]' ATTRIBUTE,
+        "VEHORD_AUTH_IND Level 01" = '[4ZCP_DPVORD-VEHORD_AUTH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_AUTH]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_AUTH]' LEVELPOSITION=1,
+        "VEHORD_AUTH_IND_Key" = '[4ZCP_DPVORD-VEHORD_AUTH].[24ZCP_DPVORD-VEHORD_AUTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_AUTH]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_AUTH]' ATTRIBUTE,
+        "VEHORD_CAR_TRUCK Level 01" = '[4ZCP_DPVORD-VEHORD_CAR_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CAR_T]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CAR_T]' LEVELPOSITION=1,
+        "VEHORD_CAR_TRUCK_Key" = '[4ZCP_DPVORD-VEHORD_CAR_T].[24ZCP_DPVORD-VEHORD_CAR_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CAR_T]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CAR_T]' ATTRIBUTE,
+        "VEHORD_CLR Level 01" = '[4ZCP_DPVORD-VEHORD_CLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR]' LEVELPOSITION=1,
+        "VEHORD_CLR_Key" = '[4ZCP_DPVORD-VEHORD_CLR].[24ZCP_DPVORD-VEHORD_CLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR]' ATTRIBUTE,
+        "VEHORD_CLR1_E Level 01" = '[4ZCP_DPVORD-VEHORD_CLR1].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR1]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR1]' LEVELPOSITION=1,
+        "VEHORD_CLR1_E_Key" = '[4ZCP_DPVORD-VEHORD_CLR1].[24ZCP_DPVORD-VEHORD_CLR1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR1]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR1]' ATTRIBUTE,
+        "VEHORD_CLR2_E Level 01" = '[4ZCP_DPVORD-VEHORD_CLR2].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR2]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR2]' LEVELPOSITION=1,
+        "VEHORD_CLR2_E_Key" = '[4ZCP_DPVORD-VEHORD_CLR2].[24ZCP_DPVORD-VEHORD_CLR2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CLR2]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CLR2]' ATTRIBUTE,
+        "VEHORD_CUST_NO Level 01" = '[4ZCP_DPVORD-VEHORD_CUST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CUST]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CUST]' LEVELPOSITION=1,
+        "VEHORD_CUST_NO_Key" = '[4ZCP_DPVORD-VEHORD_CUST].[24ZCP_DPVORD-VEHORD_CUST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_CUST]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_CUST]' ATTRIBUTE,
+        "VEHORD_DIST Level 01" = '[4ZCP_DPVORD-VEHORD_DIST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DIST]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DIST]' LEVELPOSITION=1,
+        "VEHORD_DIST_Key" = '[4ZCP_DPVORD-VEHORD_DIST].[24ZCP_DPVORD-VEHORD_DIST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DIST]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DIST]' ATTRIBUTE,
+        "VEHORD_DLR Level 01" = '[4ZCP_DPVORD-VEHORD_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DLR]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DLR]' LEVELPOSITION=1,
+        "VEHORD_DLR_Key" = '[4ZCP_DPVORD-VEHORD_DLR].[24ZCP_DPVORD-VEHORD_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DLR]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DLR]' ATTRIBUTE,
+        "VEHORD_DS_CODE Level 01" = '[4ZCP_DPVORD-VEHORD_DS_CO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DS_CO]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DS_CO]' LEVELPOSITION=1,
+        "VEHORD_DS_CODE_Key" = '[4ZCP_DPVORD-VEHORD_DS_CO].[24ZCP_DPVORD-VEHORD_DS_CO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_DS_CO]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_DS_CO]' ATTRIBUTE,
+        "VEHORD_FLEET Level 01" = '[4ZCP_DPVORD-VEHORD_FLEET].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_FLEET]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_FLEET]' LEVELPOSITION=1,
+        "VEHORD_FLEET_Key" = '[4ZCP_DPVORD-VEHORD_FLEET].[24ZCP_DPVORD-VEHORD_FLEET]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_FLEET]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_FLEET]' ATTRIBUTE,
+        "VEHORD_INT_CLR Level 01" = '[4ZCP_DPVORD-VEHORD_INT_C].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_INT_C]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_INT_C]' LEVELPOSITION=1,
+        "VEHORD_INT_CLR_Key" = '[4ZCP_DPVORD-VEHORD_INT_C].[24ZCP_DPVORD-VEHORD_INT_C]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_INT_C]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_INT_C]' ATTRIBUTE,
+        "VEHORD_LD_IND Level 01" = '[4ZCP_DPVORD-VEHORD_LD_IN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_LD_IN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_LD_IN]' LEVELPOSITION=1,
+        "VEHORD_LD_IND_Key" = '[4ZCP_DPVORD-VEHORD_LD_IN].[24ZCP_DPVORD-VEHORD_LD_IN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_LD_IN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_LD_IN]' ATTRIBUTE,
+        "VEHORD_LOAD Level 01" = '[4ZCP_DPVORD-VEHORD_LOAD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_LOAD]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_LOAD]' LEVELPOSITION=1,
+        "VEHORD_LOAD_Key" = '[4ZCP_DPVORD-VEHORD_LOAD].[24ZCP_DPVORD-VEHORD_LOAD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_LOAD]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_LOAD]' ATTRIBUTE,
+        "VEHORD_MCH_STATUS Level 01" = '[4ZCP_DPVORD-VEHORD_MCH_S].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MCH_S]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MCH_S]' LEVELPOSITION=1,
+        "VEHORD_MCH_STATUS_Key" = '[4ZCP_DPVORD-VEHORD_MCH_S].[24ZCP_DPVORD-VEHORD_MCH_S]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MCH_S]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MCH_S]' ATTRIBUTE,
+        "VEHORD_MDL Level 01" = '[4ZCP_DPVORD-VEHORD_MDL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL]' LEVELPOSITION=1,
+        "VEHORD_MDL_Key" = '[4ZCP_DPVORD-VEHORD_MDL].[24ZCP_DPVORD-VEHORD_MDL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL]' ATTRIBUTE,
+        "VEHORD_MDL_E Level 01" = '[4ZCP_DPVORD-VEHORD_MDL_E].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL_E]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL_E]' LEVELPOSITION=1,
+        "VEHORD_MDL_E_Key" = '[4ZCP_DPVORD-VEHORD_MDL_E].[24ZCP_DPVORD-VEHORD_MDL_E]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL_E]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL_E]' ATTRIBUTE,
+        "VEHORD_MDL_YR Level 01" = '[4ZCP_DPVORD-VEHORD_MDL_Y].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL_Y]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL_Y]' LEVELPOSITION=1,
+        "VEHORD_MDL_YR_Key" = '[4ZCP_DPVORD-VEHORD_MDL_Y].[24ZCP_DPVORD-VEHORD_MDL_Y]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_MDL_Y]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_MDL_Y]' ATTRIBUTE,
+        "VEHORD_NOS_CYCLE Level 01" = '[4ZCP_DPVORD-VEHORD_NOS_C].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_NOS_C]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_NOS_C]' LEVELPOSITION=1,
+        "VEHORD_NOS_CYCLE_Key" = '[4ZCP_DPVORD-VEHORD_NOS_C].[24ZCP_DPVORD-VEHORD_NOS_C]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_NOS_C]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_NOS_C]' ATTRIBUTE,
+        "VEHORD_NOTES Level 01" = '[4ZCP_DPVORD-VEHORD_NOTES].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_NOTES]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_NOTES]' LEVELPOSITION=1,
+        "VEHORD_NOTES_Key" = '[4ZCP_DPVORD-VEHORD_NOTES].[24ZCP_DPVORD-VEHORD_NOTES]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_NOTES]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_NOTES]' ATTRIBUTE,
+        "VEHORD_PDS Level 01" = '[4ZCP_DPVORD-VEHORD_PDS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PDS]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PDS]' LEVELPOSITION=1,
+        "VEHORD_PDS_Key" = '[4ZCP_DPVORD-VEHORD_PDS].[24ZCP_DPVORD-VEHORD_PDS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PDS]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PDS]' ATTRIBUTE,
+        "VEHORD_PIPLN Level 01" = '[4ZCP_DPVORD-VEHORD_PIPLN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PIPLN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PIPLN]' LEVELPOSITION=1,
+        "VEHORD_PIPLN_Key" = '[4ZCP_DPVORD-VEHORD_PIPLN].[24ZCP_DPVORD-VEHORD_PIPLN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PIPLN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PIPLN]' ATTRIBUTE,
+        "VEHORD_PREF_FULFILL Level 01" = '[4ZCP_DPVORD-VEHORD_PREF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PREF]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PREF]' LEVELPOSITION=1,
+        "VEHORD_PREF_FULFILL_Key" = '[4ZCP_DPVORD-VEHORD_PREF].[24ZCP_DPVORD-VEHORD_PREF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_PREF]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_PREF]' ATTRIBUTE,
+        "VEHORD_RSV Level 01" = '[4ZCP_DPVORD-VEHORD_RSV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_RSV]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_RSV]' LEVELPOSITION=1,
+        "VEHORD_RSV_Key" = '[4ZCP_DPVORD-VEHORD_RSV].[24ZCP_DPVORD-VEHORD_RSV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_RSV]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_RSV]' ATTRIBUTE,
+        "VEHORD_SERIES Level 01" = '[4ZCP_DPVORD-VEHORD_SERIE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_SERIE]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_SERIE]' LEVELPOSITION=1,
+        "VEHORD_SERIES_Key" = '[4ZCP_DPVORD-VEHORD_SERIE].[24ZCP_DPVORD-VEHORD_SERIE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_SERIE]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_SERIE]' ATTRIBUTE,
+        "VEHORD_SOLD Level 01" = '[4ZCP_DPVORD-VEHORD_SOLD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_SOLD]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_SOLD]' LEVELPOSITION=1,
+        "VEHORD_SOLD_Key" = '[4ZCP_DPVORD-VEHORD_SOLD].[24ZCP_DPVORD-VEHORD_SOLD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_SOLD]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_SOLD]' ATTRIBUTE,
+        "VEHORD_STATUS Level 01" = '[4ZCP_DPVORD-VEHORD_STATU].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_STATU]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_STATU]' LEVELPOSITION=1,
+        "VEHORD_STATUS_Key" = '[4ZCP_DPVORD-VEHORD_STATU].[24ZCP_DPVORD-VEHORD_STATU]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_STATU]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_STATU]' ATTRIBUTE,
+        "VEHORD_TEMP_LEVEL Level 01" = '[4ZCP_DPVORD-VEHORD_TEMP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TEMP]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TEMP]' LEVELPOSITION=1,
+        "VEHORD_TEMP_LEVEL_Key" = '[4ZCP_DPVORD-VEHORD_TEMP].[24ZCP_DPVORD-VEHORD_TEMP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TEMP]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TEMP]' ATTRIBUTE,
+        "VEHORD_TRADE_SEQ Level 01" = '[4ZCP_DPVORD-VEHORD_TRADE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TRADE]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TRADE]' LEVELPOSITION=1,
+        "VEHORD_TRADE_SEQ_Key" = '[4ZCP_DPVORD-VEHORD_TRADE].[24ZCP_DPVORD-VEHORD_TRADE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TRADE]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TRADE]' ATTRIBUTE,
+        "VEHORD_TRADE_STATUS Level 01" = '[4ZCP_DPVORD-VEHORD_TRA_0].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TRA_0]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TRA_0]' LEVELPOSITION=1,
+        "VEHORD_TRADE_STATUS_Key" = '[4ZCP_DPVORD-VEHORD_TRA_0].[24ZCP_DPVORD-VEHORD_TRA_0]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_TRA_0]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_TRA_0]' ATTRIBUTE,
+        "VEHORD_VESS Level 01" = '[4ZCP_DPVORD-VEHORD_VESS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_VESS]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_VESS]' LEVELPOSITION=1,
+        "VEHORD_VESS_Key" = '[4ZCP_DPVORD-VEHORD_VESS].[24ZCP_DPVORD-VEHORD_VESS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_VESS]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_VESS]' ATTRIBUTE,
+        "VEHORD_VIN Level 01" = '[4ZCP_DPVORD-VEHORD_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_VIN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_VIN]' LEVELPOSITION=1,
+        "VEHORD_VIN_Key" = '[4ZCP_DPVORD-VEHORD_VIN].[24ZCP_DPVORD-VEHORD_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_DPVORD-VEHORD_VIN]' DIMENSIONNAME = '[4ZCP_DPVORD-VEHORD_VIN]' ATTRIBUTE,
         numberofrecords_0 = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
     );
 
@@ -111,74 +111,74 @@ CREATE OR REPLACE TABLE bv_zcp_dpvord I18N us_cst (
         vehord_act_clr_key:text,
         vehord_act_datelevel01_0:text,
         vehord_act_date_key:text,
-        vehord_alllevel01_0:text,
-        vehord_all_key:text,
-        vehord_allo_yrlevel01_0:text,
-        vehord_allo_yr_key:text,
-        vehord_archive_inlevel01_0:text,
-        vehord_archive_in_key:text,
-        vehord_auth_indlevel01_0:text,
-        vehord_auth_ind_key:text,
-        vehord_car_trucklevel01_0:text,
-        vehord_car_truck_key:text,
-        vehord_clrlevel01_0:text,
-        vehord_clr_key:text,
-        vehord_clr1_elevel01_0:text,
-        vehord_clr1_e_key:text,
-        vehord_clr2_elevel01_0:text,
-        vehord_clr2_e_key:text,
-        vehord_cust_nolevel01_0:text,
-        vehord_cust_no_key:text,
-        vehord_distlevel01_0:text,
-        vehord_dist_key:text,
-        vehord_dlrlevel01_0:text,
-        vehord_dlr_key:text,
-        vehord_ds_codelevel01_0:text,
-        vehord_ds_code_key:text,
-        vehord_fleetlevel01_0:text,
-        vehord_fleet_key:text,
-        vehord_int_clrlevel01_0:text,
-        vehord_int_clr_key:text,
-        vehord_ld_indlevel01_0:text,
-        vehord_ld_ind_key:text,
-        vehord_loadlevel01_0:text,
-        vehord_load_key:text,
-        vehord_mch_statuslevel01_0:text,
-        vehord_mch_status_key:text,
-        vehord_mdllevel01_0:text,
-        vehord_mdl_key:text,
-        vehord_mdl_elevel01_0:text,
-        vehord_mdl_e_key:text,
-        vehord_mdl_yrlevel01_0:text,
-        vehord_mdl_yr_key:text,
-        vehord_nos_cyclelevel01_0:text,
-        vehord_nos_cycle_key:text,
-        vehord_noteslevel01_0:text,
-        vehord_notes_key:text,
-        vehord_pdslevel01_0:text,
-        vehord_pds_key:text,
-        vehord_piplnlevel01_0:text,
-        vehord_pipln_key:text,
-        vehord_pref_fulfilllevel01_0:text,
-        vehord_pref_fulfill_key:text,
-        vehord_rsvlevel01_0:text,
-        vehord_rsv_key:text,
-        vehord_serieslevel01_0:text,
-        vehord_series_key:text,
-        vehord_soldlevel01_0:text,
-        vehord_sold_key:text,
-        vehord_statuslevel01_0:text,
-        vehord_status_key:text,
-        vehord_temp_levellevel01_0:text,
-        vehord_temp_level_key:text,
-        vehord_trade_seqlevel01_0:text,
-        vehord_trade_seq_key:text,
-        vehord_trade_statuslevel01_0:text,
-        vehord_trade_status_key:text,
-        vehord_vesslevel01_0:text,
-        vehord_vess_key:text,
-        vehord_vinlevel01_0:text,
-        vehord_vin_key:text,
+        "VEHORD_ALL Level 01":text,
+        "VEHORD_ALL_Key":text,
+        "VEHORD_ALLO_YR Level 01":text,
+        "VEHORD_ALLO_YR_Key":text,
+        "VEHORD_ARCHIVE_IN Level 01":text,
+        "VEHORD_ARCHIVE_IN_Key":text,
+        "VEHORD_AUTH_IND Level 01":text,
+        "VEHORD_AUTH_IND_Key":text,
+        "VEHORD_CAR_TRUCK Level 01":text,
+        "VEHORD_CAR_TRUCK_Key":text,
+        "VEHORD_CLR Level 01":text,
+        "VEHORD_CLR_Key":text,
+        "VEHORD_CLR1_E Level 01":text,
+        "VEHORD_CLR1_E_Key":text,
+        "VEHORD_CLR2_E Level 01":text,
+        "VEHORD_CLR2_E_Key":text,
+        "VEHORD_CUST_NO Level 01":text,
+        "VEHORD_CUST_NO_Key":text,
+        "VEHORD_DIST Level 01":text,
+        "VEHORD_DIST_Key":text,
+        "VEHORD_DLR Level 01":text,
+        "VEHORD_DLR_Key":text,
+        "VEHORD_DS_CODE Level 01":text,
+        "VEHORD_DS_CODE_Key":text,
+        "VEHORD_FLEET Level 01":text,
+        "VEHORD_FLEET_Key":text,
+        "VEHORD_INT_CLR Level 01":text,
+        "VEHORD_INT_CLR_Key":text,
+        "VEHORD_LD_IND Level 01":text,
+        "VEHORD_LD_IND_Key":text,
+        "VEHORD_LOAD Level 01":text,
+        "VEHORD_LOAD_Key":text,
+        "VEHORD_MCH_STATUS Level 01":text,
+        "VEHORD_MCH_STATUS_Key":text,
+        "VEHORD_MDL Level 01":text,
+        "VEHORD_MDL_Key":text,
+        "VEHORD_MDL_E Level 01":text,
+        "VEHORD_MDL_E_Key":text,
+        "VEHORD_MDL_YR Level 01":text,
+        "VEHORD_MDL_YR_Key":text,
+        "VEHORD_NOS_CYCLE Level 01":text,
+        "VEHORD_NOS_CYCLE_Key":text,
+        "VEHORD_NOTES Level 01":text,
+        "VEHORD_NOTES_Key":text,
+        "VEHORD_PDS Level 01":text,
+        "VEHORD_PDS_Key":text,
+        "VEHORD_PIPLN Level 01":text,
+        "VEHORD_PIPLN_Key":text,
+        "VEHORD_PREF_FULFILL Level 01":text,
+        "VEHORD_PREF_FULFILL_Key":text,
+        "VEHORD_RSV Level 01":text,
+        "VEHORD_RSV_Key":text,
+        "VEHORD_SERIES Level 01":text,
+        "VEHORD_SERIES_Key":text,
+        "VEHORD_SOLD Level 01":text,
+        "VEHORD_SOLD_Key":text,
+        "VEHORD_STATUS Level 01":text,
+        "VEHORD_STATUS_Key":text,
+        "VEHORD_TEMP_LEVEL Level 01":text,
+        "VEHORD_TEMP_LEVEL_Key":text,
+        "VEHORD_TRADE_SEQ Level 01":text,
+        "VEHORD_TRADE_SEQ_Key":text,
+        "VEHORD_TRADE_STATUS Level 01":text,
+        "VEHORD_TRADE_STATUS_Key":text,
+        "VEHORD_VESS Level 01":text,
+        "VEHORD_VESS_Key":text,
+        "VEHORD_VIN Level 01":text,
+        "VEHORD_VIN_Key":text,
         numberofrecords_0:double
     )
     FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
@@ -203,77 +203,77 @@ CREATE OR REPLACE TABLE bv_zcp_dpvord I18N us_cst (
              ADD vehord_act_clr_key (any) OPT ANY
              ADD vehord_act_datelevel01_0 (any) OPT ANY
              ADD vehord_act_date_key (any) OPT ANY
-             ADD vehord_alllevel01_0 (any) OPT ANY
-             ADD vehord_all_key (any) OPT ANY
-             ADD vehord_allo_yrlevel01_0 (any) OPT ANY
-             ADD vehord_allo_yr_key (any) OPT ANY
-             ADD vehord_archive_inlevel01_0 (any) OPT ANY
-             ADD vehord_archive_in_key (any) OPT ANY
-             ADD vehord_auth_indlevel01_0 (any) OPT ANY
-             ADD vehord_auth_ind_key (any) OPT ANY
-             ADD vehord_car_trucklevel01_0 (any) OPT ANY
-             ADD vehord_car_truck_key (any) OPT ANY
-             ADD vehord_clrlevel01_0 (any) OPT ANY
-             ADD vehord_clr_key (any) OPT ANY
-             ADD vehord_clr1_elevel01_0 (any) OPT ANY
-             ADD vehord_clr1_e_key (any) OPT ANY
-             ADD vehord_clr2_elevel01_0 (any) OPT ANY
-             ADD vehord_clr2_e_key (any) OPT ANY
-             ADD vehord_cust_nolevel01_0 (any) OPT ANY
-             ADD vehord_cust_no_key (any) OPT ANY
-             ADD vehord_distlevel01_0 (any) OPT ANY
-             ADD vehord_dist_key (any) OPT ANY
-             ADD vehord_dlrlevel01_0 (any) OPT ANY
-             ADD vehord_dlr_key (any) OPT ANY
-             ADD vehord_ds_codelevel01_0 (any) OPT ANY
-             ADD vehord_ds_code_key (any) OPT ANY
-             ADD vehord_fleetlevel01_0 (any) OPT ANY
-             ADD vehord_fleet_key (any) OPT ANY
-             ADD vehord_int_clrlevel01_0 (any) OPT ANY
-             ADD vehord_int_clr_key (any) OPT ANY
-             ADD vehord_ld_indlevel01_0 (any) OPT ANY
-             ADD vehord_ld_ind_key (any) OPT ANY
-             ADD vehord_loadlevel01_0 (any) OPT ANY
-             ADD vehord_load_key (any) OPT ANY
-             ADD vehord_mch_statuslevel01_0 (any) OPT ANY
-             ADD vehord_mch_status_key (any) OPT ANY
-             ADD vehord_mdllevel01_0 (any) OPT ANY
-             ADD vehord_mdl_key (any) OPT ANY
-             ADD vehord_mdl_elevel01_0 (any) OPT ANY
-             ADD vehord_mdl_e_key (any) OPT ANY
-             ADD vehord_mdl_yrlevel01_0 (any) OPT ANY
-             ADD vehord_mdl_yr_key (any) OPT ANY
-             ADD vehord_nos_cyclelevel01_0 (any) OPT ANY
-             ADD vehord_nos_cycle_key (any) OPT ANY
-             ADD vehord_noteslevel01_0 (any) OPT ANY
-             ADD vehord_notes_key (any) OPT ANY
-             ADD vehord_pdslevel01_0 (any) OPT ANY
-             ADD vehord_pds_key (any) OPT ANY
-             ADD vehord_piplnlevel01_0 (any) OPT ANY
-             ADD vehord_pipln_key (any) OPT ANY
-             ADD vehord_pref_fulfilllevel01_0 (any) OPT ANY
-             ADD vehord_pref_fulfill_key (any) OPT ANY
-             ADD vehord_rsvlevel01_0 (any) OPT ANY
-             ADD vehord_rsv_key (any) OPT ANY
-             ADD vehord_serieslevel01_0 (any) OPT ANY
-             ADD vehord_series_key (any) OPT ANY
-             ADD vehord_soldlevel01_0 (any) OPT ANY
-             ADD vehord_sold_key (any) OPT ANY
-             ADD vehord_statuslevel01_0 (any) OPT ANY
-             ADD vehord_status_key (any) OPT ANY
-             ADD vehord_temp_levellevel01_0 (any) OPT ANY
-             ADD vehord_temp_level_key (any) OPT ANY
-             ADD vehord_trade_seqlevel01_0 (any) OPT ANY
-             ADD vehord_trade_seq_key (any) OPT ANY
-             ADD vehord_trade_statuslevel01_0 (any) OPT ANY
-             ADD vehord_trade_status_key (any) OPT ANY
-             ADD vehord_vesslevel01_0 (any) OPT ANY
-             ADD vehord_vess_key (any) OPT ANY
-             ADD vehord_vinlevel01_0 (any) OPT ANY
-             ADD vehord_vin_key (any) OPT ANY
+             ADD "VEHORD_ALL Level 01" (any) OPT ANY
+             ADD "VEHORD_ALL_Key" (any) OPT ANY
+             ADD "VEHORD_ALLO_YR Level 01" (any) OPT ANY
+             ADD "VEHORD_ALLO_YR_Key" (any) OPT ANY
+             ADD "VEHORD_ARCHIVE_IN Level 01" (any) OPT ANY
+             ADD "VEHORD_ARCHIVE_IN_Key" (any) OPT ANY
+             ADD "VEHORD_AUTH_IND Level 01" (any) OPT ANY
+             ADD "VEHORD_AUTH_IND_Key" (any) OPT ANY
+             ADD "VEHORD_CAR_TRUCK Level 01" (any) OPT ANY
+             ADD "VEHORD_CAR_TRUCK_Key" (any) OPT ANY
+             ADD "VEHORD_CLR Level 01" (any) OPT ANY
+             ADD "VEHORD_CLR_Key" (any) OPT ANY
+             ADD "VEHORD_CLR1_E Level 01" (any) OPT ANY
+             ADD "VEHORD_CLR1_E_Key" (any) OPT ANY
+             ADD "VEHORD_CLR2_E Level 01" (any) OPT ANY
+             ADD "VEHORD_CLR2_E_Key" (any) OPT ANY
+             ADD "VEHORD_CUST_NO Level 01" (any) OPT ANY
+             ADD "VEHORD_CUST_NO_Key" (any) OPT ANY
+             ADD "VEHORD_DIST Level 01" (any) OPT ANY
+             ADD "VEHORD_DIST_Key" (any) OPT ANY
+             ADD "VEHORD_DLR Level 01" (any) OPT ANY
+             ADD "VEHORD_DLR_Key" (any) OPT ANY
+             ADD "VEHORD_DS_CODE Level 01" (any) OPT ANY
+             ADD "VEHORD_DS_CODE_Key" (any) OPT ANY
+             ADD "VEHORD_FLEET Level 01" (any) OPT ANY
+             ADD "VEHORD_FLEET_Key" (any) OPT ANY
+             ADD "VEHORD_INT_CLR Level 01" (any) OPT ANY
+             ADD "VEHORD_INT_CLR_Key" (any) OPT ANY
+             ADD "VEHORD_LD_IND Level 01" (any) OPT ANY
+             ADD "VEHORD_LD_IND_Key" (any) OPT ANY
+             ADD "VEHORD_LOAD Level 01" (any) OPT ANY
+             ADD "VEHORD_LOAD_Key" (any) OPT ANY
+             ADD "VEHORD_MCH_STATUS Level 01" (any) OPT ANY
+             ADD "VEHORD_MCH_STATUS_Key" (any) OPT ANY
+             ADD "VEHORD_MDL Level 01" (any) OPT ANY
+             ADD "VEHORD_MDL_Key" (any) OPT ANY
+             ADD "VEHORD_MDL_E Level 01" (any) OPT ANY
+             ADD "VEHORD_MDL_E_Key" (any) OPT ANY
+             ADD "VEHORD_MDL_YR Level 01" (any) OPT ANY
+             ADD "VEHORD_MDL_YR_Key" (any) OPT ANY
+             ADD "VEHORD_NOS_CYCLE Level 01" (any) OPT ANY
+             ADD "VEHORD_NOS_CYCLE_Key" (any) OPT ANY
+             ADD "VEHORD_NOTES Level 01" (any) OPT ANY
+             ADD "VEHORD_NOTES_Key" (any) OPT ANY
+             ADD "VEHORD_PDS Level 01" (any) OPT ANY
+             ADD "VEHORD_PDS_Key" (any) OPT ANY
+             ADD "VEHORD_PIPLN Level 01" (any) OPT ANY
+             ADD "VEHORD_PIPLN_Key" (any) OPT ANY
+             ADD "VEHORD_PREF_FULFILL Level 01" (any) OPT ANY
+             ADD "VEHORD_PREF_FULFILL_Key" (any) OPT ANY
+             ADD "VEHORD_RSV Level 01" (any) OPT ANY
+             ADD "VEHORD_RSV_Key" (any) OPT ANY
+             ADD "VEHORD_SERIES Level 01" (any) OPT ANY
+             ADD "VEHORD_SERIES_Key" (any) OPT ANY
+             ADD "VEHORD_SOLD Level 01" (any) OPT ANY
+             ADD "VEHORD_SOLD_Key" (any) OPT ANY
+             ADD "VEHORD_STATUS Level 01" (any) OPT ANY
+             ADD "VEHORD_STATUS_Key" (any) OPT ANY
+             ADD "VEHORD_TEMP_LEVEL Level 01" (any) OPT ANY
+             ADD "VEHORD_TEMP_LEVEL_Key" (any) OPT ANY
+             ADD "VEHORD_TRADE_SEQ Level 01" (any) OPT ANY
+             ADD "VEHORD_TRADE_SEQ_Key" (any) OPT ANY
+             ADD "VEHORD_TRADE_STATUS Level 01" (any) OPT ANY
+             ADD "VEHORD_TRADE_STATUS_Key" (any) OPT ANY
+             ADD "VEHORD_VESS Level 01" (any) OPT ANY
+             ADD "VEHORD_VESS_Key" (any) OPT ANY
+             ADD "VEHORD_VIN Level 01" (any) OPT ANY
+             ADD "VEHORD_VIN_Key" (any) OPT ANY
              ADD numberofrecords_0 (any) OPT ANY
         )
-        OUTPUTLIST (cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, upd_by_id_key, upd_by_idlevel01_0, upd_ts_key, upd_tslevel01_0, vehord_act_clr_key, vehord_act_clrlevel01_0, vehord_act_date_key, vehord_act_datelevel01_0, vehord_all_key, vehord_alllevel01_0, vehord_allo_yr_key, vehord_allo_yrlevel01_0, vehord_archive_in_key, vehord_archive_inlevel01_0, vehord_auth_ind_key, vehord_auth_indlevel01_0, vehord_car_truck_key, vehord_car_trucklevel01_0, vehord_clr1_e_key, vehord_clr1_elevel01_0, vehord_clr2_e_key, vehord_clr2_elevel01_0, vehord_clr_key, vehord_clrlevel01_0, vehord_cust_no_key, vehord_cust_nolevel01_0, vehord_dist_key, vehord_distlevel01_0, vehord_dlr_key, vehord_dlrlevel01_0, vehord_ds_code_key, vehord_ds_codelevel01_0, vehord_fleet_key, vehord_fleetlevel01_0, vehord_int_clr_key, vehord_int_clrlevel01_0, vehord_ld_ind_key, vehord_ld_indlevel01_0, vehord_load_key, vehord_loadlevel01_0, vehord_mch_status_key, vehord_mch_statuslevel01_0, vehord_mdl_e_key, vehord_mdl_elevel01_0, vehord_mdl_key, vehord_mdl_yr_key, vehord_mdl_yrlevel01_0, vehord_mdllevel01_0, vehord_nos_cycle_key, vehord_nos_cyclelevel01_0, vehord_notes_key, vehord_noteslevel01_0, vehord_pds_key, vehord_pdslevel01_0, vehord_pipln_key, vehord_piplnlevel01_0, vehord_pref_fulfill_key, vehord_pref_fulfilllevel01_0, vehord_rsv_key, vehord_rsvlevel01_0, vehord_series_key, vehord_serieslevel01_0, vehord_sold_key, vehord_soldlevel01_0, vehord_status_key, vehord_statuslevel01_0, vehord_temp_level_key, vehord_temp_levellevel01_0, vehord_trade_seq_key, vehord_trade_seqlevel01_0, vehord_trade_status_key, vehord_trade_statuslevel01_0, vehord_vess_key, vehord_vesslevel01_0, vehord_vin_key, vehord_vinlevel01_0
+        OUTPUTLIST ("VEHORD_ALL Level 01", "VEHORD_ALLO_YR Level 01", "VEHORD_ALLO_YR_Key", "VEHORD_ALL_Key", "VEHORD_ARCHIVE_IN Level 01", "VEHORD_ARCHIVE_IN_Key", "VEHORD_AUTH_IND Level 01", "VEHORD_AUTH_IND_Key", "VEHORD_CAR_TRUCK Level 01", "VEHORD_CAR_TRUCK_Key", "VEHORD_CLR Level 01", "VEHORD_CLR1_E Level 01", "VEHORD_CLR1_E_Key", "VEHORD_CLR2_E Level 01", "VEHORD_CLR2_E_Key", "VEHORD_CLR_Key", "VEHORD_CUST_NO Level 01", "VEHORD_CUST_NO_Key", "VEHORD_DIST Level 01", "VEHORD_DIST_Key", "VEHORD_DLR Level 01", "VEHORD_DLR_Key", "VEHORD_DS_CODE Level 01", "VEHORD_DS_CODE_Key", "VEHORD_FLEET Level 01", "VEHORD_FLEET_Key", "VEHORD_INT_CLR Level 01", "VEHORD_INT_CLR_Key", "VEHORD_LD_IND Level 01", "VEHORD_LD_IND_Key", "VEHORD_LOAD Level 01", "VEHORD_LOAD_Key", "VEHORD_MCH_STATUS Level 01", "VEHORD_MCH_STATUS_Key", "VEHORD_MDL Level 01", "VEHORD_MDL_E Level 01", "VEHORD_MDL_E_Key", "VEHORD_MDL_Key", "VEHORD_MDL_YR Level 01", "VEHORD_MDL_YR_Key", "VEHORD_NOS_CYCLE Level 01", "VEHORD_NOS_CYCLE_Key", "VEHORD_NOTES Level 01", "VEHORD_NOTES_Key", "VEHORD_PDS Level 01", "VEHORD_PDS_Key", "VEHORD_PIPLN Level 01", "VEHORD_PIPLN_Key", "VEHORD_PREF_FULFILL Level 01", "VEHORD_PREF_FULFILL_Key", "VEHORD_RSV Level 01", "VEHORD_RSV_Key", "VEHORD_SERIES Level 01", "VEHORD_SERIES_Key", "VEHORD_SOLD Level 01", "VEHORD_SOLD_Key", "VEHORD_STATUS Level 01", "VEHORD_STATUS_Key", "VEHORD_TEMP_LEVEL Level 01", "VEHORD_TEMP_LEVEL_Key", "VEHORD_TRADE_SEQ Level 01", "VEHORD_TRADE_SEQ_Key", "VEHORD_TRADE_STATUS Level 01", "VEHORD_TRADE_STATUS_Key", "VEHORD_VESS Level 01", "VEHORD_VESS_Key", "VEHORD_VIN Level 01", "VEHORD_VIN_Key", cre_by_id_key, cre_by_idlevel01_0, cre_ts_key, cre_tslevel01_0, infoprovider_key, infoprovider_longname_0, infoprovider_name, infoproviderlevel01_0, numberofrecords_0, upd_by_id_key, upd_by_idlevel01_0, upd_ts_key, upd_tslevel01_0, vehord_act_clr_key, vehord_act_clrlevel01_0, vehord_act_date_key, vehord_act_datelevel01_0
         )
         WRAPPER (sapbwbapi bv_zcp_dpvord)
     );
