@@ -1,0 +1,148 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_vmaccy
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_VMACCY'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "ARRAY_INDEX Level 01" = '[4ZCP_VMACCY-ARRAY_INDEX].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-ARRAY_INDEX]' DIMENSIONNAME = '[4ZCP_VMACCY-ARRAY_INDEX]' LEVELPOSITION=1,
+        "ARRAY_INDEX_Key" = '[4ZCP_VMACCY-ARRAY_INDEX].[24ZCP_VMACCY-ARRAY_INDEX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-ARRAY_INDEX]' DIMENSIONNAME = '[4ZCP_VMACCY-ARRAY_INDEX]' ATTRIBUTE,
+        "CRE_BY_ID Level 01" = '[4ZCP_VMACCY-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_VMACCY-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_VMACCY-CRE_BY_ID].[24ZCP_VMACCY-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_VMACCY-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_VMACCY-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-CRE_TS]' DIMENSIONNAME = '[4ZCP_VMACCY-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_VMACCY-CRE_TS].[24ZCP_VMACCY-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-CRE_TS]' DIMENSIONNAME = '[4ZCP_VMACCY-CRE_TS]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_VMACCY-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_VMACCY-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_VMACCY-UPD_BY_ID].[24ZCP_VMACCY-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_VMACCY-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_VMACCY-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-UPD_TS]' DIMENSIONNAME = '[4ZCP_VMACCY-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_VMACCY-UPD_TS].[24ZCP_VMACCY-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-UPD_TS]' DIMENSIONNAME = '[4ZCP_VMACCY-UPD_TS]' ATTRIBUTE,
+        "VMA_ARCHIVE_IN Level 01" = '[4ZCP_VMACCY-VMA_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VMA_ARCHIVE]' DIMENSIONNAME = '[4ZCP_VMACCY-VMA_ARCHIVE]' LEVELPOSITION=1,
+        "VMA_ARCHIVE_IN_Key" = '[4ZCP_VMACCY-VMA_ARCHIVE].[24ZCP_VMACCY-VMA_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VMA_ARCHIVE]' DIMENSIONNAME = '[4ZCP_VMACCY-VMA_ARCHIVE]' ATTRIBUTE,
+        "VM_ACC_ABREV Level 01" = '[4ZCP_VMACCY-VM_ACC_ABREV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_ABREV]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_ABREV]' LEVELPOSITION=1,
+        "VM_ACC_ABREV_Key" = '[4ZCP_VMACCY-VM_ACC_ABREV].[24ZCP_VMACCY-VM_ACC_ABREV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_ABREV]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_ABREV]' ATTRIBUTE,
+        "VM_ACC_CODE Level 01" = '[4ZCP_VMACCY-VM_ACC_CODE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_CODE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_CODE]' LEVELPOSITION=1,
+        "VM_ACC_CODE_Key" = '[4ZCP_VMACCY-VM_ACC_CODE].[24ZCP_VMACCY-VM_ACC_CODE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_CODE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_CODE]' ATTRIBUTE,
+        "VM_ACC_PHASE_CD Level 01" = '[4ZCP_VMACCY-VM_ACC_PHASE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_PHASE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_PHASE]' LEVELPOSITION=1,
+        "VM_ACC_PHASE_CD_Key" = '[4ZCP_VMACCY-VM_ACC_PHASE].[24ZCP_VMACCY-VM_ACC_PHASE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_PHASE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_PHASE]' ATTRIBUTE,
+        "VM_ACC_PKG_IN Level 01" = '[4ZCP_VMACCY-VM_ACC_PKG_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_PKG_I]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_PKG_I]' LEVELPOSITION=1,
+        "VM_ACC_PKG_IN_Key" = '[4ZCP_VMACCY-VM_ACC_PKG_I].[24ZCP_VMACCY-VM_ACC_PKG_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_PKG_I]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_PKG_I]' ATTRIBUTE,
+        "VM_ACC_PRE Level 01" = '[4ZCP_VMACCY-VM_ACC_PRE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_PRE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_PRE]' LEVELPOSITION=1,
+        "VM_ACC_PRE_Key" = '[4ZCP_VMACCY-VM_ACC_PRE].[24ZCP_VMACCY-VM_ACC_PRE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_PRE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_PRE]' ATTRIBUTE,
+        "VM_ACC_SERIES Level 01" = '[4ZCP_VMACCY-VM_ACC_SERIE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_SERIE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_SERIE]' LEVELPOSITION=1,
+        "VM_ACC_SERIES_Key" = '[4ZCP_VMACCY-VM_ACC_SERIE].[24ZCP_VMACCY-VM_ACC_SERIE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_ACC_SERIE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_ACC_SERIE]' ATTRIBUTE,
+        "VM_MCH_INST_PIOS Level 01" = '[4ZCP_VMACCY-VM_MCH_INST].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_MCH_INST]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_MCH_INST]' LEVELPOSITION=1,
+        "VM_MCH_INST_PIOS_Key" = '[4ZCP_VMACCY-VM_MCH_INST].[24ZCP_VMACCY-VM_MCH_INST]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_MCH_INST]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_MCH_INST]' ATTRIBUTE,
+        "VM_PAK_PHASE Level 01" = '[4ZCP_VMACCY-VM_PAK_PHASE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_PAK_PHASE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_PAK_PHASE]' LEVELPOSITION=1,
+        "VM_PAK_PHASE_Key" = '[4ZCP_VMACCY-VM_PAK_PHASE].[24ZCP_VMACCY-VM_PAK_PHASE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_PAK_PHASE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_PAK_PHASE]' ATTRIBUTE,
+        "VM_PAK_PLUSER Level 01" = '[4ZCP_VMACCY-VM_PAK_PLUSE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_PAK_PLUSE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_PAK_PLUSE]' LEVELPOSITION=1,
+        "VM_PAK_PLUSER_Key" = '[4ZCP_VMACCY-VM_PAK_PLUSE].[24ZCP_VMACCY-VM_PAK_PLUSE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_PAK_PLUSE]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_PAK_PLUSE]' ATTRIBUTE,
+        "VM_UNIT_ID Level 01" = '[4ZCP_VMACCY-VM_UNIT_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_UNIT_ID]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_UNIT_ID]' LEVELPOSITION=1,
+        "VM_UNIT_ID_Key" = '[4ZCP_VMACCY-VM_UNIT_ID].[24ZCP_VMACCY-VM_UNIT_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_UNIT_ID]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_UNIT_ID]' ATTRIBUTE,
+        "VM_VACY_ACC_STAT Level 01" = '[4ZCP_VMACCY-VM_VACY_ACC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_VACY_ACC]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_VACY_ACC]' LEVELPOSITION=1,
+        "VM_VACY_ACC_STAT_Key" = '[4ZCP_VMACCY-VM_VACY_ACC].[24ZCP_VMACCY-VM_VACY_ACC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_VACY_ACC]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_VACY_ACC]' ATTRIBUTE,
+        "VM_VIN Level 01" = '[4ZCP_VMACCY-VM_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_VIN]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_VIN]' LEVELPOSITION=1,
+        "VM_VIN_Key" = '[4ZCP_VMACCY-VM_VIN].[24ZCP_VMACCY-VM_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VMACCY-VM_VIN]' DIMENSIONNAME = '[4ZCP_VMACCY-VM_VIN]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_vmaccy I18N us_cst (
+        "ARRAY_INDEX Level 01":text,
+        "ARRAY_INDEX_Key":text,
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "VMA_ARCHIVE_IN Level 01":text,
+        "VMA_ARCHIVE_IN_Key":text,
+        "VM_ACC_ABREV Level 01":text,
+        "VM_ACC_ABREV_Key":text,
+        "VM_ACC_CODE Level 01":text,
+        "VM_ACC_CODE_Key":text,
+        "VM_ACC_PHASE_CD Level 01":text,
+        "VM_ACC_PHASE_CD_Key":text,
+        "VM_ACC_PKG_IN Level 01":text,
+        "VM_ACC_PKG_IN_Key":text,
+        "VM_ACC_PRE Level 01":text,
+        "VM_ACC_PRE_Key":text,
+        "VM_ACC_SERIES Level 01":text,
+        "VM_ACC_SERIES_Key":text,
+        "VM_MCH_INST_PIOS Level 01":text,
+        "VM_MCH_INST_PIOS_Key":text,
+        "VM_PAK_PHASE Level 01":text,
+        "VM_PAK_PHASE_Key":text,
+        "VM_PAK_PLUSER Level 01":text,
+        "VM_PAK_PLUSER_Key":text,
+        "VM_UNIT_ID Level 01":text,
+        "VM_UNIT_ID_Key":text,
+        "VM_VACY_ACC_STAT Level 01":text,
+        "VM_VACY_ACC_STAT_Key":text,
+        "VM_VIN Level 01":text,
+        "VM_VIN_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_vmaccy(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "ARRAY_INDEX Level 01" (any) OPT ANY
+             ADD "ARRAY_INDEX_Key" (any) OPT ANY
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "VMA_ARCHIVE_IN Level 01" (any) OPT ANY
+             ADD "VMA_ARCHIVE_IN_Key" (any) OPT ANY
+             ADD "VM_ACC_ABREV Level 01" (any) OPT ANY
+             ADD "VM_ACC_ABREV_Key" (any) OPT ANY
+             ADD "VM_ACC_CODE Level 01" (any) OPT ANY
+             ADD "VM_ACC_CODE_Key" (any) OPT ANY
+             ADD "VM_ACC_PHASE_CD Level 01" (any) OPT ANY
+             ADD "VM_ACC_PHASE_CD_Key" (any) OPT ANY
+             ADD "VM_ACC_PKG_IN Level 01" (any) OPT ANY
+             ADD "VM_ACC_PKG_IN_Key" (any) OPT ANY
+             ADD "VM_ACC_PRE Level 01" (any) OPT ANY
+             ADD "VM_ACC_PRE_Key" (any) OPT ANY
+             ADD "VM_ACC_SERIES Level 01" (any) OPT ANY
+             ADD "VM_ACC_SERIES_Key" (any) OPT ANY
+             ADD "VM_MCH_INST_PIOS Level 01" (any) OPT ANY
+             ADD "VM_MCH_INST_PIOS_Key" (any) OPT ANY
+             ADD "VM_PAK_PHASE Level 01" (any) OPT ANY
+             ADD "VM_PAK_PHASE_Key" (any) OPT ANY
+             ADD "VM_PAK_PLUSER Level 01" (any) OPT ANY
+             ADD "VM_PAK_PLUSER_Key" (any) OPT ANY
+             ADD "VM_UNIT_ID Level 01" (any) OPT ANY
+             ADD "VM_UNIT_ID_Key" (any) OPT ANY
+             ADD "VM_VACY_ACC_STAT Level 01" (any) OPT ANY
+             ADD "VM_VACY_ACC_STAT_Key" (any) OPT ANY
+             ADD "VM_VIN Level 01" (any) OPT ANY
+             ADD "VM_VIN_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("ARRAY_INDEX Level 01", "ARRAY_INDEX_Key", "CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key", "VMA_ARCHIVE_IN Level 01", "VMA_ARCHIVE_IN_Key", "VM_ACC_ABREV Level 01", "VM_ACC_ABREV_Key", "VM_ACC_CODE Level 01", "VM_ACC_CODE_Key", "VM_ACC_PHASE_CD Level 01", "VM_ACC_PHASE_CD_Key", "VM_ACC_PKG_IN Level 01", "VM_ACC_PKG_IN_Key", "VM_ACC_PRE Level 01", "VM_ACC_PRE_Key", "VM_ACC_SERIES Level 01", "VM_ACC_SERIES_Key", "VM_MCH_INST_PIOS Level 01", "VM_MCH_INST_PIOS_Key", "VM_PAK_PHASE Level 01", "VM_PAK_PHASE_Key", "VM_PAK_PLUSER Level 01", "VM_PAK_PLUSER_Key", "VM_UNIT_ID Level 01", "VM_UNIT_ID_Key", "VM_VACY_ACC_STAT Level 01", "VM_VACY_ACC_STAT_Key", "VM_VIN Level 01", "VM_VIN_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_vmaccy)
+    );
+
