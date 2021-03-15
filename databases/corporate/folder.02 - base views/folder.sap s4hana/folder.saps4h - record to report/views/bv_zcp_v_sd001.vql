@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_v_sd001
-    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    FOLDER = '/02 - base views/sap s4hana/saps4h - record to report'
     DATASOURCENAME = ds_sap_hana
     SCHEMANAME = ''
     CUBENAME = '$$ZCP_V_SD001'
@@ -357,7 +357,7 @@ CREATE OR REPLACE TABLE bv_zcp_v_sd001 I18N us_cst (
         subtotal5_0:double,
         subtotal6_0:double
     )
-    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    FOLDER = '/02 - base views/sap s4hana/saps4h - record to report'
     DESCRIPTION = 'Contains actuals from S4 only.  It does not contain any historical data or objectives.'
     CACHE OFF
     TIMETOLIVEINCACHE DEFAULT

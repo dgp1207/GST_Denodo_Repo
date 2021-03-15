@@ -1,0 +1,2 @@
+﻿CREATE OR REPLACE FOLDER '/02 - base views/sap bw4hana/SAPBW - Order to Cash' DESCRIPTION 'Order to Cash' ;
+

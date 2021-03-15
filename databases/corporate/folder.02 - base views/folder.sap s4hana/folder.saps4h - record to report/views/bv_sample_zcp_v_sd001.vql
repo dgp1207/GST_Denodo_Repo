@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "bv_sample_ZCP_V_SD001"
-    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    FOLDER = '/02 - base views/sap s4hana/saps4h - record to report'
     DATASOURCENAME = ds_sap_hana
     SCHEMANAME = ''
     CUBENAME = '$$ZCP_V_SD001'
@@ -287,7 +287,7 @@ CREATE OR REPLACE TABLE "bv_sample_ZCP_V_SD001" I18N us_cst (
         "Subtotal 3":double,
         "Subtotal 4":double
     )
-    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    FOLDER = '/02 - base views/sap s4hana/saps4h - record to report'
     CACHE OFF
     TIMETOLIVEINCACHE DEFAULT
     ADD SEARCHMETHOD "bv_sample_ZCP_V_SD001"(

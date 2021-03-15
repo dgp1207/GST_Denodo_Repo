@@ -1,5 +1,5 @@
 ﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_v_sd003
-    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    FOLDER = '/02 - base views/sap s4hana/saps4h - record to report'
     DATASOURCENAME = ds_sap_hana
     SCHEMANAME = ''
     CUBENAME = '$$ZCP_V_SD003'
@@ -71,7 +71,7 @@ CREATE OR REPLACE TABLE bv_zcp_v_sd003 I18N us_cst (
         numberofrecords_0:double,
         qtyinbaseuom_0:double
     )
-    FOLDER = '/02 - base views/sap s4hana/saps4h - rtr'
+    FOLDER = '/02 - base views/sap s4hana/saps4h - record to report'
     DESCRIPTION = 'Retail Sales and Objectives.  Contains actual, history, and objectives.  This will be key for reporting that Tableau will use as its base.  It contains everything.'
     CACHE OFF
     TIMETOLIVEINCACHE DEFAULT
