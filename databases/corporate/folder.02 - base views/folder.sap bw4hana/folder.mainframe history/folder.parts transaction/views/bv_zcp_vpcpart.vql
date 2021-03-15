@@ -1,0 +1,88 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_vpcpart
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_VPCPART'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "VPP_ARCHIVE_CD Level 01" = '[4ZCP_VPCPART-VPP_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_ARCHIVE]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_ARCHIVE]' LEVELPOSITION=1,
+        "VPP_ARCHIVE_CD_Key" = '[4ZCP_VPCPART-VPP_ARCHIVE].[24ZCP_VPCPART-VPP_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_ARCHIVE]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_ARCHIVE]' ATTRIBUTE,
+        "VPP_CRE_BY_ID Level 01" = '[4ZCP_VPCPART-VPP_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_CRE_BY_I]' LEVELPOSITION=1,
+        "VPP_CRE_BY_ID_Key" = '[4ZCP_VPCPART-VPP_CRE_BY_I].[24ZCP_VPCPART-VPP_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_CRE_BY_I]' ATTRIBUTE,
+        "VPP_CRE_TS Level 01" = '[4ZCP_VPCPART-VPP_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_CRE_TS]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_CRE_TS]' LEVELPOSITION=1,
+        "VPP_CRE_TS_Key" = '[4ZCP_VPCPART-VPP_CRE_TS].[24ZCP_VPCPART-VPP_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_CRE_TS]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_CRE_TS]' ATTRIBUTE,
+        "VPP_PART_INV_DT Level 01" = '[4ZCP_VPCPART-VPP_PART_INV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_PART_INV]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_PART_INV]' LEVELPOSITION=1,
+        "VPP_PART_INV_DT_Key" = '[4ZCP_VPCPART-VPP_PART_INV].[24ZCP_VPCPART-VPP_PART_INV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_PART_INV]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_PART_INV]' ATTRIBUTE,
+        "VPP_PART_INV_TL_AM_SN Level 01" = '[4ZCP_VPCPART-QCFRK6DYKHOY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-QCFRK6DYKHOY]' DIMENSIONNAME = '[4ZCP_VPCPART-QCFRK6DYKHOY]' LEVELPOSITION=1,
+        "VPP_PART_INV_TL_AM_SN_Key" = '[4ZCP_VPCPART-QCFRK6DYKHOY].[24ZCP_VPCPART-QCFRK6DYKHOY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-QCFRK6DYKHOY]' DIMENSIONNAME = '[4ZCP_VPCPART-QCFRK6DYKHOY]' ATTRIBUTE,
+        "VPP_PART_ON_HLD_QTY Level 01" = '[4ZCP_VPCPART-VPP_PART_ON].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_PART_ON]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_PART_ON]' LEVELPOSITION=1,
+        "VPP_PART_ON_HLD_QTY_Key" = '[4ZCP_VPCPART-VPP_PART_ON].[24ZCP_VPCPART-VPP_PART_ON]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_PART_ON]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_PART_ON]' ATTRIBUTE,
+        "VPP_UPD_BY_ID Level 01" = '[4ZCP_VPCPART-VPP_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_UPD_BY_I]' LEVELPOSITION=1,
+        "VPP_UPD_BY_ID_Key" = '[4ZCP_VPCPART-VPP_UPD_BY_I].[24ZCP_VPCPART-VPP_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_UPD_BY_I]' ATTRIBUTE,
+        "VPP_UPD_TS Level 01" = '[4ZCP_VPCPART-VPP_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_UPD_TS]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_UPD_TS]' LEVELPOSITION=1,
+        "VPP_UPD_TS_Key" = '[4ZCP_VPCPART-VPP_UPD_TS].[24ZCP_VPCPART-VPP_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VPCPART-VPP_UPD_TS]' DIMENSIONNAME = '[4ZCP_VPCPART-VPP_UPD_TS]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_vpcpart I18N us_cst (
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "VPP_ARCHIVE_CD Level 01":text,
+        "VPP_ARCHIVE_CD_Key":text,
+        "VPP_CRE_BY_ID Level 01":text,
+        "VPP_CRE_BY_ID_Key":text,
+        "VPP_CRE_TS Level 01":text,
+        "VPP_CRE_TS_Key":text,
+        "VPP_PART_INV_DT Level 01":text,
+        "VPP_PART_INV_DT_Key":text,
+        "VPP_PART_INV_TL_AM_SN Level 01":text,
+        "VPP_PART_INV_TL_AM_SN_Key":text,
+        "VPP_PART_ON_HLD_QTY Level 01":text,
+        "VPP_PART_ON_HLD_QTY_Key":text,
+        "VPP_UPD_BY_ID Level 01":text,
+        "VPP_UPD_BY_ID_Key":text,
+        "VPP_UPD_TS Level 01":text,
+        "VPP_UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_vpcpart(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "VPP_ARCHIVE_CD Level 01" (any) OPT ANY
+             ADD "VPP_ARCHIVE_CD_Key" (any) OPT ANY
+             ADD "VPP_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "VPP_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "VPP_CRE_TS Level 01" (any) OPT ANY
+             ADD "VPP_CRE_TS_Key" (any) OPT ANY
+             ADD "VPP_PART_INV_DT Level 01" (any) OPT ANY
+             ADD "VPP_PART_INV_DT_Key" (any) OPT ANY
+             ADD "VPP_PART_INV_TL_AM_SN Level 01" (any) OPT ANY
+             ADD "VPP_PART_INV_TL_AM_SN_Key" (any) OPT ANY
+             ADD "VPP_PART_ON_HLD_QTY Level 01" (any) OPT ANY
+             ADD "VPP_PART_ON_HLD_QTY_Key" (any) OPT ANY
+             ADD "VPP_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "VPP_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "VPP_UPD_TS Level 01" (any) OPT ANY
+             ADD "VPP_UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "VPP_ARCHIVE_CD Level 01", "VPP_ARCHIVE_CD_Key", "VPP_CRE_BY_ID Level 01", "VPP_CRE_BY_ID_Key", "VPP_CRE_TS Level 01", "VPP_CRE_TS_Key", "VPP_PART_INV_DT Level 01", "VPP_PART_INV_DT_Key", "VPP_PART_INV_TL_AM_SN Level 01", "VPP_PART_INV_TL_AM_SN_Key", "VPP_PART_ON_HLD_QTY Level 01", "VPP_PART_ON_HLD_QTY_Key", "VPP_UPD_BY_ID Level 01", "VPP_UPD_BY_ID_Key", "VPP_UPD_TS Level 01", "VPP_UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_vpcpart)
+    );
+
