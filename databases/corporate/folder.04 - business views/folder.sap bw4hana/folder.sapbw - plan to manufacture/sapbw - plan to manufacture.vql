@@ -1,0 +1,2 @@
+﻿CREATE OR REPLACE FOLDER '/04 - business views/sap bw4hana/SAPBW - Plan to Manufacture' DESCRIPTION 'Plan to Manufacturer' ;
+
