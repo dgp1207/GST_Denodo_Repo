@@ -1,0 +1,106 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_vehprc
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_VEHPRC'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "VPR_ACCT_NO Level 01" = '[4ZCP_VEHPRC-VPR_ACCT_NO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_ACCT_NO]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_ACCT_NO]' LEVELPOSITION=1,
+        "VPR_ACCT_NO_Key" = '[4ZCP_VEHPRC-VPR_ACCT_NO].[24ZCP_VEHPRC-VPR_ACCT_NO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_ACCT_NO]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_ACCT_NO]' ATTRIBUTE,
+        "VPR_ARCHIVE_IN Level 01" = '[4ZCP_VEHPRC-VPR_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_ARCHIVE]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_ARCHIVE]' LEVELPOSITION=1,
+        "VPR_ARCHIVE_IN_Key" = '[4ZCP_VEHPRC-VPR_ARCHIVE].[24ZCP_VEHPRC-VPR_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_ARCHIVE]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_ARCHIVE]' ATTRIBUTE,
+        "VPR_CRE_BY_ID Level 01" = '[4ZCP_VEHPRC-VPR_CRE_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_CRE_BY_I]' LEVELPOSITION=1,
+        "VPR_CRE_BY_ID_Key" = '[4ZCP_VEHPRC-VPR_CRE_BY_I].[24ZCP_VEHPRC-VPR_CRE_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_CRE_BY_I]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_CRE_BY_I]' ATTRIBUTE,
+        "VPR_CRE_TS Level 01" = '[4ZCP_VEHPRC-VPR_CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_CRE_TS]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_CRE_TS]' LEVELPOSITION=1,
+        "VPR_CRE_TS_Key" = '[4ZCP_VEHPRC-VPR_CRE_TS].[24ZCP_VEHPRC-VPR_CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_CRE_TS]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_CRE_TS]' ATTRIBUTE,
+        "VPR_PRC_EFF_TS Level 01" = '[4ZCP_VEHPRC-VPR_PRC_EFF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_PRC_EFF]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_PRC_EFF]' LEVELPOSITION=1,
+        "VPR_PRC_EFF_TS_Key" = '[4ZCP_VEHPRC-VPR_PRC_EFF].[24ZCP_VEHPRC-VPR_PRC_EFF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_PRC_EFF]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_PRC_EFF]' ATTRIBUTE,
+        "VPR_SHIP_DLR_NO Level 01" = '[4ZCP_VEHPRC-VPR_SHIP_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_SHIP_DLR]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_SHIP_DLR]' LEVELPOSITION=1,
+        "VPR_SHIP_DLR_NO_Key" = '[4ZCP_VEHPRC-VPR_SHIP_DLR].[24ZCP_VEHPRC-VPR_SHIP_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_SHIP_DLR]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_SHIP_DLR]' ATTRIBUTE,
+        "VPR_SOLD_DLR_NO Level 01" = '[4ZCP_VEHPRC-VPR_SOLD_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_SOLD_DLR]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_SOLD_DLR]' LEVELPOSITION=1,
+        "VPR_SOLD_DLR_NO_Key" = '[4ZCP_VEHPRC-VPR_SOLD_DLR].[24ZCP_VEHPRC-VPR_SOLD_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_SOLD_DLR]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_SOLD_DLR]' ATTRIBUTE,
+        "VPR_TMS_INVC_NO Level 01" = '[4ZCP_VEHPRC-VPR_TMS_INVC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_TMS_INVC]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_TMS_INVC]' LEVELPOSITION=1,
+        "VPR_TMS_INVC_NO_Key" = '[4ZCP_VEHPRC-VPR_TMS_INVC].[24ZCP_VEHPRC-VPR_TMS_INVC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_TMS_INVC]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_TMS_INVC]' ATTRIBUTE,
+        "VPR_UNIT_ID Level 01" = '[4ZCP_VEHPRC-VPR_UNIT_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_UNIT_ID]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_UNIT_ID]' LEVELPOSITION=1,
+        "VPR_UNIT_ID_Key" = '[4ZCP_VEHPRC-VPR_UNIT_ID].[24ZCP_VEHPRC-VPR_UNIT_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_UNIT_ID]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_UNIT_ID]' ATTRIBUTE,
+        "VPR_UPD_BY_ID Level 01" = '[4ZCP_VEHPRC-VPR_UPD_BY_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_UPD_BY_I]' LEVELPOSITION=1,
+        "VPR_UPD_BY_ID_Key" = '[4ZCP_VEHPRC-VPR_UPD_BY_I].[24ZCP_VEHPRC-VPR_UPD_BY_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_UPD_BY_I]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_UPD_BY_I]' ATTRIBUTE,
+        "VPR_UPD_TS Level 01" = '[4ZCP_VEHPRC-VPR_UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_UPD_TS]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_UPD_TS]' LEVELPOSITION=1,
+        "VPR_UPD_TS_Key" = '[4ZCP_VEHPRC-VPR_UPD_TS].[24ZCP_VEHPRC-VPR_UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VEHPRC-VPR_UPD_TS]' DIMENSIONNAME = '[4ZCP_VEHPRC-VPR_UPD_TS]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_vehprc I18N us_cst (
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "VPR_ACCT_NO Level 01":text,
+        "VPR_ACCT_NO_Key":text,
+        "VPR_ARCHIVE_IN Level 01":text,
+        "VPR_ARCHIVE_IN_Key":text,
+        "VPR_CRE_BY_ID Level 01":text,
+        "VPR_CRE_BY_ID_Key":text,
+        "VPR_CRE_TS Level 01":text,
+        "VPR_CRE_TS_Key":text,
+        "VPR_PRC_EFF_TS Level 01":text,
+        "VPR_PRC_EFF_TS_Key":text,
+        "VPR_SHIP_DLR_NO Level 01":text,
+        "VPR_SHIP_DLR_NO_Key":text,
+        "VPR_SOLD_DLR_NO Level 01":text,
+        "VPR_SOLD_DLR_NO_Key":text,
+        "VPR_TMS_INVC_NO Level 01":text,
+        "VPR_TMS_INVC_NO_Key":text,
+        "VPR_UNIT_ID Level 01":text,
+        "VPR_UNIT_ID_Key":text,
+        "VPR_UPD_BY_ID Level 01":text,
+        "VPR_UPD_BY_ID_Key":text,
+        "VPR_UPD_TS Level 01":text,
+        "VPR_UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_vehprc(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "VPR_ACCT_NO Level 01" (any) OPT ANY
+             ADD "VPR_ACCT_NO_Key" (any) OPT ANY
+             ADD "VPR_ARCHIVE_IN Level 01" (any) OPT ANY
+             ADD "VPR_ARCHIVE_IN_Key" (any) OPT ANY
+             ADD "VPR_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "VPR_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "VPR_CRE_TS Level 01" (any) OPT ANY
+             ADD "VPR_CRE_TS_Key" (any) OPT ANY
+             ADD "VPR_PRC_EFF_TS Level 01" (any) OPT ANY
+             ADD "VPR_PRC_EFF_TS_Key" (any) OPT ANY
+             ADD "VPR_SHIP_DLR_NO Level 01" (any) OPT ANY
+             ADD "VPR_SHIP_DLR_NO_Key" (any) OPT ANY
+             ADD "VPR_SOLD_DLR_NO Level 01" (any) OPT ANY
+             ADD "VPR_SOLD_DLR_NO_Key" (any) OPT ANY
+             ADD "VPR_TMS_INVC_NO Level 01" (any) OPT ANY
+             ADD "VPR_TMS_INVC_NO_Key" (any) OPT ANY
+             ADD "VPR_UNIT_ID Level 01" (any) OPT ANY
+             ADD "VPR_UNIT_ID_Key" (any) OPT ANY
+             ADD "VPR_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "VPR_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "VPR_UPD_TS Level 01" (any) OPT ANY
+             ADD "VPR_UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "VPR_ACCT_NO Level 01", "VPR_ACCT_NO_Key", "VPR_ARCHIVE_IN Level 01", "VPR_ARCHIVE_IN_Key", "VPR_CRE_BY_ID Level 01", "VPR_CRE_BY_ID_Key", "VPR_CRE_TS Level 01", "VPR_CRE_TS_Key", "VPR_PRC_EFF_TS Level 01", "VPR_PRC_EFF_TS_Key", "VPR_SHIP_DLR_NO Level 01", "VPR_SHIP_DLR_NO_Key", "VPR_SOLD_DLR_NO Level 01", "VPR_SOLD_DLR_NO_Key", "VPR_TMS_INVC_NO Level 01", "VPR_TMS_INVC_NO_Key", "VPR_UNIT_ID Level 01", "VPR_UNIT_ID_Key", "VPR_UPD_BY_ID Level 01", "VPR_UPD_BY_ID_Key", "VPR_UPD_TS Level 01", "VPR_UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_vehprc)
+    );
+
