@@ -1,0 +1,100 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_trctot
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_TRCTOT'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "TOT_BILL_DATE Level 01" = '[4ZCP_TRCTOT-TOT_BILL_DAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_BILL_DAT]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_BILL_DAT]' LEVELPOSITION=1,
+        "TOT_BILL_DATE_Key" = '[4ZCP_TRCTOT-TOT_BILL_DAT].[24ZCP_TRCTOT-TOT_BILL_DAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_BILL_DAT]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_BILL_DAT]' ATTRIBUTE,
+        "TOT_DATE_PAID Level 01" = '[4ZCP_TRCTOT-TOT_DATE_PAI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_DATE_PAI]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_DATE_PAI]' LEVELPOSITION=1,
+        "TOT_DATE_PAID_Key" = '[4ZCP_TRCTOT-TOT_DATE_PAI].[24ZCP_TRCTOT-TOT_DATE_PAI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_DATE_PAI]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_DATE_PAI]' ATTRIBUTE,
+        "TOT_DLR Level 01" = '[4ZCP_TRCTOT-TOT_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_DLR]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_DLR]' LEVELPOSITION=1,
+        "TOT_DLR_Key" = '[4ZCP_TRCTOT-TOT_DLR].[24ZCP_TRCTOT-TOT_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_DLR]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_DLR]' ATTRIBUTE,
+        "TOT_TRANSMIT_DATE Level 01" = '[4ZCP_TRCTOT-TOT_TRANSMIT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_TRANSMIT]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_TRANSMIT]' LEVELPOSITION=1,
+        "TOT_TRANSMIT_DATE_Key" = '[4ZCP_TRCTOT-TOT_TRANSMIT].[24ZCP_TRCTOT-TOT_TRANSMIT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_TRANSMIT]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_TRANSMIT]' ATTRIBUTE,
+        "TOT_UNITS Level 01" = '[4ZCP_TRCTOT-TOT_UNITS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_UNITS]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_UNITS]' LEVELPOSITION=1,
+        "TOT_UNITS_Key" = '[4ZCP_TRCTOT-TOT_UNITS].[24ZCP_TRCTOT-TOT_UNITS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_UNITS]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_UNITS]' ATTRIBUTE,
+        "TOT_YR_MO Level 01" = '[4ZCP_TRCTOT-TOT_YR_MO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_YR_MO]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_YR_MO]' LEVELPOSITION=1,
+        "TOT_YR_MO_Key" = '[4ZCP_TRCTOT-TOT_YR_MO].[24ZCP_TRCTOT-TOT_YR_MO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TOT_YR_MO]' DIMENSIONNAME = '[4ZCP_TRCTOT-TOT_YR_MO]' ATTRIBUTE,
+        "TRCTOT_CRE_BY_ID Level 01" = '[4ZCP_TRCTOT-TRCTOT_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TRCTOT_CRE_B]' DIMENSIONNAME = '[4ZCP_TRCTOT-TRCTOT_CRE_B]' LEVELPOSITION=1,
+        "TRCTOT_CRE_BY_ID_Key" = '[4ZCP_TRCTOT-TRCTOT_CRE_B].[24ZCP_TRCTOT-TRCTOT_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TRCTOT_CRE_B]' DIMENSIONNAME = '[4ZCP_TRCTOT-TRCTOT_CRE_B]' ATTRIBUTE,
+        "TRCTOT_CRE_TS Level 01" = '[4ZCP_TRCTOT-TRCTOT_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TRCTOT_CRE_T]' DIMENSIONNAME = '[4ZCP_TRCTOT-TRCTOT_CRE_T]' LEVELPOSITION=1,
+        "TRCTOT_CRE_TS_Key" = '[4ZCP_TRCTOT-TRCTOT_CRE_T].[24ZCP_TRCTOT-TRCTOT_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TRCTOT_CRE_T]' DIMENSIONNAME = '[4ZCP_TRCTOT-TRCTOT_CRE_T]' ATTRIBUTE,
+        "TRCTOT_UPD_BY_ID Level 01" = '[4ZCP_TRCTOT-TRCTOT_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TRCTOT_UPD_B]' DIMENSIONNAME = '[4ZCP_TRCTOT-TRCTOT_UPD_B]' LEVELPOSITION=1,
+        "TRCTOT_UPD_BY_ID_Key" = '[4ZCP_TRCTOT-TRCTOT_UPD_B].[24ZCP_TRCTOT-TRCTOT_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TRCTOT_UPD_B]' DIMENSIONNAME = '[4ZCP_TRCTOT-TRCTOT_UPD_B]' ATTRIBUTE,
+        "TRCTOT_UPD_TS Level 01" = '[4ZCP_TRCTOT-TRCTOT_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TRCTOT_UPD_T]' DIMENSIONNAME = '[4ZCP_TRCTOT-TRCTOT_UPD_T]' LEVELPOSITION=1,
+        "TRCTOT_UPD_TS_Key" = '[4ZCP_TRCTOT-TRCTOT_UPD_T].[24ZCP_TRCTOT-TRCTOT_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TRCTOT-TRCTOT_UPD_T]' DIMENSIONNAME = '[4ZCP_TRCTOT-TRCTOT_UPD_T]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_trctot I18N us_cst (
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "TOT_BILL_DATE Level 01":text,
+        "TOT_BILL_DATE_Key":text,
+        "TOT_DATE_PAID Level 01":text,
+        "TOT_DATE_PAID_Key":text,
+        "TOT_DLR Level 01":text,
+        "TOT_DLR_Key":text,
+        "TOT_TRANSMIT_DATE Level 01":text,
+        "TOT_TRANSMIT_DATE_Key":text,
+        "TOT_UNITS Level 01":text,
+        "TOT_UNITS_Key":text,
+        "TOT_YR_MO Level 01":text,
+        "TOT_YR_MO_Key":text,
+        "TRCTOT_CRE_BY_ID Level 01":text,
+        "TRCTOT_CRE_BY_ID_Key":text,
+        "TRCTOT_CRE_TS Level 01":text,
+        "TRCTOT_CRE_TS_Key":text,
+        "TRCTOT_UPD_BY_ID Level 01":text,
+        "TRCTOT_UPD_BY_ID_Key":text,
+        "TRCTOT_UPD_TS Level 01":text,
+        "TRCTOT_UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_trctot(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "TOT_BILL_DATE Level 01" (any) OPT ANY
+             ADD "TOT_BILL_DATE_Key" (any) OPT ANY
+             ADD "TOT_DATE_PAID Level 01" (any) OPT ANY
+             ADD "TOT_DATE_PAID_Key" (any) OPT ANY
+             ADD "TOT_DLR Level 01" (any) OPT ANY
+             ADD "TOT_DLR_Key" (any) OPT ANY
+             ADD "TOT_TRANSMIT_DATE Level 01" (any) OPT ANY
+             ADD "TOT_TRANSMIT_DATE_Key" (any) OPT ANY
+             ADD "TOT_UNITS Level 01" (any) OPT ANY
+             ADD "TOT_UNITS_Key" (any) OPT ANY
+             ADD "TOT_YR_MO Level 01" (any) OPT ANY
+             ADD "TOT_YR_MO_Key" (any) OPT ANY
+             ADD "TRCTOT_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "TRCTOT_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "TRCTOT_CRE_TS Level 01" (any) OPT ANY
+             ADD "TRCTOT_CRE_TS_Key" (any) OPT ANY
+             ADD "TRCTOT_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "TRCTOT_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "TRCTOT_UPD_TS Level 01" (any) OPT ANY
+             ADD "TRCTOT_UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "TOT_BILL_DATE Level 01", "TOT_BILL_DATE_Key", "TOT_DATE_PAID Level 01", "TOT_DATE_PAID_Key", "TOT_DLR Level 01", "TOT_DLR_Key", "TOT_TRANSMIT_DATE Level 01", "TOT_TRANSMIT_DATE_Key", "TOT_UNITS Level 01", "TOT_UNITS_Key", "TOT_YR_MO Level 01", "TOT_YR_MO_Key", "TRCTOT_CRE_BY_ID Level 01", "TRCTOT_CRE_BY_ID_Key", "TRCTOT_CRE_TS Level 01", "TRCTOT_CRE_TS_Key", "TRCTOT_UPD_BY_ID Level 01", "TRCTOT_UPD_BY_ID_Key", "TRCTOT_UPD_TS Level 01", "TRCTOT_UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_trctot)
+    );
+
