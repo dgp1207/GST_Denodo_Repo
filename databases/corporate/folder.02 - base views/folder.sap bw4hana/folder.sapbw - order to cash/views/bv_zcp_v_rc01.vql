@@ -1,0 +1,226 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI "bv_ZCP_V_RC01"
+    FOLDER = '/02 - base views/sap bw4hana/sapbw - order to cash'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_V_RC01'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "ALC Available to Dlr Level 01" = '[ZALCATFLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZALCATFLG]' DIMENSIONNAME = '[ZALCATFLG]' LEVELPOSITION=1,
+        "ALC Available to Dlr_Key" = '[ZALCATFLG].[2ZALCATFLG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZALCATFLG]' DIMENSIONNAME = '[ZALCATFLG]' ATTRIBUTE,
+        "Day Abbreviated Level 01" = '[ZDAYBBR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYBBR]' DIMENSIONNAME = '[ZDAYBBR]' LEVELPOSITION=1,
+        "Day Abbreviated_Key" = '[ZDAYBBR].[2ZDAYBBR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYBBR]' DIMENSIONNAME = '[ZDAYBBR]' ATTRIBUTE,
+        "Day Date Level 01" = '[ZDAYDATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' LEVELPOSITION=1,
+        "Day Date_Calendar Year (Key)" = '[ZDAYDATE].[20CALYEAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Calendar Year/Month (Key)" = '[ZDAYDATE].[20CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Calendar Year/Month (Long Name)" = '[ZDAYDATE].[40CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Calendar Year/Month (Medium Name)" = '[ZDAYDATE].[50CALMONTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Calendar Year/Quarte (Key)" = '[ZDAYDATE].[20CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Calendar Year/Quarte (Long Name)" = '[ZDAYDATE].[40CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Calendar Year/Quarte (Name)" = '[ZDAYDATE].[10CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Calendar Year/Week (Key)" = '[ZDAYDATE].[20CALWEEK]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Calendar month (Key)" = '[ZDAYDATE].[20CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Calendar month (Long Name)" = '[ZDAYDATE].[40CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Calendar month (Medium Name)" = '[ZDAYDATE].[50CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Halfyear (Key)" = '[ZDAYDATE].[20HALFYEAR1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Key" = '[ZDAYDATE].[2ZDAYDATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Quarter (Key)" = '[ZDAYDATE].[20CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Quarter (Long Name)" = '[ZDAYDATE].[40CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Date_Quarter (Name)" = '[ZDAYDATE].[10CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYDATE]' DIMENSIONNAME = '[ZDAYDATE]' ATTRIBUTE,
+        "Day Name Level 01" = '[ZDAYNAME].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYNAME]' DIMENSIONNAME = '[ZDAYNAME]' LEVELPOSITION=1,
+        "Day Name_Key" = '[ZDAYNAME].[2ZDAYNAME]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYNAME]' DIMENSIONNAME = '[ZDAYNAME]' ATTRIBUTE,
+        "Day Of Month Level 01" = '[ZDAYOFMTH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYOFMTH]' DIMENSIONNAME = '[ZDAYOFMTH]' LEVELPOSITION=1,
+        "Day Of Month_Key" = '[ZDAYOFMTH].[2ZDAYOFMTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYOFMTH]' DIMENSIONNAME = '[ZDAYOFMTH]' ATTRIBUTE,
+        "Day Of Year Level 01" = '[ZDAYOFYER].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYOFYER]' DIMENSIONNAME = '[ZDAYOFYER]' LEVELPOSITION=1,
+        "Day Of Year_Key" = '[ZDAYOFYER].[2ZDAYOFYER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYOFYER]' DIMENSIONNAME = '[ZDAYOFYER]' ATTRIBUTE,
+        "Day in Month Level 01" = '[ZDAYINMTH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYINMTH]' DIMENSIONNAME = '[ZDAYINMTH]' LEVELPOSITION=1,
+        "Day in Month_Key" = '[ZDAYINMTH].[2ZDAYINMTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZDAYINMTH]' DIMENSIONNAME = '[ZDAYINMTH]' ATTRIBUTE,
+        "Holiday Flag Level 01" = '[ZHOLDYFLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZHOLDYFLG]' DIMENSIONNAME = '[ZHOLDYFLG]' LEVELPOSITION=1,
+        "Holiday Flag_Key" = '[ZHOLDYFLG].[2ZHOLDYFLG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZHOLDYFLG]' DIMENSIONNAME = '[ZHOLDYFLG]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "MTD Rtl RNK Level 01" = '[ZMTDRNK].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMTDRNK]' DIMENSIONNAME = '[ZMTDRNK]' LEVELPOSITION=1,
+        "MTD Rtl RNK_Key" = '[ZMTDRNK].[2ZMTDRNK]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMTDRNK]' DIMENSIONNAME = '[ZMTDRNK]' ATTRIBUTE,
+        "Month ID ( YYYYMM) Level 01" = '[ZMONTHID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' LEVELPOSITION=1,
+        "Month ID ( YYYYMM)_Calendar Year (Key)" = '[ZMONTHID].[20CALYEAR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Calendar Year/Quarte (Key)" = '[ZMONTHID].[20CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Calendar Year/Quarte (Long Name)" = '[ZMONTHID].[40CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Calendar Year/Quarte (Name)" = '[ZMONTHID].[10CALQUARTER]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Calendar month (Key)" = '[ZMONTHID].[20CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Calendar month (Long Name)" = '[ZMONTHID].[40CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Calendar month (Medium Name)" = '[ZMONTHID].[50CALMONTH2]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Halfyear (Key)" = '[ZMONTHID].[20HALFYEAR1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Key" = '[ZMONTHID].[2ZMONTHID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Long Name" = '[ZMONTHID].[4ZMONTHID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Medium Name" = '[ZMONTHID].[5ZMONTHID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Number of Days (Key)" = '[ZMONTHID].[20NUMDAY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Number of Workdays (Key)" = '[ZMONTHID].[20NUMWDAY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Quarter (Key)" = '[ZMONTHID].[20CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Quarter (Long Name)" = '[ZMONTHID].[40CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Quarter (Name)" = '[ZMONTHID].[10CALQUART1]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Valid From (Key)" = '[ZMONTHID].[20DATEFROM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "Month ID ( YYYYMM)_Valid To (Key)" = '[ZMONTHID].[20DATETO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZMONTHID]' DIMENSIONNAME = '[ZMONTHID]' ATTRIBUTE,
+        "RTL Day Level 01" = '[ZRTLDAY].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZRTLDAY]' DIMENSIONNAME = '[ZRTLDAY]' LEVELPOSITION=1,
+        "RTL Day_Key" = '[ZRTLDAY].[2ZRTLDAY]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZRTLDAY]' DIMENSIONNAME = '[ZRTLDAY]' ATTRIBUTE,
+        "Sale Close Flag Level 01" = '[ZSCLOFLAG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSCLOFLAG]' DIMENSIONNAME = '[ZSCLOFLAG]' LEVELPOSITION=1,
+        "Sale Close Flag_Key" = '[ZSCLOFLAG].[2ZSCLOFLAG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSCLOFLAG]' DIMENSIONNAME = '[ZSCLOFLAG]' ATTRIBUTE,
+        "SaleBase Mid Month F Level 01" = '[ZSBMMTHF].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSBMMTHF]' DIMENSIONNAME = '[ZSBMMTHF]' LEVELPOSITION=1,
+        "SaleBase Mid Month F_Key" = '[ZSBMMTHF].[2ZSBMMTHF]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZSBMMTHF]' DIMENSIONNAME = '[ZSBMMTHF]' ATTRIBUTE,
+        "TMS Holiday Flag Level 01" = '[ZTMSHFLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTMSHFLG]' DIMENSIONNAME = '[ZTMSHFLG]' LEVELPOSITION=1,
+        "TMS Holiday Flag_Key" = '[ZTMSHFLG].[2ZTMSHFLG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZTMSHFLG]' DIMENSIONNAME = '[ZTMSHFLG]' ATTRIBUTE,
+        "YTD Rtl RNK Level 01" = '[ZYTDRNK].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZYTDRNK]' DIMENSIONNAME = '[ZYTDRNK]' LEVELPOSITION=1,
+        "YTD Rtl RNK_Key" = '[ZYTDRNK].[2ZYTDRNK]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[ZYTDRNK]' DIMENSIONNAME = '[ZYTDRNK]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_v_rc01 I18N us_cst (
+        "ALC Available to Dlr Level 01":text,
+        "ALC Available to Dlr_Key":text,
+        "Day Abbreviated Level 01":text,
+        "Day Abbreviated_Key":text,
+        "Day Date Level 01":text,
+        "Day Date_Calendar Year (Key)":text,
+        "Day Date_Calendar Year/Month (Key)":text,
+        "Day Date_Calendar Year/Month (Long Name)":text,
+        "Day Date_Calendar Year/Month (Medium Name)":text,
+        "Day Date_Calendar Year/Quarte (Key)":text,
+        "Day Date_Calendar Year/Quarte (Long Name)":text,
+        "Day Date_Calendar Year/Quarte (Name)":text,
+        "Day Date_Calendar Year/Week (Key)":text,
+        "Day Date_Calendar month (Key)":text,
+        "Day Date_Calendar month (Long Name)":text,
+        "Day Date_Calendar month (Medium Name)":text,
+        "Day Date_Halfyear (Key)":text,
+        "Day Date_Key":text,
+        "Day Date_Quarter (Key)":text,
+        "Day Date_Quarter (Long Name)":text,
+        "Day Date_Quarter (Name)":text,
+        "Day Name Level 01":text,
+        "Day Name_Key":text,
+        "Day Of Month Level 01":text,
+        "Day Of Month_Key":text,
+        "Day Of Year Level 01":text,
+        "Day Of Year_Key":text,
+        "Day in Month Level 01":text,
+        "Day in Month_Key":text,
+        "Holiday Flag Level 01":text,
+        "Holiday Flag_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "MTD Rtl RNK Level 01":text,
+        "MTD Rtl RNK_Key":text,
+        "Month ID ( YYYYMM) Level 01":text,
+        "Month ID ( YYYYMM)_Calendar Year (Key)":text,
+        "Month ID ( YYYYMM)_Calendar Year/Quarte (Key)":text,
+        "Month ID ( YYYYMM)_Calendar Year/Quarte (Long Name)":text,
+        "Month ID ( YYYYMM)_Calendar Year/Quarte (Name)":text,
+        "Month ID ( YYYYMM)_Calendar month (Key)":text,
+        "Month ID ( YYYYMM)_Calendar month (Long Name)":text,
+        "Month ID ( YYYYMM)_Calendar month (Medium Name)":text,
+        "Month ID ( YYYYMM)_Halfyear (Key)":text,
+        "Month ID ( YYYYMM)_Key":text,
+        "Month ID ( YYYYMM)_Long Name":text,
+        "Month ID ( YYYYMM)_Medium Name":text,
+        "Month ID ( YYYYMM)_Number of Days (Key)":text,
+        "Month ID ( YYYYMM)_Number of Workdays (Key)":text,
+        "Month ID ( YYYYMM)_Quarter (Key)":text,
+        "Month ID ( YYYYMM)_Quarter (Long Name)":text,
+        "Month ID ( YYYYMM)_Quarter (Name)":text,
+        "Month ID ( YYYYMM)_Valid From (Key)":text,
+        "Month ID ( YYYYMM)_Valid To (Key)":text,
+        "RTL Day Level 01":text,
+        "RTL Day_Key":text,
+        "Sale Close Flag Level 01":text,
+        "Sale Close Flag_Key":text,
+        "SaleBase Mid Month F Level 01":text,
+        "SaleBase Mid Month F_Key":text,
+        "TMS Holiday Flag Level 01":text,
+        "TMS Holiday Flag_Key":text,
+        "YTD Rtl RNK Level 01":text,
+        "YTD Rtl RNK_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/sapbw - order to cash'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD "bv_ZCP_V_RC01"(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "ALC Available to Dlr Level 01" (any) OPT ANY
+             ADD "ALC Available to Dlr_Key" (any) OPT ANY
+             ADD "Day Abbreviated Level 01" (any) OPT ANY
+             ADD "Day Abbreviated_Key" (any) OPT ANY
+             ADD "Day Date Level 01" (any) OPT ANY
+             ADD "Day Date_Calendar Year (Key)" (any) OPT ANY
+             ADD "Day Date_Calendar Year/Month (Key)" (any) OPT ANY
+             ADD "Day Date_Calendar Year/Month (Long Name)" (any) OPT ANY
+             ADD "Day Date_Calendar Year/Month (Medium Name)" (any) OPT ANY
+             ADD "Day Date_Calendar Year/Quarte (Key)" (any) OPT ANY
+             ADD "Day Date_Calendar Year/Quarte (Long Name)" (any) OPT ANY
+             ADD "Day Date_Calendar Year/Quarte (Name)" (any) OPT ANY
+             ADD "Day Date_Calendar Year/Week (Key)" (any) OPT ANY
+             ADD "Day Date_Calendar month (Key)" (any) OPT ANY
+             ADD "Day Date_Calendar month (Long Name)" (any) OPT ANY
+             ADD "Day Date_Calendar month (Medium Name)" (any) OPT ANY
+             ADD "Day Date_Halfyear (Key)" (any) OPT ANY
+             ADD "Day Date_Key" (any) OPT ANY
+             ADD "Day Date_Quarter (Key)" (any) OPT ANY
+             ADD "Day Date_Quarter (Long Name)" (any) OPT ANY
+             ADD "Day Date_Quarter (Name)" (any) OPT ANY
+             ADD "Day Name Level 01" (any) OPT ANY
+             ADD "Day Name_Key" (any) OPT ANY
+             ADD "Day Of Month Level 01" (any) OPT ANY
+             ADD "Day Of Month_Key" (any) OPT ANY
+             ADD "Day Of Year Level 01" (any) OPT ANY
+             ADD "Day Of Year_Key" (any) OPT ANY
+             ADD "Day in Month Level 01" (any) OPT ANY
+             ADD "Day in Month_Key" (any) OPT ANY
+             ADD "Holiday Flag Level 01" (any) OPT ANY
+             ADD "Holiday Flag_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "MTD Rtl RNK Level 01" (any) OPT ANY
+             ADD "MTD Rtl RNK_Key" (any) OPT ANY
+             ADD "Month ID ( YYYYMM) Level 01" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Calendar Year (Key)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Calendar Year/Quarte (Key)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Calendar Year/Quarte (Long Name)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Calendar Year/Quarte (Name)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Calendar month (Key)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Calendar month (Long Name)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Calendar month (Medium Name)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Halfyear (Key)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Key" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Long Name" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Medium Name" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Number of Days (Key)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Number of Workdays (Key)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Quarter (Key)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Quarter (Long Name)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Quarter (Name)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Valid From (Key)" (any) OPT ANY
+             ADD "Month ID ( YYYYMM)_Valid To (Key)" (any) OPT ANY
+             ADD "RTL Day Level 01" (any) OPT ANY
+             ADD "RTL Day_Key" (any) OPT ANY
+             ADD "Sale Close Flag Level 01" (any) OPT ANY
+             ADD "Sale Close Flag_Key" (any) OPT ANY
+             ADD "SaleBase Mid Month F Level 01" (any) OPT ANY
+             ADD "SaleBase Mid Month F_Key" (any) OPT ANY
+             ADD "TMS Holiday Flag Level 01" (any) OPT ANY
+             ADD "TMS Holiday Flag_Key" (any) OPT ANY
+             ADD "YTD Rtl RNK Level 01" (any) OPT ANY
+             ADD "YTD Rtl RNK_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("ALC Available to Dlr Level 01", "ALC Available to Dlr_Key", "Day Abbreviated Level 01", "Day Abbreviated_Key", "Day Date Level 01", "Day Date_Calendar Year (Key)", "Day Date_Calendar Year/Month (Key)", "Day Date_Calendar Year/Month (Long Name)", "Day Date_Calendar Year/Month (Medium Name)", "Day Date_Calendar Year/Quarte (Key)", "Day Date_Calendar Year/Quarte (Long Name)", "Day Date_Calendar Year/Quarte (Name)", "Day Date_Calendar Year/Week (Key)", "Day Date_Calendar month (Key)", "Day Date_Calendar month (Long Name)", "Day Date_Calendar month (Medium Name)", "Day Date_Halfyear (Key)", "Day Date_Key", "Day Date_Quarter (Key)", "Day Date_Quarter (Long Name)", "Day Date_Quarter (Name)", "Day Name Level 01", "Day Name_Key", "Day Of Month Level 01", "Day Of Month_Key", "Day Of Year Level 01", "Day Of Year_Key", "Day in Month Level 01", "Day in Month_Key", "Holiday Flag Level 01", "Holiday Flag_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "MTD Rtl RNK Level 01", "MTD Rtl RNK_Key", "Month ID ( YYYYMM) Level 01", "Month ID ( YYYYMM)_Calendar Year (Key)", "Month ID ( YYYYMM)_Calendar Year/Quarte (Key)", "Month ID ( YYYYMM)_Calendar Year/Quarte (Long Name)", "Month ID ( YYYYMM)_Calendar Year/Quarte (Name)", "Month ID ( YYYYMM)_Calendar month (Key)", "Month ID ( YYYYMM)_Calendar month (Long Name)", "Month ID ( YYYYMM)_Calendar month (Medium Name)", "Month ID ( YYYYMM)_Halfyear (Key)", "Month ID ( YYYYMM)_Key", "Month ID ( YYYYMM)_Long Name", "Month ID ( YYYYMM)_Medium Name", "Month ID ( YYYYMM)_Number of Days (Key)", "Month ID ( YYYYMM)_Number of Workdays (Key)", "Month ID ( YYYYMM)_Quarter (Key)", "Month ID ( YYYYMM)_Quarter (Long Name)", "Month ID ( YYYYMM)_Quarter (Name)", "Month ID ( YYYYMM)_Valid From (Key)", "Month ID ( YYYYMM)_Valid To (Key)", "Number of Records", "RTL Day Level 01", "RTL Day_Key", "Sale Close Flag Level 01", "Sale Close Flag_Key", "SaleBase Mid Month F Level 01", "SaleBase Mid Month F_Key", "TMS Holiday Flag Level 01", "TMS Holiday Flag_Key", "YTD Rtl RNK Level 01", "YTD Rtl RNK_Key"
+        )
+        WRAPPER (sapbwbapi "bv_ZCP_V_RC01")
+    );
+
