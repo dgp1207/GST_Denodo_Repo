@@ -1,0 +1,166 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_tmssor
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_TMSSOR'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "APPL_PROC_IND Level 01" = '[4ZCP_TMSSOR-APPL_PROC_IN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-APPL_PROC_IN]' DIMENSIONNAME = '[4ZCP_TMSSOR-APPL_PROC_IN]' LEVELPOSITION=1,
+        "APPL_PROC_IND_Key" = '[4ZCP_TMSSOR-APPL_PROC_IN].[24ZCP_TMSSOR-APPL_PROC_IN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-APPL_PROC_IN]' DIMENSIONNAME = '[4ZCP_TMSSOR-APPL_PROC_IN]' ATTRIBUTE,
+        "APPR_DT Level 01" = '[4ZCP_TMSSOR-APPR_DT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-APPR_DT]' DIMENSIONNAME = '[4ZCP_TMSSOR-APPR_DT]' LEVELPOSITION=1,
+        "APPR_DT_Key" = '[4ZCP_TMSSOR-APPR_DT].[24ZCP_TMSSOR-APPR_DT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-APPR_DT]' DIMENSIONNAME = '[4ZCP_TMSSOR-APPR_DT]' ATTRIBUTE,
+        "APPR_ID Level 01" = '[4ZCP_TMSSOR-APPR_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-APPR_ID]' DIMENSIONNAME = '[4ZCP_TMSSOR-APPR_ID]' LEVELPOSITION=1,
+        "APPR_ID_Key" = '[4ZCP_TMSSOR-APPR_ID].[24ZCP_TMSSOR-APPR_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-APPR_ID]' DIMENSIONNAME = '[4ZCP_TMSSOR-APPR_ID]' ATTRIBUTE,
+        "ASGN_TYP Level 01" = '[4ZCP_TMSSOR-ASGN_TYP].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-ASGN_TYP]' DIMENSIONNAME = '[4ZCP_TMSSOR-ASGN_TYP]' LEVELPOSITION=1,
+        "ASGN_TYP_Key" = '[4ZCP_TMSSOR-ASGN_TYP].[24ZCP_TMSSOR-ASGN_TYP]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-ASGN_TYP]' DIMENSIONNAME = '[4ZCP_TMSSOR-ASGN_TYP]' ATTRIBUTE,
+        "CRTE_TMDT Level 01" = '[4ZCP_TMSSOR-CRTE_TMDT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-CRTE_TMDT]' DIMENSIONNAME = '[4ZCP_TMSSOR-CRTE_TMDT]' LEVELPOSITION=1,
+        "CRTE_TMDT_Key" = '[4ZCP_TMSSOR-CRTE_TMDT].[24ZCP_TMSSOR-CRTE_TMDT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-CRTE_TMDT]' DIMENSIONNAME = '[4ZCP_TMSSOR-CRTE_TMDT]' ATTRIBUTE,
+        "DLR_CD Level 01" = '[4ZCP_TMSSOR-DLR_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-DLR_CD]' DIMENSIONNAME = '[4ZCP_TMSSOR-DLR_CD]' LEVELPOSITION=1,
+        "DLR_CD_Key" = '[4ZCP_TMSSOR-DLR_CD].[24ZCP_TMSSOR-DLR_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-DLR_CD]' DIMENSIONNAME = '[4ZCP_TMSSOR-DLR_CD]' ATTRIBUTE,
+        "ERN_ASGN_FLG Level 01" = '[4ZCP_TMSSOR-ERN_ASGN_FLG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-ERN_ASGN_FLG]' DIMENSIONNAME = '[4ZCP_TMSSOR-ERN_ASGN_FLG]' LEVELPOSITION=1,
+        "ERN_ASGN_FLG_Key" = '[4ZCP_TMSSOR-ERN_ASGN_FLG].[24ZCP_TMSSOR-ERN_ASGN_FLG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-ERN_ASGN_FLG]' DIMENSIONNAME = '[4ZCP_TMSSOR-ERN_ASGN_FLG]' ATTRIBUTE,
+        "EXT_CLR_CD Level 01" = '[4ZCP_TMSSOR-EXT_CLR_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-EXT_CLR_CD]' DIMENSIONNAME = '[4ZCP_TMSSOR-EXT_CLR_CD]' LEVELPOSITION=1,
+        "EXT_CLR_CD_Key" = '[4ZCP_TMSSOR-EXT_CLR_CD].[24ZCP_TMSSOR-EXT_CLR_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-EXT_CLR_CD]' DIMENSIONNAME = '[4ZCP_TMSSOR-EXT_CLR_CD]' ATTRIBUTE,
+        "FCTY_ACCY_ARR Level 01" = '[4ZCP_TMSSOR-FCTY_ACCY_AR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-FCTY_ACCY_AR]' DIMENSIONNAME = '[4ZCP_TMSSOR-FCTY_ACCY_AR]' LEVELPOSITION=1,
+        "FCTY_ACCY_ARR_Key" = '[4ZCP_TMSSOR-FCTY_ACCY_AR].[24ZCP_TMSSOR-FCTY_ACCY_AR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-FCTY_ACCY_AR]' DIMENSIONNAME = '[4ZCP_TMSSOR-FCTY_ACCY_AR]' ATTRIBUTE,
+        "INT_CLR_FAB_CD Level 01" = '[4ZCP_TMSSOR-INT_CLR_FAB].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-INT_CLR_FAB]' DIMENSIONNAME = '[4ZCP_TMSSOR-INT_CLR_FAB]' LEVELPOSITION=1,
+        "INT_CLR_FAB_CD_Key" = '[4ZCP_TMSSOR-INT_CLR_FAB].[24ZCP_TMSSOR-INT_CLR_FAB]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-INT_CLR_FAB]' DIMENSIONNAME = '[4ZCP_TMSSOR-INT_CLR_FAB]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "LST_UPDT_ID Level 01" = '[4ZCP_TMSSOR-LST_UPDT_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-LST_UPDT_ID]' DIMENSIONNAME = '[4ZCP_TMSSOR-LST_UPDT_ID]' LEVELPOSITION=1,
+        "LST_UPDT_ID_Key" = '[4ZCP_TMSSOR-LST_UPDT_ID].[24ZCP_TMSSOR-LST_UPDT_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-LST_UPDT_ID]' DIMENSIONNAME = '[4ZCP_TMSSOR-LST_UPDT_ID]' ATTRIBUTE,
+        "LST_UPDT_TMDT Level 01" = '[4ZCP_TMSSOR-LST_UPDT_TMD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-LST_UPDT_TMD]' DIMENSIONNAME = '[4ZCP_TMSSOR-LST_UPDT_TMD]' LEVELPOSITION=1,
+        "LST_UPDT_TMDT_Key" = '[4ZCP_TMSSOR-LST_UPDT_TMD].[24ZCP_TMSSOR-LST_UPDT_TMD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-LST_UPDT_TMD]' DIMENSIONNAME = '[4ZCP_TMSSOR-LST_UPDT_TMD]' ATTRIBUTE,
+        "MDL_CD Level 01" = '[4ZCP_TMSSOR-MDL_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-MDL_CD]' DIMENSIONNAME = '[4ZCP_TMSSOR-MDL_CD]' LEVELPOSITION=1,
+        "MDL_CD_Key" = '[4ZCP_TMSSOR-MDL_CD].[24ZCP_TMSSOR-MDL_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-MDL_CD]' DIMENSIONNAME = '[4ZCP_TMSSOR-MDL_CD]' ATTRIBUTE,
+        "MDL_YR Level 01" = '[4ZCP_TMSSOR-MDL_YR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-MDL_YR]' DIMENSIONNAME = '[4ZCP_TMSSOR-MDL_YR]' LEVELPOSITION=1,
+        "MDL_YR_Key" = '[4ZCP_TMSSOR-MDL_YR].[24ZCP_TMSSOR-MDL_YR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-MDL_YR]' DIMENSIONNAME = '[4ZCP_TMSSOR-MDL_YR]' ATTRIBUTE,
+        "ORD_NO Level 01" = '[4ZCP_TMSSOR-ORD_NO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-ORD_NO]' DIMENSIONNAME = '[4ZCP_TMSSOR-ORD_NO]' LEVELPOSITION=1,
+        "ORD_NO_Key" = '[4ZCP_TMSSOR-ORD_NO].[24ZCP_TMSSOR-ORD_NO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-ORD_NO]' DIMENSIONNAME = '[4ZCP_TMSSOR-ORD_NO]' ATTRIBUTE,
+        "PLNT_CD Level 01" = '[4ZCP_TMSSOR-PLNT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-PLNT_CD]' DIMENSIONNAME = '[4ZCP_TMSSOR-PLNT_CD]' LEVELPOSITION=1,
+        "PLNT_CD_Key" = '[4ZCP_TMSSOR-PLNT_CD].[24ZCP_TMSSOR-PLNT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-PLNT_CD]' DIMENSIONNAME = '[4ZCP_TMSSOR-PLNT_CD]' ATTRIBUTE,
+        "PROD_MNTH Level 01" = '[4ZCP_TMSSOR-PROD_MNTH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-PROD_MNTH]' DIMENSIONNAME = '[4ZCP_TMSSOR-PROD_MNTH]' LEVELPOSITION=1,
+        "PROD_MNTH_Key" = '[4ZCP_TMSSOR-PROD_MNTH].[24ZCP_TMSSOR-PROD_MNTH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-PROD_MNTH]' DIMENSIONNAME = '[4ZCP_TMSSOR-PROD_MNTH]' ATTRIBUTE,
+        "RGN_CMNT Level 01" = '[4ZCP_TMSSOR-RGN_CMNT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-RGN_CMNT]' DIMENSIONNAME = '[4ZCP_TMSSOR-RGN_CMNT]' LEVELPOSITION=1,
+        "RGN_CMNT_Key" = '[4ZCP_TMSSOR-RGN_CMNT].[24ZCP_TMSSOR-RGN_CMNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-RGN_CMNT]' DIMENSIONNAME = '[4ZCP_TMSSOR-RGN_CMNT]' ATTRIBUTE,
+        "SPCL_ORD_GUID Level 01" = '[4ZCP_TMSSOR-SPCL_ORD_GUI].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-SPCL_ORD_GUI]' DIMENSIONNAME = '[4ZCP_TMSSOR-SPCL_ORD_GUI]' LEVELPOSITION=1,
+        "SPCL_ORD_GUID_Key" = '[4ZCP_TMSSOR-SPCL_ORD_GUI].[24ZCP_TMSSOR-SPCL_ORD_GUI]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-SPCL_ORD_GUI]' DIMENSIONNAME = '[4ZCP_TMSSOR-SPCL_ORD_GUI]' ATTRIBUTE,
+        "STAT_CD Level 01" = '[4ZCP_TMSSOR-STAT_CD].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-STAT_CD]' DIMENSIONNAME = '[4ZCP_TMSSOR-STAT_CD]' LEVELPOSITION=1,
+        "STAT_CD_Key" = '[4ZCP_TMSSOR-STAT_CD].[24ZCP_TMSSOR-STAT_CD]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-STAT_CD]' DIMENSIONNAME = '[4ZCP_TMSSOR-STAT_CD]' ATTRIBUTE,
+        "VEH_CHG_CMNT Level 01" = '[4ZCP_TMSSOR-VEH_CHG_CMNT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-VEH_CHG_CMNT]' DIMENSIONNAME = '[4ZCP_TMSSOR-VEH_CHG_CMNT]' LEVELPOSITION=1,
+        "VEH_CHG_CMNT_Key" = '[4ZCP_TMSSOR-VEH_CHG_CMNT].[24ZCP_TMSSOR-VEH_CHG_CMNT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_TMSSOR-VEH_CHG_CMNT]' DIMENSIONNAME = '[4ZCP_TMSSOR-VEH_CHG_CMNT]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_tmssor I18N us_cst (
+        "APPL_PROC_IND Level 01":text,
+        "APPL_PROC_IND_Key":text,
+        "APPR_DT Level 01":text,
+        "APPR_DT_Key":text,
+        "APPR_ID Level 01":text,
+        "APPR_ID_Key":text,
+        "ASGN_TYP Level 01":text,
+        "ASGN_TYP_Key":text,
+        "CRTE_TMDT Level 01":text,
+        "CRTE_TMDT_Key":text,
+        "DLR_CD Level 01":text,
+        "DLR_CD_Key":text,
+        "ERN_ASGN_FLG Level 01":text,
+        "ERN_ASGN_FLG_Key":text,
+        "EXT_CLR_CD Level 01":text,
+        "EXT_CLR_CD_Key":text,
+        "FCTY_ACCY_ARR Level 01":text,
+        "FCTY_ACCY_ARR_Key":text,
+        "INT_CLR_FAB_CD Level 01":text,
+        "INT_CLR_FAB_CD_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "LST_UPDT_ID Level 01":text,
+        "LST_UPDT_ID_Key":text,
+        "LST_UPDT_TMDT Level 01":text,
+        "LST_UPDT_TMDT_Key":text,
+        "MDL_CD Level 01":text,
+        "MDL_CD_Key":text,
+        "MDL_YR Level 01":text,
+        "MDL_YR_Key":text,
+        "ORD_NO Level 01":text,
+        "ORD_NO_Key":text,
+        "PLNT_CD Level 01":text,
+        "PLNT_CD_Key":text,
+        "PROD_MNTH Level 01":text,
+        "PROD_MNTH_Key":text,
+        "RGN_CMNT Level 01":text,
+        "RGN_CMNT_Key":text,
+        "SPCL_ORD_GUID Level 01":text,
+        "SPCL_ORD_GUID_Key":text,
+        "STAT_CD Level 01":text,
+        "STAT_CD_Key":text,
+        "VEH_CHG_CMNT Level 01":text,
+        "VEH_CHG_CMNT_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_tmssor(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "APPL_PROC_IND Level 01" (any) OPT ANY
+             ADD "APPL_PROC_IND_Key" (any) OPT ANY
+             ADD "APPR_DT Level 01" (any) OPT ANY
+             ADD "APPR_DT_Key" (any) OPT ANY
+             ADD "APPR_ID Level 01" (any) OPT ANY
+             ADD "APPR_ID_Key" (any) OPT ANY
+             ADD "ASGN_TYP Level 01" (any) OPT ANY
+             ADD "ASGN_TYP_Key" (any) OPT ANY
+             ADD "CRTE_TMDT Level 01" (any) OPT ANY
+             ADD "CRTE_TMDT_Key" (any) OPT ANY
+             ADD "DLR_CD Level 01" (any) OPT ANY
+             ADD "DLR_CD_Key" (any) OPT ANY
+             ADD "ERN_ASGN_FLG Level 01" (any) OPT ANY
+             ADD "ERN_ASGN_FLG_Key" (any) OPT ANY
+             ADD "EXT_CLR_CD Level 01" (any) OPT ANY
+             ADD "EXT_CLR_CD_Key" (any) OPT ANY
+             ADD "FCTY_ACCY_ARR Level 01" (any) OPT ANY
+             ADD "FCTY_ACCY_ARR_Key" (any) OPT ANY
+             ADD "INT_CLR_FAB_CD Level 01" (any) OPT ANY
+             ADD "INT_CLR_FAB_CD_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "LST_UPDT_ID Level 01" (any) OPT ANY
+             ADD "LST_UPDT_ID_Key" (any) OPT ANY
+             ADD "LST_UPDT_TMDT Level 01" (any) OPT ANY
+             ADD "LST_UPDT_TMDT_Key" (any) OPT ANY
+             ADD "MDL_CD Level 01" (any) OPT ANY
+             ADD "MDL_CD_Key" (any) OPT ANY
+             ADD "MDL_YR Level 01" (any) OPT ANY
+             ADD "MDL_YR_Key" (any) OPT ANY
+             ADD "ORD_NO Level 01" (any) OPT ANY
+             ADD "ORD_NO_Key" (any) OPT ANY
+             ADD "PLNT_CD Level 01" (any) OPT ANY
+             ADD "PLNT_CD_Key" (any) OPT ANY
+             ADD "PROD_MNTH Level 01" (any) OPT ANY
+             ADD "PROD_MNTH_Key" (any) OPT ANY
+             ADD "RGN_CMNT Level 01" (any) OPT ANY
+             ADD "RGN_CMNT_Key" (any) OPT ANY
+             ADD "SPCL_ORD_GUID Level 01" (any) OPT ANY
+             ADD "SPCL_ORD_GUID_Key" (any) OPT ANY
+             ADD "STAT_CD Level 01" (any) OPT ANY
+             ADD "STAT_CD_Key" (any) OPT ANY
+             ADD "VEH_CHG_CMNT Level 01" (any) OPT ANY
+             ADD "VEH_CHG_CMNT_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("APPL_PROC_IND Level 01", "APPL_PROC_IND_Key", "APPR_DT Level 01", "APPR_DT_Key", "APPR_ID Level 01", "APPR_ID_Key", "ASGN_TYP Level 01", "ASGN_TYP_Key", "CRTE_TMDT Level 01", "CRTE_TMDT_Key", "DLR_CD Level 01", "DLR_CD_Key", "ERN_ASGN_FLG Level 01", "ERN_ASGN_FLG_Key", "EXT_CLR_CD Level 01", "EXT_CLR_CD_Key", "FCTY_ACCY_ARR Level 01", "FCTY_ACCY_ARR_Key", "INT_CLR_FAB_CD Level 01", "INT_CLR_FAB_CD_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "LST_UPDT_ID Level 01", "LST_UPDT_ID_Key", "LST_UPDT_TMDT Level 01", "LST_UPDT_TMDT_Key", "MDL_CD Level 01", "MDL_CD_Key", "MDL_YR Level 01", "MDL_YR_Key", "Number of Records", "ORD_NO Level 01", "ORD_NO_Key", "PLNT_CD Level 01", "PLNT_CD_Key", "PROD_MNTH Level 01", "PROD_MNTH_Key", "RGN_CMNT Level 01", "RGN_CMNT_Key", "SPCL_ORD_GUID Level 01", "SPCL_ORD_GUID_Key", "STAT_CD Level 01", "STAT_CD_Key", "VEH_CHG_CMNT Level 01", "VEH_CHG_CMNT_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_tmssor)
+    );
+
