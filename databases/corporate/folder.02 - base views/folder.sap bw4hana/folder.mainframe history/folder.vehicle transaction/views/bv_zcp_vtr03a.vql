@@ -1,0 +1,130 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_vtr03a
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_VTR03A'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "ARRAY_INDEX Level 01" = '[4ZCP_VTR03A-ARRAY_INDEX].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-ARRAY_INDEX]' DIMENSIONNAME = '[4ZCP_VTR03A-ARRAY_INDEX]' LEVELPOSITION=1,
+        "ARRAY_INDEX_Key" = '[4ZCP_VTR03A-ARRAY_INDEX].[24ZCP_VTR03A-ARRAY_INDEX]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-ARRAY_INDEX]' DIMENSIONNAME = '[4ZCP_VTR03A-ARRAY_INDEX]' ATTRIBUTE,
+        "CRE_BY_ID Level 01" = '[4ZCP_VTR03A-CRE_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_VTR03A-CRE_BY_ID]' LEVELPOSITION=1,
+        "CRE_BY_ID_Key" = '[4ZCP_VTR03A-CRE_BY_ID].[24ZCP_VTR03A-CRE_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-CRE_BY_ID]' DIMENSIONNAME = '[4ZCP_VTR03A-CRE_BY_ID]' ATTRIBUTE,
+        "CRE_TS Level 01" = '[4ZCP_VTR03A-CRE_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-CRE_TS]' DIMENSIONNAME = '[4ZCP_VTR03A-CRE_TS]' LEVELPOSITION=1,
+        "CRE_TS_Key" = '[4ZCP_VTR03A-CRE_TS].[24ZCP_VTR03A-CRE_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-CRE_TS]' DIMENSIONNAME = '[4ZCP_VTR03A-CRE_TS]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "UPD_BY_ID Level 01" = '[4ZCP_VTR03A-UPD_BY_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_VTR03A-UPD_BY_ID]' LEVELPOSITION=1,
+        "UPD_BY_ID_Key" = '[4ZCP_VTR03A-UPD_BY_ID].[24ZCP_VTR03A-UPD_BY_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-UPD_BY_ID]' DIMENSIONNAME = '[4ZCP_VTR03A-UPD_BY_ID]' ATTRIBUTE,
+        "UPD_TS Level 01" = '[4ZCP_VTR03A-UPD_TS].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-UPD_TS]' DIMENSIONNAME = '[4ZCP_VTR03A-UPD_TS]' LEVELPOSITION=1,
+        "UPD_TS_Key" = '[4ZCP_VTR03A-UPD_TS].[24ZCP_VTR03A-UPD_TS]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-UPD_TS]' DIMENSIONNAME = '[4ZCP_VTR03A-UPD_TS]' ATTRIBUTE,
+        "VTR03D_KEY_FILLER01 Level 01" = '[4ZCP_VTR03A-VTR03D_KEY_F].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VTR03D_KEY_F]' DIMENSIONNAME = '[4ZCP_VTR03A-VTR03D_KEY_F]' LEVELPOSITION=1,
+        "VTR03D_KEY_FILLER01_Key" = '[4ZCP_VTR03A-VTR03D_KEY_F].[24ZCP_VTR03A-VTR03D_KEY_F]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VTR03D_KEY_F]' DIMENSIONNAME = '[4ZCP_VTR03A-VTR03D_KEY_F]' ATTRIBUTE,
+        "VT_03_ACC_CODE Level 01" = '[4ZCP_VTR03A-VT_03_ACC_CO].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_03_ACC_CO]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_03_ACC_CO]' LEVELPOSITION=1,
+        "VT_03_ACC_CODE_Key" = '[4ZCP_VTR03A-VT_03_ACC_CO].[24ZCP_VTR03A-VT_03_ACC_CO]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_03_ACC_CO]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_03_ACC_CO]' ATTRIBUTE,
+        "VT_03_ACC_PHASE Level 01" = '[4ZCP_VTR03A-VT_03_ACC_PH].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_03_ACC_PH]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_03_ACC_PH]' LEVELPOSITION=1,
+        "VT_03_ACC_PHASE_Key" = '[4ZCP_VTR03A-VT_03_ACC_PH].[24ZCP_VTR03A-VT_03_ACC_PH]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_03_ACC_PH]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_03_ACC_PH]' ATTRIBUTE,
+        "VT_ARCHIVE_IN Level 01" = '[4ZCP_VTR03A-VT_ARCHIVE_I].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_ARCHIVE_I]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_ARCHIVE_I]' LEVELPOSITION=1,
+        "VT_ARCHIVE_IN_Key" = '[4ZCP_VTR03A-VT_ARCHIVE_I].[24ZCP_VTR03A-VT_ARCHIVE_I]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_ARCHIVE_I]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_ARCHIVE_I]' ATTRIBUTE,
+        "VT_TRN_CNTL Level 01" = '[4ZCP_VTR03A-VT_TRN_CNTL].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_CNTL]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_CNTL]' LEVELPOSITION=1,
+        "VT_TRN_CNTL_Key" = '[4ZCP_VTR03A-VT_TRN_CNTL].[24ZCP_VTR03A-VT_TRN_CNTL]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_CNTL]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_CNTL]' ATTRIBUTE,
+        "VT_TRN_DATE Level 01" = '[4ZCP_VTR03A-VT_TRN_DATE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_DATE]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_DATE]' LEVELPOSITION=1,
+        "VT_TRN_DATE_Key" = '[4ZCP_VTR03A-VT_TRN_DATE].[24ZCP_VTR03A-VT_TRN_DATE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_DATE]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_DATE]' ATTRIBUTE,
+        "VT_TRN_DLR Level 01" = '[4ZCP_VTR03A-VT_TRN_DLR].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_DLR]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_DLR]' LEVELPOSITION=1,
+        "VT_TRN_DLR_Key" = '[4ZCP_VTR03A-VT_TRN_DLR].[24ZCP_VTR03A-VT_TRN_DLR]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_DLR]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_DLR]' ATTRIBUTE,
+        "VT_TRN_SEQ Level 01" = '[4ZCP_VTR03A-VT_TRN_SEQ].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_SEQ]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_SEQ]' LEVELPOSITION=1,
+        "VT_TRN_SEQ_Key" = '[4ZCP_VTR03A-VT_TRN_SEQ].[24ZCP_VTR03A-VT_TRN_SEQ]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_SEQ]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_SEQ]' ATTRIBUTE,
+        "VT_TRN_TRAN Level 01" = '[4ZCP_VTR03A-VT_TRN_TRAN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_TRAN]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_TRAN]' LEVELPOSITION=1,
+        "VT_TRN_TRAN_Key" = '[4ZCP_VTR03A-VT_TRN_TRAN].[24ZCP_VTR03A-VT_TRN_TRAN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_TRAN]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_TRAN]' ATTRIBUTE,
+        "VT_TRN_VIN Level 01" = '[4ZCP_VTR03A-VT_TRN_VIN].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_VIN]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_VIN]' LEVELPOSITION=1,
+        "VT_TRN_VIN_Key" = '[4ZCP_VTR03A-VT_TRN_VIN].[24ZCP_VTR03A-VT_TRN_VIN]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_VTR03A-VT_TRN_VIN]' DIMENSIONNAME = '[4ZCP_VTR03A-VT_TRN_VIN]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_vtr03a I18N us_cst (
+        "ARRAY_INDEX Level 01":text,
+        "ARRAY_INDEX_Key":text,
+        "CRE_BY_ID Level 01":text,
+        "CRE_BY_ID_Key":text,
+        "CRE_TS Level 01":text,
+        "CRE_TS_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "UPD_BY_ID Level 01":text,
+        "UPD_BY_ID_Key":text,
+        "UPD_TS Level 01":text,
+        "UPD_TS_Key":text,
+        "VTR03D_KEY_FILLER01 Level 01":text,
+        "VTR03D_KEY_FILLER01_Key":text,
+        "VT_03_ACC_CODE Level 01":text,
+        "VT_03_ACC_CODE_Key":text,
+        "VT_03_ACC_PHASE Level 01":text,
+        "VT_03_ACC_PHASE_Key":text,
+        "VT_ARCHIVE_IN Level 01":text,
+        "VT_ARCHIVE_IN_Key":text,
+        "VT_TRN_CNTL Level 01":text,
+        "VT_TRN_CNTL_Key":text,
+        "VT_TRN_DATE Level 01":text,
+        "VT_TRN_DATE_Key":text,
+        "VT_TRN_DLR Level 01":text,
+        "VT_TRN_DLR_Key":text,
+        "VT_TRN_SEQ Level 01":text,
+        "VT_TRN_SEQ_Key":text,
+        "VT_TRN_TRAN Level 01":text,
+        "VT_TRN_TRAN_Key":text,
+        "VT_TRN_VIN Level 01":text,
+        "VT_TRN_VIN_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/vehicle transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_vtr03a(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "ARRAY_INDEX Level 01" (any) OPT ANY
+             ADD "ARRAY_INDEX_Key" (any) OPT ANY
+             ADD "CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "CRE_BY_ID_Key" (any) OPT ANY
+             ADD "CRE_TS Level 01" (any) OPT ANY
+             ADD "CRE_TS_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "UPD_BY_ID_Key" (any) OPT ANY
+             ADD "UPD_TS Level 01" (any) OPT ANY
+             ADD "UPD_TS_Key" (any) OPT ANY
+             ADD "VTR03D_KEY_FILLER01 Level 01" (any) OPT ANY
+             ADD "VTR03D_KEY_FILLER01_Key" (any) OPT ANY
+             ADD "VT_03_ACC_CODE Level 01" (any) OPT ANY
+             ADD "VT_03_ACC_CODE_Key" (any) OPT ANY
+             ADD "VT_03_ACC_PHASE Level 01" (any) OPT ANY
+             ADD "VT_03_ACC_PHASE_Key" (any) OPT ANY
+             ADD "VT_ARCHIVE_IN Level 01" (any) OPT ANY
+             ADD "VT_ARCHIVE_IN_Key" (any) OPT ANY
+             ADD "VT_TRN_CNTL Level 01" (any) OPT ANY
+             ADD "VT_TRN_CNTL_Key" (any) OPT ANY
+             ADD "VT_TRN_DATE Level 01" (any) OPT ANY
+             ADD "VT_TRN_DATE_Key" (any) OPT ANY
+             ADD "VT_TRN_DLR Level 01" (any) OPT ANY
+             ADD "VT_TRN_DLR_Key" (any) OPT ANY
+             ADD "VT_TRN_SEQ Level 01" (any) OPT ANY
+             ADD "VT_TRN_SEQ_Key" (any) OPT ANY
+             ADD "VT_TRN_TRAN Level 01" (any) OPT ANY
+             ADD "VT_TRN_TRAN_Key" (any) OPT ANY
+             ADD "VT_TRN_VIN Level 01" (any) OPT ANY
+             ADD "VT_TRN_VIN_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("ARRAY_INDEX Level 01", "ARRAY_INDEX_Key", "CRE_BY_ID Level 01", "CRE_BY_ID_Key", "CRE_TS Level 01", "CRE_TS_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "UPD_BY_ID Level 01", "UPD_BY_ID_Key", "UPD_TS Level 01", "UPD_TS_Key", "VTR03D_KEY_FILLER01 Level 01", "VTR03D_KEY_FILLER01_Key", "VT_03_ACC_CODE Level 01", "VT_03_ACC_CODE_Key", "VT_03_ACC_PHASE Level 01", "VT_03_ACC_PHASE_Key", "VT_ARCHIVE_IN Level 01", "VT_ARCHIVE_IN_Key", "VT_TRN_CNTL Level 01", "VT_TRN_CNTL_Key", "VT_TRN_DATE Level 01", "VT_TRN_DATE_Key", "VT_TRN_DLR Level 01", "VT_TRN_DLR_Key", "VT_TRN_SEQ Level 01", "VT_TRN_SEQ_Key", "VT_TRN_TRAN Level 01", "VT_TRN_TRAN_Key", "VT_TRN_VIN Level 01", "VT_TRN_VIN_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_vtr03a)
+    );
+
