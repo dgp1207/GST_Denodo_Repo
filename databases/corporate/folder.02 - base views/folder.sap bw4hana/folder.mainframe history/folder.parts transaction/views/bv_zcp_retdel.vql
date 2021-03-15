@@ -1,0 +1,112 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_retdel
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_RETDEL'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "DEL_ARCHIVE_IN Level 01" = '[4ZCP_RETDEL-DEL_ARCHIVE].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_ARCHIVE]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_ARCHIVE]' LEVELPOSITION=1,
+        "DEL_ARCHIVE_IN_Key" = '[4ZCP_RETDEL-DEL_ARCHIVE].[24ZCP_RETDEL-DEL_ARCHIVE]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_ARCHIVE]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_ARCHIVE]' ATTRIBUTE,
+        "DEL_CLAIM_DATE Level 01" = '[4ZCP_RETDEL-DEL_CLAIM_DA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_CLAIM_DA]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_CLAIM_DA]' LEVELPOSITION=1,
+        "DEL_CLAIM_DATE_Key" = '[4ZCP_RETDEL-DEL_CLAIM_DA].[24ZCP_RETDEL-DEL_CLAIM_DA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_CLAIM_DA]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_CLAIM_DA]' ATTRIBUTE,
+        "DEL_DLR_NUM Level 01" = '[4ZCP_RETDEL-DEL_DLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_DLR_NUM]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_DLR_NUM]' LEVELPOSITION=1,
+        "DEL_DLR_NUM_Key" = '[4ZCP_RETDEL-DEL_DLR_NUM].[24ZCP_RETDEL-DEL_DLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_DLR_NUM]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_DLR_NUM]' ATTRIBUTE,
+        "DEL_DOC_NUM Level 01" = '[4ZCP_RETDEL-DEL_DOC_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_DOC_NUM]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_DOC_NUM]' LEVELPOSITION=1,
+        "DEL_DOC_NUM_Key" = '[4ZCP_RETDEL-DEL_DOC_NUM].[24ZCP_RETDEL-DEL_DOC_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_DOC_NUM]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_DOC_NUM]' ATTRIBUTE,
+        "DEL_FLAG Level 01" = '[4ZCP_RETDEL-DEL_FLAG].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_FLAG]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_FLAG]' LEVELPOSITION=1,
+        "DEL_FLAG_Key" = '[4ZCP_RETDEL-DEL_FLAG].[24ZCP_RETDEL-DEL_FLAG]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_FLAG]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_FLAG]' ATTRIBUTE,
+        "DEL_PART_NUM Level 01" = '[4ZCP_RETDEL-DEL_PART_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_PART_NUM]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_PART_NUM]' LEVELPOSITION=1,
+        "DEL_PART_NUM_Key" = '[4ZCP_RETDEL-DEL_PART_NUM].[24ZCP_RETDEL-DEL_PART_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_PART_NUM]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_PART_NUM]' ATTRIBUTE,
+        "DEL_TRANS_DATE Level 01" = '[4ZCP_RETDEL-DEL_TRANS_DA].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_TRANS_DA]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_TRANS_DA]' LEVELPOSITION=1,
+        "DEL_TRANS_DATE_Key" = '[4ZCP_RETDEL-DEL_TRANS_DA].[24ZCP_RETDEL-DEL_TRANS_DA]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_TRANS_DA]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_TRANS_DA]' ATTRIBUTE,
+        "DEL_USER_ID Level 01" = '[4ZCP_RETDEL-DEL_USER_ID].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_USER_ID]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_USER_ID]' LEVELPOSITION=1,
+        "DEL_USER_ID_Key" = '[4ZCP_RETDEL-DEL_USER_ID].[24ZCP_RETDEL-DEL_USER_ID]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-DEL_USER_ID]' DIMENSIONNAME = '[4ZCP_RETDEL-DEL_USER_ID]' ATTRIBUTE,
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "RETDEL_CRE_BY_ID Level 01" = '[4ZCP_RETDEL-RETDEL_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-RETDEL_CRE_B]' DIMENSIONNAME = '[4ZCP_RETDEL-RETDEL_CRE_B]' LEVELPOSITION=1,
+        "RETDEL_CRE_BY_ID_Key" = '[4ZCP_RETDEL-RETDEL_CRE_B].[24ZCP_RETDEL-RETDEL_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-RETDEL_CRE_B]' DIMENSIONNAME = '[4ZCP_RETDEL-RETDEL_CRE_B]' ATTRIBUTE,
+        "RETDEL_CRE_TS Level 01" = '[4ZCP_RETDEL-RETDEL_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-RETDEL_CRE_T]' DIMENSIONNAME = '[4ZCP_RETDEL-RETDEL_CRE_T]' LEVELPOSITION=1,
+        "RETDEL_CRE_TS_Key" = '[4ZCP_RETDEL-RETDEL_CRE_T].[24ZCP_RETDEL-RETDEL_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-RETDEL_CRE_T]' DIMENSIONNAME = '[4ZCP_RETDEL-RETDEL_CRE_T]' ATTRIBUTE,
+        "RETDEL_UPD_BY_ID Level 01" = '[4ZCP_RETDEL-RETDEL_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-RETDEL_UPD_B]' DIMENSIONNAME = '[4ZCP_RETDEL-RETDEL_UPD_B]' LEVELPOSITION=1,
+        "RETDEL_UPD_BY_ID_Key" = '[4ZCP_RETDEL-RETDEL_UPD_B].[24ZCP_RETDEL-RETDEL_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-RETDEL_UPD_B]' DIMENSIONNAME = '[4ZCP_RETDEL-RETDEL_UPD_B]' ATTRIBUTE,
+        "RETDEL_UPD_TS Level 01" = '[4ZCP_RETDEL-RETDEL_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-RETDEL_UPD_T]' DIMENSIONNAME = '[4ZCP_RETDEL-RETDEL_UPD_T]' LEVELPOSITION=1,
+        "RETDEL_UPD_TS_Key" = '[4ZCP_RETDEL-RETDEL_UPD_T].[24ZCP_RETDEL-RETDEL_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_RETDEL-RETDEL_UPD_T]' DIMENSIONNAME = '[4ZCP_RETDEL-RETDEL_UPD_T]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_retdel I18N us_cst (
+        "DEL_ARCHIVE_IN Level 01":text,
+        "DEL_ARCHIVE_IN_Key":text,
+        "DEL_CLAIM_DATE Level 01":text,
+        "DEL_CLAIM_DATE_Key":text,
+        "DEL_DLR_NUM Level 01":text,
+        "DEL_DLR_NUM_Key":text,
+        "DEL_DOC_NUM Level 01":text,
+        "DEL_DOC_NUM_Key":text,
+        "DEL_FLAG Level 01":text,
+        "DEL_FLAG_Key":text,
+        "DEL_PART_NUM Level 01":text,
+        "DEL_PART_NUM_Key":text,
+        "DEL_TRANS_DATE Level 01":text,
+        "DEL_TRANS_DATE_Key":text,
+        "DEL_USER_ID Level 01":text,
+        "DEL_USER_ID_Key":text,
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "RETDEL_CRE_BY_ID Level 01":text,
+        "RETDEL_CRE_BY_ID_Key":text,
+        "RETDEL_CRE_TS Level 01":text,
+        "RETDEL_CRE_TS_Key":text,
+        "RETDEL_UPD_BY_ID Level 01":text,
+        "RETDEL_UPD_BY_ID_Key":text,
+        "RETDEL_UPD_TS Level 01":text,
+        "RETDEL_UPD_TS_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_retdel(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "DEL_ARCHIVE_IN Level 01" (any) OPT ANY
+             ADD "DEL_ARCHIVE_IN_Key" (any) OPT ANY
+             ADD "DEL_CLAIM_DATE Level 01" (any) OPT ANY
+             ADD "DEL_CLAIM_DATE_Key" (any) OPT ANY
+             ADD "DEL_DLR_NUM Level 01" (any) OPT ANY
+             ADD "DEL_DLR_NUM_Key" (any) OPT ANY
+             ADD "DEL_DOC_NUM Level 01" (any) OPT ANY
+             ADD "DEL_DOC_NUM_Key" (any) OPT ANY
+             ADD "DEL_FLAG Level 01" (any) OPT ANY
+             ADD "DEL_FLAG_Key" (any) OPT ANY
+             ADD "DEL_PART_NUM Level 01" (any) OPT ANY
+             ADD "DEL_PART_NUM_Key" (any) OPT ANY
+             ADD "DEL_TRANS_DATE Level 01" (any) OPT ANY
+             ADD "DEL_TRANS_DATE_Key" (any) OPT ANY
+             ADD "DEL_USER_ID Level 01" (any) OPT ANY
+             ADD "DEL_USER_ID_Key" (any) OPT ANY
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "RETDEL_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "RETDEL_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "RETDEL_CRE_TS Level 01" (any) OPT ANY
+             ADD "RETDEL_CRE_TS_Key" (any) OPT ANY
+             ADD "RETDEL_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "RETDEL_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "RETDEL_UPD_TS Level 01" (any) OPT ANY
+             ADD "RETDEL_UPD_TS_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("DEL_ARCHIVE_IN Level 01", "DEL_ARCHIVE_IN_Key", "DEL_CLAIM_DATE Level 01", "DEL_CLAIM_DATE_Key", "DEL_DLR_NUM Level 01", "DEL_DLR_NUM_Key", "DEL_DOC_NUM Level 01", "DEL_DOC_NUM_Key", "DEL_FLAG Level 01", "DEL_FLAG_Key", "DEL_PART_NUM Level 01", "DEL_PART_NUM_Key", "DEL_TRANS_DATE Level 01", "DEL_TRANS_DATE_Key", "DEL_USER_ID Level 01", "DEL_USER_ID_Key", "InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "RETDEL_CRE_BY_ID Level 01", "RETDEL_CRE_BY_ID_Key", "RETDEL_CRE_TS Level 01", "RETDEL_CRE_TS_Key", "RETDEL_UPD_BY_ID Level 01", "RETDEL_UPD_BY_ID_Key", "RETDEL_UPD_TS Level 01", "RETDEL_UPD_TS_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_retdel)
+    );
+

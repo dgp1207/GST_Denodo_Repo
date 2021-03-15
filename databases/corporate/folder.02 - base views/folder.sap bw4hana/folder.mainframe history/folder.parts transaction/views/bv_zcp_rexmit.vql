@@ -1,0 +1,100 @@
+﻿CREATE OR REPLACE WRAPPER SAPBWBAPI bv_zcp_rexmit
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    DATASOURCENAME = ds_sap_hana
+    SCHEMANAME = ''
+    CUBENAME = '$$ZCP_REXMIT'
+    DIMENSIONKEYFIELDS = FALSE
+    LEAFLEVELMEMBERSONLY = TRUE
+    INCLUDEEMPTYROWS = FALSE
+    OUTPUTSCHEMA (
+        "InfoProvider Level 01" = '[0INFOPROV].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' LEVELPOSITION=1,
+        "InfoProvider_Key" = '[0INFOPROV].[20INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Long Name" = '[0INFOPROV].[40INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "InfoProvider_Name" = '[0INFOPROV].[10INFOPROV]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[0INFOPROV]' DIMENSIONNAME = '[0INFOPROV]' ATTRIBUTE,
+        "REXMIT_CRE_BY_ID Level 01" = '[4ZCP_REXMIT-REXMIT_CRE_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REXMIT_CRE_B]' DIMENSIONNAME = '[4ZCP_REXMIT-REXMIT_CRE_B]' LEVELPOSITION=1,
+        "REXMIT_CRE_BY_ID_Key" = '[4ZCP_REXMIT-REXMIT_CRE_B].[24ZCP_REXMIT-REXMIT_CRE_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REXMIT_CRE_B]' DIMENSIONNAME = '[4ZCP_REXMIT-REXMIT_CRE_B]' ATTRIBUTE,
+        "REXMIT_CRE_TS Level 01" = '[4ZCP_REXMIT-REXMIT_CRE_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REXMIT_CRE_T]' DIMENSIONNAME = '[4ZCP_REXMIT-REXMIT_CRE_T]' LEVELPOSITION=1,
+        "REXMIT_CRE_TS_Key" = '[4ZCP_REXMIT-REXMIT_CRE_T].[24ZCP_REXMIT-REXMIT_CRE_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REXMIT_CRE_T]' DIMENSIONNAME = '[4ZCP_REXMIT-REXMIT_CRE_T]' ATTRIBUTE,
+        "REXMIT_UPD_BY_ID Level 01" = '[4ZCP_REXMIT-REXMIT_UPD_B].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REXMIT_UPD_B]' DIMENSIONNAME = '[4ZCP_REXMIT-REXMIT_UPD_B]' LEVELPOSITION=1,
+        "REXMIT_UPD_BY_ID_Key" = '[4ZCP_REXMIT-REXMIT_UPD_B].[24ZCP_REXMIT-REXMIT_UPD_B]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REXMIT_UPD_B]' DIMENSIONNAME = '[4ZCP_REXMIT-REXMIT_UPD_B]' ATTRIBUTE,
+        "REXMIT_UPD_TS Level 01" = '[4ZCP_REXMIT-REXMIT_UPD_T].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REXMIT_UPD_T]' DIMENSIONNAME = '[4ZCP_REXMIT-REXMIT_UPD_T]' LEVELPOSITION=1,
+        "REXMIT_UPD_TS_Key" = '[4ZCP_REXMIT-REXMIT_UPD_T].[24ZCP_REXMIT-REXMIT_UPD_T]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REXMIT_UPD_T]' DIMENSIONNAME = '[4ZCP_REXMIT-REXMIT_UPD_T]' ATTRIBUTE,
+        "REX_CLAIM_QTY Level 01" = '[4ZCP_REXMIT-REX_CLAIM_QT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_CLAIM_QT]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_CLAIM_QT]' LEVELPOSITION=1,
+        "REX_CLAIM_QTY_Key" = '[4ZCP_REXMIT-REX_CLAIM_QT].[24ZCP_REXMIT-REX_CLAIM_QT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_CLAIM_QT]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_CLAIM_QT]' ATTRIBUTE,
+        "REX_DLR_NUM Level 01" = '[4ZCP_REXMIT-REX_DLR_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_DLR_NUM]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_DLR_NUM]' LEVELPOSITION=1,
+        "REX_DLR_NUM_Key" = '[4ZCP_REXMIT-REX_DLR_NUM].[24ZCP_REXMIT-REX_DLR_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_DLR_NUM]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_DLR_NUM]' ATTRIBUTE,
+        "REX_HAZ_MAT_FLAG Level 01" = '[4ZCP_REXMIT-REX_HAZ_MAT].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_HAZ_MAT]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_HAZ_MAT]' LEVELPOSITION=1,
+        "REX_HAZ_MAT_FLAG_Key" = '[4ZCP_REXMIT-REX_HAZ_MAT].[24ZCP_REXMIT-REX_HAZ_MAT]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_HAZ_MAT]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_HAZ_MAT]' ATTRIBUTE,
+        "REX_PART_LOC Level 01" = '[4ZCP_REXMIT-REX_PART_LOC].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_PART_LOC]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_PART_LOC]' LEVELPOSITION=1,
+        "REX_PART_LOC_Key" = '[4ZCP_REXMIT-REX_PART_LOC].[24ZCP_REXMIT-REX_PART_LOC]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_PART_LOC]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_PART_LOC]' ATTRIBUTE,
+        "REX_PART_NUM Level 01" = '[4ZCP_REXMIT-REX_PART_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_PART_NUM]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_PART_NUM]' LEVELPOSITION=1,
+        "REX_PART_NUM_Key" = '[4ZCP_REXMIT-REX_PART_NUM].[24ZCP_REXMIT-REX_PART_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_PART_NUM]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_PART_NUM]' ATTRIBUTE,
+        "REX_REF_NUM Level 01" = '[4ZCP_REXMIT-REX_REF_NUM].[LEVEL01]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_REF_NUM]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_REF_NUM]' LEVELPOSITION=1,
+        "REX_REF_NUM_Key" = '[4ZCP_REXMIT-REX_REF_NUM].[24ZCP_REXMIT-REX_REF_NUM]' : 'java.lang.String' (OPT) HIERARCHYNAME = '[4ZCP_REXMIT-REX_REF_NUM]' DIMENSIONNAME = '[4ZCP_REXMIT-REX_REF_NUM]' ATTRIBUTE,
+        "Number of Records" = '[Measures].[1ROWCOUNT]' : 'java.lang.Double' (OPT) MEASURE
+    );
+
+CREATE OR REPLACE TABLE bv_zcp_rexmit I18N us_cst (
+        "InfoProvider Level 01":text,
+        "InfoProvider_Key":text,
+        "InfoProvider_Long Name":text,
+        "InfoProvider_Name":text,
+        "REXMIT_CRE_BY_ID Level 01":text,
+        "REXMIT_CRE_BY_ID_Key":text,
+        "REXMIT_CRE_TS Level 01":text,
+        "REXMIT_CRE_TS_Key":text,
+        "REXMIT_UPD_BY_ID Level 01":text,
+        "REXMIT_UPD_BY_ID_Key":text,
+        "REXMIT_UPD_TS Level 01":text,
+        "REXMIT_UPD_TS_Key":text,
+        "REX_CLAIM_QTY Level 01":text,
+        "REX_CLAIM_QTY_Key":text,
+        "REX_DLR_NUM Level 01":text,
+        "REX_DLR_NUM_Key":text,
+        "REX_HAZ_MAT_FLAG Level 01":text,
+        "REX_HAZ_MAT_FLAG_Key":text,
+        "REX_PART_LOC Level 01":text,
+        "REX_PART_LOC_Key":text,
+        "REX_PART_NUM Level 01":text,
+        "REX_PART_NUM_Key":text,
+        "REX_REF_NUM Level 01":text,
+        "REX_REF_NUM_Key":text,
+        "Number of Records":double
+    )
+    FOLDER = '/02 - base views/sap bw4hana/mainframe history/parts transaction'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_zcp_rexmit(
+        I18N us_cst
+        CONSTRAINTS (
+             ADD "InfoProvider Level 01" (any) OPT ANY
+             ADD "InfoProvider_Key" (any) OPT ANY
+             ADD "InfoProvider_Long Name" (any) OPT ANY
+             ADD "InfoProvider_Name" (any) OPT ANY
+             ADD "REXMIT_CRE_BY_ID Level 01" (any) OPT ANY
+             ADD "REXMIT_CRE_BY_ID_Key" (any) OPT ANY
+             ADD "REXMIT_CRE_TS Level 01" (any) OPT ANY
+             ADD "REXMIT_CRE_TS_Key" (any) OPT ANY
+             ADD "REXMIT_UPD_BY_ID Level 01" (any) OPT ANY
+             ADD "REXMIT_UPD_BY_ID_Key" (any) OPT ANY
+             ADD "REXMIT_UPD_TS Level 01" (any) OPT ANY
+             ADD "REXMIT_UPD_TS_Key" (any) OPT ANY
+             ADD "REX_CLAIM_QTY Level 01" (any) OPT ANY
+             ADD "REX_CLAIM_QTY_Key" (any) OPT ANY
+             ADD "REX_DLR_NUM Level 01" (any) OPT ANY
+             ADD "REX_DLR_NUM_Key" (any) OPT ANY
+             ADD "REX_HAZ_MAT_FLAG Level 01" (any) OPT ANY
+             ADD "REX_HAZ_MAT_FLAG_Key" (any) OPT ANY
+             ADD "REX_PART_LOC Level 01" (any) OPT ANY
+             ADD "REX_PART_LOC_Key" (any) OPT ANY
+             ADD "REX_PART_NUM Level 01" (any) OPT ANY
+             ADD "REX_PART_NUM_Key" (any) OPT ANY
+             ADD "REX_REF_NUM Level 01" (any) OPT ANY
+             ADD "REX_REF_NUM_Key" (any) OPT ANY
+             ADD "Number of Records" (any) OPT ANY
+        )
+        OUTPUTLIST ("InfoProvider Level 01", "InfoProvider_Key", "InfoProvider_Long Name", "InfoProvider_Name", "Number of Records", "REXMIT_CRE_BY_ID Level 01", "REXMIT_CRE_BY_ID_Key", "REXMIT_CRE_TS Level 01", "REXMIT_CRE_TS_Key", "REXMIT_UPD_BY_ID Level 01", "REXMIT_UPD_BY_ID_Key", "REXMIT_UPD_TS Level 01", "REXMIT_UPD_TS_Key", "REX_CLAIM_QTY Level 01", "REX_CLAIM_QTY_Key", "REX_DLR_NUM Level 01", "REX_DLR_NUM_Key", "REX_HAZ_MAT_FLAG Level 01", "REX_HAZ_MAT_FLAG_Key", "REX_PART_LOC Level 01", "REX_PART_LOC_Key", "REX_PART_NUM Level 01", "REX_PART_NUM_Key", "REX_REF_NUM Level 01", "REX_REF_NUM_Key"
+        )
+        WRAPPER (sapbwbapi bv_zcp_rexmit)
+    );
+
